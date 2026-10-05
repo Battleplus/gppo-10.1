@@ -1,0 +1,22 @@
+{
+  "scope": "final local WSL system harness SELF plus waited CHILDREN once; not remote acceptance",
+  "wall_seconds": 4.915553924998676,
+  "self_cpu_seconds": 0.174473,
+  "waited_child_cpu_seconds": 1.338543,
+  "cpu_seconds": 1.5130160000000001,
+  "model_calls": 0,
+  "cuda_context_initializations": 0,
+  "command": [
+    "wsl.exe",
+    "-d",
+    "Ubuntu-24.04",
+    "--",
+    "python3",
+    "-B",
+    "-c",
+    "import resource,runpy,time,json,sys; sys.path.insert(0,'/mnt/e/Z\u535a\u58eb/diagnostic-work/w1-gpu-smoke-consolidated-acceptance-v3/package'); t=time.monotonic(); p=runpy.run_path('/mnt/e/Z\u535a\u58eb/diagnostic-work/w1-gpu-smoke-consolidated-acceptance-v3/package/run_system_phase_harness.py'); code=p['main'](); a=resource.getrusage(resource.RUSAGE_SELF); b=resource.getrusage(resource.RUSAGE_CHILDREN); print(json.dumps({'scope':'final local WSL system harness SELF plus waited CHILDREN once; not remote acceptance','wall_seconds':time.monotonic()-t,'self_cpu_seconds':a.ru_utime+a.ru_stime,'waited_child_cpu_seconds':b.ru_utime+b.ru_stime,'cpu_seconds':a.ru_utime+a.ru_stime+b.ru_utime+b.ru_stime,'model_calls':0,'cuda_context_initializations':0})); raise SystemExit(code)"
+  ],
+  "exit_code": 0,
+  "windows_wait_wall_seconds": 4.916013599999133,
+  "prior_offline_development_tests_not_lifetime_metered": true
+}

@@ -1,0 +1,63 @@
+{
+  "classification": "GPU_SMOKE_TEST",
+  "returncode": 0,
+  "supervisor": {
+    "affinity": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "artifact_bytes": 2350,
+    "automatic_retry": false,
+    "available_ram_bytes": 6615310336,
+    "cpu_estimate_source": "stable_proc_tree_ticks_including_kernel_waited_descendants",
+    "cpu_lifetime_settlement_complete": true,
+    "cpu_observed_process_tree_seconds": 22.16,
+    "cpu_process_self_seconds_cumulative": 3.746028,
+    "cpu_reaped_children_seconds": 0.0,
+    "cpu_reaped_children_seconds_cumulative": 21.714621,
+    "cpu_sampled_monotonic": 20401.93987217,
+    "cpu_sampled_reaped_overlap_seconds": 0.0,
+    "cpu_sampling_started_monotonic": 20369.49899796,
+    "cpu_scope": "final RUSAGE_SELF plus waited RUSAGE_CHILDREN after owned descendant cleanup; live stage accounting uses stable owner-verified /proc self+waited ticks and synchronous authenticated boundaries",
+    "cpu_scope_complete": false,
+    "cpu_scope_hard_enforcement": false,
+    "cpu_scope_limitations": [
+      "/proc is not an atomic tree snapshot; unstable scans and nonmonotonic totals fail closed",
+      "without a delegated cgroup, CPU cap enforcement is sampled rather than kernel-hard; final RUSAGE settlement rejects overrun"
+    ],
+    "cpu_scope_verified": true,
+    "cpu_seconds": 25.460649,
+    "cumulative_cost": {
+      "cpu_seconds_upper_with_history": 25.460649,
+      "cumulative_reserved_consumption": null,
+      "cumulative_resource_acceptance": false,
+      "current_call_status_counts": null,
+      "current_reserved": null,
+      "historical_pending_and_monitoring_gap_preserved": true,
+      "history": {},
+      "wall_seconds_upper_with_history": 32.44087421000222
+    },
+    "device": "cpu",
+    "disk_free_bytes": 960961396736,
+    "final_resource_pass": true,
+    "gpu_owned_process_memory_peak_bytes": 0,
+    "heartbeat": 290,
+    "peak_rss_bytes": 2252042240,
+    "peak_rss_upper_bound_bytes": 2261098496,
+    "phase_rows": [],
+    "pid": 801,
+    "returncode": 0,
+    "rss_bytes": 489652224,
+    "run": null,
+    "stage": "staging_and_zero_step_gate",
+    "status": "complete",
+    "stop_reason": null,
+    "supervisor_pid": 795,
+    "updated_monotonic": 20401.947745037,
+    "wall_seconds": 32.44087421000222
+  },
+  "training_result": "/home/asus/w1-gpu-smoke-local-v1/gpu-evidence/local-gpu-result.json",
+  "wall_seconds": 36.588351401002
+}

@@ -1,0 +1,25 @@
+# Independent Review of W1 GPU Smoke Artifacts
+
+## Scope
+
+This is an offline review of the downloaded smoke evidence. JSON and JSONL artifacts were parsed with the supplied Python interpreter in `-B` mode; the download hash manifest was checked. No PyTorch import, checkpoint load, model/environment execution, or frozen-package modification was performed. The only new file is this report.
+
+## Findings
+
+The worker result in `download/gpu-evidence/local-gpu-result.json` is internally consistent with a completed bounded smoke: `status=complete`, `training_completed=true`, and `measured_limits_pass=true`. It separately records `full_resource_acceptance=false`. All four reported phases passed with zero failures, errors, and skips: CPU scope regression, supervised phase synchronization, joint pipeline, and sequence-world regression (`download/gpu-evidence/partial-phase-results.json`).
+
+The production joint-pipeline evidence records six routes, G1 and G2 for seeds 8201, 8202, and 8203. Each route reports one epoch, two updates, 10 actual candidate rows, and training/checkpoint restore on `cuda:0`. Ten is the observed row count; it should not be described as 50 rows trained. Its settled ledger contributes 12 model initializations/loads, 84 batch forwards, 12 backward calls and optimizer updates, 6 checkpoint writes and loads, and 420 sample evaluations (`download/gpu-evidence/joint-controlled-export/run-once/world-model-training-summary.json`, `resource-settlement.json`).
+
+The separate sequence-world regression uses CPU and contributes another six routes, one epoch and one update per route, with five actual candidate rows per route. Its ledger contributes 12 initializations/loads, 66 forwards, 6 backward calls and updates, 6 checkpoint writes and loads, and 330 sample evaluations (`download/gpu-evidence/sequence-world-controlled-export/world-model-training-summary.json`, `ledger-summary.json`). Adding the two ledgers reproduces the worker totals exactly: 24 initializations/loads, 150 forwards, 18 backward calls and updates, 12 checkpoint writes and loads, and 750 sample evaluations. The total also records one CUDA context. These aggregate calls therefore include CPU regression work and are not all GPU calls.
+
+The hardware record names an NVIDIA GeForce RTX 3060 Laptop GPU with a 4 GiB allocator ceiling. PyTorch reports peak allocation of 48,227,328 bytes and peak reservation of 52,428,800 bytes. The result explicitly says WDDM/WSL process memory and exclusivity were unavailable: owned-process memory is null and exclusive allocation is unproven. This is why the successful measured limits do not constitute full resource acceptance. The worker reports about 30.79 seconds wall time and 20.90 seconds CPU time; its root-process RSS high-water mark is about 1.67 GB and storage peak about 71.9 MB. CPU limits are sampled, and the RSS scope excludes descendants.
+
+The outer `final-resource-settlement.json` records a different scope: 36.378 seconds for the launched job plus 13.934 seconds for controlled download, a 50.312-second sum that omits separately recorded preparation and idle time between offline inspection calls. Native root-plus-waited-child CPU is 25.460649 seconds; worker CPU is nested there and is not added a second time. This outer record reports a 2.261 GB process-tree RSS high-water mark and separately lists unmeasured WSL bridge, copy/hash subprocess CPU, and final file-write/process-exit tail. It also confirms that all original call limits were respected, with full process GPU memory still unmeasured.
+
+Both prediction traces contain eight distinct synthetic confirmation parents, and both metrics files report 8 expected and 8 valid parents with coverage passing. Counting mask-false/null target slots across the 40 candidate rows in each trace gives 160 of 200 event slots, 24 of 120 horizon task-outcome slots, and 56 of 240 outcome slots invalid. Those slots are masked in the trace; they are not evidence of missing parent coverage. The 12-window training-data admission record also passes and reports synthetic parent support for host, expiry, and physical labels.
+
+The prediction comparison has zero parent-macro regret improvement for G1 versus transparent and G2 versus G1. Neither comparison meets the frozen 0.005 improvement floor or the requirement for positive improvement on at least two seeds; both `worth_gppo_suggestion` values are false and GPPO was not executed. The coverage summary records `research_success=false`, with task utility and practical cost not evaluated. These synthetic smoke metrics do not establish model efficacy.
+
+## Assessment
+
+The artifacts support the conclusion that the bounded GPU smoke and accompanying CPU regression completed and that their measured limits passed. They do not support full resource acceptance because WDDM/WSL cannot attribute process GPU memory or prove exclusivity, and they do not support an efficacy conclusion because the run is synthetic and produced no regret improvement. The independent JSON/JSONL and ledger checks found no internal count or status discrepancy.

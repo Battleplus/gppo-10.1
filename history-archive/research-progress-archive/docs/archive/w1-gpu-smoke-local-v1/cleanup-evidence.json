@@ -1,0 +1,20 @@
+{
+  "command": [
+    "wsl",
+    "-d",
+    "Ubuntu-24.04",
+    "--",
+    "python3",
+    "-B",
+    "-c",
+    "import pathlib,json; r=pathlib.Path('/home/asus/w1-gpu-smoke-local-v1'); s=json.loads((r/'package-supervision/supervisor-status.json').read_text()); print(json.dumps({'owned_processes_alive':{str(pid):pathlib.Path('/proc',str(pid)).exists() for pid in [s['pid'],s['supervisor_pid']]},'native_storage_bytes':sum(p.stat().st_size for p in r.rglob('*') if p.is_file())}))"
+  ],
+  "exit_code": 0,
+  "stdout": "{\"owned_processes_alive\": {\"801\": false, \"795\": false}, \"native_storage_bytes\": 40009495}\n",
+  "stderr": "w\u0000s\u0000l\u0000:\u0000 \u0000�hKm0R \u0000l\u0000o\u0000c\u0000a\u0000l\u0000h\u0000o\u0000s\u0000t\u0000 \u0000�N\u0006tM�n\f�FO*g\\��P0R \u0000W\u0000S\u0000L\u0000\u00020N\u0000A\u0000T\u0000 \u0000!j\u000f_\u000bN�v \u0000W\u0000S\u0000L\u0000 \u0000\nN/e\u0001c \u0000l\u0000o\u0000c\u0000a\u0000l\u0000h\u0000o\u0000s\u0000t\u0000 \u0000�N\u0006t\u00020\n\u0000\n\u0000",
+  "owned_processes_alive": {
+    "801": false,
+    "795": false
+  },
+  "native_storage_bytes": 40009495
+}

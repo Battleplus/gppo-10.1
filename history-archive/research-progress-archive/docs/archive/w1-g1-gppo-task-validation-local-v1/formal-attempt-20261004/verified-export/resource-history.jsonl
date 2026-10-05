@@ -1,0 +1,2 @@
+{"artifact_bytes_cumulative":242,"cpu_seconds_cumulative":6.675141,"run":null,"stage":"staging_and_zero_step_gate","wall_seconds_cumulative":14.057013091005501}
+{"artifact_bytes_cumulative":1650,"cpu_seconds_cumulative":9.665141,"run":"task_pipeline","stage":"staging_and_zero_step_gate","wall_seconds_cumulative":17.132835806012736}

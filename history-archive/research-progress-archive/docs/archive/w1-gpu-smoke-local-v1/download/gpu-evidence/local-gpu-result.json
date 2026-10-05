@@ -1,0 +1,2270 @@
+{
+  "classification": "GPU_SMOKE_TEST",
+  "closing_resource_bound": {
+    "active_storage_peak_bytes": 71876686,
+    "aggregate_storage_peak_bytes": 71876686,
+    "charged_upper_complete_process_cpu_seconds": 23.908571000000002,
+    "charged_upper_wall_seconds": 35.79433545100255,
+    "closing_reserve_cpu_seconds": 3,
+    "closing_reserve_wall_seconds": 5,
+    "complete_process_cpu_scope": "RUSAGE_SELF plus RUSAGE_CHILDREN, including waited/reaped descendants",
+    "complete_process_cpu_seconds": 20.908571000000002,
+    "current_active_storage_bytes": 39861458,
+    "current_aggregate_storage_bytes": 39861458,
+    "root_process_rss_high_water_bytes": 1668796416,
+    "rss_measurement_scope": "root process /proc/self/status VmRSS and VmHWM only; sampled checks; excludes descendants",
+    "wall_seconds": 30.794335451002553
+  },
+  "completed_routes": {
+    "G1": 3,
+    "G2": 3
+  },
+  "device_name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "engineering_job_id": "w1-gpu-smoke-local-v1-once",
+  "full_resource_acceptance": false,
+  "gpu_resources": {
+    "ceiling_bytes": 4294967296,
+    "framework_peak_allocated_bytes": 48227328,
+    "framework_peak_reserved_bytes": 52428800,
+    "framework_samples": "torch.cuda.max_memory_allocated/reserved at production call boundaries; no extra model forwards",
+    "observed_owned_process_memory_peak_bytes": null,
+    "process_accounting_limitation": "WDDM/WSL unavailable; no exclusivity assertion",
+    "process_samples": [
+      {
+        "boundary": "start",
+        "cuda_max_memory_allocated_bytes": 0,
+        "cuda_max_memory_reserved_bytes": 0,
+        "driver": "571.96",
+        "exclusive_allocation_proven": false,
+        "free_bytes": 5284823040,
+        "gpu_physical_device": 0,
+        "gpu_uuid": "GPU-251529f5-cac7-6734-462b-f4d75840022c",
+        "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+        "owned_process_memory_bytes": null,
+        "phase": "cpu_scope_regression",
+        "scope": "shared Windows desktop GPU; per-process WDDM/WSL accounting unavailable",
+        "total_bytes": 6442450944
+      },
+      {
+        "boundary": "end",
+        "cuda_max_memory_allocated_bytes": 0,
+        "cuda_max_memory_reserved_bytes": 0,
+        "driver": "571.96",
+        "exclusive_allocation_proven": false,
+        "free_bytes": 5284823040,
+        "gpu_physical_device": 0,
+        "gpu_uuid": "GPU-251529f5-cac7-6734-462b-f4d75840022c",
+        "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+        "owned_process_memory_bytes": null,
+        "phase": "cpu_scope_regression",
+        "scope": "shared Windows desktop GPU; per-process WDDM/WSL accounting unavailable",
+        "total_bytes": 6442450944
+      },
+      {
+        "boundary": "start",
+        "cuda_max_memory_allocated_bytes": 0,
+        "cuda_max_memory_reserved_bytes": 0,
+        "driver": "571.96",
+        "exclusive_allocation_proven": false,
+        "free_bytes": 5284823040,
+        "gpu_physical_device": 0,
+        "gpu_uuid": "GPU-251529f5-cac7-6734-462b-f4d75840022c",
+        "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+        "owned_process_memory_bytes": null,
+        "phase": "supervised_phase_sync",
+        "scope": "shared Windows desktop GPU; per-process WDDM/WSL accounting unavailable",
+        "total_bytes": 6442450944
+      },
+      {
+        "boundary": "end",
+        "cuda_max_memory_allocated_bytes": 0,
+        "cuda_max_memory_reserved_bytes": 0,
+        "driver": "571.96",
+        "exclusive_allocation_proven": false,
+        "free_bytes": 5284823040,
+        "gpu_physical_device": 0,
+        "gpu_uuid": "GPU-251529f5-cac7-6734-462b-f4d75840022c",
+        "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+        "owned_process_memory_bytes": null,
+        "phase": "supervised_phase_sync",
+        "scope": "shared Windows desktop GPU; per-process WDDM/WSL accounting unavailable",
+        "total_bytes": 6442450944
+      },
+      {
+        "boundary": "start",
+        "cuda_max_memory_allocated_bytes": 0,
+        "cuda_max_memory_reserved_bytes": 0,
+        "driver": "571.96",
+        "exclusive_allocation_proven": false,
+        "free_bytes": 5284823040,
+        "gpu_physical_device": 0,
+        "gpu_uuid": "GPU-251529f5-cac7-6734-462b-f4d75840022c",
+        "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+        "owned_process_memory_bytes": null,
+        "phase": "joint_pipeline",
+        "scope": "shared Windows desktop GPU; per-process WDDM/WSL accounting unavailable",
+        "total_bytes": 6442450944
+      },
+      {
+        "boundary": "end",
+        "cuda_max_memory_allocated_bytes": 48227328,
+        "cuda_max_memory_reserved_bytes": 52428800,
+        "driver": "571.96",
+        "exclusive_allocation_proven": false,
+        "free_bytes": 5170528256,
+        "gpu_physical_device": 0,
+        "gpu_uuid": "GPU-251529f5-cac7-6734-462b-f4d75840022c",
+        "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+        "owned_process_memory_bytes": null,
+        "phase": "joint_pipeline",
+        "scope": "shared Windows desktop GPU; per-process WDDM/WSL accounting unavailable",
+        "total_bytes": 6442450944
+      },
+      {
+        "boundary": "start",
+        "cuda_max_memory_allocated_bytes": 48227328,
+        "cuda_max_memory_reserved_bytes": 52428800,
+        "driver": "571.96",
+        "exclusive_allocation_proven": false,
+        "free_bytes": 5170528256,
+        "gpu_physical_device": 0,
+        "gpu_uuid": "GPU-251529f5-cac7-6734-462b-f4d75840022c",
+        "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+        "owned_process_memory_bytes": null,
+        "phase": "sequence_world_regression",
+        "scope": "shared Windows desktop GPU; per-process WDDM/WSL accounting unavailable",
+        "total_bytes": 6442450944
+      },
+      {
+        "boundary": "end",
+        "cuda_max_memory_allocated_bytes": 48227328,
+        "cuda_max_memory_reserved_bytes": 52428800,
+        "driver": "571.96",
+        "exclusive_allocation_proven": false,
+        "free_bytes": 5170528256,
+        "gpu_physical_device": 0,
+        "gpu_uuid": "GPU-251529f5-cac7-6734-462b-f4d75840022c",
+        "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+        "owned_process_memory_bytes": null,
+        "phase": "sequence_world_regression",
+        "scope": "shared Windows desktop GPU; per-process WDDM/WSL accounting unavailable",
+        "total_bytes": 6442450944
+      }
+    ]
+  },
+  "identity": {
+    "hashes": "ee2f3acde833799df174f980edf344eb420cf388fd77c36f4d41b69985c0d30d",
+    "manifest": "72d20a69313a521e1fc9fc8bc65d5ac3df971cbac194e0e9ed94b4b6132a6aa5"
+  },
+  "initial_gpu": {
+    "driver": "571.96",
+    "exclusive_allocation_proven": false,
+    "free_bytes": 5397020672,
+    "gpu_physical_device": 0,
+    "gpu_uuid": "GPU-251529f5-cac7-6734-462b-f4d75840022c",
+    "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "owned_process_memory_bytes": null,
+    "scope": "shared Windows desktop GPU; per-process WDDM/WSL accounting unavailable",
+    "total_bytes": 6442450944
+  },
+  "measured_limits_pass": true,
+  "model_call_totals": {
+    "branch_snapshot_copies": 60,
+    "branches": 60,
+    "candidate_scans": 60,
+    "checkpoint_loads": 12,
+    "checkpoint_writes": 12,
+    "cuda_context_initializations": 1,
+    "environment_steps": 288,
+    "forced_first_actions": 60,
+    "model_initializations_or_loads": 24,
+    "public_rule_decisions": 228,
+    "resets_upper": 12,
+    "snapshot_captures": 12,
+    "world_backward_calls": 18,
+    "world_batch_forwards": 150,
+    "world_optimizer_updates": 18,
+    "world_sample_evaluations": 750
+  },
+  "module_origins": {
+    "__main__": "/home/asus/w1-gpu-smoke-local-v1/package/local_gpu_worker.py",
+    "__mp_main__": "/home/asus/w1-gpu-smoke-local-v1/package/local_gpu_worker.py",
+    "acceptance_entry": "/home/asus/w1-gpu-smoke-local-v1/package/acceptance_entry.py",
+    "budget_ledger": "/home/asus/w1-gpu-smoke-local-v1/package/budget_ledger.py",
+    "classical_baselines": "/home/asus/w1-gpu-smoke-local-v1/package/classical_baselines.py",
+    "cpu_scope_contract": "/home/asus/w1-gpu-smoke-local-v1/package/cpu_scope_contract.py",
+    "event_jepa_losses": "/home/asus/w1-gpu-smoke-local-v1/package/event_jepa_losses.py",
+    "freeze_joint_package": "/home/asus/w1-gpu-smoke-local-v1/package/freeze_joint_package.py",
+    "gppo_world": "/home/asus/w1-gpu-smoke-local-v1/package/native/gppo_world/__init__.py",
+    "gppo_world.consequence_model": "/home/asus/w1-gpu-smoke-local-v1/package/native/gppo_world/consequence_model.py",
+    "gppo_world.contracts": "/home/asus/w1-gpu-smoke-local-v1/package/native/gppo_world/contracts.py",
+    "gppo_world.data": "/home/asus/w1-gpu-smoke-local-v1/package/native/gppo_world/data.py",
+    "gppo_world.dataset": "/home/asus/w1-gpu-smoke-local-v1/package/native/gppo_world/dataset.py",
+    "gppo_world.events": "/home/asus/w1-gpu-smoke-local-v1/package/native/gppo_world/events.py",
+    "gppo_world.graph5": "/home/asus/w1-gpu-smoke-local-v1/package/native/gppo_world/graph5.py",
+    "gppo_world.model": "/home/asus/w1-gpu-smoke-local-v1/package/native/gppo_world/model.py",
+    "gppo_world.registry": "/home/asus/w1-gpu-smoke-local-v1/package/native/gppo_world/registry.py",
+    "gppo_world.task_lifecycle": "/home/asus/w1-gpu-smoke-local-v1/package/native/gppo_world/task_lifecycle.py",
+    "infra_io": "/home/asus/w1-gpu-smoke-local-v1/package/infra_io.py",
+    "isolated_fixture_preflight": "/home/asus/w1-gpu-smoke-local-v1/package/isolated_fixture_preflight.py",
+    "joint_inputs": "/home/asus/w1-gpu-smoke-local-v1/package/joint_inputs.py",
+    "joint_pipeline": "/home/asus/w1-gpu-smoke-local-v1/package/joint_pipeline.py",
+    "launch_once": "/home/asus/w1-gpu-smoke-local-v1/package/launch_once.py",
+    "local_runtime": "/home/asus/w1-gpu-smoke-local-v1/package/local_runtime.py",
+    "manifest_contract": "/home/asus/w1-gpu-smoke-local-v1/package/manifest_contract.py",
+    "production_data": "/home/asus/w1-gpu-smoke-local-v1/package/production_data.py",
+    "production_world": "/home/asus/w1-gpu-smoke-local-v1/package/production_world.py",
+    "public_controller": "/home/asus/w1-gpu-smoke-local-v1/package/public_controller.py",
+    "public_event_targets": "/home/asus/w1-gpu-smoke-local-v1/package/public_event_targets.py",
+    "public_history": "/home/asus/w1-gpu-smoke-local-v1/package/public_history.py",
+    "public_transition_contract": "/home/asus/w1-gpu-smoke-local-v1/package/public_transition_contract.py",
+    "runner": "/home/asus/w1-gpu-smoke-local-v1/package/runner.py",
+    "runtime_config_contract": "/home/asus/w1-gpu-smoke-local-v1/package/runtime_config_contract.py",
+    "sequence_data_contract": "/home/asus/w1-gpu-smoke-local-v1/package/sequence_data_contract.py",
+    "task_outcome_contract": "/home/asus/w1-gpu-smoke-local-v1/package/task_outcome_contract.py",
+    "test_action_conditioned_task_outcomes": "/home/asus/w1-gpu-smoke-local-v1/package/test_action_conditioned_task_outcomes.py",
+    "test_cpu_scope_contract": "/home/asus/w1-gpu-smoke-local-v1/package/test_cpu_scope_contract.py",
+    "test_joint_pipeline": "/home/asus/w1-gpu-smoke-local-v1/package/test_joint_pipeline.py",
+    "test_production_collector_lifecycle": "/home/asus/w1-gpu-smoke-local-v1/package/test_production_collector_lifecycle.py",
+    "test_runtime_config_contract": "/home/asus/w1-gpu-smoke-local-v1/package/test_runtime_config_contract.py",
+    "test_sequence_data": "/home/asus/w1-gpu-smoke-local-v1/package/test_sequence_data.py",
+    "test_sequence_world": "/home/asus/w1-gpu-smoke-local-v1/package/test_sequence_world.py",
+    "test_supervised_phase_integration": "/home/asus/w1-gpu-smoke-local-v1/package/test_supervised_phase_integration.py",
+    "transparent_utility": "/home/asus/w1-gpu-smoke-local-v1/package/transparent_utility.py",
+    "verify_runtime_inputs": "/home/asus/w1-gpu-smoke-local-v1/package/verify_runtime_inputs.py",
+    "w1_graph_jepa": "/home/asus/w1-gpu-smoke-local-v1/package/w1_graph_jepa.py",
+    "w1_training": "/home/asus/w1-gpu-smoke-local-v1/package/w1_training.py",
+    "worker_contract": "/home/asus/w1-gpu-smoke-local-v1/package/worker_contract.py"
+  },
+  "platform": "local-wsl",
+  "resource_measurement_gaps": [
+    "GPU process memory/exclusivity unavailable on WDDM/WSL",
+    "final file writes/process exit reserved, not measured here",
+    "CPU caps sampled, not delegated cgroup hard enforcement"
+  ],
+  "resource_phases": [
+    {
+      "complete_process_cpu_seconds": 0.046896999999999966,
+      "name": "cpu_scope_regression",
+      "wall_seconds": 0.1297112489992287
+    },
+    {
+      "complete_process_cpu_seconds": 0.3965580000000002,
+      "name": "supervised_phase_sync",
+      "wall_seconds": 0.8055816980013333
+    },
+    {
+      "complete_process_cpu_seconds": 9.256316,
+      "name": "joint_pipeline",
+      "wall_seconds": 20.871760984999128
+    },
+    {
+      "complete_process_cpu_seconds": 7.840513,
+      "name": "sequence_world_regression",
+      "wall_seconds": 5.543361474003177
+    }
+  ],
+  "resources": {
+    "active_storage_peak_bytes": 71876686,
+    "aggregate_storage_peak_bytes": 71876686,
+    "complete_process_cpu_scope": "RUSAGE_SELF plus RUSAGE_CHILDREN, including waited/reaped descendants",
+    "complete_process_cpu_seconds": 20.904234000000002,
+    "current_active_storage_bytes": 39861458,
+    "current_aggregate_storage_bytes": 39861458,
+    "root_process_rss_high_water_bytes": 1668796416,
+    "rss_measurement_scope": "root process /proc/self/status VmRSS and VmHWM only; sampled checks; excludes descendants",
+    "wall_seconds": 30.7898811390005
+  },
+  "runtime": {
+    "cuda": "12.8",
+    "cuda_initialized": false,
+    "installed_distributions": {
+      "Jinja2": {
+        "record_sha256": "4551b3fb657b85a9f01e961c0f8a235da65d758149b619400211964b3ac02bdc",
+        "version": "3.1.6"
+      },
+      "MarkupSafe": {
+        "record_sha256": "d3805a9d6d2c5f9db0a04fc757be42edcd5412016aaf9c47a524542aa962f884",
+        "version": "3.0.3"
+      },
+      "filelock": {
+        "record_sha256": "977b6b42d26c24d999d1babdcd700a9cb146c085a61de15f7b252e2e441aee04",
+        "version": "3.32.3"
+      },
+      "fsspec": {
+        "record_sha256": "bf8970ef32f4fa1da4c23e55e648fbcd3980d3d67f14268a514a5973514fd2a0",
+        "version": "2026.7.0"
+      },
+      "mpmath": {
+        "record_sha256": "09cbd04e87d0c5ab64aab08291b31883e4ea27e8d2c640710e0beb1995e86b9b",
+        "version": "1.3.0"
+      },
+      "networkx": {
+        "record_sha256": "f6833bb525b720a7809dd6280817601af3dbd78efef02d9e55d4b887ec1f52da",
+        "version": "3.6.1"
+      },
+      "numpy": {
+        "record_sha256": "bd96d65a8453f8e9c44662cfc7243239bb011abb4cbac22bf5633aad496904dd",
+        "version": "1.26.0"
+      },
+      "nvidia-cublas-cu12": {
+        "record_sha256": "f9485923fae105fdc16fe6a7ce1a41aa1376412d0bfc8da5e6c47455089fcd2a",
+        "version": "12.8.3.14"
+      },
+      "nvidia-cuda-cupti-cu12": {
+        "record_sha256": "f270d4523baa0a1b7b67003499763b24f2412003a08ae8f65c95ed6d0335f19b",
+        "version": "12.8.57"
+      },
+      "nvidia-cuda-nvrtc-cu12": {
+        "record_sha256": "0a22fc7e0db4ce1d3ab335b4595527e2ad483980f0cc1cbf88b352a7e2c4d8d1",
+        "version": "12.8.61"
+      },
+      "nvidia-cuda-runtime-cu12": {
+        "record_sha256": "5641397c600b866b50a12cf177b201439e71daeb82a25c645b05a14005402491",
+        "version": "12.8.57"
+      },
+      "nvidia-cudnn-cu12": {
+        "record_sha256": "b7b917bb32345d858a9529e00963d6bc35fdf6e64567e8620792a7f5b1531664",
+        "version": "9.7.1.26"
+      },
+      "nvidia-cufft-cu12": {
+        "record_sha256": "62968e69e63c78940c02ab48a9a8c0e95b8a0302f569dc8f9a63af787a45e5b6",
+        "version": "11.3.3.41"
+      },
+      "nvidia-cufile-cu12": {
+        "record_sha256": "e0b49591b5d502081b920f0ea7b5ec611826e81113d7a37d7b1edeb2f6d465e1",
+        "version": "1.13.0.11"
+      },
+      "nvidia-curand-cu12": {
+        "record_sha256": "d93571cadd0943230aa0b1c3557ae501b29f5e5eeeef93512fb5cafc8dc45202",
+        "version": "10.3.9.55"
+      },
+      "nvidia-cusolver-cu12": {
+        "record_sha256": "dca5cc5a621e4b00fbd5b60134401005b18ccd7036218090f2912f81a3f73d6b",
+        "version": "11.7.2.55"
+      },
+      "nvidia-cusparse-cu12": {
+        "record_sha256": "a73567df1819409f35926f1c54b53a1ece45615770506e5e53a2aa32aba170ac",
+        "version": "12.5.7.53"
+      },
+      "nvidia-cusparselt-cu12": {
+        "record_sha256": "44827ad74c274b7ec6d69f9e552f9bb244e6a8f673115fc1ffb585d363fd0074",
+        "version": "0.6.3"
+      },
+      "nvidia-nccl-cu12": {
+        "record_sha256": "cc8b3146c7a5d6f1568b4b7db73d5bed9dabde09b2a69999acfc7323c024d3f1",
+        "version": "2.26.2"
+      },
+      "nvidia-nvjitlink-cu12": {
+        "record_sha256": "79655e213f6bde522e63e1d35fc6950fc25915fdb0d81a782d54f2b995901aad",
+        "version": "12.8.61"
+      },
+      "nvidia-nvtx-cu12": {
+        "record_sha256": "c752bdbe6e6ad224e749f6e420359882e443d95754d0e9fe3148a8c25984b461",
+        "version": "12.8.55"
+      },
+      "setuptools": {
+        "record_sha256": "a20628e88a72670896096c609d1c57e72bdc12276636a882e2dd78ce854fb9c0",
+        "version": "78.1.0"
+      },
+      "sympy": {
+        "record_sha256": "db4fac866208bb352ea4a8f34c22fb502f6b89db2d526a3dd9099c26ed821495",
+        "version": "1.14.0"
+      },
+      "torch": {
+        "record_sha256": "eaf6c44326aef4fff0822285c89bdfb99d40269f079be4ed92d6232bd752491d",
+        "version": "2.7.0+cu128"
+      },
+      "triton": {
+        "record_sha256": "4785f0d20263d9d2f3355bcef163e86b9c51c112a43f1cf6728a86a21212c5de",
+        "version": "3.3.0"
+      },
+      "typing_extensions": {
+        "record_sha256": "9e07fea845cac76293d927afa7157a14ecba39b318bc8af236b8de530b7656c1",
+        "version": "4.16.0"
+      }
+    },
+    "python": "3.11.16",
+    "python_binary_sha256": "ec579de7512e84d960bc642a840de69c785c52d6adf89e3a15f51717b29be40f",
+    "python_executable": "/home/asus/.venvs/w1-light-repaired-fair-rerun-py31116/bin/python",
+    "python_prefix": "/home/asus/.venvs/w1-light-repaired-fair-rerun-py31116",
+    "torch": "2.7.0+cu128",
+    "torch_module": "/home/asus/.venvs/w1-light-repaired-fair-rerun-py31116/lib/python3.11/site-packages/torch/__init__.py",
+    "torch_module_sha256": "9801e75447c7f585545f989f8a21940b60e0c4cc888effb2f08e739664b4b904"
+  },
+  "status": "complete",
+  "training_completed": true,
+  "workload": {
+    "calls": {
+      "branch_snapshot_copies": 60,
+      "branches": 60,
+      "candidate_scans": 60,
+      "checkpoint_loads": 12,
+      "checkpoint_writes": 12,
+      "cuda_context_initializations": 1,
+      "environment_steps": 288,
+      "forced_first_actions": 60,
+      "model_initializations_or_loads": 24,
+      "public_rule_decisions": 228,
+      "resets_upper": 12,
+      "snapshot_captures": 12,
+      "world_backward_calls": 18,
+      "world_batch_forwards": 150,
+      "world_optimizer_updates": 18,
+      "world_sample_evaluations": 750
+    },
+    "gpu_resources": {
+      "ceiling_bytes": 4294967296,
+      "framework_peak_allocated_bytes": 48227328,
+      "framework_peak_reserved_bytes": 52428800,
+      "framework_samples": "torch.cuda.max_memory_allocated/reserved at production call boundaries; no extra model forwards",
+      "observed_owned_process_memory_peak_bytes": null,
+      "process_accounting_limitation": "WDDM/WSL unavailable; no exclusivity assertion",
+      "process_samples": [
+        {
+          "boundary": "start",
+          "cuda_max_memory_allocated_bytes": 0,
+          "cuda_max_memory_reserved_bytes": 0,
+          "driver": "571.96",
+          "exclusive_allocation_proven": false,
+          "free_bytes": 5284823040,
+          "gpu_physical_device": 0,
+          "gpu_uuid": "GPU-251529f5-cac7-6734-462b-f4d75840022c",
+          "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+          "owned_process_memory_bytes": null,
+          "phase": "cpu_scope_regression",
+          "scope": "shared Windows desktop GPU; per-process WDDM/WSL accounting unavailable",
+          "total_bytes": 6442450944
+        },
+        {
+          "boundary": "end",
+          "cuda_max_memory_allocated_bytes": 0,
+          "cuda_max_memory_reserved_bytes": 0,
+          "driver": "571.96",
+          "exclusive_allocation_proven": false,
+          "free_bytes": 5284823040,
+          "gpu_physical_device": 0,
+          "gpu_uuid": "GPU-251529f5-cac7-6734-462b-f4d75840022c",
+          "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+          "owned_process_memory_bytes": null,
+          "phase": "cpu_scope_regression",
+          "scope": "shared Windows desktop GPU; per-process WDDM/WSL accounting unavailable",
+          "total_bytes": 6442450944
+        },
+        {
+          "boundary": "start",
+          "cuda_max_memory_allocated_bytes": 0,
+          "cuda_max_memory_reserved_bytes": 0,
+          "driver": "571.96",
+          "exclusive_allocation_proven": false,
+          "free_bytes": 5284823040,
+          "gpu_physical_device": 0,
+          "gpu_uuid": "GPU-251529f5-cac7-6734-462b-f4d75840022c",
+          "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+          "owned_process_memory_bytes": null,
+          "phase": "supervised_phase_sync",
+          "scope": "shared Windows desktop GPU; per-process WDDM/WSL accounting unavailable",
+          "total_bytes": 6442450944
+        },
+        {
+          "boundary": "end",
+          "cuda_max_memory_allocated_bytes": 0,
+          "cuda_max_memory_reserved_bytes": 0,
+          "driver": "571.96",
+          "exclusive_allocation_proven": false,
+          "free_bytes": 5284823040,
+          "gpu_physical_device": 0,
+          "gpu_uuid": "GPU-251529f5-cac7-6734-462b-f4d75840022c",
+          "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+          "owned_process_memory_bytes": null,
+          "phase": "supervised_phase_sync",
+          "scope": "shared Windows desktop GPU; per-process WDDM/WSL accounting unavailable",
+          "total_bytes": 6442450944
+        },
+        {
+          "boundary": "start",
+          "cuda_max_memory_allocated_bytes": 0,
+          "cuda_max_memory_reserved_bytes": 0,
+          "driver": "571.96",
+          "exclusive_allocation_proven": false,
+          "free_bytes": 5284823040,
+          "gpu_physical_device": 0,
+          "gpu_uuid": "GPU-251529f5-cac7-6734-462b-f4d75840022c",
+          "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+          "owned_process_memory_bytes": null,
+          "phase": "joint_pipeline",
+          "scope": "shared Windows desktop GPU; per-process WDDM/WSL accounting unavailable",
+          "total_bytes": 6442450944
+        },
+        {
+          "boundary": "end",
+          "cuda_max_memory_allocated_bytes": 48227328,
+          "cuda_max_memory_reserved_bytes": 52428800,
+          "driver": "571.96",
+          "exclusive_allocation_proven": false,
+          "free_bytes": 5170528256,
+          "gpu_physical_device": 0,
+          "gpu_uuid": "GPU-251529f5-cac7-6734-462b-f4d75840022c",
+          "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+          "owned_process_memory_bytes": null,
+          "phase": "joint_pipeline",
+          "scope": "shared Windows desktop GPU; per-process WDDM/WSL accounting unavailable",
+          "total_bytes": 6442450944
+        },
+        {
+          "boundary": "start",
+          "cuda_max_memory_allocated_bytes": 48227328,
+          "cuda_max_memory_reserved_bytes": 52428800,
+          "driver": "571.96",
+          "exclusive_allocation_proven": false,
+          "free_bytes": 5170528256,
+          "gpu_physical_device": 0,
+          "gpu_uuid": "GPU-251529f5-cac7-6734-462b-f4d75840022c",
+          "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+          "owned_process_memory_bytes": null,
+          "phase": "sequence_world_regression",
+          "scope": "shared Windows desktop GPU; per-process WDDM/WSL accounting unavailable",
+          "total_bytes": 6442450944
+        },
+        {
+          "boundary": "end",
+          "cuda_max_memory_allocated_bytes": 48227328,
+          "cuda_max_memory_reserved_bytes": 52428800,
+          "driver": "571.96",
+          "exclusive_allocation_proven": false,
+          "free_bytes": 5170528256,
+          "gpu_physical_device": 0,
+          "gpu_uuid": "GPU-251529f5-cac7-6734-462b-f4d75840022c",
+          "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+          "owned_process_memory_bytes": null,
+          "phase": "sequence_world_regression",
+          "scope": "shared Windows desktop GPU; per-process WDDM/WSL accounting unavailable",
+          "total_bytes": 6442450944
+        }
+      ]
+    },
+    "joint_pipeline": {
+      "checkpoint_restore_executed": true,
+      "controlled_export_verified": true,
+      "cpu_seconds": 9.230645571,
+      "device": "cuda:0",
+      "formal_matrix_tested": false,
+      "gppo_calls": 0,
+      "ledger": {
+        "failed_calls": 0,
+        "pending_calls": 0,
+        "totals": {
+          "branch_snapshot_copies": 60,
+          "branches": 60,
+          "candidate_scans": 60,
+          "checkpoint_loads": 6,
+          "checkpoint_writes": 6,
+          "environment_steps": 288,
+          "forced_first_actions": 60,
+          "model_initializations_or_loads": 12,
+          "public_rule_decisions": 228,
+          "resets_upper": 12,
+          "snapshot_captures": 12,
+          "world_backward_calls": 12,
+          "world_batch_forwards": 84,
+          "world_optimizer_updates": 12,
+          "world_sample_evaluations": 420
+        }
+      },
+      "model_calls_are_synthetic_and_nonzero": true,
+      "no_opportunity": false,
+      "production_runner_main_executed": true,
+      "real_environment_calls": 0,
+      "scope": "synthetic bottom-environment production pipeline; full model architecture, 1 epoch, 2/2/8 parents",
+      "status": "prediction_evaluation_complete",
+      "synthetic_environment_constructions": 12,
+      "wall_seconds": 20.785566988000937
+    },
+    "sequence_world": {
+      "coverage_pass": true,
+      "event_brier_by_head_parent": {
+        "G1:8201": {
+          "continuation_publicly_confirmed": {
+            "synthetic-confirm-0": 0.28063062115962367,
+            "synthetic-confirm-1": 0.28063062115962367,
+            "synthetic-confirm-2": 0.28063062115962367,
+            "synthetic-confirm-3": 0.28063062115962367,
+            "synthetic-confirm-4": 0.28063062115962367,
+            "synthetic-confirm-5": 0.28063062115962367,
+            "synthetic-confirm-6": 0.28063062115962367,
+            "synthetic-confirm-7": 0.28063062115962367
+          },
+          "host_confirmation_observed": {},
+          "new_measurement_received": {},
+          "physical_completion_observed": {},
+          "public_field_change": {}
+        },
+        "G1:8202": {
+          "continuation_publicly_confirmed": {
+            "synthetic-confirm-0": 0.22065474076808264,
+            "synthetic-confirm-1": 0.22065474076808264,
+            "synthetic-confirm-2": 0.22065474076808264,
+            "synthetic-confirm-3": 0.22065474076808264,
+            "synthetic-confirm-4": 0.22065474076808264,
+            "synthetic-confirm-5": 0.22065474076808264,
+            "synthetic-confirm-6": 0.22065474076808264,
+            "synthetic-confirm-7": 0.22065474076808264
+          },
+          "host_confirmation_observed": {},
+          "new_measurement_received": {},
+          "physical_completion_observed": {},
+          "public_field_change": {}
+        },
+        "G1:8203": {
+          "continuation_publicly_confirmed": {
+            "synthetic-confirm-0": 0.22694712693692445,
+            "synthetic-confirm-1": 0.22694712693692445,
+            "synthetic-confirm-2": 0.22694712693692445,
+            "synthetic-confirm-3": 0.22694712693692445,
+            "synthetic-confirm-4": 0.22694712693692445,
+            "synthetic-confirm-5": 0.22694712693692445,
+            "synthetic-confirm-6": 0.22694712693692445,
+            "synthetic-confirm-7": 0.22694712693692445
+          },
+          "host_confirmation_observed": {},
+          "new_measurement_received": {},
+          "physical_completion_observed": {},
+          "public_field_change": {}
+        },
+        "G1:ensemble": {
+          "continuation_publicly_confirmed": {
+            "synthetic-confirm-0": 0.2416299760399534,
+            "synthetic-confirm-1": 0.2416299760399534,
+            "synthetic-confirm-2": 0.2416299760399534,
+            "synthetic-confirm-3": 0.2416299760399534,
+            "synthetic-confirm-4": 0.2416299760399534,
+            "synthetic-confirm-5": 0.2416299760399534,
+            "synthetic-confirm-6": 0.2416299760399534,
+            "synthetic-confirm-7": 0.2416299760399534
+          },
+          "host_confirmation_observed": {},
+          "new_measurement_received": {},
+          "physical_completion_observed": {},
+          "public_field_change": {}
+        },
+        "G2:8201": {
+          "continuation_publicly_confirmed": {
+            "synthetic-confirm-0": 0.14399010725880945,
+            "synthetic-confirm-1": 0.14399010725880945,
+            "synthetic-confirm-2": 0.14399010725880945,
+            "synthetic-confirm-3": 0.14399010725880945,
+            "synthetic-confirm-4": 0.14399010725880945,
+            "synthetic-confirm-5": 0.14399010725880945,
+            "synthetic-confirm-6": 0.14399010725880945,
+            "synthetic-confirm-7": 0.14399010725880945
+          },
+          "host_confirmation_observed": {},
+          "new_measurement_received": {},
+          "physical_completion_observed": {},
+          "public_field_change": {}
+        },
+        "G2:8202": {
+          "continuation_publicly_confirmed": {
+            "synthetic-confirm-0": 0.1133511033996207,
+            "synthetic-confirm-1": 0.1133511033996207,
+            "synthetic-confirm-2": 0.1133511033996207,
+            "synthetic-confirm-3": 0.1133511033996207,
+            "synthetic-confirm-4": 0.1133511033996207,
+            "synthetic-confirm-5": 0.1133511033996207,
+            "synthetic-confirm-6": 0.1133511033996207,
+            "synthetic-confirm-7": 0.1133511033996207
+          },
+          "host_confirmation_observed": {},
+          "new_measurement_received": {},
+          "physical_completion_observed": {},
+          "public_field_change": {}
+        },
+        "G2:8203": {
+          "continuation_publicly_confirmed": {
+            "synthetic-confirm-0": 0.12023819618967532,
+            "synthetic-confirm-1": 0.12023819618967532,
+            "synthetic-confirm-2": 0.12023819618967532,
+            "synthetic-confirm-3": 0.12023819618967532,
+            "synthetic-confirm-4": 0.12023819618967532,
+            "synthetic-confirm-5": 0.12023819618967532,
+            "synthetic-confirm-6": 0.12023819618967532,
+            "synthetic-confirm-7": 0.12023819618967532
+          },
+          "host_confirmation_observed": {},
+          "new_measurement_received": {},
+          "physical_completion_observed": {},
+          "public_field_change": {}
+        },
+        "G2:ensemble": {
+          "continuation_publicly_confirmed": {
+            "synthetic-confirm-0": 0.12522701287109847,
+            "synthetic-confirm-1": 0.12522701287109847,
+            "synthetic-confirm-2": 0.12522701287109847,
+            "synthetic-confirm-3": 0.12522701287109847,
+            "synthetic-confirm-4": 0.12522701287109847,
+            "synthetic-confirm-5": 0.12522701287109847,
+            "synthetic-confirm-6": 0.12522701287109847,
+            "synthetic-confirm-7": 0.12522701287109847
+          },
+          "host_confirmation_observed": {},
+          "new_measurement_received": {},
+          "physical_completion_observed": {},
+          "public_field_change": {}
+        }
+      },
+      "event_brier_by_head_parent_macro": {
+        "G1:8201": {
+          "continuation_publicly_confirmed": 0.28063062115962367,
+          "host_confirmation_observed": null,
+          "new_measurement_received": null,
+          "physical_completion_observed": null,
+          "public_field_change": null
+        },
+        "G1:8202": {
+          "continuation_publicly_confirmed": 0.2206547407680826,
+          "host_confirmation_observed": null,
+          "new_measurement_received": null,
+          "physical_completion_observed": null,
+          "public_field_change": null
+        },
+        "G1:8203": {
+          "continuation_publicly_confirmed": 0.22694712693692448,
+          "host_confirmation_observed": null,
+          "new_measurement_received": null,
+          "physical_completion_observed": null,
+          "public_field_change": null
+        },
+        "G1:ensemble": {
+          "continuation_publicly_confirmed": 0.2416299760399534,
+          "host_confirmation_observed": null,
+          "new_measurement_received": null,
+          "physical_completion_observed": null,
+          "public_field_change": null
+        },
+        "G2:8201": {
+          "continuation_publicly_confirmed": 0.14399010725880945,
+          "host_confirmation_observed": null,
+          "new_measurement_received": null,
+          "physical_completion_observed": null,
+          "public_field_change": null
+        },
+        "G2:8202": {
+          "continuation_publicly_confirmed": 0.11335110339962072,
+          "host_confirmation_observed": null,
+          "new_measurement_received": null,
+          "physical_completion_observed": null,
+          "public_field_change": null
+        },
+        "G2:8203": {
+          "continuation_publicly_confirmed": 0.12023819618967534,
+          "host_confirmation_observed": null,
+          "new_measurement_received": null,
+          "physical_completion_observed": null,
+          "public_field_change": null
+        },
+        "G2:ensemble": {
+          "continuation_publicly_confirmed": 0.12522701287109847,
+          "host_confirmation_observed": null,
+          "new_measurement_received": null,
+          "physical_completion_observed": null,
+          "public_field_change": null
+        }
+      },
+      "event_brier_parent_macro": {
+        "G1:8201": 0.28063062115962367,
+        "G1:8202": 0.2206547407680826,
+        "G1:8203": 0.22694712693692448,
+        "G1:ensemble": 0.2416299760399534,
+        "G2:8201": 0.14399010725880945,
+        "G2:8202": 0.11335110339962072,
+        "G2:8203": 0.12023819618967534,
+        "G2:ensemble": 0.12522701287109847
+      },
+      "event_ece_10bin_parent_macro": {
+        "G1:8201": 0.5295170307159424,
+        "G1:8202": 0.46905729770660404,
+        "G1:8203": 0.4754471063613891,
+        "G1:ensemble": 0.4913404782613119,
+        "G2:8201": 0.37921304106712345,
+        "G2:8202": 0.3362041711807251,
+        "G2:8203": 0.345621520280838,
+        "G2:ensemble": 0.3536795775095621
+      },
+      "event_nll_parent_macro": {
+        "G1:8201": 0.7545303346648121,
+        "G1:8202": 0.6342395878270634,
+        "G1:8203": 0.6468573461346737,
+        "G1:ensemble": 0.6763936863431058,
+        "G2:8201": 0.4770067124983441,
+        "G2:8202": 0.41013835744077776,
+        "G2:8203": 0.4249905298007398,
+        "G2:ensemble": 0.4366266703206146
+      },
+      "expected_parent_count": 8,
+      "g1_minus_transparent_macro_regret": 0.0,
+      "g2_minus_g1_event_brier": -0.11640296316885491,
+      "g2_minus_g1_macro_regret": 0.0,
+      "gppo_executed": false,
+      "horizon_task_outcome_brier_by_head_parent": {
+        "G1:8201": {
+          "host_confirmation": {
+            "synthetic-confirm-0": 0.18660803262140302,
+            "synthetic-confirm-1": 0.18660803262140302,
+            "synthetic-confirm-2": 0.18660803262140302,
+            "synthetic-confirm-3": 0.18660803262140302,
+            "synthetic-confirm-4": 0.18660803262140302,
+            "synthetic-confirm-5": 0.18660803262140302,
+            "synthetic-confirm-6": 0.18660803262140302,
+            "synthetic-confirm-7": 0.18660803262140302
+          },
+          "physical_on_time_completion": {
+            "synthetic-confirm-0": 0.16415338249598488,
+            "synthetic-confirm-1": 0.16415338249598488,
+            "synthetic-confirm-2": 0.16415338249598488,
+            "synthetic-confirm-3": 0.16415338249598488,
+            "synthetic-confirm-4": 0.16415338249598488,
+            "synthetic-confirm-5": 0.16415338249598488,
+            "synthetic-confirm-6": 0.16415338249598488,
+            "synthetic-confirm-7": 0.16415338249598488
+          },
+          "task_expired": {
+            "synthetic-confirm-0": 0.1558311968976538,
+            "synthetic-confirm-1": 0.1558311968976538,
+            "synthetic-confirm-2": 0.1558311968976538,
+            "synthetic-confirm-3": 0.1558311968976538,
+            "synthetic-confirm-4": 0.1558311968976538,
+            "synthetic-confirm-5": 0.1558311968976538,
+            "synthetic-confirm-6": 0.1558311968976538,
+            "synthetic-confirm-7": 0.1558311968976538
+          }
+        },
+        "G1:8202": {
+          "host_confirmation": {
+            "synthetic-confirm-0": 0.21621120739436694,
+            "synthetic-confirm-1": 0.21621120739436694,
+            "synthetic-confirm-2": 0.21621120739436694,
+            "synthetic-confirm-3": 0.21621120739436694,
+            "synthetic-confirm-4": 0.21621120739436694,
+            "synthetic-confirm-5": 0.21621120739436694,
+            "synthetic-confirm-6": 0.21621120739436694,
+            "synthetic-confirm-7": 0.21621120739436694
+          },
+          "physical_on_time_completion": {
+            "synthetic-confirm-0": 0.147375519200744,
+            "synthetic-confirm-1": 0.147375519200744,
+            "synthetic-confirm-2": 0.147375519200744,
+            "synthetic-confirm-3": 0.147375519200744,
+            "synthetic-confirm-4": 0.147375519200744,
+            "synthetic-confirm-5": 0.147375519200744,
+            "synthetic-confirm-6": 0.147375519200744,
+            "synthetic-confirm-7": 0.147375519200744
+          },
+          "task_expired": {
+            "synthetic-confirm-0": 0.19181473047833797,
+            "synthetic-confirm-1": 0.19181473047833797,
+            "synthetic-confirm-2": 0.19181473047833797,
+            "synthetic-confirm-3": 0.19181473047833797,
+            "synthetic-confirm-4": 0.19181473047833797,
+            "synthetic-confirm-5": 0.19181473047833797,
+            "synthetic-confirm-6": 0.19181473047833797,
+            "synthetic-confirm-7": 0.19181473047833797
+          }
+        },
+        "G1:8203": {
+          "host_confirmation": {
+            "synthetic-confirm-0": 0.16540036044316242,
+            "synthetic-confirm-1": 0.16540036044316242,
+            "synthetic-confirm-2": 0.16540036044316242,
+            "synthetic-confirm-3": 0.16540036044316242,
+            "synthetic-confirm-4": 0.16540036044316242,
+            "synthetic-confirm-5": 0.16540036044316242,
+            "synthetic-confirm-6": 0.16540036044316242,
+            "synthetic-confirm-7": 0.16540036044316242
+          },
+          "physical_on_time_completion": {
+            "synthetic-confirm-0": 0.13655241704735133,
+            "synthetic-confirm-1": 0.13655241704735133,
+            "synthetic-confirm-2": 0.13655241704735133,
+            "synthetic-confirm-3": 0.13655241704735133,
+            "synthetic-confirm-4": 0.13655241704735133,
+            "synthetic-confirm-5": 0.13655241704735133,
+            "synthetic-confirm-6": 0.13655241704735133,
+            "synthetic-confirm-7": 0.13655241704735133
+          },
+          "task_expired": {
+            "synthetic-confirm-0": 0.20442685626602097,
+            "synthetic-confirm-1": 0.20442685626602097,
+            "synthetic-confirm-2": 0.20442685626602097,
+            "synthetic-confirm-3": 0.20442685626602097,
+            "synthetic-confirm-4": 0.20442685626602097,
+            "synthetic-confirm-5": 0.20442685626602097,
+            "synthetic-confirm-6": 0.20442685626602097,
+            "synthetic-confirm-7": 0.20442685626602097
+          }
+        },
+        "G1:ensemble": {
+          "host_confirmation": {
+            "synthetic-confirm-0": 0.18843563983549466,
+            "synthetic-confirm-1": 0.18843563983549466,
+            "synthetic-confirm-2": 0.18843563983549466,
+            "synthetic-confirm-3": 0.18843563983549466,
+            "synthetic-confirm-4": 0.18843563983549466,
+            "synthetic-confirm-5": 0.18843563983549466,
+            "synthetic-confirm-6": 0.18843563983549466,
+            "synthetic-confirm-7": 0.18843563983549466
+          },
+          "physical_on_time_completion": {
+            "synthetic-confirm-0": 0.14900737461685865,
+            "synthetic-confirm-1": 0.14900737461685865,
+            "synthetic-confirm-2": 0.14900737461685865,
+            "synthetic-confirm-3": 0.14900737461685865,
+            "synthetic-confirm-4": 0.14900737461685865,
+            "synthetic-confirm-5": 0.14900737461685865,
+            "synthetic-confirm-6": 0.14900737461685865,
+            "synthetic-confirm-7": 0.14900737461685865
+          },
+          "task_expired": {
+            "synthetic-confirm-0": 0.18313637724557666,
+            "synthetic-confirm-1": 0.18313637724557666,
+            "synthetic-confirm-2": 0.18313637724557666,
+            "synthetic-confirm-3": 0.18313637724557666,
+            "synthetic-confirm-4": 0.18313637724557666,
+            "synthetic-confirm-5": 0.18313637724557666,
+            "synthetic-confirm-6": 0.18313637724557666,
+            "synthetic-confirm-7": 0.18313637724557666
+          }
+        },
+        "G2:8201": {
+          "host_confirmation": {
+            "synthetic-confirm-0": 0.19850466176848336,
+            "synthetic-confirm-1": 0.19850466176848336,
+            "synthetic-confirm-2": 0.19850466176848336,
+            "synthetic-confirm-3": 0.19850466176848336,
+            "synthetic-confirm-4": 0.19850466176848336,
+            "synthetic-confirm-5": 0.19850466176848336,
+            "synthetic-confirm-6": 0.19850466176848336,
+            "synthetic-confirm-7": 0.19850466176848336
+          },
+          "physical_on_time_completion": {
+            "synthetic-confirm-0": 0.20201644042856692,
+            "synthetic-confirm-1": 0.20201644042856692,
+            "synthetic-confirm-2": 0.20201644042856692,
+            "synthetic-confirm-3": 0.20201644042856692,
+            "synthetic-confirm-4": 0.20201644042856692,
+            "synthetic-confirm-5": 0.20201644042856692,
+            "synthetic-confirm-6": 0.20201644042856692,
+            "synthetic-confirm-7": 0.20201644042856692
+          },
+          "task_expired": {
+            "synthetic-confirm-0": 0.2239067303701303,
+            "synthetic-confirm-1": 0.2239067303701303,
+            "synthetic-confirm-2": 0.2239067303701303,
+            "synthetic-confirm-3": 0.2239067303701303,
+            "synthetic-confirm-4": 0.2239067303701303,
+            "synthetic-confirm-5": 0.2239067303701303,
+            "synthetic-confirm-6": 0.2239067303701303,
+            "synthetic-confirm-7": 0.2239067303701303
+          }
+        },
+        "G2:8202": {
+          "host_confirmation": {
+            "synthetic-confirm-0": 0.233466660811934,
+            "synthetic-confirm-1": 0.233466660811934,
+            "synthetic-confirm-2": 0.233466660811934,
+            "synthetic-confirm-3": 0.233466660811934,
+            "synthetic-confirm-4": 0.233466660811934,
+            "synthetic-confirm-5": 0.233466660811934,
+            "synthetic-confirm-6": 0.233466660811934,
+            "synthetic-confirm-7": 0.233466660811934
+          },
+          "physical_on_time_completion": {
+            "synthetic-confirm-0": 0.20939348700250715,
+            "synthetic-confirm-1": 0.20939348700250715,
+            "synthetic-confirm-2": 0.20939348700250715,
+            "synthetic-confirm-3": 0.20939348700250715,
+            "synthetic-confirm-4": 0.20939348700250715,
+            "synthetic-confirm-5": 0.20939348700250715,
+            "synthetic-confirm-6": 0.20939348700250715,
+            "synthetic-confirm-7": 0.20939348700250715
+          },
+          "task_expired": {
+            "synthetic-confirm-0": 0.19627648597340808,
+            "synthetic-confirm-1": 0.19627648597340808,
+            "synthetic-confirm-2": 0.19627648597340808,
+            "synthetic-confirm-3": 0.19627648597340808,
+            "synthetic-confirm-4": 0.19627648597340808,
+            "synthetic-confirm-5": 0.19627648597340808,
+            "synthetic-confirm-6": 0.19627648597340808,
+            "synthetic-confirm-7": 0.19627648597340808
+          }
+        },
+        "G2:8203": {
+          "host_confirmation": {
+            "synthetic-confirm-0": 0.2261716132188596,
+            "synthetic-confirm-1": 0.2261716132188596,
+            "synthetic-confirm-2": 0.2261716132188596,
+            "synthetic-confirm-3": 0.2261716132188596,
+            "synthetic-confirm-4": 0.2261716132188596,
+            "synthetic-confirm-5": 0.2261716132188596,
+            "synthetic-confirm-6": 0.2261716132188596,
+            "synthetic-confirm-7": 0.2261716132188596
+          },
+          "physical_on_time_completion": {
+            "synthetic-confirm-0": 0.1183334827610727,
+            "synthetic-confirm-1": 0.1183334827610727,
+            "synthetic-confirm-2": 0.1183334827610727,
+            "synthetic-confirm-3": 0.1183334827610727,
+            "synthetic-confirm-4": 0.1183334827610727,
+            "synthetic-confirm-5": 0.1183334827610727,
+            "synthetic-confirm-6": 0.1183334827610727,
+            "synthetic-confirm-7": 0.1183334827610727
+          },
+          "task_expired": {
+            "synthetic-confirm-0": 0.25418738305144917,
+            "synthetic-confirm-1": 0.25418738305144917,
+            "synthetic-confirm-2": 0.25418738305144917,
+            "synthetic-confirm-3": 0.25418738305144917,
+            "synthetic-confirm-4": 0.25418738305144917,
+            "synthetic-confirm-5": 0.25418738305144917,
+            "synthetic-confirm-6": 0.25418738305144917,
+            "synthetic-confirm-7": 0.25418738305144917
+          }
+        },
+        "G2:ensemble": {
+          "host_confirmation": {
+            "synthetic-confirm-0": 0.21865439445699697,
+            "synthetic-confirm-1": 0.21865439445699697,
+            "synthetic-confirm-2": 0.21865439445699697,
+            "synthetic-confirm-3": 0.21865439445699697,
+            "synthetic-confirm-4": 0.21865439445699697,
+            "synthetic-confirm-5": 0.21865439445699697,
+            "synthetic-confirm-6": 0.21865439445699697,
+            "synthetic-confirm-7": 0.21865439445699697
+          },
+          "physical_on_time_completion": {
+            "synthetic-confirm-0": 0.17380661899043245,
+            "synthetic-confirm-1": 0.17380661899043245,
+            "synthetic-confirm-2": 0.17380661899043245,
+            "synthetic-confirm-3": 0.17380661899043245,
+            "synthetic-confirm-4": 0.17380661899043245,
+            "synthetic-confirm-5": 0.17380661899043245,
+            "synthetic-confirm-6": 0.17380661899043245,
+            "synthetic-confirm-7": 0.17380661899043245
+          },
+          "task_expired": {
+            "synthetic-confirm-0": 0.2239166845017614,
+            "synthetic-confirm-1": 0.2239166845017614,
+            "synthetic-confirm-2": 0.2239166845017614,
+            "synthetic-confirm-3": 0.2239166845017614,
+            "synthetic-confirm-4": 0.2239166845017614,
+            "synthetic-confirm-5": 0.2239166845017614,
+            "synthetic-confirm-6": 0.2239166845017614,
+            "synthetic-confirm-7": 0.2239166845017614
+          }
+        }
+      },
+      "horizon_task_outcome_brier_by_head_parent_macro": {
+        "G1:8201": {
+          "host_confirmation": 0.18660803262140302,
+          "physical_on_time_completion": 0.16415338249598488,
+          "task_expired": 0.1558311968976538
+        },
+        "G1:8202": {
+          "host_confirmation": 0.21621120739436694,
+          "physical_on_time_completion": 0.147375519200744,
+          "task_expired": 0.19181473047833797
+        },
+        "G1:8203": {
+          "host_confirmation": 0.16540036044316242,
+          "physical_on_time_completion": 0.13655241704735133,
+          "task_expired": 0.20442685626602097
+        },
+        "G1:ensemble": {
+          "host_confirmation": 0.1884356398354947,
+          "physical_on_time_completion": 0.14900737461685865,
+          "task_expired": 0.1831363772455767
+        },
+        "G2:8201": {
+          "host_confirmation": 0.19850466176848336,
+          "physical_on_time_completion": 0.20201644042856692,
+          "task_expired": 0.2239067303701303
+        },
+        "G2:8202": {
+          "host_confirmation": 0.233466660811934,
+          "physical_on_time_completion": 0.20939348700250715,
+          "task_expired": 0.19627648597340808
+        },
+        "G2:8203": {
+          "host_confirmation": 0.2261716132188596,
+          "physical_on_time_completion": 0.1183334827610727,
+          "task_expired": 0.25418738305144917
+        },
+        "G2:ensemble": {
+          "host_confirmation": 0.21865439445699697,
+          "physical_on_time_completion": 0.17380661899043243,
+          "task_expired": 0.22391668450176144
+        }
+      },
+      "parent_macro_absolute_outcome_mae": {
+        "G1:8201": 0.310265785974005,
+        "G1:8202": 0.40732315613928705,
+        "G1:8203": 0.29218087219835626,
+        "G1:ensemble": 0.3058707276291713,
+        "G2:8201": 0.29708854627350106,
+        "G2:8202": 0.44660900176867196,
+        "G2:8203": 0.33755798087171884,
+        "G2:ensemble": 0.31552729788033856
+      },
+      "parent_macro_centered_utility_mae": {
+        "G1": 0.011252838611602783,
+        "G1_seed_8201": 0.012914948940277103,
+        "G1_seed_8202": 0.014800884202122692,
+        "G1_seed_8203": 0.014949203073978429,
+        "G2": 0.010707518041133884,
+        "G2_seed_8201": 0.023548253476619714,
+        "G2_seed_8202": 0.014981827855110156,
+        "G2_seed_8203": 0.01342271029949188,
+        "transparent": 0.0
+      },
+      "parent_macro_centered_utility_rmse": {
+        "G1": 0.012297964822952114,
+        "G1_seed_8201": 0.016824362775351157,
+        "G1_seed_8202": 0.019781230282959247,
+        "G1_seed_8203": 0.018093177942385616,
+        "G2": 0.012971031250274077,
+        "G2_seed_8201": 0.027858500848010868,
+        "G2_seed_8202": 0.01911562721695242,
+        "G2_seed_8203": 0.01786534488488734,
+        "transparent": 0.0
+      },
+      "parent_macro_denominator": 8,
+      "parent_macro_noop_selection_rate": {
+        "G1": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        },
+        "G1_seed_8201": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        },
+        "G1_seed_8202": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        },
+        "G1_seed_8203": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        },
+        "G2": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        },
+        "G2_seed_8201": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        },
+        "G2_seed_8202": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        },
+        "G2_seed_8203": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        },
+        "transparent": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        }
+      },
+      "parent_macro_outcome_rmse": {
+        "G1:8201": 0.37183898746049854,
+        "G1:8202": 0.5937107498397475,
+        "G1:8203": 0.3930061516783653,
+        "G1:ensemble": 0.431723142499476,
+        "G2:8201": 0.44947742046727057,
+        "G2:8202": 0.5993846034026168,
+        "G2:8203": 0.4184196027384704,
+        "G2:ensemble": 0.4666821870910266
+      },
+      "parent_macro_pairwise_direction_accuracy": {},
+      "parent_macro_pairwise_utility_mae": {
+        "G1": 0.017123083099722866,
+        "G1_seed_8201": 0.022472047805786134,
+        "G1_seed_8202": 0.02581334304064512,
+        "G1_seed_8203": 0.025421859547495842,
+        "G2": 0.01788817723592123,
+        "G2_seed_8201": 0.039194294810295106,
+        "G2_seed_8202": 0.022266460061073298,
+        "G2_seed_8203": 0.02360986828804016,
+        "transparent": 0.0
+      },
+      "parent_macro_pairwise_utility_rmse": {
+        "G1": 0.019444789712579024,
+        "G1_seed_8201": 0.02660165327553072,
+        "G1_seed_8202": 0.031276871307224126,
+        "G1_seed_8203": 0.028607826204328664,
+        "G2": 0.02050900117604382,
+        "G2_seed_8201": 0.04404815743872331,
+        "G2_seed_8202": 0.03022446045413765,
+        "G2_seed_8203": 0.02824759051034132,
+        "transparent": 0.0
+      },
+      "parent_macro_public_state_mae": {
+        "G1:8201": 0.2006704764311507,
+        "G1:8202": 0.20777828010504892,
+        "G1:8203": 0.1976463821432844,
+        "G1:ensemble": 0.13966847502397284,
+        "G2:8201": 0.21343803256168029,
+        "G2:8202": 0.22530726281620447,
+        "G2:8203": 0.20810749203083104,
+        "G2:ensemble": 0.1398767158726211
+      },
+      "parent_macro_public_state_rmse": {
+        "G1:8201": 0.5065571389519836,
+        "G1:8202": 0.47436264882400886,
+        "G1:8203": 0.4751775354152944,
+        "G1:ensemble": 0.45663934461164424,
+        "G2:8201": 0.5073375557759195,
+        "G2:8202": 0.4896674184416971,
+        "G2:8203": 0.47804445261522993,
+        "G2:ensemble": 0.45810285932248934
+      },
+      "parent_macro_regret": {
+        "G1": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        },
+        "G1_seed_8201": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        },
+        "G1_seed_8202": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        },
+        "G1_seed_8203": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        },
+        "G2": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        },
+        "G2_seed_8201": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        },
+        "G2_seed_8202": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        },
+        "G2_seed_8203": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        },
+        "transparent": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        }
+      },
+      "parent_macro_top1": {
+        "G1": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        },
+        "G1_seed_8201": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        },
+        "G1_seed_8202": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        },
+        "G1_seed_8203": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        },
+        "G2": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        },
+        "G2_seed_8201": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        },
+        "G2_seed_8202": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        },
+        "G2_seed_8203": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        },
+        "transparent": {
+          "synthetic-confirm-0": 1.0,
+          "synthetic-confirm-1": 1.0,
+          "synthetic-confirm-2": 1.0,
+          "synthetic-confirm-3": 1.0,
+          "synthetic-confirm-4": 1.0,
+          "synthetic-confirm-5": 1.0,
+          "synthetic-confirm-6": 1.0,
+          "synthetic-confirm-7": 1.0
+        }
+      },
+      "parents_g1_no_worse_than_transparent": 8,
+      "parents_g2_no_worse_than_g1": 8,
+      "prediction_gates": {
+        "confirmation_parents": 8,
+        "g1_vs_transparent": {
+          "noninferior_parent_minimum": 6,
+          "positive_improvement_seed_minimum": 2,
+          "regret_improvement_minimum": 0.005
+        },
+        "g2_vs_g1": {
+          "noninferior_parent_minimum": 6,
+          "positive_improvement_seed_minimum": 2,
+          "regret_improvement_minimum": 0.005
+        },
+        "inference": "exploratory within-study held-out parents; report paired parent differences and bootstrap uncertainty; no population efficacy claim",
+        "next_gppo": "separate application only; no branch runs GPPO in this protocol",
+        "schema": "w1-joint-world-model-prospective-gates/1.0.0"
+      },
+      "residual_utility_indices": {
+        "energy": 3,
+        "task": 4
+      },
+      "schema": "w1-world-model-metrics/2.0.0",
+      "seed_parent_macro_regret": {
+        "G1_seed_8201": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        },
+        "G1_seed_8202": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        },
+        "G1_seed_8203": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        },
+        "G2_seed_8201": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        },
+        "G2_seed_8202": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        },
+        "G2_seed_8203": {
+          "synthetic-confirm-0": 0.0,
+          "synthetic-confirm-1": 0.0,
+          "synthetic-confirm-2": 0.0,
+          "synthetic-confirm-3": 0.0,
+          "synthetic-confirm-4": 0.0,
+          "synthetic-confirm-5": 0.0,
+          "synthetic-confirm-6": 0.0,
+          "synthetic-confirm-7": 0.0
+        }
+      },
+      "selection_tie_rule": "highest score, then lowest action_id, then lexical candidate_id",
+      "sequence_return_definition": "full_first_action_plus_hungarian_continuation_vector_return",
+      "valid_parent_count": 8,
+      "window_decisions": [
+        {
+          "oracle_utility": 0.0,
+          "parent": "synthetic-confirm-0",
+          "regret": {
+            "G1": 0.0,
+            "G1_seed_8201": 0.0,
+            "G1_seed_8202": 0.0,
+            "G1_seed_8203": 0.0,
+            "G2": 0.0,
+            "G2_seed_8201": 0.0,
+            "G2_seed_8202": 0.0,
+            "G2_seed_8203": 0.0,
+            "transparent": 0.0
+          },
+          "repeat": 0,
+          "selected": {
+            "G1": 12,
+            "G1_seed_8201": 12,
+            "G1_seed_8202": 6,
+            "G1_seed_8203": 12,
+            "G2": 12,
+            "G2_seed_8201": 12,
+            "G2_seed_8202": 6,
+            "G2_seed_8203": 12,
+            "transparent": 0
+          },
+          "status": "complete"
+        },
+        {
+          "oracle_utility": 0.0,
+          "parent": "synthetic-confirm-1",
+          "regret": {
+            "G1": 0.0,
+            "G1_seed_8201": 0.0,
+            "G1_seed_8202": 0.0,
+            "G1_seed_8203": 0.0,
+            "G2": 0.0,
+            "G2_seed_8201": 0.0,
+            "G2_seed_8202": 0.0,
+            "G2_seed_8203": 0.0,
+            "transparent": 0.0
+          },
+          "repeat": 0,
+          "selected": {
+            "G1": 12,
+            "G1_seed_8201": 12,
+            "G1_seed_8202": 6,
+            "G1_seed_8203": 12,
+            "G2": 12,
+            "G2_seed_8201": 12,
+            "G2_seed_8202": 6,
+            "G2_seed_8203": 12,
+            "transparent": 0
+          },
+          "status": "complete"
+        },
+        {
+          "oracle_utility": 0.0,
+          "parent": "synthetic-confirm-2",
+          "regret": {
+            "G1": 0.0,
+            "G1_seed_8201": 0.0,
+            "G1_seed_8202": 0.0,
+            "G1_seed_8203": 0.0,
+            "G2": 0.0,
+            "G2_seed_8201": 0.0,
+            "G2_seed_8202": 0.0,
+            "G2_seed_8203": 0.0,
+            "transparent": 0.0
+          },
+          "repeat": 0,
+          "selected": {
+            "G1": 12,
+            "G1_seed_8201": 12,
+            "G1_seed_8202": 6,
+            "G1_seed_8203": 12,
+            "G2": 12,
+            "G2_seed_8201": 12,
+            "G2_seed_8202": 6,
+            "G2_seed_8203": 12,
+            "transparent": 0
+          },
+          "status": "complete"
+        },
+        {
+          "oracle_utility": 0.0,
+          "parent": "synthetic-confirm-3",
+          "regret": {
+            "G1": 0.0,
+            "G1_seed_8201": 0.0,
+            "G1_seed_8202": 0.0,
+            "G1_seed_8203": 0.0,
+            "G2": 0.0,
+            "G2_seed_8201": 0.0,
+            "G2_seed_8202": 0.0,
+            "G2_seed_8203": 0.0,
+            "transparent": 0.0
+          },
+          "repeat": 0,
+          "selected": {
+            "G1": 12,
+            "G1_seed_8201": 12,
+            "G1_seed_8202": 6,
+            "G1_seed_8203": 12,
+            "G2": 12,
+            "G2_seed_8201": 12,
+            "G2_seed_8202": 6,
+            "G2_seed_8203": 12,
+            "transparent": 0
+          },
+          "status": "complete"
+        },
+        {
+          "oracle_utility": 0.0,
+          "parent": "synthetic-confirm-4",
+          "regret": {
+            "G1": 0.0,
+            "G1_seed_8201": 0.0,
+            "G1_seed_8202": 0.0,
+            "G1_seed_8203": 0.0,
+            "G2": 0.0,
+            "G2_seed_8201": 0.0,
+            "G2_seed_8202": 0.0,
+            "G2_seed_8203": 0.0,
+            "transparent": 0.0
+          },
+          "repeat": 0,
+          "selected": {
+            "G1": 12,
+            "G1_seed_8201": 12,
+            "G1_seed_8202": 6,
+            "G1_seed_8203": 12,
+            "G2": 12,
+            "G2_seed_8201": 12,
+            "G2_seed_8202": 6,
+            "G2_seed_8203": 12,
+            "transparent": 0
+          },
+          "status": "complete"
+        },
+        {
+          "oracle_utility": 0.0,
+          "parent": "synthetic-confirm-5",
+          "regret": {
+            "G1": 0.0,
+            "G1_seed_8201": 0.0,
+            "G1_seed_8202": 0.0,
+            "G1_seed_8203": 0.0,
+            "G2": 0.0,
+            "G2_seed_8201": 0.0,
+            "G2_seed_8202": 0.0,
+            "G2_seed_8203": 0.0,
+            "transparent": 0.0
+          },
+          "repeat": 0,
+          "selected": {
+            "G1": 12,
+            "G1_seed_8201": 12,
+            "G1_seed_8202": 6,
+            "G1_seed_8203": 12,
+            "G2": 12,
+            "G2_seed_8201": 12,
+            "G2_seed_8202": 6,
+            "G2_seed_8203": 12,
+            "transparent": 0
+          },
+          "status": "complete"
+        },
+        {
+          "oracle_utility": 0.0,
+          "parent": "synthetic-confirm-6",
+          "regret": {
+            "G1": 0.0,
+            "G1_seed_8201": 0.0,
+            "G1_seed_8202": 0.0,
+            "G1_seed_8203": 0.0,
+            "G2": 0.0,
+            "G2_seed_8201": 0.0,
+            "G2_seed_8202": 0.0,
+            "G2_seed_8203": 0.0,
+            "transparent": 0.0
+          },
+          "repeat": 0,
+          "selected": {
+            "G1": 12,
+            "G1_seed_8201": 12,
+            "G1_seed_8202": 6,
+            "G1_seed_8203": 12,
+            "G2": 12,
+            "G2_seed_8201": 12,
+            "G2_seed_8202": 6,
+            "G2_seed_8203": 12,
+            "transparent": 0
+          },
+          "status": "complete"
+        },
+        {
+          "oracle_utility": 0.0,
+          "parent": "synthetic-confirm-7",
+          "regret": {
+            "G1": 0.0,
+            "G1_seed_8201": 0.0,
+            "G1_seed_8202": 0.0,
+            "G1_seed_8203": 0.0,
+            "G2": 0.0,
+            "G2_seed_8201": 0.0,
+            "G2_seed_8202": 0.0,
+            "G2_seed_8203": 0.0,
+            "transparent": 0.0
+          },
+          "repeat": 0,
+          "selected": {
+            "G1": 12,
+            "G1_seed_8201": 12,
+            "G1_seed_8202": 6,
+            "G1_seed_8203": 12,
+            "G2": 12,
+            "G2_seed_8201": 12,
+            "G2_seed_8202": 6,
+            "G2_seed_8203": 12,
+            "transparent": 0
+          },
+          "status": "complete"
+        }
+      ],
+      "worth_gppo_suggestions": {
+        "G1_vs_transparent": {
+          "baseline": "transparent",
+          "candidate": "G1",
+          "candidate_minus_baseline_parent_macro_regret": 0.0,
+          "expected_parent_count": 8,
+          "gppo_executed": false,
+          "noninferior_parent_count": 8,
+          "noninferior_parent_minimum": 6,
+          "paired_parent_count": 8,
+          "per_seed_candidate_minus_baseline_parent_macro_regret": {
+            "8201": 0.0,
+            "8202": 0.0,
+            "8203": 0.0
+          },
+          "positive_improvement_seed_count": 0,
+          "positive_improvement_seed_minimum": 2,
+          "reason": "regret_improvement_below_frozen_floor",
+          "regret_improvement": -0.0,
+          "regret_improvement_minimum": 0.005,
+          "worth_gppo_suggestion": false
+        },
+        "G2_vs_G1": {
+          "baseline": "G1",
+          "candidate": "G2",
+          "candidate_minus_baseline_parent_macro_regret": 0.0,
+          "expected_parent_count": 8,
+          "gppo_executed": false,
+          "noninferior_parent_count": 8,
+          "noninferior_parent_minimum": 6,
+          "paired_parent_count": 8,
+          "per_seed_candidate_minus_baseline_parent_macro_regret": {
+            "8201": 0.0,
+            "8202": 0.0,
+            "8203": 0.0
+          },
+          "positive_improvement_seed_count": 0,
+          "positive_improvement_seed_minimum": 2,
+          "reason": "regret_improvement_below_frozen_floor",
+          "regret_improvement": -0.0,
+          "regret_improvement_minimum": 0.005,
+          "worth_gppo_suggestion": false
+        }
+      }
+    },
+    "supervised_phase_sync": {
+      "commanded_cpu_work_seconds": 0.09,
+      "hardware_guard_only_injected": false,
+      "model_calls": 0,
+      "real_environment_calls": 0,
+      "supervisor": {
+        "affinity": [
+          0,
+          1,
+          3,
+          2
+        ],
+        "artifact_bytes": 18991,
+        "automatic_retry": false,
+        "available_ram_bytes": 6293553152,
+        "cpu_estimate_source": "stable_proc_tree_ticks_including_kernel_waited_descendants",
+        "cpu_lifetime_settlement_complete": true,
+        "cpu_observed_process_tree_seconds": 0.24,
+        "cpu_process_self_seconds_cumulative": 0.09934,
+        "cpu_reaped_children_seconds": 0.0,
+        "cpu_reaped_children_seconds_cumulative": 0.24250399999999997,
+        "cpu_sampled_monotonic": 20374.176019019,
+        "cpu_sampled_reaped_overlap_seconds": 0.0,
+        "cpu_sampling_started_monotonic": 20373.580334205,
+        "cpu_scope": "final RUSAGE_SELF plus waited RUSAGE_CHILDREN after owned descendant cleanup; live stage accounting uses stable owner-verified /proc self+waited ticks and synchronous authenticated boundaries",
+        "cpu_scope_complete": false,
+        "cpu_scope_hard_enforcement": false,
+        "cpu_scope_limitations": [
+          "/proc is not an atomic tree snapshot; unstable scans and nonmonotonic totals fail closed",
+          "without a delegated cgroup, CPU cap enforcement is sampled rather than kernel-hard; final RUSAGE settlement rejects overrun"
+        ],
+        "cpu_scope_verified": true,
+        "cpu_seconds": 0.341844,
+        "cumulative_cost": {
+          "cpu_seconds_upper_with_history": 0.341844,
+          "cumulative_reserved_consumption": null,
+          "cumulative_resource_acceptance": false,
+          "current_call_status_counts": null,
+          "current_reserved": null,
+          "historical_pending_and_monitoring_gap_preserved": true,
+          "history": {},
+          "wall_seconds_upper_with_history": 0.595684814001288
+        },
+        "device": "cpu",
+        "disk_free_bytes": 960992264192,
+        "final_resource_pass": true,
+        "gpu_owned_process_memory_peak_bytes": 0,
+        "heartbeat": 16,
+        "peak_rss_bytes": 60907520,
+        "peak_rss_upper_bound_bytes": 639488000,
+        "phase_rows": [
+          {
+            "cpu_seconds": 0.061535999999999993,
+            "cpu_seconds_cumulative": 0.061535999999999993,
+            "next_stage": "label_qualification",
+            "sampled_monotonic": 20373.916306917,
+            "scope": "supervisor self and waited helpers plus quiescent worker self and waited descendants",
+            "stage": "staging_and_zero_step_gate",
+            "wall_seconds": 0.3359727120005118,
+            "worker_cpu_end_seconds": 0.040139999999999995,
+            "worker_reported_cpu_seconds": 0.040139999999999995,
+            "worker_reported_wall_seconds": 0.01617528299902915,
+            "worker_wall_end_monotonic": 20373.893291112
+          },
+          {
+            "cpu_seconds": 0.10674999999999998,
+            "cpu_seconds_cumulative": 0.168286,
+            "next_stage": "world_model_training_and_selection",
+            "sampled_monotonic": 20374.006479459,
+            "scope": "supervisor self and waited helpers plus quiescent worker self and waited descendants",
+            "stage": "label_qualification",
+            "wall_seconds": 0.0901725420008006,
+            "worker_cpu_end_seconds": 0.136793,
+            "worker_reported_cpu_seconds": 0.096653,
+            "worker_reported_wall_seconds": 0.10754993600130547,
+            "worker_wall_end_monotonic": 20374.000841048
+          },
+          {
+            "cpu_seconds": 0.04929500000000003,
+            "cpu_seconds_cumulative": 0.21758100000000002,
+            "next_stage": "prediction_confirmation",
+            "sampled_monotonic": 20374.070065182,
+            "scope": "supervisor self and waited helpers plus quiescent worker self and waited descendants",
+            "stage": "world_model_training_and_selection",
+            "wall_seconds": 0.06358572300086962,
+            "worker_cpu_end_seconds": 0.181093,
+            "worker_reported_cpu_seconds": 0.044300000000000006,
+            "worker_reported_wall_seconds": 0.060368587997800205,
+            "worker_wall_end_monotonic": 20374.061209636
+          },
+          {
+            "cpu_seconds": 0.05946299999999999,
+            "cpu_seconds_cumulative": 0.277044,
+            "next_stage": "settlement_and_verified_export",
+            "sampled_monotonic": 20374.135453005,
+            "scope": "supervisor self and waited helpers plus quiescent worker self and waited descendants",
+            "stage": "prediction_confirmation",
+            "wall_seconds": 0.06538782300049206,
+            "worker_cpu_end_seconds": 0.231766,
+            "worker_reported_cpu_seconds": 0.050672999999999996,
+            "worker_reported_wall_seconds": 0.06424959800278884,
+            "worker_wall_end_monotonic": 20374.125459234
+          }
+        ],
+        "pid": 817,
+        "returncode": 0,
+        "rss_bytes": 47185920,
+        "run": null,
+        "stage": "settlement_and_verified_export",
+        "status": "complete",
+        "stop_reason": null,
+        "supervisor_pid": 816,
+        "updated_monotonic": 20374.182457588,
+        "wall_seconds": 0.595684814001288
+      },
+      "synthetic_cpu_subprocesses": 3,
+      "worker_phases": [
+        {
+          "cpu_end_seconds": 0.040139999999999995,
+          "cpu_seconds": 0.040139999999999995,
+          "cpu_start_seconds": 0.0,
+          "next_stage": "label_qualification",
+          "pid": 817,
+          "scope": "self_plus_waited_descendants",
+          "stage": "staging_and_zero_step_gate",
+          "supervisor_handshake": {
+            "cpu_seconds": 0.061535999999999993,
+            "cpu_seconds_cumulative": 0.061535999999999993,
+            "next_stage": "label_qualification",
+            "sampled_monotonic": 20373.916306917,
+            "scope": "supervisor self and waited helpers plus quiescent worker self and waited descendants",
+            "stage": "staging_and_zero_step_gate",
+            "status": "acknowledged",
+            "wall_seconds": 0.3359727120005118,
+            "worker_cpu_end_seconds": 0.040139999999999995,
+            "worker_reported_cpu_seconds": 0.040139999999999995,
+            "worker_reported_wall_seconds": 0.01617528299902915,
+            "worker_wall_end_monotonic": 20373.893291112
+          },
+          "wall_end_monotonic": 20373.893291112,
+          "wall_seconds": 0.01617528299902915,
+          "wall_start_monotonic": 20373.877115829
+        },
+        {
+          "cpu_end_seconds": 0.136793,
+          "cpu_seconds": 0.096653,
+          "cpu_start_seconds": 0.040139999999999995,
+          "next_stage": "world_model_training_and_selection",
+          "pid": 817,
+          "scope": "self_plus_waited_descendants",
+          "stage": "label_qualification",
+          "supervisor_handshake": {
+            "cpu_seconds": 0.10674999999999998,
+            "cpu_seconds_cumulative": 0.168286,
+            "next_stage": "world_model_training_and_selection",
+            "sampled_monotonic": 20374.006479459,
+            "scope": "supervisor self and waited helpers plus quiescent worker self and waited descendants",
+            "stage": "label_qualification",
+            "status": "acknowledged",
+            "wall_seconds": 0.0901725420008006,
+            "worker_cpu_end_seconds": 0.136793,
+            "worker_reported_cpu_seconds": 0.096653,
+            "worker_reported_wall_seconds": 0.10754993600130547,
+            "worker_wall_end_monotonic": 20374.000841048
+          },
+          "wall_end_monotonic": 20374.000841048,
+          "wall_seconds": 0.10754993600130547,
+          "wall_start_monotonic": 20373.893291112
+        },
+        {
+          "cpu_end_seconds": 0.181093,
+          "cpu_seconds": 0.044300000000000006,
+          "cpu_start_seconds": 0.136793,
+          "next_stage": "prediction_confirmation",
+          "pid": 817,
+          "scope": "self_plus_waited_descendants",
+          "stage": "world_model_training_and_selection",
+          "supervisor_handshake": {
+            "cpu_seconds": 0.04929500000000003,
+            "cpu_seconds_cumulative": 0.21758100000000002,
+            "next_stage": "prediction_confirmation",
+            "sampled_monotonic": 20374.070065182,
+            "scope": "supervisor self and waited helpers plus quiescent worker self and waited descendants",
+            "stage": "world_model_training_and_selection",
+            "status": "acknowledged",
+            "wall_seconds": 0.06358572300086962,
+            "worker_cpu_end_seconds": 0.181093,
+            "worker_reported_cpu_seconds": 0.044300000000000006,
+            "worker_reported_wall_seconds": 0.060368587997800205,
+            "worker_wall_end_monotonic": 20374.061209636
+          },
+          "wall_end_monotonic": 20374.061209636,
+          "wall_seconds": 0.060368587997800205,
+          "wall_start_monotonic": 20374.000841048
+        },
+        {
+          "cpu_end_seconds": 0.231766,
+          "cpu_seconds": 0.050672999999999996,
+          "cpu_start_seconds": 0.181093,
+          "next_stage": "settlement_and_verified_export",
+          "pid": 817,
+          "scope": "self_plus_waited_descendants",
+          "stage": "prediction_confirmation",
+          "supervisor_handshake": {
+            "cpu_seconds": 0.05946299999999999,
+            "cpu_seconds_cumulative": 0.277044,
+            "next_stage": "settlement_and_verified_export",
+            "sampled_monotonic": 20374.135453005,
+            "scope": "supervisor self and waited helpers plus quiescent worker self and waited descendants",
+            "stage": "prediction_confirmation",
+            "status": "acknowledged",
+            "wall_seconds": 0.06538782300049206,
+            "worker_cpu_end_seconds": 0.231766,
+            "worker_reported_cpu_seconds": 0.050672999999999996,
+            "worker_reported_wall_seconds": 0.06424959800278884,
+            "worker_wall_end_monotonic": 20374.125459234
+          },
+          "wall_end_monotonic": 20374.125459234,
+          "wall_seconds": 0.06424959800278884,
+          "wall_start_monotonic": 20374.061209636
+        },
+        {
+          "cpu_end_seconds": 0.232655,
+          "cpu_seconds": 0.0008890000000000009,
+          "cpu_start_seconds": 0.231766,
+          "next_stage": "settlement_and_verified_export",
+          "pid": 817,
+          "scope": "self_plus_waited_descendants",
+          "stage": "settlement_and_verified_export",
+          "supervisor_handshake": {
+            "scope": "final_same_stage_snapshot"
+          },
+          "wall_end_monotonic": 20374.14439268,
+          "wall_seconds": 0.018933445997390663,
+          "wall_start_monotonic": 20374.125459234
+        }
+      ]
+    },
+    "tests": [
+      {
+        "errors": 0,
+        "failures": 0,
+        "gpu_resources": {
+          "end": {
+            "boundary": "end",
+            "cuda_max_memory_allocated_bytes": 0,
+            "cuda_max_memory_reserved_bytes": 0,
+            "driver": "571.96",
+            "exclusive_allocation_proven": false,
+            "free_bytes": 5284823040,
+            "gpu_physical_device": 0,
+            "gpu_uuid": "GPU-251529f5-cac7-6734-462b-f4d75840022c",
+            "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+            "owned_process_memory_bytes": null,
+            "phase": "cpu_scope_regression",
+            "scope": "shared Windows desktop GPU; per-process WDDM/WSL accounting unavailable",
+            "total_bytes": 6442450944
+          },
+          "framework_memory": {
+            "cuda_max_memory_allocated_bytes": 0,
+            "cuda_max_memory_reserved_bytes": 0
+          },
+          "start": {
+            "boundary": "start",
+            "cuda_max_memory_allocated_bytes": 0,
+            "cuda_max_memory_reserved_bytes": 0,
+            "driver": "571.96",
+            "exclusive_allocation_proven": false,
+            "free_bytes": 5284823040,
+            "gpu_physical_device": 0,
+            "gpu_uuid": "GPU-251529f5-cac7-6734-462b-f4d75840022c",
+            "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+            "owned_process_memory_bytes": null,
+            "phase": "cpu_scope_regression",
+            "scope": "shared Windows desktop GPU; per-process WDDM/WSL accounting unavailable",
+            "total_bytes": 6442450944
+          }
+        },
+        "phase": "cpu_scope_regression",
+        "resources": {
+          "complete_process_cpu_seconds": 0.046896999999999966,
+          "name": "cpu_scope_regression",
+          "wall_seconds": 0.1297112489992287
+        },
+        "skipped": 0,
+        "successful": true,
+        "test_id": "test_cpu_scope_contract.CpuScopeContractTests.test_monitor_charges_live_delta_and_reaped_short_child_once",
+        "tests_run": 1
+      },
+      {
+        "errors": 0,
+        "failures": 0,
+        "gpu_resources": {
+          "end": {
+            "boundary": "end",
+            "cuda_max_memory_allocated_bytes": 0,
+            "cuda_max_memory_reserved_bytes": 0,
+            "driver": "571.96",
+            "exclusive_allocation_proven": false,
+            "free_bytes": 5284823040,
+            "gpu_physical_device": 0,
+            "gpu_uuid": "GPU-251529f5-cac7-6734-462b-f4d75840022c",
+            "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+            "owned_process_memory_bytes": null,
+            "phase": "supervised_phase_sync",
+            "scope": "shared Windows desktop GPU; per-process WDDM/WSL accounting unavailable",
+            "total_bytes": 6442450944
+          },
+          "framework_memory": {
+            "cuda_max_memory_allocated_bytes": 0,
+            "cuda_max_memory_reserved_bytes": 0
+          },
+          "start": {
+            "boundary": "start",
+            "cuda_max_memory_allocated_bytes": 0,
+            "cuda_max_memory_reserved_bytes": 0,
+            "driver": "571.96",
+            "exclusive_allocation_proven": false,
+            "free_bytes": 5284823040,
+            "gpu_physical_device": 0,
+            "gpu_uuid": "GPU-251529f5-cac7-6734-462b-f4d75840022c",
+            "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+            "owned_process_memory_bytes": null,
+            "phase": "supervised_phase_sync",
+            "scope": "shared Windows desktop GPU; per-process WDDM/WSL accounting unavailable",
+            "total_bytes": 6442450944
+          }
+        },
+        "phase": "supervised_phase_sync",
+        "resources": {
+          "complete_process_cpu_seconds": 0.3965580000000002,
+          "name": "supervised_phase_sync",
+          "wall_seconds": 0.8055816980013333
+        },
+        "skipped": 0,
+        "successful": true,
+        "test_id": "test_supervised_phase_integration.SupervisedPhaseIntegrationTests.test_short_subprocesses_and_stage_boundaries_through_real_supervisor",
+        "tests_run": 1
+      },
+      {
+        "errors": 0,
+        "failures": 0,
+        "gpu_resources": {
+          "end": {
+            "boundary": "end",
+            "cuda_max_memory_allocated_bytes": 48227328,
+            "cuda_max_memory_reserved_bytes": 52428800,
+            "driver": "571.96",
+            "exclusive_allocation_proven": false,
+            "free_bytes": 5170528256,
+            "gpu_physical_device": 0,
+            "gpu_uuid": "GPU-251529f5-cac7-6734-462b-f4d75840022c",
+            "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+            "owned_process_memory_bytes": null,
+            "phase": "joint_pipeline",
+            "scope": "shared Windows desktop GPU; per-process WDDM/WSL accounting unavailable",
+            "total_bytes": 6442450944
+          },
+          "framework_memory": {
+            "cuda_max_memory_allocated_bytes": 48227328,
+            "cuda_max_memory_reserved_bytes": 52428800
+          },
+          "start": {
+            "boundary": "start",
+            "cuda_max_memory_allocated_bytes": 0,
+            "cuda_max_memory_reserved_bytes": 0,
+            "driver": "571.96",
+            "exclusive_allocation_proven": false,
+            "free_bytes": 5284823040,
+            "gpu_physical_device": 0,
+            "gpu_uuid": "GPU-251529f5-cac7-6734-462b-f4d75840022c",
+            "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+            "owned_process_memory_bytes": null,
+            "phase": "joint_pipeline",
+            "scope": "shared Windows desktop GPU; per-process WDDM/WSL accounting unavailable",
+            "total_bytes": 6442450944
+          }
+        },
+        "phase": "joint_pipeline",
+        "resources": {
+          "complete_process_cpu_seconds": 9.256316,
+          "name": "joint_pipeline",
+          "wall_seconds": 20.871760984999128
+        },
+        "skipped": 0,
+        "successful": true,
+        "test_id": "test_joint_pipeline.JointProductionPipelineTests.test_actual_collection_training_restore_metrics_ledger_export",
+        "tests_run": 1
+      },
+      {
+        "errors": 0,
+        "failures": 0,
+        "gpu_resources": {
+          "end": {
+            "boundary": "end",
+            "cuda_max_memory_allocated_bytes": 48227328,
+            "cuda_max_memory_reserved_bytes": 52428800,
+            "driver": "571.96",
+            "exclusive_allocation_proven": false,
+            "free_bytes": 5170528256,
+            "gpu_physical_device": 0,
+            "gpu_uuid": "GPU-251529f5-cac7-6734-462b-f4d75840022c",
+            "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+            "owned_process_memory_bytes": null,
+            "phase": "sequence_world_regression",
+            "scope": "shared Windows desktop GPU; per-process WDDM/WSL accounting unavailable",
+            "total_bytes": 6442450944
+          },
+          "framework_memory": {
+            "cuda_max_memory_allocated_bytes": 48227328,
+            "cuda_max_memory_reserved_bytes": 52428800
+          },
+          "start": {
+            "boundary": "start",
+            "cuda_max_memory_allocated_bytes": 48227328,
+            "cuda_max_memory_reserved_bytes": 52428800,
+            "driver": "571.96",
+            "exclusive_allocation_proven": false,
+            "free_bytes": 5170528256,
+            "gpu_physical_device": 0,
+            "gpu_uuid": "GPU-251529f5-cac7-6734-462b-f4d75840022c",
+            "name": "NVIDIA GeForce RTX 3060 Laptop GPU",
+            "owned_process_memory_bytes": null,
+            "phase": "sequence_world_regression",
+            "scope": "shared Windows desktop GPU; per-process WDDM/WSL accounting unavailable",
+            "total_bytes": 6442450944
+          }
+        },
+        "phase": "sequence_world_regression",
+        "resources": {
+          "complete_process_cpu_seconds": 7.840513,
+          "name": "sequence_world_regression",
+          "wall_seconds": 5.543361474003177
+        },
+        "skipped": 0,
+        "successful": true,
+        "test_id": "test_sequence_world.SequenceWorldIntegrationTests.test_synthetic_cpu_train_checkpoint_restore_and_confirmation_accounting",
+        "tests_run": 1
+      }
+    ]
+  }
+}

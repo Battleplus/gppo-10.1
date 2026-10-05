@@ -1,0 +1,10 @@
+{
+  "engineering_job_id": "w1-gpu-smoke-test-consolidated-acceptance-v3-once",
+  "manifest_sha256": "23255950aa927aa516150f9e4b2c8b39b0752c1df3dc400aa23cd51af290c47a",
+  "hashes_sha256": "d03ea9817204c04f9c38fcb86885d484152e5cf73455552edbf83cebb512a2b2",
+  "server_acceptance_request_sha256": "749cdaa9bf2ba4093b08021d233b9dbd16938552425647277ffb78f1b64706e3",
+  "resource_request_sha256": "d14b2348a8e27c1294a7e34fe055bd38b833907d57613c27b13e9f31b35c5c7a",
+  "classification": "GPU_SMOKE_TEST",
+  "old_evidence_preserved": true,
+  "budgets_profile_model_and_training_sources_unchanged": true
+}

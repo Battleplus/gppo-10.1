@@ -1,0 +1,16 @@
+{
+  "classification": "GPU_SMOKE_TEST_OFFLINE_REPAIR",
+  "tests_run": 4,
+  "passed": true,
+  "coverage": "actual fixture path/load statements and unchanged production-module bytes; not full fixture import or GPU pipeline",
+  "model_initializations": 0,
+  "model_forwards": 0,
+  "optimizer_updates": 0,
+  "real_environment_calls": 0,
+  "remote_calls": 0,
+  "new_attempt_created": false,
+  "changed_files": {
+    "test_action_conditioned_task_outcomes.py": "f5acfe53bb744137604ff1a98fd6142e1b49cf3de1e37315aa281e988b0ae170",
+    "test_runtime_config_contract.py": "b234d5ee8e4c68dabd91ee96e282e4d028169aebb49e3bb488dab5cb949cc730"
+  }
+}

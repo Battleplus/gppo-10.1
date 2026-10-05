@@ -1,0 +1,159 @@
+{
+  "schema": "w1-g1-gppo-luna-final-review/1.0.0",
+  "review_date": "2026-10-04",
+  "target": "research-plans/w1-g1-gppo-task-validation-local-v1",
+  "disposition": {
+    "blocking_source_findings": 0,
+    "engineering_readiness_to_submit_formal_request": true,
+    "formal_approval": false,
+    "full_resource_acceptance": false,
+    "real_task_efficacy": "not_evaluated"
+  },
+  "frozen_identity": {
+    "package_file_count": 209,
+    "archive_file_count": 209,
+    "package_archive_inventory_identical": true,
+    "package_archive_content_sha256_matches": true,
+    "delivery_record_hashes_match": true,
+    "ordinary_package_hash_entries": 207,
+    "self_referential_identity_files_checked_by_outer_delivery_record": [
+      "hashes.json",
+      "execution-manifest.json"
+    ],
+    "execution_manifest_sha256": "219cd82a046ebffd3feb3f1e2f9bc5b158f7ab040273d6baef5b866b01ff2895",
+    "hashes_sha256": "aea59645b889fda413fa9ef110453622d402019016132b0daf59d5779d6d465f",
+    "resource_request_sha256": "85939a3d6211dc86c5db2a56a368b657c42975468b48dadc141e99b7a7e57e8a",
+    "controlled_synthetic_source_binding": {
+      "fixture_python_file_count": 151,
+      "fixture_python_matches_final_package": true,
+      "loaded_production_module_count": 11,
+      "loaded_production_modules_match_final_package": true
+    }
+  },
+  "preflights": {
+    "windows_exit_code": 0,
+    "wsl_exit_code": 0,
+    "scope": "read-only structure, runtime/source identity, and dependency checks; no token validation",
+    "formal_attempt_started": false,
+    "staging_started": false,
+    "worker_started": false
+  },
+  "authorization": {
+    "package_request_status": "NOT_APPROVED",
+    "external_authorization_status": "NOT_APPROVED",
+    "token_sha256": null,
+    "token_validated": false,
+    "authorization_consumed": false,
+    "runner_ready": true,
+    "interpretation": "engineering readiness to request execution only"
+  },
+  "synthetic_pipeline": {
+    "synthetic_only": true,
+    "first_nonisolated_attempt": {
+      "driver_exit_code": 1,
+      "driver_failure_labels": [
+        "hidden_replay_observations_match_ledger_encode_charges",
+        "reduced_route_budgets"
+      ],
+      "raw_evidence_retained": false
+    },
+    "final_isolated_attempt": {
+      "original_driver_exit_code": 1,
+      "driver_failure_labels": [
+        "hidden_replay_observations_match_ledger_encode_charges"
+      ],
+      "raw_evidence_retained": true,
+      "retained_driver_evidence": "controlled-synthetic-task-pipeline-evidence-isolated-20261004/controlled-run-evidence.json",
+      "read_only_post_run_audit_exit_code": 0,
+      "route_count": 9,
+      "optimizer_updates": 18,
+      "task_episodes": 240,
+      "policy_checkpoint_writes": 9,
+      "checkpoint_loads": 15,
+      "model_initializations_or_loads": 24,
+      "in_memory_world_model_substitutions": 6,
+      "world_model_optimizer_updates": 0,
+      "settlement_and_verified_export": true,
+      "real_environment_constructors": 0,
+      "real_frozen_checkpoint_deserializations": 0,
+      "task_gate_pass": false,
+      "research_success": false,
+      "replay_accounting_by_method": {
+        "G0": {
+          "routes": 3,
+          "replayed_observations": 36,
+          "ledger_calls": 36,
+          "encoder_charges": 36,
+          "matches": true
+        },
+        "T": {
+          "routes": 3,
+          "replayed_observations": 36,
+          "ledger_calls": 36,
+          "encoder_charges": 36,
+          "matches": true
+        },
+        "G1": {
+          "routes": 3,
+          "replayed_observations": 36,
+          "ledger_calls": 36,
+          "encoder_charges": 36,
+          "matches": true
+        }
+      },
+      "g1_cost_gate": {
+        "status": "failed",
+        "sample_count": 1296,
+        "active_decision_count": 475,
+        "cpu_mean_ms": 56.54830440277796,
+        "cpu_mean_limit_ms": 10,
+        "wall_p95_ms": 159.31778600497637,
+        "wall_p95_limit_ms": 50
+      },
+      "read_only_audit_mode": "read_only_post_run_audit_no_pipeline_rerun"
+    }
+  },
+  "known_resource_gaps": [
+    "Windows/WSL bridge CPU",
+    "final controller write/exit tail",
+    "shared CPU load and cross-clock difference"
+  ],
+  "interpretive_limits": [
+    "Synthetic gates are software evidence, not real task efficacy or full-budget completion.",
+    "Prior G1 improvement was against a transparent reference that selected NOOP in all eight confirmation windows under optimistic free continuation.",
+    "The G1 residual prior is based on a fixed-H continuation target; transfer to a policy with different later GPPO actions remains a hypothesis.",
+    "The eight-parent task split does not establish project-wide historical non-use.",
+    "Exact-deadline equality expires before an arrival is logged; the native inclusive flag is not a reachable completed-arrival label defect on that path."
+  ],
+  "verification": {
+    "reviewer_package_hash_audit": "passed; read-only SHA-256 comparison over package/archive/delivery records",
+    "reviewer_tests_run": false,
+    "reviewer_model_or_environment_run": false,
+    "retained_preparation_test_runs": [
+      {
+        "name": "earlier_focused_unittest_run",
+        "source_evidence": "gppo-preparation-validation-evidence-20261004.json",
+        "status": "passed",
+        "tests": 35,
+        "syntax_compilation": "passed"
+      },
+      {
+        "name": "final_validate_preparation_run",
+        "source_evidence": "preparation-tests-evidence.json",
+        "status": "passed",
+        "tests": 34,
+        "errors": 0,
+        "failures": 0
+      }
+    ],
+    "retained_test_counts_are_additive": false,
+    "rerun_by_reviewer": false,
+    "retained_independent_sqlite_audit": {
+      "status": "success",
+      "open_mode": "ro",
+      "torch_imported": false,
+      "model_or_environment_calls": 0
+    }
+  },
+  "recommendation": "Engineering readiness to submit the formal request is supported with synthetic task/cost failures and accounting gaps disclosed; this review does not grant approval, full resource acceptance, or a positive research result."
+}

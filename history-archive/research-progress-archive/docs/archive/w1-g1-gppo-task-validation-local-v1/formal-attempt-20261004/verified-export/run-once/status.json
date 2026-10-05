@@ -1,0 +1,1 @@
+{"attempt":"w1-g1-gppo-task-validation-local-v1-once","automatic_retry":false,"checkpoint_loaded":false,"environment_constructed":false,"environment_construction_status":"not_started","model_initialized":false,"schema":"w1-g1-gppo-task-validation-status/1.0.0","stage":"staging_and_zero_step_gate","status":"initializing","training_started":false}

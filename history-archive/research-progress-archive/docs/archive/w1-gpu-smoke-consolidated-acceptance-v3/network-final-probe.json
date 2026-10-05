@@ -1,0 +1,9 @@
+{
+  "utc": "2026-10-03T13:55:14.693231+00:00",
+  "exit_code": 0,
+  "connected": false,
+  "exception_chain": "Traceback (most recent call last):\n  File \"E:\\Z博士\\diagnostic-work\\w1-gpu-smoke-consolidated-acceptance-v3\\network_probe.py\", line 10, in <module>\n    stream.connect((\"172.17.27.173\", 22))\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^\nTimeoutError: timed out\n",
+  "server": "172.17.27.173",
+  "port": 22,
+  "seconds": 5.014353200000187
+}

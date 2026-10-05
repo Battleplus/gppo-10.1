@@ -1,0 +1,7 @@
+test_isolation_checked_before_package_import (test_bootstrap_order.BootstrapOrderTests.test_isolation_checked_before_package_import) ... ok
+test_isolation_failure_is_not_bypassed (test_bootstrap_order.BootstrapOrderTests.test_isolation_failure_is_not_bypassed) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.302s
+
+OK

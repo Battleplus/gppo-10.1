@@ -1,0 +1,26 @@
+{
+  "classification": "GPU_SMOKE_TEST_OFFLINE_REPAIR",
+  "consumed_package_identity_verified": true,
+  "consumed_evidence_unchanged": true,
+  "verified_failure_export": true,
+  "new_dynamic_identity_created": false,
+  "development_copy_frozen": false,
+  "runner_ready": false,
+  "source_manifest_sha256": "69b3d14fdc98f93afb67fe6e28166b0dd75ddf8d05c240ff743c0f6e872b9fea",
+  "source_hashes_sha256": "7dd180d999a32d1273986e1709c2e7f5af5452d78da3f9b3b5d85a0b9c0c2c53",
+  "tests": {
+    "fixture_path": 4,
+    "wall_authorization_orchestration": 34
+  },
+  "new_model_environment_remote_calls": 0,
+  "changed_file_hashes": {
+    "acceptance_entry.py": "a2b17cf30cf9fa298c2c1f7329f29e88e0a624dc66395ca4170dcedccf712f24",
+    "launch_joint_once.py": "38c21bed9367454d1f520409a42e623728e4fcfcee733e1735fec33d7b06f119",
+    "launch_server_acceptance.py": "34e956ab63d2ee4048d47e5922b3c3f4bf275f8d19388f97841676d7fdbd2302",
+    "test_action_conditioned_task_outcomes.py": "f5acfe53bb744137604ff1a98fd6142e1b49cf3de1e37315aa281e988b0ae170",
+    "test_runtime_config_contract.py": "b234d5ee8e4c68dabd91ee96e282e4d028169aebb49e3bb488dab5cb949cc730",
+    "test_smoke_transport_orchestration.py": "26982d76628ba4b2b410501b295adad47d952d46b0a868ae60f9f8ac4dcb98dc",
+    "test_transport_wall_budget.py": "554b23220fd58c22a70b194299bc1f87ea920aaddc83e628828fd0c5bd3cca80",
+    "transport_wall_budget.py": "c366e3acbd31c12255f3327a5f30a48de0c42189fe05bf1a89fd1c5e4dad8cdf"
+  }
+}

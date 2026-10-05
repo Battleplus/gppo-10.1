@@ -1,0 +1,41 @@
+{
+  "classification": "GPU_SMOKE_TEST",
+  "status": "complete",
+  "training_completed": true,
+  "full_resource_acceptance": false,
+  "measured_component_limits_pass": true,
+  "timing_scope": "actual launched job and controlled download subprocess durations; includes native settlement, omits idle time between offline inspection calls",
+  "launch_seconds": 36.37818960000004,
+  "download_seconds": 13.933899299998302,
+  "launch_plus_download_duration_sum_seconds": 50.31208889999834,
+  "preparation_wall_seconds_separately_recorded": {
+    "sync": 3.4713926000003994,
+    "preflight": 5.1540013999983785,
+    "system": 8.429798900000605
+  },
+  "cpu_native_root_plus_waited_children_once_seconds": 25.460649,
+  "cpu_windows_controller_process_seconds": 0.09375,
+  "cpu_not_added_again": "worker CPU is nested within supervisor waited CHILDREN; not summed",
+  "cpu_unmeasured": [
+    "WSL bridge process",
+    "copy/hash subprocess complete CPU",
+    "final supervisor file writes/process exit tail"
+  ],
+  "gpu_allocator_peak_bytes": 48227328,
+  "gpu_reserved_peak_bytes": 52428800,
+  "gpu_allocator_cap_bytes": 4294967296,
+  "gpu_full_process_memory_unmeasured": true,
+  "process_tree_peak_rss_bytes": 2261098496,
+  "native_peak_active_storage_bytes": 71876686,
+  "native_plus_export_current_bytes": 80051270,
+  "native_peak_plus_full_export_and_frozen_windows_package_conservative_upper_bytes": 111918461,
+  "all_original_call_limits_respected": true,
+  "real_environment_calls": 0,
+  "gppo_calls": 0,
+  "engineering_identity_consumed": true,
+  "research_attempt_created": false,
+  "owned_processes_alive": {
+    "801": false,
+    "795": false
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "classification": "GPU_SMOKE_TEST",
+  "credential_files_excluded": true,
+  "failure_export_manifest_sha256": "9c6c957a6adba0e20281a230b3d1356b76882d32d598a49a574a6eb0e3264d2e",
+  "files": {
+    "GPU_SMOKE_TEST_REPORT.md": {
+      "bytes": 4512,
+      "sha256": "4513201269743453007b937a78447129827955d26660e92fa63a833aa18874df"
+    },
+    "GPU_SMOKE_TEST_SETTLEMENT.json": {
+      "bytes": 3086,
+      "sha256": "a59bbdaf742596c5c79dd1c2a14ce2541397d2d90b98c32c2bd9d1e998abd490"
+    },
+    "README.md": {
+      "bytes": 2752,
+      "sha256": "f623bf1b12c6f69ef3c22801d1bd20882e728647dd23bf6ef745b3907fea930f"
+    },
+    "console-resume-evidence.json": {
+      "bytes": 204,
+      "sha256": "3df7a12c5f16154f0697440433141e59c7d2f734615f7e5caa21678896a08b0d"
+    },
+    "controller-live-observation.json": {
+      "bytes": 627,
+      "sha256": "69283650480d3d796858c35110402b2fa8a8fde5b26fbdda16b40501d2513a4e"
+    },
+    "controller-measurement.json": {
+      "bytes": 348,
+      "sha256": "40c3e7a90d999cd68bb6888f7d978240a4adce53b5ee0c1c1cb00c92d8394999"
+    },
+    "controller-result.json": {
+      "bytes": 3165,
+      "sha256": "20c64d1b00ce7dfd2a4135e00efba56c9aef41ac20dcea6e82d1d9088eb07d8d"
+    },
+    "first-error-traceback.txt": {
+      "bytes": 1626,
+      "sha256": "3b166196c8a0a00f912e78bba6d2b4689d44c4fe47ba662fa161c8c0b4304887"
+    },
+    "post-run-audit.json": {
+      "bytes": 24567,
+      "sha256": "c25ceeafdc186bbe2741986ee8b81eef7743675fe803283f988a669a11daed6c"
+    },
+    "post_run_audit.py": {
+      "bytes": 2817,
+      "sha256": "1e350175c141ea2a42d9904bdd1e48c221755110427d1b963e366227182aeab6"
+    },
+    "remote-bootstrap.json": {
+      "bytes": 1347,
+      "sha256": "5678940c0d37bf4d306729bec59bd7efda0b15f7ae91c7fbd2ed0afbe4dd4fa3"
+    },
+    "run_gpu_smoke.py": {
+      "bytes": 4668,
+      "sha256": "5a8ab60f9c97e1d6059127f1b4d6ae2af5e89f5f37d853727ff0f5191929b95d"
+    },
+    "seal_result.py": {
+      "bytes": 9797,
+      "sha256": "7d651190bdb4639dccb6056fcdfd66b21f185be94aecaa30ee81ddbb84eb2834"
+    },
+    "smoke-package-identity.json": {
+      "bytes": 290,
+      "sha256": "752c3b342836bbd6b210e98c71b5d58ea1bbc659d0ec3aa94703780692f77a82"
+    },
+    "upload-verification.json": {
+      "bytes": 234,
+      "sha256": "fb1d51327c475184e55fb12e0e6b7e5da94baba8c7d93525c66ab72c81cfbb5a"
+    }
+  },
+  "package_identity": {
+    "hashes_sha256": "7dd180d999a32d1273986e1709c2e7f5af5452d78da3f9b3b5d85a0b9c0c2c53",
+    "manifest_sha256": "69b3d14fdc98f93afb67fe6e28166b0dd75ddf8d05c240ff743c0f6e872b9fea",
+    "server_acceptance_request_sha256": "53237231e46275d680c52cf78a20351cfe5a75f883cd960a9916d892d28a9dca"
+  }
+}

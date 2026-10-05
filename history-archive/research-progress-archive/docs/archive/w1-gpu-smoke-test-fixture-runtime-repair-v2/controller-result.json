@@ -1,0 +1,89 @@
+{
+  "status": "technical_stop",
+  "runner_ready": false,
+  "cpu_scope_unverified": true,
+  "remote_exit_code": 1,
+  "remote_result": {
+    "engineering_job_consumed": false,
+    "engineering_job_id": "w1-gpu-smoke-test-fixture-runtime-repair-v2-once",
+    "error_type": "AcceptanceError",
+    "evidence_manifest_sha256": "8ba4e159d696e7cb9c497c63a9d88288895c8fa5ba1b6eb64ac6407e6a28a56b",
+    "formal_research_attempt_created": false,
+    "registration_job_id": null,
+    "resources": {
+      "active_storage_peak_bytes": 0,
+      "aggregate_storage_peak_bytes": 1485,
+      "complete_process_cpu_scope": "RUSAGE_SELF plus RUSAGE_CHILDREN, including waited/reaped descendants",
+      "complete_process_cpu_seconds": 11.106864,
+      "current_active_storage_bytes": 0,
+      "current_aggregate_storage_bytes": 1485,
+      "root_process_rss_high_water_bytes": 508653568,
+      "rss_measurement_scope": "root process /proc/self/status VmRSS and VmHWM only; sampled checks; excludes descendants",
+      "wall_seconds": 15.721878582146019
+    },
+    "status": "technical_stop"
+  },
+  "remote_target_preflight": {
+    "/home/user1/w1-gpu-smoke-test-fixture-runtime-repair-v2-evidence": {
+      "exists": false,
+      "symlink": false
+    },
+    "/home/user1/w1-gpu-smoke-test-fixture-runtime-repair-v2-once": {
+      "exists": false,
+      "symlink": false
+    },
+    "gpu1_prelaunch": {
+      "gpu_physical_device": 1,
+      "gpu_uuid": "GPU-7b708ead-e044-6ce7-a530-6b3093ac905e",
+      "free_memory_mib": 10988,
+      "name": "NVIDIA GeForce RTX 2080 Ti",
+      "other_compute_tasks": [],
+      "allocation_attestation_required": false
+    }
+  },
+  "local_evidence": {
+    "path": "E:\\Z博士\\diagnostic-work\\runs\\w1-gpu-smoke-test-fixture-runtime-repair-v2-once",
+    "files": 3,
+    "verified_bytes": 8594,
+    "manifest_sha256": "8ba4e159d696e7cb9c497c63a9d88288895c8fa5ba1b6eb64ac6407e6a28a56b",
+    "transport_sha256": "f5b8390ac0d433f7774b8e952c71513878f2df6ff00cab1041f57a9f89025189",
+    "temporary_remote_transport_removed": true,
+    "aggregate_storage_check_includes_three_payload_copies_and_transport": true
+  },
+  "uploaded_authorization_verification": {
+    "bytes": 892,
+    "sha256": "8aed29a4168815a43d4783f93f1b7deeae4d41ce9c152b0ac424e47f39b2dcd7",
+    "length_verified": true,
+    "json_verified": true,
+    "identity_and_budget_binding_verified": true,
+    "worker_started": false
+  },
+  "settlement": {
+    "status": "technical_stop",
+    "gpu_smoke_test_passed": false,
+    "runner_ready": false,
+    "cpu_scope_unverified": true,
+    "server_wall_seconds": 15.721878582146019,
+    "server_complete_process_cpu_seconds": 11.106864,
+    "server_charged_upper_wall_seconds": null,
+    "server_charged_upper_complete_process_cpu_seconds": null,
+    "controller_elapsed_wall_seconds": 91.26859100000001,
+    "controller_process_cpu_seconds": 0.5,
+    "controller_wall_overhead_seconds": 75.546712417854,
+    "controller_wall_charged_allowance_seconds": 30,
+    "remote_preflight_and_transport_cpu_charged_allowance_seconds": 30,
+    "controller_cpu_charged_allowance_seconds": 30,
+    "combined_wall_charged_upper_seconds": null,
+    "combined_cpu_charged_upper_seconds": null,
+    "controller_budget_pass": false,
+    "server_budget_pass": false,
+    "aggregate_budget_pass": false,
+    "aggregate_budget_arithmetic_pass": false,
+    "remote_preflight_transport_cpu_individually_measured": false,
+    "automatic_retry": false
+  },
+  "engineering_job_consumed": true,
+  "token_consumed": true,
+  "automatic_retry": false,
+  "authorization_id": "gpu-smoke-fixture-runtime-repair-v2-user-authorized"
+}

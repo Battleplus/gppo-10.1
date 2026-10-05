@@ -1,0 +1,196 @@
+{
+  "classification": "GPU_SMOKE_TEST_OFFLINE_SOURCE_AUDIT",
+  "selected_production_entry_cases": [
+    {
+      "phase": "cpu_scope_regression",
+      "module": "test_cpu_scope_contract",
+      "class": "CpuScopeContractTests",
+      "method": "test_monitor_charges_live_delta_and_reaped_short_child_once"
+    },
+    {
+      "phase": "supervised_phase_sync",
+      "module": "test_supervised_phase_integration",
+      "class": "SupervisedPhaseIntegrationTests",
+      "method": "test_short_subprocesses_and_stage_boundaries_through_real_supervisor"
+    },
+    {
+      "phase": "joint_pipeline",
+      "module": "test_joint_pipeline",
+      "class": "JointProductionPipelineTests",
+      "method": "test_actual_collection_training_restore_metrics_ledger_export"
+    },
+    {
+      "phase": "sequence_world_regression",
+      "module": "test_sequence_world",
+      "class": "SequenceWorldIntegrationTests",
+      "method": "test_synthetic_cpu_train_checkpoint_restore_and_confirmation_accounting"
+    }
+  ],
+  "syntax_checked_local_modules": 41,
+  "source_sha256": {
+    "budget_ledger.py": "cb95c78555ddd7d52a498f50edaad98e16000f832b6db381b9e15e1e65d4876c",
+    "classical_baselines.py": "424e17682004737e7ff700a70c9cc62bfd2988e16b2cdc8c9055c57d941bf53d",
+    "cpu_scope_contract.py": "c1c3586ba0494eeddfd7e5998d08599e22ff78a8853ae91a27ce9ffe7ddca277",
+    "event_jepa_losses.py": "fbbb5ad5e8deba1d6e787eb282f04920387a32039ffdf949b31123d5f8e4d274",
+    "freeze_joint_package.py": "89399c37ac57e2c593116b45f2626e03b81ed76f19be6f8f68ae7c316290e1d9",
+    "infra_io.py": "fbd6533833f8845d49ce6ad28b793245e58f22467acbe83e7c45a14704db7ace",
+    "joint_inputs.py": "1d865ef1619b4d069a81f6970ffc513d01f35419f6ecdc30f6004b651e264463",
+    "joint_pipeline.py": "69f911c9885b85469d34db11d2ba25a39944cee2c4a858caeb25bfe19f2b9d8c",
+    "launch_once.py": "fab8f49af49003cf00a2160a6b0ea68703b8808ec4271c5a2d70a5f974e69ada",
+    "linux_process_scope.py": "3cc229bd1d64971a029f6d1f37ea5f63e708224a04d9ed11537a9f2f8d4c0f21",
+    "manifest_contract.py": "801365cb16d5d2d38533840ff8ae9bead8f4381ba86de71ab75225efd70508ff",
+    "native/gppo_world/graph5.py": "a4a2c701d8a36306b4e57eb3d24930bae985dea7d11d95afbcdc08968231af09",
+    "native/gppo_world/joint_consequence_baseline.py": "38f6740baabcc856c37c3757797b341b4c22b9d94ebafefa24688293e99b2c37",
+    "native/gppo_world/joint_training.py": "808b1de65e676ad45480843c152874248be1fe91c1ce56e1a015fddf81bfd4d1",
+    "native/gppo_world/m10_environment.py": "0f4615d11604a7cd1cc74c94f0258dfc6cb59748f64a075276ec90941db094b1",
+    "native/gppo_world/task_lifecycle.py": "50248afa519fd18dbc5995ba0bbf7e58adc0833ae501760ea032ab91fca5ed89",
+    "native/gppo_world/telemetry.py": "c52f2367c06625dc670f08211dc8e514caf2e005cce7d3b82c2ab1bd7cc556bc",
+    "phase_handshake.py": "eef556ebd9217a60bebb8d481d1268dcf97171c9f2d2c1a666ee14fa4c9b4a5c",
+    "production_data.py": "f842564d8a9695236119d21ffc293039823ebe0adfa96309d9f1f19a2c7971f9",
+    "production_world.py": "ddcca48e3867d49d1d858d231dd0412a20d538f39fc2fd21a0bf5ff1638771c0",
+    "public_controller.py": "d796ec67e6c62f9f297f4f48fe09ea1d16a160bc13b15c3c102674ae02263d8f",
+    "public_event_targets.py": "ea3980432e6e2a2a106b3a4fe568281cde55afa5c82485a18b7867938bf45271",
+    "public_history.py": "097da3b9ad0550989ab4748520a2a6737aa18aa06d9b46510ae79f3729e6fed8",
+    "public_transition_contract.py": "e11ef0d242535a810ce6ae459a1cabd0d2afa533ce78e07cceb7164810425e3d",
+    "runner.py": "c343dc2bf7e18c071d7faf729ddb5b3357de1e455aad45b6228b762b731dab8c",
+    "runtime_config_contract.py": "42e55b777043fdc69940706d80d722efae0083f0c3ae0eb09b715a2aeafe54a7",
+    "sequence_data_contract.py": "ac9e6f7f2d04eaaef51c7a1f247efd8cf3f4be42fc86f975ccd681d303155c58",
+    "supervise.py": "180b73d6ea25fafb050c5cdf9199479df344871b4752040b21591eabe97efc72",
+    "task_outcome_contract.py": "c15eda7f48b4c64f9b5df40a4df52f816295f384566d476ecc917defc4011ee8",
+    "test_action_conditioned_task_outcomes.py": "f5acfe53bb744137604ff1a98fd6142e1b49cf3de1e37315aa281e988b0ae170",
+    "test_cpu_scope_contract.py": "be5ee111c5b9223d61b355987ae15c8be443342355844042692d41402fc76862",
+    "test_joint_pipeline.py": "0226ee4cf1359cdaad7e48601800804c451b270336f274d977b821f77d099490",
+    "test_production_collector_lifecycle.py": "7ca04c4ae7a25ad2e29126649a99e3417a8d58aac18767376b24f61753615395",
+    "test_sequence_data.py": "af608116ea54b2cc966bf1f0fd81eb5a3af02aae61b7276ec40fb2a0ff0c570e",
+    "test_sequence_world.py": "08a3d256f1f30da066f7fda4fe5c7268eeea4ff13ea2c36a8020cc1bc2cf0ed0",
+    "test_supervised_phase_integration.py": "8ee2af9117a3a0591ad5077daa2742f048b4d05c79aeeb1447eece5909d95700",
+    "transparent_utility.py": "d90da67e06b3548f53ef0372262e3ccace22104b260ef224e4a7f0fe76fbbe08",
+    "verify_runtime_inputs.py": "64b2206462d428f881f32bf5a46805de7392e2cb19f765fc40efb836e250a35e",
+    "w1_graph_jepa.py": "239ff4e78327d1e9d9b7fafad61b4b78e310de1e437758d51ca7290b564a2b63",
+    "w1_training.py": "546eab9c8cad27b04d2454d914ac48f292cedf9d26ba536d192d1dacd8aef7cb",
+    "worker_contract.py": "a7d8fa9605e62764247f9674e528d33f5fab1b760643d2d82263f091e71ecd7c"
+  },
+  "stdlib_dependencies": [
+    "__future__",
+    "argparse",
+    "ast",
+    "copy",
+    "csv",
+    "ctypes",
+    "dataclasses",
+    "enum",
+    "errno",
+    "fcntl",
+    "hashlib",
+    "heapq",
+    "hmac",
+    "json",
+    "math",
+    "os",
+    "pathlib",
+    "random",
+    "re",
+    "resource",
+    "runpy",
+    "shutil",
+    "signal",
+    "socket",
+    "sqlite3",
+    "stat",
+    "struct",
+    "subprocess",
+    "sys",
+    "tempfile",
+    "time",
+    "traceback",
+    "types",
+    "typing",
+    "unittest",
+    "uuid"
+  ],
+  "third_party_or_unresolved_absolute_imports": [
+    "numpy",
+    "torch"
+  ],
+  "dynamic_load_expressions_requiring_runtime_validation": [
+    {
+      "file": "test_action_conditioned_task_outcomes.py",
+      "line": 16,
+      "expression": "runpy.run_path(str(SOURCE_ROOT / 'task_lifecycle.py'))"
+    }
+  ],
+  "relative_imports_requiring_runtime_validation": [
+    {
+      "file": "native/gppo_world/m10_environment.py",
+      "line": 18,
+      "expression": "from .service_clock import ServiceClock, ServiceEvent, ServiceResource"
+    },
+    {
+      "file": "native/gppo_world/m10_environment.py",
+      "line": 19,
+      "expression": "from .task_decision_bridge import TaskDecisionBridge"
+    },
+    {
+      "file": "native/gppo_world/m10_environment.py",
+      "line": 20,
+      "expression": "from .task_execution import TaskCommand, TaskExecution"
+    },
+    {
+      "file": "native/gppo_world/m10_environment.py",
+      "line": 21,
+      "expression": "from .task_lifecycle import TaskLifecycle, TaskState"
+    },
+    {
+      "file": "native/gppo_world/m10_environment.py",
+      "line": 22,
+      "expression": "from .task_policy_view import TaskPolicySnapshot, TaskPolicyView"
+    },
+    {
+      "file": "native/gppo_world/m10_environment.py",
+      "line": 23,
+      "expression": "from .telemetry import Telemetry"
+    },
+    {
+      "file": "native/gppo_world/m10_environment.py",
+      "line": 24,
+      "expression": "from .m10_communication import CommunicationProfile"
+    },
+    {
+      "file": "native/gppo_world/m10_environment.py",
+      "line": 25,
+      "expression": "from .m10_communication import formal_three_condition_profile, weak_communication_profile"
+    },
+    {
+      "file": "native/gppo_world/joint_training.py",
+      "line": 22,
+      "expression": "from .joint_gppo import EVENT_NAMES, JOINT_PROTOCOL, WORLD_FEATURE_DIM, ActionConditionedTemporalWorldModel, JointGraphPreferencePolicy, JointTrainConfig, build_observed_event_labels, finite_optimizer, finite_parameters, masked_event_bce, masked_normalized_preference, preco_logit_direction, preference_similarity, preference_similarity_coefficients"
+    },
+    {
+      "file": "native/gppo_world/joint_training.py",
+      "line": 28,
+      "expression": "from .m10_environment import M10Config, M10Environment, M10Scenario, scenario_tape"
+    },
+    {
+      "file": "native/gppo_world/joint_training.py",
+      "line": 29,
+      "expression": "from .m10_training import M10ActorCritic, PPOConfig, _evaluate_sequence, masked_distribution, train_policy, update_policy"
+    },
+    {
+      "file": "native/gppo_world/joint_consequence_baseline.py",
+      "line": 8,
+      "expression": "from .graph5 import GRAPH5_ACTION_COUNT, GRAPH5_CANDIDATE_COUNT, Graph5Snapshot"
+    }
+  ],
+  "full_runtime_import_validated": false,
+  "gpu_training_validated": false,
+  "remote_calls": 0,
+  "model_calls": 0,
+  "environment_calls": 0,
+  "old_pid_reuse": {
+    "pid": 19428,
+    "current_process_name": "LogonUI",
+    "original_controller_still_live": false
+  },
+  "new_attempt_created": false,
+  "automatic_retry": false
+}

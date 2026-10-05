@@ -1,0 +1,196 @@
+{
+  "classification": "GPU_SMOKE_TEST",
+  "status": "complete",
+  "exit_code": 0,
+  "training_completed": true,
+  "completed_routes": {
+    "G1": 3,
+    "G2": 3
+  },
+  "profile": {
+    "train_parents": 2,
+    "selection_parents": 2,
+    "confirmation_parents": 8,
+    "seeds": [
+      8201,
+      8202,
+      8203
+    ],
+    "epochs": 1,
+    "actual_training_candidates": 10,
+    "maximum_training_candidates": 50
+  },
+  "routes": [
+    {
+      "variant": "G1",
+      "seed": 8201,
+      "epoch": 1,
+      "loss": 1.4773749113082886,
+      "updates": 2,
+      "training_candidate_rows": 10,
+      "event_brier": 0.25014490076889173,
+      "physical_on_time_brier": 0.2881170082374427,
+      "macro_regret": 0.0,
+      "checkpoint": "E:\\Z博士\\diagnostic-work\\w1-gpu-smoke-local-v1\\download\\gpu-evidence\\joint-controlled-export\\run-once\\world-model-checkpoints\\G1\\seed-8201.pt",
+      "checkpoint_sha256": "417a8dc4e2881fd21bdf641f11793935a5ea5c48831ef0921a37091f9a61fa47",
+      "restored": true
+    },
+    {
+      "variant": "G1",
+      "seed": 8202,
+      "epoch": 1,
+      "loss": 1.6310450434684753,
+      "updates": 2,
+      "training_candidate_rows": 10,
+      "event_brier": 0.2890047046027648,
+      "physical_on_time_brier": 0.2902962338694829,
+      "macro_regret": 0.0,
+      "checkpoint": "E:\\Z博士\\diagnostic-work\\w1-gpu-smoke-local-v1\\download\\gpu-evidence\\joint-controlled-export\\run-once\\world-model-checkpoints\\G1\\seed-8202.pt",
+      "checkpoint_sha256": "267c31f1494d4cce4c1a5874b684395565f23f62a8bfe7b869e99280521eed6c",
+      "restored": true
+    },
+    {
+      "variant": "G1",
+      "seed": 8203,
+      "epoch": 1,
+      "loss": 1.5423479080200195,
+      "updates": 2,
+      "training_candidate_rows": 10,
+      "event_brier": 0.26018314865113595,
+      "physical_on_time_brier": 0.2502304578468867,
+      "macro_regret": 0.0,
+      "checkpoint": "E:\\Z博士\\diagnostic-work\\w1-gpu-smoke-local-v1\\download\\gpu-evidence\\joint-controlled-export\\run-once\\world-model-checkpoints\\G1\\seed-8203.pt",
+      "checkpoint_sha256": "dde2c7576c2b0d5095132a1a2afca1618bb93904dc698ef9ad7e42f2ff1fbc9c",
+      "restored": true
+    },
+    {
+      "variant": "G2",
+      "seed": 8201,
+      "epoch": 1,
+      "loss": 2.2736518383026123,
+      "updates": 2,
+      "training_candidate_rows": 10,
+      "event_brier": 0.28446786158701254,
+      "physical_on_time_brier": 0.2726964716078699,
+      "macro_regret": 0.0,
+      "checkpoint": "E:\\Z博士\\diagnostic-work\\w1-gpu-smoke-local-v1\\download\\gpu-evidence\\joint-controlled-export\\run-once\\world-model-checkpoints\\G2\\seed-8201.pt",
+      "checkpoint_sha256": "2c6f564ef85a9c083fca7b628eadd032c64e44156aa186345faa2b2ab83485b1",
+      "restored": true
+    },
+    {
+      "variant": "G2",
+      "seed": 8202,
+      "epoch": 1,
+      "loss": 2.49823260307312,
+      "updates": 2,
+      "training_candidate_rows": 10,
+      "event_brier": 0.3385005947351236,
+      "physical_on_time_brier": 0.289922208196674,
+      "macro_regret": 0.0,
+      "checkpoint": "E:\\Z博士\\diagnostic-work\\w1-gpu-smoke-local-v1\\download\\gpu-evidence\\joint-controlled-export\\run-once\\world-model-checkpoints\\G2\\seed-8202.pt",
+      "checkpoint_sha256": "888ea51757f86b9e6dd2d6c7a6c5be64c104040d9e8d91ce612932d53bc0d538",
+      "restored": true
+    },
+    {
+      "variant": "G2",
+      "seed": 8203,
+      "epoch": 1,
+      "loss": 2.2737311124801636,
+      "updates": 2,
+      "training_candidate_rows": 10,
+      "event_brier": 0.2926835178436142,
+      "physical_on_time_brier": 0.21358175381681954,
+      "macro_regret": 0.0,
+      "checkpoint": "E:\\Z博士\\diagnostic-work\\w1-gpu-smoke-local-v1\\download\\gpu-evidence\\joint-controlled-export\\run-once\\world-model-checkpoints\\G2\\seed-8203.pt",
+      "checkpoint_sha256": "097d765056860016c85e0cf37bfd0d3bea1266bf04a48276024363e7de8a1656",
+      "restored": true
+    }
+  ],
+  "independent_metrics": {
+    "model_calls": 0,
+    "trace_windows": 8,
+    "candidate_rows": 40,
+    "parent_count": 8,
+    "macro_regret": {
+      "G1": 0.0,
+      "G1_seed_8201": 0.0,
+      "G1_seed_8202": 0.0,
+      "G1_seed_8203": 0.0,
+      "G2": 0.0,
+      "G2_seed_8201": 0.0,
+      "G2_seed_8202": 0.0,
+      "G2_seed_8203": 0.0,
+      "transparent": 0.0
+    },
+    "event_brier_parent_macro": {
+      "G1:8201": 0.2501449007688917,
+      "G1:8202": 0.2890047046027648,
+      "G1:8203": 0.26018314865113595,
+      "G1:ensemble": 0.2659832634617594,
+      "G2:8201": 0.28446786158701254,
+      "G2:8202": 0.3385005947351236,
+      "G2:8203": 0.2926835178436141,
+      "G2:ensemble": 0.3044350587328591
+    },
+    "persisted_metrics_match": true
+  },
+  "resources": {
+    "launch_wall_seconds": 36.37818960000004,
+    "download_and_hash_verify_wall_seconds": 13.933899299998302,
+    "native_supervisor_cpu_seconds": 25.460649,
+    "worker_cpu_seconds_nested_not_added": 20.904234000000002,
+    "gpu_peak_allocated_bytes": 48227328,
+    "gpu_peak_reserved_bytes": 52428800,
+    "process_tree_peak_rss_bytes": 2261098496,
+    "worker_active_storage_peak_bytes": 71876686,
+    "downloaded_bytes": 30507202,
+    "measured_limits_pass": true,
+    "full_resource_acceptance": false,
+    "measurement_gaps": [
+      "GPU process memory/exclusivity unavailable on WDDM/WSL",
+      "final file writes/process exit reserved, not measured here",
+      "CPU caps sampled, not delegated cgroup hard enforcement",
+      "Windows WSL bridge and copy subprocess CPU not measured"
+    ],
+    "no_automatic_retry": true
+  },
+  "gpu_call_accounting": {
+    "checkpoint_loads": 6,
+    "checkpoint_writes": 6,
+    "model_initializations_or_loads": 12,
+    "world_backward_calls": 12,
+    "world_batch_forwards": 84,
+    "world_optimizer_updates": 12,
+    "world_sample_evaluations": 420
+  },
+  "gpu_plus_cpu_regression_call_accounting": {
+    "branch_snapshot_copies": 60,
+    "branches": 60,
+    "candidate_scans": 60,
+    "checkpoint_loads": 12,
+    "checkpoint_writes": 12,
+    "cuda_context_initializations": 1,
+    "environment_steps": 288,
+    "forced_first_actions": 60,
+    "model_initializations_or_loads": 24,
+    "public_rule_decisions": 228,
+    "resets_upper": 12,
+    "snapshot_captures": 12,
+    "world_backward_calls": 18,
+    "world_batch_forwards": 150,
+    "world_optimizer_updates": 18,
+    "world_sample_evaluations": 750
+  },
+  "research_environment_calls": 0,
+  "gppo_calls": 0,
+  "research_effect_established": false,
+  "checkpoint_restore_validated_routes": 6,
+  "downloaded_artifact_hashes_verified": 242,
+  "source_identity": {
+    "execution_manifest_sha256": "72d20a69313a521e1fc9fc8bc65d5ac3df971cbac194e0e9ed94b4b6132a6aa5",
+    "hashes_sha256": "ee2f3acde833799df174f980edf344eb420cf388fd77c36f4d41b69985c0d30d",
+    "local_request_sha256": "af3389c436212d41b8c83404dc6baf831f4fc7ca512a362f357b972f5dae5b5a",
+    "runtime_identity_sha256": "2100e84a69a34b85c54d7a75a3c3c57fea48c1e7df7004fc05d759def3b7dea2",
+    "source_files_preserved": 179
+  }
+}

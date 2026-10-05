@@ -1,0 +1,9 @@
+{
+  "classification": "GPU_SMOKE_TEST",
+  "wall_seconds": 91.26955239999916,
+  "controller_process_cpu_seconds": 0.5,
+  "ssh_sftp_remote_cpu_seconds": null,
+  "prior_transport_regression_reused_as_evidence": true,
+  "cpu_scope": "local controller process only; remote SSH/SFTP CPU not measured",
+  "full_resource_acceptance": false
+}

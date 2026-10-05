@@ -1,0 +1,60 @@
+{
+  "schema": "w1-gppo-preparation-validation-evidence/1.0.0",
+  "date": "2026-10-04",
+  "package": "package",
+  "scope": "Record previously completed focused tests, syntax compilation, and synthetic GPPO numeric regression; no additional run performed for this record.",
+  "verification": {
+    "unittest": {
+      "working_directory": "package",
+      "command": "python -m unittest -v test_g1_policy_preparation test_task_pipeline test_independent_task_recompute test_action_conditioned_task_outcomes",
+      "status": "passed",
+      "tests_passed": 35,
+      "elapsed_seconds": 6.414
+    },
+    "py_compile": {
+      "working_directory": "project root",
+      "command": "python -m py_compile package/runtime_hooks.py package/production_policy.py package/test_g1_policy_preparation.py run_controlled_synthetic_pipeline.py",
+      "status": "passed",
+      "exit_code": 0
+    }
+  },
+  "synthetic_gppo_numeric_regression": {
+    "status": "passed",
+    "policy_route": "T",
+    "optimizer_instances": 1,
+    "masked_decisions": 3,
+    "mask_cases": "two partial masks and one NOOP-only mask",
+    "independent_pre_update_log_probability_replay": {
+      "status": "passed",
+      "maximum_absolute_error_bound": 1e-6
+    },
+    "ppo_update_count": 1,
+    "update_metrics_finite": true,
+    "policy_parameters_changed": true,
+    "instrumented_operation_counts": false,
+    "code_path_derived_operation_counts": {
+      "policy_encodes": 9,
+      "policy_evaluations": 7,
+      "categorical_samples": 6,
+      "categorical_samples_for_selected_actions": 3,
+      "categorical_samples_for_same_rng_comparisons": 3,
+      "autograd_grad_calls": 1,
+      "total_loss_backward_calls": 1,
+      "optimizer_steps": 1
+    }
+  },
+  "unmeasured": {
+    "production_policy_checkpoint_saves": null,
+    "production_policy_checkpoint_loads": null,
+    "instrument_measured_internal_operation_totals": null
+  },
+  "external_run_status": {
+    "controlled_full_pipeline_settlement_and_export_completion": "not_confirmed"
+  },
+  "constraints_and_interpretation": [
+    "Synthetic checkpoint path markers were exercised only by contract validation; this does not establish production checkpoint save/load totals.",
+    "No additional model run or package edit was performed for this evidence record.",
+    "The arrival reward boundary erratum preserves native inclusive (<=) reward flags and the audit's strict (<) physical-arrival label. At exact equality the reported pure-clock case expires before logging an arrival and raises ValueError: Arrival requires the assigned UAV. The listed unittest command does not include test_arrival_deadline_boundary.py, so this record does not count that regression among the 35 passing tests or independently assert its execution.",
+    "The controlled full pipeline settlement/export run belongs to gppo_path_explorer; completion was not confirmed for this record."
+  ]
+}

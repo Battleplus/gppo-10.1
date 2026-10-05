@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/asus/w1-g1-gppo-task-validation-local-v1-once/package/runner.py", line 210, in main
+    summary = run_pipeline(ROOT, OUTPUT, matrix, request, ledger, boundary=boundary)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/asus/w1-g1-gppo-task-validation-local-v1-once/package/task_pipeline.py", line 298, in run_pipeline
+    ledger.select("conditional_policy_training")
+  File "/home/asus/w1-g1-gppo-task-validation-local-v1-once/package/budget_ledger.py", line 37, in select
+    self._finish_phase(next_stage=stage)
+  File "/home/asus/w1-g1-gppo-task-validation-local-v1-once/package/budget_ledger.py", line 70, in _finish_phase
+    row["supervisor_handshake"] = request_boundary(row) if next_stage != stage else {"scope": "final_same_stage_snapshot"}
+                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/asus/w1-g1-gppo-task-validation-local-v1-once/package/phase_handshake.py", line 34, in request_boundary
+    raise RuntimeError("PHASE_ACCOUNTING_REJECTED:" + str(value.get("error")))
+RuntimeError: PHASE_ACCOUNTING_REJECTED:PHASE_CPU_BASELINE_DISCONTINUITY

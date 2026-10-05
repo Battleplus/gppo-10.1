@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/asus/w1-g1-gppo-task-validation-local-v1-once/package/supervise.py", line 272, in main
+    pending=phase_server.process_pending(worker.pid)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/asus/w1-g1-gppo-task-validation-local-v1-once/package/phase_handshake.py", line 141, in process_pending
+    raise RuntimeError("PHASE_CPU_BASELINE_DISCONTINUITY")
+RuntimeError: PHASE_CPU_BASELINE_DISCONTINUITY
+{"attempt": "w1-g1-gppo-task-validation-local-v1-once", "authorization_consumed": true, "resource_status": {"cpu_scope_complete": false, "cpu_seconds": 9.692891, "final_resource_pass": false, "gpu_allocator_peak_bytes": null, "wall_seconds": 17.686576427004184}, "returncode": 1, "status": "stopped", "supervisor_status": "/home/asus/w1-g1-gppo-task-validation-local-v1-once/package/supervisor-status.json"}

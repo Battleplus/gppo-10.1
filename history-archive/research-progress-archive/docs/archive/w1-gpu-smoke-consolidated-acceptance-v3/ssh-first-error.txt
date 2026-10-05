@@ -1,0 +1,13 @@
+Original exec session 92999 exit_code=1, captured before any remote operation:
+Traceback (most recent call last):
+  File "E:\Z博士\diagnostic-work\w1-gpu-smoke-consolidated-acceptance-v3\system_controller.py", line 115, in <module>
+    raise SystemExit(main())
+  File "E:\Z博士\diagnostic-work\w1-gpu-smoke-consolidated-acceptance-v3\system_controller.py", line 28, in main
+    client = connection.connect(checked["contract"], password)
+  File "E:\Z博士\diagnostic-work\w1-gpu-smoke-consolidated-acceptance-v3\package\launch_joint_once.py", line 31, in connect
+    client.connect(contract["host"], username=contract["user"], password=password,
+                   look_for_keys=False, allow_agent=False, timeout=timeout, auth_timeout=timeout,
+                   banner_timeout=timeout)
+  File "E:\Z博士\.runtime-tools\w1-ssh-controller-v1\Lib\site-packages\paramiko\client.py", line 384, in connect
+    sock.connect(addr)
+TimeoutError: timed out

@@ -1,0 +1,1 @@
+{"status": "structure_preflight_pass", "manifest": "72d20a69313a521e1fc9fc8bc65d5ac3df971cbac194e0e9ed94b4b6132a6aa5", "hashes": "ee2f3acde833799df174f980edf344eb420cf388fd77c36f4d41b69985c0d30d", "staging_started": false, "worker_started": false, "cuda_initialized": false, "authorization_consumed": false}

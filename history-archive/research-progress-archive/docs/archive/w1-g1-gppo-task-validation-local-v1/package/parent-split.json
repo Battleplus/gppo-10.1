@@ -1,0 +1,301 @@
+{
+  "attempt": "w1-g1-gppo-task-validation-local-v1-once",
+  "current_development_identity_overlap": false,
+  "current_development_structure_overlap": false,
+  "historical_use_elsewhere": "not_proven_absent; only separation from current world-model development/analysis identities is verified",
+  "schema": "w1-g1-gppo-task-parent-split/1.0.0",
+  "selection_rule": "fixed contiguous train-0104..0111 before task outcomes; no replacements",
+  "source_tape_sha256": "f2e6f7b2d7590989e305be5d7c6faf685369e15563a7b2fefb18c0468e7aa510",
+  "task_confirmation": [
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0104|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0104",
+      "scenario_sha256": "6e39e198f77f39d0c551f8bae3f995e50055cbf4ecc6278e4ad40be979920374",
+      "structural_sha256": "fbab3be8a15a7a4efb02597eae7d5989bcb68c72b4fbb2bb56aa900f60c7ba2f",
+      "tape_index": 104
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0105|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0105",
+      "scenario_sha256": "b7a0cbd08f9e9578783a613d48f28f98a1202d3bad5eca76265caa57646adb41",
+      "structural_sha256": "22da2a54481c7b7a6b20a5108ae1bf20a4628d54efcbf8fe3ebcfee4ddaaeebb",
+      "tape_index": 105
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0106|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0106",
+      "scenario_sha256": "3ca4bfd935efe9ceaaf2dd351c97f4214e458ae90ffafaf3447e9568b891aa2c",
+      "structural_sha256": "736df647696dfbd532f2949e43d8dc7afa9d4e4a2110b13f1f3bb8000459bf92",
+      "tape_index": 106
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0107|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0107",
+      "scenario_sha256": "226c0960b0f2263ce8a9400f5f50145a157881458382cea7b6457395bbc26253",
+      "structural_sha256": "06623e266caa5d49c3ac6e4c49e7f1672be2b95d1247fd14b819c1f3e2c03c13",
+      "tape_index": 107
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0108|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0108",
+      "scenario_sha256": "958d46e1d2c3aade84fa3c1de65c5384accd9f8ad9715f0df7d11a99f414aa79",
+      "structural_sha256": "609534cf46ec2fd5eb3ea013d55c5ebc1b1d09706c78117bf5a24605fad32a14",
+      "tape_index": 108
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0109|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0109",
+      "scenario_sha256": "8a07204a707fb4d8d9f6772f4ca72a04828111dcdacb696c1fdcd59ce0299664",
+      "structural_sha256": "e4cfa4fab76efc22014c540dd296d0892b1f817ed6248c2ae0995219ad04edbb",
+      "tape_index": 109
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0110|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0110",
+      "scenario_sha256": "61550c700cd55c75c82b43c36fd8f491217d24988f41f0cecbdbc0874745abde",
+      "structural_sha256": "65f595e4b7cb819154ead170a9c3db5951bd9d6f34200e620387f9d82951bfce",
+      "tape_index": 110
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0111|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0111",
+      "scenario_sha256": "8d9e133a13412561ad9377d3c5b395aca94efbd3a2b89420d1c6850ca32d95be",
+      "structural_sha256": "517887ad8601e05455ea407abaaa5e9c44b32b1cbcfe773a74af1f3b1126c51a",
+      "tape_index": 111
+    }
+  ],
+  "train": [
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0064|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0064",
+      "scenario_sha256": "f8d6341eaf11bf61fef4f1c0c1966d8ad5e13ca292f875211f099f5b9b0b650e",
+      "structural_sha256": "bb6d3f8c2a7a40582ad74a18fedfa45773a16476a684d43c38962ca38c246382",
+      "tape_index": 64
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0065|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0065",
+      "scenario_sha256": "4fba0bff1a8f911323c7970565141b914ef85f715077d46eb308d26f7e14c1cf",
+      "structural_sha256": "7c6b39d867c36777c4fd84e5999d3cfd811f3004963f96c6f9fdf4ebcea31433",
+      "tape_index": 65
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0066|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0066",
+      "scenario_sha256": "9c53284cac590fc7f7a2208dc8997ff9635ac7061c798ca1ee3023d27f2855d4",
+      "structural_sha256": "9ea0428431bd2410c523dcca74938f862c39b30f111af96e83377cd73930df45",
+      "tape_index": 66
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0067|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0067",
+      "scenario_sha256": "a460491c846b8cacd8536249dfb5a0cab8b6df03803bab7b8b165241b149b881",
+      "structural_sha256": "271b2d3745bc143128908271b365e6931a398a95369807c6cebbc4d7e6b57c43",
+      "tape_index": 67
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0068|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0068",
+      "scenario_sha256": "80559a074ebaf3e34c08aac2ebebc61e88254140ed1765be28e606cd95511fa0",
+      "structural_sha256": "578e85182b8eb84aec625f66dec4417677fd4821533c1401f57ed3ecfb7712e0",
+      "tape_index": 68
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0069|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0069",
+      "scenario_sha256": "f518c7f58a88e88a9317a6f044586eaf9887cee63efe81d8994e300bf7914047",
+      "structural_sha256": "41a1ad06b703e3a0585c5f69032c3f52eb7203a87b3de1c9b87337f413a04da1",
+      "tape_index": 69
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0070|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0070",
+      "scenario_sha256": "1d9b0e4b0421cd006e5f54a100112f93d053c7fbffb3b72c4b098468b1ae7020",
+      "structural_sha256": "d30c013f16e0bb28d1ad15e16fa4f623e8eda2849819d11586bdd5cf3af5939b",
+      "tape_index": 70
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0071|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0071",
+      "scenario_sha256": "9880e419512821da56e6d480261d98c7303241a68f76eff97bc6b21a1a73a574",
+      "structural_sha256": "4499084dabb5165d377ef75814000ccb8dc8382b22a392a38e8939050e305e52",
+      "tape_index": 71
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0072|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0072",
+      "scenario_sha256": "a35581e398438ad368210e1dcb3056ed92aeb15fdd8298d3ffe422511c2bb12d",
+      "structural_sha256": "d68354c5fde2400967cd5566b3e1e1dda8f6ca131e596e84a6e7a46d6eed07ed",
+      "tape_index": 72
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0073|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0073",
+      "scenario_sha256": "85061d4a1c195caccfa9d6fb74dc92d569f0a327105b72b9e835fed00f8fa655",
+      "structural_sha256": "8430e0cc9c3e4e1aea1c05ec144c1bcc21cba1751b1f74ac7455d32145451154",
+      "tape_index": 73
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0074|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0074",
+      "scenario_sha256": "ddd1128fbb1e868fae40067f74ff7f0c82d2ad4801e873b9b54aed35bb66e7fe",
+      "structural_sha256": "81305c9a499b0465d3f082f386e225ae2acb5e4f641ab2c270bf33dffe7e3381",
+      "tape_index": 74
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0075|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0075",
+      "scenario_sha256": "d3bed7098e29c5aa17e2f7dfc8b874928172dde7b87962f0a57db15247f7994e",
+      "structural_sha256": "70c205aa2b880425cd37ad2408711745203cad24230e39ac4a5cd681746e0c27",
+      "tape_index": 75
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0076|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0076",
+      "scenario_sha256": "85036724bdb5316675c41f929dfcffbc0d7cf3aab4a752b6b0454a7df78bc2eb",
+      "structural_sha256": "a21b038ef3c65b0e0c9257548e302c53dec06b2347ec95c3e7daae3b4c6f2a2c",
+      "tape_index": 76
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0077|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0077",
+      "scenario_sha256": "65358b75956f78f3b25ae674bf26a1886b6219b2f32d247f9c1e6e0f57d995a5",
+      "structural_sha256": "e5ac08ec32b7d7d7335b4d6afe612f44070739d5ef1fba28fd0774ef4d649be6",
+      "tape_index": 77
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0078|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0078",
+      "scenario_sha256": "6cb09a4427a625afa638b2f6bf96e7f1e056cad96dd231533dd4143175b69dc9",
+      "structural_sha256": "24f623078975fedd5e5077b5509f55b14a1811fc3546303bfaa2f9d9cdc1f877",
+      "tape_index": 78
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0079|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0079",
+      "scenario_sha256": "a500fbdd8f2803291eeb4ce7dae169cacc93d8bdd45e71e99e0da59c8a23e59b",
+      "structural_sha256": "828ea981f65acd8ba3597e6eb345da73561b81d2a4338471e302409b835852fe",
+      "tape_index": 79
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0080|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0080",
+      "scenario_sha256": "b39cc150223579f7fc6e6693705db751ad0351a4e94004f86d82052736e52d2e",
+      "structural_sha256": "dd74fc1156738d5b4388fb566a12ae7af5f84f16ba316381c026ffc2b8ccc228",
+      "tape_index": 80
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0081|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0081",
+      "scenario_sha256": "f4bf7a4a602cb61bb2d5d22c0212feea3640b7028bf44d4db2e77e75b6d1d68a",
+      "structural_sha256": "f562c66ddbb2e628103210ba3549866925f5b1c9f55a50d7b8186e635bce56df",
+      "tape_index": 81
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0082|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0082",
+      "scenario_sha256": "09fe842950276d46866579da7481001b0c6bd6f7fcf4d13e6421a3c958b2ca6a",
+      "structural_sha256": "da86202e1270a4c085b2ccc2e4688968222edc218fd48bd931060b3a225a5938",
+      "tape_index": 82
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0083|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0083",
+      "scenario_sha256": "7c9549e4704a68407c84bfcb573f50bee5610140c35e6521966b8ee7bc479aac",
+      "structural_sha256": "da036498ded94b85e9b0ebac8df312dfff33774a110616fffbc8551c95570d41",
+      "tape_index": 83
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0084|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0084",
+      "scenario_sha256": "23a3d05693eecb1b2600c4e033a1ee8f761de5cf0ed91e21c211a7e584f15a89",
+      "structural_sha256": "97786aa805fa93983d048dbc039f7dad3fa9e59796c6fafe0bc9fcccbb3d9c5a",
+      "tape_index": 84
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0085|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0085",
+      "scenario_sha256": "45dc47458b900567e66ee76ea1b823d0adf12cb18b7e2e29c0fff00838df207b",
+      "structural_sha256": "b09bea8d3a97fc8445ba814b62b94ff0e08ce3cb5dd3bf8d86e957dfb06425f3",
+      "tape_index": 85
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0086|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0086",
+      "scenario_sha256": "0e4953eb1a294aaf0bf9a3f004ed9ce6b5e122a15b3d744b4465eed53a1a9850",
+      "structural_sha256": "924017037d47b7bed579be43dca5ea983889618106caa1e04cf13bda3328d667",
+      "tape_index": 86
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0087|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0087",
+      "scenario_sha256": "b06238b5e964cf54112a962f300752b59c77de60cfaf530716e90ec0a0b77453",
+      "structural_sha256": "fea93a3b7d0835de7708192a26f9226910b947643b4ad7dff67356eae0f1554f",
+      "tape_index": 87
+    }
+  ]
+}

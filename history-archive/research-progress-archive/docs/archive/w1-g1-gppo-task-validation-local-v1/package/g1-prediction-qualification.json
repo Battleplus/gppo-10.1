@@ -1,0 +1,85 @@
+{
+  "G1_gate_pass": true,
+  "G2_gate_pass": false,
+  "frozen_original_gates": {
+    "confirmation_parents": 8,
+    "g1_vs_transparent": {
+      "noninferior_parent_minimum": 6,
+      "positive_improvement_seed_minimum": 2,
+      "regret_improvement_minimum": 0.005
+    },
+    "g2_vs_g1": {
+      "noninferior_parent_minimum": 6,
+      "positive_improvement_seed_minimum": 2,
+      "regret_improvement_minimum": 0.005
+    },
+    "inference": "exploratory within-study held-out parents; report paired parent differences and bootstrap uncertainty; no population efficacy claim",
+    "next_gppo": "separate application only; no branch runs GPPO in this protocol",
+    "schema": "w1-joint-world-model-prospective-gates/1.0.0"
+  },
+  "gate_evidence": {
+    "G1_vs_transparent": {
+      "baseline": "transparent",
+      "candidate": "G1",
+      "candidate_minus_baseline_parent_macro_regret": -0.18303515845909712,
+      "expected_parent_count": 8,
+      "gppo_executed": false,
+      "noninferior_parent_count": 7,
+      "noninferior_parent_minimum": 6,
+      "paired_parent_count": 8,
+      "per_seed_candidate_minus_baseline_parent_macro_regret": {
+        "8201": -0.18303515845909712,
+        "8202": -0.11558194508543239,
+        "8203": -0.18303515845909712
+      },
+      "positive_improvement_seed_count": 3,
+      "positive_improvement_seed_minimum": 2,
+      "reason": "all_frozen_criteria_met",
+      "regret_improvement": 0.18303515845909712,
+      "regret_improvement_minimum": 0.005,
+      "worth_gppo_suggestion": true
+    },
+    "G2_vs_G1": {
+      "baseline": "G1",
+      "candidate": "G2",
+      "candidate_minus_baseline_parent_macro_regret": 0.05038453483721242,
+      "expected_parent_count": 8,
+      "gppo_executed": false,
+      "noninferior_parent_count": 7,
+      "noninferior_parent_minimum": 6,
+      "paired_parent_count": 8,
+      "per_seed_candidate_minus_baseline_parent_macro_regret": {
+        "8201": 0.05046475137351081,
+        "8202": 0.01665724952472374,
+        "8203": 0.05038453483721242
+      },
+      "positive_improvement_seed_count": 0,
+      "positive_improvement_seed_minimum": 2,
+      "reason": "regret_improvement_below_frozen_floor",
+      "regret_improvement": -0.05038453483721242,
+      "regret_improvement_minimum": 0.005,
+      "worth_gppo_suggestion": false
+    }
+  },
+  "interpretation": "G1 ranking benefit versus optimistic ideal-continuation reference selecting NOOP in all eight windows; not strong-rule superiority or GPPO value proof",
+  "macro_regret": {
+    "G1": 0.05096710502402857,
+    "G1_seed_8201": 0.05096710502402857,
+    "G1_seed_8202": 0.11842031839769335,
+    "G1_seed_8203": 0.05096710502402857,
+    "G2": 0.10135163986124099,
+    "G2_seed_8201": 0.10143185639753938,
+    "G2_seed_8202": 0.13507756792241707,
+    "G2_seed_8203": 0.10135163986124099,
+    "transparent": 0.23400226348312572
+  },
+  "new_branch": "historically qualified G1 only; G2 excluded; fresh task evaluation remains unexecuted",
+  "schema": "w1-g1-historical-prediction-qualification/1.0.0",
+  "source_attempt": "w1-task-outcome-g1-g2-joint-local-v1-once",
+  "source_evidence": {
+    "independent-metric-recalculation.json": "0103fc5de0ce094771f53a26706e3cbb807482e72b4a82eb366141f5c8ee9af1",
+    "verified-export/run-once/prediction-metrics.json": "72a84749c63e411507a1192d1f4dcd56edcc509f0cce154774fa6b5eaf6dd0ab",
+    "verified-export/run-once/world-model-training-summary.json": "85d7743217d71ea5e21b7473110cfff9ab87cba7def42719efe20b07af2cbf36"
+  },
+  "source_manifest_sha256": "e08328eeeab23d4cf5d64456f5b7b12d5604b793e56a44963ae233f71f0c590c"
+}

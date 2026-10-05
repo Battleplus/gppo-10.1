@@ -1,0 +1,225 @@
+{
+  "archive_evidence_path": "/mnt/e/Z博士/research-plans/w1-g1-gppo-task-validation-local-v1/controlled-synthetic-task-pipeline-evidence-isolated-20261004",
+  "evidence_tree_manifest_sha256": "4e8ca694741a0b30bab492476e50173b325a8569c4f56c5e949200ac6c0eb356",
+  "loaded_production_source_sha256": {
+    "native/gppo_world/graph5.py": "a4a2c701d8a36306b4e57eb3d24930bae985dea7d11d95afbcdc08968231af09",
+    "native/gppo_world/joint_consequence_baseline.py": "38f6740baabcc856c37c3757797b341b4c22b9d94ebafefa24688293e99b2c37",
+    "native/gppo_world/joint_gppo.py": "3c799cfe12050971e1b11da6b2c04fa6a7c244a36935578861c5db533396f55e",
+    "native/gppo_world/m10_environment.py": "0f4615d11604a7cd1cc74c94f0258dfc6cb59748f64a075276ec90941db094b1",
+    "production_data.py": "f842564d8a9695236119d21ffc293039823ebe0adfa96309d9f1f19a2c7971f9",
+    "production_policy.py": "7f90bade8992df3384a359dfceaade40fecafe7cc3f8002abc8b82b2973b5dbb",
+    "production_world.py": "ddcca48e3867d49d1d858d231dd0412a20d538f39fc2fd21a0bf5ff1638771c0",
+    "runner.py": "fb0cfea7c72aa75fdc7153385478d90b044bd8459449eb64d4e076394c0cf2b4",
+    "runtime_hooks.py": "e7136038c53cbf1463bd009772777590f9fc48068ea54a1e7c4f6c6daf7d4af0",
+    "task_pipeline.py": "6bba96ec95d6c17f9263fa788785c90c90722bba4e128e2bec18fb630761dafc",
+    "w1_graph_jepa.py": "239ff4e78327d1e9d9b7fafad61b4b78e310de1e437758d51ca7290b564a2b63"
+  },
+  "native_evidence_path": "/home/asus/w1-preparation-evidence/controlled-synthetic-task-pipeline-evidence-isolated",
+  "run_provenance": {
+    "driver_exit_code": 1,
+    "first_attempt": {
+      "exit_code": 1,
+      "nine_policy_routes": true,
+      "pipeline_completed": true,
+      "raw_evidence_note": "The first WSL /tmp tree was not copied before the distro session ended and could not be recovered; only the observed command exit and verifier failure list are retained.",
+      "raw_evidence_retained": false,
+      "verification_failure": [
+        "hidden_replay_observations_match_ledger_encode_charges",
+        "reduced_route_budgets"
+      ]
+    },
+    "invocation_argv": [
+      "wsl.exe",
+      "-d",
+      "Ubuntu-24.04",
+      "--exec",
+      "/usr/bin/env",
+      "-i",
+      "PATH=/usr/bin:/bin",
+      "HOME=/home/asus",
+      "TMPDIR=/tmp",
+      "CUDA_VISIBLE_DEVICES=",
+      "OMP_NUM_THREADS=1",
+      "MKL_NUM_THREADS=1",
+      "OPENBLAS_NUM_THREADS=1",
+      "/home/asus/.venvs/w1-light-repaired-fair-rerun-py31116/bin/python",
+      "-I",
+      "-B",
+      "-X",
+      "pycache_prefix=/tmp/w1-task-pipeline-pycache-20261004",
+      "-u",
+      "/mnt/e/Z博士/research-plans/w1-g1-gppo-task-validation-local-v1/run_controlled_synthetic_pipeline.py",
+      "/tmp/w1-task-pipeline-isolated-20261004",
+      "--archive-root",
+      "/mnt/e/Z博士/research-plans/w1-g1-gppo-task-validation-local-v1/controlled-synthetic-task-pipeline-evidence-isolated-20261004"
+    ],
+    "post_run_audit_argv": [
+      "wsl.exe",
+      "-d",
+      "Ubuntu-24.04",
+      "--exec",
+      "/usr/bin/env",
+      "-i",
+      "PATH=/usr/bin:/bin",
+      "HOME=/home/asus",
+      "TMPDIR=/tmp",
+      "/home/asus/.venvs/w1-light-repaired-fair-rerun-py31116/bin/python",
+      "-I",
+      "-B",
+      "-X",
+      "pycache_prefix=/tmp/w1-task-pipeline-pycache-20261004",
+      "-u",
+      "/mnt/e/Z博士/research-plans/w1-g1-gppo-task-validation-local-v1/audit_controlled_synthetic_pipeline.py",
+      "/mnt/e/Z博士/research-plans/w1-g1-gppo-task-validation-local-v1/controlled-synthetic-task-pipeline-evidence-isolated-20261004"
+    ],
+    "post_run_audit_exit_code": 0,
+    "process_accounting": {
+      "capture_status": "last_proc_sample_before_exit",
+      "captured_at_utc": "2026-10-04T05:48:56.380485+00:00",
+      "elapsed_wall_seconds": 643.3899999999994,
+      "pid": 538,
+      "sample_count": 2072,
+      "sampling_interval_seconds": 0.1,
+      "schema": "w1-controlled-synthetic-process-accounting/1.0.0",
+      "self_cpu_seconds": 269.98,
+      "system_cpu_seconds": 21.25,
+      "user_cpu_seconds": 248.73
+    }
+  },
+  "schema": "w1-controlled-synthetic-final-evidence/1.0.0",
+  "verification": {
+    "all_pass": true,
+    "persistent_native_copy_verified": true,
+    "pipeline_checks": {
+      "complete_frozen_task_matrix": true,
+      "eight_parents_three_repeats_all_methods_and_seeds": true,
+      "final_status_records_actual_outcome": true,
+      "hidden_replay_observations_match_ledger_encode_charges": true,
+      "independent_recomputation_complete": true,
+      "ledger_settled_with_expected_work": true,
+      "nine_policy_checkpoints_deserialized_only": true,
+      "nine_policy_routes": true,
+      "pipeline_completed": true,
+      "real_frozen_checkpoint_deserializations_zero": true,
+      "reduced_route_budgets": true,
+      "route_updates_executed": true,
+      "settlement_export_verified": true,
+      "single_cpu_thread_affinity_and_cuda_uninitialized": true,
+      "six_in_memory_world_model_substitutions": true,
+      "synthetic_environment_used": true,
+      "training_and_task_world_model_initial_hashes_match": true,
+      "two_rollout_hidden_replay_groups_per_route": true,
+      "zero_real_environment_constructors": true
+    },
+    "source_provenance_checks": {
+      "all_provenance_checks_pass": true,
+      "environment": "env -i; PATH, HOME, TMPDIR, CUDA_VISIBLE_DEVICES, and single-thread BLAS settings explicitly set",
+      "execution_flags": [
+        "-I",
+        "-B",
+        "-X",
+        "pycache_prefix=/tmp/w1-task-pipeline-pycache-20261004"
+      ],
+      "fixture_python_source_count": 151,
+      "fixture_python_sources_match_final_package": true,
+      "loaded_module_relative_paths": {
+        "gppo_world.graph5": {
+          "final_package_path": "/mnt/e/Z博士/research-plans/w1-g1-gppo-task-validation-local-v1/package/native/gppo_world/graph5.py",
+          "final_package_sha256": "a4a2c701d8a36306b4e57eb3d24930bae985dea7d11d95afbcdc08968231af09",
+          "matches_final_package": true,
+          "relative_path": "native/gppo_world/graph5.py",
+          "staged_fixture_path": "/mnt/e/Z博士/research-plans/w1-g1-gppo-task-validation-local-v1/controlled-synthetic-task-pipeline-evidence-isolated-20261004/fixture-package/native/gppo_world/graph5.py",
+          "staged_fixture_sha256": "a4a2c701d8a36306b4e57eb3d24930bae985dea7d11d95afbcdc08968231af09"
+        },
+        "gppo_world.joint_consequence_baseline": {
+          "final_package_path": "/mnt/e/Z博士/research-plans/w1-g1-gppo-task-validation-local-v1/package/native/gppo_world/joint_consequence_baseline.py",
+          "final_package_sha256": "38f6740baabcc856c37c3757797b341b4c22b9d94ebafefa24688293e99b2c37",
+          "matches_final_package": true,
+          "relative_path": "native/gppo_world/joint_consequence_baseline.py",
+          "staged_fixture_path": "/mnt/e/Z博士/research-plans/w1-g1-gppo-task-validation-local-v1/controlled-synthetic-task-pipeline-evidence-isolated-20261004/fixture-package/native/gppo_world/joint_consequence_baseline.py",
+          "staged_fixture_sha256": "38f6740baabcc856c37c3757797b341b4c22b9d94ebafefa24688293e99b2c37"
+        },
+        "gppo_world.joint_gppo": {
+          "final_package_path": "/mnt/e/Z博士/research-plans/w1-g1-gppo-task-validation-local-v1/package/native/gppo_world/joint_gppo.py",
+          "final_package_sha256": "3c799cfe12050971e1b11da6b2c04fa6a7c244a36935578861c5db533396f55e",
+          "matches_final_package": true,
+          "relative_path": "native/gppo_world/joint_gppo.py",
+          "staged_fixture_path": "/mnt/e/Z博士/research-plans/w1-g1-gppo-task-validation-local-v1/controlled-synthetic-task-pipeline-evidence-isolated-20261004/fixture-package/native/gppo_world/joint_gppo.py",
+          "staged_fixture_sha256": "3c799cfe12050971e1b11da6b2c04fa6a7c244a36935578861c5db533396f55e"
+        },
+        "gppo_world.m10_environment": {
+          "final_package_path": "/mnt/e/Z博士/research-plans/w1-g1-gppo-task-validation-local-v1/package/native/gppo_world/m10_environment.py",
+          "final_package_sha256": "0f4615d11604a7cd1cc74c94f0258dfc6cb59748f64a075276ec90941db094b1",
+          "matches_final_package": true,
+          "relative_path": "native/gppo_world/m10_environment.py",
+          "staged_fixture_path": "/mnt/e/Z博士/research-plans/w1-g1-gppo-task-validation-local-v1/controlled-synthetic-task-pipeline-evidence-isolated-20261004/fixture-package/native/gppo_world/m10_environment.py",
+          "staged_fixture_sha256": "0f4615d11604a7cd1cc74c94f0258dfc6cb59748f64a075276ec90941db094b1"
+        },
+        "production_data": {
+          "final_package_path": "/mnt/e/Z博士/research-plans/w1-g1-gppo-task-validation-local-v1/package/production_data.py",
+          "final_package_sha256": "f842564d8a9695236119d21ffc293039823ebe0adfa96309d9f1f19a2c7971f9",
+          "matches_final_package": true,
+          "relative_path": "production_data.py",
+          "staged_fixture_path": "/mnt/e/Z博士/research-plans/w1-g1-gppo-task-validation-local-v1/controlled-synthetic-task-pipeline-evidence-isolated-20261004/fixture-package/production_data.py",
+          "staged_fixture_sha256": "f842564d8a9695236119d21ffc293039823ebe0adfa96309d9f1f19a2c7971f9"
+        },
+        "production_policy": {
+          "final_package_path": "/mnt/e/Z博士/research-plans/w1-g1-gppo-task-validation-local-v1/package/production_policy.py",
+          "final_package_sha256": "7f90bade8992df3384a359dfceaade40fecafe7cc3f8002abc8b82b2973b5dbb",
+          "matches_final_package": true,
+          "relative_path": "production_policy.py",
+          "staged_fixture_path": "/mnt/e/Z博士/research-plans/w1-g1-gppo-task-validation-local-v1/controlled-synthetic-task-pipeline-evidence-isolated-20261004/fixture-package/production_policy.py",
+          "staged_fixture_sha256": "7f90bade8992df3384a359dfceaade40fecafe7cc3f8002abc8b82b2973b5dbb"
+        },
+        "production_world": {
+          "final_package_path": "/mnt/e/Z博士/research-plans/w1-g1-gppo-task-validation-local-v1/package/production_world.py",
+          "final_package_sha256": "ddcca48e3867d49d1d858d231dd0412a20d538f39fc2fd21a0bf5ff1638771c0",
+          "matches_final_package": true,
+          "relative_path": "production_world.py",
+          "staged_fixture_path": "/mnt/e/Z博士/research-plans/w1-g1-gppo-task-validation-local-v1/controlled-synthetic-task-pipeline-evidence-isolated-20261004/fixture-package/production_world.py",
+          "staged_fixture_sha256": "ddcca48e3867d49d1d858d231dd0412a20d538f39fc2fd21a0bf5ff1638771c0"
+        },
+        "runner": {
+          "final_package_path": "/mnt/e/Z博士/research-plans/w1-g1-gppo-task-validation-local-v1/package/runner.py",
+          "final_package_sha256": "fb0cfea7c72aa75fdc7153385478d90b044bd8459449eb64d4e076394c0cf2b4",
+          "matches_final_package": true,
+          "relative_path": "runner.py",
+          "staged_fixture_path": "/mnt/e/Z博士/research-plans/w1-g1-gppo-task-validation-local-v1/controlled-synthetic-task-pipeline-evidence-isolated-20261004/fixture-package/runner.py",
+          "staged_fixture_sha256": "fb0cfea7c72aa75fdc7153385478d90b044bd8459449eb64d4e076394c0cf2b4"
+        },
+        "runtime_hooks": {
+          "final_package_path": "/mnt/e/Z博士/research-plans/w1-g1-gppo-task-validation-local-v1/package/runtime_hooks.py",
+          "final_package_sha256": "e7136038c53cbf1463bd009772777590f9fc48068ea54a1e7c4f6c6daf7d4af0",
+          "matches_final_package": true,
+          "relative_path": "runtime_hooks.py",
+          "staged_fixture_path": "/mnt/e/Z博士/research-plans/w1-g1-gppo-task-validation-local-v1/controlled-synthetic-task-pipeline-evidence-isolated-20261004/fixture-package/runtime_hooks.py",
+          "staged_fixture_sha256": "e7136038c53cbf1463bd009772777590f9fc48068ea54a1e7c4f6c6daf7d4af0"
+        },
+        "task_pipeline": {
+          "final_package_path": "/mnt/e/Z博士/research-plans/w1-g1-gppo-task-validation-local-v1/package/task_pipeline.py",
+          "final_package_sha256": "6bba96ec95d6c17f9263fa788785c90c90722bba4e128e2bec18fb630761dafc",
+          "matches_final_package": true,
+          "relative_path": "task_pipeline.py",
+          "staged_fixture_path": "/mnt/e/Z博士/research-plans/w1-g1-gppo-task-validation-local-v1/controlled-synthetic-task-pipeline-evidence-isolated-20261004/fixture-package/task_pipeline.py",
+          "staged_fixture_sha256": "6bba96ec95d6c17f9263fa788785c90c90722bba4e128e2bec18fb630761dafc"
+        },
+        "w1_graph_jepa": {
+          "final_package_path": "/mnt/e/Z博士/research-plans/w1-g1-gppo-task-validation-local-v1/package/w1_graph_jepa.py",
+          "final_package_sha256": "239ff4e78327d1e9d9b7fafad61b4b78e310de1e437758d51ca7290b564a2b63",
+          "matches_final_package": true,
+          "relative_path": "w1_graph_jepa.py",
+          "staged_fixture_path": "/mnt/e/Z博士/research-plans/w1-g1-gppo-task-validation-local-v1/controlled-synthetic-task-pipeline-evidence-isolated-20261004/fixture-package/w1_graph_jepa.py",
+          "staged_fixture_sha256": "239ff4e78327d1e9d9b7fafad61b4b78e310de1e437758d51ca7290b564a2b63"
+        }
+      },
+      "loaded_modules_match_final_package": true,
+      "python_executable": "/home/asus/.venvs/w1-light-repaired-fair-rerun-py31116/bin/python",
+      "python_source_count": 151,
+      "python_version": "3.11.16 (main, Sep 24 2026, 17:56:40) [Clang 22.1.3 ]",
+      "schema": "w1-controlled-synthetic-runtime-source-provenance/1.0.0",
+      "source_snapshot_after_sha256": "3c13de1b09ea3cfeba24250d1169d3b6aa88d32e31c737529eb4b870027ba851",
+      "source_snapshot_before_sha256": "3c13de1b09ea3cfeba24250d1169d3b6aa88d32e31c737529eb4b870027ba851",
+      "source_snapshot_unchanged": true
+    }
+  }
+}

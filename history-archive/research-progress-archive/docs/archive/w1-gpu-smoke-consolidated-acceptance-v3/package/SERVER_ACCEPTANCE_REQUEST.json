@@ -1,0 +1,117 @@
+{
+  "acceptance_id": "w1-gpu-smoke-test-consolidated-acceptance-v3",
+  "automatic_retry": false,
+  "engineering_job_id": "w1-gpu-smoke-test-consolidated-acceptance-v3-once",
+  "evidence_directory": "/home/user1/w1-gpu-smoke-test-consolidated-acceptance-v3-evidence",
+  "formal_research_attempt_created": false,
+  "gpu": {
+    "exclusive_allocation_required": false,
+    "free_memory_minimum_bytes": 9663676416,
+    "logical_device": "cuda:0",
+    "peak_allocated_memory_bytes": 8589934592,
+    "physical_device": 1
+  },
+  "implementation_sha256": {
+    "SERVER_ACCEPTANCE_PROTOCOL.md": "7edc754043dd192cdeea380f8e6490fbfddb51a610a7b8d5d1e3afa47893e9af",
+    "acceptance_entry.py": "dfb9eca0843fcd6f41295d262f5a142c62c9aabda6f36542b23a61904df565a8",
+    "bulk_payload_transport.py": "4c2b727686371b0c79d0c57f8e4ea4ee1c1912d0e4dd9ac6a40dd53a7604e031",
+    "isolated_fixture_preflight.py": "1642ccdd3eb8deb9e5ac85eb010fad581dd1dff2a6c1a06dd3d6b297ff7ae973",
+    "launch_joint_once.py": "38c21bed9367454d1f520409a42e623728e4fcfcee733e1735fec33d7b06f119",
+    "launch_server_acceptance.py": "611d90801cae189d39593f989990835f631e3ddffc4c30f1bd06f014d215503c",
+    "smoke_supervisor_entry.py": "29be69d6bf1cc00e92cbdf25f4064d48889b369074167e82e68fcf0dfd122e66",
+    "smoke_worker.py": "f18a129f1f44df5547c6979af96bee25b6d08623f94ced3af3b8de4046b30359",
+    "test_server_acceptance_entry.py": "d5731748dfe41adb3dc5186281f9805da891167c373659ce4b72a6863d4f0ca6",
+    "transport_wall_budget.py": "c366e3acbd31c12255f3327a5f30a48de0c42189fe05bf1a89fd1c5e4dad8cdf"
+  },
+  "limits": {
+    "active_storage_bytes": 536870912,
+    "aggregate_storage_bytes": 1073741824,
+    "calls": {
+      "checkpoint_loads": 12,
+      "checkpoint_writes": 12,
+      "cuda_context_initializations": 1,
+      "model_initializations_or_loads": 24,
+      "world_backward_calls": 18,
+      "world_batch_forwards": 150,
+      "world_optimizer_updates": 18,
+      "world_sample_evaluations": 750
+    },
+    "complete_process_cpu_seconds": 360,
+    "controller_closing_cpu_reserve_seconds": 2,
+    "controller_closing_wall_reserve_seconds": 5,
+    "controller_complete_process_cpu_seconds": 30,
+    "controller_wall_seconds": 30,
+    "cpu_scope_regression_cpu_seconds": 10,
+    "cpu_scope_regression_wall_seconds": 30,
+    "remote_preflight_and_transport_cpu_allowance_seconds": 30,
+    "rss_peak_bytes": 4294967296,
+    "server_complete_process_cpu_seconds": 300,
+    "server_wall_seconds": 150,
+    "supervised_phase_sync_cpu_seconds": 10,
+    "supervised_phase_sync_wall_seconds": 30,
+    "terminalization_reserve_cpu_seconds": 3,
+    "terminalization_reserve_wall_seconds": 5,
+    "wall_seconds": 180
+  },
+  "purpose": "One bounded engineering acceptance of synthetic production data collection, G1/G2 training and prediction wiring on the target server.",
+  "registration_order": [
+    "REGISTERED",
+    "RUNNING with root PID and empty GPU binding",
+    "one cuda_context_initializations event, not a model call",
+    "RUNNING with the root PID bound to physical GPU 1",
+    "SUCCEEDED only after both selected tests, export, and resource checks pass; otherwise FAILED or EXPIRED"
+  ],
+  "remote_execution_root": "/home/user1/w1-gpu-smoke-test-consolidated-acceptance-v3-once",
+  "research_training": false,
+  "resource_measurement_scope": {
+    "root_process_rss": "root process /proc/self/status VmRSS and VmHWM only; sampled checks; excludes descendants"
+  },
+  "runtime": {
+    "cuda": "12.1",
+    "python": "3.10.12",
+    "python_executable": "/home/user1/.venvs/w1-runtime-v1/bin/python",
+    "runtime_identity_sha256": "af32685059d7c3107ab6d0d2f34bc0e9e71c118ec8179d394a216798d7b62cb1",
+    "torch": "2.5.1+cu121"
+  },
+  "schema": "w1-server-synthetic-acceptance-request/1.0.0",
+  "scope": {
+    "cpu_scope_regression": {
+      "device": "cpu",
+      "scope_limit": "bounded CPU accounting arithmetic regression",
+      "test_id": "test_cpu_scope_contract.CpuScopeContractTests.test_monitor_charges_live_delta_and_reaped_short_child_once"
+    },
+    "joint_pipeline": {
+      "device": "cuda:0",
+      "environment_boundary": "bottom environment only; production collector, training, selection, checkpoint restore, prediction, persisted metric recomputation, settlement, and controlled export remain production code",
+      "maximum_epochs": 1,
+      "maximum_train_candidate_rows": 50,
+      "parents": {
+        "model_selection": 2,
+        "prediction_confirmation": 8,
+        "train": 2
+      },
+      "test_id": "test_joint_pipeline.JointProductionPipelineTests.test_actual_collection_training_restore_metrics_ledger_export"
+    },
+    "sequence_world_regression": {
+      "device": "cpu",
+      "maximum_epochs": 1,
+      "maximum_train_candidate_rows": 25,
+      "parents": {
+        "model_selection": 1,
+        "prediction_confirmation": 8,
+        "train": 1
+      },
+      "scope_limit": "direct production_world training, checkpoint, prediction, trace, and metric regression; synthetic input records; does not exercise ProductionDataCollector",
+      "test_id": "test_sequence_world.SequenceWorldIntegrationTests.test_synthetic_cpu_train_checkpoint_restore_and_confirmation_accounting"
+    },
+    "supervised_phase_sync": {
+      "commanded_cpu_work_seconds": 0.09,
+      "device": "cpu",
+      "scope_limit": "production supervisor and BudgetLedger authenticated phase handshakes with synthetic waited CPU children; no research environment or model calls",
+      "synthetic_cpu_subprocesses": 3,
+      "test_id": "test_supervised_phase_integration.SupervisedPhaseIntegrationTests.test_short_subprocesses_and_stage_boundaries_through_real_supervisor"
+    }
+  },
+  "smoke_adapter": true,
+  "status": "NOT_APPROVED"
+}

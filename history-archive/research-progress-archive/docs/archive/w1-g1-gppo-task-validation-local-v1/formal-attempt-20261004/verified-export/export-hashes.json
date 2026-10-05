@@ -1,0 +1,14 @@
+{
+  "authorization-consumed.json": "4841eb60bdeee723d50a3fd2d9b71d84921288ac55d638b66a92cb833568a163",
+  "console.log": "9999e860063254ac5e21f7a9e2501e003d2fe9c3d74ede8734222072e6e491b3",
+  "native-launch.stdout.txt": "14ebdba080894445bff677f38410614ffa70c0f06bafeaf5508d8af6b97210ab",
+  "resource-history.jsonl": "71f3589e1cb111a0c244c92e0deeb954c78b276d9754b694e2cb6b19e51803b4",
+  "run-once/activity.json": "411db5e19e2053ffba02a1e9a193fbe44b0d55eb9c48f2b494bc922eca6d37fe",
+  "run-once/budget.sqlite3": "d9f60defbb885016d57a541996d8abf3c9472d624a0d8a0178b3ba72c42d5104",
+  "run-once/runtime-module-provenance.json": "333f6ae3b77066d3541c110e40d9cf2792590ebbbf09bdd197206033fbd3bf27",
+  "run-once/status.json": "8706d03f29970a7d0e1f7ecc33e9c345f098a5eaa3335bd15fc598faf3e71d87",
+  "run-once/task-input-check.json": "76ccddebc55e48bc66db74dad7b1cfe4ff230dae182a861750e3210910dea9ca",
+  "run-once/worker-phase-accounting.jsonl": "46c915e610aceeaec0d5eb0dddf17a03448a797e6f9a39f9bc9b4d7995107ea4",
+  "supervisor-console.log": "deb9b27761b3012e610faa658c9e159d4de3269cb93f5f028233891e0551de48",
+  "supervisor-status.json": "73ad0e89bc8d00c243798a3f0412469a67636834cfa0d4f300fdbf552a9c27f7"
+}

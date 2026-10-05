@@ -1,0 +1,45 @@
+{
+  "global_wall_limit_seconds": 180,
+  "closing_reserve_seconds": 5,
+  "deadline_reached": false,
+  "elapsed_wall_seconds": 91.26874939999925,
+  "phases": [
+    {
+      "phase": "connect",
+      "wall_seconds": 1.7162230000003547,
+      "elapsed_wall_seconds": 1.7535992999992231,
+      "outcome": "complete"
+    },
+    {
+      "phase": "remote_preflight",
+      "wall_seconds": 15.666322400000354,
+      "elapsed_wall_seconds": 17.419941999999537,
+      "outcome": "complete"
+    },
+    {
+      "phase": "upload",
+      "wall_seconds": 33.93814029999976,
+      "elapsed_wall_seconds": 51.3584093999998,
+      "outcome": "complete"
+    },
+    {
+      "phase": "bootstrap",
+      "wall_seconds": 17.554447000000437,
+      "elapsed_wall_seconds": 69.67400589999943,
+      "outcome": "complete"
+    },
+    {
+      "phase": "remote_acceptance",
+      "wall_seconds": 17.174682400000165,
+      "elapsed_wall_seconds": 86.84938229999989,
+      "outcome": "complete"
+    },
+    {
+      "phase": "download",
+      "wall_seconds": 4.412786500000038,
+      "elapsed_wall_seconds": 91.26858569999968,
+      "outcome": "complete"
+    }
+  ],
+  "enforcement_scope": "own SSH connection timer plus remote alarm; local hashing/OS shutdown are cooperative"
+}

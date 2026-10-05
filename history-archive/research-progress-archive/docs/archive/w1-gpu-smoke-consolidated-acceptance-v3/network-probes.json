@@ -1,0 +1,26 @@
+[
+  {
+    "command": [
+      "E:\\Z\u535a\u58eb\\.runtime-tools\\w1-ssh-controller-v1\\Scripts\\python.exe",
+      "-B",
+      "E:\\Z\u535a\u58eb\\diagnostic-work\\w1-gpu-smoke-consolidated-acceptance-v3\\network_probe.py"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"connected\": false, \"exception_chain\": \"Traceback (most recent call last):\\n  File \\\"E:\\\\Z\\u535a\\u58eb\\\\diagnostic-work\\\\w1-gpu-smoke-consolidated-acceptance-v3\\\\network_probe.py\\\", line 10, in <module>\\n    stream.connect((\\\"172.17.27.173\\\", 22))\\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^\\nTimeoutError: timed out\\n\", \"server\": \"172.17.27.173\", \"port\": 22, \"seconds\": 5.011232400000154}\r\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "wsl.exe",
+      "-d",
+      "Ubuntu-24.04",
+      "--",
+      "python3",
+      "-B",
+      "/mnt/e/Z\u535a\u58eb/diagnostic-work/w1-gpu-smoke-consolidated-acceptance-v3/network_probe.py"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"connected\": false, \"exception_chain\": \"Traceback (most recent call last):\\n  File \\\"/mnt/e/Z\\u535a\\u58eb/diagnostic-work/w1-gpu-smoke-consolidated-acceptance-v3/network_probe.py\\\", line 10, in <module>\\n    stream.connect((\\\"172.17.27.173\\\", 22))\\nTimeoutError: timed out\\n\", \"server\": \"172.17.27.173\", \"port\": 22, \"seconds\": 5.035291276000862}\n",
+    "stderr": "w\u0000s\u0000l\u0000:\u0000 \u0000\ufffdhKm0R \u0000l\u0000o\u0000c\u0000a\u0000l\u0000h\u0000o\u0000s\u0000t\u0000 \u0000\ufffdN\u0006tM\ufffdn\u007f\f\ufffdFO*g\\\ufffd\ufffdP0R \u0000W\u0000S\u0000L\u0000\u00020N\u0000A\u0000T\u0000 \u0000!j\u000f_\u000bN\ufffdv \u0000W\u0000S\u0000L\u0000 \u0000\rN/e\u0001c \u0000l\u0000o\u0000c\u0000a\u0000l\u0000h\u0000o\u0000s\u0000t\u0000 \u0000\ufffdN\u0006t\u00020\r\u0000\n\u0000"
+  }
+]

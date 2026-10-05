@@ -1,0 +1,100 @@
+{
+  "acceptance_id": "w1-gpu-smoke-local-v1",
+  "automatic_retry": false,
+  "engineering_job_id": "w1-gpu-smoke-local-v1-once",
+  "evidence_directory": "/home/asus/w1-gpu-smoke-local-v1/gpu-evidence",
+  "formal_research_attempt_created": false,
+  "gpu": {
+    "desktop_gpu_shared": true,
+    "exclusive_allocation_required": false,
+    "free_memory_minimum_bytes": 4831838208,
+    "logical_device": "cuda:0",
+    "peak_allocated_memory_bytes": 4294967296,
+    "physical_device": 0
+  },
+  "implementation_sha256": {},
+  "limits": {
+    "active_storage_bytes": 536870912,
+    "aggregate_storage_bytes": 1073741824,
+    "calls": {
+      "checkpoint_loads": 12,
+      "checkpoint_writes": 12,
+      "cuda_context_initializations": 1,
+      "model_initializations_or_loads": 24,
+      "world_backward_calls": 18,
+      "world_batch_forwards": 150,
+      "world_optimizer_updates": 18,
+      "world_sample_evaluations": 750
+    },
+    "complete_process_cpu_seconds": 360,
+    "controller_closing_cpu_reserve_seconds": 2,
+    "controller_closing_wall_reserve_seconds": 5,
+    "controller_complete_process_cpu_seconds": 30,
+    "controller_wall_seconds": 30,
+    "cpu_scope_regression_cpu_seconds": 10,
+    "cpu_scope_regression_wall_seconds": 30,
+    "remote_preflight_and_transport_cpu_allowance_seconds": 30,
+    "rss_peak_bytes": 4294967296,
+    "server_complete_process_cpu_seconds": 300,
+    "server_wall_seconds": 150,
+    "supervised_phase_sync_cpu_seconds": 10,
+    "supervised_phase_sync_wall_seconds": 30,
+    "terminalization_reserve_cpu_seconds": 3,
+    "terminalization_reserve_wall_seconds": 5,
+    "wall_seconds": 180
+  },
+  "purpose": "User-authorized local WSL GPU_SMOKE_TEST; synthetic fixtures only",
+  "registration_order": [],
+  "remote_execution_root": "/home/asus/w1-gpu-smoke-local-v1/package",
+  "research_training": false,
+  "resource_measurement_scope": {
+    "root_process_rss": "root process /proc/self/status VmRSS and VmHWM only; sampled checks; excludes descendants"
+  },
+  "runtime": {
+    "cuda": "12.8",
+    "python": "3.11.16",
+    "python_executable": "/home/asus/.venvs/w1-light-repaired-fair-rerun-py31116/bin/python",
+    "torch": "2.7.0+cu128"
+  },
+  "schema": "w1-local-synthetic-acceptance-request/1.0.0",
+  "scope": {
+    "cpu_scope_regression": {
+      "device": "cpu",
+      "scope_limit": "bounded CPU accounting arithmetic regression",
+      "test_id": "test_cpu_scope_contract.CpuScopeContractTests.test_monitor_charges_live_delta_and_reaped_short_child_once"
+    },
+    "joint_pipeline": {
+      "device": "cuda:0",
+      "environment_boundary": "bottom environment only; production collector, training, selection, checkpoint restore, prediction, persisted metric recomputation, settlement, and controlled export remain production code",
+      "maximum_epochs": 1,
+      "maximum_train_candidate_rows": 50,
+      "parents": {
+        "model_selection": 2,
+        "prediction_confirmation": 8,
+        "train": 2
+      },
+      "test_id": "test_joint_pipeline.JointProductionPipelineTests.test_actual_collection_training_restore_metrics_ledger_export"
+    },
+    "sequence_world_regression": {
+      "device": "cpu",
+      "maximum_epochs": 1,
+      "maximum_train_candidate_rows": 25,
+      "parents": {
+        "model_selection": 1,
+        "prediction_confirmation": 8,
+        "train": 1
+      },
+      "scope_limit": "direct production_world training, checkpoint, prediction, trace, and metric regression; synthetic input records; does not exercise ProductionDataCollector",
+      "test_id": "test_sequence_world.SequenceWorldIntegrationTests.test_synthetic_cpu_train_checkpoint_restore_and_confirmation_accounting"
+    },
+    "supervised_phase_sync": {
+      "commanded_cpu_work_seconds": 0.09,
+      "device": "cpu",
+      "scope_limit": "production supervisor and BudgetLedger authenticated phase handshakes with synthetic waited CPU children; no research environment or model calls",
+      "synthetic_cpu_subprocesses": 3,
+      "test_id": "test_supervised_phase_integration.SupervisedPhaseIntegrationTests.test_short_subprocesses_and_stage_boundaries_through_real_supervisor"
+    }
+  },
+  "smoke_adapter": true,
+  "status": "NOT_APPROVED"
+}

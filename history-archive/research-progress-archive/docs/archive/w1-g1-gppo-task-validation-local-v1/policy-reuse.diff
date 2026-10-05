@@ -1,0 +1,1939 @@
+--- E:\Z博士\research-plans\w1-eawm-jepa-world-model-production-repair-v4-e2e-integration-auth-repair-v1\production_policy.py
++++ E:\Z博士\research-plans\w1-g1-gppo-task-validation-local-v1\package\production_policy.py
+@@ -3,6 +3,7 @@
+ 
+ from collections import Counter
+ from dataclasses import dataclass
++import hashlib
+ import json
+ import math
+ from pathlib import Path
+@@ -15,14 +16,53 @@
+ 
+ from infra_io import durable_append_jsonl, durable_atomic_json
+ 
+-POLICY_METHODS = ("G0", "T", "G1", "G2")
++POLICY_METHODS = ("G0", "T", "G1")
+ TASK_METHODS = (*POLICY_METHODS, "H")
+ POLICY_SEEDS = (8301, 8302, 8303)
+-WORLD_MODEL_VARIANTS = ("G1", "G2")
++WORLD_MODEL_VARIANTS = ("G1",)
+ WORLD_MODEL_SEEDS = (8201, 8202, 8203)
+ ACTION_COUNT = 25
+ NOOP_ACTION = 24
+ BASE_CANDIDATE_FEATURES = 17
++
++
++def _canonical_value(value: Any) -> Any:
++    if torch.is_tensor(value):
++        return _canonical_value(value.detach().cpu().tolist())
++    if isinstance(value, Mapping):
++        return {str(key): _canonical_value(item) for key, item in sorted(value.items(), key=lambda pair: str(pair[0]))}
++    if isinstance(value, (list, tuple)):
++        return [_canonical_value(item) for item in value]
++    if hasattr(value, "tolist"):
++        return _canonical_value(value.tolist())
++    if isinstance(value, float) and not math.isfinite(value):
++        raise PolicyProductionError("NONFINITE_CANONICAL_INPUT")
++    if value is None or isinstance(value, (str, bool, int, float)):
++        return value
++    raise PolicyProductionError(f"CANONICAL_INPUT_TYPE_UNSUPPORTED:{type(value).__name__}")
++
++
++def canonical_sha256(value: Any) -> str:
++    payload = json.dumps(_canonical_value(value), ensure_ascii=False, sort_keys=True,
++                         separators=(",", ":"), allow_nan=False).encode("utf-8")
++    return hashlib.sha256(payload).hexdigest()
++
++
++def state_dict_sha256(state_dict: Mapping[str, Any]) -> str:
++    digest = hashlib.sha256()
++    for name, value in sorted(state_dict.items()):
++        if not torch.is_tensor(value):
++            raise PolicyProductionError("CHECKPOINT_STATE_VALUE_NOT_TENSOR")
++        tensor = value.detach().to(device="cpu").contiguous()
++        header = json.dumps({"name": str(name), "dtype": str(tensor.dtype),
++                             "shape": list(tensor.shape)}, sort_keys=True,
++                            separators=(",", ":")).encode("utf-8")
++        digest.update(len(header).to_bytes(8, "big"))
++        digest.update(header)
++        raw = tensor.reshape(-1).view(torch.uint8).numpy().tobytes()
++        digest.update(len(raw).to_bytes(8, "big"))
++        digest.update(raw)
++    return digest.hexdigest()
+ 
+ 
+ class PolicyProductionError(RuntimeError):
+@@ -135,6 +175,8 @@
+     preference_config = matrix.get("preference_configuration")
+     if not isinstance(config, Mapping) or not isinstance(priors, Mapping):
+         raise PolicyProductionError("POLICY_OR_PRIOR_CONFIGURATION_MISSING")
++    if set(priors) != set(POLICY_METHODS) | {"illegal_action_policy"}:
++        raise PolicyProductionError("POLICY_PRIOR_METHOD_SET_MISMATCH")
+     if not isinstance(preference_config, Mapping):
+         raise PolicyProductionError("PREFERENCE_CONFIGURATION_MISSING")
+     steps = int(matrix.get("policy_training_steps_per_method_seed", 0))
+@@ -156,7 +198,7 @@
+         raise PolicyProductionError("POLICY_UPDATE_LEDGER_BUDGET_MISMATCH")
+     expected_priors = {
+         "G0": (False, False, 0.0), "T": (True, False, 0.1),
+-        "G1": (True, True, 0.1), "G2": (True, True, 0.1),
++        "G1": (True, True, 0.1),
+     }
+     for method, expected in expected_priors.items():
+         value = priors.get(method)
+@@ -327,9 +369,15 @@
+         self.parent = str(parent)
+         self.repeat = int(repeat)
+         self.clock = clock
++        self.selector_injected = selector is not None
+         self.selector = selector or (lambda distribution: int(distribution.sample().item()))
+         self.cost_rows: list[dict[str, Any]] = []
+         self.decision_count = 0
++        self.base_argmax_counts: Counter[int] = Counter()
++        self.prior_adjusted_argmax_counts: Counter[int] = Counter()
++        self.argmax_changed_count = 0
++        self.sampled_action_changed_count = 0
++        self.sampled_action_comparison_count = 0
+ 
+     @staticmethod
+     def _residuals(value: Any, expected_actions: torch.Tensor,
+@@ -368,15 +416,19 @@
+         dense[expected_actions] = result.to(device="cpu")
+         return dense
+ 
+-    def _prior(self, observation: Any, inputs: Mapping[str, Any], mask: torch.Tensor) -> tuple[torch.Tensor, int, int]:
++    def _prior(self, observation: Any, inputs: Mapping[str, Any], mask: torch.Tensor) -> tuple[torch.Tensor, int, int, dict[str, Any]]:
+         transparent = torch.zeros(ACTION_COUNT, dtype=torch.float32)
++        transparent_diagnostics: Mapping[str, Any] = {}
+         if self.prior_config["transparent_score"]:
+-            transparent = _finite_tensor(
+-                self.transparent_scorer(observation, inputs), name="transparent_scores",
+-            ).reshape(-1)
++            transparent_result = self.transparent_scorer(observation, inputs)
++            if isinstance(transparent_result, Mapping):
++                transparent_diagnostics = transparent_result.get("components", {})
++                transparent_result = transparent_result.get("scores")
++            transparent = _finite_tensor(transparent_result, name="transparent_scores").reshape(-1)
+             if transparent.shape != (ACTION_COUNT,):
+                 raise PolicyProductionError("TRANSPARENT_SCORE_SHAPE_MISMATCH")
+         residuals = []
++        residual_diagnostics = []
+         candidate_actions = torch.nonzero(
+             mask.reshape(-1).to(dtype=torch.bool, device="cpu"), as_tuple=False,
+         ).flatten().to(dtype=torch.long)
+@@ -391,6 +443,32 @@
+                     candidate_actions, mask.reshape(-1).cpu(),
+                 )
+                 residuals.append(self._residuals(raw, candidate_actions, inputs["preference"]))
++                model_row: dict[str, Any] = {
++                    "world_model_variant": self.method,
++                    "world_model_seed": WORLD_MODEL_SEEDS[POLICY_SEEDS.index(self.seed)],
++                    "candidate_actions": candidate_actions.tolist(),
++                }
++                if isinstance(raw, Mapping) and "outcomes" in raw:
++                    outcomes = _finite_tensor(raw["outcomes"], name="world_outcomes")
++                    if outcomes.shape != (int(candidate_actions.numel()), 6):
++                        raise PolicyProductionError("WORLD_OUTCOME_SHAPE_MISMATCH")
++                    model_row["raw_six_dimensional_residuals"] = {
++                        str(int(action)): vector
++                        for action, vector in zip(candidate_actions.tolist(), outcomes.detach().cpu().tolist())
++                    }
++                    model_row["utility_residuals"] = {
++                        str(int(action)): float(residuals[-1][int(action)])
++                        for action in candidate_actions.tolist()
++                    }
++                elif isinstance(raw, Mapping) and "utility_residuals" in raw:
++                    raw_residuals = _finite_tensor(raw["utility_residuals"], name="world_utility_residual").reshape(-1)
++                    if raw_residuals.shape != (int(candidate_actions.numel()),):
++                        raise PolicyProductionError("WORLD_RESIDUAL_SHAPE_MISMATCH")
++                    model_row["utility_residuals"] = {
++                        str(int(action)): float(value)
++                        for action, value in zip(candidate_actions.tolist(), raw_residuals.detach().cpu().tolist())
++                    }
++                residual_diagnostics.append(model_row)
+                 forwards += 1
+                 sample_evaluations += int(candidate_actions.numel())
+         score = transparent
+@@ -401,13 +479,30 @@
+         if not bool(torch.isfinite(score[legal]).all()):
+             raise PolicyProductionError("LEGAL_PRIOR_SCORE_INVALID")
+         score[~legal] = 0.0
+-        return score, forwards, sample_evaluations
++        diagnostics = {
++            "transparent_horizon_components": _canonical_value(transparent_diagnostics),
++            "world_model_predictions": residual_diagnostics,
++            "residual_utility_by_action": {
++                str(int(action)): float(torch.stack(residuals).mean(dim=0)[int(action)])
++                for action in candidate_actions.tolist()
++            } if residuals else {},
++            "final_prior_by_action": {str(int(action)): float(score[int(action)])
++                                      for action in candidate_actions.tolist()},
++        }
++        return score, forwards, sample_evaluations, diagnostics
+ 
+     def select(self, observation: Any, *, decision_step: int,
+-               hidden: torch.Tensor | None = None) -> PolicyDecision:
++               hidden: torch.Tensor | None = None,
++               clock_start: tuple[float, float] | None = None) -> PolicyDecision:
+         self.decision_count += 1
+-        wall_started = self.clock.perf_counter()
+-        cpu_started = self.clock.process_time()
++        if clock_start is None:
++            wall_started = self.clock.perf_counter()
++            cpu_started = self.clock.process_time()
++        else:
++            if (not isinstance(clock_start, (tuple, list)) or len(clock_start) != 2
++                    or not all(math.isfinite(float(value)) for value in clock_start)):
++                raise PolicyProductionError("DECISION_CLOCK_START_INVALID")
++            wall_started, cpu_started = map(float, clock_start)
+         inputs = self.input_builder(observation)
+         required = {"obs_tensor", "preference", "candidate_features", "mask"}
+         missing = required.difference(inputs)
+@@ -428,23 +523,45 @@
+         if candidate_features.shape != (1, ACTION_COUNT, BASE_CANDIDATE_FEATURES):
+             raise PolicyProductionError("BASE_CANDIDATE_FEATURE_SHAPE_MISMATCH")
+         candidate_count = int(mask.sum().item())
+-        encoded = self.calls.call(
+-            "model", f"{self.method.lower()}_policy_encode",
+-            {"encode_sample_evaluations": 1}, self.policy.base.encode, obs_tensor, hidden,
+-        )
+-        if not isinstance(encoded, (tuple, list)) or len(encoded) != 3:
+-            raise PolicyProductionError("POLICY_ENCODER_OUTPUT_INVALID")
+-        features, pair_messages, next_hidden = encoded
+-        prior, world_forwards, world_samples = self._prior(observation, inputs, mask)
+-        augmented = augment_candidate_features(candidate_features, prior.unsqueeze(0)).to(features.device)
+-        preference = preference.to(features.device)
+-        mask = mask.to(features.device)
+-        evaluated = self.calls.call(
+-            "model", f"{self.method.lower()}_policy_action_select",
+-            {"actor_sample_evaluations": 1}, self.policy.evaluate_encoded,
+-            features, pair_messages, preference, augmented, mask,
+-        )
++        with torch.no_grad():
++            encoded = self.calls.call(
++                "model", f"{self.method.lower()}_policy_encode",
++                {"encode_sample_evaluations": 1}, self.policy.base.encode, obs_tensor, hidden,
++            )
++            if not isinstance(encoded, (tuple, list)) or len(encoded) != 3:
++                raise PolicyProductionError("POLICY_ENCODER_OUTPUT_INVALID")
++            features, pair_messages, next_hidden = encoded
++            prior, world_forwards, world_samples, prior_diagnostics = self._prior(observation, inputs, mask)
++            augmented = augment_candidate_features(candidate_features, prior.unsqueeze(0)).to(features.device)
++            preference = preference.to(features.device)
++            mask = mask.to(features.device)
++            evaluated = self.calls.call(
++                "model", f"{self.method.lower()}_policy_action_select",
++                {"actor_sample_evaluations": 1}, self.policy.evaluate_encoded,
++                features, pair_messages, preference, augmented, mask,
++            )
++        legal = mask[0].to(dtype=torch.bool)
++        base_argmax_action = int(evaluated["base_logits"][0].masked_fill(~legal, -torch.inf).argmax().item())
++        prior_adjusted_argmax_action = int(evaluated["final_logits"][0].argmax().item())
++        prior_changed = base_argmax_action != prior_adjusted_argmax_action
++        self.base_argmax_counts[base_argmax_action] += 1
++        self.prior_adjusted_argmax_counts[prior_adjusted_argmax_action] += 1
++        self.argmax_changed_count += int(prior_changed)
++        sampled_action_change_evaluated = not self.selector_injected
++        selected_action_without_prior = None
++        if sampled_action_change_evaluated:
++            pre_selection_rng_state = torch.get_rng_state()
+         action = int(self.selector(evaluated["distribution"]))
++        if sampled_action_change_evaluated:
++            post_selection_rng_state = torch.get_rng_state()
++            try:
++                torch.set_rng_state(pre_selection_rng_state)
++                no_prior_logits = evaluated["base_logits"].masked_fill(~mask, -torch.inf)
++                selected_action_without_prior = int(Categorical(logits=no_prior_logits).sample()[0].item())
++            finally:
++                torch.set_rng_state(post_selection_rng_state)
++            self.sampled_action_comparison_count += 1
++            self.sampled_action_changed_count += int(selected_action_without_prior != action)
+         if action < 0 or action >= ACTION_COUNT or not bool(mask[0, action]):
+             raise PolicyProductionError("POLICY_SELECTED_ILLEGAL_ACTION")
+         log_probability = float(evaluated["distribution"].log_prob(
+@@ -456,24 +573,79 @@
+         wall_seconds = float(self.clock.perf_counter() - wall_started)
+         if not math.isfinite(cpu_seconds) or not math.isfinite(wall_seconds) or cpu_seconds < 0 or wall_seconds < 0:
+             raise PolicyProductionError("DECISION_CLOCK_INVALID")
++        legal_actions = torch.nonzero(mask[0], as_tuple=False).flatten().detach().cpu().tolist()
++        has_non_noop_candidate = any(int(value) != NOOP_ACTION for value in legal_actions)
++        g1_cost_eligible = bool(self.method == "G1" and has_non_noop_candidate and world_forwards > 0)
++        route_identity = observation.get("decision_identity", {}) if isinstance(observation, Mapping) else {}
++        if not isinstance(route_identity, Mapping):
++            raise PolicyProductionError("DECISION_ROUTE_IDENTITY_INVALID")
++        history_schema = observation.get("public_history_schema") if isinstance(observation, Mapping) else None
++        history_state = observation.get("public_history") if isinstance(observation, Mapping) else None
++        history_identity = None if history_state is None else {
++            "schema": history_schema, "sha256": canonical_sha256(history_state),
++        }
++        public_input_sha256 = canonical_sha256({
++            "inputs": inputs,
++            "public_history_schema": history_schema,
++            "public_history": history_state,
++            "public_entity_ids": observation.get("public_entity_ids") if isinstance(observation, Mapping) else None,
++        })
++        entity_ids = observation.get("public_entity_ids", {}) if isinstance(observation, Mapping) else {}
++        uav_ids, task_ids = tuple(entity_ids.get("uavs", ())), tuple(entity_ids.get("tasks", ()))
++        legal_candidate_identities = []
++        for legal_action in legal_actions:
++            if int(legal_action) == NOOP_ACTION:
++                legal_candidate_identities.append({"action_id": NOOP_ACTION, "candidate_id": "NOOP"})
++                continue
++            uav_index, task_index = divmod(int(legal_action), 6)
++            if uav_index >= len(uav_ids) or task_index >= len(task_ids):
++                raise PolicyProductionError("LEGAL_CANDIDATE_PUBLIC_IDENTITY_MISSING")
++            legal_candidate_identities.append({
++                "action_id": int(legal_action),
++                "candidate_id": f"{uav_ids[uav_index]}|{task_ids[task_index]}",
++                "uav_id": str(uav_ids[uav_index]), "task_id": str(task_ids[task_index]),
++            })
+         cost = {
+             "method": self.method, "parent": self.parent, "repeat": self.repeat,
+             "seed": self.seed, "decision_step": int(decision_step),
+             "candidate_count": candidate_count, "cpu_seconds": cpu_seconds,
+             "wall_seconds": wall_seconds, "world_model_forwards": world_forwards,
+             "world_model_sample_evaluations": world_samples,
+-            "cost_scope": "features + world-model forwards + ensemble + policy logits + action selection",
++            "selected_action": action, "noop_selected": action == NOOP_ACTION,
++            "has_non_noop_candidate": has_non_noop_candidate,
++            "g1_cost_eligible": g1_cost_eligible,
++            "sampled_action_change_evaluated": sampled_action_change_evaluated,
++            "policy_sampling_key": route_identity.get("policy_sampling_key"),
++            "policy_sampling_seed": route_identity.get("policy_sampling_seed"),
++            "cost_scope": "shared public preparation/history + features + world-model forwards + ensemble + policy logits + action selection",
+         }
+         self.cost_rows.append(cost)
+         trace = {
+             "method": self.method, "seed": self.seed, "decision_step": int(decision_step),
+-            "legal_actions": torch.nonzero(mask[0], as_tuple=False).flatten().detach().cpu().tolist(),
++            "parent": route_identity.get("parent", self.parent),
++            "repeat": route_identity.get("repeat", self.repeat),
++            "exogenous_key": route_identity.get("exogenous_key"),
++            "scenario_id": route_identity.get("scenario_id"),
++            "policy_sampling_key": route_identity.get("policy_sampling_key"),
++            "policy_sampling_seed": route_identity.get("policy_sampling_seed"),
++            "public_input_sha256": public_input_sha256,
++            "public_history_identity": history_identity,
++            "legal_actions": legal_actions,
++            "legal_candidate_identities": legal_candidate_identities,
+             "candidate_count": candidate_count,
+             "base_logits": evaluated["base_logits"][0].detach().cpu().tolist(),
+             "prior_logits": evaluated["prior_logits"][0].detach().cpu().tolist(),
+             "final_logits": [float(x) if math.isfinite(float(x)) else None
+                              for x in evaluated["final_logits"][0].detach().cpu().tolist()],
++            "base_argmax_action": base_argmax_action,
++            "prior_adjusted_argmax_action": prior_adjusted_argmax_action,
++            "prior_changed": prior_changed,
++            "argmax_changed": prior_changed,
++            "selected_action_without_prior_same_rng": selected_action_without_prior,
++            "sampled_action_change_evaluated": sampled_action_change_evaluated,
++            "action_probabilities": evaluated["probabilities"][0].detach().cpu().tolist(),
+             "selected_action": action,
++            **prior_diagnostics,
+         }
+         values = evaluated.get("state_values", evaluated.get("critic_values"))
+         if values is None:
+@@ -482,6 +654,25 @@
+         if values.shape != (2,):
+             raise PolicyProductionError("POLICY_STATE_VALUE_SHAPE_MISMATCH")
+         return PolicyDecision(action, log_probability, augmented, next_hidden, trace, cost, values)
++
++    def decision_summary(self) -> dict[str, Any]:
++        return {
++            "raw_decision_count": self.decision_count,
++            "base_argmax_action_counts": {
++                str(key): value for key, value in sorted(self.base_argmax_counts.items())
++            },
++            "prior_adjusted_argmax_action_counts": {
++                str(key): value for key, value in sorted(self.prior_adjusted_argmax_counts.items())
++            },
++            "argmax_changed_count": self.argmax_changed_count,
++            "sampled_action_changed_count": self.sampled_action_changed_count,
++            "sampled_action_comparison_count": self.sampled_action_comparison_count,
++            "sampled_action_comparison_status": (
++                "evaluated" if self.sampled_action_comparison_count == self.decision_count
++                else "partially_evaluated" if self.sampled_action_comparison_count
++                else "not_evaluated"
++            ),
++        }
+ 
+     def bootstrap_value(self, observation: Any, *, hidden: torch.Tensor | None = None) -> torch.Tensor:
+         """Evaluate V(s,p) at a rollout boundary without selecting an action.
+@@ -505,26 +696,27 @@
+             mask = mask.unsqueeze(0)
+         if mask.shape != (1, ACTION_COUNT) or not bool(mask.any()):
+             raise PolicyProductionError("BOOTSTRAP_LEGAL_MASK_INVALID")
+-        encoded = self.calls.call(
+-            "model", f"{self.method.lower()}_bootstrap_encode",
+-            {"encode_sample_evaluations": 1}, self.policy.base.encode, obs_tensor, hidden,
+-        )
+-        if not isinstance(encoded, (tuple, list)) or len(encoded) != 3:
+-            raise PolicyProductionError("BOOTSTRAP_ENCODER_OUTPUT_INVALID")
+-        features, pair_messages, _ = encoded
+-        base_candidates = torch.zeros(
+-            (1, ACTION_COUNT, BASE_CANDIDATE_FEATURES),
+-            dtype=features.dtype, device=features.device,
+-        )
+-        augmented = augment_candidate_features(
+-            base_candidates, torch.zeros((1, ACTION_COUNT), dtype=features.dtype, device=features.device),
+-        )
+-        evaluated = self.calls.call(
+-            "model", f"{self.method.lower()}_bootstrap_value",
+-            {"actor_sample_evaluations": 1}, self.policy.evaluate_encoded,
+-            features, pair_messages, preference.to(features.device),
+-            augmented, mask.to(features.device),
+-        )
++        with torch.no_grad():
++            encoded = self.calls.call(
++                "model", f"{self.method.lower()}_bootstrap_encode",
++                {"encode_sample_evaluations": 1}, self.policy.base.encode, obs_tensor, hidden,
++            )
++            if not isinstance(encoded, (tuple, list)) or len(encoded) != 3:
++                raise PolicyProductionError("BOOTSTRAP_ENCODER_OUTPUT_INVALID")
++            features, pair_messages, _ = encoded
++            base_candidates = torch.zeros(
++                (1, ACTION_COUNT, BASE_CANDIDATE_FEATURES),
++                dtype=features.dtype, device=features.device,
++            )
++            augmented = augment_candidate_features(
++                base_candidates, torch.zeros((1, ACTION_COUNT), dtype=features.dtype, device=features.device),
++            )
++            evaluated = self.calls.call(
++                "model", f"{self.method.lower()}_bootstrap_value",
++                {"actor_sample_evaluations": 1}, self.policy.evaluate_encoded,
++                features, pair_messages, preference.to(features.device),
++                augmented, mask.to(features.device),
++            )
+         values = evaluated.get("state_values", evaluated.get("critic_values"))
+         if values is None:
+             raise PolicyProductionError("BOOTSTRAP_STATE_VALUE_MISSING")
+@@ -547,6 +739,17 @@
+ 
+ def _checkpoint_path(output: Path | None, method: str, seed: int) -> str:
+     return f"{method}-seed-{seed}" if output is None else str(output / "policy-checkpoints" / f"{method}-seed-{seed}.pt")
++
++
++def _file_sha256(path: str | Path) -> str | None:
++    target = Path(path)
++    if not target.is_file():
++        return None
++    digest = hashlib.sha256()
++    with target.open("rb") as stream:
++        for block in iter(lambda: stream.read(1024 * 1024), b""):
++            digest.update(block)
++    return digest.hexdigest()
+ 
+ 
+ def train_policy_routes(*, matrix: Mapping[str, Any], request: Mapping[str, Any], ledger: Any,
+@@ -560,19 +763,29 @@
+                         transparent_scorer: Callable[[Any, Mapping[str, Any]], Any] | None,
+                         world_predictor: Callable[[str, Any, Any, torch.Tensor, torch.Tensor], Any] | None,
+                         output_dir: str | Path | None = None, clock: Any = time) -> dict[str, Any]:
+-    """Run the frozen 4-method × 3-seed policy stage through supplied native ops."""
++    """Run the frozen 3-policy-method × 3-seed stage through supplied native ops."""
+     schedule = policy_schedule(matrix, request)
+     calls = CallAccounting(ledger, boundary)
+     output = Path(output_dir) if output_dir is not None else None
+     if output is not None:
+         output.mkdir(parents=True, exist_ok=True)
+     frozen_models: dict[tuple[str, int], Any] = {}
++    world_model_hashes: dict[tuple[str, int], str] = {}
+     for variant in WORLD_MODEL_VARIANTS:
+         for wm_seed in WORLD_MODEL_SEEDS:
+-            frozen_models[(variant, wm_seed)] = calls.call(
++            model = calls.call(
+                 "checkpoint", f"load_frozen_world_model:{variant}:{wm_seed}",
+-                {"model_initializations_or_loads": 1}, world_model_loader, variant, wm_seed,
++                {"checkpoint_loads": 1, "model_initializations_or_loads": 1},
++                world_model_loader, variant, wm_seed,
+             )
++            if not isinstance(model, nn.Module):
++                raise PolicyProductionError("WORLD_MODEL_LOADER_MUST_RETURN_MODULE")
++            model.eval()
++            model.requires_grad_(False)
++            if model.training or any(parameter.requires_grad for parameter in model.parameters()):
++                raise PolicyProductionError("FROZEN_WORLD_MODEL_STATE_INVALID")
++            frozen_models[(variant, wm_seed)] = model
++            world_model_hashes[(variant, wm_seed)] = state_dict_sha256(model.state_dict())
+     routes: list[dict[str, Any]] = []
+     policies: dict[tuple[str, int], PriorConditionedPolicy] = {}
+     checkpoint_paths: dict[tuple[str, int], str] = {}
+@@ -612,6 +825,7 @@
+             return calls.call(
+                 "optimizer", f"ppo_update:{_route.method}:{_route.seed}",
+                 {"policy_optimizer_updates": 1,
++                 "policy_backward_calls": 1,
+                  "encode_sample_evaluations": len(transitions),
+                  "actor_sample_evaluations": len(transitions)},
+                 ppo_update_fn, _policy, transitions, _optimizer,
+@@ -639,6 +853,10 @@
+         )
+         if saved is not None:
+             checkpoint = str(saved)
++        checkpoint_file_sha256 = _file_sha256(checkpoint)
++        checkpoint_state_digest = state_dict_sha256(policy.base.state_dict())
++        if checkpoint_file_sha256 is None:
++            raise PolicyProductionError("POLICY_CHECKPOINT_FILE_MISSING_AFTER_SAVE")
+         row = {
+             "method": route.method, "seed": route.seed,
+             "world_model_variant": route.world_model_variant,
+@@ -646,18 +864,55 @@
+             "training_steps": route.steps, "optimizer_updates": route.optimizer_updates,
+             "rollout_steps": route.rollout_steps,
+             "updates_per_rollout": schedule.updates_per_rollout,
+-            "checkpoint": checkpoint, "summary": dict(summary),
++            "checkpoint": checkpoint,
++            "checkpoint_sha256": checkpoint_file_sha256,
++            "checkpoint_state_sha256": checkpoint_state_digest,
++            "summary": {key: value for key, value in summary.items()
++                        if key not in {"decision_traces", "ppo_update_traces"}},
++            "ppo_update_count": len(summary.get("ppo_update_traces", ())),
+         }
+         routes.append(row)
+         policies[(route.method, route.seed)] = policy
+         checkpoint_paths[(route.method, route.seed)] = checkpoint
+         if output is not None:
++            update_traces = summary.get("ppo_update_traces", ())
++            if not isinstance(update_traces, Sequence):
++                raise PolicyProductionError("PPO_UPDATE_TRACES_INVALID")
++            for trace in update_traces:
++                if not isinstance(trace, Mapping) or not isinstance(trace.get("metrics"), Mapping):
++                    raise PolicyProductionError("PPO_UPDATE_TRACE_INVALID")
++                durable_append_jsonl(output / "policy-update-traces.jsonl", trace)
++            decision_traces = summary.get("decision_traces", ())
++            if not isinstance(decision_traces, Sequence):
++                raise PolicyProductionError("POLICY_DECISION_TRACES_INVALID")
++            for trace in decision_traces:
++                if not isinstance(trace, Mapping):
++                    raise PolicyProductionError("POLICY_DECISION_TRACE_INVALID")
++                durable_append_jsonl(output / "policy-training-traces.jsonl", trace)
+             durable_append_jsonl(output / "policy-training-routes.jsonl", row)
+     expected = {(method, seed) for method in POLICY_METHODS for seed in POLICY_SEEDS}
+-    if set(policies) != expected or len(routes) != 12:
++    if set(policies) != expected or len(routes) != 9:
+         raise PolicyProductionError("POLICY_TRAINING_ROUTE_SET_MISMATCH")
++    final_world_model_hashes = {
++        key: state_dict_sha256(model.state_dict()) for key, model in frozen_models.items()
++    }
++    world_model_evidence = [
++        {"variant": variant, "seed": seed,
++         "initial_state_sha256": world_model_hashes[(variant, seed)],
++         "final_state_sha256": final_world_model_hashes[(variant, seed)],
++         "unchanged": world_model_hashes[(variant, seed)] == final_world_model_hashes[(variant, seed)]}
++        for variant, seed in sorted(world_model_hashes)
++    ]
++    if any(not row["unchanged"] for row in world_model_evidence):
++        raise PolicyProductionError("FROZEN_WORLD_MODEL_STATE_CHANGED_DURING_POLICY_TRAINING")
++    if output is not None:
++        durable_atomic_json(output / "frozen-world-model-state.json", {
++            "schema": "w1-g1-frozen-world-model-state/1.0.0",
++            "models": world_model_evidence,
++        })
+     return {"routes": routes, "policies": policies, "checkpoints": checkpoint_paths,
+             "frozen_world_models": frozen_models, "resource_amounts": calls.snapshot(),
++            "frozen_world_model_state": world_model_evidence,
+             "route_count": len(routes)}
+ 
+ 
+@@ -675,6 +930,7 @@
+     task_preference: tuple[float, float]
+     utility_discount: float
+     task_component_scale: float
++    clock: Any = time
+ 
+     def reset_environment(self, operation: Callable[..., Any], *args: Any, **kwargs: Any) -> Any:
+         return self.calls.call("environment", f"task_reset:{self.method}:{self.parent}:{self.repeat}",
+@@ -719,17 +975,34 @@
+ def summarize_decision_costs(cost_rows: Sequence[Mapping[str, Any]],
+                              units: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
+     result: dict[str, Any] = {"by_method": {}, "by_method_parent_repeat": {}}
+-    for method in POLICY_METHODS:
++    for method in TASK_METHODS:
+         selected = [row for row in cost_rows if row.get("method") == method]
++        non_noop_opportunities = sum(bool(row.get("has_non_noop_candidate", int(row.get("candidate_count", 1)) > 1))
++                                     for row in selected)
++        world_forward_decisions = sum(int(row.get("world_model_forwards", 0)) > 0 for row in selected)
++        eligible_decisions = sum(bool(row.get("g1_cost_eligible", False)) for row in selected)
+         if selected:
+             result["by_method"][method] = {
+                 "status": "evaluated", "sample_count": len(selected),
+                 "cpu_mean_ms": 1000.0 * sum(float(row["cpu_seconds"]) for row in selected) / len(selected),
+                 "wall_p95_ms": 1000.0 * _nearest_rank_p95([float(row["wall_seconds"]) for row in selected]),
++                "noop_selected_count": sum(bool(row.get("noop_selected", row.get("selected_action") == NOOP_ACTION)) for row in selected),
++                "world_model_forwards": sum(int(row.get("world_model_forwards", 0)) for row in selected),
++                "world_model_sample_evaluations": sum(int(row.get("world_model_sample_evaluations", 0)) for row in selected),
++                "non_noop_candidate_decision_count": non_noop_opportunities,
++                "world_model_forward_decision_count": world_forward_decisions,
++                "g1_cost_eligible_decision_count": eligible_decisions,
++                "g1_cost_eligible": bool(method == "G1" and eligible_decisions > 0),
+             }
+         else:
+             result["by_method"][method] = {"status": "not_evaluated", "sample_count": 0,
+-                                            "cpu_mean_ms": None, "wall_p95_ms": None}
++                                            "cpu_mean_ms": None, "wall_p95_ms": None,
++                                            "noop_selected_count": 0, "world_model_forwards": 0,
++                                            "world_model_sample_evaluations": 0,
++                                            "non_noop_candidate_decision_count": 0,
++                                            "world_model_forward_decision_count": 0,
++                                            "g1_cost_eligible_decision_count": 0,
++                                            "g1_cost_eligible": False}
+         for unit in units:
+             parent, repeat = str(unit["parent"]), int(unit["repeat"])
+             group = [row for row in selected if row.get("parent") == parent and int(row.get("repeat", -1)) == repeat]
+@@ -739,92 +1012,253 @@
+                     "status": "evaluated", "sample_count": len(group),
+                     "cpu_mean_ms": 1000.0 * sum(float(row["cpu_seconds"]) for row in group) / len(group),
+                     "wall_p95_ms": 1000.0 * _nearest_rank_p95([float(row["wall_seconds"]) for row in group]),
++                    "noop_selected_count": sum(bool(row.get("noop_selected", row.get("selected_action") == NOOP_ACTION)) for row in group),
++                    "world_model_forwards": sum(int(row.get("world_model_forwards", 0)) for row in group),
++                    "world_model_sample_evaluations": sum(int(row.get("world_model_sample_evaluations", 0)) for row in group),
++                    "non_noop_candidate_decision_count": sum(bool(row.get("has_non_noop_candidate", int(row.get("candidate_count", 1)) > 1)) for row in group),
++                    "world_model_forward_decision_count": sum(int(row.get("world_model_forwards", 0)) > 0 for row in group),
++                    "g1_cost_eligible_decision_count": sum(bool(row.get("g1_cost_eligible", False)) for row in group),
++                    "g1_cost_eligible": bool(method == "G1" and any(bool(row.get("g1_cost_eligible", False)) for row in group)),
+                 }
+             else:
+                 result["by_method_parent_repeat"][key] = {
+                     "status": "not_evaluated", "sample_count": 0,
+                     "cpu_mean_ms": None, "wall_p95_ms": None,
++                    "noop_selected_count": 0, "world_model_forwards": 0,
++                    "world_model_sample_evaluations": 0,
++                    "non_noop_candidate_decision_count": 0,
++                    "world_model_forward_decision_count": 0,
++                    "g1_cost_eligible_decision_count": 0,
++                    "g1_cost_eligible": False,
+                 }
+     return result
+ 
+ 
+ def recompute_task_metrics(episodes: Sequence[Mapping[str, Any]],
+-                           units: Sequence[Mapping[str, Any]]) -> dict[str, Any]:
+-    """Recompute task utility at the parent level without counting seeds as parents."""
++                           units: Sequence[Mapping[str, Any]], *,
++                           task_preference: Sequence[float] = (0.8, 0.2),
++                           utility_discount: float = 0.99,
++                           task_component_scale: float = 0.5) -> dict[str, Any]:
++    """Recompute paired G1 utility contrasts while keeping unknowns explicit."""
++    preference = tuple(float(value) for value in task_preference)
++    if (len(preference) != 2 or not all(math.isfinite(value) and value >= 0 for value in preference)
++            or abs(sum(preference) - 1.0) > 1e-8 or not math.isfinite(utility_discount)
++            or not 0.0 <= utility_discount <= 1.0 or not math.isfinite(task_component_scale)
++            or task_component_scale < 0):
++        raise PolicyProductionError("TASK_UTILITY_CONFIGURATION_INVALID")
++    comparisons = {"G0": "g1_minus_g0", "T": "g1_minus_t", "H": "g1_minus_h"}
++
++    def mean_known(values: Sequence[float | None]) -> tuple[float | None, int]:
++        known = [float(value) for value in values if value is not None]
++        if any(not math.isfinite(value) for value in known):
++            raise PolicyProductionError("TASK_METRIC_VALUE_NONFINITE")
++        return (sum(known) / len(known), len(known)) if known else (None, 0)
++
+     unit_rows: list[dict[str, Any]] = []
++    expected_routes = {(method, seed) for method in POLICY_METHODS for seed in POLICY_SEEDS}
+     for unit in units:
+         parent, repeat = str(unit["parent"]), int(unit["repeat"])
+         selected = [row for row in episodes
+                     if str(row.get("parent")) == parent and int(row.get("repeat", -1)) == repeat]
+-        h_rows = [row for row in selected if row.get("method") == "H"]
+-        method_rows = {method: [row for row in selected if row.get("method") == method]
+-                       for method in POLICY_METHODS}
+-        if len(h_rows) != 1 or any(len(rows) != len(POLICY_SEEDS) for rows in method_rows.values()):
++        route_rows: dict[tuple[str, int | None], Mapping[str, Any]] = {}
++        for row in selected:
++            method = str(row.get("method"))
++            seed = None if method == "H" else int(row.get("seed", -1))
++            key = (method, seed)
++            if key in route_rows:
++                raise PolicyProductionError(f"TASK_METRIC_DUPLICATE_ROUTE:{parent}:{repeat}:{key}")
++            route_rows[key] = row
++        if set(route_rows) != expected_routes | {("H", None)}:
+             raise PolicyProductionError(f"TASK_METRIC_ROUTE_COUNT_MISMATCH:{parent}:{repeat}")
+-        opportunities = {bool(row.get("outcome_valid")) for row in selected}
+-        if len(opportunities) != 1:
+-            raise PolicyProductionError(f"TASK_OPPORTUNITY_PAIRING_MISMATCH:{parent}:{repeat}")
+-        valid = opportunities == {True}
+-        utilities: dict[str, float | None] = {}
+-        for method in TASK_METHODS:
+-            rows = h_rows if method == "H" else method_rows[method]
+-            values = [row.get("utility") for row in rows]
+-            if valid:
+-                if any(value is None or not math.isfinite(float(value)) for value in values):
++
++        utility_by_route: dict[tuple[str, int | None], float | None] = {}
++        opportunity_counts = {method: 0 for method in TASK_METHODS}
++        unknown_outcome_counts = {method: 0 for method in TASK_METHODS}
++        unknown_utility_counts = {method: 0 for method in TASK_METHODS}
++        utility_recomputation_errors = []
++        for key, row in route_rows.items():
++            method = key[0]
++            opportunity_counts[method] += int(not bool(row.get("opportunity", False)))
++            unknown_outcome_counts[method] += int(not bool(row.get("outcome_valid", True)))
++            recorded_utility = row.get("utility")
++            utility_valid = bool(row.get("utility_valid", recorded_utility is not None))
++            if utility_valid:
++                if recorded_utility is None or not math.isfinite(float(recorded_utility)):
+                     raise PolicyProductionError(f"TASK_UTILITY_INVALID:{method}:{parent}:{repeat}")
+-                utilities[method] = sum(float(value) for value in values) / len(values)
++                rewards = row.get("vector_rewards")
++                if rewards is None:
++                    rewards = [item.get("vector_reward") for item in row.get("actions", ())]
++                steps = int(row.get("steps", -1))
++                if not isinstance(rewards, Sequence) or len(rewards) != steps:
++                    raise PolicyProductionError(f"TASK_VECTOR_REWARD_SEQUENCE_INVALID:{method}:{parent}:{repeat}")
++                reconstructed = 0.0
++                for step, reward in enumerate(rewards):
++                    if not isinstance(reward, Sequence) or isinstance(reward, (str, bytes)) or len(reward) != 2:
++                        raise PolicyProductionError(f"TASK_VECTOR_REWARD_INVALID:{method}:{parent}:{repeat}:{step}")
++                    task_reward, energy_reward = float(reward[0]), float(reward[1])
++                    if not math.isfinite(task_reward) or not math.isfinite(energy_reward):
++                        raise PolicyProductionError(f"TASK_VECTOR_REWARD_NONFINITE:{method}:{parent}:{repeat}:{step}")
++                    reconstructed += utility_discount ** step * (
++                        task_component_scale * preference[0] * task_reward
++                        + preference[1] * energy_reward
++                    )
++                error = abs(reconstructed - float(recorded_utility))
++                if error > 1e-8:
++                    raise PolicyProductionError(f"TASK_REWARD_UTILITY_MISMATCH:{method}:{parent}:{repeat}")
++                utility_by_route[key] = reconstructed
++                utility_recomputation_errors.append(error)
+             else:
+-                if any(value is not None for value in values):
+-                    raise PolicyProductionError(f"TASK_NO_OPPORTUNITY_UTILITY_PRESENT:{method}:{parent}:{repeat}")
+-                utilities[method] = None
+-        unit_rows.append({"parent": parent, "repeat": repeat, "valid": valid,
+-                          "utilities": utilities})
++                if recorded_utility is not None:
++                    raise PolicyProductionError(f"TASK_UNKNOWN_UTILITY_HAS_VALUE:{method}:{parent}:{repeat}")
++                utility_by_route[key] = None
++                unknown_utility_counts[method] += 1
++
++        seed_rows = []
++        for seed in POLICY_SEEDS:
++            g1_value = utility_by_route[("G1", seed)]
++            seed_comparisons = {}
++            for baseline, name in comparisons.items():
++                baseline_seed = seed if baseline != "H" else None
++                baseline_value = utility_by_route[(baseline, baseline_seed)]
++                seed_comparisons[name] = (
++                    None if g1_value is None or baseline_value is None
++                    else g1_value - baseline_value
++                )
++            seed_rows.append({
++                "seed": seed,
++                "utilities": {
++                    method: utility_by_route[(method, seed)] for method in POLICY_METHODS
++                } | {"H": utility_by_route[("H", None)]},
++                "comparisons": seed_comparisons,
++            })
++        utilities = {}
++        for method in POLICY_METHODS:
++            values = [utility_by_route[(method, seed)] for seed in POLICY_SEEDS]
++            utilities[method], _ = mean_known(values)
++        utilities["H"] = utility_by_route[("H", None)]
++        comparison_rows = {}
++        for name in comparisons.values():
++            value, count = mean_known([row["comparisons"][name] for row in seed_rows])
++            comparison_rows[name] = {
++                "mean": value, "valid_seed_count": count,
++                "unknown_seed_count": len(POLICY_SEEDS) - count,
++            }
++        known_utility_count = sum(value is not None for value in utility_by_route.values())
++        unit_rows.append({
++            "parent": parent, "repeat": repeat,
++            "status": "evaluated" if known_utility_count else "utility_unknown",
++            "utilities": utilities, "per_seed": seed_rows,
++            "comparisons": comparison_rows,
++            "no_opportunity_episode_count_by_method": opportunity_counts,
++            "unknown_outcome_count_by_method": unknown_outcome_counts,
++            "unknown_utility_count_by_method": unknown_utility_counts,
++            "known_utility_episode_count": known_utility_count,
++            "utility_recomputation_max_abs_error": max(utility_recomputation_errors, default=0.0),
++        })
+ 
+     parent_rows: list[dict[str, Any]] = []
+     for parent in sorted({str(unit["parent"]) for unit in units}):
+-        valid_units = [row for row in unit_rows if row["parent"] == parent and row["valid"]]
+-        if not valid_units:
+-            parent_rows.append({"parent": parent, "status": "no_opportunity",
+-                                "valid_repeat_count": 0, "utilities": None,
+-                                "g2_minus_h": None, "g2_minus_t": None,
+-                                "g2_minus_g1": None})
+-            continue
+-        utilities = {
+-            method: sum(float(row["utilities"][method]) for row in valid_units) / len(valid_units)
+-            for method in TASK_METHODS
+-        }
++        parent_units = [row for row in unit_rows if row["parent"] == parent]
++        utilities: dict[str, float | None] = {}
++        utility_counts = {}
++        for method in TASK_METHODS:
++            utilities[method], utility_counts[method] = mean_known(
++                [row["utilities"][method] for row in parent_units]
++            )
++        parent_comparisons = {}
++        for name in comparisons.values():
++            value, count = mean_known([
++                row["comparisons"][name]["mean"] for row in parent_units
++            ])
++            parent_comparisons[name] = {
++                "mean": value, "valid_repeat_count": count,
++                "unknown_repeat_count": len(parent_units) - count,
++            }
++        per_seed = {}
++        for seed in POLICY_SEEDS:
++            per_seed[str(seed)] = {}
++            for name in comparisons.values():
++                value, count = mean_known([
++                    seed_row["comparisons"][name]
++                    for row in parent_units for seed_row in row["per_seed"]
++                    if seed_row["seed"] == seed
++                ])
++                per_seed[str(seed)][name] = {
++                    "mean": value, "valid_repeat_count": count,
++                    "unknown_repeat_count": len(parent_units) - count,
++                }
+         parent_rows.append({
+-            "parent": parent, "status": "evaluated", "valid_repeat_count": len(valid_units),
+-            "utilities": utilities,
+-            "g2_minus_h": utilities["G2"] - utilities["H"],
+-            "g2_minus_t": utilities["G2"] - utilities["T"],
+-            "g2_minus_g1": utilities["G2"] - utilities["G1"],
++            "parent": parent,
++            "status": "evaluated" if any(item["mean"] is not None for item in parent_comparisons.values()) else "utility_unknown",
++            "utilities": utilities, "utility_episode_count_by_method": utility_counts,
++            "comparisons": parent_comparisons, "per_seed_comparisons": per_seed,
++            "valid_repeat_count": max(
++                (item["valid_repeat_count"] for item in parent_comparisons.values()), default=0,
++            ),
++            "no_opportunity_episode_count_by_method": {
++                method: sum(row["no_opportunity_episode_count_by_method"][method] for row in parent_units)
++                for method in TASK_METHODS
++            },
++            "unknown_outcome_count_by_method": {
++                method: sum(row["unknown_outcome_count_by_method"][method] for row in parent_units)
++                for method in TASK_METHODS
++            },
++            "unknown_utility_count_by_method": {
++                method: sum(row["unknown_utility_count_by_method"][method] for row in parent_units)
++                for method in TASK_METHODS
++            },
+         })
+-    evaluated = [row for row in parent_rows if row["status"] == "evaluated"]
+-    if evaluated:
+-        macro = {
+-            method: sum(float(row["utilities"][method]) for row in evaluated) / len(evaluated)
+-            for method in TASK_METHODS
+-        }
+-        g2_minus_h = macro["G2"] - macro["H"]
+-        g2_minus_t = macro["G2"] - macro["T"]
+-        g2_minus_g1 = macro["G2"] - macro["G1"]
+-    else:
+-        macro = {method: None for method in TASK_METHODS}
+-        g2_minus_h = g2_minus_t = g2_minus_g1 = None
++
++    macro_utility = {}
++    for method in TASK_METHODS:
++        macro_utility[method], _ = mean_known([row["utilities"][method] for row in parent_rows])
++    macro_comparisons = {}
++    for name in comparisons.values():
++        value, count = mean_known([row["comparisons"][name]["mean"] for row in parent_rows])
++        macro_comparisons[name] = {"mean": value, "valid_parent_count": count,
++                                   "unknown_parent_count": len(parent_rows) - count}
++    seed_macro = {}
++    for seed in POLICY_SEEDS:
++        seed_macro[str(seed)] = {}
++        for name in comparisons.values():
++            value, count = mean_known([
++                row["per_seed_comparisons"][str(seed)][name]["mean"] for row in parent_rows
++            ])
++            seed_macro[str(seed)][name] = {
++                "mean": value, "valid_parent_count": count,
++                "unknown_parent_count": len(parent_rows) - count,
++            }
++    evaluated_parents = [row for row in parent_rows if row["status"] == "evaluated"]
+     return {
+-        "valid_parent_count": len(evaluated),
+-        "valid_unit_count": sum(int(row["valid"]) for row in unit_rows),
+-        "parent_macro_utility": macro,
+-        "g2_minus_h_macro_utility": g2_minus_h,
+-        "g2_minus_t_macro_utility": g2_minus_t,
+-        "g2_minus_g1_macro_utility": g2_minus_g1,
+-        "parents_g2_no_worse_than_t": sum(
+-            float(row["g2_minus_t"]) >= 0.0 for row in evaluated
++        "valid_parent_count": len(evaluated_parents),
++        "valid_unit_count": sum(row["status"] == "evaluated" for row in unit_rows),
++        "episode_count": len(episodes),
++        "unknown_outcome_episode_count": sum(
++            not bool(row.get("outcome_valid", True)) for row in episodes
++        ),
++        "no_opportunity_episode_count": sum(
++            not bool(row.get("opportunity", False)) for row in episodes
++        ),
++        "unknown_utility_episode_count": sum(
++            row.get("utility") is None for row in episodes
++        ),
++        "utility_recomputation_max_abs_error": max(
++            (row["utility_recomputation_max_abs_error"] for row in unit_rows), default=0.0,
++        ),
++        "parent_macro_utility": macro_utility,
++        "macro_comparisons": macro_comparisons,
++        "per_seed_macro_comparisons": seed_macro,
++        "g1_minus_g0_macro_utility": macro_comparisons["g1_minus_g0"]["mean"],
++        "g1_minus_t_macro_utility": macro_comparisons["g1_minus_t"]["mean"],
++        "g1_minus_h_macro_utility": macro_comparisons["g1_minus_h"]["mean"],
++        "parents_g1_no_worse_than_t": sum(
++            row["comparisons"]["g1_minus_t"]["mean"] >= 0.0
++            for row in evaluated_parents
++            if row["comparisons"]["g1_minus_t"]["mean"] is not None
+         ),
+         "per_parent": parent_rows,
+         "per_parent_repeat": unit_rows,
+-        "aggregation": "mean seeds within parent-repeat, mean valid repeats within parent, macro mean across parents",
++        "aggregation": "mean policy seeds within parent-repeat, mean known repeats within parent, macro mean across parents; unavailable values remain null",
+     }
+ 
+ def evaluate_task_confirmation(*, matrix: Mapping[str, Any], request: Mapping[str, Any], ledger: Any,
+@@ -838,11 +1272,11 @@
+                                checkpoints: Mapping[tuple[str, int], str],
+                                output_dir: str | Path | None = None, clock: Any = time,
+                                selector: Callable[[Categorical], int] | None = None) -> dict[str, Any]:
+-    """Run 288 paired policy episodes and 24 shared deterministic H episodes."""
++    """Run 216 paired policy episodes and 24 shared deterministic H episodes."""
+     schedule = policy_schedule(matrix, request)
+     units = _task_units(matrix)
+     max_steps = int(matrix.get("task_episode_max_steps", 0))
+-    expected_count = len(units) * len(POLICY_METHODS) * len(schedule.seeds) + len(units)
++    expected_count = len(units) * (len(POLICY_METHODS) * len(schedule.seeds) + 1)
+     if max_steps != 18 or int(matrix.get("task_episode_count", -1)) != expected_count:
+         raise PolicyProductionError("TASK_EPISODE_CONTRACT_MISMATCH")
+     calls = CallAccounting(ledger, boundary)
+@@ -857,19 +1291,29 @@
+                 raise PolicyProductionError(f"POLICY_CHECKPOINT_MISSING:{method}:{seed}")
+             base = calls.call(
+                 "checkpoint", f"load_policy_checkpoint:{method}:{seed}",
+-                {"model_initializations_or_loads": 1}, policy_loader,
++                {"checkpoint_loads": 1, "model_initializations_or_loads": 1}, policy_loader,
+                 method, seed, str(checkpoint),
+             )
+             if not isinstance(base, nn.Module):
+                 raise PolicyProductionError("POLICY_LOADER_MUST_RETURN_MODULE")
+             policies[(method, seed)] = PriorConditionedPolicy(base)
+     task_world_models: dict[tuple[str, int], Any] = {}
++    task_world_model_initial_hashes: dict[tuple[str, int], str] = {}
+     for variant in WORLD_MODEL_VARIANTS:
+         for world_seed in WORLD_MODEL_SEEDS:
+-            task_world_models[(variant, world_seed)] = calls.call(
++            model = calls.call(
+                 "checkpoint", f"load_task_world_model:{variant}:{world_seed}",
+-                {"model_initializations_or_loads": 1}, world_model_loader, variant, world_seed,
++                {"checkpoint_loads": 1, "model_initializations_or_loads": 1},
++                world_model_loader, variant, world_seed,
+             )
++            if not isinstance(model, nn.Module):
++                raise PolicyProductionError("WORLD_MODEL_LOADER_MUST_RETURN_MODULE")
++            model.eval()
++            model.requires_grad_(False)
++            if model.training or any(parameter.requires_grad for parameter in model.parameters()):
++                raise PolicyProductionError("FROZEN_WORLD_MODEL_STATE_INVALID")
++            task_world_models[(variant, world_seed)] = model
++            task_world_model_initial_hashes[(variant, world_seed)] = state_dict_sha256(model.state_dict())
+     episodes: list[dict[str, Any]] = []
+     cost_rows: list[dict[str, Any]] = []
+     task_count_before = calls.amounts["task_episodes"]
+@@ -892,7 +1336,7 @@
+         context = TaskEpisodeContext(method, seed, parent, repeat, exogenous_key,
+                                      max_steps, policy, decision, calls,
+                                      schedule.task_preference, schedule.utility_discount,
+-                                     schedule.task_component_scale)
++                                     schedule.task_component_scale, clock)
+         result = episode_runner(context)
+         if not isinstance(result, Mapping):
+             raise PolicyProductionError("TASK_EPISODE_RESULT_INVALID")
+@@ -906,39 +1350,124 @@
+             raise PolicyProductionError("TASK_EPISODE_RESET_ACCOUNTING_MISMATCH")
+         opportunity = bool(result.get("opportunity"))
+         utility = result.get("utility")
+-        if opportunity:
+-            if utility is None or not math.isfinite(float(utility)):
++        utility_valid = bool(result.get("utility_valid", utility is not None))
++        if utility is not None:
++            if not math.isfinite(float(utility)):
+                 raise PolicyProductionError("TASK_EPISODE_UTILITY_INVALID")
+             utility = float(utility)
+-        elif utility is not None:
+-            raise PolicyProductionError("NO_OPPORTUNITY_UTILITY_MUST_REMAIN_UNKNOWN")
++        elif utility_valid:
++            raise PolicyProductionError("TASK_EPISODE_UTILITY_INVALID")
++        vector_rewards = result.get("vector_rewards")
++        if vector_rewards is None:
++            vector_rewards = [item.get("vector_reward") for item in result.get("actions", ())
++                              if isinstance(item, Mapping)]
++        if not isinstance(vector_rewards, Sequence) or len(vector_rewards) != steps:
++            raise PolicyProductionError("TASK_EPISODE_VECTOR_REWARDS_MISSING")
++        normalized_rewards = []
++        for index, reward in enumerate(vector_rewards):
++            if not isinstance(reward, Sequence) or isinstance(reward, (str, bytes)) or len(reward) != 2:
++                raise PolicyProductionError(f"TASK_EPISODE_VECTOR_REWARD_INVALID:{index}")
++            values = [float(reward[0]), float(reward[1])]
++            if not all(math.isfinite(value) for value in values):
++                raise PolicyProductionError(f"TASK_EPISODE_VECTOR_REWARD_NONFINITE:{index}")
++            normalized_rewards.append(values)
++        terminated = result.get("terminated") is True
++        truncated = result.get("truncated") is True
++        if terminated == truncated:
++            raise PolicyProductionError("TASK_EPISODE_COMPLETION_FLAGS_INVALID")
++        if utility_valid:
++            reconstructed_utility = sum(
++                schedule.utility_discount ** index * (
++                    schedule.task_component_scale * schedule.task_preference[0] * reward[0]
++                    + schedule.task_preference[1] * reward[1]
++                ) for index, reward in enumerate(normalized_rewards)
++            )
++            if utility is None or abs(reconstructed_utility - utility) > 1e-8:
++                raise PolicyProductionError("TASK_EPISODE_REWARD_UTILITY_MISMATCH")
++            utility = reconstructed_utility
++        outcome_valid = bool(result.get("outcome_valid", True))
++        lifecycle_outcomes = result.get("lifecycle_outcomes")
++        if not isinstance(lifecycle_outcomes, Sequence) or isinstance(lifecycle_outcomes, (str, bytes)) or not lifecycle_outcomes:
++            raise PolicyProductionError("TASK_LIFECYCLE_OUTCOMES_MISSING")
++        for label in lifecycle_outcomes:
++            if not isinstance(label, Mapping):
++                raise PolicyProductionError("TASK_LIFECYCLE_OUTCOME_INVALID")
++            for name in ("physical_on_time_completion", "host_confirmation"):
++                field = label.get(name)
++                if not isinstance(field, Mapping) or type(field.get("valid")) is not bool:
++                    raise PolicyProductionError(f"TASK_LIFECYCLE_LABEL_INVALID:{name}")
++                if field["valid"] and type(field.get("value")) is not bool:
++                    raise PolicyProductionError(f"TASK_LIFECYCLE_LABEL_VALUE_INVALID:{name}")
++                if not field["valid"] and field.get("value") is not None:
++                    raise PolicyProductionError(f"TASK_UNKNOWN_LIFECYCLE_LABEL_HAS_VALUE:{name}")
++        if outcome_valid != all(label["physical_on_time_completion"]["valid"] for label in lifecycle_outcomes):
++            raise PolicyProductionError("TASK_LIFECYCLE_VALIDITY_MISMATCH")
+         preference = tuple(float(value) for value in result.get("preference", ()))
+         if preference != schedule.task_preference:
+             raise PolicyProductionError("TASK_EPISODE_PREFERENCE_MISMATCH")
+         if decision is not None:
++            if decision.decision_count != steps or len(decision.cost_rows) != steps:
++                raise PolicyProductionError("TASK_POLICY_DECISION_COST_COVERAGE_MISMATCH")
+             cost_rows.extend(decision.cost_rows)
+             if output is not None:
+                 for row in decision.cost_rows:
+                     durable_append_jsonl(output / "decision-costs.jsonl", row)
++        else:
++            raw_costs = result.get("decision_costs", ())
++            if not isinstance(raw_costs, Sequence) or len(raw_costs) != steps:
++                raise PolicyProductionError("TASK_DECISION_COSTS_INVALID")
++            for cost in raw_costs:
++                if (not isinstance(cost, Mapping) or cost.get("method") != "H"
++                        or cost.get("parent") != parent or int(cost.get("repeat", -1)) != repeat
++                        or cost.get("seed") is not None):
++                    raise PolicyProductionError("HUNGARIAN_DECISION_COST_INVALID")
++                cost_rows.append(dict(cost))
++                if output is not None:
++                    durable_append_jsonl(output / "decision-costs.jsonl", dict(cost))
+         episode = {
+             "method": method, "seed": seed, "parent": parent, "repeat": repeat,
+             "scenario_sha256": unit.get("scenario_sha256"),
+             "structural_sha256": unit.get("structural_sha256"),
+             "exogenous_key": exogenous_key, "opportunity": opportunity,
+-            "outcome_valid": opportunity, "utility": utility, "steps": steps,
++            "outcome_valid": outcome_valid,
++            "outcome_unknown_reason": result.get("outcome_unknown_reason"),
++            "lifecycle_outcomes": list(lifecycle_outcomes),
++            "utility_valid": utility_valid,
++            "utility": utility, "steps": steps,
+             "actions": list(result.get("actions", ())),
++            "vector_rewards": normalized_rewards,
+             "preference": list(preference),
++            "environment_config_sha256": result.get("environment_config_sha256"),
++            "scenario_id": result.get("scenario_id", parent),
+             "physical_rate": result.get("physical_rate"),
+             "host_rate": result.get("host_rate"),
+             "counts": result.get("counts"),
+             "energy_used": result.get("energy_used"),
+-            "terminated": result.get("terminated"),
+-            "truncated": result.get("truncated"),
+-            "decision_count": 0 if decision is None else decision.decision_count,
+-            "decision_cost_count": 0 if decision is None else len(decision.cost_rows),
++            "terminated": terminated,
++            "truncated": truncated,
++            "decision_count": steps,
++            "decision_cost_count": steps,
++            "argmax_changed_count": 0 if decision is None else decision.argmax_changed_count,
++            "sampled_action_changed_count": 0 if decision is None else decision.sampled_action_changed_count,
++            "sampled_action_comparison_count": 0 if decision is None else decision.sampled_action_comparison_count,
++            "sampled_action_comparison_status": (
++                "not_evaluated" if decision is None
++                else decision.decision_summary()["sampled_action_comparison_status"]
++            ),
++            "policy_sampling_key": result.get("policy_sampling_key"),
++            "policy_sampling_seed": result.get("policy_sampling_seed"),
+         }
+         episodes.append(episode)
+         if output is not None:
++            for index, trace in enumerate(episode["actions"]):
++                durable_append_jsonl(output / "task-decision-traces.jsonl", {
++                    "method": method, "seed": seed, "parent": parent,
++                    "repeat": repeat, "exogenous_key": exogenous_key,
++                    "decision_step": index, "scenario_sha256": unit.get("scenario_sha256"),
++                    "structural_sha256": unit.get("structural_sha256"),
++                    "environment_config_sha256": episode["environment_config_sha256"],
++                    **dict(trace),
++                })
+             durable_append_jsonl(output / "task-confirmation.jsonl", episode)
+ 
+     for unit in units:
+@@ -959,13 +1488,32 @@
+                      for row in episodes if row["method"] in POLICY_METHODS}
+     if expected_keys != observed_keys or len(episodes) != expected_count:
+         raise PolicyProductionError("TASK_POLICY_ROUTE_SET_MISMATCH")
+-    if sum(row["method"] == "H" for row in episodes) != 24:
++    if sum(row["method"] == "H" for row in episodes) != len(units):
+         raise PolicyProductionError("HUNGARIAN_SHARED_EPISODE_COUNT_MISMATCH")
+     if calls.amounts["task_episodes"] - task_count_before != expected_count:
+         raise PolicyProductionError("TASK_EPISODE_LEDGER_COUNT_MISMATCH")
++    task_world_model_evidence = [
++        {"variant": variant, "seed": seed,
++         "initial_state_sha256": task_world_model_initial_hashes[(variant, seed)],
++         "final_state_sha256": state_dict_sha256(task_world_models[(variant, seed)].state_dict()),
++         "unchanged": task_world_model_initial_hashes[(variant, seed)]
++         == state_dict_sha256(task_world_models[(variant, seed)].state_dict())}
++        for variant, seed in sorted(task_world_models)
++    ]
++    if any(not row["unchanged"] for row in task_world_model_evidence):
++        raise PolicyProductionError("FROZEN_WORLD_MODEL_STATE_CHANGED_DURING_TASK_EVALUATION")
+     summaries = summarize_decision_costs(cost_rows, units)
+-    metrics = recompute_task_metrics(episodes, units)
++    metrics = recompute_task_metrics(
++        episodes, units, task_preference=schedule.task_preference,
++        utility_discount=schedule.utility_discount,
++        task_component_scale=schedule.task_component_scale,
++    )
++    calls.charge("task_comparison", {"task_comparison_calls": 1})
+     if output is not None:
++        durable_atomic_json(output / "frozen-task-world-model-state.json", {
++            "schema": "w1-g1-frozen-task-world-model-state/1.0.0",
++            "models": task_world_model_evidence,
++        })
+         durable_append_jsonl(output / "task-cost-summary.jsonl", summaries)
+         durable_atomic_json(output / "task-metrics.json", metrics)
+     return {
+@@ -978,7 +1526,7 @@
+ 
+ 
+ __all__ = [
+-    "ACTION_COUNT", "NOOP_ACTION", "POLICY_METHODS", "POLICY_SEEDS",
++    "ACTION_COUNT", "NOOP_ACTION", "POLICY_METHODS", "TASK_METHODS", "POLICY_SEEDS",
+     "WORLD_MODEL_SEEDS", "WORLD_MODEL_VARIANTS", "CallAccounting",
+     "DecisionPriorPolicy", "PolicyDecision", "PolicyProductionError",
+     "PolicyRoute", "PolicySchedule", "PolicyTrainingContext",
+--- E:\Z博士\research-plans\w1-eawm-jepa-world-model-production-repair-v4-e2e-integration-auth-repair-v1\runtime_hooks.py
++++ E:\Z博士\research-plans\w1-g1-gppo-task-validation-local-v1\package\runtime_hooks.py
+@@ -7,13 +7,91 @@
+ """
+ from __future__ import annotations
+ 
++import time
+ import json
++import hashlib
++import math
+ from pathlib import Path
+ from typing import Any, Mapping
+ 
++from infra_io import durable_append_jsonl
++
+ 
+ class RuntimeHookError(RuntimeError):
+     pass
++
++
++def _policy_sampling_identity(parent: str, repeat: int, policy_seed: int) -> tuple[str, int]:
++    key = json.dumps({"parent": str(parent), "repeat": int(repeat),
++                      "policy_seed": int(policy_seed)}, sort_keys=True,
++                     separators=(",", ":"), ensure_ascii=False)
++    derived = int.from_bytes(hashlib.sha256(key.encode("utf-8")).digest()[:8], "big") & ((1 << 63) - 1)
++    return key, derived
++
++
++def task_outcome_labels(tasks: Any, final_info: Mapping[str, Any]) -> list[dict[str, Any]]:
++    """Audit terminal physical-arrival and host-receipt labels independently."""
++    import math
++
++    records = final_info.get("completion_records", {})
++    states = final_info.get("tasks", {})
++    final_time = float(final_info.get("time", float("nan")))
++    if not math.isfinite(final_time) or not isinstance(records, Mapping) or not isinstance(states, Mapping):
++        raise RuntimeHookError("TASK_OUTCOME_TERMINAL_RECORD_INVALID")
++    outcomes = []
++    for task in tasks:
++        task_id = str(task["task_id"])
++        deadline = float(task["deadline"])
++        if not math.isfinite(deadline):
++            raise RuntimeHookError("TASK_OUTCOME_DEADLINE_INVALID")
++        record = records.get(task_id, {})
++        if not isinstance(record, Mapping):
++            raise RuntimeHookError("TASK_OUTCOME_COMPLETION_RECORD_INVALID")
++        state = str(states.get(task_id, "unknown"))
++        physical_time = record.get("physical_arrival_time")
++        host_time = record.get("host_confirmation_time")
++        if physical_time is not None:
++            physical_time = float(physical_time)
++            if not math.isfinite(physical_time) or physical_time > final_time:
++                raise RuntimeHookError("TASK_OUTCOME_PHYSICAL_TIME_INVALID")
++            physical_label = {
++                "value": bool(physical_time < deadline), "valid": True,
++                "source": "completion_records.physical_arrival_time", "reason": None,
++            }
++        elif state == "expired":
++            physical_label = {
++                "value": False, "valid": True,
++                "source": "terminal_task_state.expired", "reason": None,
++            }
++        else:
++            physical_label = {
++                "value": None, "valid": False, "source": None,
++                "reason": "terminal_physical_arrival_not_observed",
++            }
++        if host_time is not None:
++            host_time = float(host_time)
++            if not math.isfinite(host_time) or host_time > final_time:
++                raise RuntimeHookError("TASK_OUTCOME_HOST_TIME_INVALID")
++            host_label = {
++                "value": bool(host_time <= deadline), "valid": True,
++                "source": "completion_records.host_confirmation_time", "reason": None,
++            }
++        elif state == "expired":
++            host_label = {
++                "value": False, "valid": True,
++                "source": "terminal_task_state.expired_without_confirmation", "reason": None,
++            }
++        else:
++            host_label = {
++                "value": None, "valid": False, "source": None,
++                "reason": "host_confirmation_not_observed_before_episode_end",
++            }
++        outcomes.append({
++            "task_id": task_id, "deadline": deadline, "terminal_state": state,
++            "physical_on_time_completion": physical_label,
++            "host_confirmation": host_label,
++        })
++    return outcomes
+ 
+ 
+ class NativeRuntimeHooks:
+@@ -21,18 +99,21 @@
+         self.adapter = adapter
+         self.root = Path(adapter.root)
+         self.source_root = self._source_root()
++        self._m10_config_value: Any | None = None
++        self._scenario_rows_value: list[Mapping[str, Any]] | None = None
++        self._g1_binding_value: Mapping[str, Any] | None = None
++        self._environment_construction_sequence = 0
++        self._policy_checkpoint_hashes: dict[str, str] = {}
++        self._policy_checkpoint_state_hashes: dict[str, str] = {}
+         if str(self.source_root) not in __import__("sys").path:
+             __import__("sys").path.insert(0, str(self.source_root))
+-        if str(self.source_root / "native") not in __import__("sys").path:
+-            __import__("sys").path.insert(0, str(self.source_root / "native"))
++        if str(self.root) not in __import__("sys").path:
++            __import__("sys").path.insert(0, str(self.root))
+ 
+     def _source_root(self) -> Path:
+-        inputs = json.loads((self.root / "runtime-inputs.json").read_text(encoding="utf-8"))
+-        source = inputs["source_run"]
+-        key = "wsl_root" if __import__("sys").platform != "win32" else "windows_root"
+-        path = Path(source[key])
+-        if not path.is_absolute():
+-            raise RuntimeHookError("SOURCE_ROOT_NOT_ABSOLUTE")
++        path = (self.root / "native").resolve()
++        if not path.is_dir():
++            raise RuntimeHookError("PACKAGE_NATIVE_ROOT_MISSING")
+         return path
+ 
+     def _native(self) -> tuple[Any, ...]:
+@@ -40,24 +121,90 @@
+         from gppo_world.joint_consequence_baseline import public_joint_action_score
+         from gppo_world.joint_gppo import JointGraphPreferencePolicy, JointTrainConfig
+         from gppo_world.m10_environment import M10Config, M10Environment, scenario_from_dict
++        from production_data import _public_pending_task_count
+         return (graph5_from_m10_observation, public_joint_action_score,
+                 JointGraphPreferencePolicy, JointTrainConfig,
+-                M10Config, M10Environment, scenario_from_dict)
++                M10Config, M10Environment, scenario_from_dict,
++                _public_pending_task_count)
++
++    def _m10_config(self) -> Any:
++        if self._m10_config_value is not None:
++            return self._m10_config_value
++        _, _, _, _, config_type, *_ = self._native()
++        contract = json.loads((self.root / "environment-config-contract.json").read_text(encoding="utf-8"))
++        values = contract.get("config")
++        digest = contract.get("config_sha256")
++        if contract.get("schema") != "w1-environment-config-contract/1.0.0" or not isinstance(values, Mapping) or not isinstance(digest, str):
++            raise RuntimeHookError("ENVIRONMENT_CONFIG_CONTRACT_INVALID")
++        from runtime_config_contract import validate_config_before_collection
++        config = config_type(**dict(values))
++        try:
++            identity = validate_config_before_collection(config, values, expected_sha256=digest)
++        except ValueError as exc:
++            raise RuntimeHookError(str(exc)) from exc
++        if identity["task_completion_mode"] != "arrival_to_region" or identity["deadline_basis"] != "physical_arrival":
++            raise RuntimeHookError("TASK_OUTCOME_CONFIG_SEMANTICS_NOT_SUPPORTED")
++        self._m10_config_value = config
++        return config
+ 
+     def _construct_environment(self, environment_type: Any, config: Any,
+                                scenario: Any, exogenous_key: str) -> Any:
+         operation = lambda: environment_type(
+             config, scenario, exogenous_key=exogenous_key,
+         )
+-        return self.adapter.boundary.environment(operation)
++        self._environment_construction_sequence += 1
++        sequence = self._environment_construction_sequence
++        output = getattr(self.adapter, "output", None)
++        evidence_dir = Path(output).resolve() if output is not None else self.root / "run-once"
++        base = {
++            "sequence": sequence, "exogenous_key": str(exogenous_key),
++            "scenario_id": str(getattr(scenario, "tape_id", getattr(scenario, "name", "unknown"))),
++        }
++        durable_append_jsonl(evidence_dir / "environment-construction.jsonl",
++                             {**base, "event": "attempted"})
++        try:
++            integration_context = getattr(self.adapter.boundary, "integration_context", {})
++            if (isinstance(integration_context, Mapping)
++                    and integration_context.get("mode") == "synthetic_test"):
++                construct = getattr(self.adapter.boundary, "construct_environment", None)
++                if not callable(construct):
++                    raise RuntimeHookError("SYNTHETIC_ENVIRONMENT_CONSTRUCTOR_BOUNDARY_MISSING")
++                result = construct(environment_type, config, scenario, exogenous_key)
++            else:
++                result = self.adapter.boundary.environment(operation)
++        except BaseException:
++            raise
++        durable_append_jsonl(evidence_dir / "environment-construction.jsonl",
++                             {**base, "event": "constructed"})
++        return result
++
++    @staticmethod
++    def _file_sha256(path: str | Path) -> str:
++        digest = hashlib.sha256()
++        with Path(path).open("rb") as stream:
++            for block in iter(lambda: stream.read(1024 * 1024), b""):
++                digest.update(block)
++        return digest.hexdigest()
+ 
+     def _scenario_rows(self) -> list[Mapping[str, Any]]:
++        if self._scenario_rows_value is not None:
++            return self._scenario_rows_value
+         inputs = json.loads((self.root / "runtime-inputs.json").read_text(encoding="utf-8"))
+-        path = self.source_root / inputs["source_run"]["train_tape_file"]
++        source = inputs.get("source_run", {})
++        relative = Path(str(source.get("train_tape_file", "")))
++        if relative.is_absolute() or ".." in relative.parts or not relative.name:
++            raise RuntimeHookError("TRAIN_TAPE_PATH_INVALID")
++        path = self.source_root / "source-evidence" / relative
++        if not path.is_file():
++            raise RuntimeHookError("STAGED_TRAIN_TAPE_MISSING")
++        digest = hashlib.sha256(path.read_bytes()).hexdigest()
++        if digest != str(source.get("train_tape_sha256", "")):
++            raise RuntimeHookError("STAGED_TRAIN_TAPE_DIGEST_MISMATCH")
+         rows = json.loads(path.read_text(encoding="utf-8"))
+         if not isinstance(rows, list) or not rows:
+             raise RuntimeHookError("TRAIN_TAPE_EMPTY")
+-        return rows
++        self._scenario_rows_value = rows
++        return self._scenario_rows_value
+ 
+     def _row(self, exogenous_key: str) -> Mapping[str, Any]:
+         prefix = str(exogenous_key).rsplit("|repeat-", 1)[0]
+@@ -70,27 +217,68 @@
+     def world_model_loader(self, variant: str, seed: int) -> Any:
+         from production_world import _file_sha256, _load_checkpoint, _model_config
+         from w1_graph_jepa import W1GraphJEPA
+-        training = self.adapter.world_training
+-        if training is None:
+-            raise RuntimeHookError("WORLD_MODEL_LOAD_BEFORE_TRAINING")
+-        route = next((row for row in training.routes
+-                      if row["variant"] == variant and int(row["seed"]) == int(seed)), None)
+-        if route is None:
+-            raise RuntimeHookError(f"WORLD_MODEL_ROUTE_MISSING:{variant}:{seed}")
+-        path = self.adapter.output / str(route["checkpoint_relative_path"])
+-        if _file_sha256(path) != str(route["checkpoint_sha256"]):
+-            raise RuntimeHookError(f"WORLD_MODEL_CHECKPOINT_DIGEST_MISMATCH:{variant}:{seed}")
+-        payload = _load_checkpoint(path)
+-        model = W1GraphJEPA(_model_config(self.adapter.matrix), event_count=5)
++        if variant != "G1" or int(seed) not in (8201, 8202, 8203):
++            raise RuntimeHookError(f"UNSUPPORTED_FROZEN_WORLD_MODEL:{variant}:{seed}")
++        binding_path = self.root / "g1-model-binding.json"
++        if self._g1_binding_value is None:
++            if not binding_path.is_file():
++                raise RuntimeHookError("G1_MODEL_BINDING_MISSING")
++            self._g1_binding_value = json.loads(binding_path.read_text(encoding="utf-8"))
++        binding = self._g1_binding_value
++        if binding.get("schema") != "w1-g1-model-binding/1.0.0":
++            raise RuntimeHookError("G1_MODEL_BINDING_SCHEMA_INVALID")
++        routes = binding.get("routes")
++        if not isinstance(routes, list):
++            raise RuntimeHookError("G1_MODEL_BINDING_ROUTES_INVALID")
++        route_rows = [row for row in routes if isinstance(row, Mapping) and int(row.get("world_seed", -1)) == int(seed)]
++        if len(route_rows) != 1:
++            raise RuntimeHookError(f"G1_MODEL_BINDING_ROUTE_MISMATCH:{seed}")
++        route = route_rows[0]
++        paired_policy_seed = {8201: 8301, 8202: 8302, 8203: 8303}[int(seed)]
++        architecture = self.adapter.matrix.get("world_model_architecture")
++        route_architecture = route.get("architecture")
++        if (int(route.get("policy_seed", -1)) != paired_policy_seed
++                or not isinstance(route_architecture, Mapping)
++                or dict(route_architecture) != dict(architecture or {})):
++            raise RuntimeHookError(f"G1_MODEL_BINDING_IDENTITY_MISMATCH:{seed}")
++        relative = Path(str(route.get("checkpoint_relative_path", "")))
++        if relative.is_absolute() or ".." in relative.parts or not relative.name:
++            raise RuntimeHookError("G1_MODEL_BINDING_PATH_INVALID")
++        path = (self.root / relative).resolve()
++        try:
++            path.relative_to(self.root.resolve())
++        except ValueError as exc:
++            raise RuntimeHookError("G1_MODEL_BINDING_PATH_ESCAPES_PACKAGE") from exc
++        expected_hash = str(route.get("checkpoint_sha256", ""))
++        if len(expected_hash) != 64 or not path.is_file() or _file_sha256(path) != expected_hash:
++            raise RuntimeHookError(f"G1_MODEL_CHECKPOINT_DIGEST_MISMATCH:{seed}")
++        payload = _load_checkpoint(path, "cpu")
++        if not isinstance(payload, Mapping) or set(payload) != {"metadata", "state_dict"}:
++            raise RuntimeHookError(f"G1_MODEL_CHECKPOINT_PAYLOAD_INVALID:{seed}")
++        metadata = route.get("checkpoint_metadata")
++        if (not isinstance(metadata, Mapping) or payload["metadata"] != dict(metadata)
++                or metadata.get("schema") != "w1-world-model-checkpoint/2.0.0"
++                or metadata.get("variant") != "G1"
++                or int(metadata.get("seed", -1)) != int(seed)
++                or metadata.get("event_loss_enabled") is not False
++                or dict(metadata.get("architecture", {})) != dict(route_architecture)
++                or type(metadata.get("best_epoch")) is not int
++                or int(metadata.get("best_epoch", 0)) <= 0
++                or metadata.get("continuation_id") != self.adapter.matrix.get("candidate_continuation_id")):
++            raise RuntimeHookError(f"G1_MODEL_CHECKPOINT_METADATA_MISMATCH:{seed}")
++        model = W1GraphJEPA(_model_config(self.adapter.matrix), event_count=5, device="cpu")
+         model.load_state_dict(payload["state_dict"])
+         model.eval()
++        model.requires_grad_(False)
++        if model.training or any(parameter.requires_grad for parameter in model.parameters()):
++            raise RuntimeHookError("G1_MODEL_FREEZE_FAILED")
+         return model
+ 
+     def policy_factory(self, method: str, seed: int, _config: Mapping[str, Any]) -> Any:
+-        _, _, policy_type, _, m10_config, _, _ = self._native()
++        _, _, policy_type, *_ = self._native()
+         import torch
+         torch.manual_seed(int(seed))
+-        return policy_type(m10_config(), history=True)
++        return policy_type(self._m10_config(), history=True)
+ 
+     def optimizer_factory(self, policy: Any, _method: str, _seed: int, config: Mapping[str, Any]) -> Any:
+         import torch
+@@ -98,24 +286,48 @@
+ 
+     def checkpoint_writer(self, path: str, policy: Any, optimizer: Any, route: Any, summary: Mapping[str, Any]) -> str:
+         import torch
++        from production_policy import state_dict_sha256
+         target = Path(path)
+         target.parent.mkdir(parents=True, exist_ok=True)
+         # ``train_policy_routes`` passes the prior wrapper, whereas task
+         # evaluation restores the base policy before rebuilding that wrapper.
+         # Persist the base identity so save/load are inverse operations.
+         policy_state = policy.base.state_dict() if hasattr(policy, "base") else policy.state_dict()
++        state_hash = state_dict_sha256(policy_state)
+         torch.save({"schema": "w1-policy-checkpoint/1.0.0", "method": route.method,
+                     "seed": route.seed, "state_dict": policy_state,
++                    "state_dict_sha256": state_hash,
+                     "optimizer_state_dict": optimizer.state_dict(), "summary": dict(summary)}, target)
++        resolved = str(target.resolve())
++        self._policy_checkpoint_state_hashes[resolved] = state_hash
+         return str(target)
+ 
+     def policy_loader(self, method: str, seed: int, path: str) -> Any:
+         import torch
+-        _, _, policy_type, _, m10_config, _, _ = self._native()
++        from production_policy import state_dict_sha256
++        _, _, policy_type, *_ = self._native()
++        resolved = str(Path(path).resolve())
++        expected_hashes = getattr(self.adapter, "policy_checkpoint_hashes", {})
++        expected_hash = expected_hashes.get(resolved) if isinstance(expected_hashes, Mapping) else None
++        if expected_hash is None:
++            expected_hash = self._policy_checkpoint_hashes.get(resolved)
++        if not isinstance(expected_hash, str) or len(expected_hash) != 64:
++            raise RuntimeHookError("POLICY_CHECKPOINT_EXPECTED_HASH_MISSING")
++        if not Path(resolved).is_file() or self._file_sha256(resolved) != expected_hash:
++            raise RuntimeHookError(f"POLICY_CHECKPOINT_DIGEST_MISMATCH:{method}:{seed}")
+         payload = torch.load(path, map_location="cpu", weights_only=False)
+         if payload.get("schema") != "w1-policy-checkpoint/1.0.0" or payload.get("method") != method or int(payload.get("seed", -1)) != int(seed):
+             raise RuntimeHookError(f"POLICY_CHECKPOINT_IDENTITY_MISMATCH:{method}:{seed}")
+-        policy = policy_type(m10_config(), history=True)
++        observed_state_hash = state_dict_sha256(payload["state_dict"])
++        if payload.get("state_dict_sha256") != observed_state_hash:
++            raise RuntimeHookError(f"POLICY_CHECKPOINT_STATE_DIGEST_MISMATCH:{method}:{seed}")
++        expected_state_hashes = getattr(self.adapter, "policy_checkpoint_state_hashes", {})
++        expected_state_hash = expected_state_hashes.get(resolved) if isinstance(expected_state_hashes, Mapping) else None
++        if expected_state_hash is None:
++            expected_state_hash = self._policy_checkpoint_state_hashes.get(resolved)
++        if expected_state_hash is not None and observed_state_hash != expected_state_hash:
++            raise RuntimeHookError(f"POLICY_CHECKPOINT_STATE_IDENTITY_MISMATCH:{method}:{seed}")
++        policy = policy_type(self._m10_config(), history=True)
+         policy.load_state_dict(payload["state_dict"])
+         policy.eval()
+         return policy
+@@ -144,22 +356,40 @@
+ 
+     def transparent_scorer(self, observation: Mapping[str, Any], _inputs: Mapping[str, Any]) -> Any:
+         import torch
+-        from production_policy import transparent_utility_components
++        from transparent_utility import transparent_horizon_components
++        from production_data import _public_pending_task_count
+         graph_builder, scorer, *_ = self._native()
+         graph = graph_builder(observation)
+-        config = self._native()[4]()
++        config = self._m10_config()
+         preference = torch.as_tensor(_inputs["preference"], dtype=torch.float32).reshape(-1)
+         if preference.shape != (2,) or not bool(torch.isfinite(preference).all()):
+             raise RuntimeHookError("TRANSPARENT_PREFERENCE_INVALID")
+         scores = torch.zeros(25, dtype=torch.float32)
++        component_rows = {}
+         for action, allowed in enumerate(graph.action_mask.tolist()):
+             if allowed:
+-                components = transparent_utility_components(
+-                    scorer(graph, action), task_capacity=config.task_capacity,
++                diagnostic = scorer(graph, action)
++                ideal_continuation = _public_pending_task_count(
++                    graph, action=action,
++                    own_on_time=bool(diagnostic.get("own_on_time_public", False)),
++                    task_capacity=int(config.task_capacity),
++                )
++                components = transparent_horizon_components(
++                    diagnostic, task_capacity=int(config.task_capacity),
+                     initial_total_energy=float(config.uav_count * config.initial_energy),
++                    ideal_continuation_completions=ideal_continuation,
+                 )
+-                scores[action] = 0.5 * float(preference[0]) * components[0] + float(preference[1]) * components[1]
+-        return scores
++                component_rows[str(action)] = {
++                    "task": float(components[0]), "energy": float(components[1]),
++                    "ideal_continuation_completions": int(ideal_continuation),
++                    "task_score": float(diagnostic["score"]),
++                    "energy_cost": float(diagnostic["energy_cost"]),
++                }
++                scores[action] = (
++                    0.5 * float(preference[0]) * components[0]
++                    + float(preference[1]) * components[1]
++                )
++        return {"scores": scores, "components": component_rows}
+ 
+     def world_predictor(self, _method: str, model: Any, observation: Mapping[str, Any], actions: Any, _mask: Any) -> Mapping[str, Any]:
+         import torch
+@@ -203,7 +433,9 @@
+         import torch
+         from classical_baselines import PublicDecisionAdapter
+         from gppo_world.joint_training import _mask_safe, _vector_reward
+-        _, _, _, _, m10_config, environment_type, scenario_from_dict = self._native()
++        from production_policy import canonical_sha256
++        _, _, _, _, _, environment_type, scenario_from_dict, _ = self._native()
++        config = self._m10_config()
+ 
+         train_rows = self._scenario_rows()
+         scenarios = []
+@@ -233,15 +465,24 @@
+         public_adapter = None
+         prepared_decision = None
+         policy_hidden = None
++        replay_decision_flats: list[np.ndarray] = []
++        recurrent_hidden_replay_groups = 0
++        recurrent_hidden_replay_observations = 0
++        recurrent_hidden_replay_traces: list[dict[str, Any]] = []
++        replay_hidden_check_pending = False
++        replay_hidden_expected: torch.Tensor | None = None
+         previous_counts = {"completed": 0, "expired": 0}
+-        previous_energy = float(m10_config().uav_count * m10_config().initial_energy)
++        previous_energy = float(config.uav_count * config.initial_energy)
++        raw_decisions: list[dict[str, Any]] = []
++        decision_traces: list[dict[str, Any]] = []
++        ppo_update_traces: list[dict[str, Any]] = []
+ 
+         def start_episode(index: int):
+             from public_history import CausalPublicHistory
+             row, source = scenarios[index % len(scenarios)]
+             scenario = scenario_from_dict(source["scenario"])
+             runtime_env = self._construct_environment(
+-                environment_type, m10_config(), scenario, str(row["exogenous_key"]),
++                environment_type, config, scenario, str(row["exogenous_key"]),
+             )
+             obs = context.calls.call(
+                 "environment", f"policy_reset:{context.route.method}:{context.route.seed}",
+@@ -267,10 +508,57 @@
+             decision_observation = dict(public_observation)
+             decision_observation["mask"] = effective_mask
+             decision_observation["policy_preference"] = current_preference
++            source_row, scenario_source = scenarios[scenario_index % len(scenarios)]
++            scenario_value = scenario_source.get("scenario", {})
++            decision_observation["decision_identity"] = {
++                "method": context.route.method, "seed": context.route.seed,
++                "parent": str(source_row.get("parent", "policy-training")),
++                "repeat": 0, "exogenous_key": str(source_row.get("exogenous_key")),
++                "scenario_id": str(scenario_value.get("tape_id", source_row.get("parent", "policy-training"))),
++            }
++            if replay_hidden_check_pending:
++                hidden_matches = (
++                    policy_hidden is None and replay_hidden_expected is None
++                ) or (
++                    policy_hidden is not None and replay_hidden_expected is not None
++                    and torch.equal(policy_hidden, replay_hidden_expected)
++                )
++                recurrent_hidden_replay_traces.append({
++                    "decision_step": int(context.decision_policy.decision_count),
++                    "expected_hidden_sha256": None if replay_hidden_expected is None
++                    else canonical_sha256(replay_hidden_expected),
++                    "observed_hidden_sha256": None if policy_hidden is None
++                    else canonical_sha256(policy_hidden),
++                    "matches": bool(hidden_matches),
++                })
++                if not hidden_matches:
++                    raise RuntimeHookError("POLICY_HIDDEN_REPLAY_NOT_USED_AT_NEXT_DECISION")
++                replay_hidden_check_pending = False
++                replay_hidden_expected = None
+             decision = context.decision_policy.select(
+                 decision_observation, decision_step=context.decision_policy.decision_count,
+                 hidden=policy_hidden,
+             )
++            replay_decision_flats.append(
++                np.asarray(decision_observation["flat"], dtype=np.float32).reshape(-1).copy()
++            )
++            raw_decisions.append({
++                "decision_step": int(context.decision_policy.decision_count - 1),
++                "candidate_count": int(decision.trace["candidate_count"]),
++                "base_argmax_action": int(decision.trace["base_argmax_action"]),
++                "prior_adjusted_argmax_action": int(decision.trace["prior_adjusted_argmax_action"]),
++                "prior_changed": bool(decision.trace["prior_changed"]),
++                "argmax_changed": bool(decision.trace["argmax_changed"]),
++                "selected_action_without_prior_same_rng": decision.trace["selected_action_without_prior_same_rng"],
++                "sampled_action_changed": (
++                    decision.action != decision.trace["selected_action_without_prior_same_rng"]
++                    if decision.trace["sampled_action_change_evaluated"] else None
++                ),
++                "selected_action": int(decision.action),
++                "noop_selected": int(decision.action) == 24,
++            })
++            decision_traces.append({**dict(decision.trace),
++                                    "training_preference": list(current_preference)})
+             values = decision.values
+             if values is None:
+                 raise RuntimeHookError("POLICY_VALUE_MISSING")
+@@ -287,7 +575,7 @@
+             # bootstrap or the next action; rollout replay stores that exact input.
+             causal_history.append(next_obs)
+             vector_reward, consequence, previous_counts, previous_energy = _vector_reward(
+-                info, previous_counts, previous_energy, m10_config(),
++                info, previous_counts, previous_energy, config,
+             )
+             transition = {
+                 "obs": np.asarray(old_obs["flat"], dtype=np.float32).copy(),
+@@ -344,9 +632,9 @@
+                 env, observation, public_adapter, causal_history = start_episode(scenario_index)
+                 prepared_decision = None
+                 policy_hidden = None
++                replay_decision_flats = []
+                 previous_counts = {"completed": 0, "expired": 0}
+-                cfg = m10_config()
+-                previous_energy = float(cfg.uav_count * cfg.initial_energy)
++                previous_energy = float(config.uav_count * config.initial_energy)
+             if len(transitions) == context.route.rollout_steps:
+                 last = transitions[-1]
+                 if not (last["terminated"] or last["truncated"]):
+@@ -365,9 +653,36 @@
+                     # Preserve the causal history attached to the bootstrap
+                     # observation when it becomes the next rollout prefix.
+                     prepared_decision = (next_decision_observation, next_effective_mask)
+-                for _ in range(updates_per_rollout):
+-                    context.update_policy(transitions, device=device)
++                rollout_index = (context.decision_policy.decision_count // context.route.rollout_steps) - 1
++                for update_in_rollout in range(updates_per_rollout):
++                    update_metrics = context.update_policy(transitions, device=device)
++                    if not isinstance(update_metrics, Mapping):
++                        raise RuntimeHookError("PPO_UPDATE_METRICS_MISSING")
++                    ppo_update_traces.append({
++                        "method": context.route.method, "seed": context.route.seed,
++                        "rollout_index": rollout_index,
++                        "update_index": total_updates,
++                        "update_in_rollout": update_in_rollout,
++                        "metrics": dict(update_metrics),
++                    })
+                     total_updates += 1
++                replay_hidden = None
++                with torch.no_grad():
++                    for replay_flat in replay_decision_flats:
++                        replay_obs = torch.as_tensor(replay_flat, dtype=torch.float32).reshape(1, -1)
++                        replay_encoded = context.calls.call(
++                            "model", f"{context.route.method.lower()}_recurrent_hidden_replay",
++                            {"encode_sample_evaluations": 1},
++                            context.decision_policy.policy.encode, replay_obs, replay_hidden,
++                        )
++                        if not isinstance(replay_encoded, (tuple, list)) or len(replay_encoded) != 3:
++                            raise RuntimeHookError("POLICY_HIDDEN_REPLAY_OUTPUT_INVALID")
++                        replay_hidden = replay_encoded[2]
++                policy_hidden = replay_hidden
++                replay_hidden_expected = None if replay_hidden is None else replay_hidden.detach().clone()
++                replay_hidden_check_pending = True
++                recurrent_hidden_replay_groups += 1
++                recurrent_hidden_replay_observations += len(replay_decision_flats)
+                 transitions = []
+         if transitions:
+             raise RuntimeHookError("POLICY_ROLLOUT_REMAINDER")
+@@ -377,6 +692,13 @@
+             "world_model_updates": 0,
+             "world_model_frozen": context.route.world_model_variant is not None,
+             "route": f"{context.route.method}:{context.route.seed}",
++            "decision_summary": context.decision_policy.decision_summary(),
++            "raw_decisions": raw_decisions,
++            "decision_traces": decision_traces,
++            "ppo_update_traces": ppo_update_traces,
++            "recurrent_hidden_replay_groups": recurrent_hidden_replay_groups,
++            "recurrent_hidden_replay_observations": recurrent_hidden_replay_observations,
++            "recurrent_hidden_replay_traces": recurrent_hidden_replay_traces,
+         }
+ 
+     def episode_runner(self, context: Any) -> Mapping[str, Any]:
+@@ -385,9 +707,10 @@
+         from public_history import CausalPublicHistory
+         from classical_baselines import ClassicalSelector, PublicDecisionAdapter
+         from gppo_world.joint_training import _vector_reward
+-        _, _, _, _, m10_config, environment_type, scenario_from_dict = self._native()
++        from production_policy import canonical_sha256
++        _, _, _, _, _, environment_type, scenario_from_dict, _ = self._native()
+         row = self._row(context.exogenous_key)
+-        config = m10_config()
++        config = self._m10_config()
+         env = self._construct_environment(
+             environment_type, config, scenario_from_dict(row["scenario"]), context.exogenous_key,
+         )
+@@ -395,28 +718,101 @@
+         public_history = CausalPublicHistory()
+         public_history.append(observation)
+         opportunity = False
+-        actions, utility, steps = [], 0.0, 0
++        actions, vector_rewards, utility, steps = [], [], 0.0, 0
+         public_adapter = PublicDecisionAdapter()
+         hungarian = ClassicalSelector("hungarian", preference=context.task_preference) if context.decision_policy is None else None
++        policy_sampling_key = None
++        policy_sampling_seed = None
++        if context.decision_policy is not None:
++            policy_sampling_key, policy_sampling_seed = _policy_sampling_identity(
++                context.parent, context.repeat, int(context.seed),
++            )
++            torch.manual_seed(policy_sampling_seed)
+         policy_hidden = None
++        hungarian_costs: list[dict[str, Any]] = []
+         previous_counts = {"completed": 0, "expired": 0}
+         initial_energy = float(config.uav_count * config.initial_energy)
+         previous_energy = initial_energy
+         final_info = None
+         done = False
+         while steps < context.max_steps and not done:
++            wall_started = context.clock.perf_counter()
++            cpu_started = context.clock.process_time()
+             public_observation, effective_mask = public_adapter.prepare(observation)
+             public_observation = public_history.attach_current(public_observation)
+             opportunity = opportunity or bool(torch.as_tensor(effective_mask, dtype=torch.bool)[:24].any())
+             decision_observation = dict(public_observation)
+             decision_observation["mask"] = effective_mask
+             decision_observation["policy_preference"] = context.task_preference
++            decision_observation["decision_identity"] = {
++                "method": context.method, "seed": context.seed,
++                "parent": context.parent, "repeat": context.repeat,
++                "exogenous_key": context.exogenous_key,
++                "scenario_id": str(row.get("scenario_id", row.get("parent", context.parent))),
++                "policy_sampling_key": policy_sampling_key,
++                "policy_sampling_seed": policy_sampling_seed,
++            }
+             if hungarian is not None:
+                 action, diagnostic = hungarian.choose(decision_observation, public_adapter.memory)
+-                trace = {"method": "H", "selected_action": action, "diagnostic": diagnostic}
++                context.calls.charge("hungarian_public_rule_decision", {"public_rule_decisions": 1})
++                cpu_seconds = float(context.clock.process_time() - cpu_started)
++                wall_seconds = float(context.clock.perf_counter() - wall_started)
++                if not all(math.isfinite(value) and value >= 0 for value in (cpu_seconds, wall_seconds)):
++                    raise RuntimeHookError("HUNGARIAN_DECISION_CLOCK_INVALID")
++                legal_actions = [index for index, legal in enumerate(effective_mask) if legal]
++                ids = public_observation.get("public_entity_ids", {})
++                candidate_ids = []
++                for legal_action in legal_actions:
++                    if legal_action == 24:
++                        candidate_ids.append({"action_id": 24, "candidate_id": "NOOP"})
++                    else:
++                        uav_index, task_index = divmod(legal_action, 6)
++                        candidate_ids.append({
++                            "action_id": legal_action,
++                            "candidate_id": f"{ids['uavs'][uav_index]}|{ids['tasks'][task_index]}",
++                            "uav_id": str(ids["uavs"][uav_index]),
++                            "task_id": str(ids["tasks"][task_index]),
++                        })
++                public_input_sha256 = canonical_sha256({
++                    "flat": decision_observation.get("flat"),
++                    "relations": decision_observation.get("graph", {}).get("relations"),
++                    "mask": effective_mask, "preference": list(context.task_preference),
++                    "public_history": decision_observation.get("public_history"),
++                    "public_history_schema": decision_observation.get("public_history_schema"),
++                    "public_entity_ids": ids,
++                })
++                trace = {
++                    "method": "H", "seed": None, "parent": context.parent,
++                    "repeat": context.repeat, "exogenous_key": context.exogenous_key,
++                    "scenario_id": decision_observation["decision_identity"]["scenario_id"],
++                    "decision_step": steps, "public_input_sha256": public_input_sha256,
++                    "public_history_identity": {
++                        "schema": decision_observation.get("public_history_schema"),
++                        "sha256": canonical_sha256(decision_observation.get("public_history")),
++                    },
++                    "legal_actions": legal_actions,
++                    "legal_candidate_identities": candidate_ids,
++                    "diagnostic": diagnostic, "action_probabilities": None,
++                    "selected_action": int(action), "policy_sampling_key": None,
++                    "policy_sampling_seed": None,
++                    "sampled_action_change_evaluated": False,
++                }
++                hungarian_costs.append({
++                    "method": "H", "parent": context.parent, "repeat": context.repeat,
++                    "seed": None, "decision_step": steps,
++                    "candidate_count": int(sum(bool(value) for value in effective_mask)),
++                    "cpu_seconds": cpu_seconds, "wall_seconds": wall_seconds,
++                    "world_model_forwards": 0, "world_model_sample_evaluations": 0,
++                    "selected_action": int(action), "noop_selected": int(action) == 24,
++                    "has_non_noop_candidate": any(value != 24 for value in legal_actions),
++                    "g1_cost_eligible": False,
++                    "sampled_action_change_evaluated": False,
++                    "cost_scope": "shared public preparation/history + public features + Hungarian assignment + action selection",
++                })
+             else:
+                 decision = context.decision_policy.select(
+                     decision_observation, decision_step=steps, hidden=policy_hidden,
++                    clock_start=(wall_started, cpu_started),
+                 )
+                 action, trace = decision.action, decision.trace
+                 policy_hidden = decision.next_hidden
+@@ -436,8 +832,10 @@
+                 context.task_component_scale * context.task_preference[0] * float(vector_reward[0])
+                 + context.task_preference[1] * float(vector_reward[1])
+             )
++            reward_vector = np.asarray(vector_reward, dtype=np.float32).tolist()
++            vector_rewards.append(reward_vector)
+             actions.append({**dict(trace), "preference": list(context.task_preference),
+-                            "vector_reward": np.asarray(vector_reward, dtype=np.float32).tolist(),
++                            "vector_reward": reward_vector,
+                             "scalar_environment_reward": float(scalar_reward)})
+             final_info = info
+             steps += 1
+@@ -447,25 +845,95 @@
+         tasks = tuple(row["scenario"].get("tasks", ()))
+         if not tasks:
+             raise RuntimeHookError("TASK_SCENARIO_HAS_NO_TASKS")
+-        physical = 0
+-        host = 0
+-        for task in tasks:
+-            record = records.get(task["task_id"], {})
+-            physical_time = record.get("physical_arrival_time")
+-            host_time = record.get("host_confirmation_time")
+-            deadline = float(task["deadline"])
+-            physical += int(physical_time is not None and float(physical_time) <= deadline)
+-            host += int(host_time is not None and float(host_time) <= deadline
+-                        and float(host_time) <= float(final_info["time"]))
++        lifecycle_outcomes = task_outcome_labels(tasks, final_info)
++        physical_known = [row["physical_on_time_completion"]["value"] for row in lifecycle_outcomes
++                          if row["physical_on_time_completion"]["valid"]]
++        host_known = [row["host_confirmation"]["value"] for row in lifecycle_outcomes
++                      if row["host_confirmation"]["valid"]]
++        outcome_valid = all(row["physical_on_time_completion"]["valid"] for row in lifecycle_outcomes)
++        unknown_reasons = sorted({row["physical_on_time_completion"]["reason"] for row in lifecycle_outcomes
++                                  if not row["physical_on_time_completion"]["valid"]})
++        config_contract = json.loads((self.root / "environment-config-contract.json").read_text(encoding="utf-8"))
++        decision_summary = {} if context.decision_policy is None else context.decision_policy.decision_summary()
+         return {
+             "steps": steps, "opportunity": opportunity,
+-            "utility": utility if opportunity else None, "actions": actions,
++            "outcome_valid": outcome_valid,
++            "outcome_unknown_reason": None if outcome_valid else ";".join(unknown_reasons),
++            "utility_valid": True,
++            "utility": utility, "actions": actions,
++            "vector_rewards": vector_rewards,
++            "lifecycle_outcomes": lifecycle_outcomes,
++            "decision_costs": hungarian_costs,
+             "preference": list(context.task_preference),
+-            "physical_rate": physical / len(tasks), "host_rate": host / len(tasks),
++            "environment_config_sha256": config_contract.get("config_sha256"),
++            "scenario_id": str(row.get("scenario_id", getattr(env.scenario, "tape_id", context.parent))),
++            "physical_rate": None if not physical_known else sum(bool(value) for value in physical_known) / len(physical_known),
++            "physical_outcome_valid_count": len(physical_known),
++            "host_rate": None if not host_known else sum(bool(value) for value in host_known) / len(host_known),
++            "host_outcome_valid_count": len(host_known),
+             "counts": dict(previous_counts), "energy_used": initial_energy - previous_energy,
+             "terminated": bool(final_info.get("terminated")),
+             "truncated": bool(final_info.get("truncated")),
++            "policy_sampling_key": policy_sampling_key,
++            "policy_sampling_seed": policy_sampling_seed,
++            "argmax_changed_count": decision_summary.get("argmax_changed_count", 0),
++            "sampled_action_changed_count": decision_summary.get("sampled_action_changed_count", 0),
++            "sampled_action_comparison_count": decision_summary.get("sampled_action_comparison_count", 0),
++            "sampled_action_comparison_status": decision_summary.get("sampled_action_comparison_status", "not_evaluated"),
+         }
+ 
+-
+-__all__ = ["NativeRuntimeHooks", "RuntimeHookError"]
++    def train_policy_routes(self, *, matrix: Mapping[str, Any], request: Mapping[str, Any],
++                            ledger: Any, boundary: Any | None = None,
++                            output_dir: str | Path | None = None,
++                            clock: Any = time) -> dict[str, Any]:
++        from production_policy import train_policy_routes
++        result = train_policy_routes(
++            matrix=matrix, request=request, ledger=ledger,
++            boundary=self.adapter.boundary if boundary is None else boundary,
++            world_model_loader=self.world_model_loader,
++            policy_factory=self.policy_factory,
++            optimizer_factory=self.optimizer_factory,
++            route_runner=self.route_runner,
++            ppo_update_fn=self.ppo_update_fn,
++            checkpoint_writer=self.checkpoint_writer,
++            input_builder=self.input_builder,
++            transparent_scorer=self.transparent_scorer,
++            world_predictor=self.world_predictor,
++            output_dir=output_dir, clock=clock,
++        )
++        hashes = {}
++        state_hashes = {}
++        for route in result.get("routes", ()):
++            resolved = str(Path(route["checkpoint"]).resolve())
++            hashes[resolved] = str(route["checkpoint_sha256"])
++            state_hashes[resolved] = str(route["checkpoint_state_sha256"])
++        self._policy_checkpoint_hashes = hashes
++        self._policy_checkpoint_state_hashes = state_hashes
++        try:
++            self.adapter.policy_checkpoint_hashes = dict(hashes)
++            self.adapter.policy_checkpoint_state_hashes = dict(state_hashes)
++        except (AttributeError, TypeError):
++            pass
++        return result
++
++    def evaluate_task_confirmation(self, *, matrix: Mapping[str, Any], request: Mapping[str, Any],
++                                   ledger: Any, checkpoints: Mapping[tuple[str, int], str],
++                                   boundary: Any | None = None,
++                                   output_dir: str | Path | None = None,
++                                   clock: Any = time, selector: Any | None = None) -> dict[str, Any]:
++        from production_policy import evaluate_task_confirmation
++        return evaluate_task_confirmation(
++            matrix=matrix, request=request, ledger=ledger,
++            boundary=self.adapter.boundary if boundary is None else boundary,
++            policy_loader=self.policy_loader,
++            world_model_loader=self.world_model_loader,
++            episode_runner=self.episode_runner,
++            input_builder=self.input_builder,
++            transparent_scorer=self.transparent_scorer,
++            world_predictor=self.world_predictor,
++            checkpoints=checkpoints, output_dir=output_dir,
++            clock=clock, selector=selector,
++        )
++
++
++__all__ = ["NativeRuntimeHooks", "RuntimeHookError", "task_outcome_labels"]
