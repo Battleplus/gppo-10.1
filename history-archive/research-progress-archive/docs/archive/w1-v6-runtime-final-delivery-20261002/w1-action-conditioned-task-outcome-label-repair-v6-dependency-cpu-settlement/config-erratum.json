@@ -1,0 +1,46 @@
+{
+  "schema": "w1-environment-config-erratum/2.0.0",
+  "status": "PROVENANCE_CORRECTION_ONLY_NO_OLD_ARTIFACTS_CHANGED",
+  "source_run": "E:/Z博士/runs/w1-light-repaired-fair-rerun-v2-nativefs-once",
+  "environment_json_sha256": "95b8b6e293fd7f500c3e89114424ff850717914cd3950a01e5cfbfb426f625ae",
+  "environment_json_generation": {
+    "script": "E:/Z博士/research-plans/gppo-world-lightweight-20260926/prepare_server.py",
+    "operation": "cfg = json.loads(binding['config']).get('environment'); write(ROOT / 'environment.json', cfg)",
+    "binding": "E:/Z博士/research-plans/gppo-world-stage2-gate-preparation-20260924/binding.json",
+    "resolved_config": "E:/Z博士/migration-artifacts/preference-weighted-wm-event-cpu-20260917/final/run/training/seed-1101/WD/resolved-config.json",
+    "recorded_mode": "arrival_to_region",
+    "recorded_deadline_basis": "physical_arrival"
+  },
+  "historical_effective_configuration": {
+    "entry": "frozen formal entry with integration_test=false; run status records production backend and source tape identity verification",
+    "collector": "W1RuntimeBackend -> ProductionDataCollector under the formal worker; the 56-window export hash differs from the separate fake-worker E2E fixture",
+    "effective_environment_class": "generated W1 M10 simulator data; not field UAV telemetry",
+    "evidence": "formal export SHA-256 932b9f6638dbe332359301b26b098db411d5f75cee93ec239114fb0ac421bb51, 110433034 bytes; formal worker status prediction_gate_stop; independent E2E fake fixture has a distinct hash and approximately 1.94 MB",
+    "misclassification_origin": "UNDETERMINED_FROM_AVAILABLE_EVIDENCE",
+    "real_field_uav_data": false
+  },
+  "affected_evidence": {
+    "world_model_windows": {
+      "total": 56,
+      "train": 24,
+      "model_selection": 8,
+      "prediction_confirmation": 24,
+      "candidate_rows": 771,
+      "mode": "continuous_service_until_deadline",
+      "evidence_class": "production_collector_on_generated_w1_m10_simulator_scenarios",
+      "prediction_confirmation_relation": "8 parents x 3 repeats; the 24 windows are included in the 56-window total"
+    },
+    "task_outcome_heads": "The formal export has no usable terminal task-lifecycle supervision for the action-conditioned physical-outcome target. It is production M10 simulator output, not the fake-worker fixture and not field UAV telemetry.",
+    "prediction_gate_stop": "Preserve the frozen procedural status. The source-class conflict is unresolved, so the old metrics are not used here as evidence that a real W1 task-outcome world model is effective or ineffective; task comparison did not run.",
+    "w1_light_repaired_fair_rerun_v2": "Its runtime explicitly loads environment.json, so its task semantics remain arrival_to_region / physical_arrival. Preserve those results and do not pool them with continuous-service labels.",
+    "history_repair_learning_loop_88_windows": "Its frozen runtime backend loads environment.json from the repaired fair-rerun runtime; its 219/68/111 candidate utility records and completion explanations remain historical arrival-contract development evidence. Candidate-to-internal-task identity is insufficient for task lifecycle reconstruction; do not merge.",
+    "oracle_144_branches": "Preserve as arrival_to_region / physical_arrival fixed-Hungarian oracle evidence; do not merge into this contract."
+  },
+  "future_collection_contract": {
+    "config_source": "environment-config-contract.json",
+    "config_sha256": "5fe6bd877533edf50e8fefc147629d92d4aa5d618c3ab678ea91e2fe57c5d9b2",
+    "precollection": "instantiate exact frozen M10Config values, validate values and digest before environment construction, then write environment.json from that same runtime object",
+    "mismatch_action": "stop before reset; retain original evidence; no implicit fallback",
+    "selected_semantics": "arrival_to_region / physical_arrival, because the W1 fair-rerun explicitly used this effective runtime configuration and it matches the meeting's arrive-at-region task meaning; historical continuous-service labels are not pooled"
+  }
+}

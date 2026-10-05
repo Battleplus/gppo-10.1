@@ -1,0 +1,26 @@
+{
+  "attempt": "w1-label-v6-isolated-collector-settlement-test-once",
+  "historical_use_elsewhere": "not_proven_absent; the baseline parent plan lists these identities, while available attempt-level usage registration is incomplete",
+  "no_opportunity": "retain as missing; do not replace or count as a zero label",
+  "parents": [
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0056|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0056",
+      "scenario_sha256": "e682dd95aa8b3af0e56a20c42bba2c057d0dbc09a6d96c3925cbd2dbef1ae9cd",
+      "structural_sha256": "9c904497288cbc7725f9e7b5912e1c9df3c6ca2e168c160be6b412f29c20bc2f",
+      "tape_index": 56
+    }
+  ],
+  "prior_registered_split_sha256": "af24bdaf4eb2a2b1156a689b7629f493b918c8fb7b283dd34cb967a8a75b39b3",
+  "repeats": {
+    "label_qualification": 1
+  },
+  "schema": "w1-action-conditioned-task-outcome-parent-split/1.0.0",
+  "selection_rule": "fixed contiguous W1 train tape indices 56-63, selected by identity before new collection outcomes; no outcome screening or substitutions",
+  "source_train_tapes_sha256": "f2e6f7b2d7590989e305be5d7c6faf685369e15563a7b2fefb18c0468e7aa510",
+  "split_counts": {
+    "label_qualification": 8
+  }
+}

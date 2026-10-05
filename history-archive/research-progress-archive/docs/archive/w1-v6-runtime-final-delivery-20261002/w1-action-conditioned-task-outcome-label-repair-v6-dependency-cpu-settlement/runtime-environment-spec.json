@@ -1,0 +1,46 @@
+{
+  "schema": "w1-runtime-environment-spec/2.0.0",
+  "base": "Ubuntu-24.04 WSL native ext4, Python 3.12.3 virtual environment with the frozen system-site setting",
+  "interpreter": "/home/asus/w1-action-relative-auxiliary-runtime-dependency-repair-v1-runtime/bin/python",
+  "python_binary_sha256": "e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f",
+  "python_version": "3.12.3",
+  "python_prefix": "/home/asus/w1-action-relative-auxiliary-runtime-dependency-repair-v1-runtime",
+  "pyvenv_cfg_sha256": "53305906f617f93b3a80ce765779bff297226d27e216ede22f5f0ff3b128ca81",
+  "include_system_site_packages": true,
+  "install_source": "previously verified CPU-only environment; no launch-time package installation",
+  "cuda_required": false,
+  "packages": {
+    "numpy": "1.26.4",
+    "torch": "2.8.0+cpu"
+  },
+  "package_sources": {
+    "numpy": {
+      "origin": "explicit Ubuntu system-site-packages dependency",
+      "import_path": "/usr/lib/python3/dist-packages/numpy/__init__.py",
+      "init_sha256": "22cd1535fa14d74ef6f457cca149ffdc80875f460be313b8f895273f78bc402e",
+      "extension_path": "/usr/lib/python3/dist-packages/numpy/core/_multiarray_umath.cpython-312-x86_64-linux-gnu.so",
+      "extension_sha256": "ade966a58746fa5bc8e937a6c7d2d0a3b1e49adbb9890c3a3267157131f22313"
+    },
+    "torch": {
+      "origin": "frozen CPU virtual environment",
+      "import_path": "/home/asus/w1-action-relative-auxiliary-runtime-dependency-repair-v1-runtime/lib/python3.12/site-packages/torch/__init__.py",
+      "init_sha256": "2f0deb66d5dff6b9c02a62832c3bf3824c2ee031c462a3afeb9ca170466da5bf",
+      "extension_path": "/home/asus/w1-action-relative-auxiliary-runtime-dependency-repair-v1-runtime/lib/python3.12/site-packages/torch/_C.cpython-312-x86_64-linux-gnu.so",
+      "extension_sha256": "5dc8a93ddc69041dbd3f796794e0c2b3f72b47e0dc24ae2b46d9e7d0dc78953b"
+    }
+  },
+  "python_runtime_critical_files": {
+    "/home/asus/w1-action-relative-auxiliary-runtime-dependency-repair-v1-runtime/bin/python": "e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f",
+    "/home/asus/w1-action-relative-auxiliary-runtime-dependency-repair-v1-runtime/pyvenv.cfg": "53305906f617f93b3a80ce765779bff297226d27e216ede22f5f0ff3b128ca81"
+  },
+  "smoke": {
+    "imports": ["numpy", "torch"],
+    "requires_cpu_only_build": true,
+    "requires_virtualenv_prefix_match": true,
+    "requires_frozen_package_paths_and_hashes": true,
+    "model_initialization": false,
+    "checkpoint_load": false,
+    "training": false
+  },
+  "lock_file": "runtime-dependency-lock.txt"
+}

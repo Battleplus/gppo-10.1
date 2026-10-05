@@ -1,0 +1,25 @@
+{
+  "actual_command": "env -u LD_LIBRARY_PATH -u LD_PRELOAD -u PYTHONPATH -u PYTHONHOME PYTHONNOUSERSITE=1 /home/user1/.venvs/w1-runtime-v1/bin/python -I -B -X pycache_prefix=/home/user1/.venvs/w1-runtime-v1/.w1-no-bytecode-cache /home/user1/w1-remote-runtime-dependency-repair-v1/runtime_preflight.py --identity /home/user1/w1-remote-runtime-dependency-repair-v1/runtime-identity-v2.json --identity-sha256 af32685059d7c3107ab6d0d2f34bc0e9e71c118ec8179d394a216798d7b62cb1",
+  "before_after_equal": true,
+  "exit_code": 0,
+  "file_count_including_outer_manifest": 27,
+  "formal_attempt_created": false,
+  "local_remote_equal": true,
+  "remote_output": {
+    "exclusive_resource_allocation_proven": false,
+    "formal_attempt_created": false,
+    "gpu_snapshot": "GPU-cd03c61b-a80e-2539-8a8a-88b3b53c2030, NVIDIA GeForce RTX 2080 Ti, 535.161.08, 10388\nGPU-7b708ead-e044-6ce7-a530-6b3093ac905e, NVIDIA GeForce RTX 2080 Ti, 535.161.08, 10988\n",
+    "model_calls": 0,
+    "optimizer_updates": 0,
+    "python_executable": "/home/user1/.venvs/w1-runtime-v1/bin/python",
+    "runtime_identity_only": true,
+    "staging_started": false,
+    "status": "pass",
+    "tensor_calls": 0,
+    "worker_started": false
+  },
+  "stderr_file": "final-original-preflight.stderr",
+  "stderr_observation": "empty; SCP omits progress for zero-byte file",
+  "stdout_file": "final-original-preflight.stdout",
+  "training_authorization": false
+}

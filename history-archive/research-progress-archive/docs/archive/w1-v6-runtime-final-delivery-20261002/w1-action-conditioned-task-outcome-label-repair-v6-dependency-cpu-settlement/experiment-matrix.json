@@ -1,0 +1,39 @@
+{
+  "schema": "w1-action-conditioned-task-outcome-label-matrix/1.0.0",
+  "attempt": "w1-action-conditioned-task-outcome-label-qualification-v6-dependency-cpu-settlement-once",
+  "parent_split_file": "parent-split.json",
+  "candidate_continuation_id": "hungarian-v1-fixed",
+  "parent_count": 8,
+  "splits": {
+    "label_qualification": "parent-split.json:parents"
+  },
+  "repeats": {
+    "label_qualification": 1
+  },
+  "bounds": {
+    "parents": 8,
+    "prefix_steps_per_parent_upper": 4,
+    "candidate_count_per_window_upper_including_noop": 25,
+    "candidate_branches_upper": 200,
+    "first_action_steps_per_branch": 1,
+    "continuation_decisions_per_branch_upper": 13,
+    "branch_steps_per_branch_upper": 14
+  },
+  "preference_configuration": {
+    "task_confirmation": [0.8, 0.2],
+    "task_component_scale": 0.5
+  },
+  "candidate_rule": "all legal public actions including NOOP; no candidate truncation or post-outcome selection",
+  "no_opportunity_rule": "persist the parent and reason as no_opportunity; no replacement or zero-label imputation",
+  "source_semantics": {
+    "task_completion_mode": "arrival_to_region",
+    "deadline_basis": "physical_arrival",
+    "arrival_radius": 0.0
+  },
+  "dynamic_model_calls": {
+    "initializations_or_loads": 0,
+    "checkpoint_loads_or_writes": 0,
+    "forwards": 0,
+    "optimizer_updates": 0
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "C:\\Python314\\python.exe",
+    "-B",
+    "E:\\Z博士\\research-plans\\w1-action-conditioned-task-outcome-label-repair-v6-dependency-cpu-settlement\\launch_once.py",
+    "--authorization-file",
+    "E:\\Z博士\\.codex-private\\w1-action-conditioned-task-outcome-label-qualification-v6-dependency-cpu-settlement-once\\authorization.json",
+    "--preflight-only"
+  ],
+  "cwd": "E:\\Z博士\\research-plans\\w1-action-conditioned-task-outcome-label-repair-v6-dependency-cpu-settlement",
+  "exit_code": 0
+}
