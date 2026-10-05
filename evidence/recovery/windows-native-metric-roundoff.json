@@ -1,0 +1,141 @@
+{
+  "difference_count": 22,
+  "differences": [
+    {
+      "absolute_error": 2.7755575615628914e-17,
+      "native_recorded": 0.24563692826733957,
+      "path": "/parent_macro_utility/G0",
+      "windows_recompute": 0.2456369282673396
+    },
+    {
+      "absolute_error": 2.7755575615628914e-17,
+      "native_recorded": 0.24563692826733957,
+      "path": "/parent_macro_utility/T",
+      "windows_recompute": 0.2456369282673396
+    },
+    {
+      "absolute_error": 5.551115123125783e-17,
+      "native_recorded": 0.3360456706429505,
+      "path": "/parent_macro_utility/H",
+      "windows_recompute": 0.33604567064295043
+    },
+    {
+      "absolute_error": 5.551115123125783e-17,
+      "native_recorded": 0.2652397842471333,
+      "path": "/per_parent/train-0106/G0",
+      "windows_recompute": 0.26523978424713335
+    },
+    {
+      "absolute_error": 5.551115123125783e-17,
+      "native_recorded": 0.2652397842471333,
+      "path": "/per_parent/train-0106/T",
+      "windows_recompute": 0.26523978424713335
+    },
+    {
+      "absolute_error": 2.7755575615628914e-17,
+      "native_recorded": 0.1692783915785919,
+      "path": "/per_parent/train-0110/G1",
+      "windows_recompute": 0.16927839157859192
+    },
+    {
+      "absolute_error": 5.551115123125783e-17,
+      "native_recorded": 0.34304442297786286,
+      "path": "/per_parent/train-0110/H",
+      "windows_recompute": 0.3430444229778628
+    },
+    {
+      "absolute_error": 2.7755575615628914e-17,
+      "native_recorded": 0.21448902588889798,
+      "path": "/per_parent/train-0111/G1",
+      "windows_recompute": 0.21448902588889796
+    },
+    {
+      "absolute_error": 5.551115123125783e-17,
+      "native_recorded": -0.026793013202886323,
+      "path": "/paired_parent_differences/G0/train-0106",
+      "windows_recompute": -0.02679301320288638
+    },
+    {
+      "absolute_error": 2.7755575615628914e-17,
+      "native_recorded": -0.028039139284426057,
+      "path": "/paired_parent_differences/G0/train-0110",
+      "windows_recompute": -0.02803913928442603
+    },
+    {
+      "absolute_error": 2.7755575615628914e-17,
+      "native_recorded": -0.026310719560216134,
+      "path": "/paired_parent_differences/G0/train-0111",
+      "windows_recompute": -0.02631071956021616
+    },
+    {
+      "absolute_error": 5.551115123125783e-17,
+      "native_recorded": -0.026793013202886323,
+      "path": "/paired_parent_differences/T/train-0106",
+      "windows_recompute": -0.02679301320288638
+    },
+    {
+      "absolute_error": 2.7755575615628914e-17,
+      "native_recorded": -0.028039139284426057,
+      "path": "/paired_parent_differences/T/train-0110",
+      "windows_recompute": -0.02803913928442603
+    },
+    {
+      "absolute_error": 2.7755575615628914e-17,
+      "native_recorded": -0.026310719560216134,
+      "path": "/paired_parent_differences/T/train-0111",
+      "windows_recompute": -0.02631071956021616
+    },
+    {
+      "absolute_error": 8.326672684688674e-17,
+      "native_recorded": -0.17376603139927096,
+      "path": "/paired_parent_differences/H/train-0110",
+      "windows_recompute": -0.17376603139927088
+    },
+    {
+      "absolute_error": 2.7755575615628914e-17,
+      "native_recorded": -0.12545219709568303,
+      "path": "/paired_parent_differences/H/train-0111",
+      "windows_recompute": -0.12545219709568306
+    },
+    {
+      "absolute_error": 6.938893903907228e-18,
+      "native_recorded": -0.008791918188701838,
+      "path": "/g1_minus_g0_macro_utility",
+      "windows_recompute": -0.008791918188701845
+    },
+    {
+      "absolute_error": 6.938893903907228e-18,
+      "native_recorded": -0.008791918188701838,
+      "path": "/g1_minus_t_macro_utility",
+      "windows_recompute": -0.008791918188701845
+    },
+    {
+      "absolute_error": 5.204170427930421e-18,
+      "native_recorded": 0.015375829232395138,
+      "path": "/seed_g1_minus_t/8301",
+      "windows_recompute": 0.015375829232395144
+    },
+    {
+      "absolute_error": 6.938893903907228e-18,
+      "native_recorded": -0.036862531392950856,
+      "path": "/seed_g1_minus_t/8303",
+      "windows_recompute": -0.03686253139295086
+    },
+    {
+      "absolute_error": 2.42861286636753e-17,
+      "native_recorded": -0.02332409617653882,
+      "path": "/bootstrap_g1_minus_t/lower_95",
+      "windows_recompute": -0.023324096176538845
+    },
+    {
+      "absolute_error": 1.3877787807814457e-17,
+      "native_recorded": 0.008297714979061916,
+      "path": "/bootstrap_g1_minus_t/upper_95",
+      "windows_recompute": 0.008297714979061902
+    }
+  ],
+  "experiment_restarted": false,
+  "maximum_absolute_numeric_error": 8.326672684688674e-17,
+  "production_evidence_changed": false,
+  "windows_python": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]"
+}

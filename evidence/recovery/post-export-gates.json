@@ -1,0 +1,28 @@
+{
+  "cost_gate": {
+    "G1_only": {
+      "active_decision_count": 693,
+      "cpu_mean_ms": 51.07337600296035,
+      "sample_count": 1014,
+      "status": "evaluated",
+      "wall_p95_ms": 150.7048269850202,
+      "world_model_forwards": 1014
+    },
+    "pass": false,
+    "status": "evaluated"
+  },
+  "research_success": false,
+  "status": "task_gain_gate_stop",
+  "task_gate": {
+    "checks": {
+      "G1_vs_G0": false,
+      "G1_vs_H": false,
+      "G1_vs_T": false,
+      "coverage": true,
+      "parent_bootstrap": false,
+      "parent_stability": false,
+      "seed_stability": false
+    },
+    "pass": false
+  }
+}

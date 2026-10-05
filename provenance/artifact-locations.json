@@ -1,0 +1,135 @@
+{
+  "schema": "w1-local-artifact-index/1",
+  "as_of": "2026-10-05",
+  "workspace_root": "E:\\Z博士",
+  "checkpoint_loading_performed": false,
+  "note": "Local artifact locations and byte hashes only; not a remote artifact backup.",
+  "files": [
+    {
+      "source_relative_to_workspace": "research-plans/w1-task-outcome-g1-g2-joint-local-v1/verified-export/run-once/world-model-windows.jsonl",
+      "bytes": 114649564,
+      "sha256": "14839fa3321f19e0ae8184a329e286b97ab4f5e64bfb7cf238ca2aff64d263d9",
+      "uploaded": false
+    },
+    {
+      "source_relative_to_workspace": "research-plans/w1-task-outcome-g1-g2-joint-local-v1/verified-export/run-once/prediction-trace.jsonl",
+      "bytes": 3841361,
+      "sha256": "de591793341e924a74087a1d0c9aaa1127a7cb4576c5b24cc5b7ddcf0394a8ff",
+      "uploaded": false
+    },
+    {
+      "source_relative_to_workspace": "research-plans/w1-task-outcome-g1-g2-joint-local-v1/verified-export/run-once/world-model-checkpoints/G1/seed-8201.pt",
+      "bytes": 1133588,
+      "sha256": "3d43fa9e03dd32aae14cb9f3de30991c88b6daed6426b2995e87610fe7df1639",
+      "uploaded": false
+    },
+    {
+      "source_relative_to_workspace": "research-plans/w1-task-outcome-g1-g2-joint-local-v1/verified-export/run-once/world-model-checkpoints/G1/seed-8202.pt",
+      "bytes": 1133588,
+      "sha256": "126a4d43dfbf7d555477584c24d231a890b8077dc6fa690f0f0e9e4daaec2789",
+      "uploaded": false
+    },
+    {
+      "source_relative_to_workspace": "research-plans/w1-task-outcome-g1-g2-joint-local-v1/verified-export/run-once/world-model-checkpoints/G1/seed-8203.pt",
+      "bytes": 1133588,
+      "sha256": "d0d0111a15b8b075df1450c64d92491bcdbf5a69d405e8662fe6672e64b76f03",
+      "uploaded": false
+    },
+    {
+      "source_relative_to_workspace": "research-plans/w1-task-outcome-g1-g2-joint-local-v1/verified-export/run-once/world-model-checkpoints/G2/seed-8201.pt",
+      "bytes": 1133588,
+      "sha256": "4f9102928e2cbd7794f92bb2c6568c3f13ddfe0adabe341a7b16ce397c9742fc",
+      "uploaded": false
+    },
+    {
+      "source_relative_to_workspace": "research-plans/w1-task-outcome-g1-g2-joint-local-v1/verified-export/run-once/world-model-checkpoints/G2/seed-8202.pt",
+      "bytes": 1133588,
+      "sha256": "26579ee397226ab94737a8c6a65c21a591980662e9036f0b4a186a24563eb25b",
+      "uploaded": false
+    },
+    {
+      "source_relative_to_workspace": "research-plans/w1-task-outcome-g1-g2-joint-local-v1/verified-export/run-once/world-model-checkpoints/G2/seed-8203.pt",
+      "bytes": 1133588,
+      "sha256": "8e974d0884e80f99fd78e4ea6f5b0acee7206a0f0becf6e6e540e5a557914284",
+      "uploaded": false
+    },
+    {
+      "source_relative_to_workspace": "research-plans/w1-g1-gppo-recovery-preparation-v1/package/frozen-models/reused-policy/G0-seed-8301.pt",
+      "bytes": 5194543,
+      "sha256": "f8d2f540e6b7e33d9a6c0d88031401f790e7cb48a2cbc2732317637efb694b73",
+      "uploaded": false
+    },
+    {
+      "source_relative_to_workspace": "research-plans/w1-g1-gppo-recovery-preparation-v1/package/frozen-models/reused-policy/G0-seed-8302.pt",
+      "bytes": 5153903,
+      "sha256": "2e796ba14199f909314b39e554b29a208e6872b20499df5a7933f1d1003126a8",
+      "uploaded": false
+    },
+    {
+      "source_relative_to_workspace": "research-plans/w1-g1-gppo-recovery-preparation-v1/package/frozen-models/reused-policy/G0-seed-8303.pt",
+      "bytes": 5217711,
+      "sha256": "8d5ba4e6de24eac7ea3f8ad72e0b3b4bc33158f55bc96339ea9e4f3707b2b20a",
+      "uploaded": false
+    },
+    {
+      "source_relative_to_workspace": "research-plans/w1-g1-gppo-recovery-preparation-v1/package/frozen-models/reused-policy/G1-seed-8301.pt",
+      "bytes": 6677167,
+      "sha256": "687d9bbc396252b5ff337d021431c932662926dd784aabd7dcb2823031cc1f16",
+      "uploaded": false
+    },
+    {
+      "source_relative_to_workspace": "research-plans/w1-g1-gppo-recovery-preparation-v1/package/frozen-models/reused-policy/T-seed-8301.pt",
+      "bytes": 5780195,
+      "sha256": "9ff5b92d8519971cbe120687959d1d3b35d955b85d1c06f6cdbfb240c567b895",
+      "uploaded": false
+    },
+    {
+      "source_relative_to_workspace": "research-plans/w1-g1-gppo-recovery-preparation-v1/package/frozen-models/reused-policy/T-seed-8302.pt",
+      "bytes": 5703651,
+      "sha256": "720e05811cca898fd6ede0d27430bc37c0b97656056e6b03f7fecfa76abd59d1",
+      "uploaded": false
+    },
+    {
+      "source_relative_to_workspace": "research-plans/w1-g1-gppo-recovery-preparation-v1/package/frozen-models/reused-policy/T-seed-8303.pt",
+      "bytes": 5824227,
+      "sha256": "dd55477a0b85d8e2d9dcb7ac9573f74a4a789a993387cd92341355c750c86a7e",
+      "uploaded": false
+    },
+    {
+      "source_relative_to_workspace": "research-plans/w1-g1-gppo-recovery-preparation-v1/verified-export/run-once/policy-checkpoints/G1-seed-8302.pt",
+      "bytes": 6607535,
+      "sha256": "b06dab3d822575ec8cb2720a7f208493426cbf517645362cb3f535c8bcedd0a1",
+      "uploaded": false
+    },
+    {
+      "source_relative_to_workspace": "research-plans/w1-g1-gppo-recovery-preparation-v1/verified-export/run-once/policy-checkpoints/G1-seed-8303.pt",
+      "bytes": 6779631,
+      "sha256": "50b142e7714c4d91178a0e12debda8324bdec28b6a0b0738f2ee4e34784fe772",
+      "uploaded": false
+    },
+    {
+      "source_relative_to_workspace": "research-plans/w1-g1-gppo-recovery-preparation-v1/verified-export/run-once/decision-costs.jsonl",
+      "bytes": 2042139,
+      "sha256": "86404d811c593a7a6fbef9d78f9906235b85d4bb5babbdba4d22faed620a312f",
+      "uploaded": false
+    },
+    {
+      "source_relative_to_workspace": "research-plans/w1-g1-gppo-recovery-preparation-v1/verified-export/run-once/task-confirmation.jsonl",
+      "bytes": 10261195,
+      "sha256": "51b45dd9c7ca198166a6911988631ce5f5efdbae86da988256a5f0144dc7472f",
+      "uploaded": false
+    },
+    {
+      "source_relative_to_workspace": "research-plans/w1-g1-gppo-recovery-preparation-v1/verified-export/run-once/task-cost-summary.jsonl",
+      "bytes": 34774,
+      "sha256": "47826d19ee662678271b90aa6eea71916b30a58c572d49df8b0ab4681d3a5d29",
+      "uploaded": false
+    },
+    {
+      "source_relative_to_workspace": "research-plans/w1-g1-gppo-recovery-preparation-v1/verified-export/run-once/task-decision-traces.jsonl",
+      "bytes": 10315180,
+      "sha256": "f117688d054c55ddc0f2b9352c49bdabdb2838490ca899a59f5fd6558096520f",
+      "uploaded": false
+    }
+  ]
+}

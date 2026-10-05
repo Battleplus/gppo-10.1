@@ -1,0 +1,34 @@
+{
+  "active_native_bytes": 118517698,
+  "attempt": "w1-g1-gppo-recovery-v1-once",
+  "automatic_retry": false,
+  "controller_phases": [
+    {
+      "cpu_seconds": 5.344501,
+      "stage": "staging_and_zero_step_gate",
+      "wall_seconds": 14.744343438011128
+    },
+    {
+      "cpu_seconds": 0.6613680000000386,
+      "stage": "settlement_and_verified_export",
+      "wall_seconds": 4.570419895986561
+    }
+  ],
+  "cpu_no_double_count": "controller SELF + kernel waited CHILDREN; nested supervisor/worker totals reported only, not added",
+  "error": null,
+  "exit_code": 0,
+  "full_resource_acceptance": false,
+  "measured_controller_limits_pass": true,
+  "native_cpu_cap_excluding_windows_reserve": 4360,
+  "resource_gaps": [
+    "Windows WSL bridge CPU not measured",
+    "controller final write and exit tail not measured",
+    "CPU polled; no delegated cgroup hard enforcement"
+  ],
+  "self_cpu_seconds": 3.4408250000000002,
+  "self_plus_waited_cpu_seconds": 604.082952,
+  "verified_export": "/mnt/e/Z博士/research-plans/w1-g1-gppo-recovery-preparation-v1/verified-export",
+  "verified_export_bytes": 59450597,
+  "waited_children_cpu_seconds": 600.642127,
+  "wall_seconds": 1175.1823748949973
+}

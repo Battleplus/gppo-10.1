@@ -1,0 +1,182 @@
+{
+  "status": "measured_limits_pass_with_disclosed_gaps",
+  "full_resource_acceptance": false,
+  "attempt": "w1-task-outcome-g1-g2-joint-local-v1-once",
+  "counts": {
+    "branch_snapshot_copies": {
+      "actual": 547,
+      "limit": 1000,
+      "pass": true
+    },
+    "branches": {
+      "actual": 547,
+      "limit": 1000,
+      "pass": true
+    },
+    "candidate_scans": {
+      "actual": 547,
+      "limit": 1000,
+      "pass": true
+    },
+    "checkpoint_loads": {
+      "actual": 6,
+      "limit": 6,
+      "pass": true
+    },
+    "checkpoint_writes": {
+      "actual": 6,
+      "limit": 6,
+      "pass": true
+    },
+    "environment_steps": {
+      "actual": 5396,
+      "limit": 14160,
+      "pass": true
+    },
+    "forced_first_actions": {
+      "actual": 547,
+      "limit": 1000,
+      "pass": true
+    },
+    "model_initializations_or_loads": {
+      "actual": 12,
+      "limit": 12,
+      "pass": true
+    },
+    "public_rule_decisions": {
+      "actual": 4849,
+      "limit": 13160,
+      "pass": true
+    },
+    "resets_upper": {
+      "actual": 40,
+      "limit": 40,
+      "pass": true
+    },
+    "snapshot_captures": {
+      "actual": 40,
+      "limit": 40,
+      "pass": true
+    },
+    "world_backward_calls": {
+      "actual": 2736,
+      "limit": 2880,
+      "pass": true
+    },
+    "world_batch_forwards": {
+      "actual": 6432,
+      "limit": 6768,
+      "pass": true
+    },
+    "world_optimizer_updates": {
+      "actual": 2736,
+      "limit": 2880,
+      "pass": true
+    },
+    "world_sample_evaluations": {
+      "actual": 90324,
+      "limit": 169200,
+      "pass": true
+    }
+  },
+  "failed_calls": 0,
+  "pending_calls": 0,
+  "gppo_updates": 0,
+  "task_comparison_calls": 0,
+  "wall_seconds": {
+    "native_controller": 978.2737642260035,
+    "windows_launcher": 963.9119490000012,
+    "conservative_max": 978.2737642260035,
+    "limit": 3138,
+    "cross_clock_difference_seconds": 14.361815226002363,
+    "cross_clock_difference_source": "来源未确定；保留两个时钟域原值，不校正或归为噪声"
+  },
+  "cpu_seconds": {
+    "native_self": 2.429861,
+    "native_waited_children": 533.0951190000001,
+    "native_self_plus_waited": 535.52498,
+    "windows_controller": 0.1875,
+    "measured_disjoint_sum": 535.71248,
+    "supervisor_nested_do_not_add": 533.0727770000001,
+    "limit": 4595,
+    "counting": "native SELF + kernel waited CHILDREN; supervisor/worker nested totals are breakdown only"
+  },
+  "stage_boundaries": [
+    {
+      "cpu_seconds": 10.814422,
+      "cpu_seconds_cumulative": 10.814422,
+      "next_stage": "label_qualification",
+      "sampled_monotonic": 59324.61100418,
+      "scope": "supervisor self and waited helpers plus quiescent worker self and waited descendants",
+      "stage": "staging_and_zero_step_gate",
+      "wall_seconds": 19.624268863990437,
+      "worker_cpu_end_seconds": 2.9378969999999995,
+      "worker_reported_cpu_seconds": 2.9378969999999995,
+      "worker_reported_wall_seconds": 0.008441480000328738,
+      "worker_wall_end_monotonic": 59324.321041826
+    },
+    {
+      "cpu_seconds": 114.87816700000002,
+      "cpu_seconds_cumulative": 125.69258900000001,
+      "next_stage": "world_model_training_and_selection",
+      "sampled_monotonic": 59541.788459954,
+      "scope": "supervisor self and waited helpers plus quiescent worker self and waited descendants",
+      "stage": "label_qualification",
+      "wall_seconds": 217.1774557739991,
+      "worker_cpu_end_seconds": 109.605877,
+      "worker_reported_cpu_seconds": 106.66798,
+      "worker_reported_wall_seconds": 216.87466609900002,
+      "worker_wall_end_monotonic": 59541.195707925
+    },
+    {
+      "cpu_seconds": 404.028133,
+      "cpu_seconds_cumulative": 529.720722,
+      "next_stage": "prediction_confirmation",
+      "sampled_monotonic": 60270.171633215,
+      "scope": "supervisor self and waited helpers plus quiescent worker self and waited descendants",
+      "stage": "world_model_training_and_selection",
+      "wall_seconds": 728.3831732610051,
+      "worker_cpu_end_seconds": 489.31319900000005,
+      "worker_reported_cpu_seconds": 379.70732200000003,
+      "worker_reported_wall_seconds": 728.4772686310025,
+      "worker_wall_end_monotonic": 60269.672976556
+    },
+    {
+      "cpu_seconds": 2.131854999999973,
+      "cpu_seconds_cumulative": 531.852577,
+      "next_stage": "settlement_and_verified_export",
+      "sampled_monotonic": 60274.157623991,
+      "scope": "supervisor self and waited helpers plus quiescent worker self and waited descendants",
+      "stage": "prediction_confirmation",
+      "wall_seconds": 3.98599077599647,
+      "worker_cpu_end_seconds": 491.310062,
+      "worker_reported_cpu_seconds": 1.996862999999962,
+      "worker_reported_wall_seconds": 4.2899134819963365,
+      "worker_wall_end_monotonic": 60273.962890038
+    }
+  ],
+  "controller_phases": [
+    {
+      "cpu_seconds": 4.740919,
+      "stage": "staging_and_zero_step_gate",
+      "wall_seconds": 13.28649386199686
+    },
+    {
+      "cpu_seconds": 0.6100659999999607,
+      "stage": "settlement_and_verified_export",
+      "wall_seconds": 5.843558631000633
+    }
+  ],
+  "rss_upper_bound_peak_bytes": 2537992192,
+  "native_active_bytes": 138362956,
+  "verified_export_bytes": 128964311,
+  "aggregate_storage_bytes": 267327267,
+  "resource_gaps": [
+    "Windows WSL bridge CPU not measured",
+    "controller final write and exit tail not measured",
+    "PyTorch allocator measured; WDDM process GPU memory/exclusivity unavailable",
+    "CPU polled; no delegated cgroup hard enforcement",
+    "Auxiliary operator audit/monitor processes outside the research process tree are not included"
+  ],
+  "practical_decision_cost": "未评价；无GPPO任务决策，不能判10ms CPU/50ms wall门通过"
+}
