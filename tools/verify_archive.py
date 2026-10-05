@@ -14,8 +14,9 @@ def digest(path):
 def main():
     errors = []
     inventory = json.loads((ROOT/'provenance/source-inventory.json').read_text(encoding='utf-8'))
+    history = json.loads((ROOT/'provenance/history-source-inventory.json').read_text(encoding='utf-8'))
     manifest = json.loads((ROOT/'provenance/archive-hashes.json').read_text(encoding='utf-8'))
-    for row in inventory['files'] + manifest['files']:
+    for row in inventory['files'] + history['files'] + manifest['files']:
         rel = row.get('archived_path', row.get('path'))
         path = ROOT/rel
         if not path.is_file():
@@ -27,18 +28,18 @@ def main():
               and not any(x in {'.git', '.publish', '__pycache__'} for x in p.relative_to(ROOT).parts)}
     if expected != actual:
         errors.append('manifest file set mismatch: '+repr(sorted(expected ^ actual)))
-    docs = [ROOT/'README.md', ROOT/'evidence/README.md', *sorted((ROOT/'docs').glob('*.md'))]
+    docs = [ROOT/'README.md', ROOT/'evidence/README.md', ROOT/'history-archive/README.md', *sorted((ROOT/'docs').glob('*.md'))]
     links = 0
     for doc in docs:
         for target in re.findall(r'\]\(([^)]+)\)', doc.read_text(encoding='utf-8')):
             if '://' in target or target.startswith('#'):
                 continue
             target = unquote(target.split('#')[0])
-            if not (doc.parent/target).is_file():
+            if not (doc.parent/target).exists():
                 errors.append('broken link in '+doc.name+': '+target)
             links += 1
     print(json.dumps({'passed': not errors, 'archive_files': len(actual),
-                      'verbatim_sources': len(inventory['files']), 'checked_links': links,
+                      'verbatim_sources': len(inventory['files']) + len(history['files']), 'checked_links': links,
                       'errors': errors}, ensure_ascii=False, indent=2))
     return 1 if errors else 0
 
