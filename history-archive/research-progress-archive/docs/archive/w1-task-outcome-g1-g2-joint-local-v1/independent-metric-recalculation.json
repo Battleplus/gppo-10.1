@@ -1,0 +1,983 @@
+{
+  "status": "pass",
+  "method": "stdlib independent arithmetic; parent macro preserved; no new gate",
+  "confirmation_windows": 8,
+  "confirmation_candidates": 101,
+  "model_calls": 0,
+  "environment_calls": 0,
+  "all_stored_choices_regret_top1_and_gates_reproduced": true,
+  "metrics": {
+    "transparent": {
+      "regret": 0.23400226348312572,
+      "top1": 0.0,
+      "full_continuation_utility_mae": 0.0918355278622551,
+      "full_continuation_utility_rmse": 0.11622612127629765
+    },
+    "G1": {
+      "regret": 0.05096710502402857,
+      "top1": 0.5,
+      "full_continuation_utility_mae": 0.07482376462480476,
+      "full_continuation_utility_rmse": 0.09778047137645487
+    },
+    "G2": {
+      "regret": 0.10135163986124099,
+      "top1": 0.375,
+      "full_continuation_utility_mae": 0.07544892167285668,
+      "full_continuation_utility_rmse": 0.09855257361906719
+    },
+    "G1_seed_8201": {
+      "regret": 0.05096710502402857,
+      "top1": 0.375,
+      "full_continuation_utility_mae": 0.07424818662938489,
+      "full_continuation_utility_rmse": 0.09708880556957898
+    },
+    "G1_seed_8202": {
+      "regret": 0.11842031839769335,
+      "top1": 0.125,
+      "full_continuation_utility_mae": 0.07211730296962326,
+      "full_continuation_utility_rmse": 0.09871092669675319
+    },
+    "G1_seed_8203": {
+      "regret": 0.05096710502402857,
+      "top1": 0.5,
+      "full_continuation_utility_mae": 0.08328957920362981,
+      "full_continuation_utility_rmse": 0.10561713759450131
+    },
+    "G2_seed_8201": {
+      "regret": 0.10143185639753938,
+      "top1": 0.125,
+      "full_continuation_utility_mae": 0.07826900403379597,
+      "full_continuation_utility_rmse": 0.10028812701667973
+    },
+    "G2_seed_8202": {
+      "regret": 0.13507756792241707,
+      "top1": 0.125,
+      "full_continuation_utility_mae": 0.07735226714117105,
+      "full_continuation_utility_rmse": 0.10330644107382002
+    },
+    "G2_seed_8203": {
+      "regret": 0.10135163986124099,
+      "top1": 0.375,
+      "full_continuation_utility_mae": 0.07447139184314788,
+      "full_continuation_utility_rmse": 0.09804049924271777
+    }
+  },
+  "parent_utility_errors": {
+    "transparent": {
+      "train-0096": {
+        "mae": 0.09839001671825018,
+        "mse": 0.01277058729009595
+      },
+      "train-0097": {
+        "mae": 0.1097119573078314,
+        "mse": 0.01823754526011021
+      },
+      "train-0098": {
+        "mae": 0.06821966720108166,
+        "mse": 0.0061554181100619875
+      },
+      "train-0099": {
+        "mae": 0.10057660263652603,
+        "mse": 0.016213846052265942
+      },
+      "train-0100": {
+        "mae": 0.09731447812344911,
+        "mse": 0.015769189652520218
+      },
+      "train-0101": {
+        "mae": 0.09721092938695076,
+        "mse": 0.015984616929492493
+      },
+      "train-0102": {
+        "mae": 0.1115351718722605,
+        "mse": 0.018666199567086168
+      },
+      "train-0103": {
+        "mae": 0.05172539965169113,
+        "mse": 0.004270687273828217
+      }
+    },
+    "G1": {
+      "train-0096": {
+        "mae": 0.06937729249087474,
+        "mse": 0.008296466803342352
+      },
+      "train-0097": {
+        "mae": 0.10324884076936196,
+        "mse": 0.015615266925740045
+      },
+      "train-0098": {
+        "mae": 0.06428864186183893,
+        "mse": 0.0059117115741505345
+      },
+      "train-0099": {
+        "mae": 0.07657422143249558,
+        "mse": 0.013478797576411072
+      },
+      "train-0100": {
+        "mae": 0.08136121154102123,
+        "mse": 0.011141911853924066
+      },
+      "train-0101": {
+        "mae": 0.07427971752883951,
+        "mse": 0.008478181048874236
+      },
+      "train-0102": {
+        "mae": 0.06752116963711681,
+        "mse": 0.008947496517881785
+      },
+      "train-0103": {
+        "mae": 0.06193902173688934,
+        "mse": 0.004618332360489609
+      }
+    },
+    "G2": {
+      "train-0096": {
+        "mae": 0.07108254118201633,
+        "mse": 0.008316444256405174
+      },
+      "train-0097": {
+        "mae": 0.10698940607569654,
+        "mse": 0.016916352641270373
+      },
+      "train-0098": {
+        "mae": 0.06752816172014191,
+        "mse": 0.006311942292369177
+      },
+      "train-0099": {
+        "mae": 0.07659790735118664,
+        "mse": 0.013433216927057292
+      },
+      "train-0100": {
+        "mae": 0.08340801771045624,
+        "mse": 0.011126056646082369
+      },
+      "train-0101": {
+        "mae": 0.06906582038861765,
+        "mse": 0.007955927099432873
+      },
+      "train-0102": {
+        "mae": 0.06842227206973271,
+        "mse": 0.008954146025441742
+      },
+      "train-0103": {
+        "mae": 0.06049724688500534,
+        "mse": 0.004686792247474267
+      }
+    },
+    "G1_seed_8201": {
+      "train-0096": {
+        "mae": 0.06651608357516428,
+        "mse": 0.007791986460569669
+      },
+      "train-0097": {
+        "mae": 0.10523396419177272,
+        "mse": 0.01571060259988797
+      },
+      "train-0098": {
+        "mae": 0.0628000705725808,
+        "mse": 0.005780246076285999
+      },
+      "train-0099": {
+        "mae": 0.07817602870890344,
+        "mse": 0.014008100512275997
+      },
+      "train-0100": {
+        "mae": 0.08020788730225631,
+        "mse": 0.011150852554056706
+      },
+      "train-0101": {
+        "mae": 0.07085461166315997,
+        "mse": 0.007716855421274112
+      },
+      "train-0102": {
+        "mae": 0.06919490025908337,
+        "mse": 0.008973398050602434
+      },
+      "train-0103": {
+        "mae": 0.06100194676215817,
+        "mse": 0.004277847660467188
+      }
+    },
+    "G1_seed_8202": {
+      "train-0096": {
+        "mae": 0.07326057584231926,
+        "mse": 0.00930531687431194
+      },
+      "train-0097": {
+        "mae": 0.12127300681730298,
+        "mse": 0.022231764110450095
+      },
+      "train-0098": {
+        "mae": 0.07929427685916551,
+        "mse": 0.008932779559104511
+      },
+      "train-0099": {
+        "mae": 0.06577155289407342,
+        "mse": 0.011587706736841757
+      },
+      "train-0100": {
+        "mae": 0.07126427615284284,
+        "mse": 0.008478225790412396
+      },
+      "train-0101": {
+        "mae": 0.04941006871731647,
+        "mse": 0.005244283244214576
+      },
+      "train-0102": {
+        "mae": 0.058017294080867095,
+        "mse": 0.006363732909424985
+      },
+      "train-0103": {
+        "mae": 0.05864737239309851,
+        "mse": 0.005806967169893994
+      }
+    },
+    "G1_seed_8203": {
+      "train-0096": {
+        "mae": 0.0797735605109483,
+        "mse": 0.00993325826777623
+      },
+      "train-0097": {
+        "mae": 0.08576959739151746,
+        "mse": 0.010902724954818893
+      },
+      "train-0098": {
+        "mae": 0.05484928875349653,
+        "mse": 0.004257228959748984
+      },
+      "train-0099": {
+        "mae": 0.08883700327565655,
+        "mse": 0.015998187353947885
+      },
+      "train-0100": {
+        "mae": 0.0962298766295943,
+        "mse": 0.015883054961193518
+      },
+      "train-0101": {
+        "mae": 0.10545868107842073,
+        "mse": 0.014815817422308792
+      },
+      "train-0102": {
+        "mae": 0.0892308799339933,
+        "mse": 0.012749537477471047
+      },
+      "train-0103": {
+        "mae": 0.06616774605541134,
+        "mse": 0.004700028631981209
+      }
+    },
+    "G2_seed_8201": {
+      "train-0096": {
+        "mae": 0.06900600539002981,
+        "mse": 0.008377039071521776
+      },
+      "train-0097": {
+        "mae": 0.0991069060566341,
+        "mse": 0.013367193760984004
+      },
+      "train-0098": {
+        "mae": 0.056100043755534124,
+        "mse": 0.004760447684834444
+      },
+      "train-0099": {
+        "mae": 0.08197415586895286,
+        "mse": 0.014789615289024614
+      },
+      "train-0100": {
+        "mae": 0.08711144082709893,
+        "mse": 0.013069626913565672
+      },
+      "train-0101": {
+        "mae": 0.08869848888050885,
+        "mse": 0.01076602970537336
+      },
+      "train-0102": {
+        "mae": 0.07986100453372094,
+        "mse": 0.010835472377579786
+      },
+      "train-0103": {
+        "mae": 0.06429398695788818,
+        "mse": 0.004496242561225833
+      }
+    },
+    "G2_seed_8202": {
+      "train-0096": {
+        "mae": 0.07818117013511558,
+        "mse": 0.009075671831970247
+      },
+      "train-0097": {
+        "mae": 0.1043585025728393,
+        "mse": 0.018844651081571264
+      },
+      "train-0098": {
+        "mae": 0.07557673023806678,
+        "mse": 0.007536306756260616
+      },
+      "train-0099": {
+        "mae": 0.07769755904968734,
+        "mse": 0.013614917956510708
+      },
+      "train-0100": {
+        "mae": 0.08705445332771057,
+        "mse": 0.012803309715009982
+      },
+      "train-0101": {
+        "mae": 0.06620495453829955,
+        "mse": 0.008689210878999312
+      },
+      "train-0102": {
+        "mae": 0.07824320873744735,
+        "mse": 0.010518912391973898
+      },
+      "train-0103": {
+        "mae": 0.051501558530201885,
+        "mse": 0.004294785526413155
+      }
+    },
+    "G2_seed_8203": {
+      "train-0096": {
+        "mae": 0.07634281964248255,
+        "mse": 0.009211791622407014
+      },
+      "train-0097": {
+        "mae": 0.11750280959761622,
+        "mse": 0.01981447310095581
+      },
+      "train-0098": {
+        "mae": 0.07418647445817918,
+        "mse": 0.007816649715439645
+      },
+      "train-0099": {
+        "mae": 0.07486750403037055,
+        "mse": 0.012561587821049021
+      },
+      "train-0100": {
+        "mae": 0.07605815897655921,
+        "mse": 0.008696299587255997
+      },
+      "train-0101": {
+        "mae": 0.05604955335360724,
+        "mse": 0.006059358783148139
+      },
+      "train-0102": {
+        "mae": 0.05506761951944211,
+        "mse": 0.006638168695263539
+      },
+      "train-0103": {
+        "mae": 0.06569619516692596,
+        "mse": 0.006097186608571585
+      }
+    }
+  },
+  "paired": {
+    "G1_vs_transparent": {
+      "gate_pass": true,
+      "macro_regret_improvement": 0.18303515845909715,
+      "parent_improvements": {
+        "train-0096": 0.13196749342605474,
+        "train-0097": 0.27024514311924575,
+        "train-0098": 0.2648296075873077,
+        "train-0099": 0.13266315078362825,
+        "train-0100": 0.3986920474097133,
+        "train-0101": 0.2660476615652442,
+        "train-0102": -0.0033304234035313185,
+        "train-0103": 0.0031665871851146166
+      },
+      "noninferior_parents": 7,
+      "seed_improvements": {
+        "8201": 0.18303515845909715,
+        "8202": 0.11558194508543237,
+        "8203": 0.18303515845909715
+      },
+      "positive_seeds": 3,
+      "largest_parent_fraction_of_positive_improvement": 0.2716604465840163
+    },
+    "G2_vs_G1": {
+      "gate_pass": false,
+      "macro_regret_improvement": -0.05038453483721242,
+      "parent_improvements": {
+        "train-0096": 0.0,
+        "train-0097": 0.0,
+        "train-0098": 0.0,
+        "train-0099": -0.40307627869769935,
+        "train-0100": 0.0,
+        "train-0101": 0.0,
+        "train-0102": 0.0,
+        "train-0103": 0.0
+      },
+      "noninferior_parents": 7,
+      "seed_improvements": {
+        "8201": -0.05046475137351081,
+        "8202": -0.016657249524723722,
+        "8203": -0.05038453483721242
+      },
+      "positive_seeds": 0,
+      "largest_parent_fraction_of_positive_improvement": null
+    }
+  },
+  "seed_stability": {
+    "G1": {
+      "seed_macro_regrets": {
+        "8201": 0.05096710502402857,
+        "8202": 0.11842031839769335,
+        "8203": 0.05096710502402857
+      },
+      "regret_range": 0.06745321337366478,
+      "all_seeds_same_action_windows": 3
+    },
+    "G2": {
+      "seed_macro_regrets": {
+        "8201": 0.10143185639753938,
+        "8202": 0.13507756792241707,
+        "8203": 0.10135163986124099
+      },
+      "regret_range": 0.03372592806117608,
+      "all_seeds_same_action_windows": 3
+    }
+  },
+  "independent_event_and_horizon_brier": {
+    "G1:8201": {
+      "automatic_event_brier": 0.21185935098307615,
+      "horizon_brier": {
+        "physical_on_time_completion": 0.14134643655588838,
+        "task_expired": 0.14108893593396102,
+        "host_confirmation": 0.1496681693717048
+      }
+    },
+    "G1:8202": {
+      "automatic_event_brier": 0.25568879685929335,
+      "horizon_brier": {
+        "physical_on_time_completion": 0.14003472528707045,
+        "task_expired": 0.14025808220517164,
+        "host_confirmation": 0.14797544398499782
+      }
+    },
+    "G1:8203": {
+      "automatic_event_brier": 0.24188787690237085,
+      "horizon_brier": {
+        "physical_on_time_completion": 0.14141073716356767,
+        "task_expired": 0.14089933827743034,
+        "host_confirmation": 0.14884248410926681
+      }
+    },
+    "G1:ensemble": {
+      "automatic_event_brier": 0.23153120566280005,
+      "horizon_brier": {
+        "physical_on_time_completion": 0.1402786213010485,
+        "task_expired": 0.1402532279807872,
+        "host_confirmation": 0.14579128857278617
+      }
+    },
+    "G2:8201": {
+      "automatic_event_brier": 0.02582425366663928,
+      "horizon_brier": {
+        "physical_on_time_completion": 0.14116575572608056,
+        "task_expired": 0.14097973440381736,
+        "host_confirmation": 0.1463033944444533
+      }
+    },
+    "G2:8202": {
+      "automatic_event_brier": 0.03632542484420626,
+      "horizon_brier": {
+        "physical_on_time_completion": 0.14400242364353427,
+        "task_expired": 0.14486858859584606,
+        "host_confirmation": 0.20861797051649242
+      }
+    },
+    "G2:8203": {
+      "automatic_event_brier": 0.031143334783594136,
+      "horizon_brier": {
+        "physical_on_time_completion": 0.13958026227678944,
+        "task_expired": 0.14012232795985372,
+        "host_confirmation": 0.15229862062840444
+      }
+    },
+    "G2:ensemble": {
+      "automatic_event_brier": 0.02981557902003124,
+      "horizon_brier": {
+        "physical_on_time_completion": 0.14002240454723366,
+        "task_expired": 0.14081037750090813,
+        "host_confirmation": 0.15871166216222718
+      }
+    }
+  },
+  "automatic_event_counts": {
+    "public_field_change": {
+      "valid": 34,
+      "positive": 34,
+      "negative": 0,
+      "unknown": 67
+    },
+    "new_measurement_received": {
+      "valid": 101,
+      "positive": 101,
+      "negative": 0,
+      "unknown": 0
+    },
+    "continuation_publicly_confirmed": {
+      "valid": 101,
+      "positive": 89,
+      "negative": 12,
+      "unknown": 0
+    },
+    "physical_completion_observed": {
+      "valid": 0,
+      "positive": 0,
+      "negative": 0,
+      "unknown": 101
+    },
+    "host_confirmation_observed": {
+      "valid": 0,
+      "positive": 0,
+      "negative": 0,
+      "unknown": 101
+    }
+  },
+  "horizon_task_outcome_counts": {
+    "physical_on_time_completion": {
+      "valid": 93,
+      "positive": 77,
+      "negative": 16,
+      "unknown": 8
+    },
+    "task_expired": {
+      "valid": 93,
+      "positive": 16,
+      "negative": 77,
+      "unknown": 8
+    },
+    "host_confirmation": {
+      "valid": 89,
+      "positive": 39,
+      "negative": 50,
+      "unknown": 12
+    }
+  },
+  "per_window": [
+    {
+      "parent": "train-0096",
+      "candidate_count": 10,
+      "oracle_action": 6,
+      "decisions": {
+        "transparent": {
+          "action": 24,
+          "true_utility": 0.10209163324907423,
+          "regret": 0.2641228913329542
+        },
+        "G1": {
+          "action": 1,
+          "true_utility": 0.23405912667512896,
+          "regret": 0.13215539790689945
+        },
+        "G2": {
+          "action": 1,
+          "true_utility": 0.23405912667512896,
+          "regret": 0.13215539790689945
+        },
+        "G1_seed_8201": {
+          "action": 1,
+          "true_utility": 0.23405912667512896,
+          "regret": 0.13215539790689945
+        },
+        "G1_seed_8202": {
+          "action": 1,
+          "true_utility": 0.23405912667512896,
+          "regret": 0.13215539790689945
+        },
+        "G1_seed_8203": {
+          "action": 1,
+          "true_utility": 0.23405912667512896,
+          "regret": 0.13215539790689945
+        },
+        "G2_seed_8201": {
+          "action": 1,
+          "true_utility": 0.23405912667512896,
+          "regret": 0.13215539790689945
+        },
+        "G2_seed_8202": {
+          "action": 1,
+          "true_utility": 0.23405912667512896,
+          "regret": 0.13215539790689945
+        },
+        "G2_seed_8203": {
+          "action": 1,
+          "true_utility": 0.23405912667512896,
+          "regret": 0.13215539790689945
+        }
+      }
+    },
+    {
+      "parent": "train-0097",
+      "candidate_count": 9,
+      "oracle_action": 1,
+      "decisions": {
+        "transparent": {
+          "action": 24,
+          "true_utility": 0.10265000527724624,
+          "regret": 0.27024514311924575
+        },
+        "G1": {
+          "action": 1,
+          "true_utility": 0.372895148396492,
+          "regret": 0.0
+        },
+        "G2": {
+          "action": 1,
+          "true_utility": 0.372895148396492,
+          "regret": 0.0
+        },
+        "G1_seed_8201": {
+          "action": 1,
+          "true_utility": 0.372895148396492,
+          "regret": 0.0
+        },
+        "G1_seed_8202": {
+          "action": 18,
+          "true_utility": 0.23560567256063225,
+          "regret": 0.13728947583585976
+        },
+        "G1_seed_8203": {
+          "action": 1,
+          "true_utility": 0.372895148396492,
+          "regret": 0.0
+        },
+        "G2_seed_8201": {
+          "action": 12,
+          "true_utility": 0.10690120467916132,
+          "regret": 0.2659939437173307
+        },
+        "G2_seed_8202": {
+          "action": 18,
+          "true_utility": 0.23560567256063225,
+          "regret": 0.13728947583585976
+        },
+        "G2_seed_8203": {
+          "action": 1,
+          "true_utility": 0.372895148396492,
+          "regret": 0.0
+        }
+      }
+    },
+    {
+      "parent": "train-0098",
+      "candidate_count": 13,
+      "oracle_action": 1,
+      "decisions": {
+        "transparent": {
+          "action": 24,
+          "true_utility": 0.10134245930239559,
+          "regret": 0.2648296075873077
+        },
+        "G1": {
+          "action": 1,
+          "true_utility": 0.36617206688970333,
+          "regret": 0.0
+        },
+        "G2": {
+          "action": 1,
+          "true_utility": 0.36617206688970333,
+          "regret": 0.0
+        },
+        "G1_seed_8201": {
+          "action": 1,
+          "true_utility": 0.36617206688970333,
+          "regret": 0.0
+        },
+        "G1_seed_8202": {
+          "action": 1,
+          "true_utility": 0.36617206688970333,
+          "regret": 0.0
+        },
+        "G1_seed_8203": {
+          "action": 1,
+          "true_utility": 0.36617206688970333,
+          "regret": 0.0
+        },
+        "G2_seed_8201": {
+          "action": 1,
+          "true_utility": 0.36617206688970333,
+          "regret": 0.0
+        },
+        "G2_seed_8202": {
+          "action": 1,
+          "true_utility": 0.36617206688970333,
+          "regret": 0.0
+        },
+        "G2_seed_8203": {
+          "action": 1,
+          "true_utility": 0.36617206688970333,
+          "regret": 0.0
+        }
+      }
+    },
+    {
+      "parent": "train-0099",
+      "candidate_count": 13,
+      "oracle_action": 0,
+      "decisions": {
+        "transparent": {
+          "action": 24,
+          "true_utility": 0.10546312099322677,
+          "regret": 0.13266315078362825
+        },
+        "G1": {
+          "action": 0,
+          "true_utility": 0.23812627177685503,
+          "regret": 0.0
+        },
+        "G2": {
+          "action": 18,
+          "true_utility": -0.16495000692084433,
+          "regret": 0.40307627869769935
+        },
+        "G1_seed_8201": {
+          "action": 12,
+          "true_utility": 0.23812627177685503,
+          "regret": 0.0
+        },
+        "G1_seed_8202": {
+          "action": 18,
+          "true_utility": -0.16495000692084433,
+          "regret": 0.40307627869769935
+        },
+        "G1_seed_8203": {
+          "action": 0,
+          "true_utility": 0.23812627177685503,
+          "regret": 0.0
+        },
+        "G2_seed_8201": {
+          "action": 12,
+          "true_utility": 0.23812627177685503,
+          "regret": 0.0
+        },
+        "G2_seed_8202": {
+          "action": 18,
+          "true_utility": -0.16495000692084433,
+          "regret": 0.40307627869769935
+        },
+        "G2_seed_8203": {
+          "action": 18,
+          "true_utility": -0.16495000692084433,
+          "regret": 0.40307627869769935
+        }
+      }
+    },
+    {
+      "parent": "train-0100",
+      "candidate_count": 13,
+      "oracle_action": 1,
+      "decisions": {
+        "transparent": {
+          "action": 24,
+          "true_utility": -0.15980124780908228,
+          "regret": 0.3986920474097133
+        },
+        "G1": {
+          "action": 1,
+          "true_utility": 0.23889079960063103,
+          "regret": 0.0
+        },
+        "G2": {
+          "action": 1,
+          "true_utility": 0.23889079960063103,
+          "regret": 0.0
+        },
+        "G1_seed_8201": {
+          "action": 1,
+          "true_utility": 0.23889079960063103,
+          "regret": 0.0
+        },
+        "G1_seed_8202": {
+          "action": 18,
+          "true_utility": 0.10348045267164709,
+          "regret": 0.13541034692898396
+        },
+        "G1_seed_8203": {
+          "action": 1,
+          "true_utility": 0.23889079960063103,
+          "regret": 0.0
+        },
+        "G2_seed_8201": {
+          "action": 12,
+          "true_utility": 0.09970750426873565,
+          "regret": 0.13918329533189538
+        },
+        "G2_seed_8202": {
+          "action": 18,
+          "true_utility": 0.10348045267164709,
+          "regret": 0.13541034692898396
+        },
+        "G2_seed_8203": {
+          "action": 1,
+          "true_utility": 0.23889079960063103,
+          "regret": 0.0
+        }
+      }
+    },
+    {
+      "parent": "train-0101",
+      "candidate_count": 17,
+      "oracle_action": 6,
+      "decisions": {
+        "transparent": {
+          "action": 24,
+          "true_utility": -0.03217409383505583,
+          "regret": 0.2675068896263838
+        },
+        "G1": {
+          "action": 1,
+          "true_utility": 0.2338735677301884,
+          "regret": 0.0014592280611396002
+        },
+        "G2": {
+          "action": 1,
+          "true_utility": 0.2338735677301884,
+          "regret": 0.0014592280611396002
+        },
+        "G1_seed_8201": {
+          "action": 1,
+          "true_utility": 0.2338735677301884,
+          "regret": 0.0014592280611396002
+        },
+        "G1_seed_8202": {
+          "action": 18,
+          "true_utility": 0.235332795791328,
+          "regret": 0.0
+        },
+        "G1_seed_8203": {
+          "action": 1,
+          "true_utility": 0.2338735677301884,
+          "regret": 0.0014592280611396002
+        },
+        "G2_seed_8201": {
+          "action": 12,
+          "true_utility": 0.235332795791328,
+          "regret": 0.0
+        },
+        "G2_seed_8202": {
+          "action": 18,
+          "true_utility": 0.235332795791328,
+          "regret": 0.0
+        },
+        "G2_seed_8203": {
+          "action": 1,
+          "true_utility": 0.2338735677301884,
+          "regret": 0.0014592280611396002
+        }
+      }
+    },
+    {
+      "parent": "train-0102",
+      "candidate_count": 17,
+      "oracle_action": 7,
+      "decisions": {
+        "transparent": {
+          "action": 24,
+          "true_utility": 0.10305711934342981,
+          "regret": 0.1359092188067734
+        },
+        "G1": {
+          "action": 1,
+          "true_utility": 0.0997266959398985,
+          "regret": 0.13923964221030471
+        },
+        "G2": {
+          "action": 1,
+          "true_utility": 0.0997266959398985,
+          "regret": 0.13923964221030471
+        },
+        "G1_seed_8201": {
+          "action": 1,
+          "true_utility": 0.0997266959398985,
+          "regret": 0.13923964221030471
+        },
+        "G1_seed_8202": {
+          "action": 18,
+          "true_utility": 0.2344178623519838,
+          "regret": 0.0045484757982194035
+        },
+        "G1_seed_8203": {
+          "action": 1,
+          "true_utility": 0.0997266959398985,
+          "regret": 0.13923964221030471
+        },
+        "G2_seed_8201": {
+          "action": 1,
+          "true_utility": 0.0997266959398985,
+          "regret": 0.13923964221030471
+        },
+        "G2_seed_8202": {
+          "action": 3,
+          "true_utility": 0.1011598661541939,
+          "regret": 0.13780647199600932
+        },
+        "G2_seed_8203": {
+          "action": 1,
+          "true_utility": 0.0997266959398985,
+          "regret": 0.13923964221030471
+        }
+      }
+    },
+    {
+      "parent": "train-0103",
+      "candidate_count": 9,
+      "oracle_action": 12,
+      "decisions": {
+        "transparent": {
+          "action": 24,
+          "true_utility": 0.10459610829129816,
+          "regret": 0.1380491591989994
+        },
+        "G1": {
+          "action": 1,
+          "true_utility": 0.10776269547641279,
+          "regret": 0.1348825720138848
+        },
+        "G2": {
+          "action": 1,
+          "true_utility": 0.10776269547641279,
+          "regret": 0.1348825720138848
+        },
+        "G1_seed_8201": {
+          "action": 1,
+          "true_utility": 0.10776269547641279,
+          "regret": 0.1348825720138848
+        },
+        "G1_seed_8202": {
+          "action": 1,
+          "true_utility": 0.10776269547641279,
+          "regret": 0.1348825720138848
+        },
+        "G1_seed_8203": {
+          "action": 1,
+          "true_utility": 0.10776269547641279,
+          "regret": 0.1348825720138848
+        },
+        "G2_seed_8201": {
+          "action": 1,
+          "true_utility": 0.10776269547641279,
+          "regret": 0.1348825720138848
+        },
+        "G2_seed_8202": {
+          "action": 1,
+          "true_utility": 0.10776269547641279,
+          "regret": 0.1348825720138848
+        },
+        "G2_seed_8203": {
+          "action": 1,
+          "true_utility": 0.10776269547641279,
+          "regret": 0.1348825720138848
+        }
+      }
+    }
+  ],
+  "transparent_noop_windows": 8,
+  "trace_sha256": "de591793341e924a74087a1d0c9aaa1127a7cb4576c5b24cc5b7ddcf0394a8ff",
+  "limits_of_interpretation": [
+    "transparent is the frozen optimistic surrogate, not evaluated full Hungarian policy",
+    "8 within-study held-out parents, not proven globally pristine",
+    "fixed Hungarian continuation is not GPPO policy value",
+    "automatic event physical/host heads masked unknown; lifecycle horizon heads are separate valid supervision"
+  ]
+}

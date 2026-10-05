@@ -1,0 +1,36 @@
+{
+  "schema": "w1-remote-runtime-audit-binding/1.0.0",
+  "scope": "future-audit-only",
+  "remote_execution_during_v6": false,
+  "remote_torch_import_during_v6": false,
+  "training_authorization": false,
+  "v6_cpu_runtime_modified": false,
+  "v6_resource_request_modified": false,
+  "artifacts": {
+    "runtime_identity_v2": {
+      "research_plans_relative_path": "w1-remote-runtime-dependency-repair-v1/runtime-identity-v2.json",
+      "sha256": "af32685059d7c3107ab6d0d2f34bc0e9e71c118ec8179d394a216798d7b62cb1"
+    },
+    "delivery_hashes": {
+      "research_plans_relative_path": "w1-remote-runtime-dependency-repair-v1/delivery-hashes.json",
+      "sha256": "d5ff5bfffa37934dd96b55fb32d407e817bfbb95a9d38ff4d66d7945a07194d6"
+    },
+    "final_readonly_preflight": {
+      "research_plans_relative_path": "w1-label-v6-final-delivery-evidence/remote-runtime/final-remote-preflight-summary.json",
+      "sha256": "d53a04fc43d3024fa3a18cca1a23ca055e95217aec920c69319000dc59b3a76e"
+    }
+  },
+  "preflight_facts": {
+    "status": "pass",
+    "exit_code": 0,
+    "local_remote_file_identity_equal": true,
+    "before_after_file_identity_equal": true,
+    "file_count_including_outer_manifest": 27,
+    "runtime_identity_only": true,
+    "torch_imported": false,
+    "staging_started": false,
+    "worker_started": false,
+    "formal_attempt_created": false,
+    "exclusive_resource_allocation_proven": false
+  }
+}

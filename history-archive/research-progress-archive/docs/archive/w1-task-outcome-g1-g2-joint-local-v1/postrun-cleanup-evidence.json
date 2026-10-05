@@ -1,0 +1,20 @@
+{
+  "timestamp_unix": 1791082697.264029,
+  "native_probe_exit_code": 0,
+  "native_probe": {
+    "timestamp_unix": 1791082696.6553082,
+    "native_content_files": 182,
+    "native_content_mismatches": [],
+    "native_manifest_matches": true,
+    "task_processes": [],
+    "task_processes_remaining": 0,
+    "no_model_environment_calls": true,
+    "probe_is_read_only": true
+  },
+  "gpu_inventory_exit_code": 0,
+  "gpu_inventory": "NVIDIA GeForce RTX 3060 Laptop GPU, 787 MiB, 5210 MiB, 5 %",
+  "gpu_memory_scope": "whole desktop GPU inventory, not per-process or exclusive-memory proof",
+  "processes_killed": 0,
+  "environment_calls": 0,
+  "model_calls": 0
+}

@@ -1,0 +1,28 @@
+{
+  "local_archive": "E:\\Z博士\\research-progress-archive\\docs\\archive\\w1-task-outcome-g1-g2-joint-local-v1",
+  "files": 61,
+  "all_copy_hashes_verified": true,
+  "existing_staged_entries_preserved": 681,
+  "existing_staged_paths_preserved": 675,
+  "signed_commit_created": false,
+  "remote_archived": false,
+  "blocker": "Signed commit failed; inspect signed-archive.stderr.txt. SSH signing remains required; ssh-agent stopped/disabled. 远端未归档",
+  "exclusions": "authorization/token/credentials/checkpoints/SQLite/raw tapes/large traces",
+  "archive_kind": "small code/protocol/result snapshot; full executable local package and research artifacts remain at original local paths",
+  "signed_commit_attempt_exit_code": "timeout",
+  "old_index_contents_preserved_after_sign_attempt": true,
+  "unsigned_commit_created": false,
+  "signing_timed_out": true,
+  "signing_agent_status": "Stopped/Disabled",
+  "owned_signing_processes_stopped": [
+    22604,
+    33360
+  ],
+  "owned_stale_locks_preserved": {
+    "index.lock": "c39b2777c356fcaf7e6e99ec8b5978bb55ab030a7179d38a46a02a4b19957c74",
+    "next-index-22604.lock": "6bbf4b371a33bc704112e1263497af3f6697de64f6668aaac9cf1d7b76286cb3"
+  },
+  "historical_lock_files_untouched": true,
+  "archive_byte_preservation": "subtree .gitattributes * -text",
+  "no_second_commit_attempt": true
+}

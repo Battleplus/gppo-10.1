@@ -1,0 +1,27 @@
+{
+  "accounting_reserves": {
+    "cross_system_wall_seconds": 2,
+    "rule": "These reserves are inside the unchanged global totals. Linux stage allocations sum to 550 CPU-seconds and 751 wall-seconds. The Linux child process tree is counted once: the WSL launcher RUSAGE_CHILDREN measurement is authoritative and the supervisor self-plus-child value is only a consistency check. The single CPU second outside stage allocations is reserved for measured Windows post-preflight work; the two wall seconds cover cross-system return and settlement. No stage can borrow another stage's allocation.",
+    "windows_post_preflight_process_cpu_seconds": 1
+  },
+  "argument_probe": "W1 标签采集 path with spaces 'single' and \"double\" quotes",
+  "attempt": "w1-label-v6-isolated-collector-settlement-test-once",
+  "authorization_status": "NOT_APPROVED",
+  "automatic_retry": false,
+  "integration_fault": null,
+  "integration_test": false,
+  "linux_stage_entry": "wsl_stage_and_launch.py",
+  "native_child_python": "/home/asus/w1-action-relative-auxiliary-runtime-dependency-repair-v1-runtime/bin/python",
+  "native_entry": "native_launch.py",
+  "native_execution_root": "/home/asus/w1-label-v6-isolated-collector-settlement-test-once",
+  "native_python": "/home/asus/w1-action-relative-auxiliary-runtime-dependency-repair-v1-runtime/bin/python",
+  "one_shot": true,
+  "purpose": "Isolated one-parent fake-environment production-chain regression; no formal attempt.",
+  "resource_request_sha256": "06eae9130733950433c11b811fb154ec6b3ebfde8c0e83ffc6a3829a7cf5a9f6",
+  "schema": "w1-eawm-jepa-launch-contract/2.1.0",
+  "windows_export_root": "/mnt/e/Z博士/research-plans/runs/w1-label-v6-isolated-collector-settlement-test-once",
+  "windows_source_root": "E:\\Z博士\\research-plans\\w1-label-v6-isolated-collector-evidence-pass3\\test-source",
+  "wsl_distribution": "Ubuntu-24.04",
+  "wsl_executable": "wsl.exe",
+  "wsl_source_root": "/mnt/e/Z博士/research-plans/w1-label-v6-isolated-collector-evidence-pass3/test-source"
+}

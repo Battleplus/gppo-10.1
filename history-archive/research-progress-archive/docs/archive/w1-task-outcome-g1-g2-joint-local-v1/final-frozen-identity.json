@@ -1,0 +1,9 @@
+{
+  "execution-manifest.json": "e08328eeeab23d4cf5d64456f5b7b12d5604b793e56a44963ae233f71f0c590c",
+  "hashes.json": "4303b91ac78e056a0d4fa187a6ab358e77d215df9fb646b4693f9ec314c8217d",
+  "RESOURCE_REQUEST.json": "bd11b07eb6146eb75166d336bc7a31369ece4450e896167be1fcba7ce6fd6d9e",
+  "local-runtime-identity.json": "2100e84a69a34b85c54d7a75a3c3c57fea48c1e7df7004fc05d759def3b7dea2",
+  "attempt": "w1-task-outcome-g1-g2-joint-local-v1-once",
+  "windows_preflight_exit_code": 0,
+  "formal_launch": "python -B E:/Z博士/research-plans/w1-task-outcome-g1-g2-joint-local-v1/package/run_local_research.py"
+}

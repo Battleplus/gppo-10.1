@@ -1,0 +1,597 @@
+{
+  "attempt": "w1-task-outcome-g1-g2-joint-local-v1-once",
+  "bounds": {
+    "branch_steps_per_branch_upper": 14,
+    "candidate_count_per_window_upper_including_noop": 25,
+    "continuation_decisions_per_branch_upper": 13,
+    "parents": 40,
+    "prefix_steps_per_parent_upper": 4
+  },
+  "candidate_continuation_id": "hungarian-v1-fixed",
+  "gppo_calls": 0,
+  "maximum_legal_candidates_per_window": 25,
+  "parent_count": 40,
+  "parent_split_file": "parent-split.json",
+  "prediction_gates": {
+    "confirmation_parents": 8,
+    "g1_vs_transparent": {
+      "noninferior_parent_minimum": 6,
+      "positive_improvement_seed_minimum": 2,
+      "regret_improvement_minimum": 0.005
+    },
+    "g2_vs_g1": {
+      "noninferior_parent_minimum": 6,
+      "positive_improvement_seed_minimum": 2,
+      "regret_improvement_minimum": 0.005
+    },
+    "inference": "exploratory within-study held-out parents; report paired parent differences and bootstrap uncertainty; no population efficacy claim",
+    "next_gppo": "separate application only; no branch runs GPPO in this protocol",
+    "schema": "w1-joint-world-model-prospective-gates/1.0.0"
+  },
+  "preference_configuration": {
+    "task_component_scale": 0.5,
+    "task_confirmation": [
+      0.8,
+      0.2
+    ]
+  },
+  "repeats": {
+    "model_selection": 1,
+    "prediction_confirmation": 1,
+    "train": 1
+  },
+  "schema": "w1-joint-sequence-supervision-matrix/1.0.0",
+  "source_semantics": {
+    "arrival_radius": 0.0,
+    "deadline_basis": "physical_arrival",
+    "task_completion_mode": "arrival_to_region"
+  },
+  "splits": {
+    "model_selection": [
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0088|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0088",
+        "proposed_split": "model_selection",
+        "repeat": 0,
+        "scenario_sha256": "04b0afc730b7a14ecdde8daeb884a1ebfe1909d202cbb6bc143a35b3cb3c2411",
+        "structural_sha256": "4d364fc008eeb939a433f11aca69889a4d8365e62d847cf1ae9197b49707e75f",
+        "tape_index": 88
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0089|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0089",
+        "proposed_split": "model_selection",
+        "repeat": 0,
+        "scenario_sha256": "5abaa841d267a0869fde55b3f6b2c7c698305c79d387b18bb7f44ecb940af450",
+        "structural_sha256": "133f2de09f37ca7e34f4af6398eb6dd6d74becca0e0b8f28761e037ef4dc6598",
+        "tape_index": 89
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0090|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0090",
+        "proposed_split": "model_selection",
+        "repeat": 0,
+        "scenario_sha256": "4ca08d67850bd50931c2a0fa319cc3656d22528ab1e915449c0608761db357e3",
+        "structural_sha256": "d0cfdd41e38594ebcc12aba5db01ba7fab2ae2ea67dc6b3ddfbe68b008218067",
+        "tape_index": 90
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0091|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0091",
+        "proposed_split": "model_selection",
+        "repeat": 0,
+        "scenario_sha256": "0153fc2bc05c001201224ad95b62455575c4d336334cecd2302d552fe9521523",
+        "structural_sha256": "d4df2db14bd5d7241f86f6af739f54423013357816aa0c2ccf708cb8c77a5b73",
+        "tape_index": 91
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0092|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0092",
+        "proposed_split": "model_selection",
+        "repeat": 0,
+        "scenario_sha256": "781d14e6a0162a90f06b3a818ffbf8051aebf1f8cf247504194e4428e57da8f6",
+        "structural_sha256": "15523ca0205530e6a01db5468298960a5a4d8cca6cae706f91e38f3ff7bbcfe3",
+        "tape_index": 92
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0093|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0093",
+        "proposed_split": "model_selection",
+        "repeat": 0,
+        "scenario_sha256": "a64db5d663a23e9b6b5e817ee1c48946057364e6746a77658e0121af292c93d5",
+        "structural_sha256": "1cfc89f88e3d45798cbc2f4925a811ad50d72d82e8364c8f7899cb9017500816",
+        "tape_index": 93
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0094|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0094",
+        "proposed_split": "model_selection",
+        "repeat": 0,
+        "scenario_sha256": "a8165c2d67611e5a3a20680ac5da8809c4d4fa1532d22d2c66539f83946ba249",
+        "structural_sha256": "846aedf4846b5c6285e0cbeadf7d57d5648b38081ab579265f4ffa20a7f6299a",
+        "tape_index": 94
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0095|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0095",
+        "proposed_split": "model_selection",
+        "repeat": 0,
+        "scenario_sha256": "5202b6e79c8370a2aa9d64bd9305d1c55cbde00d5fb2c4f965584c3c4d11d4a5",
+        "structural_sha256": "342696b19dca4c481d70cd1d700c52046856d826584f2fa67142fad6f25abb20",
+        "tape_index": 95
+      }
+    ],
+    "prediction_confirmation": [
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0096|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0096",
+        "proposed_split": "prediction_confirmation",
+        "repeat": 0,
+        "scenario_sha256": "3660fcf53dd6f67dea0e7ab178c06a9a54bc21efcfae5bc5825945a1aad544ca",
+        "structural_sha256": "b77ec86c5d6916c313a088f81452077c0dc67e21cdb8803a25452b23e2a443be",
+        "tape_index": 96
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0097|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0097",
+        "proposed_split": "prediction_confirmation",
+        "repeat": 0,
+        "scenario_sha256": "329523c56e441b888dd541b9c31f815ed69a866e3c6dbfe4eeb6864f696a54f8",
+        "structural_sha256": "4610bd7ec6ae677e3c6eb97bf546e109729526db292e2a85347d69e4ded29536",
+        "tape_index": 97
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0098|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0098",
+        "proposed_split": "prediction_confirmation",
+        "repeat": 0,
+        "scenario_sha256": "1b29b844ac1094664a4da3cdc8eeac452e57d71b2443508244402dcc083e10c6",
+        "structural_sha256": "770382d6376bca7f3bc96a14ae036d4411ad3d5c3ddb7983c16adf9a886cce30",
+        "tape_index": 98
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0099|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0099",
+        "proposed_split": "prediction_confirmation",
+        "repeat": 0,
+        "scenario_sha256": "3e41f0630359bc467b02c21cb7029a8e2cb567842439c0c4bebf03b5e0f42db6",
+        "structural_sha256": "f3d2c73d51b16593923bbc06756e1098bbeb4ed555544ae974f9902d80452094",
+        "tape_index": 99
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0100|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0100",
+        "proposed_split": "prediction_confirmation",
+        "repeat": 0,
+        "scenario_sha256": "0f4c455dc94cf194a1e161bb734b51b310c5bdd553c06076a1a1522dd0548892",
+        "structural_sha256": "c830b360a62a1555555738f28f399382ae16fcfc757fe5e9794067ac2f36ea35",
+        "tape_index": 100
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0101|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0101",
+        "proposed_split": "prediction_confirmation",
+        "repeat": 0,
+        "scenario_sha256": "954bf5fb1444b9ea4148cc52b8fb7d116824921299c87b091ecf8f0a6a087f20",
+        "structural_sha256": "cc497d8db57cd59a7dbaaacf7a79ced77007077c1eb7986c9a992e8af6d416ea",
+        "tape_index": 101
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0102|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0102",
+        "proposed_split": "prediction_confirmation",
+        "repeat": 0,
+        "scenario_sha256": "3b8cc25ee2dda49736ead33a57658fc5aa181339adc183886662492381cccde7",
+        "structural_sha256": "74ecf474c6b90041e8a90117c3bd1204e0c990379a66d86f9bc8733c82710589",
+        "tape_index": 102
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0103|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0103",
+        "proposed_split": "prediction_confirmation",
+        "repeat": 0,
+        "scenario_sha256": "79d5623a4bb04bacd78c6b674370ee9a7dd2aa9fc6c35e9c03e3b6c07d2f2b55",
+        "structural_sha256": "6623e6226d3f9e2ec456bc1278242377ad28f130237908959f510bd43b510cfc",
+        "tape_index": 103
+      }
+    ],
+    "train": [
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0064|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0064",
+        "proposed_split": "train",
+        "repeat": 0,
+        "scenario_sha256": "f8d6341eaf11bf61fef4f1c0c1966d8ad5e13ca292f875211f099f5b9b0b650e",
+        "structural_sha256": "bb6d3f8c2a7a40582ad74a18fedfa45773a16476a684d43c38962ca38c246382",
+        "tape_index": 64
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0065|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0065",
+        "proposed_split": "train",
+        "repeat": 0,
+        "scenario_sha256": "4fba0bff1a8f911323c7970565141b914ef85f715077d46eb308d26f7e14c1cf",
+        "structural_sha256": "7c6b39d867c36777c4fd84e5999d3cfd811f3004963f96c6f9fdf4ebcea31433",
+        "tape_index": 65
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0066|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0066",
+        "proposed_split": "train",
+        "repeat": 0,
+        "scenario_sha256": "9c53284cac590fc7f7a2208dc8997ff9635ac7061c798ca1ee3023d27f2855d4",
+        "structural_sha256": "9ea0428431bd2410c523dcca74938f862c39b30f111af96e83377cd73930df45",
+        "tape_index": 66
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0067|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0067",
+        "proposed_split": "train",
+        "repeat": 0,
+        "scenario_sha256": "a460491c846b8cacd8536249dfb5a0cab8b6df03803bab7b8b165241b149b881",
+        "structural_sha256": "271b2d3745bc143128908271b365e6931a398a95369807c6cebbc4d7e6b57c43",
+        "tape_index": 67
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0068|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0068",
+        "proposed_split": "train",
+        "repeat": 0,
+        "scenario_sha256": "80559a074ebaf3e34c08aac2ebebc61e88254140ed1765be28e606cd95511fa0",
+        "structural_sha256": "578e85182b8eb84aec625f66dec4417677fd4821533c1401f57ed3ecfb7712e0",
+        "tape_index": 68
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0069|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0069",
+        "proposed_split": "train",
+        "repeat": 0,
+        "scenario_sha256": "f518c7f58a88e88a9317a6f044586eaf9887cee63efe81d8994e300bf7914047",
+        "structural_sha256": "41a1ad06b703e3a0585c5f69032c3f52eb7203a87b3de1c9b87337f413a04da1",
+        "tape_index": 69
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0070|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0070",
+        "proposed_split": "train",
+        "repeat": 0,
+        "scenario_sha256": "1d9b0e4b0421cd006e5f54a100112f93d053c7fbffb3b72c4b098468b1ae7020",
+        "structural_sha256": "d30c013f16e0bb28d1ad15e16fa4f623e8eda2849819d11586bdd5cf3af5939b",
+        "tape_index": 70
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0071|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0071",
+        "proposed_split": "train",
+        "repeat": 0,
+        "scenario_sha256": "9880e419512821da56e6d480261d98c7303241a68f76eff97bc6b21a1a73a574",
+        "structural_sha256": "4499084dabb5165d377ef75814000ccb8dc8382b22a392a38e8939050e305e52",
+        "tape_index": 71
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0072|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0072",
+        "proposed_split": "train",
+        "repeat": 0,
+        "scenario_sha256": "a35581e398438ad368210e1dcb3056ed92aeb15fdd8298d3ffe422511c2bb12d",
+        "structural_sha256": "d68354c5fde2400967cd5566b3e1e1dda8f6ca131e596e84a6e7a46d6eed07ed",
+        "tape_index": 72
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0073|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0073",
+        "proposed_split": "train",
+        "repeat": 0,
+        "scenario_sha256": "85061d4a1c195caccfa9d6fb74dc92d569f0a327105b72b9e835fed00f8fa655",
+        "structural_sha256": "8430e0cc9c3e4e1aea1c05ec144c1bcc21cba1751b1f74ac7455d32145451154",
+        "tape_index": 73
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0074|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0074",
+        "proposed_split": "train",
+        "repeat": 0,
+        "scenario_sha256": "ddd1128fbb1e868fae40067f74ff7f0c82d2ad4801e873b9b54aed35bb66e7fe",
+        "structural_sha256": "81305c9a499b0465d3f082f386e225ae2acb5e4f641ab2c270bf33dffe7e3381",
+        "tape_index": 74
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0075|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0075",
+        "proposed_split": "train",
+        "repeat": 0,
+        "scenario_sha256": "d3bed7098e29c5aa17e2f7dfc8b874928172dde7b87962f0a57db15247f7994e",
+        "structural_sha256": "70c205aa2b880425cd37ad2408711745203cad24230e39ac4a5cd681746e0c27",
+        "tape_index": 75
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0076|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0076",
+        "proposed_split": "train",
+        "repeat": 0,
+        "scenario_sha256": "85036724bdb5316675c41f929dfcffbc0d7cf3aab4a752b6b0454a7df78bc2eb",
+        "structural_sha256": "a21b038ef3c65b0e0c9257548e302c53dec06b2347ec95c3e7daae3b4c6f2a2c",
+        "tape_index": 76
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0077|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0077",
+        "proposed_split": "train",
+        "repeat": 0,
+        "scenario_sha256": "65358b75956f78f3b25ae674bf26a1886b6219b2f32d247f9c1e6e0f57d995a5",
+        "structural_sha256": "e5ac08ec32b7d7d7335b4d6afe612f44070739d5ef1fba28fd0774ef4d649be6",
+        "tape_index": 77
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0078|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0078",
+        "proposed_split": "train",
+        "repeat": 0,
+        "scenario_sha256": "6cb09a4427a625afa638b2f6bf96e7f1e056cad96dd231533dd4143175b69dc9",
+        "structural_sha256": "24f623078975fedd5e5077b5509f55b14a1811fc3546303bfaa2f9d9cdc1f877",
+        "tape_index": 78
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0079|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0079",
+        "proposed_split": "train",
+        "repeat": 0,
+        "scenario_sha256": "a500fbdd8f2803291eeb4ce7dae169cacc93d8bdd45e71e99e0da59c8a23e59b",
+        "structural_sha256": "828ea981f65acd8ba3597e6eb345da73561b81d2a4338471e302409b835852fe",
+        "tape_index": 79
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0080|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0080",
+        "proposed_split": "train",
+        "repeat": 0,
+        "scenario_sha256": "b39cc150223579f7fc6e6693705db751ad0351a4e94004f86d82052736e52d2e",
+        "structural_sha256": "dd74fc1156738d5b4388fb566a12ae7af5f84f16ba316381c026ffc2b8ccc228",
+        "tape_index": 80
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0081|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0081",
+        "proposed_split": "train",
+        "repeat": 0,
+        "scenario_sha256": "f4bf7a4a602cb61bb2d5d22c0212feea3640b7028bf44d4db2e77e75b6d1d68a",
+        "structural_sha256": "f562c66ddbb2e628103210ba3549866925f5b1c9f55a50d7b8186e635bce56df",
+        "tape_index": 81
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0082|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0082",
+        "proposed_split": "train",
+        "repeat": 0,
+        "scenario_sha256": "09fe842950276d46866579da7481001b0c6bd6f7fcf4d13e6421a3c958b2ca6a",
+        "structural_sha256": "da86202e1270a4c085b2ccc2e4688968222edc218fd48bd931060b3a225a5938",
+        "tape_index": 82
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0083|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0083",
+        "proposed_split": "train",
+        "repeat": 0,
+        "scenario_sha256": "7c9549e4704a68407c84bfcb573f50bee5610140c35e6521966b8ee7bc479aac",
+        "structural_sha256": "da036498ded94b85e9b0ebac8df312dfff33774a110616fffbc8551c95570d41",
+        "tape_index": 83
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0084|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0084",
+        "proposed_split": "train",
+        "repeat": 0,
+        "scenario_sha256": "23a3d05693eecb1b2600c4e033a1ee8f761de5cf0ed91e21c211a7e584f15a89",
+        "structural_sha256": "97786aa805fa93983d048dbc039f7dad3fa9e59796c6fafe0bc9fcccbb3d9c5a",
+        "tape_index": 84
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0085|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0085",
+        "proposed_split": "train",
+        "repeat": 0,
+        "scenario_sha256": "45dc47458b900567e66ee76ea1b823d0adf12cb18b7e2e29c0fff00838df207b",
+        "structural_sha256": "b09bea8d3a97fc8445ba814b62b94ff0e08ce3cb5dd3bf8d86e957dfb06425f3",
+        "tape_index": 85
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0086|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0086",
+        "proposed_split": "train",
+        "repeat": 0,
+        "scenario_sha256": "0e4953eb1a294aaf0bf9a3f004ed9ce6b5e122a15b3d744b4465eed53a1a9850",
+        "structural_sha256": "924017037d47b7bed579be43dca5ea983889618106caa1e04cf13bda3328d667",
+        "tape_index": 86
+      },
+      {
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0087|repeat-0",
+        "historical_use_elsewhere": "not_proven_absent; do not call globally unseen",
+        "overlaps_prior_registered_scenario": false,
+        "overlaps_prior_registered_structure": false,
+        "parent": "train-0087",
+        "proposed_split": "train",
+        "repeat": 0,
+        "scenario_sha256": "b06238b5e964cf54112a962f300752b59c77de60cfaf530716e90ec0a0b77453",
+        "structural_sha256": "fea93a3b7d0835de7708192a26f9226910b947643b4ad7dff67356eae0f1554f",
+        "tape_index": 87
+      }
+    ]
+  },
+  "task_comparison_calls": 0,
+  "transition_horizon": "next public observation for JEPA/state; complete fixed continuation for returns and task outcomes",
+  "transparent_utility_configuration": {
+    "residual_target": "full continuation vector return minus public transparent horizon components",
+    "scope": "public_only_ideal_continuation_surrogate"
+  },
+  "world_model_architecture": {
+    "action_count": 25,
+    "ema": 0.99,
+    "event_count": 5,
+    "hidden_dim": 128,
+    "history_dim": 128,
+    "horizon_task_outcome_dim": 3,
+    "latent_dim": 64,
+    "node_dim": 32,
+    "outcome_dim": 6,
+    "relation_dim": 4
+  },
+  "world_model_batch_organization": "one complete window per optimizer update; equal window scheduling",
+  "world_model_batch_size": 25,
+  "world_model_confirmation_windows": 8,
+  "world_model_device": "cuda:0",
+  "world_model_loss": {
+    "beta_collapse": 0.04,
+    "beta_event_by_variant": {
+      "G1": 0.0,
+      "G2": 1.0
+    },
+    "beta_horizon_task_outcome": 1.0,
+    "beta_jepa": 1.0,
+    "beta_outcome": 1.0,
+    "beta_state": 1.0,
+    "unknown_masking": "required"
+  },
+  "world_model_maximum_epochs": 20,
+  "world_model_maximum_train_candidate_rows": 600,
+  "world_model_maximum_updates_per_variant_seed": 480,
+  "world_model_model_selection": {
+    "confirmation_data_access": false,
+    "early_stopping_patience_epochs": 15,
+    "primary_metric": "parent_macro_action_selection_regret",
+    "rule": "minimum primary metric on the frozen model-selection parents; ties use lower parent-macro absolute outcome MAE, then earlier epoch"
+  },
+  "world_model_optimizer": {
+    "gradient_clip_norm": 5.0,
+    "learning_rate": 0.001,
+    "name": "AdamW",
+    "weight_decay": 1e-05
+  },
+  "world_model_seeds": [
+    8201,
+    8202,
+    8203
+  ],
+  "world_model_selection_windows": 8,
+  "world_model_training_windows": 24,
+  "world_model_variants": {
+    "G1": "event_loss_disabled",
+    "G2": "event_loss_enabled"
+  }
+}

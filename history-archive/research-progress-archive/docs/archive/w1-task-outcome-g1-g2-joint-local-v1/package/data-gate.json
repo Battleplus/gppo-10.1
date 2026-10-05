@@ -1,0 +1,16 @@
+{
+  "all_registered_parents_required": true,
+  "complete_return_required_all_candidates": true,
+  "physical_and_expiry_valid_min_per_window": 1,
+  "reason": "minimum outcome variation spanning parents; engineering support for a small exploratory learner, not statistical power proof",
+  "schema": "w1-sequence-data-admission/1.0.0",
+  "split_window_counts": {
+    "model_selection": 8,
+    "prediction_confirmation": 8,
+    "train": 24
+  },
+  "train_expiry_positive_min_parents": 4,
+  "train_host_valid_min_parents": 8,
+  "train_physical_positive_min_parents": 4,
+  "unknown": "preserve null/mask false; NOOP no target; missing/no opportunity never zero or replacement"
+}

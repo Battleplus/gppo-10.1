@@ -1,0 +1,64 @@
+{
+  "schema": "w1-local-entry-no-model-evidence/1.0.0",
+  "package_root": "E:\\Z博士\\research-plans\\w1-task-outcome-g1-g2-joint-local-v1\\package",
+  "evidence_scope": "local launcher and supervisor adaptation only; no research attempt",
+  "commands": [
+    {
+      "purpose": "verify isolated local runtime and shared-GPU inventory without CUDA initialization",
+      "command": "wsl.exe -d Ubuntu-24.04 -- env -u LD_LIBRARY_PATH -u LD_PRELOAD -u PYTHONPATH -u PYTHONHOME PYTHONNOUSERSITE=1 CUDA_VISIBLE_DEVICES=0 OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 /home/asus/.venvs/w1-light-repaired-fair-rerun-py31116/bin/python -I -B -X pycache_prefix=/home/asus/.venvs/w1-light-repaired-fair-rerun-py31116/.w1-no-bytecode-cache -c <runtime-and-GPU-contract-check>",
+      "exit_code": 0,
+      "stdout_result": {
+        "runtime": "pass",
+        "supervisor_local_gpu_contract": "pass",
+        "gpu_inventory": "pass",
+        "cuda_initialized": false,
+        "physical_device": 0,
+        "free_bytes": 5423235072,
+        "allocator_cap_bytes": 4294967296,
+        "exclusive_assertion": false,
+        "gpu_owned_process_memory_current_bytes": null
+      }
+    },
+    {
+      "purpose": "no-model supervisor offset test through authenticated first stage boundary",
+      "command": "wsl.exe -d Ubuntu-24.04 -- env -u LD_LIBRARY_PATH -u LD_PRELOAD -u PYTHONPATH -u PYTHONHOME PYTHONNOUSERSITE=1 /home/asus/.venvs/w1-light-repaired-fair-rerun-py31116/bin/python -I -B -X pycache_prefix=/home/asus/.venvs/w1-light-repaired-fair-rerun-py31116/.w1-no-bytecode-cache /mnt/e/Z博士/diagnostic-work/w1-local-research-entry-no-model-test.py",
+      "exit_code": 0,
+      "stdout_result": {
+        "status": "pass",
+        "attempt_created_in_research_package": false,
+        "worker_returncode": 0,
+        "resource_pass": true,
+        "staging_offsets": {
+          "wall_seconds": 2.5,
+          "cpu_seconds": 1.25,
+          "phase_wall_seconds": 2.996417096001096,
+          "phase_cpu_seconds": 1.330864
+        },
+        "supervisor_wall_seconds": 3.063899325003149,
+        "supervisor_cpu_seconds": 1.3316240000000001
+      },
+      "test_root": "ephemeral /tmp directory outside the research package",
+      "worker_scope": "single dummy process sent one authenticated stage-boundary message; no environment, model, CUDA context, or checkpoint"
+    },
+    {
+      "purpose": "compile adapted Python sources without writing bytecode",
+      "command": "wsl.exe -d Ubuntu-24.04 -- env -u LD_LIBRARY_PATH -u LD_PRELOAD -u PYTHONPATH -u PYTHONHOME PYTHONNOUSERSITE=1 /home/asus/.venvs/w1-light-repaired-fair-rerun-py31116/bin/python -I -B -X pycache_prefix=/home/asus/.venvs/w1-light-repaired-fair-rerun-py31116/.w1-no-bytecode-cache -c <compile-local-entry-worker-supervisor>",
+      "exit_code": 0,
+      "stdout_result": "syntax-pass local_research_entry.py,local_research_worker.py,supervise.py"
+    }
+  ],
+  "changed_package_files": [
+    "package/local_research_entry.py",
+    "package/local_research_worker.py",
+    "package/supervise.py"
+  ],
+  "not_run": [
+    "final frozen-package preflight (parent will freeze first)",
+    "production runner, collector, simulator, CUDA initialization, model forward, training, checkpoint, prediction"
+  ],
+  "notes": [
+    "Local WSL supervisor validates physical GPU 0 and free-memory threshold but reports WDDM process memory and exclusivity as unavailable.",
+    "The local worker installs the 4 GiB PyTorch caching-allocator cap only at first CUDA initialization, after production data admission and when model work starts.",
+    "The existing authenticated StageServer handshake is preserved; controller staging CPU/wall offsets are charged to the first frozen stage and global totals."
+  ]
+}

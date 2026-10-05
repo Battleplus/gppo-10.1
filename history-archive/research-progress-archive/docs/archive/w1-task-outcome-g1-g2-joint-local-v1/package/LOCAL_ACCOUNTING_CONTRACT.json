@@ -1,0 +1,16 @@
+{
+  "schema": "w1-local-joint-accounting-disclosure/1.0.0",
+  "old_cpu_contract": "cpu-accounting-contract.json records remote metered_joint_entry design; it is historical for this local entry",
+  "authoritative_measured_native_cpu": "local_pipeline_controller RUSAGE_SELF + waited RUSAGE_CHILDREN includes staging, preflight, supervisor, worker, descendants, export up to sample",
+  "no_double_count": "nested worker/supervisor measurements are breakdowns and never added to the waited total",
+  "phase_boundaries": "production authenticated StageServer and BudgetLedger; controller staging offsets charged before worker start",
+  "additional_cpu": "Windows controller process time reported separately",
+  "unmeasured": ["Windows WSL bridge process CPU", "native controller final JSON write and exit tail", "per-process GPU memory and exclusivity on WDDM"],
+  "unmeasured_is_zero": false,
+  "full_resource_acceptance": false,
+  "cpu_enforcement": "production polling and final settlement, not kernel cgroup hard enforcement",
+  "gpu_enforcement": "local inventory and allocator cap installed at first CUDA initialization; framework allocated/reserved peak checked at worker settlement",
+  "budget_increased": false,
+  "storage_scope": "native package plus native results/logs/auth evidence; aggregate adds verified Windows result export",
+  "resource_failure": "stop seal no retry, training completion reported independently"
+}

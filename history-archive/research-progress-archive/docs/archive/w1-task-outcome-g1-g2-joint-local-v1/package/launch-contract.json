@@ -1,0 +1,21 @@
+{
+  "accounting_reserves": {
+    "cross_system_wall_seconds": 30,
+    "windows_post_preflight_process_cpu_seconds": 30
+  },
+  "attempt": "w1-task-outcome-g1-g2-joint-local-v1-once",
+  "authorization_status": "NOT_APPROVED",
+  "automatic_retry": false,
+  "frozen_windows_entry": "run_local_research.py",
+  "host": "local-Windows-WSL-Ubuntu-24.04",
+  "integration_test": false,
+  "native_entry": "local_research_entry.py",
+  "native_execution_root": "/home/asus/w1-task-outcome-g1-g2-joint-local-v1-once/package",
+  "native_python": "/home/asus/.venvs/w1-light-repaired-fair-rerun-py31116/bin/python",
+  "one_shot": true,
+  "resource_request_sha256": "bd11b07eb6146eb75166d336bc7a31369ece4450e896167be1fcba7ce6fd6d9e",
+  "runtime_identity_sha256": "2100e84a69a34b85c54d7a75a3c3c57fea48c1e7df7004fc05d759def3b7dea2",
+  "runtime_mode": "local_wsl_research",
+  "schema": "w1-eawm-jepa-launch-contract/2.1.0",
+  "user": "asus"
+}
