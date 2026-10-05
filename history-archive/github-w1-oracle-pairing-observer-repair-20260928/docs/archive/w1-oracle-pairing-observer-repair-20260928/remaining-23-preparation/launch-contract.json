@@ -1,0 +1,15 @@
+{
+  "schema": "w1-oracle-remaining-23-launch/1.0.0",
+  "attempt": "w1-action-consequence-oracle-remaining-23-v1-once",
+  "authorization_status": "NOT_APPROVED",
+  "external_token_sha256": "d68d6233163a85820ae056e5687bf1ab170b60811cba69f1e5620761cd7b7b15",
+  "raw_token_stored_in_package": false,
+  "native_python": "/home/asus/.venvs/w1-light-repaired-fair-rerun-py31116/bin/python",
+  "native_execution_root": "/home/asus/w1-runs/w1-action-consequence-oracle-remaining-23-v1-once",
+  "windows_export_root": "/mnt/e/Z博士/runs/w1-action-consequence-oracle-remaining-23-v1-once",
+  "one_shot": true,
+  "automatic_retry": false,
+  "reused_unit_reexecution_authorized": false,
+  "remaining_units_authorized": false,
+  "purpose": "External token gate for a future explicitly authorized remaining-23-unit oracle run."
+}

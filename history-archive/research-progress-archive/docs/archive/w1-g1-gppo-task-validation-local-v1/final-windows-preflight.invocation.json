@@ -1,0 +1,18 @@
+{
+  "command": [
+    "C:/Python314/python.exe",
+    "-B",
+    "E:\\Z博士\\research-plans\\w1-g1-gppo-task-validation-local-v1\\package\\run_g1_task_validation.py",
+    "--preflight-only",
+    "--authorization-file",
+    "E:\\Z博士\\research-plans\\w1-g1-gppo-task-validation-local-v1\\external-authorization.json"
+  ],
+  "exit_code": 0,
+  "stderr_file": "final-windows-preflight.stderr.txt",
+  "stderr_raw_file": "final-windows-preflight.stderr.raw",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_file": "final-windows-preflight.stdout.txt",
+  "stdout_raw_file": "final-windows-preflight.stdout.raw",
+  "stdout_sha256": "93422fe652d192cf6a850dd8091c26d000b0d3634f2371b6f4525e56d684b897",
+  "wall_seconds": 0.7065036999993026
+}

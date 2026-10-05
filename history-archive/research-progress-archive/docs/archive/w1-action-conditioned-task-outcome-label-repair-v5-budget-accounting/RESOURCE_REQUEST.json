@@ -1,0 +1,115 @@
+{
+  "schema": "w1-action-conditioned-task-outcome-label-qualification-request/2.0.0",
+  "status": "NOT_APPROVED",
+  "attempt": "w1-action-conditioned-task-outcome-label-qualification-v5-budget-accounting-once",
+  "contract_version": "w1-action-conditioned-task-outcome/4.0.0",
+  "purpose": "one_time_real_w1_m10_simulator_action_conditioned_task_outcome_label_qualification_only",
+  "research_training": false,
+  "model_initializations_or_loads": 0,
+  "checkpoint_loads_or_writes": 0,
+  "model_forwards": 0,
+  "optimizer_updates": 0,
+  "policy_or_task_comparison": false,
+  "matrix": {
+    "parent_split_file": "parent-split.json",
+    "parent_count": 8,
+    "repeats_per_parent": 1,
+    "decision_windows_upper": 8,
+    "legal_action_count_upper_including_noop": 25,
+    "candidate_branches_upper": 200,
+    "resets_upper": 8,
+    "prefix_steps_per_parent_upper": 4,
+    "branch_steps_upper": 14,
+    "continuation_decisions_per_branch_upper": 13,
+    "no_opportunity": "retain parent and reason as missing; no replacement, zero imputation, or retry",
+    "candidate_set": "all legal public candidates, including NOOP with task-head masks false",
+    "parent_identity": "fixed train-0056 through train-0063 with scenario and structural hashes in parent-split.json; verify against frozen source tape and historical split before authorization; any mismatch stops without substitution"
+  },
+  "derived_dynamic_limits": {
+    "environment_steps": 2832,
+    "resets_upper": 8,
+    "branches": 200,
+    "public_rule_decisions": 2632,
+    "candidate_scans": 200,
+    "forced_first_actions": 200,
+    "snapshot_captures": 8,
+    "branch_snapshot_copies": 200,
+    "wall_seconds": 753,
+    "complete_process_cpu_seconds": 551,
+    "all_resident_rss_bytes": 2147483648,
+    "active_storage_bytes": 536870912,
+    "aggregate_native_plus_verified_export_bytes": 1073741824,
+    "model_initializations_or_loads": 0,
+    "checkpoint_loads_or_writes": 0,
+    "model_forwards": 0,
+    "optimizer_updates": 0
+  },
+  "stages": {
+    "staging_and_zero_step_gate": {
+      "wall_seconds": 20,
+      "complete_process_cpu_seconds": 20,
+      "active_storage_bytes": 536870912
+    },
+    "label_qualification": {
+      "environment_steps": 2832,
+      "resets_upper": 8,
+      "branches": 200,
+      "public_rule_decisions": 2632,
+      "candidate_scans": 200,
+      "forced_first_actions": 200,
+      "snapshot_captures": 8,
+      "branch_snapshot_copies": 200,
+      "wall_seconds": 693,
+      "complete_process_cpu_seconds": 491,
+      "active_storage_bytes": 536870912
+    },
+    "settlement_and_verified_export": {
+      "wall_seconds": 38,
+      "complete_process_cpu_seconds": 39,
+      "active_storage_bytes": 536870912
+    }
+  },
+  "accounting_reserves": {
+    "windows_post_preflight_process_cpu_seconds": 1,
+    "cross_system_wall_seconds": 2,
+    "rule": "These reserves are inside the unchanged global totals. Linux stage allocations sum to 550 CPU-seconds and 751 wall-seconds. The Linux child process tree is counted once: the WSL launcher RUSAGE_CHILDREN measurement is authoritative and the supervisor self-plus-child value is only a consistency check. The single CPU second outside stage allocations is reserved for measured Windows post-preflight work; the two wall seconds cover cross-system return and settlement. No stage can borrow another stage's allocation."
+  },
+  "totals": {
+    "environment_steps": 2832,
+    "resets_upper": 8,
+    "branches": 200,
+    "public_rule_decisions": 2632,
+    "candidate_scans": 200,
+    "forced_first_actions": 200,
+    "snapshot_captures": 8,
+    "branch_snapshot_copies": 200,
+    "model_initializations_or_loads": 0,
+    "checkpoint_loads_or_writes": 0,
+    "model_forwards": 0,
+    "optimizer_updates": 0,
+    "wall_seconds": 753,
+    "complete_process_cpu_seconds": 551,
+    "all_resident_rss_bytes": 2147483648,
+    "active_storage_bytes": 536870912,
+    "aggregate_native_plus_verified_export_bytes": 1073741824
+  },
+  "derivation": {
+    "environment_steps": "8*4 prefix steps + 200*(1 forced first action + 13 horizon-limited continuation steps), derived from 18-second horizon, 1-second decision interval, and first decision at or after t=4s",
+    "public_rule_decisions": "8*4 public NOOP prefix decisions + 200*13 Hungarian continuation decisions; forced candidate first actions are counted separately",
+    "wall_seconds": "ceil(3*230.81851591199938 measured seconds from the completed history-repair attempt) = 693 collection; add 20 staging/zero-step + 38 settlement/export + 2 cross-system wall reserve = 753",
+    "complete_process_cpu_seconds": "ceil(3*163.57187984099997 measured seconds from the completed history-repair attempt) = 491 collection; add 20 staging/zero-step + 39 settlement/export + 1 Windows post-preflight CPU reserve = 551. The former 1-second native-launcher reserve is reallocated to settlement accounting because native supervisor and worker CPU are measured once as the complete Linux child process tree.",
+    "all_resident_rss_bytes": "2*771072000 measured peak bytes from the prior attempt, rounded up to 2 GiB",
+    "active_storage_bytes": "2*193032425-byte verified export rounded up to 512 MiB",
+    "aggregate_native_plus_verified_export_bytes": "twice the rounded active-storage allowance, 1 GiB"
+  },
+  "stops": [
+    "source tape, source manifest, production module, environment config, parent, candidate, task, command, or continuation identity mismatch before or during collection",
+    "runtime config mismatch before reset",
+    "invalid or non-contiguous post-action timeline",
+    "missing lifecycle or notice evidence remains unknown and is never imputed",
+    "any parent with no opportunity remains missing; no replacement or retry is allowed",
+    "any NaN, Inf, ledger, filesystem, storage, time, or export contract failure stops and seals"
+  ],
+  "qualification_rule": "coverage passes only if all eight frozen parents have exactly one complete valid window containing at least one valid physical_on_time_completion or task_expired label; no-opportunity and unresolved windows remain missing; host_confirmation does not determine this gate",
+  "approval_basis": "One bounded production-collector label-qualification run only. It cannot establish model accuracy, action-ranking benefit, or task benefit; any later model experiment requires a separate frozen protocol and authorization."
+}

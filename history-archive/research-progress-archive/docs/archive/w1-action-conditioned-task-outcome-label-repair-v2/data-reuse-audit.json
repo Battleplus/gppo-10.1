@@ -1,0 +1,89 @@
+{
+  "schema": "w1-action-conditioned-task-outcome-data-reuse-audit/2.0.0",
+  "status": "NO_HISTORICAL_ROWS_ADMITTED_TO_V3_TASK_OUTCOME_LABELS",
+  "contract": "w1-action-conditioned-task-outcome/3.0.0",
+  "records": [
+    {
+      "id": "history-repair-learning-loop",
+      "path": "runs/w1-action-outcome-learning-loop-history-repair-v1-once/run-once/learning-records.jsonl",
+      "sha256": "c502768a0483b485c78e9d23ee0a63e9a5595717c3524d38a243f167ccdaeca4",
+      "bytes": 1792623,
+      "paired_unit_path": "runs/w1-action-outcome-learning-loop-history-repair-v1-once/run-once/data-units.jsonl",
+      "paired_unit_sha256": "66608d86bf9be78baf2a47696c4dcd43cf87df53fc0e795573630341c037398f",
+      "paired_unit_bytes": 188468514,
+      "window_count": 88,
+      "candidate_count": 398,
+      "train_candidates": 219,
+      "model_selection_candidates": 68,
+      "prediction_evaluation_candidates": 111,
+      "continuation_id": "hungarian-v1-fixed",
+      "historical_task_explanations": {
+        "completed": 1750,
+        "expired": 104,
+        "unknown": 534,
+        "host_confirmation_true": 1683,
+        "host_confirmation_false": 67,
+        "host_confirmation_unknown": 638,
+        "first_transport_loss": 10,
+        "first_acceptance_unknown": 13
+      },
+      "runtime_configuration": {
+        "mode": "arrival_to_region",
+        "deadline_basis": "physical_arrival",
+        "path": "research-plans/w1-light-repaired-fair-rerun-infra-repair-v1/environment.json",
+        "sha256": "95b8b6e293fd7f500c3e89114424ff850717914cd3950a01e5cfbfb426f625ae"
+      },
+      "reuse_decision": "NOT_MERGEABLE",
+      "reasons": [
+        "historical task semantics differ from the v3 continuous-service physical-service contract",
+        "candidate rows do not carry an auditable public task-slot to internal task-ID mapping",
+        "remaining utility and old explanation counts do not establish a task-specific completed_at or expiry trace"
+      ],
+      "old_prediction_gate_stop": "PRESERVED; task comparison was not run"
+    },
+    {
+      "id": "eawm-v4-e2e-fixture-export",
+      "path": ".codex-exports/w1-eawm-jepa-world-model-production-repair-v4-e2e-integration-auth-repair-v1-once/run-once/world-model-windows.jsonl",
+      "sha256": "932b9f6638dbe332359301b26b098db411d5f75cee93ec239114fb0ac421bb51",
+      "bytes": 110433034,
+      "total_windows": 56,
+      "split_windows": {
+        "train": 24,
+        "model_selection": 8,
+        "prediction_confirmation": 24
+      },
+      "prediction_confirmation_relation": "8 parents x 3 repeats; the 24 windows are a subset of 56, not a second dataset",
+      "candidate_count": 771,
+      "real_environment_data": false,
+      "branches_with_terminal_or_truncated_task_lifecycle": 0,
+      "physical_completion_valid_labels": 0,
+      "host_confirmation_valid_labels": 0,
+      "reuse_decision": "TEST_FIXTURE_ONLY"
+    },
+    {
+      "id": "arrival-contract-oracle-branches",
+      "path": "runs/w1-action-consequence-oracle-remaining-23-v1-once/run-once/analysis.json",
+      "source_sha256": "6da3a92af9af2917b39a574f62d4c7e9b31ab497cd7d287279c372b076608062",
+      "candidate_count": 144,
+      "continuation_id": "hungarian-v1-fixed",
+      "runtime_configuration": "arrival_to_region / physical_arrival",
+      "reuse_decision": "NOT_MERGEABLE",
+      "reason": "the completion event and time origin differ from the continuous-service physical-service contract"
+    }
+  ],
+  "head_decisions": {
+    "physical_on_time_completion": "retain as a sequence-outcome target when explicitly valid; real non-synthetic coverage remains unevaluated",
+    "task_expired": "retain as a separate sequence-outcome target when explicit expiry is observed; unknown remains masked",
+    "host_confirmation": "disable as a supervised head under continuous_service_until_deadline; keep null with valid=false",
+    "completion_by_first_command": "audit-only; do not treat as a general sequence-outcome head"
+  },
+  "dynamic_activity_this_preparation": {
+    "real_environment_steps": 0,
+    "real_resets": 0,
+    "model_initializations_or_loads": 0,
+    "checkpoint_loads_or_writes": 0,
+    "model_forwards": 0,
+    "training_updates": 0,
+    "formal_attempt_created": false
+  }
+}

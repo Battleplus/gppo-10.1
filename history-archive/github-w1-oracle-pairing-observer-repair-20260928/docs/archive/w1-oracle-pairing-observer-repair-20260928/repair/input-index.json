@@ -1,0 +1,106 @@
+{
+  "schema": "w1-oracle-observer-repair-input-index/1.0.0",
+  "created_date": "2026-09-28",
+  "inputs": [
+    {
+      "role": "oracle_root_cause_summary",
+      "path": "E:\\Z博士\\research-plans\\w1-oracle-pairing-root-cause-v1\\analysis-summary.json",
+      "sha256": "ac52d63d7aef9b23946eaad68a9471e296b482b79d0204a3bc77ecde8faa9fde"
+    },
+    {
+      "role": "oracle_root_cause_report",
+      "path": "E:\\Z博士\\research-plans\\w1-oracle-pairing-root-cause-v1\\root-cause-report.md",
+      "sha256": "0e649751094c217f71fa686c8f1d6e208b2e915e83ef2ed0f018fa73d5b9e9d2"
+    },
+    {
+      "role": "oracle_root_cause_mismatch_table",
+      "path": "E:\\Z博士\\research-plans\\w1-oracle-pairing-root-cause-v1\\message-mismatch-table.csv",
+      "sha256": "e96a9577adb279c286a9eeee7b399030a92404e14292e768d3004e0d0ff68e90"
+    },
+    {
+      "role": "oracle_root_cause_hashes",
+      "path": "E:\\Z博士\\research-plans\\w1-oracle-pairing-root-cause-v1\\hashes.json",
+      "sha256": "24a12e8cf7582258e85d4a1c8764588450897754e7f505df0e2ba0f941eef911"
+    },
+    {
+      "role": "stopped_oracle_runner",
+      "path": "E:\\Z博士\\research-plans\\w1-action-consequence-oracle-ceiling-runner-ready-v1\\runner.py",
+      "sha256": "92f2ce4e9e73c929788bbb946a1f230947743f5f944751feb3159aabf3712e99"
+    },
+    {
+      "role": "stopped_oracle_execution_manifest",
+      "path": "E:\\Z博士\\research-plans\\w1-action-consequence-oracle-ceiling-runner-ready-v1\\execution-manifest.json",
+      "sha256": "62b545903347aa7e39d217d2a1251910b9f80bad89e69fac7b0bbad4df74613a"
+    },
+    {
+      "role": "stopped_oracle_package_hashes",
+      "path": "E:\\Z博士\\research-plans\\w1-action-consequence-oracle-ceiling-runner-ready-v1\\hashes.json",
+      "sha256": "863f27140760f729bc7f9f1ffe5c395fb75b59aff1a763308eeca481969a452c"
+    },
+    {
+      "role": "stopped_attempt_worker_status",
+      "path": "E:\\Z博士\\runs\\w1-action-consequence-oracle-ceiling-v1-once\\run-once\\status.json",
+      "sha256": "ffd6ece1b7c80ad8c62389679feb1d5300234e061a7d6b3cdf52ffa72b684e4e"
+    },
+    {
+      "role": "stopped_attempt_supervisor_status",
+      "path": "E:\\Z博士\\runs\\w1-action-consequence-oracle-ceiling-v1-once\\supervisor-status.json",
+      "sha256": "b70622dd00a1fd7a037054f31bdf837323b4c830f8d2c2475f88c1aee228c66e"
+    },
+    {
+      "role": "stopped_attempt_export_manifest",
+      "path": "E:\\Z博士\\runs\\w1-action-consequence-oracle-ceiling-v1-once\\export-manifest.json",
+      "sha256": "47f6cc8af69d7f36e0f179cb8054671c7a0f3ba9e88a2a144d5e2adb0b428726"
+    },
+    {
+      "role": "stopped_attempt_branch_summaries",
+      "path": "E:\\Z博士\\runs\\w1-action-consequence-oracle-ceiling-v1-once\\run-once\\branch-summaries.jsonl",
+      "sha256": "f3616136ff6c3f022a1eebda162cd148cadf95cda682aa40324196466bce1bcf"
+    },
+    {
+      "role": "stopped_attempt_steps",
+      "path": "E:\\Z博士\\runs\\w1-action-consequence-oracle-ceiling-v1-once\\run-once\\steps.jsonl",
+      "sha256": "afbfc6cab6074e1997a0dbd5b4ae8416d12a2af0b7d68729a9159e3dde67529c"
+    },
+    {
+      "role": "two_parent_communication_validation",
+      "path": "E:\\Z博士\\runs\\w1-telemetry-identity-dynamic-technical-validation-v1-once\\communication-validation.json",
+      "sha256": "e819d77020437e9ef3f98b575c7297d4b92828fbd8ee354a56261caefc0c3a62"
+    },
+    {
+      "role": "completed_fair_rerun_execution_manifest",
+      "path": "E:\\Z博士\\runs\\w1-light-repaired-fair-rerun-v2-nativefs-once\\execution-manifest.json",
+      "sha256": "961016499ba5229112c116313ff80a87305eda48342c869212b696f280833a12"
+    },
+    {
+      "role": "fixed_development_tape",
+      "path": "E:\\Z博士\\research-plans\\w1-light-repaired-fair-rerun-infra-repair-v1\\tapes-light-dev.json",
+      "sha256": "49fe174f54b6cd93d93f9fe482db08e67d8e86185bc5610668312032906b77de"
+    },
+    {
+      "role": "environment_contract",
+      "path": "E:\\Z博士\\research-plans\\w1-light-repaired-fair-rerun-infra-repair-v1\\environment.json",
+      "sha256": "95b8b6e293fd7f500c3e89114424ff850717914cd3950a01e5cfbfb426f625ae"
+    },
+    {
+      "role": "frozen_hungarian_implementation",
+      "path": "E:\\Z博士\\research-plans\\w1-light-repaired-fair-rerun-infra-repair-v1\\classical_baselines.py",
+      "sha256": "424e17682004737e7ff700a70c9cc62bfd2988e16b2cdc8c9055c57d941bf53d"
+    },
+    {
+      "role": "public_controller",
+      "path": "E:\\Z博士\\research-plans\\w1-light-repaired-fair-rerun-infra-repair-v1\\public_controller.py",
+      "sha256": "d796ec67e6c62f9f297f4f48fe09ea1d16a160bc13b15c3c102674ae02263d8f"
+    },
+    {
+      "role": "packet_identity_repaired_environment",
+      "path": "E:\\Z博士\\research-plans\\w1-light-repaired-fair-rerun-infra-repair-v1\\native\\gppo_world\\m10_environment.py",
+      "sha256": "0f4615d11604a7cd1cc74c94f0258dfc6cb59748f64a075276ec90941db094b1"
+    },
+    {
+      "role": "packet_identity_repaired_communication",
+      "path": "E:\\Z博士\\research-plans\\w1-light-repaired-fair-rerun-infra-repair-v1\\native\\gppo_world\\m10_communication.py",
+      "sha256": "fcaada4fea48446aae509fb97f4b6b8275d5b6b9dda3bcdef00c5c392e6011ce"
+    }
+  ]
+}

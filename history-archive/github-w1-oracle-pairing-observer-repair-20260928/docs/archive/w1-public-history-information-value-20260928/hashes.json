@@ -1,0 +1,71 @@
+{
+  "schema": "w1-public-history-information-value-output-hashes/1.0.0",
+  "generated_at": "2026-09-28",
+  "files": [
+    {
+      "path": "analysis-plan.md",
+      "bytes": 7401,
+      "sha256": "59a0cb1bc821975778a9a407ddc50cab78a6d1bfedd2ee93e6b3b9e2c06456c8"
+    },
+    {
+      "path": "analysis-run-output.txt",
+      "bytes": 9761,
+      "sha256": "ba8c0e4d22acdbf6633a328082cde7fea8e8e1020865e157f5e52f18ca48f254"
+    },
+    {
+      "path": "analysis-summary.json",
+      "bytes": 9761,
+      "sha256": "ba8c0e4d22acdbf6633a328082cde7fea8e8e1020865e157f5e52f18ca48f254"
+    },
+    {
+      "path": "analyze_history_value.py",
+      "bytes": 27788,
+      "sha256": "62170cbd979cae469a1b526eb73d712e43bbf1cfc5d8a772bb59f02f251940e3"
+    },
+    {
+      "path": "decision.md",
+      "bytes": 2923,
+      "sha256": "00da5d0196f89e33ffc84f05bf0b8a6c4fb991171d3527f0606b65b03ab252df"
+    },
+    {
+      "path": "estimation-results.csv",
+      "bytes": 52716,
+      "sha256": "4b8b6ee08da5a3957fbe66f56de1309cf82505d3da5a643a8f2c5bac61bb1bd1"
+    },
+    {
+      "path": "evidence-cases.md",
+      "bytes": 4213,
+      "sha256": "35b1a7dd8f6ce2692b9c6e2ea04089e96d721e602e671de30bd5eac29a1f116d"
+    },
+    {
+      "path": "input-index.json",
+      "bytes": 3158,
+      "sha256": "e41ea3844f42187985e09a9973d0bff25eeb0380b124cb87decb5fd75787ef69"
+    },
+    {
+      "path": "input-label-availability.csv",
+      "bytes": 1510,
+      "sha256": "31d28901802da4128d1f076ba515e106ec5c6ced9fbeee9b9565ae16c4be6ee4"
+    },
+    {
+      "path": "README.md",
+      "bytes": 881,
+      "sha256": "35b37e5e2d9626a2f7bb97e446f17fe34e4c0d4bac345559bdaaf19142776412"
+    },
+    {
+      "path": "sample-evidence.jsonl",
+      "bytes": 7615,
+      "sha256": "e7586a88e3522b74300d1f9a6ff3c335f0872ddd9af512a081e7f309ab2616da"
+    },
+    {
+      "path": "test_history_value.py",
+      "bytes": 2528,
+      "sha256": "b0d23d197015901a29364cc63eb43077b30cb2773c2de941259753be972614fa"
+    },
+    {
+      "path": "test-output.txt",
+      "bytes": 732,
+      "sha256": "9788579dd63de1467cb5a134d65394b70c1068a7f7ac697864dc5cd062890894"
+    }
+  ]
+}

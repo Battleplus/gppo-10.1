@@ -1,0 +1,22 @@
+{
+  "schema": "w1-action-consequence-oracle-postrun-artifact-index/1.0.0",
+  "attempt_root": "E:\\Z博士\\runs\\w1-action-consequence-oracle-remaining-23-v1-once",
+  "artifacts": [
+    {"role":"analysis","path":"run-once/analysis.json","bytes":32855,"sha256":"6da3a92af9af2917b39a574f62d4c7e9b31ab497cd7d287279c372b076608062","github_include":true},
+    {"role":"worker_status","path":"run-once/status.json","bytes":2256,"sha256":"02a0b8e45969243e824f7184d2d30b3b69a4d2ac779b31ce7c81aa25c1babe3f","github_include":true},
+    {"role":"reuse_audit","path":"run-once/reuse-audit.json","bytes":4309,"sha256":"a2e7e3e4a3557714cf053360593a3cb78d3d96d6d875c42545743606bcf84827","github_include":true},
+    {"role":"candidate_decisions","path":"run-once/candidate-decisions.jsonl","bytes":23225,"sha256":"c91504ff0df21f923ecc0c81108e8ba117a0267dee027dc8d4d8b6b45f7ce2c9","github_include":true},
+    {"role":"communication_pairing","path":"run-once/communication-pairing.jsonl","bytes":11924,"sha256":"ac9e73e89903cc07f1404d58d9841a1a3bc9894ac7c78b2e02204664ef569381","github_include":true},
+    {"role":"supervisor_status","path":"supervisor-status.json","bytes":3620,"sha256":"ac1b08adaa7948d028a57cefcf99dd40fb55ed5ed94968dc21b8873f421b128d","github_include":true},
+    {"role":"infrastructure_settlement","path":"infrastructure-settlement.json","bytes":367,"sha256":"29ef5226cff4bd162fbabf105dcb76e855275aa100a943f74032be82f1aecab9","github_include":true},
+    {"role":"export_manifest","path":"export-manifest.json","bytes":8253,"sha256":"efa772e6b26f1c764cd7f4c9063fa0ce352722220eb7f8061efba929310779b1","github_include":true},
+    {"role":"export_completion","path":"EXPORT_COMPLETE.json","bytes":198,"sha256":"578242db71934feb575486ca3848ce289caf8ed7dde6f203d94648ed0d682614","github_include":true},
+    {"role":"native_export_status","path":"export-status.json","bytes":616,"sha256":"dff1401a2bf0f08512a46703be26c97a38c140d3aa1949cc607e284252e3cd14","github_include":true,"location":"native_root_only"},
+    {"role":"branch_summaries","path":"run-once/branch-summaries.jsonl","bytes":87784151,"sha256":"5a44d7efe0331dc22ccb6f41cb1ae0b76ef6fceaab02a81d569e84ee20445157","github_include":false,"exclusion":"large raw evidence retained locally"},
+    {"role":"step_log","path":"run-once/steps.jsonl","bytes":351165617,"sha256":"c9a4dca78ef913f4898ef350cd12f89ebca94207f553195d6218a09c4e93a66a","github_include":false,"exclusion":"large raw evidence retained locally"},
+    {"role":"budget_ledger","path":"run-once/budget.sqlite3","bytes":405504,"sha256":"b7f6d2bb12d68686f9dc25f213def09fe0cca7ea32689ea098178d0f216d42d5","github_include":false,"exclusion":"SQLite ledger retained locally"}
+  ],
+  "github_archive_is_complete_backup": false,
+  "credentials_or_authorization_tokens_included": false,
+  "checkpoints_included": false
+}

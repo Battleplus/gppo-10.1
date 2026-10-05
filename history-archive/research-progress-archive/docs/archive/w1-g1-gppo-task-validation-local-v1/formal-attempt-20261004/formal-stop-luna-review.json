@@ -1,0 +1,114 @@
+{
+  "schema": "w1-g1-gppo-formal-stop-luna-review/1.0.0",
+  "review_date": "2026-10-04",
+  "attempt": "w1-g1-gppo-task-validation-local-v1-once",
+  "review_scope": "artifact-only; SQLite connected with mode=ro and query_only=1; frozen source read only",
+  "launch": {
+    "formal_attempt_started": true,
+    "authorization_consumed": true,
+    "supervisor_started": true,
+    "automatic_retry": false,
+    "outer_exit_code": 1,
+    "preflight_exit_code": 0,
+    "preflight_staging_started": false,
+    "preflight_worker_started": false,
+    "frozen_contents_unchanged_recorded": true
+  },
+  "stop": {
+    "supervisor_status": "stopped",
+    "supervisor_stage": "staging_and_zero_step_gate",
+    "supervisor_run": "task_pipeline",
+    "worker_return_code": -15,
+    "supervisor_stop_reason": "RuntimeError: PHASE_CPU_BASELINE_DISCONTINUITY",
+    "worker_error": "PHASE_ACCOUNTING_REJECTED:PHASE_CPU_BASELINE_DISCONTINUITY",
+    "transition_target_in_worker_trace": "conditional_policy_training",
+    "training_started": false,
+    "model_initialized": false,
+    "checkpoint_loaded": false,
+    "environment_constructed": false,
+    "task_input_model_loads": 0,
+    "supervisor_accepted_phase_rows": 0,
+    "rejected_boundary_values_retained": false,
+    "worker_final_resource_settlement_present": false,
+    "worker_status_retained": "initializing",
+    "worker_settlement_activity_recorded": true,
+    "directly_observed_guard": "PHASE_CPU_BASELINE_DISCONTINUITY"
+  },
+  "sqlite_ledger": {
+    "path": "verified-export/run-once/budget.sqlite3",
+    "connection_mode": "ro",
+    "query_only": true,
+    "tables": ["calls"],
+    "call_count": 0,
+    "grouped_call_counts": [],
+    "recorded_resource_amounts": {}
+  },
+  "accounting": {
+    "native_controller": {
+      "self_cpu_seconds": 0.982874,
+      "waited_children_cpu_seconds": 9.470093,
+      "self_plus_waited_cpu_seconds": 10.452967,
+      "sum_matches": true,
+      "reported_controller_phases": {
+        "staging_and_zero_step_gate_cpu_seconds": 4.072863,
+        "settlement_and_verified_export_cpu_seconds": 0.06865499999999969
+      },
+      "nested_supervisor_and_worker_totals_added_again": false
+    },
+    "supervisor_nested_view": {
+      "cpu_seconds": 9.692891,
+      "self_cpu_seconds": 0.021221000000000156,
+      "waited_children_cpu_seconds": 3.006529,
+      "external_staging_offset_seconds": 6.665141,
+      "scope_complete": false,
+      "final_resource_pass": false,
+      "added_to_native_controller_total": false
+    },
+    "worker_phase_snapshot": {
+      "stage": "staging_and_zero_step_gate",
+      "next_stage": "staging_and_zero_step_gate",
+      "scope": "self_plus_waited_descendants",
+      "cpu_start_seconds": 0.0,
+      "cpu_end_seconds": 2.8661529999999997,
+      "supervisor_handshake_scope": "final_same_stage_snapshot",
+      "added_to_native_controller_or_supervisor_total": false
+    },
+    "limits_and_acceptance": {
+      "windows_cpu_reserve_pass": true,
+      "measured_wall_pass": true,
+      "measured_controller_limits_pass": true,
+      "full_resource_acceptance": false,
+      "resource_gaps": [
+        "WSL bridge CPU and cross-clock reconciliation unmeasured",
+        "controller final write and exit tail not measured",
+        "CPU polled; no delegated cgroup hard enforcement"
+      ]
+    }
+  },
+  "source_trace": {
+    "initial_worker_select": "runner.py:207 calls ledger.select(staging_and_zero_step_gate)",
+    "ledger_select_source": "package/budget_ledger.py:33-38",
+    "same_stage_snapshot_source": "package/budget_ledger.py:57-73",
+    "persisted_initial_snapshot": {
+      "stage": "staging_and_zero_step_gate",
+      "next_stage": "staging_and_zero_step_gate",
+      "cpu_start_seconds": 0.0,
+      "cpu_end_seconds": 2.8661529999999997,
+      "supervisor_handshake_scope": "final_same_stage_snapshot"
+    },
+    "source_derived_local_baseline_after_snapshot_seconds": 2.8661529999999997,
+    "source_derived_reason_no_initial_boundary_was_sent": "next_stage equals stage, so request_boundary is skipped; _finish_phase then assigns cpu to phase_started_cpu",
+    "training_transition_source": "package/task_pipeline.py:298 calls ledger.select(conditional_policy_training)",
+    "supervisor_initial_baseline_seconds": 0.0,
+    "supervisor_baseline_source": "package/phase_handshake.py:58; last_worker_cpu_end advances only after an accepted boundary at lines 172-176",
+    "rejection_condition": "abs(incoming cpu_start_seconds - last_worker_cpu_end) > 1e-6",
+    "rejection_source": "package/phase_handshake.py:140-141",
+    "source_derived_mechanism": "The training transition uses the worker's advanced local phase baseline for its boundary while the supervisor baseline remains zero because no earlier boundary was sent or accepted; the supervisor rejects that boundary as discontinuous.",
+    "source_derived_mechanism_supported": true,
+    "supervisor_call_site": "package/supervise.py:272",
+    "supervisor_accepted_phase_rows": 0,
+    "rejected_socket_payload_retained": false,
+    "rejected_numeric_row_claimed_as_captured": false
+  },
+  "conclusion": "The directly observed stop was a CPU baseline discontinuity rejection before training. Frozen-source flow plus the persisted first same-stage snapshot support the more specific mechanism: that snapshot advanced the worker's local CPU baseline without synchronizing the supervisor baseline, so the later training boundary was rejected. The rejected socket payload was not retained; the reconstruction does not present its numeric row as captured evidence. The worker's final resource settlement is also absent, and its retained status remains initializing. The SQLite calls table contains zero rows."
+}

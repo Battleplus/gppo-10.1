@@ -1,0 +1,12 @@
+{
+  "schema": "w1-action-consequence-oracle-postrun-hashes/1.0.0",
+  "scope": "All post-run report files except this self-referential hash list",
+  "files": {
+    "analysis-summary.json": {"bytes":2218,"sha256":"a331c92e53e01fff0fbb273e782030d851ddd0c2428a5f8f486611605d0c07f7"},
+    "artifact-index.json": {"bytes":2830,"sha256":"cfd0784eebb621ea3c43d3e97cee3252f49ccc1463f0be7aae6b32cf40b01fe6"},
+    "input-index.json": {"bytes":1443,"sha256":"20d676b5956314a070a38039fda36f63ced0c0f5dfcb1b011a39bf59220af958"},
+    "interpretation-limitations.md": {"bytes":2220,"sha256":"183db338a4461b0e7ffc2607a210551e1aa24132ad29e34995081ec94a57315d"},
+    "resource-settlement.json": {"bytes":2110,"sha256":"75793768b440b3ed5b5037910f1ec3d4d51b98c33d7bdd450089f4a179ab35ad"},
+    "result-report.md": {"bytes":4187,"sha256":"d1ba8c1ebfd56ce8fc963221578abb5d2469d7e12f6ef7738fe123473de97d97"}
+  }
+}

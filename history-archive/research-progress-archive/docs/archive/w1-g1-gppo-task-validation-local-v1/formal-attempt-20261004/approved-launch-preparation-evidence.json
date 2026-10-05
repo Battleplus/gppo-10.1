@@ -1,0 +1,28 @@
+{
+  "attempt": "w1-g1-gppo-task-validation-local-v1-once",
+  "approved_input_sha256": {
+    "execution-manifest.json": "219cd82a046ebffd3feb3f1e2f9bc5b158f7ab040273d6baef5b866b01ff2895",
+    "hashes.json": "aea59645b889fda413fa9ef110453622d402019016132b0daf59d5779d6d465f",
+    "RESOURCE_REQUEST.json": "85939a3d6211dc86c5db2a56a368b657c42975468b48dadc141e99b7a7e57e8a"
+  },
+  "authorization_source": "explicit user approval in this conversation, 2026-10-04",
+  "authorization_standard_json_roundtrip": true,
+  "authorization_fields_and_token_binding_validated": true,
+  "secret_logged": false,
+  "token_file_owner_only_acl": true,
+  "formal_package_contains_failed_synthetic_verifier": false,
+  "preflight_command": [
+    "C:/Python314/python.exe",
+    "-B",
+    "E:\\Z博士\\research-plans\\w1-g1-gppo-task-validation-local-v1\\package\\run_g1_task_validation.py",
+    "--preflight-only",
+    "--authorization-file",
+    "E:\\Z博士\\research-plans\\w1-g1-gppo-task-validation-local-v1\\external-authorization.json"
+  ],
+  "preflight_exit_code": 0,
+  "preflight_wall_seconds": 0.7230618000030518,
+  "frozen_package_unchanged": true,
+  "staging_started": false,
+  "worker_started": false,
+  "authorization_consumed": false
+}

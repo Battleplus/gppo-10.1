@@ -1,0 +1,57 @@
+{
+  "schema": "w1-action-conditioned-task-outcome-label-qualification-request/1.0.0",
+  "status": "NOT_APPROVED",
+  "purpose": "one_time_real_data_label_coverage_qualification_only",
+  "proposed_attempt": "w1-action-conditioned-task-outcome-label-qualification-v2-once",
+  "contract_version": "w1-action-conditioned-task-outcome/3.0.0",
+  "research_training": false,
+  "model_initializations_or_loads": 0,
+  "checkpoint_loads_or_writes": 0,
+  "model_forwards": 0,
+  "optimizer_updates": 0,
+  "policy_or_task_comparison": false,
+  "matrix": {
+    "parents": 8,
+    "repeats_per_parent": 1,
+    "decision_windows_upper": 8,
+    "legal_action_count_upper_including_noop": 25,
+    "candidate_branches_upper": 200,
+    "resets_upper": 8,
+    "prefix_steps_per_parent_upper": 4,
+    "branch_steps_upper": 14,
+    "continuation_decisions_per_branch_upper": 13,
+    "no_opportunity": "retain; do not replace or count as a zero label",
+    "candidate_set": "all legal public candidates, including NOOP with task-head masks false",
+    "parent_identity": "must be materialized from the frozen W1-light generator and cross-checked against the historical identity registry before external authorization; any collision or unavailable parent stops without substitution"
+  },
+  "derived_dynamic_limits": {
+    "environment_steps": 2832,
+    "rule_decisions": 2632,
+    "branches": 200,
+    "candidate_scans": 200,
+    "forced_first_actions": 200,
+    "snapshot_captures": 8,
+    "branch_snapshot_copies": 200,
+    "wall_seconds": 753,
+    "complete_process_cpu_seconds": 551,
+    "rss_bytes": 2147483648,
+    "active_storage_bytes": 536870912,
+    "native_plus_export_storage_bytes": 1073741824
+  },
+  "derivation": {
+    "environment_steps": "8*4 prefix steps + 200*(1 forced first action + 13 horizon-limited continuation steps); M10Config horizon=18s and decision_interval=1s, decision begins no earlier than t=4s",
+    "rule_decisions": "8*4 public NOOP prefix decisions + 200*13 Hungarian continuation decisions; forced candidate first actions are separately counted",
+    "wall_and_cpu": "ceil(3x the completed history-repair attempt totals: wall 230.81851591199938s and complete CPU 163.57187984099997s) plus a 60s shutdown reserve, rounded up to whole seconds",
+    "rss": "2x the prior attempt's 771072000-byte peak RSS upper bound, rounded up to 2 GiB",
+    "storage": "2x the prior 193032425-byte verified export, rounded up to 512 MiB active and 1 GiB native plus export"
+  },
+  "stops": [
+    "runtime config identity mismatch before reset",
+    "public-input, candidate, task, command, or continuation identity mismatch",
+    "invalid or non-contiguous post-action timeline",
+    "missing lifecycle evidence remains unknown and cannot be imputed",
+    "any no-opportunity parent remains missing; no replacement is allowed",
+    "any ledger, filesystem, storage, or time cap failure stops and seals; no retry"
+  ],
+  "approval_basis": "This is a bounded label-availability collection request only. It cannot establish model accuracy, action-ranking benefit, or task benefit; those require a separately frozen protocol."
+}

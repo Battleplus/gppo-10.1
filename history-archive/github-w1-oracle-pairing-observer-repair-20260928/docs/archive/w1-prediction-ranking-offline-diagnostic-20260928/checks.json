@@ -1,0 +1,16 @@
+{
+  "all_windows_same_continuation": true,
+  "analysis_has_no_environment_runtime_import": true,
+  "analysis_has_no_subprocess_execution": true,
+  "analysis_has_no_torch_import": true,
+  "analysis_imports_only_standard_library": true,
+  "baseline_metrics_reproduced": true,
+  "current_and_transparent_same_windows_and_labels": true,
+  "evaluation_parents_8": true,
+  "evaluation_records_111": true,
+  "evaluation_windows_24": true,
+  "learned_predictions_not_claimed_available": true,
+  "legal_candidate_sets_complete": true,
+  "no_environment_model_or_training_calls": true,
+  "sealed_prediction_gate_decision_preserved": true
+}

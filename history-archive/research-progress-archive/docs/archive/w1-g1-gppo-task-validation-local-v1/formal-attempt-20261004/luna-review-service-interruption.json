@@ -1,0 +1,8 @@
+{
+  "attempt": "w1-g1-gppo-task-validation-local-v1-once",
+  "review_scope": "artifact-only; no model or environment calls",
+  "existing_review_files_retained": true,
+  "followup_source_attribution_review": "interrupted_then_reissued",
+  "observed_error": "Agent errored: unexpected status 502 Bad Gateway: Unknown error",
+  "unreturned_followup_is_not_review_pass": true
+}

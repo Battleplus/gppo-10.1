@@ -1,0 +1,231 @@
+{
+  "aggregate_only_learned_inferences": {
+    "baseline_exact_best_windows": 12.0,
+    "baseline_total_regret": 0.16554570187280898,
+    "cannot_locate_to_windows_or_actions": true,
+    "learned_exact_best_windows": 8.999999999999998,
+    "learned_minus_baseline_total_regret": 0.017340780549723482,
+    "learned_total_regret": 0.18288648242253247,
+    "valid_because_each_parent_has_three_windows": true
+  },
+  "analysis_calls": {
+    "checkpoint_loads": 0,
+    "environment": 0,
+    "model_forwards": 0,
+    "model_initializations": 0,
+    "reset_or_step": 0,
+    "training_updates": 0
+  },
+  "baseline_metric_reproduction": {
+    "current_public": {
+      "decisions": 24,
+      "parent_macro_mae": 0.20232415237755616,
+      "parent_macro_rmse": 0.21059651917760225,
+      "parent_macro_selected_regret": 0.006897737578033708,
+      "parent_macro_top1_accuracy": 0.5,
+      "parents": 8,
+      "records": 111
+    },
+    "matches_saved_to_1e-15": true,
+    "transparent_history": {
+      "decisions": 24,
+      "parent_macro_mae": 0.2092994436587661,
+      "parent_macro_rmse": 0.21942708962748292,
+      "parent_macro_selected_regret": 0.006897737578033708,
+      "parent_macro_top1_accuracy": 0.5,
+      "parents": 8,
+      "records": 111
+    }
+  },
+  "baseline_noop_selected_windows": 0,
+  "candidate_count_histogram": {
+    "3": 10,
+    "4": 3,
+    "5": 4,
+    "7": 7
+  },
+  "current_vs_transparent": {
+    "different_action_details": [],
+    "different_action_windows": 0,
+    "same_action_windows": 24
+  },
+  "decision_preserved": "PREDICTION_GATE_NOT_PASSED",
+  "evaluation_parents_now_development_evidence": true,
+  "exploratory_near_tie_counts_do_not_change_frozen_top1": {
+    "gap_at_most_0.001": 9,
+    "gap_at_most_0.005": 21
+  },
+  "frozen_aggregate_metrics": {
+    "comparison": {
+      "current_public": {
+        "decisions": 24,
+        "parent_macro_mae": 0.20232415237755616,
+        "parent_macro_rmse": 0.21059651917760228,
+        "parent_macro_selected_regret": 0.006897737578033708,
+        "parent_macro_top1_accuracy": 0.5,
+        "parents": 8,
+        "records": 111
+      },
+      "learned_three_seed_mean": {
+        "decisions": 24,
+        "parent_macro_mae": 0.04608096035458966,
+        "parent_macro_rmse": 0.05561700552587361,
+        "parent_macro_selected_regret": 0.007620270100938853,
+        "parent_macro_top1_accuracy": 0.37499999999999994,
+        "parents": 8,
+        "records": 111
+      },
+      "transparent_history": {
+        "decisions": 24,
+        "parent_macro_mae": 0.20929944365876613,
+        "parent_macro_rmse": 0.2194270896274829,
+        "parent_macro_selected_regret": 0.006897737578033708,
+        "parent_macro_top1_accuracy": 0.5,
+        "parents": 8,
+        "records": 111
+      }
+    },
+    "gate": {
+      "checks": {
+        "mae_better_than_current_public": true,
+        "mae_better_than_transparent_history": true,
+        "selection_regret_better_than_transparent_history": false
+      },
+      "meaning": "strict aggregate development gate; it is not task-benefit evidence",
+      "pass": false
+    }
+  },
+  "learned_candidate_prediction_availability": {
+    "checkpoint_use_in_this_analysis": false,
+    "ensemble": false,
+    "evidence": "no per-candidate learned predictions were persisted; only aggregate metrics and checkpoints exist",
+    "model_forwards_in_this_analysis": 0,
+    "per_seed": false
+  },
+  "noop_legal_windows": 24,
+  "noop_true_best_windows": 4,
+  "parents": 8,
+  "records": 111,
+  "regret_concentration_available_for_baselines_only": {
+    "baseline_total_regret": 0.16554570187280898,
+    "by_selected_acceptance": {
+      "accepted": {
+        "regret_sum": 0.16360632406265188,
+        "windows": 22
+      },
+      "command_transport_lost": {
+        "regret_sum": 0.0,
+        "windows": 1
+      },
+      "unknown": {
+        "regret_sum": 0.0019393778101571002,
+        "windows": 1
+      }
+    },
+    "largest_window": {
+      "decision_id": "prediction_evaluation:train-0227:r1:s4",
+      "noop_selected": false,
+      "parent": "train-0227",
+      "regret": 0.12782107912400353,
+      "repeat": 1,
+      "selected_acceptance": "accepted",
+      "selected_action": 0,
+      "share_of_total": 0.7721195879927478
+    },
+    "learned_concentration": "NOT_SAVED"
+  },
+  "repeats_per_parent": {
+    "train-0227": 3,
+    "train-0513": 3,
+    "train-0788": 3,
+    "train-1012": 3,
+    "train-1151": 3,
+    "train-1446": 3,
+    "train-1724": 3,
+    "train-1763": 3
+  },
+  "schema": "w1-prediction-ranking-offline-diagnostic/1.0.0",
+  "training_objective_review": {
+    "candidate_weighting": "each candidate is one training row; windows with more legal candidates contribute more rows",
+    "continuation": "hungarian-v1-fixed for every saved evaluation record",
+    "features": "770 current-public values + 32 frozen public-history features + 25-way candidate one-hot",
+    "loss": "candidate-row Smooth L1 on absolute remaining utility",
+    "parent_split_isolation": "enforced and passed; train/model-selection/prediction parents are disjoint",
+    "ranking_or_centered_term": false,
+    "training_candidate_count_histogram": {
+      "3": 16,
+      "4": 13,
+      "5": 8,
+      "7": 10,
+      "9": 1
+    },
+    "training_candidate_rows_by_window_size": {
+      "3": 48,
+      "4": 52,
+      "5": 40,
+      "7": 70,
+      "9": 9
+    },
+    "training_windows": 48
+  },
+  "true_exact_best_tie_windows": 1,
+  "unknown_interpretation": {
+    "first_acceptance": "unknown acceptance blocks command-state interpretation for that branch but does not erase the saved scalar utility",
+    "host_confirmation": "unknown values block host-confirmation-specific conclusions",
+    "observed_unknown_cross_counts": [
+      {
+        "branches": 55,
+        "host_confirmation_unknown_count": 1,
+        "task_unknown_count": 1
+      },
+      {
+        "branches": 19,
+        "host_confirmation_unknown_count": 2,
+        "task_unknown_count": 1
+      },
+      {
+        "branches": 22,
+        "host_confirmation_unknown_count": 2,
+        "task_unknown_count": 2
+      },
+      {
+        "branches": 7,
+        "host_confirmation_unknown_count": 3,
+        "task_unknown_count": 2
+      },
+      {
+        "branches": 4,
+        "host_confirmation_unknown_count": 3,
+        "task_unknown_count": 3
+      },
+      {
+        "branches": 3,
+        "host_confirmation_unknown_count": 4,
+        "task_unknown_count": 3
+      }
+    ],
+    "remaining_utility": "finite saved reward-sequence target for every candidate; unknown host-confirmation fields were not substituted into it"
+  },
+  "window_macro_diagnostics": {
+    "best_second_gap": 0.00739422169672631,
+    "current_absolute_mae": 0.20202196960213709,
+    "current_centered_mae": 0.029063685698737855,
+    "current_pairwise_difference_mae": 0.043821208083681444,
+    "current_pairwise_direction_accuracy": 0.6492063492063492,
+    "current_regret": 0.006897737578033708,
+    "current_score_span": 0.07136143933171844,
+    "learned_centered_mae": null,
+    "learned_pairwise_difference_mae": null,
+    "learned_pairwise_direction_accuracy": null,
+    "learned_regret": null,
+    "learned_score_span": null,
+    "transparent_absolute_mae": 0.20707738326607447,
+    "transparent_centered_mae": 0.030124831384628462,
+    "transparent_pairwise_difference_mae": 0.045804764552200755,
+    "transparent_pairwise_direction_accuracy": 0.6412698412698412,
+    "transparent_regret": 0.006897737578033708,
+    "transparent_score_span": 0.07195522358127858,
+    "true_range": 0.05361276342128616
+  },
+  "windows": 24
+}

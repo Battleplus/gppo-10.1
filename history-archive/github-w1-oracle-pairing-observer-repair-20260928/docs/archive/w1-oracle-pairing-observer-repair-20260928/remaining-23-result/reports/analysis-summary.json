@@ -1,0 +1,52 @@
+{
+  "schema": "w1-action-consequence-oracle-postrun-summary/1.0.0",
+  "attempt": "w1-action-consequence-oracle-remaining-23-v1-once",
+  "status": "complete",
+  "decision": "FAIL_FIRST_WINDOW_HUNGARIAN_CONTINUATION_CEILING",
+  "gate_pass": false,
+  "coverage": {
+    "units_with_opportunity": 24,
+    "fixed_units": 24,
+    "parents_with_opportunity": 8,
+    "fixed_parents": 8,
+    "pass": true
+  },
+  "materiality": {
+    "threshold": 0.01,
+    "eight_parent_macro_mean_gain": 0.013226693424422117,
+    "passing_parents": 2,
+    "required_passing_parents": 4,
+    "pass": false,
+    "both_accepted_material_units": 3,
+    "acceptance_mismatch_units": 1
+  },
+  "unit_summary": {
+    "positive_gain_units": 14,
+    "nonpositive_gain_units": 10,
+    "material_gain_units": 3,
+    "hindsight_winner_differs_from_hungarian": 14,
+    "hindsight_winner_is_hungarian": 10
+  },
+  "parents": [
+    {"parent":"validation-0000","mean_gain":0.0026420668475141498,"positive_repeats":1,"pass":false},
+    {"parent":"validation-0001","mean_gain":0.004418626930532317,"positive_repeats":1,"pass":false},
+    {"parent":"validation-0002","mean_gain":0.04127856703108331,"positive_repeats":3,"pass":true},
+    {"parent":"validation-0003","mean_gain":0.004241392603908545,"positive_repeats":2,"pass":false},
+    {"parent":"validation-0004","mean_gain":0.00041734787077968294,"positive_repeats":1,"pass":false},
+    {"parent":"validation-0005","mean_gain":0.0037194554719625628,"positive_repeats":2,"pass":false},
+    {"parent":"validation-0006","mean_gain":0.004027490183335962,"positive_repeats":2,"pass":false},
+    {"parent":"validation-0007","mean_gain":0.04506860045626041,"positive_repeats":2,"pass":true}
+  ],
+  "labels": {
+    "candidate_branches": 144,
+    "tasks_per_branch": 6,
+    "candidate_branch_task_labels": 864,
+    "known_host_confirmation_labels": 682,
+    "unknown_host_confirmation_labels": 182,
+    "unknowns_imputed": false,
+    "unknowns_are_physical_failures": false,
+    "utility_depends_on_unknown_host_confirmation": false
+  },
+  "recommendation": "stop_this_specific_first-window_hungarian-continuation_oracle_line_without_automatic_training_or_expansion",
+  "historical_10ms_cost_failure_preserved": true
+}

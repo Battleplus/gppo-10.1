@@ -1,0 +1,20 @@
+{
+  "schema": "w1-runtime-environment-spec/1.0.0",
+  "base": "Ubuntu-24.04 WSL native ext4, Python 3.12.3 virtual environment",
+  "interpreter": "/home/asus/w1-action-relative-auxiliary-runtime-dependency-repair-v1-runtime/bin/python",
+  "install_source": "previously verified CPU-only environment; no launch-time package installation",
+  "cuda_required": false,
+  "packages": {
+    "numpy": "1.26.4",
+    "torch": "2.8.0+cpu"
+  },
+  "smoke": {
+    "imports": ["numpy", "torch"],
+    "requires_cpu_only_build": true,
+    "requires_virtualenv_prefix_match": true,
+    "model_initialization": false,
+    "checkpoint_load": false,
+    "training": false
+  },
+  "lock_file": "runtime-dependency-lock.txt"
+}

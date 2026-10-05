@@ -1,0 +1,65 @@
+{
+  "schema": "w1-action-consequence-oracle-remaining-23-resource-settlement/1.0.0",
+  "attempt": "w1-action-consequence-oracle-remaining-23-v1-once",
+  "status": "complete",
+  "final_resource_pass": true,
+  "actual_calls": {
+    "environment_steps": 1598,
+    "resets": 23,
+    "candidate_scans": 47,
+    "public_rule_decisions": 1484,
+    "snapshot_captures": 23,
+    "branch_snapshot_copies": 137,
+    "branches": 137,
+    "forced_first_actions": 137,
+    "model_initializations_or_loads": 0,
+    "encode_forwards": 0,
+    "actor_forwards": 0,
+    "world_forwards": 0,
+    "policy_updates": 0,
+    "world_updates": 0,
+    "offline_predictor_updates": 0
+  },
+  "limits": {
+    "environment_steps": 10350,
+    "resets": 23,
+    "public_rule_decisions": 9798,
+    "branches": 575,
+    "wall_seconds": 4200,
+    "complete_process_cpu_seconds": 8400,
+    "all_resident_rss_bytes": 4294967296,
+    "active_artifact_bytes": 4294967296,
+    "aggregate_native_plus_verified_export_bytes": 8589934592
+  },
+  "accounting": {
+    "verified_calls": 3586,
+    "pending_calls": 0,
+    "unknown_calls": 0,
+    "integrity": "ok",
+    "automatic_retry": false,
+    "worker_relaunched": false,
+    "historical_credit": 0
+  },
+  "resources": {
+    "worker_wall_seconds": 86.92798596899956,
+    "worker_complete_process_cpu_seconds": 33.269452,
+    "combined_wall_seconds": 102.95346811700438,
+    "combined_complete_process_cpu_seconds": 35.258349268,
+    "peak_rss_bytes": 470032384,
+    "peak_rss_upper_bound_bytes": 470827008,
+    "active_artifact_bytes": 439430752,
+    "export_payload_bytes": 465829105,
+    "aggregate_native_plus_export_bytes": 931658210
+  },
+  "export": {
+    "status": "verified",
+    "file_count": 68,
+    "manifest_sha256": "efa772e6b26f1c764cd7f4c9063fa0ce352722220eb7f8061efba929310779b1",
+    "native_export_status_sha256": "dff1401a2bf0f08512a46703be26c97a38c140d3aa1949cc607e284252e3cd14",
+    "independent_checked_files": 68,
+    "independent_missing_files": 0,
+    "independent_mismatched_files": 0
+  },
+  "historical_scope_complete": false,
+  "historical_10ms_cost_failure_preserved": true
+}

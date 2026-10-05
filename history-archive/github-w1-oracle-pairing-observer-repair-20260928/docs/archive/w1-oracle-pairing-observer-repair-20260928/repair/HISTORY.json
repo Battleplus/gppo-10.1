@@ -1,0 +1,66 @@
+{
+  "schema": "w1-oracle-observer-repair-history-index/1.0.0",
+  "credit_to_new_request": 0,
+  "historical_recorded_cumulative": {
+    "scope": "Recorded cumulative accounting through the defective-runtime lightweight work, repaired-runtime technical validation, stopped repaired rerun, completed repaired nativefs fair rerun, and the stopped oracle attempt. Known work outside the indexed sources is not reconstructed.",
+    "reserved_consumption": {
+      "actor_sample_evaluations": 273508,
+      "classical_decisions": 2036,
+      "encode_sample_evaluations": 282471,
+      "environment_steps": 51116,
+      "model_loads_or_initializations": 61,
+      "policy_optimizer_steps": 2848,
+      "resets_upper": 3707,
+      "world_batch_invocations": 6184,
+      "world_optimizer_steps": 560,
+      "world_sample_evaluations": 145080
+    },
+    "wall_seconds_upper": 27637.188791242657,
+    "cpu_seconds_upper": 55284.676709340005,
+    "unknown_calls_preserved": true,
+    "historical_scope_complete": false,
+    "not_a_complete_whole_project_total": true,
+    "cumulative_resource_acceptance": false
+  },
+  "completed_repaired_fair_rerun": {
+    "attempt": "w1-light-repaired-fair-rerun-v2-nativefs-once",
+    "environment_steps": 6918,
+    "resets_upper": 485,
+    "verified_calls": 70671,
+    "unknown_calls": 0,
+    "wall_seconds": 3036.790102343002,
+    "complete_process_cpu_seconds": 3658.297116,
+    "peak_rss_upper_bound_bytes": 839659520,
+    "artifact_bytes": 801878994,
+    "source": "E:\\Z博士\\runs\\w1-light-repaired-fair-rerun-v2-nativefs-once\\supervisor-status.json",
+    "budget_credit": 0
+  },
+  "stopped_repaired_fair_rerun": {
+    "attempt": "w1-light-repaired-fair-rerun-v1-once",
+    "environment_steps": 771,
+    "unknown_calls": 1,
+    "unknown_call_id": 9994,
+    "checkpoint_reuse_permitted": false,
+    "budget_credit": 0
+  },
+  "stopped_oracle_attempt": {
+    "attempt": "w1-action-consequence-oracle-ceiling-v1-once",
+    "status": "technical_stop_no_retry",
+    "environment_steps": 90,
+    "resets": 1,
+    "public_rule_decisions": 84,
+    "branches": 7,
+    "unknown_calls": 0,
+    "root_cause": "oracle verifier compared downstream execution stages and coarse command identifiers instead of exact primitive calls",
+    "oracle_results_reusable": false,
+    "budget_credit": 0,
+    "source": "E:\\Z博士\\runs\\w1-action-consequence-oracle-ceiling-v1-once\\supervisor-status.json"
+  },
+  "cost_standard": {
+    "mean_cpu_ms_per_decision": 10.0,
+    "p95_wall_ms_per_decision": 50.0,
+    "status": "Historical FULL CPU cost failure remains; thresholds unchanged.",
+    "meaning": "Pre-adopted research practicality standard, not a demonstrated field SLA."
+  },
+  "accounting_rule": "The future attempt reports new and historical costs cumulatively. This package creates no execution ledger and clears no historical consumption."
+}

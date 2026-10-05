@@ -1,0 +1,89 @@
+{
+  "attempt": "w1-action-conditioned-task-outcome-label-qualification-v5-budget-accounting-once",
+  "historical_use_elsewhere": "not_proven_absent; the baseline parent plan lists these identities, while available attempt-level usage registration is incomplete",
+  "no_opportunity": "retain as missing; do not replace or count as a zero label",
+  "parents": [
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0056|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0056",
+      "scenario_sha256": "e682dd95aa8b3af0e56a20c42bba2c057d0dbc09a6d96c3925cbd2dbef1ae9cd",
+      "structural_sha256": "9c904497288cbc7725f9e7b5912e1c9df3c6ca2e168c160be6b412f29c20bc2f",
+      "tape_index": 56
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0057|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0057",
+      "scenario_sha256": "ec9282ff9a07f7e451a937fe8342250add13ea4a8deaa79d7750a3c9f86f6654",
+      "structural_sha256": "cf39fa28cd1592e5be505f4657e281a191f9bb85d6c504a1b41dde56ee3ec99f",
+      "tape_index": 57
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0058|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0058",
+      "scenario_sha256": "3e88755ed0f7d1ab65cfa8c4135f610fac9f701383235635d5225543b2fd372d",
+      "structural_sha256": "f504e67453fc8d8be871f139e2ef2bd2f320515fee2c97c66baa8d4fb0aabf73",
+      "tape_index": 58
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0059|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0059",
+      "scenario_sha256": "40f17d7bf1d665ebd4cab4b9ef46be58ec60ec07d487f873962ddb531f4064fa",
+      "structural_sha256": "a9267bd3473c066434c57ff66635a7b8715c88dd9edd15278f44639d8688a5a2",
+      "tape_index": 59
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0060|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0060",
+      "scenario_sha256": "99e647c7d7835ae199d65ef9a64bb7a8a55059e29526eac2a2e0d341aac50043",
+      "structural_sha256": "e1b4157e2e29e1ffe112ab8f7da18cf0d31ebdf5da2194406007a4d8b66ef472",
+      "tape_index": 60
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0061|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0061",
+      "scenario_sha256": "6ddfc75ab72811122b4c37ae3a418ec15f184037ff4af84769af2b252340df03",
+      "structural_sha256": "285219030578bebe42eb25910b88bf2bd7b0a35bfa8be1487d01488e01203262",
+      "tape_index": 61
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0062|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0062",
+      "scenario_sha256": "a69b75d4be9a4beffb77e948fe76c35109e43ba09662385f49a7d3638edffd59",
+      "structural_sha256": "51aef42c27c3c8828c04a76440e6f5bc2e5afaf08d55f3ab0a31a5b1188a15f9",
+      "tape_index": 62
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0063|repeat-0",
+      "generator_split": "train",
+      "parent": "train-0063",
+      "scenario_sha256": "7ae0cd847bb8e42306869b607c3308bbd88c8813e8218de0e62741f6600ff079",
+      "structural_sha256": "904cc77a815a3d6ec2e000e2daadcd96de859b36f0a2d42c44cf51169128fbb5",
+      "tape_index": 63
+    }
+  ],
+  "prior_registered_split_sha256": "af24bdaf4eb2a2b1156a689b7629f493b918c8fb7b283dd34cb967a8a75b39b3",
+  "repeats": {
+    "label_qualification": 1
+  },
+  "schema": "w1-action-conditioned-task-outcome-parent-split/1.0.0",
+  "selection_rule": "fixed contiguous W1 train tape indices 56-63, selected by identity before new collection outcomes; no outcome screening or substitutions",
+  "source_train_tapes_sha256": "f2e6f7b2d7590989e305be5d7c6faf685369e15563a7b2fefb18c0468e7aa510",
+  "split_counts": {
+    "label_qualification": 8
+  }
+}

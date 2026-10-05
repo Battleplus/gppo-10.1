@@ -1,0 +1,76 @@
+{
+  "schema": "w1-public-history-information-value-input-index/1.0.0",
+  "inputs": [
+    {
+      "path": "E:\\Z博士\\runs\\w1-light-repaired-fair-rerun-v2-nativefs-once\\run-once\\evaluation\\steps.jsonl",
+      "bytes": 28911028,
+      "sha256": "e7f1b1cf54226b7b690b076e8fe7a4e99629a66e6babb37d724c0cbd1770d67d"
+    },
+    {
+      "path": "E:\\Z博士\\runs\\w1-light-repaired-fair-rerun-v2-nativefs-once\\run-once\\evaluation\\episodes.jsonl",
+      "bytes": 79759,
+      "sha256": "284d1aed3b78e27a25a93fb107ce0afe35a63b5ea15caf5239440fad4806897b"
+    },
+    {
+      "path": "E:\\Z博士\\runs\\w1-light-repaired-fair-rerun-v2-nativefs-once\\public_controller.py",
+      "bytes": 12778,
+      "sha256": "d796ec67e6c62f9f297f4f48fe09ea1d16a160bc13b15c3c102674ae02263d8f"
+    },
+    {
+      "path": "E:\\Z博士\\runs\\w1-light-repaired-fair-rerun-v2-nativefs-once\\classical_baselines.py",
+      "bytes": 6911,
+      "sha256": "424e17682004737e7ff700a70c9cc62bfd2988e16b2cdc8c9055c57d941bf53d"
+    },
+    {
+      "path": "E:\\Z博士\\runs\\w1-light-repaired-fair-rerun-v2-nativefs-once\\rl_adapters.py",
+      "bytes": 50489,
+      "sha256": "a15c6db308d86b55f993f385446ad58949dc349ba2faa79bc22618cea27aaa39"
+    },
+    {
+      "path": "E:\\Z博士\\runs\\w1-light-repaired-fair-rerun-v2-nativefs-once\\runner.py",
+      "bytes": 24347,
+      "sha256": "5249c02bcba10f032547ba4897fe304a07bd867e417d02a874a9422cb15acdef"
+    },
+    {
+      "path": "E:\\Z博士\\runs\\w1-light-repaired-fair-rerun-v2-nativefs-once\\environment.json",
+      "bytes": 903,
+      "sha256": "95b8b6e293fd7f500c3e89114424ff850717914cd3950a01e5cfbfb426f625ae"
+    },
+    {
+      "path": "E:\\Z博士\\runs\\w1-light-repaired-fair-rerun-v2-nativefs-once\\native\\gppo_world\\service_clock.py",
+      "bytes": 10947,
+      "sha256": "c5699bd117b442534725a88a0805704a0477217e8b918069152665f4bd1538f3"
+    },
+    {
+      "path": "E:\\Z博士\\runs\\w1-light-repaired-fair-rerun-v2-nativefs-once\\native\\gppo_world\\m10_environment.py",
+      "bytes": 57554,
+      "sha256": "0f4615d11604a7cd1cc74c94f0258dfc6cb59748f64a075276ec90941db094b1"
+    },
+    {
+      "path": "E:\\Z博士\\research-plans\\w1-history-consequence-mechanism-v1\\summary.json",
+      "bytes": 3590,
+      "sha256": "f729e0a798821d36e32beb1b384d2badc434c707c95b28e1392539b1a5a9bde0"
+    },
+    {
+      "path": "E:\\Z博士\\research-plans\\w1-history-consequence-mechanism-v1\\decision-evidence.jsonl",
+      "bytes": 430238,
+      "sha256": "eb0790dcd77f6bc7cd85e2326fe463b66d68cc729862ea9c020781475666601c"
+    },
+    {
+      "path": "E:\\Z博士\\research-plans\\w1-light-repaired-fair-rerun-v2-postrun-analysis\\prediction-fusion-analysis.json",
+      "bytes": 20333,
+      "sha256": "fe7538749c88b1abfcabc3f238a9b5de99fc83f2f5154f74762b337a9f6348f0"
+    }
+  ],
+  "excluded": [
+    "defective-runtime records",
+    "heldout/test results",
+    "checkpoints and model outputs as executable inputs",
+    "oracle branch outcomes as estimation samples"
+  ],
+  "calls": {
+    "environment": 0,
+    "model": 0,
+    "training": 0
+  }
+}

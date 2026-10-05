@@ -1,0 +1,11 @@
+{
+  "content_file_count": 20,
+  "contract_id": "w1-action-conditioned-task-outcome-label-repair-v2",
+  "dynamic_attempt_created": false,
+  "hashes_sha256": "c13a5a786f3df0c0a07c77e19ecafe44cb8ee846138b0b6120c6bf44fb868be1",
+  "proposed_attempt": "w1-action-conditioned-task-outcome-label-qualification-v2-once",
+  "resource_request_sha256": "e95d4e04fafd0fe01b02ac044d185b10591730322fedcc9c5f5141321814f712",
+  "resource_request_status": "NOT_APPROVED",
+  "schema": "w1-label-contract-package-manifest/1.0.0",
+  "status": "FROZEN_PREPARATION_NOT_APPROVED"
+}

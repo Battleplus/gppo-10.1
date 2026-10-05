@@ -1,0 +1,3 @@
+{"artifact_bytes_cumulative":0,"cpu_seconds_cumulative":0.93,"run":null,"stage":"staging_and_zero_step_gate","wall_seconds_cumulative":0.2532073140027933}
+{"artifact_bytes_cumulative":0,"cpu_seconds_cumulative":1.25,"run":"production_collector","stage":"label_qualification","wall_seconds_cumulative":0.7763539079896873}
+{"artifact_bytes_cumulative":12787,"cpu_seconds_cumulative":2.42,"run":"technical_stop_settlement","stage":"settlement_and_verified_export","wall_seconds_cumulative":2.3103803339909064}

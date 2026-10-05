@@ -1,0 +1,44 @@
+{
+  "schema": "w1-environment-config-erratum/1.0.0",
+  "status": "CORRECTION_ONLY_NO_OLD_ARTIFACTS_CHANGED",
+  "source_run": "E:/Z博士/runs/w1-light-repaired-fair-rerun-v2-nativefs-once",
+  "environment_json_sha256": "95b8b6e293fd7f500c3e89114424ff850717914cd3950a01e5cfbfb426f625ae",
+  "environment_json_generation": {
+    "script": "E:/Z博士/research-plans/gppo-world-lightweight-20260926/prepare_server.py",
+    "operation": "cfg = json.loads(binding['config']).get('environment'); write(ROOT / 'environment.json', cfg)",
+    "binding": "E:/Z博士/research-plans/gppo-world-stage2-gate-preparation-20260924/binding.json",
+    "resolved_config": "E:/Z博士/migration-artifacts/preference-weighted-wm-event-cpu-20260917/final/run/training/seed-1101/WD/resolved-config.json",
+    "recorded_mode": "arrival_to_region",
+    "recorded_deadline_basis": "physical_arrival"
+  },
+  "historical_effective_configuration": {
+    "collector": "production_data.py constructs M10Config() with no override",
+    "effective_mode": "continuous_service_until_deadline",
+    "effective_deadline_basis": "physical_service",
+    "evidence": "the EAWM collector code path constructs the native default; the 56-window/771-candidate export is a synthetic fake-worker E2E fixture, whose candidate branches all stop after one step with completed=0, expired=0, terminated=false, truncated=false",
+    "real_environment_data": false
+  },
+  "affected_evidence": {
+    "world_model_windows": {
+      "total": 56,
+      "train": 24,
+      "model_selection": 8,
+      "prediction_confirmation": 24,
+      "candidate_rows": 771,
+      "mode": "continuous_service_until_deadline",
+      "evidence_class": "synthetic_integration_fixture_not_real_collection",
+      "prediction_confirmation_relation": "8 parents x 3 repeats; the 24 windows are included in the 56-window total"
+    },
+    "task_outcome_heads": "The synthetic integration fixture has zero terminal lifecycle labels. It supports no claim about real physical-completion or expiry coverage. Host confirmation is not observable in the continuous-service mode and remains unsupervised.",
+    "prediction_gate_stop": "Preserve the frozen verdict. The 88-window historical utility-learning attempt remains prediction_gate_stop and did not run task comparison. This verdict is not retrospectively changed by this label-contract repair.",
+    "w1_light_repaired_fair_rerun_v2": "Its runtime explicitly loads environment.json, so its task semantics remain arrival_to_region / physical_arrival. Preserve those results and do not pool them with continuous-service labels.",
+    "history_repair_learning_loop_88_windows": "Its frozen runtime backend loads environment.json from the repaired fair-rerun runtime; its 219/68/111 candidate utility records and completion explanations remain historical arrival-contract development evidence. Candidate-to-internal-task identity is insufficient for v3 reconstruction; do not merge.",
+    "oracle_144_branches": "Preserve as arrival_to_region / physical_arrival fixed-Hungarian oracle evidence; do not merge into this contract."
+  },
+  "future_collection_contract": {
+    "config_source": "environment-config-contract.json",
+    "config_sha256": "c77c9978c0d1d54e73e4e3022649ccfb7a2e80674662bda395cb9f9ce46a9119",
+    "precollection": "instantiate exact frozen M10Config values, validate values and digest before environment construction, then write environment.json from that same runtime object",
+    "mismatch_action": "stop before reset; retain original evidence; no implicit fallback"
+  }
+}

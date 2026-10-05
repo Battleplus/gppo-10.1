@@ -1,0 +1,65 @@
+{
+  "files": [
+    {
+      "bytes": 28156,
+      "path": "analyze_ranking.py",
+      "sha256": "f921470d9417ecbcef70028ea5376f605e9dc9b072a19a2822961433a74ac89c"
+    },
+    {
+      "bytes": 21879,
+      "path": "candidate-evidence.csv",
+      "sha256": "c0dba60d9b53c0d7e580dd31faf4dfd0b8eed2b91dc874c8203ee7c12b4ec604"
+    },
+    {
+      "bytes": 646,
+      "path": "checks.json",
+      "sha256": "83ebcc37f96e03a341c64ef62eb80ed7eb2078aaf2107cb35331d28b9250fc71"
+    },
+    {
+      "bytes": 5511,
+      "path": "diagnostic-report.md",
+      "sha256": "c6f8e65013c84f8014b50025aff6572b3d09cd344e0b815886909829b3959263"
+    },
+    {
+      "bytes": 7786,
+      "path": "diagnostic-summary.json",
+      "sha256": "5e357852f71b838921a4534d4dfe4c3f2269b30723b4248de03bc10ddaa9ca97"
+    },
+    {
+      "bytes": 3276,
+      "path": "evaluation-contract.md",
+      "sha256": "fda35476ca978dc8d3c67524a56ba191ccb10339a4c331942f0d5b84122e58f3"
+    },
+    {
+      "bytes": 3851,
+      "path": "freeze_outputs.py",
+      "sha256": "a6a0bfabf179da3c6ce709567763822090d22ea36d33a3ad84552ec0c0d59c27"
+    },
+    {
+      "bytes": 2898,
+      "path": "input-index.json",
+      "sha256": "42bed25262e8e5731f9f190f417eb109a4e3e5458ee0ae4edef9bac17c167d12"
+    },
+    {
+      "bytes": 881,
+      "path": "missing-evidence.md",
+      "sha256": "baf6f9eea691535de08182da4c8032ce2b4549a4da46e5b75f6d2523bea18113"
+    },
+    {
+      "bytes": 1786,
+      "path": "parent-repeat-regret.csv",
+      "sha256": "221e0ec3ba04a6f66ff0202d4fded90bcde5125a620e98e0944a4e53e19911cc"
+    },
+    {
+      "bytes": 3364,
+      "path": "parent-summary.csv",
+      "sha256": "757015af971808bab56301f396b2e2fd96212c29435c3fb913db85507ad17b0d"
+    },
+    {
+      "bytes": 13763,
+      "path": "window-comparison.csv",
+      "sha256": "a4eace31deea401174b7bcb8787ab8e72f23ddab17355ea212c7d813e1463c28"
+    }
+  ],
+  "schema": "w1-prediction-ranking-offline-hashes/1.0.0"
+}

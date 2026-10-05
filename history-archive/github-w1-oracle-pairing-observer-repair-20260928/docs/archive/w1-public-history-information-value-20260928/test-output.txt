@@ -1,0 +1,23 @@
+Command: python test_history_value.py
+Date: 2026-09-28
+
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+OK
+
+Covered invariants:
+- estimator input rejects future measurement age;
+- exact-time labels do not substitute later measurement times;
+- public field measurement time is reception time minus age;
+- public continuation identities remain aligned to UAV/task identities;
+- missing values remain distinct from numeric zero;
+- source script contains no environment/model/checkpoint execution import or call pattern.
+
+Analysis execution counters:
+- environment calls: 0
+- model initializations or loads: 0
+- model forward calls: 0
+- training updates: 0
+- new dynamic attempts: 0

@@ -1,0 +1,30 @@
+{
+  "schema": "w1-action-consequence-oracle-postrun-input-index/1.0.0",
+  "frozen_preparation": {
+    "path": "E:\\Z博士\\research-plans\\w1-action-consequence-oracle-remaining-23-preparation-v1",
+    "execution_manifest_sha256": "2bf84e49d151c0fa3be4a723df97eb5b41f1571bbd88def0c04c196c2e401843",
+    "hashes_json_sha256": "d0e0388174dce35787b18cc377e5455f6fc8874673b73b5e79a973147fb97ac1"
+  },
+  "completed_attempt": {
+    "windows_path": "E:\\Z博士\\runs\\w1-action-consequence-oracle-remaining-23-v1-once",
+    "native_path": "/home/asus/w1-runs/w1-action-consequence-oracle-remaining-23-v1-once",
+    "analysis_path": "run-once/analysis.json",
+    "analysis_sha256": "6da3a92af9af2917b39a574f62d4c7e9b31ab497cd7d287279c372b076608062",
+    "status_path": "run-once/status.json",
+    "status_sha256": "02a0b8e45969243e824f7184d2d30b3b69a4d2ac779b31ce7c81aa25c1babe3f",
+    "export_manifest_sha256": "efa772e6b26f1c764cd7f4c9063fa0ce352722220eb7f8061efba929310779b1",
+    "native_export_status_sha256": "dff1401a2bf0f08512a46703be26c97a38c140d3aa1949cc607e284252e3cd14"
+  },
+  "reused_unit": {
+    "unit": "validation-0000/repeat-0",
+    "counted_once": true,
+    "reexecuted": false,
+    "source_execution_manifest_sha256": "99643974f96681ebd1d70a24bfd1190218caf7868a08bb80fc5fdb38e98b9353"
+  },
+  "postrun_analysis": {
+    "environment_calls": 0,
+    "model_calls": 0,
+    "training_updates": 0,
+    "new_experiment_attempts": 0
+  }
+}

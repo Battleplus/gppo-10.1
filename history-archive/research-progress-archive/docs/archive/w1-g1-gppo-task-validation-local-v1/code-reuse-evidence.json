@@ -1,0 +1,563 @@
+{
+  "GPPO_core_sha256": "808b1de65e676ad45480843c152874248be1fe91c1ce56e1a015fddf81bfd4d1",
+  "changed": [
+    {
+      "base_sha256": "f9607d2ee1c3fcb6ce9d2082a0002867421c0773c3f51f159bca975f586c37d8",
+      "new_sha256": "a6a522610c8068e4ae28ae4df500240e115392b7c7fa97bdcedd0aa0eb6ceb36",
+      "path": "DEVELOPMENT_STATUS.md",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "2f5371d073219d0f4f2b21909a1749433b5ce28108a87aaeb973643d84a7389f",
+      "new_sha256": "9485925c377be5d12c90d67d28bc6f357ae2e43983242004dee9baa5fef94e75",
+      "path": "ENGINEERING_ACCEPTANCE.md",
+      "status": "modified"
+    },
+    {
+      "base_sha256": null,
+      "new_sha256": "30377ebfdd5016eea5710de96eba161b3b4b585b80e9e89c0c9c3ddeeec7b2c2",
+      "path": "G1-GPPO-PROTOCOL.md",
+      "status": "added"
+    },
+    {
+      "base_sha256": "ff30adeedec07a874b509e88e71937fff0c90ed5b051da3094b8f06f37d3dc2d",
+      "new_sha256": "89ee5f7edf673566793dd23c9c89ee1beb90b5f0cf2931942a4a8959d8630b92",
+      "path": "LOCAL_REAL_RESEARCH.md",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "e76c8efc2c073160dc67a6681ebefba74d17342967af3a34b6fcf64fc0ecba18",
+      "new_sha256": "5824e405897d2faaf9892b41335dea487a23bf949f3adb35cb717c3d7fa4be9e",
+      "path": "LOCAL_SMOKE.md",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "e2bfa12c14ad0379bae09127f6726010cffab3e90a7b9349adc7a1b019b71e77",
+      "new_sha256": "fea45563d89bbe3d05c35b30d779e93540988e04f112ec0b250e50374e48435a",
+      "path": "PRODUCTION_WIRING_ACCEPTANCE.md",
+      "status": "modified"
+    },
+    {
+      "base_sha256": null,
+      "new_sha256": "6bb7c131e47053e5c4dc6cc1e2837404f6df7a83833fa29ab29f6d904e52b830",
+      "path": "README-inherited-local-world-model.md",
+      "status": "added"
+    },
+    {
+      "base_sha256": null,
+      "new_sha256": "2aec0efa43a66caa8747010ab01f7bb350ba39d7f44e8708eb3b81ae1a8d3dc0",
+      "path": "README-task-validation.md",
+      "status": "added"
+    },
+    {
+      "base_sha256": "2f06d5ed26a9c36c07950f71b4f2fe7505db4ccac9529e213b90f9f0fb8b6e26",
+      "new_sha256": "54ca3520da330e251bd87c5556500ea53f92782a859295b5f2cb97f869413678",
+      "path": "README.md",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "bd11b07eb6146eb75166d336bc7a31369ece4450e896167be1fcba7ce6fd6d9e",
+      "new_sha256": "85939a3d6211dc86c5db2a56a368b657c42975468b48dadc141e99b7a7e57e8a",
+      "path": "RESOURCE_REQUEST.json",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "7edc754043dd192cdeea380f8e6490fbfddb51a610a7b8d5d1e3afa47893e9af",
+      "new_sha256": "90387745e8218b8b381dffbfa640f0df9c00033ba5d04971c17e3722228d597c",
+      "path": "SERVER_ACCEPTANCE_PROTOCOL.md",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "b088103beb875a78b6dad60a4a7e0073c44ca4d0fe49e7a6f74c5cd4e4b04285",
+      "new_sha256": "83f5f7a8f57fa5db79e7f6e7a38320bc35c8f4e224f97fe5922d241fadc2f55f",
+      "path": "SMOKE_REPAIR.md",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "2928cb21472147b036b8559effcbc7be39055e486da89dde1db858683d4beb7d",
+      "new_sha256": "f72d49d6f437aa06b0c0e8baab2ea86d68fa43ae1e96652b568921b124d41c6d",
+      "path": "SYSTEM_WIRING.md",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "f132a3bea5a5625f892236eb0ac147fc025e26b3fa654976cbd89b2f6912689f",
+      "new_sha256": "dbf5ba17e16e5cc09952d79e95886e6c7b038a8be54b9944ab27dc8b14660d73",
+      "path": "TASK_OUTCOME_LABEL_CONTRACT-v4.md",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "dfb9eca0843fcd6f41295d262f5a142c62c9aabda6f36542b23a61904df565a8",
+      "new_sha256": "6bdcfdb5bcff20d70b8780608efa2f296275180b75faf87a9c77ebde5e932ef2",
+      "path": "acceptance_entry.py",
+      "status": "modified"
+    },
+    {
+      "base_sha256": null,
+      "new_sha256": "7331a3dff594d1565035705c42311a2cd6a0bdadbf99280911cddd29bdc4c8a0",
+      "path": "arrival-reward-boundary-erratum.md",
+      "status": "added"
+    },
+    {
+      "base_sha256": "fc8ee78c8f276f5d4bb5c2ee89fca763dc2941c22c6d8dbc1cae0e703ac7ea83",
+      "new_sha256": "a1bf4f9b506936311be7d4a59a5e0c71db96152a80a14d484da7c7c2c1b75fbb",
+      "path": "budget-accounting-erratum-v5.md",
+      "status": "modified"
+    },
+    {
+      "base_sha256": null,
+      "new_sha256": "8ec07d3abc189ab7e1d6dd4d9e80f6682ceeaff004812f2cef501fcce96117b1",
+      "path": "budget-basis-task-validation.md",
+      "status": "added"
+    },
+    {
+      "base_sha256": "ede789dc7729f14d33075870a0a07ea8796673ffb34afd5eb4be0667148d7e3f",
+      "new_sha256": "5709c66fe8e11941ba25361060b2e47923bb808e29240f1bd4d3ad7bae1ca036",
+      "path": "configuration-identity-audit.md",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "5b180ed8aaa08ff65bcc4431d82708a0566f7a01eef115a9e27a9238b65431b5",
+      "new_sha256": "7ee9b37affe9fb3fa8c9c539cde9f1d910c9cebfdf0242a27618e7db01f8acaa",
+      "path": "cpu-accounting-erratum-v6.md",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "e08328eeeab23d4cf5d64456f5b7b12d5604b793e56a44963ae233f71f0c590c",
+      "new_sha256": "219cd82a046ebffd3feb3f1e2f9bc5b158f7ab040273d6baef5b866b01ff2895",
+      "path": "execution-manifest.json",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "647d97888b5104b0b02ff59b990cbf1e5e15de587624631bcd5daf0e4e41905a",
+      "new_sha256": "7b91a030d71ce2eeb8900431aa5cf640685d82cf04b200e1574831d9472c6f4f",
+      "path": "experiment-matrix.json",
+      "status": "modified"
+    },
+    {
+      "base_sha256": null,
+      "new_sha256": "3d43fa9e03dd32aae14cb9f3de30991c88b6daed6426b2995e87610fe7df1639",
+      "path": "frozen-models/G1/seed-8201.pt",
+      "status": "added"
+    },
+    {
+      "base_sha256": null,
+      "new_sha256": "126a4d43dfbf7d555477584c24d231a890b8077dc6fa690f0f0e9e4daaec2789",
+      "path": "frozen-models/G1/seed-8202.pt",
+      "status": "added"
+    },
+    {
+      "base_sha256": null,
+      "new_sha256": "d0d0111a15b8b075df1450c64d92491bcdbf5a69d405e8662fe6672e64b76f03",
+      "path": "frozen-models/G1/seed-8203.pt",
+      "status": "added"
+    },
+    {
+      "base_sha256": null,
+      "new_sha256": "d84905b3b4224da8a62576b94a6c649abb4bae42ea068f366c9a0b2748537e86",
+      "path": "g1-model-binding.json",
+      "status": "added"
+    },
+    {
+      "base_sha256": null,
+      "new_sha256": "b4cadbce6795daea2a5a4f0e19535cb9d5eaa259b5581f19de2021fc042f16b5",
+      "path": "g1-prediction-qualification.json",
+      "status": "added"
+    },
+    {
+      "base_sha256": "4303b91ac78e056a0d4fa187a6ab358e77d215df9fb646b4693f9ec314c8217d",
+      "new_sha256": "aea59645b889fda413fa9ef110453622d402019016132b0daf59d5779d6d465f",
+      "path": "hashes.json",
+      "status": "modified"
+    },
+    {
+      "base_sha256": null,
+      "new_sha256": "15e075af45721a5da5ba9667859eb529d0577762ead2fc75f23f29d9a7c24515",
+      "path": "independent_task_recompute.py",
+      "status": "added"
+    },
+    {
+      "base_sha256": "0adca82c96d03b1df6b27b93f0c3fd976ac0ed7eacc0ade9cc7ab7a2897f240d",
+      "new_sha256": "3b862cc1e06afeef26de3c514a8006d7668116d1376fcc5dae09e52eaccd2832",
+      "path": "joint_supervisor_entry.py",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "6b106f20fbb12dd75568d552e1939705c9760f01233b7e4336b67e4d1b174bad",
+      "new_sha256": "6e97fd9906e6273215a689981c5104f092f6371acb925339f7a528f6054732b4",
+      "path": "label-repair-report.md",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "ff8996811c2a06829e3153361de3de9a23c04814ff2e91f64d5f4c8085d21632",
+      "new_sha256": "9dd46ecceaf71eae268eb0fab132a32babd410870883e26ead5b2017c7af27aa",
+      "path": "launch-contract.json",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "38c21bed9367454d1f520409a42e623728e4fcfcee733e1735fec33d7b06f119",
+      "new_sha256": "f02443153797cef69b4e34bc5da23f92a0cb74fe3ad20265d984a519a7e08047",
+      "path": "launch_joint_once.py",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "fab8f49af49003cf00a2160a6b0ea68703b8808ec4271c5a2d70a5f974e69ada",
+      "new_sha256": "0873eb3a80f90c3eae35b3a76806c69841fd63204386fd69b79f64615fb37e13",
+      "path": "launch_once.py",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "611d90801cae189d39593f989990835f631e3ddffc4c30f1bd06f014d215503c",
+      "new_sha256": "1e8da491e463152f0875c9e7648690b303c9dda04a984986c5ca6a12837b9b58",
+      "path": "launch_server_acceptance.py",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "c6262884c0095d44211dc1746b106997d96697ef05cecc9d04f8de95ac8ee945",
+      "new_sha256": "e25e4dad1970febe72d7afa2c3c5b87616a4b8cd501664ab00017ac246e0c57f",
+      "path": "local_launcher.py",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "9301a1021cbd35ed7e5f3ad5da731328e3641984e71cfcb13bdb2db761980432",
+      "new_sha256": "86c2a70af2f90d6be42d5667a01f9deedf8fef7337c1cf26481f41a07ede77b7",
+      "path": "local_pipeline_controller.py",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "d7ac71afb48071f5d788b264ee06e1408541ca4d7fa153e6cf8b4afaf14a6e21",
+      "new_sha256": "b3133fcdd02120445f381581d84ac10a1f4befc1e1c083a017e0c6963ffdc97d",
+      "path": "local_research_entry.py",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "464b5cc0d88ad50bdab8fd4e052ced0e12c026d8638f2746b5e718ef60a6118d",
+      "new_sha256": "c8b739e94bb17eff705a35184fa0e7d56b26688cd86d2fb227a239eade429d42",
+      "path": "local_research_worker.py",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "801365cb16d5d2d38533840ff8ae9bead8f4381ba86de71ab75225efd70508ff",
+      "new_sha256": "9ff5f007312baf862636732a373875ed312b74bd753a7b153c5cd170922e51ac",
+      "path": "manifest_contract.py",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "29431177ad35c0336dd56d2e11cfe00728513debd1b62318d25fe3496d690c7b",
+      "new_sha256": "3d727717adf65ef683fa82e257fd87400a9633b97c307dbb09895a0a672a96b8",
+      "path": "metered_joint_entry.py",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "07a077273a356e7f1e292f250b7b53dc534e48ecf249877c2f74c66ebea8ba92",
+      "new_sha256": "667065dd2b7141d1cae9c099959f4d70e2c63c0d007e17795cb03bb9fe80db03",
+      "path": "native_launch.py",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "8f5341226f91e2f8b7630927ee83e87730771278895fa23fd754f68018d01231",
+      "new_sha256": "17763ae21656f891718f93ce0e62ebb1ef713e934806eabfbd39902950c617c2",
+      "path": "parent-split.json",
+      "status": "modified"
+    },
+    {
+      "base_sha256": null,
+      "new_sha256": "d3069a88dc0c3b8b3e342184cc9d77b9705339150148175ed49f4141c50c1d90",
+      "path": "production-stage-wiring.md",
+      "status": "added"
+    },
+    {
+      "base_sha256": null,
+      "new_sha256": "7f90bade8992df3384a359dfceaade40fecafe7cc3f8002abc8b82b2973b5dbb",
+      "path": "production_policy.py",
+      "status": "added"
+    },
+    {
+      "base_sha256": null,
+      "new_sha256": "adf64ac441bc0966f2095415fc1d197872265ba0d9ee6c0cfc3ac4fa3cd3a688",
+      "path": "reuse-and-changes.md",
+      "status": "added"
+    },
+    {
+      "base_sha256": null,
+      "new_sha256": "518c211c15ccebdcee1be5e04d2a299d7e965f4078af300ade9d713b10dc27d1",
+      "path": "run_g1_task_validation.py",
+      "status": "added"
+    },
+    {
+      "base_sha256": "02c115d0a4577e1e1aa93e34cc72a0774ba52296da36a7782cbc15b869d68b20",
+      "new_sha256": "ad80f0e0953c8278cf3d3728c2d02d82415a5f393dc9fed4fe21082147f980ea",
+      "path": "run_local_research.py",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "c343dc2bf7e18c071d7faf729ddb5b3357de1e455aad45b6228b762b731dab8c",
+      "new_sha256": "fb0cfea7c72aa75fdc7153385478d90b044bd8459449eb64d4e076394c0cf2b4",
+      "path": "runner.py",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "222a6f466670b4c6ad0e8bad77ed810ea1fe5ed906c01de34e7a523ffb804c6d",
+      "new_sha256": "0515209bd58b7b34a41c1c7c035a7a05757efd8c0f2c0707a709ae05413b6d14",
+      "path": "runtime-inputs.json",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "2a2d7ba9d5fcfc9136c34d9e28726547326246b3cd7dfe0696af4c7c81ad1be9",
+      "new_sha256": "8d7ac5f8d374c183d76d0a35e3b939d4ff4f796007b2880af3eaa8b8e9f6fda5",
+      "path": "runtime-probe-contract.md",
+      "status": "modified"
+    },
+    {
+      "base_sha256": null,
+      "new_sha256": "e7136038c53cbf1463bd009772777590f9fc48068ea54a1e7c4f6c6daf7d4af0",
+      "path": "runtime_hooks.py",
+      "status": "added"
+    },
+    {
+      "base_sha256": "29be69d6bf1cc00e92cbdf25f4064d48889b369074167e82e68fcf0dfd122e66",
+      "new_sha256": "b13e2295d0870c244698ea2ceb57c58313b0f49d75441a564b086b68618b00e4",
+      "path": "smoke_supervisor_entry.py",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "f3b9a90d12e2a07cf8b101009e86112eb06f3b0d79a8be890db5c813df9705c6",
+      "new_sha256": "454ae223f31164e76eb23683caa0134e3b39a9b040acf7ff4b7389d2f588e3c4",
+      "path": "source-erratum.md",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "08206251853c2c2a89a79630f564555015a0dfaba31a70219ff124925b1c364e",
+      "new_sha256": "a5b1decaee9bcfe62d494f88f831f7b2c40edcd970ed88a1191a3f23a7a39772",
+      "path": "supervise.py",
+      "status": "modified"
+    },
+    {
+      "base_sha256": null,
+      "new_sha256": "6ca4d49677e860414e86908e2a9fdf481dc48bdcbe7d77908ff6373265db2f85",
+      "path": "task_contract.py",
+      "status": "added"
+    },
+    {
+      "base_sha256": null,
+      "new_sha256": "6bba96ec95d6c17f9263fa788785c90c90722bba4e128e2bec18fb630761dafc",
+      "path": "task_pipeline.py",
+      "status": "added"
+    },
+    {
+      "base_sha256": "8adcae0e0ebb8609d1bf64fb279766dd64244f735757016a4af43b180546f97f",
+      "new_sha256": "b0303b67b355f25a8ade5d721da7d9bd9f9ddc2c4b3508481dd857d7ec7ad509",
+      "path": "test-evidence.md",
+      "status": "modified"
+    },
+    {
+      "base_sha256": null,
+      "new_sha256": "f7ccbed5a44fe39ef52f57a0ced78db99de2516199b38c9e618e02b4e437c88a",
+      "path": "test_arrival_deadline_boundary.py",
+      "status": "added"
+    },
+    {
+      "base_sha256": null,
+      "new_sha256": "82deaefb2bee36d1f96454c5d317825943cbce71fdd807d95b3572ee57f6f841",
+      "path": "test_g1_policy_preparation.py",
+      "status": "added"
+    },
+    {
+      "base_sha256": null,
+      "new_sha256": "04e8e53b9d31fd822b7eab5721b41376b1bcd2bb7b42087fcd88e6d0e7f03be5",
+      "path": "test_independent_task_recompute.py",
+      "status": "added"
+    },
+    {
+      "base_sha256": null,
+      "new_sha256": "df60a2b55535f4d050a588766729e8c961f290fec4a839c74c34f6d7b2e598d3",
+      "path": "test_task_launch_contract.py",
+      "status": "added"
+    },
+    {
+      "base_sha256": null,
+      "new_sha256": "c1967749cf1b9ea916b457435b45540fa5fcb3ea208121e604680994abc8f608",
+      "path": "test_task_pipeline.py",
+      "status": "added"
+    },
+    {
+      "base_sha256": null,
+      "new_sha256": "6bd620232cb30764a0a7e12379a9bfdb14597569a35f3bca11311dd3f73534c6",
+      "path": "transparent-reference-audit.json",
+      "status": "added"
+    },
+    {
+      "base_sha256": null,
+      "new_sha256": "2fb2bf2921f02b29cc2a1c484181b7c5ffbc1b7478fbb1a5c3d34da449499d97",
+      "path": "transparent-reference-audit.md",
+      "status": "added"
+    },
+    {
+      "base_sha256": "4bdf14f1f0ea141a5213ddc6976bca1ddc92b74d9f77285f7a1ef1cdcfc0a653",
+      "new_sha256": "cc688fdbaa2c738357fe1681e389d44365820685158ce332b036acfc994af39f",
+      "path": "unique-launch-command.md",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "388294da95a08dab2fef45c7d8dc6197ad75f41fa64d8ea8f9037b6995d14233",
+      "new_sha256": "dfac5e3d458a7c47115da6d623b96b589c69deb90dcaf27e0f9380a94a9b20ff",
+      "path": "v6-change-report.md",
+      "status": "modified"
+    },
+    {
+      "base_sha256": "8918dd8e30a6e90205b9cc1048bec27dd4e38ab55ef9716034ce169f99616c1b",
+      "new_sha256": "4dcde85a1226b4e08358d41b6c068179e4360e87e4702b24edd1e26153179d73",
+      "path": "wsl_stage_and_launch.py",
+      "status": "modified"
+    }
+  ],
+  "native_all_unchanged": true,
+  "native_files": 47,
+  "new_world_training": false,
+  "old_attempt_modified": false,
+  "reviewed_policy_base": "E:\\Z博士\\research-plans\\w1-eawm-jepa-world-model-production-repair-v4-e2e-integration-auth-repair-v1",
+  "schema": "w1-g1-gppo-reuse-byte-evidence/1.0.0",
+  "successful_runtime_base": "E:\\Z博士\\research-plans\\w1-task-outcome-g1-g2-joint-local-v1\\package",
+  "unchanged": [
+    "LOCAL_ACCEPTANCE_REQUEST.json",
+    "LOCAL_ACCOUNTING_CONTRACT.json",
+    "SERVER_ACCEPTANCE_REQUEST.json",
+    "audit_v6_recoverability.py",
+    "budget_ledger.py",
+    "bulk_payload_transport.py",
+    "classical_baselines.py",
+    "config-erratum.json",
+    "controller-runtime-contract.json",
+    "controller_runtime.py",
+    "cpu-accounting-contract.json",
+    "cpu_scope_contract.py",
+    "data-gate.json",
+    "data-reuse-audit.json",
+    "dependency_probe.py",
+    "environment-config-contract.json",
+    "event_jepa_losses.py",
+    "freeze_contract.py",
+    "freeze_joint_package.py",
+    "freeze_parent_split.py",
+    "infra_io.py",
+    "isolated_fixture_preflight.py",
+    "joint_inputs.py",
+    "joint_pipeline.py",
+    "joint_remote_native.py",
+    "launcher_preflight_probe.py",
+    "linux_process_scope.py",
+    "local-runtime-identity.json",
+    "local_gpu_worker.py",
+    "local_runtime.py",
+    "native/gppo_world/__init__.py",
+    "native/gppo_world/adapter_probe.py",
+    "native/gppo_world/arrival_consequence_data.py",
+    "native/gppo_world/arrival_consequence_model.py",
+    "native/gppo_world/arrival_gppo_fusion.py",
+    "native/gppo_world/budget_executor.py",
+    "native/gppo_world/calibration.py",
+    "native/gppo_world/consequence_data.py",
+    "native/gppo_world/consequence_model.py",
+    "native/gppo_world/contracts.py",
+    "native/gppo_world/data.py",
+    "native/gppo_world/dataset.py",
+    "native/gppo_world/event_training.py",
+    "native/gppo_world/event_trigger_semimarkov.py",
+    "native/gppo_world/events.py",
+    "native/gppo_world/gppo_adapter.py",
+    "native/gppo_world/gppo_shadow_env.py",
+    "native/gppo_world/gppo_trainer.py",
+    "native/gppo_world/graph5.py",
+    "native/gppo_world/jepa.py",
+    "native/gppo_world/jepa_two_stage.py",
+    "native/gppo_world/joint_consequence.py",
+    "native/gppo_world/joint_consequence_baseline.py",
+    "native/gppo_world/joint_consequence_data.py",
+    "native/gppo_world/joint_consequence_model.py",
+    "native/gppo_world/joint_gppo.py",
+    "native/gppo_world/joint_training.py",
+    "native/gppo_world/m10_communication.py",
+    "native/gppo_world/m10_environment.py",
+    "native/gppo_world/m10_training.py",
+    "native/gppo_world/model.py",
+    "native/gppo_world/phase_data.py",
+    "native/gppo_world/phase_learning.py",
+    "native/gppo_world/recorder.py",
+    "native/gppo_world/registry.py",
+    "native/gppo_world/s1_r_contracts.py",
+    "native/gppo_world/service_clock.py",
+    "native/gppo_world/shadow.py",
+    "native/gppo_world/task_decision_bridge.py",
+    "native/gppo_world/task_execution.py",
+    "native/gppo_world/task_lifecycle.py",
+    "native/gppo_world/task_policy_view.py",
+    "native/gppo_world/telemetry.py",
+    "native/gppo_world/training.py",
+    "native/source-evidence/execution-manifest.json",
+    "native/source-evidence/tapes-train.json",
+    "native/source-evidence/transparent_utility_base.py",
+    "phase_handshake.py",
+    "prediction-gates.json",
+    "prepare_acceptance_identity.py",
+    "prepare_joint_config.py",
+    "production_data.py",
+    "production_world.py",
+    "public_controller.py",
+    "public_event_targets.py",
+    "public_history.py",
+    "public_transition_contract.py",
+    "registration_identity.py",
+    "remote-requirements.lock.txt",
+    "remote-runtime-audit-binding.json",
+    "remote-runtime-identity.json",
+    "remote_preparation_probe.py",
+    "remote_runtime_preflight.py",
+    "run_system_phase_harness.py",
+    "runtime-dependency-lock.txt",
+    "runtime-environment-spec.json",
+    "runtime_config_contract.py",
+    "sequence_data_contract.py",
+    "server_registration.py",
+    "smoke_controller.py",
+    "smoke_worker.py",
+    "system_acceptance.py",
+    "system_controller.py",
+    "task_outcome_contract.py",
+    "test_action_conditioned_task_outcomes.py",
+    "test_bulk_payload_transport.py",
+    "test_cpu_scope_contract.py",
+    "test_dependency_closure.py",
+    "test_freeze_contract_paths.py",
+    "test_isolated_collector_settlement.py",
+    "test_joint_contract.py",
+    "test_joint_pipeline.py",
+    "test_joint_remote_native_settlement.py",
+    "test_launch_accounting.py",
+    "test_launcher_budget_guards.py",
+    "test_linux_process_scope.py",
+    "test_metered_joint_entry.py",
+    "test_phase_handshake.py",
+    "test_production_collector_lifecycle.py",
+    "test_registration_identity.py",
+    "test_remote_entry_guards.py",
+    "test_runner_bootstrap.py",
+    "test_runtime_config_contract.py",
+    "test_sequence_data.py",
+    "test_sequence_world.py",
+    "test_server_acceptance_entry.py",
+    "test_server_registration.py",
+    "test_smoke_static_contract.py",
+    "test_smoke_transport_orchestration.py",
+    "test_supervise_settlement.py",
+    "test_supervised_phase_integration.py",
+    "test_transparent_utility.py",
+    "test_transport_wall_budget.py",
+    "test_worker_phase_accounting.py",
+    "transparent_utility.py",
+    "transport_wall_budget.py",
+    "verify_runtime_inputs.py",
+    "w1_graph_jepa.py",
+    "w1_training.py",
+    "worker_bootstrap.py",
+    "worker_contract.py"
+  ]
+}

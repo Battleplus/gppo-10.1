@@ -1,0 +1,56 @@
+{
+  "schema": "w1-action-conditioned-task-outcome-label-qualification-postrun/1.0.0",
+  "attempt": "w1-action-conditioned-task-outcome-label-qualification-v5-budget-accounting-once",
+  "package": "E:\\Z博士\\research-plans\\w1-action-conditioned-task-outcome-label-repair-v5-budget-accounting",
+  "manifest_sha256": "e4703e4be26f5e3d2bffd40f7c9c768d52c3c4a2465fcf9d3719dce58fe5edf4",
+  "hashes_sha256": "ebc75ab39bd93a73b17909c73912bdf0a62c90918ce9641976d776db46d4b5ec",
+  "resource_request_sha256": "8be3d85904c904f2e6003bc8a19dac81177e68c0f4df70bd997a33afaa428162",
+  "status": "technical_stop",
+  "failure_stage": "label_qualification",
+  "failure": {
+    "type": "ModuleNotFoundError",
+    "message": "No module named 'production_policy'",
+    "source": "production_data.py:373",
+    "worker": "runner.py:167"
+  },
+  "dynamic_calls": {
+    "environment_steps": 0,
+    "resets": 0,
+    "candidate_branches": 0,
+    "public_rule_decisions": 0,
+    "model_initializations_or_loads": 0,
+    "model_forwards": 0,
+    "checkpoint_loads_or_writes": 0,
+    "optimizer_updates": 0,
+    "ledger_failed_calls": 0,
+    "ledger_pending_calls": 0
+  },
+  "environment_constructed": false,
+  "training_started": false,
+  "automatic_retry": false,
+  "resource_observed": {
+    "supervisor_wall_seconds": 2.826081687991973,
+    "supervisor_cpu_seconds": 2.536691,
+    "native_process_tree_cpu_seconds": 2.811616,
+    "combined_staging_cpu_seconds": 2.035938622,
+    "combined_staging_wall_seconds": 3.0877812810067553,
+    "native_label_stage_wall_seconds": 3.972907061994192,
+    "export_stage_wall_seconds": 1.0200461229978828,
+    "export_stage_cpu_seconds": 0.1134546059999999,
+    "peak_rss_bytes": 490881024,
+    "export_payload_files": 60,
+    "export_payload_bytes": 356134
+  },
+  "accounting_note": "Native process-tree CPU differed from supervisor consistency evidence by 0.274925 seconds, exceeding the frozen 0.05-second check; export-status is failed.",
+  "preflight": {
+    "status": "preflight_pass",
+    "exit_code": 0,
+    "staging_started": false,
+    "worker_started": false,
+    "python": "/usr/bin/python3.12",
+    "torch": "2.8.0+cpu"
+  },
+  "token_secret_saved": false,
+  "token_file_deleted_after_use": true,
+  "sqlite_archived": false
+}

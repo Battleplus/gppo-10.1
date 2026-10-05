@@ -1,0 +1,74 @@
+{
+  "schema": "w1-oracle-observer-repair-identity-diff/1.0.0",
+  "created_date": "2026-09-28",
+  "baseline_package": "E:\\Z博士\\research-plans\\w1-action-consequence-oracle-ceiling-runner-ready-v1",
+  "repair_package": "E:\\Z博士\\research-plans\\w1-action-consequence-oracle-pairing-observer-repair-v1",
+  "unchanged_research_runtime": {
+    "native/gppo_world/m10_environment.py": "0f4615d11604a7cd1cc74c94f0258dfc6cb59748f64a075276ec90941db094b1",
+    "native/gppo_world/m10_communication.py": "fcaada4fea48446aae509fb97f4b6b8275d5b6b9dda3bcdef00c5c392e6011ce",
+    "tapes-light-dev.json": "49fe174f54b6cd93d93f9fe482db08e67d8e86185bc5610668312032906b77de",
+    "environment.json": "95b8b6e293fd7f500c3e89114424ff850717914cd3950a01e5cfbfb426f625ae",
+    "classical_baselines.py": "424e17682004737e7ff700a70c9cc62bfd2988e16b2cdc8c9055c57d941bf53d",
+    "public_controller.py": "d796ec67e6c62f9f297f4f48fe09ea1d16a160bc13b15c3c102674ae02263d8f",
+    "public_adapter_bridge.py": "de6fc0c3026fe7a09c92247b32eb3e1c888cb911bf91328c76e8c42eb2264a02",
+    "labeling.py": "0fdfc5c6c7efafa41a261cf5a4bc4823b8c7e874a5fdaeca4b00d4deff8dec4a",
+    "infra_io.py": "b265f2a65e71e2c5087bc24188ccd64d105f30cc7d50af293ec9dcb137a234a0"
+  },
+  "changed_file_sha256": {
+    "communication_observer.py": {
+      "before": null,
+      "after": "faaf689533f858bfdbec064b31a3e7ac69b38d3d5ad1e21a28df1a55f57f6377"
+    },
+    "runner.py": {
+      "before": "92f2ce4e9e73c929788bbb946a1f230947743f5f944751feb3159aabf3712e99",
+      "after": "4c0cced5ff23f6ce5c7fc69229f7064ef94a69ad13219cd4f3a243ab5591af29"
+    },
+    "test_communication_observer.py": {
+      "before": null,
+      "after": "99ecedde76eac9adcc38378c52acf8ab33fd81ee5ee83f5547e0dd6088f75e9d"
+    },
+    "test_runner.py": {
+      "before": "8f4a6a2646645af29479e7661d7041076a665942e8cbdcccf4f97b1e01c122ab",
+      "after": "95253a5077a954646492262ddcfaef4d316edbffebea03f8728f84b122db7170"
+    },
+    "test_package_contract.py": {
+      "before": "e33f75f54e97e49b03b3a841651dfa8b886c0dd1ff2ee08209e7207298ebf8ca",
+      "after": "da3fb6a827aedf152212cfdc29696c6fe1295eb789a7fc9edd006e214ae8b721"
+    },
+    "PROTOCOL.md": {
+      "before": "f90a1d76bdcdfbcf46c07fddccd99eb122ab1b13dac642a8c556f3710e340650",
+      "after": "35e6cd133d310f9ab985d5f3847d2570fc97ea5f750a0bccbd32aef73f8aee6c"
+    },
+    "RESOURCE_REQUEST.json": {
+      "before": "f81679da35ab1a1be287939cd7359565f0bf91670ae2050bbe53fa4c1641c55f",
+      "after": "a2177d05906206cb87d043346bd8476d1a4f37c45e651fd4c78214e604d22209"
+    },
+    "launch-contract.json": {
+      "before": "986b0bf50cdacaee56b1474add3b950924ad870f8fc1382ecf4f44edbc1b515b",
+      "after": "7806ac1492998bf339768374a4f555deaa7c6cff0ade1aa5d3ef89f71ea14419"
+    }
+  },
+  "observer_and_gate_changes": [
+    "communication_observer.py added as a transparent primitive-call wrapper and verifier",
+    "runner.py restricted to validation-0000/repeat-0 and wired to the observer",
+    "oracle materiality analyzer and analysis contract removed from this technical-gate package",
+    "tests expanded for primitive identity, multiplicity, parameter conflicts, fate mismatch, and single-unit stopping",
+    "protocol, resource request, launch contract, history, and preparation reports updated for an unapproved single-unit gate"
+  ],
+  "explicitly_unchanged": [
+    "communication primitives",
+    "packet identity algorithm",
+    "environment dynamics",
+    "W1-light communication profile",
+    "public information boundary",
+    "Hungarian rule and candidate formulas",
+    "scenario tape",
+    "reward and labels"
+  ],
+  "historical_effect": {
+    "stopped_oracle_branches": "remain a technical stop and are not oracle results",
+    "completed_repaired_fair_rerun": "unchanged; observer defect is oracle-runner-specific",
+    "two_parent_communication_validation": "unchanged",
+    "historical_costs_and_10ms_failure": "retained"
+  }
+}

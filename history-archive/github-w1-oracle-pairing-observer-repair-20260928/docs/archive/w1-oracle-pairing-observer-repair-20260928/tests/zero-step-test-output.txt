@@ -1,0 +1,47 @@
+Oracle observer repair zero-call verification
+Date: 2026-09-28
+
+Execution boundary
+- Real environment construction: 0
+- reset/step calls: 0
+- Model initialization/load/forward calls: 0
+- Training updates: 0
+- Dynamic attempts created: 0
+
+Target stack verification
+- Filesystem: WSL native ext4 (/home/asus/w1-observer-tests-20260928)
+- Python: 3.11.16 (/home/asus/.venvs/w1-light-repaired-fair-rerun-py31116/bin/python)
+- Test runner: pytest 7.4.4 loaded from the existing system pure-Python package
+- Runtime dependencies, including NumPy, loaded from the frozen Python 3.11.16 environment
+
+Command
+PYTHONPATH=<frozen-venv-site-packages>:/usr/lib/python3/dist-packages \
+  /home/asus/.venvs/w1-light-repaired-fair-rerun-py31116/bin/python -m pytest -q
+
+Result
+................................                                         [100%]
+34 passed in 4.26s
+
+Coverage includes
+- transparent primitive wrapper return value, call count, and call order
+- direct-versus-observed equivalence on the frozen real W1-light communication interface
+- complete identity and parameter preservation
+- exception recording and rethrow
+- repeated-call multiplicity without dictionary overwrite
+- true common primitive fate mismatch stopping
+- branch-only calls without random-stream alignment assumptions
+- explicit parameter-conflict reporting
+- missing fields and empty common-call evidence failing closed
+- distinct command, renewal, and ACK identities
+- all 135 saved telemetry cases classified from the sealed audit table
+- fixed single-unit execution and no continuation/materiality analysis
+- fake-runtime branch deepcopy and source-state isolation
+- unapproved resource request and zero model/training budget
+- indexed input SHA-256 verification
+- before/after identity-diff SHA-256 verification for changed and unchanged files
+- native-filesystem atomic state, failure, settlement, and export behavior
+
+Additional diagnostics
+- The result above was repeated after package freezing; the frozen manifest then verified all 38 listed files byte-for-byte.
+- Windows logic subset after deepcopy repair: 23 passed; the remaining two cases failed only because Windows does not permit the Linux directory-fsync operation. The same cases passed on native ext4.
+- Python 3.11.16 compileall and direct imports of communication_observer, runner, and infra_io passed before the full test run.

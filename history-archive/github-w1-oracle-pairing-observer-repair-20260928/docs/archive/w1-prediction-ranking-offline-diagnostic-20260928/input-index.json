@@ -1,0 +1,67 @@
+{
+  "analysis_calls": {
+    "checkpoint_loads": 0,
+    "environment": 0,
+    "model_forwards": 0,
+    "model_initializations": 0,
+    "reset_or_step": 0,
+    "training_updates": 0
+  },
+  "excluded_unread_task_outputs": [
+    "conditional task-comparison results (stage was not executed)",
+    "unexecuted task-evaluation parent outcomes"
+  ],
+  "inputs": [
+    {
+      "bytes": 1792623,
+      "path": "E:\\Z\u535a\u58eb\\runs\\w1-action-outcome-learning-loop-history-repair-v1-once\\run-once\\learning-records.jsonl",
+      "sha256": "c502768a0483b485c78e9d23ee0a63e9a5595717c3524d38a243f167ccdaeca4"
+    },
+    {
+      "bytes": 188468514,
+      "path": "E:\\Z\u535a\u58eb\\runs\\w1-action-outcome-learning-loop-history-repair-v1-once\\run-once\\data-units.jsonl",
+      "sha256": "66608d86bf9be78baf2a47696c4dcd43cf87df53fc0e795573630341c037398f"
+    },
+    {
+      "bytes": 1231,
+      "path": "E:\\Z\u535a\u58eb\\runs\\w1-action-outcome-learning-loop-history-repair-v1-once\\run-once\\prediction-evaluation.json",
+      "sha256": "5c023fe0e64dc29375e75b9cd0620eedf074fc19a4a114f9be34d99678f00142"
+    },
+    {
+      "bytes": 242,
+      "path": "E:\\Z\u535a\u58eb\\runs\\w1-action-outcome-learning-loop-history-repair-v1-once\\run-once\\status.json",
+      "sha256": "bfdc4b186157467ab47d951e4b1351ef430c118578a4a2ef0beb5d96772c1c6d"
+    },
+    {
+      "bytes": 726,
+      "path": "E:\\Z\u535a\u58eb\\runs\\w1-action-outcome-learning-loop-history-repair-v1-once\\run-once\\settlement.json",
+      "sha256": "9b57c536bae33afa0ece25ef3a0b413455bdd7d5e634f30f1a38f7da415b7408"
+    },
+    {
+      "bytes": 4083,
+      "path": "E:\\Z\u535a\u58eb\\runs\\w1-action-outcome-learning-loop-history-repair-v1-once\\prediction_evaluation.py",
+      "sha256": "b2761561b4c4d21b38ee40918f7f70cbe917c4039fc10f66b366c6b11b2a8362"
+    },
+    {
+      "bytes": 9318,
+      "path": "E:\\Z\u535a\u58eb\\runs\\w1-action-outcome-learning-loop-history-repair-v1-once\\learning.py",
+      "sha256": "861dad8195edce3a60d189e98f365b8b2e042576f68d10caf917b921030b2680"
+    },
+    {
+      "bytes": 8730,
+      "path": "E:\\Z\u535a\u58eb\\runs\\w1-action-outcome-learning-loop-history-repair-v1-once\\learning_schema.py",
+      "sha256": "cf35fd08e184c6debaa137902947dcb13d09a5eb3f1b85f4c4b96a7aad9a45c0"
+    },
+    {
+      "bytes": 3650,
+      "path": "E:\\Z\u535a\u58eb\\runs\\w1-action-outcome-learning-loop-history-repair-v1-once\\transparent_baselines.py",
+      "sha256": "dfa0631a38c0beb92c38dd1a81c18989f0e56a7a01dc63a99ca752dd05c8e9e9"
+    },
+    {
+      "bytes": 16045,
+      "path": "E:\\Z\u535a\u58eb\\runs\\w1-action-outcome-learning-loop-history-repair-v1-once\\experiment-matrix.json",
+      "sha256": "2ede516db7941a569cfba74d3850393cbcc605561a82844574e1e4c271365f5a"
+    }
+  ],
+  "schema": "w1-prediction-ranking-offline-input-index/1.0.0"
+}

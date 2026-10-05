@@ -1,0 +1,47 @@
+{
+  "schema": "w1-oracle-first-unit-reuse-contract/1.0.0",
+  "source_attempt": "w1-action-consequence-oracle-observer-single-unit-gate-v1-once",
+  "source_unit": {
+    "parent": "validation-0000",
+    "repeat": 0,
+    "external_key": "w1-action-consequence-oracle-ceiling-v1|validation-0000|repeat-0",
+    "expected_actions": [0, 1, 6, 7, 18, 19, 24],
+    "expected_public_state_sha256": "5a47298e118ca3c17e5e476015b6fb3a3e26fac30ced216b4595ce455bf3a941"
+  },
+  "files": {
+    "branch-summaries.jsonl": "b6e50f71efb0593b04f1a08ffb7eee08e15155241561bc58d612a22700c8e8e2",
+    "candidate-decisions.jsonl": "73c02041ca88aa7beb51e3ad7ced8ff508e4e628791a1573f8547eb8d0969739",
+    "communication-pairing.jsonl": "3db36921398c00c8dc6741767299cf184240c1ed1b2359078e2af48b93442df1",
+    "source-execution-manifest.json": "99643974f96681ebd1d70a24bfd1190218caf7868a08bb80fc5fdb38e98b9353",
+    "source-hashes.json": "694e7fefabf7ac1139741b4cb742d520ac7ce6a5540ad3872b366a39e443bed4",
+    "status.json": "b8c69b4c167c946e8c4c21e64ea508e6fb5cdd40db91d5627991d2345d47a2ba",
+    "steps.jsonl": "539e1c704221715c8f7c561ec0a7fee21f6f16ef1b3e2dfb1b14736c25412549",
+    "technical-gate.json": "614d9373d3c2db15a9066268d87d8eb3b6fc888c87ed9a60fc720cf4950b3d2f"
+  },
+  "runtime_identity_files": [
+    "classical_baselines.py",
+    "communication_observer.py",
+    "environment.json",
+    "labeling.py",
+    "native/gppo_world/m10_communication.py",
+    "native/gppo_world/m10_environment.py",
+    "native/gppo_world/service_clock.py",
+    "native/gppo_world/task_decision_bridge.py",
+    "native/gppo_world/task_execution.py",
+    "native/gppo_world/task_lifecycle.py",
+    "native/gppo_world/task_policy_view.py",
+    "native/gppo_world/telemetry.py",
+    "public_adapter_bridge.py",
+    "public_controller.py",
+    "tapes-light-dev.json"
+  ],
+  "utility": {
+    "gamma": 0.99,
+    "task_scale": 0.5,
+    "preference": [0.8, 0.2],
+    "task_capacity": 6.0,
+    "fleet_initial_energy": 36.0,
+    "absolute_tolerance": 1e-12
+  },
+  "unknown_label_policy": "Preserve unknown host-confirmation labels. They do not enter the frozen utility, which uses completed/expired count increments and energy increments only."
+}
