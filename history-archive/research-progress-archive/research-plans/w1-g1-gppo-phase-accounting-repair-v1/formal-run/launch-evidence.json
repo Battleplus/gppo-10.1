@@ -1,0 +1,41 @@
+{
+  "attempt": "w1-g1-gppo-phase-accounting-repair-v1-once",
+  "command": [
+    "wsl",
+    "-d",
+    "Ubuntu-24.04",
+    "--",
+    "env",
+    "-u",
+    "LD_LIBRARY_PATH",
+    "-u",
+    "LD_PRELOAD",
+    "-u",
+    "PYTHONPATH",
+    "-u",
+    "PYTHONHOME",
+    "PYTHONNOUSERSITE=1",
+    "CUDA_VISIBLE_DEVICES=",
+    "OMP_NUM_THREADS=1",
+    "MKL_NUM_THREADS=1",
+    "OPENBLAS_NUM_THREADS=1",
+    "/home/asus/.venvs/w1-light-repaired-fair-rerun-py31116/bin/python",
+    "-I",
+    "-B",
+    "-X",
+    "pycache_prefix=/home/asus/.venvs/w1-light-repaired-fair-rerun-py31116/.w1-no-bytecode-cache",
+    "/mnt/e/Z博士/research-plans/w1-g1-gppo-phase-accounting-repair-v1/package/local_pipeline_controller.py"
+  ],
+  "exit_code": 1,
+  "error": null,
+  "wall_seconds": 3629.3990414,
+  "windows_controller_cpu_seconds": 0.03125,
+  "frozen_contents_unchanged": true,
+  "automatic_retry": false,
+  "resource_gaps": [
+    "WSL bridge CPU and cross-clock reconciliation unmeasured"
+  ],
+  "windows_cpu_reserve_pass": true,
+  "measured_wall_pass": true,
+  "full_resource_acceptance": false
+}

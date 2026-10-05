@@ -1,0 +1,44 @@
+{
+  "status": "pass",
+  "production_dispatch_ast_sha256": "5fe7b73afa8f81d142f84f5a7421a8ff7ebe619bfab8de0834670080418ac699",
+  "initialized_noncomputing_callbacks": [
+    [
+      "G1",
+      8302
+    ],
+    [
+      "G1",
+      8303
+    ]
+  ],
+  "trained_route_callbacks": [
+    [
+      "G1",
+      8302
+    ],
+    [
+      "G1",
+      8303
+    ]
+  ],
+  "checkpoint_write_callbacks": [
+    [
+      "G1",
+      8302
+    ],
+    [
+      "G1",
+      8303
+    ]
+  ],
+  "reuse_count": 7,
+  "complete_route_count": 9,
+  "real_models_initialized": 0,
+  "real_environment_steps": 0,
+  "real_forwards": 0,
+  "real_backward_or_optimizer_updates": 0,
+  "torch_imported": false,
+  "checkpoint_deserializations": 0,
+  "research_attempt_created": false,
+  "scope": "actual production dispatcher source executed; model/counter callbacks are noncomputing fixtures. Does not validate real training or restoration."
+}

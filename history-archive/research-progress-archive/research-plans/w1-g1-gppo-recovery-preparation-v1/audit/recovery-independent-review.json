@@ -1,0 +1,70 @@
+{
+  "schema": "w1-g1-gppo-recovery-independent-review/1.0.0",
+  "status": "no_blocking_findings_in_bounded_static_review",
+  "scope": "Read-only review of recovery routing, checkpoint restoration, budget identity, and optimizer metadata. No model/environment initialization, torch import/load, forward pass, training, formal attempt, sealed-set inspection, or task-result inspection.",
+  "reviewed_modules": [
+    "package/recovery_contract.py",
+    "package/production_policy.py",
+    "package/runtime_hooks.py",
+    "package/task_pipeline.py",
+    "package/RESOURCE_REQUEST.json"
+  ],
+  "route_contract": {
+    "reused_routes": 7,
+    "new_training_routes": [
+      ["G1", 8302],
+      ["G1", 8303]
+    ],
+    "evaluation_route_identities": 9,
+    "task_confirmation_episodes": 240,
+    "assessment": "Recovery identity and route counts agree across recovery_contract, the production schedule, checkpoint validation, and the task pipeline."
+  },
+  "checkpoint_and_optimizer": {
+    "evaluation_restores_policy_weights_only": true,
+    "new_training_routes_use_fresh_adam": true,
+    "checkpoint_count_reviewed": 7,
+    "optimizer_groups_per_checkpoint": 1,
+    "optimizer_group_parameter_ids_per_checkpoint": 35,
+    "optimizer_state_slots_per_checkpoint": 33,
+    "optimizer_learning_rate": 0.0003,
+    "all_populated_optimizer_slots_have_step_128": true,
+    "numeric_optimizer_ids_mapped_to_parameter_names": false,
+    "limitation": "The offline parser cannot identify the two group IDs without serialized slots by parameter name; optimizer completeness is not asserted from counts alone."
+  },
+  "budgets": {
+    "training_estimate_seconds": {
+      "wall": 3060,
+      "cpu": 2160
+    },
+    "training_cap_seconds": {
+      "wall": 3200,
+      "cpu": 2600
+    },
+    "training_headroom_seconds": {
+      "wall": 140,
+      "cpu": 440
+    },
+    "cpu_estimate_is_route_measured": false,
+    "task_confirmation_cap_seconds": {
+      "wall": 1200,
+      "cpu": 1600
+    },
+    "task_confirmation_episodes": 240,
+    "decision_component_wall_proxy_seconds": 136.70773398801686,
+    "decision_proxy_establishes_task_cap_sufficiency": false,
+    "global_cap_seconds": {
+      "wall": 4670,
+      "cpu": 4390
+    },
+    "stage_and_accounting_reserve_arithmetic_pass": true
+  },
+  "verification": {
+    "offline_audit_exit_code": 0,
+    "checkpoint_integrity_pass": true,
+    "torch_imported": false,
+    "parent_reported_wsl_stdlib_contract_merge_tests": 10,
+    "parent_reported_test_exit_code": 0,
+    "package_files_modified_by_this_review": false
+  },
+  "blocking_findings": []
+}

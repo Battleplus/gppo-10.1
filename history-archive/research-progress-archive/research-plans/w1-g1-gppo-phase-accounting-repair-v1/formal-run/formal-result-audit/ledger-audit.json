@@ -1,0 +1,168 @@
+{
+  "by_stage": {
+    "conditional_policy_training": {
+      "actor_sample_evaluations": 74263,
+      "checkpoint_loads": 3,
+      "checkpoint_writes": 7,
+      "encode_sample_evaluations": 75722,
+      "environment_steps": 14848,
+      "model_initializations_or_loads": 11,
+      "policy_backward_calls": 925,
+      "policy_optimizer_updates": 925,
+      "resets_upper": 1073,
+      "world_batch_forwards": 2560,
+      "world_sample_evaluations": 8495
+    }
+  },
+  "call_count": 51017,
+  "call_statuses": {
+    "complete": 51016,
+    "pending": 1
+  },
+  "limits": {
+    "by_stage": {
+      "conditional_policy_training": {
+        "actor_sample_evaluations": {
+          "cap": 110592,
+          "used": 74263,
+          "within_cap": true
+        },
+        "checkpoint_loads": {
+          "cap": 3,
+          "used": 3,
+          "within_cap": true
+        },
+        "checkpoint_writes": {
+          "cap": 9,
+          "used": 7,
+          "within_cap": true
+        },
+        "encode_sample_evaluations": {
+          "cap": 110592,
+          "used": 75722,
+          "within_cap": true
+        },
+        "environment_steps": {
+          "cap": 18432,
+          "used": 14848,
+          "within_cap": true
+        },
+        "model_initializations_or_loads": {
+          "cap": 12,
+          "used": 11,
+          "within_cap": true
+        },
+        "policy_backward_calls": {
+          "cap": 1152,
+          "used": 925,
+          "within_cap": true
+        },
+        "policy_optimizer_updates": {
+          "cap": 1152,
+          "used": 925,
+          "within_cap": true
+        },
+        "resets_upper": {
+          "cap": 18441,
+          "used": 1073,
+          "within_cap": true
+        },
+        "world_batch_forwards": {
+          "cap": 6144,
+          "used": 2560,
+          "within_cap": true
+        },
+        "world_sample_evaluations": {
+          "cap": 153600,
+          "used": 8495,
+          "within_cap": true
+        }
+      }
+    },
+    "global": {
+      "actor_sample_evaluations": {
+        "cap": 114480,
+        "used": 74263,
+        "within_cap": true
+      },
+      "checkpoint_loads": {
+        "cap": 15,
+        "used": 3,
+        "within_cap": true
+      },
+      "checkpoint_writes": {
+        "cap": 9,
+        "used": 7,
+        "within_cap": true
+      },
+      "encode_sample_evaluations": {
+        "cap": 114480,
+        "used": 75722,
+        "within_cap": true
+      },
+      "environment_steps": {
+        "cap": 22752,
+        "used": 14848,
+        "within_cap": true
+      },
+      "model_initializations_or_loads": {
+        "cap": 24,
+        "used": 11,
+        "within_cap": true
+      },
+      "policy_backward_calls": {
+        "cap": 1152,
+        "used": 925,
+        "within_cap": true
+      },
+      "policy_optimizer_updates": {
+        "cap": 1152,
+        "used": 925,
+        "within_cap": true
+      },
+      "resets_upper": {
+        "cap": 18681,
+        "used": 1073,
+        "within_cap": true
+      },
+      "world_batch_forwards": {
+        "cap": 7440,
+        "used": 2560,
+        "within_cap": true
+      },
+      "world_sample_evaluations": {
+        "cap": 186000,
+        "used": 8495,
+        "within_cap": true
+      }
+    }
+  },
+  "noncomplete_calls": [
+    {
+      "amounts": {
+        "actor_sample_evaluations": 64,
+        "encode_sample_evaluations": 64,
+        "policy_backward_calls": 1,
+        "policy_optimizer_updates": 1
+      },
+      "error": null,
+      "name": "ppo_update:G1:8302",
+      "stage": "conditional_policy_training",
+      "status": "pending"
+    }
+  ],
+  "reserved_failed_calls_are_not_claimed_successful": true,
+  "used": {
+    "actor_sample_evaluations": 74263,
+    "checkpoint_loads": 3,
+    "checkpoint_writes": 7,
+    "encode_sample_evaluations": 75722,
+    "environment_steps": 14848,
+    "model_initializations_or_loads": 11,
+    "policy_backward_calls": 925,
+    "policy_optimizer_updates": 925,
+    "resets_upper": 1073,
+    "world_batch_forwards": 2560,
+    "world_sample_evaluations": 8495
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "files": [
+    {
+      "bytes": 539,
+      "file": "authorization-consumed.json",
+      "native_export_match": true,
+      "sha256": "8e6d2e5399d3f44ec9771404ec9c612ed05bb1202108d8d9019c0e580a8b4cf5"
+    },
+    {
+      "bytes": 0,
+      "file": "console.log",
+      "native_export_match": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 390,
+      "file": "native-launch.stdout.txt",
+      "native_export_match": true,
+      "sha256": "88de6efa33c103bf31981597e973860451006320990a21aea6d745245118de6a"
+    },
+    {
+      "bytes": 4239,
+      "file": "resource-history.jsonl",
+      "native_export_match": true,
+      "sha256": "ddea855b3c2ed0f34947e64caf57f6e649de242c7090c3df523a1be069e4af6d"
+    },
+    {
+      "bytes": 67,
+      "file": "run-once/activity.json",
+      "native_export_match": true,
+      "sha256": "2a87a87bc3ad56d7bea4d0987ae467318651f4f915663513077207b9d9f99c48"
+    },
+    {
+      "bytes": 3588096,
+      "file": "run-once/budget.sqlite3",
+      "native_export_match": true,
+      "sha256": "738b12ee6a9a5a7cc83e8e6d7490de048cb4a86471c9aa36167bb8b92cb014d9"
+    },
+    {
+      "bytes": 2042139,
+      "file": "run-once/decision-costs.jsonl",
+      "native_export_match": true,
+      "sha256": "86404d811c593a7a6fbef9d78f9906235b85d4bb5babbdba4d22faed620a312f"
+    },
+    {
+      "bytes": 176248,
+      "file": "run-once/environment-construction.jsonl",
+      "native_export_match": true,
+      "sha256": "5221765cee363227143882d6e6fff507f3b24ca5eacc67005b58844d62b5e4ae"
+    },
+    {
+      "bytes": 738,
+      "file": "run-once/frozen-task-world-model-state.json",
+      "native_export_match": true,
+      "sha256": "e230d153b3590f7cb19ee6ee3acc41242532a343678e22c3e6d7aa60049d67f5"
+    },
+    {
+      "bytes": 733,
+      "file": "run-once/frozen-world-model-state.json",
+      "native_export_match": true,
+      "sha256": "8e5a76a5eb5ca818dcbd529f78b0599f5070f15c7324ccf2bd39dc82c4cb7d30"
+    },
+    {
+      "bytes": 78660,
+      "file": "run-once/independent-task-metrics.json",
+      "native_export_match": true,
+      "sha256": "9ee3a42eef9a3baeae32dd504ae69886e5e1bd4ad901f9bea69366e7eeaf61d9"
+    },
+    {
+      "bytes": 3973,
+      "file": "run-once/local-runtime-execution.json",
+      "native_export_match": true,
+      "sha256": "34019b748f8a7ad94c79147c0700824926cf405251b2db0f734703f7076c021c"
+    },
+    {
+      "bytes": 6607535,
+      "file": "run-once/policy-checkpoints/G1-seed-8302.pt",
+      "native_export_match": true,
+      "sha256": "b06dab3d822575ec8cb2720a7f208493426cbf517645362cb3f535c8bcedd0a1"
+    },
+    {
+      "bytes": 6779631,
+      "file": "run-once/policy-checkpoints/G1-seed-8303.pt",
+      "native_export_match": true,
+      "sha256": "50b142e7714c4d91178a0e12debda8324bdec28b6a0b0738f2ee4e34784fe772"
+    },
+    {
+      "bytes": 3768159,
+      "file": "run-once/policy-reused-routes.jsonl",
+      "native_export_match": true,
+      "sha256": "3a9b934e54385ab5e8e218e406707902cbf826da3e55ba6636b2b9ae1b44a76b"
+    },
+    {
+      "bytes": 1089517,
+      "file": "run-once/policy-training-routes.jsonl",
+      "native_export_match": true,
+      "sha256": "ebe2590b2f63e7a4cff946ca240f4c7a77bee2ceed51a699586baec7dfbf8375"
+    },
+    {
+      "bytes": 5355,
+      "file": "run-once/policy-training-summary.json",
+      "native_export_match": true,
+      "sha256": "b509ff4dd6aad128ce79e5cd44a937150fb1e5c9288f66454f61f2418befebec"
+    },
+    {
+      "bytes": 14455709,
+      "file": "run-once/policy-training-traces.jsonl",
+      "native_export_match": true,
+      "sha256": "b248d1188900b3adbb23d0b9d0d1cdbed07caa7fcbfaefe61b9e16b40a59b46e"
+    },
+    {
+      "bytes": 150542,
+      "file": "run-once/policy-update-traces.jsonl",
+      "native_export_match": true,
+      "sha256": "51f95c0adb0c6ecc624b6daf321dfe72d700c1b4c92797450969eb6033261a9c"
+    },
+    {
+      "bytes": 1066,
+      "file": "run-once/resource-settlement.json",
+      "native_export_match": true,
+      "sha256": "36f961df3c49e6747cb70a4a5570840c149cd3f5b279f67d28cce3f2b189c7cc"
+    },
+    {
+      "bytes": 1638,
+      "file": "run-once/runtime-module-provenance.json",
+      "native_export_match": true,
+      "sha256": "a9a134c06e5b161be58cceaea9e5b4cac20466ee7d48dd30c78ee1c3f062f165"
+    },
+    {
+      "bytes": 1409,
+      "file": "run-once/status.json",
+      "native_export_match": true,
+      "sha256": "00f5d6f49ea86203eec61255ebf5ebc7bce5921575914347a0ca19d9fe8cd84a"
+    },
+    {
+      "bytes": 10261195,
+      "file": "run-once/task-confirmation.jsonl",
+      "native_export_match": true,
+      "sha256": "51b45dd9c7ca198166a6911988631ce5f5efdbae86da988256a5f0144dc7472f"
+    },
+    {
+      "bytes": 34774,
+      "file": "run-once/task-cost-summary.jsonl",
+      "native_export_match": true,
+      "sha256": "47826d19ee662678271b90aa6eea71916b30a58c572d49df8b0ab4681d3a5d29"
+    },
+    {
+      "bytes": 10315180,
+      "file": "run-once/task-decision-traces.jsonl",
+      "native_export_match": true,
+      "sha256": "f117688d054c55ddc0f2b9352c49bdabdb2838490ca899a59f5fd6558096520f"
+    },
+    {
+      "bytes": 517,
+      "file": "run-once/task-gate.json",
+      "native_export_match": true,
+      "sha256": "783837b786d9b9806f616caef6b2b7eeae705e06c04b8c70375685d00139a6a8"
+    },
+    {
+      "bytes": 5906,
+      "file": "run-once/task-input-check.json",
+      "native_export_match": true,
+      "sha256": "66419388ce9f775727a386a56098acfadd414b8692a6de6d340f4a1fa7984bbb"
+    },
+    {
+      "bytes": 48239,
+      "file": "run-once/task-metrics.json",
+      "native_export_match": true,
+      "sha256": "ea78794db98c634e4912ec4409b5463c57ee0773351dc95ef72bf4bbbbdafd76"
+    },
+    {
+      "bytes": 687,
+      "file": "run-once/task-pipeline-summary.json",
+      "native_export_match": true,
+      "sha256": "0884e7c4b80d2b5f648cc406bf5fb6cba9b2c244948a97c3199973622fa9900a"
+    },
+    {
+      "bytes": 584,
+      "file": "run-once/task-run-summary.json",
+      "native_export_match": true,
+      "sha256": "3cffd93d7a9d29b23dc916415f1d3736f0481f684301ffb4673900a506dac34b"
+    },
+    {
+      "bytes": 3089,
+      "file": "run-once/worker-phase-accounting.jsonl",
+      "native_export_match": true,
+      "sha256": "525b5ce52679f8053254bc9770963411f080b6ae1d2a66b023b26f9ee5ead352"
+    },
+    {
+      "bytes": 4953,
+      "file": "run-once/worker-phase-protocol.jsonl",
+      "native_export_match": true,
+      "sha256": "38f55284ebc94a9599d656818bbbcb6298a62883f9e1d6f4af0810ed00da0ccb"
+    },
+    {
+      "bytes": 344,
+      "file": "supervisor-console.log",
+      "native_export_match": true,
+      "sha256": "c0dc98a857c4746eca41b503d66bd666e1bc2f40db266985f83c29b62f1c5901"
+    },
+    {
+      "bytes": 8898,
+      "file": "supervisor-phase-protocol.jsonl",
+      "native_export_match": true,
+      "sha256": "6ee17c3d27606681241e4afbbed1e768c304ba65297946395858d053cf8e9fda"
+    },
+    {
+      "bytes": 6151,
+      "file": "supervisor-status.json",
+      "native_export_match": true,
+      "sha256": "01128905a6880baefa7e6f0b8cf30241113ef107f06825c057bb6f703078f763"
+    }
+  ],
+  "frozen_inputs_unchanged": true,
+  "verified_payload_count": 35
+}

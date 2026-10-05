@@ -1,0 +1,48 @@
+{
+  "all_file_count": 102,
+  "attempt": "w1-action-conditioned-task-outcome-label-qualification-v6-dependency-cpu-settlement-once",
+  "authorization_is_unapproved_draft": true,
+  "before_after_equal": true,
+  "execution_manifest_sha256": "efe05f15995b6f10a163a9ab18e108c6fb1d9a561370ce976787289a9c67565f",
+  "exit_code": 0,
+  "full_windows_wsl_output_file": "final-original-preflight.stdout",
+  "hashes_sha256": "6cde7420a18220ebcc4b8deefa99b6c603380d243a62a0800b73ac2901861f26",
+  "official_token_created": false,
+  "resource_request_sha256": "0f2adba35a0c0565b9bb8096a8108e94be2510cd6864cda1f1a79cf490b4a74a",
+  "schema": "w1-external-launch-authorization/2.0.0",
+  "staging_started": false,
+  "status": "NOT_APPROVED",
+  "stderr_file": "final-original-preflight.stderr",
+  "token_sha256": null,
+  "windows_output": {
+    "attempt": "w1-action-conditioned-task-outcome-label-qualification-v6-dependency-cpu-settlement-once",
+    "complete_resource_accounting": null,
+    "dependency_probe": {
+      "cpu_only": true,
+      "model_forwards": 0,
+      "python": "/usr/bin/python3.12",
+      "remote_runtime_binding": {
+        "artifact_count": 3,
+        "remote_execution_during_v6": false,
+        "remote_torch_import_during_v6": false,
+        "schema": "w1-remote-runtime-audit-binding/1.0.0",
+        "scope": "future-audit-only",
+        "training_authorization": false
+      },
+      "synthetic_kernel_backwards": 0,
+      "synthetic_kernel_matmuls": 1,
+      "synthetic_optimizer_updates": 0,
+      "torch": "2.8.0+cpu"
+    },
+    "elapsed_wall_seconds": 4.5855265999998664,
+    "launcher_returncode": 0,
+    "staging_started": false,
+    "status": "preflight_pass",
+    "windows_process_cpu_seconds": 0.0625,
+    "windows_wsl_child_process_cpu_seconds": 0.015625,
+    "worker_started": false,
+    "wsl_returncode": 0,
+    "wsl_timed_out": false
+  },
+  "worker_started": false
+}

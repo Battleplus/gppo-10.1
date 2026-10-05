@@ -1,0 +1,16 @@
+{
+  "complete_local_archive_identity_pass": true,
+  "external_authorization_status": "NOT_APPROVED",
+  "frozen_byte_identity_pass": true,
+  "old_input_evidence_unchanged": true,
+  "remaining_training_routes": [
+    "G1/8302",
+    "G1/8303"
+  ],
+  "request_status": "NOT_APPROVED",
+  "research_dynamic_calls": 0,
+  "reused_complete_routes": 7,
+  "token_created": false,
+  "torch_imported": false,
+  "worker_started": false
+}

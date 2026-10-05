@@ -1,0 +1,34 @@
+{
+  "reviewer": "luna_worker /root/formal_result_review",
+  "mode": "independent read-only source and artifact review",
+  "dynamic_calls": 0,
+  "checkpoint_deserializations": 0,
+  "conclusion": "technical_stop; task utility and per-decision costs not evaluated",
+  "verified": {
+    "first_error": "conditional_policy_training wall shutdown reserve",
+    "training_stage_wall_seconds": 3600.830220251999,
+    "training_stage_cpu_seconds": 2478.8917340000003,
+    "completed_routes": 7,
+    "checkpoint_file_hashes_match": true,
+    "ledger_complete_calls": 51016,
+    "ledger_pending_calls": 1,
+    "pending_operation": "ppo_update:G1:8302",
+    "completed_updates": 924,
+    "reserved_updates": 925,
+    "task_episodes": 0,
+    "worker_returncode": -15,
+    "worker_final_settlement_missing": true,
+    "fallback_settlement_status": "incomplete",
+    "manifest_entries_checked": 208,
+    "export_payloads_checked": 28,
+    "hash_mismatches": 0
+  },
+  "interpretation_limits": [
+    "Unknown host confirmation cannot be inferred from valid utility.",
+    "Reward-vector arithmetic recomputation alone does not establish reward semantics or causal attribution.",
+    "Hungarian is shared once per parent-repeat, not three independent seed replicates.",
+    "Per-decision cost gate is distinct from complete run resource acceptance.",
+    "Descriptive counts cannot be called rates without denominators."
+  ],
+  "parent_integration": "Unknown-utility handling in the package-external audit was repaired; frozen production inputs and raw exports were not modified. No task-stage descriptive statistics were produced because evaluation never began."
+}

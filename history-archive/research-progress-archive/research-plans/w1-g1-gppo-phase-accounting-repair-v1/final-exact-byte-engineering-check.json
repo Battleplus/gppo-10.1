@@ -1,0 +1,22 @@
+{
+  "all_pass": true,
+  "checkpoint_operations": 0,
+  "checks": {
+    "exact_frozen_source_used_for_production": true,
+    "final_package_unchanged": true,
+    "frozen_archive_identical": true,
+    "no_proposed_research_attempt_or_token": true,
+    "post_freeze_production_pass": true,
+    "post_freeze_unit_pass": true
+  },
+  "environment_calls": 0,
+  "execution_manifest_sha256": "9ac065202126484968227469c16634ffbdfd5c30933c73a5c3a407e6c26815f9",
+  "full_resource_acceptance": false,
+  "hashes_sha256": "a4d2be66a4834fe62ee461d0e5ba7255b77b0ee2adef1702b94f41c48fd12ae1",
+  "model_initializations": 0,
+  "production_cases": 8,
+  "resource_request_sha256": "4eda5196e3fc0fce1c69f74b93b0b97c1a1335c655fc4007bce95d823a5f252b",
+  "scope": "final source bytes copied unchanged; engineering fixtures alter identity/path metadata only, with no scientific budget changes; proposed formal identity independently read-only preflighted",
+  "tests": 43,
+  "training_updates": 0
+}

@@ -1,0 +1,11 @@
+{
+  "command": [
+    "C:\\Python314\\python.exe",
+    "-B",
+    "E:\\Z博士\\research-plans\\w1-g1-gppo-recovery-preparation-v1\\check_dispatch_without_models.py"
+  ],
+  "exit_code": 0,
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "bc392a79cd9518a529df2430afef12cbb1f130732241d68b0f93a4b0391368e4",
+  "wall_seconds": 0.27980659999593627
+}

@@ -1,0 +1,18 @@
+{
+  "command": [
+    "wsl",
+    "-d",
+    "Ubuntu-24.04",
+    "--",
+    "/home/asus/.venvs/w1-light-repaired-fair-rerun-py31116/bin/python",
+    "-I",
+    "-B",
+    "-c",
+    "import pathlib,sys,json; v=pathlib.Path(sys.argv[1]).parent.exists(); print(json.dumps({\"proposed_attempt_exists\":v})); raise SystemExit(1 if v else 0)",
+    "/home/asus/w1-g1-gppo-recovery-v1-once/package"
+  ],
+  "exit_code": 0,
+  "stderr_sha256": "b280c454d6f559e56eb3f5ed39f3ba084b8d1744a3ff7fe016b21ff86dea1aca",
+  "stdout_sha256": "dd7da13df64b85bcf16e7b0d3f199ed704ab869eb85cabd9da0bf7bafe7665dc",
+  "wall_seconds": 0.1523155000031693
+}

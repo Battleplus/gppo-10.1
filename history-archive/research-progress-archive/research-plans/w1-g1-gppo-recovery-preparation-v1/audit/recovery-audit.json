@@ -1,0 +1,3470 @@
+{
+  "schema": "w1-g1-gppo-offline-recovery-audit/1.0.0",
+  "audit_scope": "offline static audit only; no model/environment initialization, torch import/load, forward pass, training, or formal attempt",
+  "source_root": "E:\\Z博士\\research-plans\\w1-g1-gppo-phase-accounting-repair-v1",
+  "recovery_request_budget": {
+    "attempt": "w1-g1-gppo-recovery-v1-once",
+    "status": "NOT_APPROVED",
+    "training_stage_caps_seconds": {
+      "wall": 3200,
+      "cpu": 2600
+    },
+    "task_confirmation_stage_caps_seconds": {
+      "wall": 1200,
+      "cpu": 1600,
+      "episodes": 240
+    },
+    "global_caps_seconds": {
+      "wall": 4670,
+      "cpu": 4390
+    },
+    "stage_and_reserve_arithmetic_pass": true
+  },
+  "inputs": {
+    "policy_routes_sha256": "2ab53db6508377b21e3b12911c32971ba9b020a1fd682629af3310165bc85432",
+    "sqlite_sha256": "7a78d2b1e255617aa1f5ce6b959d674af020b03e24713830c9f212f8e6408af6",
+    "export_hashes_sha256": "d093d90fd1c7e5fe1e8ddbaa89bca3282b3239460325b164a612fbee564c36cd",
+    "experiment_matrix_sha256": "0f2037a1c745ccc3b07634497e611872369823be4f59853074800492c9ee65a6",
+    "task_input_check_sha256": "7437d67ffb03dbd3e68f11ad4cac02848df8f8e1d657a487d05cbf6c24825533",
+    "execution_manifest_sha256": "9ac065202126484968227469c16634ffbdfd5c30933c73a5c3a407e6c26815f9",
+    "budget_ledger_sha256": "972e8fe783920e354da6a5d02d454587372c667409c32431c34b1eaa1098cda8",
+    "g1_model_binding_sha256": "d84905b3b4224da8a62576b94a6c649abb4bae42ea068f366c9a0b2748537e86",
+    "runtime_hooks_sha256": "e7136038c53cbf1463bd009772777590f9fc48068ea54a1e7c4f6c6daf7d4af0",
+    "production_policy_sha256": "7f90bade8992df3384a359dfceaade40fecafe7cc3f8002abc8b82b2973b5dbb",
+    "resource_history_sha256": "ef0ff4eb2febe6a8e70fb74f40a1d81c339b48ab5c5fdaa580f9ba4a63ed6d6c",
+    "resource_settlement_sha256": "66d47994f197048a4f1be89362f76dab9a5ca56f5193873b4bdf6e53b68c079c",
+    "recovery_resource_request_sha256": "7f62d4f5d09c935e0e13241e7468097d9f0f54b9a1e245e060a74d379491168d"
+  },
+  "configuration": {
+    "matrix_schema": "w1-eawm-jepa-experiment-matrix/1.0.0",
+    "policy_seeds": [
+      8301,
+      8302,
+      8303
+    ],
+    "world_model_seeds": [
+      8201,
+      8202,
+      8203
+    ],
+    "training_steps_per_route": 2048,
+    "rollout_steps": 64,
+    "updates_per_route": 128,
+    "updates_per_rollout": 4,
+    "task_episode_count": 240,
+    "task_episode_max_steps": 18,
+    "matrix_contract_pass": true,
+    "g1_pairing_in_source_schedule": [
+      {
+        "policy_seed": 8301,
+        "world_seed": 8201
+      },
+      {
+        "policy_seed": 8302,
+        "world_seed": 8202
+      },
+      {
+        "policy_seed": 8303,
+        "world_seed": 8203
+      }
+    ],
+    "source_chain": {
+      "schedule_module": "package/production_policy.py::policy_schedule and PolicySchedule.routes",
+      "checkpoint_writer_module": "package/runtime_hooks.py::checkpoint_writer",
+      "route_output": "verified-export/run-once/policy-training-routes.jsonl",
+      "task_input_check_worker_manifest_sha256": "9ac065202126484968227469c16634ffbdfd5c30933c73a5c3a407e6c26815f9",
+      "g1_binding_source_manifest_sha256": "e08328eeeab23d4cf5d64456f5b7b12d5604b793e56a44963ae233f71f0c590c"
+    },
+    "training_prior_configuration": {
+      "G0": {
+        "learned_residual": false,
+        "prior_scale": 0.0,
+        "transparent_score": false
+      },
+      "G1": {
+        "learned_residual": true,
+        "prior_scale": 0.1,
+        "transparent_score": true
+      },
+      "T": {
+        "learned_residual": false,
+        "prior_scale": 0.1,
+        "transparent_score": true
+      },
+      "illegal_action_policy": "original mask remains authoritative"
+    },
+    "policy_configuration_embedded_in_checkpoint": false,
+    "policy_configuration_source_chain": "frozen experiment-matrix.json -> production_policy.py policy_schedule/routes -> policy-training-routes.jsonl -> checkpoint writer; optimizer param-group lr is independently checked"
+  },
+  "checkpoint_writer_contract_static": {
+    "source_file": "package/runtime_hooks.py",
+    "source_function": "checkpoint_writer",
+    "serialized_root_keys": [
+      "schema",
+      "method",
+      "seed",
+      "state_dict",
+      "state_dict_sha256",
+      "optimizer_state_dict",
+      "summary"
+    ],
+    "state_source": "policy.base.state_dict() where wrapped, otherwise policy.state_dict()",
+    "optimizer_source": "optimizer.state_dict()",
+    "no_rng_environment_or_rollout_snapshot_in_writer": true,
+    "source_file_sha256": "e7136038c53cbf1463bd009772777590f9fc48068ea54a1e7c4f6c6daf7d4af0"
+  },
+  "checkpoint_count": 7,
+  "checkpoint_directory_files": [
+    "G0-seed-8301.pt",
+    "G0-seed-8302.pt",
+    "G0-seed-8303.pt",
+    "G1-seed-8301.pt",
+    "T-seed-8301.pt",
+    "T-seed-8302.pt",
+    "T-seed-8303.pt"
+  ],
+  "checkpoint_directory_file_count": 7,
+  "all_seven_checkpoint_state_shapes_match": true,
+  "shared_state_architecture_signature": "199520b69870b0c33724338f1c09d9053fdceaf4d5eb3e05a86acd554d3d3224",
+  "checkpoint_reports": [
+    {
+      "method": "G0",
+      "seed": 8301,
+      "world_model_variant": null,
+      "world_model_seed": null,
+      "training_steps": 2048,
+      "optimizer_updates": 128,
+      "rollout_steps": 64,
+      "updates_per_rollout": 4,
+      "checkpoint": "/home/asus/w1-g1-gppo-phase-accounting-repair-v1-once/package/run-once/policy-checkpoints/G0-seed-8301.pt",
+      "checkpoint_sha256": "f8d2f540e6b7e33d9a6c0d88031401f790e7cb48a2cbc2732317637efb694b73",
+      "checkpoint_state_sha256": "21e6776fe7630386599d1a011ff4a34e2e0a7ae9d4f3413611ef782d048b893d",
+      "ppo_update_count": 128,
+      "summary_route": "G0:8301",
+      "summary_environment_steps": 2048,
+      "summary_optimizer_updates": 128,
+      "summary_world_model_updates": 0,
+      "summary_world_model_frozen": false,
+      "summary_raw_decision_count": 2048,
+      "summary_recurrent_replay_groups": 32,
+      "archive_sha256": "f8d2f540e6b7e33d9a6c0d88031401f790e7cb48a2cbc2732317637efb694b73",
+      "archive_bytes": 5194543,
+      "byteorder": "little",
+      "pickle_globals_allowed": [
+        "collections.OrderedDict",
+        "torch._utils._rebuild_tensor_v2 (inert stub)",
+        "torch.*Storage (metadata token only)"
+      ],
+      "top_level_keys": [
+        "method",
+        "optimizer_state_dict",
+        "schema",
+        "seed",
+        "state_dict",
+        "state_dict_sha256",
+        "summary"
+      ],
+      "schema": "w1-policy-checkpoint/1.0.0",
+      "stored_state_sha256": "21e6776fe7630386599d1a011ff4a34e2e0a7ae9d4f3413611ef782d048b893d",
+      "recomputed_state_sha256": "21e6776fe7630386599d1a011ff4a34e2e0a7ae9d4f3413611ef782d048b893d",
+      "state_hash_matches_stored": true,
+      "state_tensor_count": 35,
+      "state_tensors": [
+        {
+          "name": "base.critic.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            1
+          ],
+          "storage_key": "22"
+        },
+        {
+          "name": "base.critic.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            128
+          ],
+          "storage_key": "21"
+        },
+        {
+          "name": "base.edge_encoder.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "8"
+        },
+        {
+          "name": "base.edge_encoder.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            132
+          ],
+          "storage_key": "7"
+        },
+        {
+          "name": "base.edge_encoder.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "10"
+        },
+        {
+          "name": "base.edge_encoder.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            64
+          ],
+          "storage_key": "9"
+        },
+        {
+          "name": "base.graph_projection.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            128
+          ],
+          "storage_key": "6"
+        },
+        {
+          "name": "base.graph_projection.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            128,
+            64
+          ],
+          "storage_key": "5"
+        },
+        {
+          "name": "base.gru.bias_hh_l0",
+          "dtype": "torch.float32",
+          "shape": [
+            384
+          ],
+          "storage_key": "20"
+        },
+        {
+          "name": "base.gru.bias_ih_l0",
+          "dtype": "torch.float32",
+          "shape": [
+            384
+          ],
+          "storage_key": "19"
+        },
+        {
+          "name": "base.gru.weight_hh_l0",
+          "dtype": "torch.float32",
+          "shape": [
+            384,
+            128
+          ],
+          "storage_key": "18"
+        },
+        {
+          "name": "base.gru.weight_ih_l0",
+          "dtype": "torch.float32",
+          "shape": [
+            384,
+            128
+          ],
+          "storage_key": "17"
+        },
+        {
+          "name": "base.noop_actor.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            1
+          ],
+          "storage_key": "16"
+        },
+        {
+          "name": "base.noop_actor.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            128
+          ],
+          "storage_key": "15"
+        },
+        {
+          "name": "base.pair_actor.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "12"
+        },
+        {
+          "name": "base.pair_actor.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            192
+          ],
+          "storage_key": "11"
+        },
+        {
+          "name": "base.pair_actor.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            1
+          ],
+          "storage_key": "14"
+        },
+        {
+          "name": "base.pair_actor.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            64
+          ],
+          "storage_key": "13"
+        },
+        {
+          "name": "base.token_encoder.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "1"
+        },
+        {
+          "name": "base.token_encoder.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            32
+          ],
+          "storage_key": "0"
+        },
+        {
+          "name": "base.token_encoder.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "3"
+        },
+        {
+          "name": "base.token_encoder.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            64
+          ],
+          "storage_key": "2"
+        },
+        {
+          "name": "base.type_embedding.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            5,
+            64
+          ],
+          "storage_key": "4"
+        },
+        {
+          "name": "candidate_actor.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            32
+          ],
+          "storage_key": "28"
+        },
+        {
+          "name": "candidate_actor.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            32,
+            17
+          ],
+          "storage_key": "27"
+        },
+        {
+          "name": "candidate_actor.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            1
+          ],
+          "storage_key": "30"
+        },
+        {
+          "name": "candidate_actor.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            32
+          ],
+          "storage_key": "29"
+        },
+        {
+          "name": "preference_actor.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "24"
+        },
+        {
+          "name": "preference_actor.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            130
+          ],
+          "storage_key": "23"
+        },
+        {
+          "name": "preference_actor.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            25
+          ],
+          "storage_key": "26"
+        },
+        {
+          "name": "preference_actor.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            25,
+            64
+          ],
+          "storage_key": "25"
+        },
+        {
+          "name": "vector_value.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            128
+          ],
+          "storage_key": "32"
+        },
+        {
+          "name": "vector_value.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            128,
+            130
+          ],
+          "storage_key": "31"
+        },
+        {
+          "name": "vector_value.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            2
+          ],
+          "storage_key": "34"
+        },
+        {
+          "name": "vector_value.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            2,
+            128
+          ],
+          "storage_key": "33"
+        }
+      ],
+      "optimizer_state_slot_count": 33,
+      "optimizer_step_values": [
+        128.0
+      ],
+      "optimizer_lrs": [
+        0.0003
+      ],
+      "optimizer_group_parameter_counts": [
+        35
+      ],
+      "export_manifest_file_sha256": "f8d2f540e6b7e33d9a6c0d88031401f790e7cb48a2cbc2732317637efb694b73",
+      "file_hash_matches_route_and_export_manifest": true,
+      "state_hash_matches_checkpoint_and_route": true,
+      "schema_method_seed_match": true,
+      "schedule_is_complete_2048_steps_128_updates": true,
+      "completed_checkpoint_write_ledger_row": true,
+      "optimizer_lr_matches_frozen_policy_configuration": true,
+      "state_architecture_signature": "199520b69870b0c33724338f1c09d9053fdceaf4d5eb3e05a86acd554d3d3224",
+      "world_binding": null
+    },
+    {
+      "method": "G0",
+      "seed": 8302,
+      "world_model_variant": null,
+      "world_model_seed": null,
+      "training_steps": 2048,
+      "optimizer_updates": 128,
+      "rollout_steps": 64,
+      "updates_per_rollout": 4,
+      "checkpoint": "/home/asus/w1-g1-gppo-phase-accounting-repair-v1-once/package/run-once/policy-checkpoints/G0-seed-8302.pt",
+      "checkpoint_sha256": "2e796ba14199f909314b39e554b29a208e6872b20499df5a7933f1d1003126a8",
+      "checkpoint_state_sha256": "dfa5c8f5680b07fde56af1d2d4c0ad24dbb9499fb773e365b398528f812a3edb",
+      "ppo_update_count": 128,
+      "summary_route": "G0:8302",
+      "summary_environment_steps": 2048,
+      "summary_optimizer_updates": 128,
+      "summary_world_model_updates": 0,
+      "summary_world_model_frozen": false,
+      "summary_raw_decision_count": 2048,
+      "summary_recurrent_replay_groups": 32,
+      "archive_sha256": "2e796ba14199f909314b39e554b29a208e6872b20499df5a7933f1d1003126a8",
+      "archive_bytes": 5153903,
+      "byteorder": "little",
+      "pickle_globals_allowed": [
+        "collections.OrderedDict",
+        "torch._utils._rebuild_tensor_v2 (inert stub)",
+        "torch.*Storage (metadata token only)"
+      ],
+      "top_level_keys": [
+        "method",
+        "optimizer_state_dict",
+        "schema",
+        "seed",
+        "state_dict",
+        "state_dict_sha256",
+        "summary"
+      ],
+      "schema": "w1-policy-checkpoint/1.0.0",
+      "stored_state_sha256": "dfa5c8f5680b07fde56af1d2d4c0ad24dbb9499fb773e365b398528f812a3edb",
+      "recomputed_state_sha256": "dfa5c8f5680b07fde56af1d2d4c0ad24dbb9499fb773e365b398528f812a3edb",
+      "state_hash_matches_stored": true,
+      "state_tensor_count": 35,
+      "state_tensors": [
+        {
+          "name": "base.critic.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            1
+          ],
+          "storage_key": "22"
+        },
+        {
+          "name": "base.critic.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            128
+          ],
+          "storage_key": "21"
+        },
+        {
+          "name": "base.edge_encoder.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "8"
+        },
+        {
+          "name": "base.edge_encoder.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            132
+          ],
+          "storage_key": "7"
+        },
+        {
+          "name": "base.edge_encoder.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "10"
+        },
+        {
+          "name": "base.edge_encoder.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            64
+          ],
+          "storage_key": "9"
+        },
+        {
+          "name": "base.graph_projection.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            128
+          ],
+          "storage_key": "6"
+        },
+        {
+          "name": "base.graph_projection.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            128,
+            64
+          ],
+          "storage_key": "5"
+        },
+        {
+          "name": "base.gru.bias_hh_l0",
+          "dtype": "torch.float32",
+          "shape": [
+            384
+          ],
+          "storage_key": "20"
+        },
+        {
+          "name": "base.gru.bias_ih_l0",
+          "dtype": "torch.float32",
+          "shape": [
+            384
+          ],
+          "storage_key": "19"
+        },
+        {
+          "name": "base.gru.weight_hh_l0",
+          "dtype": "torch.float32",
+          "shape": [
+            384,
+            128
+          ],
+          "storage_key": "18"
+        },
+        {
+          "name": "base.gru.weight_ih_l0",
+          "dtype": "torch.float32",
+          "shape": [
+            384,
+            128
+          ],
+          "storage_key": "17"
+        },
+        {
+          "name": "base.noop_actor.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            1
+          ],
+          "storage_key": "16"
+        },
+        {
+          "name": "base.noop_actor.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            128
+          ],
+          "storage_key": "15"
+        },
+        {
+          "name": "base.pair_actor.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "12"
+        },
+        {
+          "name": "base.pair_actor.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            192
+          ],
+          "storage_key": "11"
+        },
+        {
+          "name": "base.pair_actor.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            1
+          ],
+          "storage_key": "14"
+        },
+        {
+          "name": "base.pair_actor.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            64
+          ],
+          "storage_key": "13"
+        },
+        {
+          "name": "base.token_encoder.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "1"
+        },
+        {
+          "name": "base.token_encoder.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            32
+          ],
+          "storage_key": "0"
+        },
+        {
+          "name": "base.token_encoder.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "3"
+        },
+        {
+          "name": "base.token_encoder.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            64
+          ],
+          "storage_key": "2"
+        },
+        {
+          "name": "base.type_embedding.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            5,
+            64
+          ],
+          "storage_key": "4"
+        },
+        {
+          "name": "candidate_actor.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            32
+          ],
+          "storage_key": "28"
+        },
+        {
+          "name": "candidate_actor.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            32,
+            17
+          ],
+          "storage_key": "27"
+        },
+        {
+          "name": "candidate_actor.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            1
+          ],
+          "storage_key": "30"
+        },
+        {
+          "name": "candidate_actor.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            32
+          ],
+          "storage_key": "29"
+        },
+        {
+          "name": "preference_actor.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "24"
+        },
+        {
+          "name": "preference_actor.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            130
+          ],
+          "storage_key": "23"
+        },
+        {
+          "name": "preference_actor.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            25
+          ],
+          "storage_key": "26"
+        },
+        {
+          "name": "preference_actor.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            25,
+            64
+          ],
+          "storage_key": "25"
+        },
+        {
+          "name": "vector_value.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            128
+          ],
+          "storage_key": "32"
+        },
+        {
+          "name": "vector_value.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            128,
+            130
+          ],
+          "storage_key": "31"
+        },
+        {
+          "name": "vector_value.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            2
+          ],
+          "storage_key": "34"
+        },
+        {
+          "name": "vector_value.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            2,
+            128
+          ],
+          "storage_key": "33"
+        }
+      ],
+      "optimizer_state_slot_count": 33,
+      "optimizer_step_values": [
+        128.0
+      ],
+      "optimizer_lrs": [
+        0.0003
+      ],
+      "optimizer_group_parameter_counts": [
+        35
+      ],
+      "export_manifest_file_sha256": "2e796ba14199f909314b39e554b29a208e6872b20499df5a7933f1d1003126a8",
+      "file_hash_matches_route_and_export_manifest": true,
+      "state_hash_matches_checkpoint_and_route": true,
+      "schema_method_seed_match": true,
+      "schedule_is_complete_2048_steps_128_updates": true,
+      "completed_checkpoint_write_ledger_row": true,
+      "optimizer_lr_matches_frozen_policy_configuration": true,
+      "state_architecture_signature": "199520b69870b0c33724338f1c09d9053fdceaf4d5eb3e05a86acd554d3d3224",
+      "world_binding": null
+    },
+    {
+      "method": "G0",
+      "seed": 8303,
+      "world_model_variant": null,
+      "world_model_seed": null,
+      "training_steps": 2048,
+      "optimizer_updates": 128,
+      "rollout_steps": 64,
+      "updates_per_rollout": 4,
+      "checkpoint": "/home/asus/w1-g1-gppo-phase-accounting-repair-v1-once/package/run-once/policy-checkpoints/G0-seed-8303.pt",
+      "checkpoint_sha256": "8d5ba4e6de24eac7ea3f8ad72e0b3b4bc33158f55bc96339ea9e4f3707b2b20a",
+      "checkpoint_state_sha256": "f6924b897cdf013ef29751e07f5b1c44f34e55509829e87bd567f96502aa22ee",
+      "ppo_update_count": 128,
+      "summary_route": "G0:8303",
+      "summary_environment_steps": 2048,
+      "summary_optimizer_updates": 128,
+      "summary_world_model_updates": 0,
+      "summary_world_model_frozen": false,
+      "summary_raw_decision_count": 2048,
+      "summary_recurrent_replay_groups": 32,
+      "archive_sha256": "8d5ba4e6de24eac7ea3f8ad72e0b3b4bc33158f55bc96339ea9e4f3707b2b20a",
+      "archive_bytes": 5217711,
+      "byteorder": "little",
+      "pickle_globals_allowed": [
+        "collections.OrderedDict",
+        "torch._utils._rebuild_tensor_v2 (inert stub)",
+        "torch.*Storage (metadata token only)"
+      ],
+      "top_level_keys": [
+        "method",
+        "optimizer_state_dict",
+        "schema",
+        "seed",
+        "state_dict",
+        "state_dict_sha256",
+        "summary"
+      ],
+      "schema": "w1-policy-checkpoint/1.0.0",
+      "stored_state_sha256": "f6924b897cdf013ef29751e07f5b1c44f34e55509829e87bd567f96502aa22ee",
+      "recomputed_state_sha256": "f6924b897cdf013ef29751e07f5b1c44f34e55509829e87bd567f96502aa22ee",
+      "state_hash_matches_stored": true,
+      "state_tensor_count": 35,
+      "state_tensors": [
+        {
+          "name": "base.critic.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            1
+          ],
+          "storage_key": "22"
+        },
+        {
+          "name": "base.critic.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            128
+          ],
+          "storage_key": "21"
+        },
+        {
+          "name": "base.edge_encoder.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "8"
+        },
+        {
+          "name": "base.edge_encoder.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            132
+          ],
+          "storage_key": "7"
+        },
+        {
+          "name": "base.edge_encoder.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "10"
+        },
+        {
+          "name": "base.edge_encoder.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            64
+          ],
+          "storage_key": "9"
+        },
+        {
+          "name": "base.graph_projection.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            128
+          ],
+          "storage_key": "6"
+        },
+        {
+          "name": "base.graph_projection.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            128,
+            64
+          ],
+          "storage_key": "5"
+        },
+        {
+          "name": "base.gru.bias_hh_l0",
+          "dtype": "torch.float32",
+          "shape": [
+            384
+          ],
+          "storage_key": "20"
+        },
+        {
+          "name": "base.gru.bias_ih_l0",
+          "dtype": "torch.float32",
+          "shape": [
+            384
+          ],
+          "storage_key": "19"
+        },
+        {
+          "name": "base.gru.weight_hh_l0",
+          "dtype": "torch.float32",
+          "shape": [
+            384,
+            128
+          ],
+          "storage_key": "18"
+        },
+        {
+          "name": "base.gru.weight_ih_l0",
+          "dtype": "torch.float32",
+          "shape": [
+            384,
+            128
+          ],
+          "storage_key": "17"
+        },
+        {
+          "name": "base.noop_actor.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            1
+          ],
+          "storage_key": "16"
+        },
+        {
+          "name": "base.noop_actor.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            128
+          ],
+          "storage_key": "15"
+        },
+        {
+          "name": "base.pair_actor.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "12"
+        },
+        {
+          "name": "base.pair_actor.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            192
+          ],
+          "storage_key": "11"
+        },
+        {
+          "name": "base.pair_actor.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            1
+          ],
+          "storage_key": "14"
+        },
+        {
+          "name": "base.pair_actor.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            64
+          ],
+          "storage_key": "13"
+        },
+        {
+          "name": "base.token_encoder.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "1"
+        },
+        {
+          "name": "base.token_encoder.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            32
+          ],
+          "storage_key": "0"
+        },
+        {
+          "name": "base.token_encoder.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "3"
+        },
+        {
+          "name": "base.token_encoder.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            64
+          ],
+          "storage_key": "2"
+        },
+        {
+          "name": "base.type_embedding.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            5,
+            64
+          ],
+          "storage_key": "4"
+        },
+        {
+          "name": "candidate_actor.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            32
+          ],
+          "storage_key": "28"
+        },
+        {
+          "name": "candidate_actor.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            32,
+            17
+          ],
+          "storage_key": "27"
+        },
+        {
+          "name": "candidate_actor.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            1
+          ],
+          "storage_key": "30"
+        },
+        {
+          "name": "candidate_actor.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            32
+          ],
+          "storage_key": "29"
+        },
+        {
+          "name": "preference_actor.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "24"
+        },
+        {
+          "name": "preference_actor.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            130
+          ],
+          "storage_key": "23"
+        },
+        {
+          "name": "preference_actor.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            25
+          ],
+          "storage_key": "26"
+        },
+        {
+          "name": "preference_actor.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            25,
+            64
+          ],
+          "storage_key": "25"
+        },
+        {
+          "name": "vector_value.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            128
+          ],
+          "storage_key": "32"
+        },
+        {
+          "name": "vector_value.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            128,
+            130
+          ],
+          "storage_key": "31"
+        },
+        {
+          "name": "vector_value.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            2
+          ],
+          "storage_key": "34"
+        },
+        {
+          "name": "vector_value.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            2,
+            128
+          ],
+          "storage_key": "33"
+        }
+      ],
+      "optimizer_state_slot_count": 33,
+      "optimizer_step_values": [
+        128.0
+      ],
+      "optimizer_lrs": [
+        0.0003
+      ],
+      "optimizer_group_parameter_counts": [
+        35
+      ],
+      "export_manifest_file_sha256": "8d5ba4e6de24eac7ea3f8ad72e0b3b4bc33158f55bc96339ea9e4f3707b2b20a",
+      "file_hash_matches_route_and_export_manifest": true,
+      "state_hash_matches_checkpoint_and_route": true,
+      "schema_method_seed_match": true,
+      "schedule_is_complete_2048_steps_128_updates": true,
+      "completed_checkpoint_write_ledger_row": true,
+      "optimizer_lr_matches_frozen_policy_configuration": true,
+      "state_architecture_signature": "199520b69870b0c33724338f1c09d9053fdceaf4d5eb3e05a86acd554d3d3224",
+      "world_binding": null
+    },
+    {
+      "method": "T",
+      "seed": 8301,
+      "world_model_variant": null,
+      "world_model_seed": null,
+      "training_steps": 2048,
+      "optimizer_updates": 128,
+      "rollout_steps": 64,
+      "updates_per_rollout": 4,
+      "checkpoint": "/home/asus/w1-g1-gppo-phase-accounting-repair-v1-once/package/run-once/policy-checkpoints/T-seed-8301.pt",
+      "checkpoint_sha256": "9ff5b92d8519971cbe120687959d1d3b35d955b85d1c06f6cdbfb240c567b895",
+      "checkpoint_state_sha256": "ad850bc1cd0a27491526495ff75943f1a16fc756aadad8e3f0a32b42b29b9c47",
+      "ppo_update_count": 128,
+      "summary_route": "T:8301",
+      "summary_environment_steps": 2048,
+      "summary_optimizer_updates": 128,
+      "summary_world_model_updates": 0,
+      "summary_world_model_frozen": false,
+      "summary_raw_decision_count": 2048,
+      "summary_recurrent_replay_groups": 32,
+      "archive_sha256": "9ff5b92d8519971cbe120687959d1d3b35d955b85d1c06f6cdbfb240c567b895",
+      "archive_bytes": 5780195,
+      "byteorder": "little",
+      "pickle_globals_allowed": [
+        "collections.OrderedDict",
+        "torch._utils._rebuild_tensor_v2 (inert stub)",
+        "torch.*Storage (metadata token only)"
+      ],
+      "top_level_keys": [
+        "method",
+        "optimizer_state_dict",
+        "schema",
+        "seed",
+        "state_dict",
+        "state_dict_sha256",
+        "summary"
+      ],
+      "schema": "w1-policy-checkpoint/1.0.0",
+      "stored_state_sha256": "ad850bc1cd0a27491526495ff75943f1a16fc756aadad8e3f0a32b42b29b9c47",
+      "recomputed_state_sha256": "ad850bc1cd0a27491526495ff75943f1a16fc756aadad8e3f0a32b42b29b9c47",
+      "state_hash_matches_stored": true,
+      "state_tensor_count": 35,
+      "state_tensors": [
+        {
+          "name": "base.critic.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            1
+          ],
+          "storage_key": "22"
+        },
+        {
+          "name": "base.critic.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            128
+          ],
+          "storage_key": "21"
+        },
+        {
+          "name": "base.edge_encoder.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "8"
+        },
+        {
+          "name": "base.edge_encoder.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            132
+          ],
+          "storage_key": "7"
+        },
+        {
+          "name": "base.edge_encoder.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "10"
+        },
+        {
+          "name": "base.edge_encoder.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            64
+          ],
+          "storage_key": "9"
+        },
+        {
+          "name": "base.graph_projection.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            128
+          ],
+          "storage_key": "6"
+        },
+        {
+          "name": "base.graph_projection.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            128,
+            64
+          ],
+          "storage_key": "5"
+        },
+        {
+          "name": "base.gru.bias_hh_l0",
+          "dtype": "torch.float32",
+          "shape": [
+            384
+          ],
+          "storage_key": "20"
+        },
+        {
+          "name": "base.gru.bias_ih_l0",
+          "dtype": "torch.float32",
+          "shape": [
+            384
+          ],
+          "storage_key": "19"
+        },
+        {
+          "name": "base.gru.weight_hh_l0",
+          "dtype": "torch.float32",
+          "shape": [
+            384,
+            128
+          ],
+          "storage_key": "18"
+        },
+        {
+          "name": "base.gru.weight_ih_l0",
+          "dtype": "torch.float32",
+          "shape": [
+            384,
+            128
+          ],
+          "storage_key": "17"
+        },
+        {
+          "name": "base.noop_actor.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            1
+          ],
+          "storage_key": "16"
+        },
+        {
+          "name": "base.noop_actor.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            128
+          ],
+          "storage_key": "15"
+        },
+        {
+          "name": "base.pair_actor.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "12"
+        },
+        {
+          "name": "base.pair_actor.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            192
+          ],
+          "storage_key": "11"
+        },
+        {
+          "name": "base.pair_actor.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            1
+          ],
+          "storage_key": "14"
+        },
+        {
+          "name": "base.pair_actor.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            64
+          ],
+          "storage_key": "13"
+        },
+        {
+          "name": "base.token_encoder.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "1"
+        },
+        {
+          "name": "base.token_encoder.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            32
+          ],
+          "storage_key": "0"
+        },
+        {
+          "name": "base.token_encoder.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "3"
+        },
+        {
+          "name": "base.token_encoder.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            64
+          ],
+          "storage_key": "2"
+        },
+        {
+          "name": "base.type_embedding.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            5,
+            64
+          ],
+          "storage_key": "4"
+        },
+        {
+          "name": "candidate_actor.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            32
+          ],
+          "storage_key": "28"
+        },
+        {
+          "name": "candidate_actor.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            32,
+            17
+          ],
+          "storage_key": "27"
+        },
+        {
+          "name": "candidate_actor.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            1
+          ],
+          "storage_key": "30"
+        },
+        {
+          "name": "candidate_actor.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            32
+          ],
+          "storage_key": "29"
+        },
+        {
+          "name": "preference_actor.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "24"
+        },
+        {
+          "name": "preference_actor.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            130
+          ],
+          "storage_key": "23"
+        },
+        {
+          "name": "preference_actor.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            25
+          ],
+          "storage_key": "26"
+        },
+        {
+          "name": "preference_actor.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            25,
+            64
+          ],
+          "storage_key": "25"
+        },
+        {
+          "name": "vector_value.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            128
+          ],
+          "storage_key": "32"
+        },
+        {
+          "name": "vector_value.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            128,
+            130
+          ],
+          "storage_key": "31"
+        },
+        {
+          "name": "vector_value.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            2
+          ],
+          "storage_key": "34"
+        },
+        {
+          "name": "vector_value.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            2,
+            128
+          ],
+          "storage_key": "33"
+        }
+      ],
+      "optimizer_state_slot_count": 33,
+      "optimizer_step_values": [
+        128.0
+      ],
+      "optimizer_lrs": [
+        0.0003
+      ],
+      "optimizer_group_parameter_counts": [
+        35
+      ],
+      "export_manifest_file_sha256": "9ff5b92d8519971cbe120687959d1d3b35d955b85d1c06f6cdbfb240c567b895",
+      "file_hash_matches_route_and_export_manifest": true,
+      "state_hash_matches_checkpoint_and_route": true,
+      "schema_method_seed_match": true,
+      "schedule_is_complete_2048_steps_128_updates": true,
+      "completed_checkpoint_write_ledger_row": true,
+      "optimizer_lr_matches_frozen_policy_configuration": true,
+      "state_architecture_signature": "199520b69870b0c33724338f1c09d9053fdceaf4d5eb3e05a86acd554d3d3224",
+      "world_binding": null
+    },
+    {
+      "method": "T",
+      "seed": 8302,
+      "world_model_variant": null,
+      "world_model_seed": null,
+      "training_steps": 2048,
+      "optimizer_updates": 128,
+      "rollout_steps": 64,
+      "updates_per_rollout": 4,
+      "checkpoint": "/home/asus/w1-g1-gppo-phase-accounting-repair-v1-once/package/run-once/policy-checkpoints/T-seed-8302.pt",
+      "checkpoint_sha256": "720e05811cca898fd6ede0d27430bc37c0b97656056e6b03f7fecfa76abd59d1",
+      "checkpoint_state_sha256": "e481e661315132bd11b808d45a19e00de9a8ac928633c83de0aefcfd6d44163e",
+      "ppo_update_count": 128,
+      "summary_route": "T:8302",
+      "summary_environment_steps": 2048,
+      "summary_optimizer_updates": 128,
+      "summary_world_model_updates": 0,
+      "summary_world_model_frozen": false,
+      "summary_raw_decision_count": 2048,
+      "summary_recurrent_replay_groups": 32,
+      "archive_sha256": "720e05811cca898fd6ede0d27430bc37c0b97656056e6b03f7fecfa76abd59d1",
+      "archive_bytes": 5703651,
+      "byteorder": "little",
+      "pickle_globals_allowed": [
+        "collections.OrderedDict",
+        "torch._utils._rebuild_tensor_v2 (inert stub)",
+        "torch.*Storage (metadata token only)"
+      ],
+      "top_level_keys": [
+        "method",
+        "optimizer_state_dict",
+        "schema",
+        "seed",
+        "state_dict",
+        "state_dict_sha256",
+        "summary"
+      ],
+      "schema": "w1-policy-checkpoint/1.0.0",
+      "stored_state_sha256": "e481e661315132bd11b808d45a19e00de9a8ac928633c83de0aefcfd6d44163e",
+      "recomputed_state_sha256": "e481e661315132bd11b808d45a19e00de9a8ac928633c83de0aefcfd6d44163e",
+      "state_hash_matches_stored": true,
+      "state_tensor_count": 35,
+      "state_tensors": [
+        {
+          "name": "base.critic.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            1
+          ],
+          "storage_key": "22"
+        },
+        {
+          "name": "base.critic.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            128
+          ],
+          "storage_key": "21"
+        },
+        {
+          "name": "base.edge_encoder.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "8"
+        },
+        {
+          "name": "base.edge_encoder.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            132
+          ],
+          "storage_key": "7"
+        },
+        {
+          "name": "base.edge_encoder.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "10"
+        },
+        {
+          "name": "base.edge_encoder.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            64
+          ],
+          "storage_key": "9"
+        },
+        {
+          "name": "base.graph_projection.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            128
+          ],
+          "storage_key": "6"
+        },
+        {
+          "name": "base.graph_projection.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            128,
+            64
+          ],
+          "storage_key": "5"
+        },
+        {
+          "name": "base.gru.bias_hh_l0",
+          "dtype": "torch.float32",
+          "shape": [
+            384
+          ],
+          "storage_key": "20"
+        },
+        {
+          "name": "base.gru.bias_ih_l0",
+          "dtype": "torch.float32",
+          "shape": [
+            384
+          ],
+          "storage_key": "19"
+        },
+        {
+          "name": "base.gru.weight_hh_l0",
+          "dtype": "torch.float32",
+          "shape": [
+            384,
+            128
+          ],
+          "storage_key": "18"
+        },
+        {
+          "name": "base.gru.weight_ih_l0",
+          "dtype": "torch.float32",
+          "shape": [
+            384,
+            128
+          ],
+          "storage_key": "17"
+        },
+        {
+          "name": "base.noop_actor.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            1
+          ],
+          "storage_key": "16"
+        },
+        {
+          "name": "base.noop_actor.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            128
+          ],
+          "storage_key": "15"
+        },
+        {
+          "name": "base.pair_actor.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "12"
+        },
+        {
+          "name": "base.pair_actor.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            192
+          ],
+          "storage_key": "11"
+        },
+        {
+          "name": "base.pair_actor.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            1
+          ],
+          "storage_key": "14"
+        },
+        {
+          "name": "base.pair_actor.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            64
+          ],
+          "storage_key": "13"
+        },
+        {
+          "name": "base.token_encoder.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "1"
+        },
+        {
+          "name": "base.token_encoder.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            32
+          ],
+          "storage_key": "0"
+        },
+        {
+          "name": "base.token_encoder.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "3"
+        },
+        {
+          "name": "base.token_encoder.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            64
+          ],
+          "storage_key": "2"
+        },
+        {
+          "name": "base.type_embedding.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            5,
+            64
+          ],
+          "storage_key": "4"
+        },
+        {
+          "name": "candidate_actor.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            32
+          ],
+          "storage_key": "28"
+        },
+        {
+          "name": "candidate_actor.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            32,
+            17
+          ],
+          "storage_key": "27"
+        },
+        {
+          "name": "candidate_actor.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            1
+          ],
+          "storage_key": "30"
+        },
+        {
+          "name": "candidate_actor.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            32
+          ],
+          "storage_key": "29"
+        },
+        {
+          "name": "preference_actor.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "24"
+        },
+        {
+          "name": "preference_actor.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            130
+          ],
+          "storage_key": "23"
+        },
+        {
+          "name": "preference_actor.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            25
+          ],
+          "storage_key": "26"
+        },
+        {
+          "name": "preference_actor.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            25,
+            64
+          ],
+          "storage_key": "25"
+        },
+        {
+          "name": "vector_value.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            128
+          ],
+          "storage_key": "32"
+        },
+        {
+          "name": "vector_value.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            128,
+            130
+          ],
+          "storage_key": "31"
+        },
+        {
+          "name": "vector_value.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            2
+          ],
+          "storage_key": "34"
+        },
+        {
+          "name": "vector_value.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            2,
+            128
+          ],
+          "storage_key": "33"
+        }
+      ],
+      "optimizer_state_slot_count": 33,
+      "optimizer_step_values": [
+        128.0
+      ],
+      "optimizer_lrs": [
+        0.0003
+      ],
+      "optimizer_group_parameter_counts": [
+        35
+      ],
+      "export_manifest_file_sha256": "720e05811cca898fd6ede0d27430bc37c0b97656056e6b03f7fecfa76abd59d1",
+      "file_hash_matches_route_and_export_manifest": true,
+      "state_hash_matches_checkpoint_and_route": true,
+      "schema_method_seed_match": true,
+      "schedule_is_complete_2048_steps_128_updates": true,
+      "completed_checkpoint_write_ledger_row": true,
+      "optimizer_lr_matches_frozen_policy_configuration": true,
+      "state_architecture_signature": "199520b69870b0c33724338f1c09d9053fdceaf4d5eb3e05a86acd554d3d3224",
+      "world_binding": null
+    },
+    {
+      "method": "T",
+      "seed": 8303,
+      "world_model_variant": null,
+      "world_model_seed": null,
+      "training_steps": 2048,
+      "optimizer_updates": 128,
+      "rollout_steps": 64,
+      "updates_per_rollout": 4,
+      "checkpoint": "/home/asus/w1-g1-gppo-phase-accounting-repair-v1-once/package/run-once/policy-checkpoints/T-seed-8303.pt",
+      "checkpoint_sha256": "dd55477a0b85d8e2d9dcb7ac9573f74a4a789a993387cd92341355c750c86a7e",
+      "checkpoint_state_sha256": "f9fb32d223bf3ebc567cdea98339e734c0c7fe4c9a983018bf5cab65e616039e",
+      "ppo_update_count": 128,
+      "summary_route": "T:8303",
+      "summary_environment_steps": 2048,
+      "summary_optimizer_updates": 128,
+      "summary_world_model_updates": 0,
+      "summary_world_model_frozen": false,
+      "summary_raw_decision_count": 2048,
+      "summary_recurrent_replay_groups": 32,
+      "archive_sha256": "dd55477a0b85d8e2d9dcb7ac9573f74a4a789a993387cd92341355c750c86a7e",
+      "archive_bytes": 5824227,
+      "byteorder": "little",
+      "pickle_globals_allowed": [
+        "collections.OrderedDict",
+        "torch._utils._rebuild_tensor_v2 (inert stub)",
+        "torch.*Storage (metadata token only)"
+      ],
+      "top_level_keys": [
+        "method",
+        "optimizer_state_dict",
+        "schema",
+        "seed",
+        "state_dict",
+        "state_dict_sha256",
+        "summary"
+      ],
+      "schema": "w1-policy-checkpoint/1.0.0",
+      "stored_state_sha256": "f9fb32d223bf3ebc567cdea98339e734c0c7fe4c9a983018bf5cab65e616039e",
+      "recomputed_state_sha256": "f9fb32d223bf3ebc567cdea98339e734c0c7fe4c9a983018bf5cab65e616039e",
+      "state_hash_matches_stored": true,
+      "state_tensor_count": 35,
+      "state_tensors": [
+        {
+          "name": "base.critic.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            1
+          ],
+          "storage_key": "22"
+        },
+        {
+          "name": "base.critic.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            128
+          ],
+          "storage_key": "21"
+        },
+        {
+          "name": "base.edge_encoder.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "8"
+        },
+        {
+          "name": "base.edge_encoder.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            132
+          ],
+          "storage_key": "7"
+        },
+        {
+          "name": "base.edge_encoder.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "10"
+        },
+        {
+          "name": "base.edge_encoder.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            64
+          ],
+          "storage_key": "9"
+        },
+        {
+          "name": "base.graph_projection.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            128
+          ],
+          "storage_key": "6"
+        },
+        {
+          "name": "base.graph_projection.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            128,
+            64
+          ],
+          "storage_key": "5"
+        },
+        {
+          "name": "base.gru.bias_hh_l0",
+          "dtype": "torch.float32",
+          "shape": [
+            384
+          ],
+          "storage_key": "20"
+        },
+        {
+          "name": "base.gru.bias_ih_l0",
+          "dtype": "torch.float32",
+          "shape": [
+            384
+          ],
+          "storage_key": "19"
+        },
+        {
+          "name": "base.gru.weight_hh_l0",
+          "dtype": "torch.float32",
+          "shape": [
+            384,
+            128
+          ],
+          "storage_key": "18"
+        },
+        {
+          "name": "base.gru.weight_ih_l0",
+          "dtype": "torch.float32",
+          "shape": [
+            384,
+            128
+          ],
+          "storage_key": "17"
+        },
+        {
+          "name": "base.noop_actor.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            1
+          ],
+          "storage_key": "16"
+        },
+        {
+          "name": "base.noop_actor.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            128
+          ],
+          "storage_key": "15"
+        },
+        {
+          "name": "base.pair_actor.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "12"
+        },
+        {
+          "name": "base.pair_actor.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            192
+          ],
+          "storage_key": "11"
+        },
+        {
+          "name": "base.pair_actor.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            1
+          ],
+          "storage_key": "14"
+        },
+        {
+          "name": "base.pair_actor.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            64
+          ],
+          "storage_key": "13"
+        },
+        {
+          "name": "base.token_encoder.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "1"
+        },
+        {
+          "name": "base.token_encoder.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            32
+          ],
+          "storage_key": "0"
+        },
+        {
+          "name": "base.token_encoder.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "3"
+        },
+        {
+          "name": "base.token_encoder.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            64
+          ],
+          "storage_key": "2"
+        },
+        {
+          "name": "base.type_embedding.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            5,
+            64
+          ],
+          "storage_key": "4"
+        },
+        {
+          "name": "candidate_actor.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            32
+          ],
+          "storage_key": "28"
+        },
+        {
+          "name": "candidate_actor.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            32,
+            17
+          ],
+          "storage_key": "27"
+        },
+        {
+          "name": "candidate_actor.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            1
+          ],
+          "storage_key": "30"
+        },
+        {
+          "name": "candidate_actor.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            32
+          ],
+          "storage_key": "29"
+        },
+        {
+          "name": "preference_actor.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "24"
+        },
+        {
+          "name": "preference_actor.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            130
+          ],
+          "storage_key": "23"
+        },
+        {
+          "name": "preference_actor.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            25
+          ],
+          "storage_key": "26"
+        },
+        {
+          "name": "preference_actor.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            25,
+            64
+          ],
+          "storage_key": "25"
+        },
+        {
+          "name": "vector_value.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            128
+          ],
+          "storage_key": "32"
+        },
+        {
+          "name": "vector_value.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            128,
+            130
+          ],
+          "storage_key": "31"
+        },
+        {
+          "name": "vector_value.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            2
+          ],
+          "storage_key": "34"
+        },
+        {
+          "name": "vector_value.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            2,
+            128
+          ],
+          "storage_key": "33"
+        }
+      ],
+      "optimizer_state_slot_count": 33,
+      "optimizer_step_values": [
+        128.0
+      ],
+      "optimizer_lrs": [
+        0.0003
+      ],
+      "optimizer_group_parameter_counts": [
+        35
+      ],
+      "export_manifest_file_sha256": "dd55477a0b85d8e2d9dcb7ac9573f74a4a789a993387cd92341355c750c86a7e",
+      "file_hash_matches_route_and_export_manifest": true,
+      "state_hash_matches_checkpoint_and_route": true,
+      "schema_method_seed_match": true,
+      "schedule_is_complete_2048_steps_128_updates": true,
+      "completed_checkpoint_write_ledger_row": true,
+      "optimizer_lr_matches_frozen_policy_configuration": true,
+      "state_architecture_signature": "199520b69870b0c33724338f1c09d9053fdceaf4d5eb3e05a86acd554d3d3224",
+      "world_binding": null
+    },
+    {
+      "method": "G1",
+      "seed": 8301,
+      "world_model_variant": "G1",
+      "world_model_seed": 8201,
+      "training_steps": 2048,
+      "optimizer_updates": 128,
+      "rollout_steps": 64,
+      "updates_per_rollout": 4,
+      "checkpoint": "/home/asus/w1-g1-gppo-phase-accounting-repair-v1-once/package/run-once/policy-checkpoints/G1-seed-8301.pt",
+      "checkpoint_sha256": "687d9bbc396252b5ff337d021431c932662926dd784aabd7dcb2823031cc1f16",
+      "checkpoint_state_sha256": "09772d0e79d5cf664e4db763261b40dcb33f24cdb1a543f48cb86f669d56d907",
+      "ppo_update_count": 128,
+      "summary_route": "G1:8301",
+      "summary_environment_steps": 2048,
+      "summary_optimizer_updates": 128,
+      "summary_world_model_updates": 0,
+      "summary_world_model_frozen": true,
+      "summary_raw_decision_count": 2048,
+      "summary_recurrent_replay_groups": 32,
+      "archive_sha256": "687d9bbc396252b5ff337d021431c932662926dd784aabd7dcb2823031cc1f16",
+      "archive_bytes": 6677167,
+      "byteorder": "little",
+      "pickle_globals_allowed": [
+        "collections.OrderedDict",
+        "torch._utils._rebuild_tensor_v2 (inert stub)",
+        "torch.*Storage (metadata token only)"
+      ],
+      "top_level_keys": [
+        "method",
+        "optimizer_state_dict",
+        "schema",
+        "seed",
+        "state_dict",
+        "state_dict_sha256",
+        "summary"
+      ],
+      "schema": "w1-policy-checkpoint/1.0.0",
+      "stored_state_sha256": "09772d0e79d5cf664e4db763261b40dcb33f24cdb1a543f48cb86f669d56d907",
+      "recomputed_state_sha256": "09772d0e79d5cf664e4db763261b40dcb33f24cdb1a543f48cb86f669d56d907",
+      "state_hash_matches_stored": true,
+      "state_tensor_count": 35,
+      "state_tensors": [
+        {
+          "name": "base.critic.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            1
+          ],
+          "storage_key": "22"
+        },
+        {
+          "name": "base.critic.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            128
+          ],
+          "storage_key": "21"
+        },
+        {
+          "name": "base.edge_encoder.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "8"
+        },
+        {
+          "name": "base.edge_encoder.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            132
+          ],
+          "storage_key": "7"
+        },
+        {
+          "name": "base.edge_encoder.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "10"
+        },
+        {
+          "name": "base.edge_encoder.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            64
+          ],
+          "storage_key": "9"
+        },
+        {
+          "name": "base.graph_projection.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            128
+          ],
+          "storage_key": "6"
+        },
+        {
+          "name": "base.graph_projection.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            128,
+            64
+          ],
+          "storage_key": "5"
+        },
+        {
+          "name": "base.gru.bias_hh_l0",
+          "dtype": "torch.float32",
+          "shape": [
+            384
+          ],
+          "storage_key": "20"
+        },
+        {
+          "name": "base.gru.bias_ih_l0",
+          "dtype": "torch.float32",
+          "shape": [
+            384
+          ],
+          "storage_key": "19"
+        },
+        {
+          "name": "base.gru.weight_hh_l0",
+          "dtype": "torch.float32",
+          "shape": [
+            384,
+            128
+          ],
+          "storage_key": "18"
+        },
+        {
+          "name": "base.gru.weight_ih_l0",
+          "dtype": "torch.float32",
+          "shape": [
+            384,
+            128
+          ],
+          "storage_key": "17"
+        },
+        {
+          "name": "base.noop_actor.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            1
+          ],
+          "storage_key": "16"
+        },
+        {
+          "name": "base.noop_actor.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            128
+          ],
+          "storage_key": "15"
+        },
+        {
+          "name": "base.pair_actor.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "12"
+        },
+        {
+          "name": "base.pair_actor.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            192
+          ],
+          "storage_key": "11"
+        },
+        {
+          "name": "base.pair_actor.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            1
+          ],
+          "storage_key": "14"
+        },
+        {
+          "name": "base.pair_actor.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            64
+          ],
+          "storage_key": "13"
+        },
+        {
+          "name": "base.token_encoder.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "1"
+        },
+        {
+          "name": "base.token_encoder.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            32
+          ],
+          "storage_key": "0"
+        },
+        {
+          "name": "base.token_encoder.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "3"
+        },
+        {
+          "name": "base.token_encoder.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            64
+          ],
+          "storage_key": "2"
+        },
+        {
+          "name": "base.type_embedding.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            5,
+            64
+          ],
+          "storage_key": "4"
+        },
+        {
+          "name": "candidate_actor.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            32
+          ],
+          "storage_key": "28"
+        },
+        {
+          "name": "candidate_actor.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            32,
+            17
+          ],
+          "storage_key": "27"
+        },
+        {
+          "name": "candidate_actor.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            1
+          ],
+          "storage_key": "30"
+        },
+        {
+          "name": "candidate_actor.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            1,
+            32
+          ],
+          "storage_key": "29"
+        },
+        {
+          "name": "preference_actor.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            64
+          ],
+          "storage_key": "24"
+        },
+        {
+          "name": "preference_actor.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            64,
+            130
+          ],
+          "storage_key": "23"
+        },
+        {
+          "name": "preference_actor.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            25
+          ],
+          "storage_key": "26"
+        },
+        {
+          "name": "preference_actor.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            25,
+            64
+          ],
+          "storage_key": "25"
+        },
+        {
+          "name": "vector_value.0.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            128
+          ],
+          "storage_key": "32"
+        },
+        {
+          "name": "vector_value.0.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            128,
+            130
+          ],
+          "storage_key": "31"
+        },
+        {
+          "name": "vector_value.2.bias",
+          "dtype": "torch.float32",
+          "shape": [
+            2
+          ],
+          "storage_key": "34"
+        },
+        {
+          "name": "vector_value.2.weight",
+          "dtype": "torch.float32",
+          "shape": [
+            2,
+            128
+          ],
+          "storage_key": "33"
+        }
+      ],
+      "optimizer_state_slot_count": 33,
+      "optimizer_step_values": [
+        128.0
+      ],
+      "optimizer_lrs": [
+        0.0003
+      ],
+      "optimizer_group_parameter_counts": [
+        35
+      ],
+      "export_manifest_file_sha256": "687d9bbc396252b5ff337d021431c932662926dd784aabd7dcb2823031cc1f16",
+      "file_hash_matches_route_and_export_manifest": true,
+      "state_hash_matches_checkpoint_and_route": true,
+      "schema_method_seed_match": true,
+      "schedule_is_complete_2048_steps_128_updates": true,
+      "completed_checkpoint_write_ledger_row": true,
+      "optimizer_lr_matches_frozen_policy_configuration": true,
+      "state_architecture_signature": "199520b69870b0c33724338f1c09d9053fdceaf4d5eb3e05a86acd554d3d3224",
+      "world_binding": {
+        "source_binding_schema": "w1-g1-model-binding/1.0.0",
+        "policy_seed": 8301,
+        "world_seed": 8201,
+        "relative_path": "frozen-models/G1/seed-8201.pt",
+        "expected_sha256": "3d43fa9e03dd32aae14cb9f3de30991c88b6daed6426b2995e87610fe7df1639",
+        "observed_sha256": "3d43fa9e03dd32aae14cb9f3de30991c88b6daed6426b2995e87610fe7df1639",
+        "checkpoint_seed": 8201,
+        "checkpoint_variant": "G1",
+        "binding_ok": true
+      }
+    }
+  ],
+  "all_nine_final_routes_present": false,
+  "all_checkpoint_integrity_checks_pass": true,
+  "optimizer_param_group_review": {
+    "checkpoint_count": 7,
+    "one_group_each": true,
+    "group_parameter_counts": [
+      [
+        35
+      ],
+      [
+        35
+      ],
+      [
+        35
+      ],
+      [
+        35
+      ],
+      [
+        35
+      ],
+      [
+        35
+      ],
+      [
+        35
+      ]
+    ],
+    "group_sizes_equal_state_tensor_counts": true,
+    "optimizer_state_slot_counts": [
+      33,
+      33,
+      33,
+      33,
+      33,
+      33,
+      33
+    ],
+    "all_populated_optimizer_slots_at_step_128": true,
+    "learning_rates": [
+      [
+        0.0003
+      ],
+      [
+        0.0003
+      ],
+      [
+        0.0003
+      ],
+      [
+        0.0003
+      ],
+      [
+        0.0003
+      ],
+      [
+        0.0003
+      ],
+      [
+        0.0003
+      ]
+    ],
+    "all_learning_rates_match_frozen_configuration": true,
+    "parameter_names_for_numeric_optimizer_ids_available": false,
+    "assessment": "Each final checkpoint has one 35-ID group and 33 populated slots; the restricted offline parser cannot map the two unpopulated IDs to parameter names. Evaluation restores policy weights only, and new training routes construct fresh Adam optimizers."
+  },
+  "recovery_8302": {
+    "method": "G1",
+    "policy_seed": 8302,
+    "world_seed": 8202,
+    "sqlite_environment_steps": 512,
+    "sqlite_complete_ppo_updates": 28,
+    "sqlite_pending_ppo_updates": 1,
+    "intermediate_or_final_checkpoint_exists": false,
+    "observed_route_wall_seconds_to_latest_ledger_event": 251.60977244377136,
+    "observed_route_unattributed_intercall_wall_seconds": 212.41250586509705,
+    "checkpoint_payload_keys": [
+      "method",
+      "optimizer_state_dict",
+      "schema",
+      "seed",
+      "state_dict",
+      "state_dict_sha256",
+      "summary"
+    ],
+    "missing_exact_resume_state": [
+      "Python/NumPy/Torch CPU and accelerator RNG states",
+      "environment internal state and active episode position",
+      "public-history/recurrent hidden state at interruption",
+      "current rollout transitions, rewards, masks, values and GAE buffer",
+      "episode/scenario cursor and exact sampling-generator state"
+    ],
+    "exact_resume_possible_from_available_artifacts": false,
+    "reason": "No intermediate checkpoint; the seven files are final G0/T routes and G1:8301. Existing final policy checkpoints are not G1:8302. Writer persists policy/optimizer plus summary, not in-flight training/environment/RNG state."
+  },
+  "sqlite_timing": {
+    "table": "calls",
+    "call_count": 51017,
+    "complete_call_count": 51016,
+    "pending_call_count": 1,
+    "ledger_call_duration_sum_seconds": 835.592325925827,
+    "ledger_first_to_last_event_seconds": 3600.3811798095703,
+    "unattributed_intercall_wall_seconds": 2764.7888538837433,
+    "outer_stage_wall_seconds": 3600.830220251999,
+    "outer_stage_cpu_seconds": 2478.8917340000003,
+    "outer_stage_cpu_wall_ratio_for_rough_budget_only": 0.6884222755235926,
+    "outer_stage_measurement_status": "measured_incomplete",
+    "cpu_limit": "SQLite calls table contains only wall timestamps; no per-call or per-route CPU split is available.",
+    "gap_limit": "Unattributed inter-call wall may include Python work, instrumentation, scheduler/IO effects, and waiting; it is not asserted to be pure waiting.",
+    "by_method_category_call_wall_seconds": {
+      "G0": {
+        "other": {
+          "count": 6,
+          "finished_count": 6,
+          "wall_seconds": 4.619895696640015
+        },
+        "environment": {
+          "count": 6588,
+          "finished_count": 6588,
+          "wall_seconds": 89.37130165100098
+        },
+        "actor_history_bootstrap": {
+          "count": 13041,
+          "finished_count": 13041,
+          "wall_seconds": 157.36563634872437
+        },
+        "update": {
+          "count": 384,
+          "finished_count": 384,
+          "wall_seconds": 36.813271045684814
+        },
+        "checkpoint": {
+          "count": 3,
+          "finished_count": 3,
+          "wall_seconds": 0.48570680618286133
+        }
+      },
+      "T": {
+        "other": {
+          "count": 6,
+          "finished_count": 6,
+          "wall_seconds": 0.07685446739196777
+        },
+        "environment": {
+          "count": 6588,
+          "finished_count": 6588,
+          "wall_seconds": 111.70835638046265
+        },
+        "actor_history_bootstrap": {
+          "count": 13041,
+          "finished_count": 13041,
+          "wall_seconds": 199.17086935043335
+        },
+        "update": {
+          "count": 384,
+          "finished_count": 384,
+          "wall_seconds": 38.09715485572815
+        },
+        "checkpoint": {
+          "count": 3,
+          "finished_count": 3,
+          "wall_seconds": 0.4890737533569336
+        }
+      },
+      "G1": {
+        "other": {
+          "count": 4,
+          "finished_count": 4,
+          "wall_seconds": 0.0499112606048584
+        },
+        "environment": {
+          "count": 2745,
+          "finished_count": 2745,
+          "wall_seconds": 46.41944718360901
+        },
+        "actor_history_bootstrap": {
+          "count": 5503,
+          "finished_count": 5503,
+          "wall_seconds": 89.00596070289612
+        },
+        "prior": {
+          "count": 2560,
+          "finished_count": 2560,
+          "wall_seconds": 46.969865798950195
+        },
+        "update": {
+          "count": 157,
+          "finished_count": 156,
+          "wall_seconds": 14.627182960510254
+        },
+        "checkpoint": {
+          "count": 1,
+          "finished_count": 1,
+          "wall_seconds": 0.19028162956237793
+        }
+      }
+    },
+    "paired_frozen_world_model_loads_before_policy_route": {
+      "G1:8301": {
+        "world_seed": 8201,
+        "call_count": 1,
+        "wall_seconds": 0.09166526794433594,
+        "occurs_before_policy_route_boundary": true
+      },
+      "G1:8302": {
+        "world_seed": 8202,
+        "call_count": 1,
+        "wall_seconds": 0.018036365509033203,
+        "occurs_before_policy_route_boundary": true
+      },
+      "G1:8303": {
+        "world_seed": 8203,
+        "call_count": 1,
+        "wall_seconds": 0.021854400634765625,
+        "occurs_before_policy_route_boundary": false
+      }
+    },
+    "route_wall_trend": {
+      "G0:8301": {
+        "wall_seconds": 196.3243372440338,
+        "unattributed_intercall_wall_seconds": 107.29955863952637
+      },
+      "G0:8302": {
+        "wall_seconds": 274.74920630455017,
+        "unattributed_intercall_wall_seconds": 176.65482902526855
+      },
+      "G0:8303": {
+        "wall_seconds": 342.34543681144714,
+        "unattributed_intercall_wall_seconds": 240.80878114700317
+      },
+      "T:8301": {
+        "wall_seconds": 431.8676118850708,
+        "unattributed_intercall_wall_seconds": 322.4880509376526
+      },
+      "T:8302": {
+        "wall_seconds": 505.5481593608856,
+        "unattributed_intercall_wall_seconds": 389.23522663116455
+      },
+      "T:8303": {
+        "wall_seconds": 586.7489809989929,
+        "unattributed_intercall_wall_seconds": 462.89916586875916
+      },
+      "G1:8301": {
+        "wall_seconds": 951.7578551769257,
+        "unattributed_intercall_wall_seconds": 793.6924722194672
+      },
+      "G1:8302": {
+        "wall_seconds": 251.60977244377136,
+        "unattributed_intercall_wall_seconds": 212.41250586509705
+      }
+    },
+    "budget_ledger_scan_source_review": {
+      "source_file_sha256": "972e8fe783920e354da6a5d02d454587372c667409c32431c34b1eaa1098cda8",
+      "used_function_line": 168,
+      "call_function_line": 176,
+      "scans_all_calls_in_current_stage": true,
+      "json_decodes_every_scanned_amount_payload": true,
+      "repeats_scan_for_each_charged_resource": true,
+      "scan_occurs_before_started_timestamp_insert": true,
+      "assessment": "A confirmed mechanism consistent with growing inter-call gaps; elapsed gap cannot be wholly attributed to this scan because it has no dedicated timer and includes other Python/runtime/scheduler/I/O work."
+    },
+    "route_timelines": {
+      "G0:8301": {
+        "start_epoch_seconds": 1791114308.138311,
+        "end_epoch_seconds": 1791114504.4626482,
+        "start_utc": "2026-10-04T11:45:08.138311+00:00",
+        "end_utc": "2026-10-04T11:48:24.462648+00:00",
+        "end_boundary": "save_policy_checkpoint.finished",
+        "route_wall_seconds_including_unattributed_gaps": 196.3243372440338,
+        "call_interval_union_seconds": 89.02477860450745,
+        "unattributed_intercall_wall_seconds": 107.29955863952637,
+        "unattributed_gap_is_not_pure_wait_or_cpu": true,
+        "call_categories": {
+          "other": {
+            "calls": 2,
+            "finished_calls": 2,
+            "pending_calls": 0,
+            "wall_seconds": 4.544778108596802
+          },
+          "environment": {
+            "calls": 2194,
+            "finished_calls": 2194,
+            "pending_calls": 0,
+            "wall_seconds": 25.814576148986816
+          },
+          "actor_history_bootstrap": {
+            "calls": 4376,
+            "finished_calls": 4376,
+            "pending_calls": 0,
+            "wall_seconds": 45.00136137008667
+          },
+          "update": {
+            "calls": 128,
+            "finished_calls": 128,
+            "pending_calls": 0,
+            "wall_seconds": 13.417810201644897
+          },
+          "checkpoint": {
+            "calls": 1,
+            "finished_calls": 1,
+            "pending_calls": 0,
+            "wall_seconds": 0.24625277519226074
+          }
+        },
+        "environment_steps": 2048,
+        "ppo_update_calls_started": 128,
+        "ppo_update_calls_finished": 128,
+        "seconds_per_environment_step_including_gaps": 0.09586149279493839,
+        "seconds_per_completed_update_including_gaps": 1.5337838847190142,
+        "seconds_per_started_update_including_gaps": 1.5337838847190142,
+        "checkpoint_saved": true
+      },
+      "G0:8302": {
+        "start_epoch_seconds": 1791114512.547132,
+        "end_epoch_seconds": 1791114787.2963383,
+        "start_utc": "2026-10-04T11:48:32.547132+00:00",
+        "end_utc": "2026-10-04T11:53:07.296338+00:00",
+        "end_boundary": "save_policy_checkpoint.finished",
+        "route_wall_seconds_including_unattributed_gaps": 274.74920630455017,
+        "call_interval_union_seconds": 98.09437727928162,
+        "unattributed_intercall_wall_seconds": 176.65482902526855,
+        "unattributed_gap_is_not_pure_wait_or_cpu": true,
+        "call_categories": {
+          "other": {
+            "calls": 2,
+            "finished_calls": 2,
+            "pending_calls": 0,
+            "wall_seconds": 0.05789589881896973
+          },
+          "environment": {
+            "calls": 2199,
+            "finished_calls": 2199,
+            "pending_calls": 0,
+            "wall_seconds": 30.991143941879272
+          },
+          "actor_history_bootstrap": {
+            "calls": 4333,
+            "finished_calls": 4333,
+            "pending_calls": 0,
+            "wall_seconds": 54.68207001686096
+          },
+          "update": {
+            "calls": 128,
+            "finished_calls": 128,
+            "pending_calls": 0,
+            "wall_seconds": 12.238702774047852
+          },
+          "checkpoint": {
+            "calls": 1,
+            "finished_calls": 1,
+            "pending_calls": 0,
+            "wall_seconds": 0.12456464767456055
+          }
+        },
+        "environment_steps": 2048,
+        "ppo_update_calls_started": 128,
+        "ppo_update_calls_finished": 128,
+        "seconds_per_environment_step_including_gaps": 0.13415488589089364,
+        "seconds_per_completed_update_including_gaps": 2.146478174254298,
+        "seconds_per_started_update_including_gaps": 2.146478174254298,
+        "checkpoint_saved": true
+      },
+      "G0:8303": {
+        "start_epoch_seconds": 1791114794.801227,
+        "end_epoch_seconds": 1791115137.146664,
+        "start_utc": "2026-10-04T11:53:14.801227+00:00",
+        "end_utc": "2026-10-04T11:58:57.146664+00:00",
+        "end_boundary": "save_policy_checkpoint.finished",
+        "route_wall_seconds_including_unattributed_gaps": 342.34543681144714,
+        "call_interval_union_seconds": 101.53665566444397,
+        "unattributed_intercall_wall_seconds": 240.80878114700317,
+        "unattributed_gap_is_not_pure_wait_or_cpu": true,
+        "call_categories": {
+          "other": {
+            "calls": 2,
+            "finished_calls": 2,
+            "pending_calls": 0,
+            "wall_seconds": 0.017221689224243164
+          },
+          "environment": {
+            "calls": 2195,
+            "finished_calls": 2195,
+            "pending_calls": 0,
+            "wall_seconds": 32.56558156013489
+          },
+          "actor_history_bootstrap": {
+            "calls": 4332,
+            "finished_calls": 4332,
+            "pending_calls": 0,
+            "wall_seconds": 57.68220496177673
+          },
+          "update": {
+            "calls": 128,
+            "finished_calls": 128,
+            "pending_calls": 0,
+            "wall_seconds": 11.156758069992065
+          },
+          "checkpoint": {
+            "calls": 1,
+            "finished_calls": 1,
+            "pending_calls": 0,
+            "wall_seconds": 0.11488938331604004
+          }
+        },
+        "environment_steps": 2048,
+        "ppo_update_calls_started": 128,
+        "ppo_update_calls_finished": 128,
+        "seconds_per_environment_step_including_gaps": 0.16716085781808943,
+        "seconds_per_completed_update_including_gaps": 2.674573725089431,
+        "seconds_per_started_update_including_gaps": 2.674573725089431,
+        "checkpoint_saved": true
+      },
+      "T:8301": {
+        "start_epoch_seconds": 1791115144.5202603,
+        "end_epoch_seconds": 1791115576.3878722,
+        "start_utc": "2026-10-04T11:59:04.520260+00:00",
+        "end_utc": "2026-10-04T12:06:16.387872+00:00",
+        "end_boundary": "save_policy_checkpoint.finished",
+        "route_wall_seconds_including_unattributed_gaps": 431.8676118850708,
+        "call_interval_union_seconds": 109.37956094741821,
+        "unattributed_intercall_wall_seconds": 322.4880509376526,
+        "unattributed_gap_is_not_pure_wait_or_cpu": true,
+        "call_categories": {
+          "other": {
+            "calls": 2,
+            "finished_calls": 2,
+            "pending_calls": 0,
+            "wall_seconds": 0.02115321159362793
+          },
+          "environment": {
+            "calls": 2194,
+            "finished_calls": 2194,
+            "pending_calls": 0,
+            "wall_seconds": 34.24845051765442
+          },
+          "actor_history_bootstrap": {
+            "calls": 4376,
+            "finished_calls": 4376,
+            "pending_calls": 0,
+            "wall_seconds": 62.511555194854736
+          },
+          "update": {
+            "calls": 128,
+            "finished_calls": 128,
+            "pending_calls": 0,
+            "wall_seconds": 12.408254623413086
+          },
+          "checkpoint": {
+            "calls": 1,
+            "finished_calls": 1,
+            "pending_calls": 0,
+            "wall_seconds": 0.19014739990234375
+          }
+        },
+        "environment_steps": 2048,
+        "ppo_update_calls_started": 128,
+        "ppo_update_calls_finished": 128,
+        "seconds_per_environment_step_including_gaps": 0.21087285736575723,
+        "seconds_per_completed_update_including_gaps": 3.3739657178521156,
+        "seconds_per_started_update_including_gaps": 3.3739657178521156,
+        "checkpoint_saved": true
+      },
+      "T:8302": {
+        "start_epoch_seconds": 1791115585.2150693,
+        "end_epoch_seconds": 1791116090.7632287,
+        "start_utc": "2026-10-04T12:06:25.215069+00:00",
+        "end_utc": "2026-10-04T12:14:50.763229+00:00",
+        "end_boundary": "save_policy_checkpoint.finished",
+        "route_wall_seconds_including_unattributed_gaps": 505.5481593608856,
+        "call_interval_union_seconds": 116.31293272972107,
+        "unattributed_intercall_wall_seconds": 389.23522663116455,
+        "unattributed_gap_is_not_pure_wait_or_cpu": true,
+        "call_categories": {
+          "other": {
+            "calls": 2,
+            "finished_calls": 2,
+            "pending_calls": 0,
+            "wall_seconds": 0.030096769332885742
+          },
+          "environment": {
+            "calls": 2199,
+            "finished_calls": 2199,
+            "pending_calls": 0,
+            "wall_seconds": 37.53593444824219
+          },
+          "actor_history_bootstrap": {
+            "calls": 4333,
+            "finished_calls": 4333,
+            "pending_calls": 0,
+            "wall_seconds": 66.25794672966003
+          },
+          "update": {
+            "calls": 128,
+            "finished_calls": 128,
+            "pending_calls": 0,
+            "wall_seconds": 12.343685150146484
+          },
+          "checkpoint": {
+            "calls": 1,
+            "finished_calls": 1,
+            "pending_calls": 0,
+            "wall_seconds": 0.14526963233947754
+          }
+        },
+        "environment_steps": 2048,
+        "ppo_update_calls_started": 128,
+        "ppo_update_calls_finished": 128,
+        "seconds_per_environment_step_including_gaps": 0.24684968718793243,
+        "seconds_per_completed_update_including_gaps": 3.949594995006919,
+        "seconds_per_started_update_including_gaps": 3.949594995006919,
+        "checkpoint_saved": true
+      },
+      "T:8303": {
+        "start_epoch_seconds": 1791116100.547799,
+        "end_epoch_seconds": 1791116687.29678,
+        "start_utc": "2026-10-04T12:15:00.547799+00:00",
+        "end_utc": "2026-10-04T12:24:47.296780+00:00",
+        "end_boundary": "save_policy_checkpoint.finished",
+        "route_wall_seconds_including_unattributed_gaps": 586.7489809989929,
+        "call_interval_union_seconds": 123.84981513023376,
+        "unattributed_intercall_wall_seconds": 462.89916586875916,
+        "unattributed_gap_is_not_pure_wait_or_cpu": true,
+        "call_categories": {
+          "other": {
+            "calls": 2,
+            "finished_calls": 2,
+            "pending_calls": 0,
+            "wall_seconds": 0.0256044864654541
+          },
+          "environment": {
+            "calls": 2195,
+            "finished_calls": 2195,
+            "pending_calls": 0,
+            "wall_seconds": 39.92397141456604
+          },
+          "actor_history_bootstrap": {
+            "calls": 4332,
+            "finished_calls": 4332,
+            "pending_calls": 0,
+            "wall_seconds": 70.40136742591858
+          },
+          "update": {
+            "calls": 128,
+            "finished_calls": 128,
+            "pending_calls": 0,
+            "wall_seconds": 13.345215082168579
+          },
+          "checkpoint": {
+            "calls": 1,
+            "finished_calls": 1,
+            "pending_calls": 0,
+            "wall_seconds": 0.1536567211151123
+          }
+        },
+        "environment_steps": 2048,
+        "ppo_update_calls_started": 128,
+        "ppo_update_calls_finished": 128,
+        "seconds_per_environment_step_including_gaps": 0.2864985258784145,
+        "seconds_per_completed_update_including_gaps": 4.583976414054632,
+        "seconds_per_started_update_including_gaps": 4.583976414054632,
+        "checkpoint_saved": true
+      },
+      "G1:8301": {
+        "start_epoch_seconds": 1791116696.6501017,
+        "end_epoch_seconds": 1791117648.4079568,
+        "start_utc": "2026-10-04T12:24:56.650102+00:00",
+        "end_utc": "2026-10-04T12:40:48.407957+00:00",
+        "end_boundary": "save_policy_checkpoint.finished",
+        "route_wall_seconds_including_unattributed_gaps": 951.7578551769257,
+        "call_interval_union_seconds": 158.0653829574585,
+        "unattributed_intercall_wall_seconds": 793.6924722194672,
+        "unattributed_gap_is_not_pure_wait_or_cpu": true,
+        "call_categories": {
+          "other": {
+            "calls": 2,
+            "finished_calls": 2,
+            "pending_calls": 0,
+            "wall_seconds": 0.02441549301147461
+          },
+          "environment": {
+            "calls": 2195,
+            "finished_calls": 2195,
+            "pending_calls": 0,
+            "wall_seconds": 37.47038531303406
+          },
+          "actor_history_bootstrap": {
+            "calls": 4407,
+            "finished_calls": 4407,
+            "pending_calls": 0,
+            "wall_seconds": 71.21804285049438
+          },
+          "prior": {
+            "calls": 2048,
+            "finished_calls": 2048,
+            "pending_calls": 0,
+            "wall_seconds": 37.41414403915405
+          },
+          "update": {
+            "calls": 128,
+            "finished_calls": 128,
+            "pending_calls": 0,
+            "wall_seconds": 11.748113632202148
+          },
+          "checkpoint": {
+            "calls": 1,
+            "finished_calls": 1,
+            "pending_calls": 0,
+            "wall_seconds": 0.19028162956237793
+          }
+        },
+        "environment_steps": 2048,
+        "ppo_update_calls_started": 128,
+        "ppo_update_calls_finished": 128,
+        "seconds_per_environment_step_including_gaps": 0.46472551522310823,
+        "seconds_per_completed_update_including_gaps": 7.435608243569732,
+        "seconds_per_started_update_including_gaps": 7.435608243569732,
+        "checkpoint_saved": true
+      },
+      "G1:8302": {
+        "start_epoch_seconds": 1791117656.7325323,
+        "end_epoch_seconds": 1791117908.3423047,
+        "start_utc": "2026-10-04T12:40:56.732532+00:00",
+        "end_utc": "2026-10-04T12:45:08.342305+00:00",
+        "end_boundary": "latest_started_or_finished_call; no checkpoint boundary",
+        "route_wall_seconds_including_unattributed_gaps": 251.60977244377136,
+        "call_interval_union_seconds": 39.197266578674316,
+        "unattributed_intercall_wall_seconds": 212.41250586509705,
+        "unattributed_gap_is_not_pure_wait_or_cpu": true,
+        "call_categories": {
+          "other": {
+            "calls": 2,
+            "finished_calls": 2,
+            "pending_calls": 0,
+            "wall_seconds": 0.02549576759338379
+          },
+          "environment": {
+            "calls": 550,
+            "finished_calls": 550,
+            "pending_calls": 0,
+            "wall_seconds": 8.949061870574951
+          },
+          "actor_history_bootstrap": {
+            "calls": 1096,
+            "finished_calls": 1096,
+            "pending_calls": 0,
+            "wall_seconds": 17.787917852401733
+          },
+          "prior": {
+            "calls": 512,
+            "finished_calls": 512,
+            "pending_calls": 0,
+            "wall_seconds": 9.555721759796143
+          },
+          "update": {
+            "calls": 29,
+            "finished_calls": 28,
+            "pending_calls": 1,
+            "wall_seconds": 2.8790693283081055
+          }
+        },
+        "environment_steps": 512,
+        "ppo_update_calls_started": 29,
+        "ppo_update_calls_finished": 28,
+        "seconds_per_environment_step_including_gaps": 0.49142533680424094,
+        "seconds_per_completed_update_including_gaps": 8.986063301563263,
+        "seconds_per_started_update_including_gaps": 8.67619904978522,
+        "checkpoint_saved": false
+      }
+    }
+  },
+  "retraining_budget": {
+    "routes": [
+      {
+        "method": "G1",
+        "policy_seed": 8302,
+        "world_seed": 8202,
+        "current_steps": 512,
+        "complete_updates": 28,
+        "pending_updates": 1,
+        "required_action": "restart this 2048-step/128-update route from initialization; no exact mid-route state bundle"
+      },
+      {
+        "method": "G1",
+        "policy_seed": 8303,
+        "world_seed": 8203,
+        "current_steps": 0,
+        "complete_updates": 0,
+        "pending_updates": 0,
+        "required_action": "run this 2048-step/128-update route from initialization"
+      }
+    ],
+    "full_route_steps": 2048,
+    "full_route_updates": 128,
+    "additional_routes": 2,
+    "additional_environment_steps": 4096,
+    "additional_optimizer_updates": 256,
+    "base_wall_estimate_seconds": 2012.878179550171,
+    "observed_slowest_g1_route_wall_seconds_per_step": 0.49142533680424094,
+    "safety_factor": 1.5,
+    "recommended_training_wall_budget_seconds_rounded_up_to_minute": 3060,
+    "cpu_estimate_basis": "estimate only: rounded training wall x incomplete source-stage CPU/wall ratio; no call- or route-level CPU exists",
+    "recommended_training_cpu_budget_seconds_rounded_up_to_minute": 2160,
+    "request_training_stage_caps_seconds": {
+      "wall": 3200,
+      "cpu": 2600
+    },
+    "headroom_to_request_training_caps_seconds": {
+      "wall": 140,
+      "cpu": 440
+    },
+    "fits_recovery_request_training_stage_caps": true,
+    "historical_original_policy_stage_caps_seconds": {
+      "wall": 3600,
+      "cpu": 6000
+    }
+  },
+  "evaluation_budget": {
+    "task_episode_budget": 240,
+    "derivation": "8 parent scenarios x 3 repeats x (3 policy methods x 3 seeds + 1 shared H episode)",
+    "policy_episode_count": 216,
+    "shared_h_episode_count": 24,
+    "max_steps_per_policy_method": 1296,
+    "decision_wall_proxy_by_method": {
+      "G0": {
+        "components": {
+          "g0_policy_encode": {
+            "calls": 6144,
+            "wall_seconds": 74.64837718009949,
+            "mean_wall_ms_per_call": 12.149800973323485
+          },
+          "g0_policy_action_select": {
+            "calls": 6144,
+            "wall_seconds": 74.07387590408325,
+            "mean_wall_ms_per_call": 12.05629490626355
+          }
+        },
+        "all_components_have_equal_call_counts": true,
+        "proxy_wall_ms_per_decision": 24.206095879587036,
+        "proxy_source_limit": "SQLite training component wall times; not an end-to-end task decision timer and no CPU field"
+      },
+      "T": {
+        "components": {
+          "t_policy_encode": {
+            "calls": 6144,
+            "wall_seconds": 93.9554979801178,
+            "mean_wall_ms_per_call": 15.292235999368131
+          },
+          "t_policy_action_select": {
+            "calls": 6144,
+            "wall_seconds": 93.57465267181396,
+            "mean_wall_ms_per_call": 15.230249458303055
+          }
+        },
+        "all_components_have_equal_call_counts": true,
+        "proxy_wall_ms_per_decision": 30.522485457671188,
+        "proxy_source_limit": "SQLite training component wall times; not an end-to-end task decision timer and no CPU field"
+      },
+      "G1": {
+        "components": {
+          "g1_policy_encode": {
+            "calls": 2560,
+            "wall_seconds": 39.976590394973755,
+            "mean_wall_ms_per_call": 15.615855623036623
+          },
+          "g1_candidate_prior_forward": {
+            "calls": 2560,
+            "wall_seconds": 46.969865798950195,
+            "mean_wall_ms_per_call": 18.34760382771492
+          },
+          "g1_policy_action_select": {
+            "calls": 2560,
+            "wall_seconds": 42.988343954086304,
+            "mean_wall_ms_per_call": 16.792321857064962
+          }
+        },
+        "all_components_have_equal_call_counts": true,
+        "proxy_wall_ms_per_decision": 50.755781307816505,
+        "proxy_source_limit": "SQLite training component wall times; not an end-to-end task decision timer and no CPU field"
+      }
+    },
+    "estimated_decision_component_wall_seconds_all_policy_methods_at_max_steps": 136.70773398801686,
+    "planned_wall_budget_seconds": 1200,
+    "planned_cpu_budget_seconds": 1600,
+    "proxy_limit_status": "component-only lower-bound proxy; excludes H decision timing, environment, feature/transparent scoring, ledger, logging, and stage overhead; does not establish that the requested cap is sufficient",
+    "cpu_note": "The task request remains 1600 CPU seconds; training/evaluation SQLite decision timings are wall-only and cannot recalibrate CPU.",
+    "budget_note": "240 episodes are task confirmation, separate from the two G1 policy retraining routes. They must run once after all nine policy routes are available; this audit does not execute them."
+  },
+  "status_evidence": {
+    "run_status": "technical_stop",
+    "run_settlement_status": "incomplete",
+    "worker_final_settlement_missing": true,
+    "settlement_status": "incomplete",
+    "worker_returncode": -15
+  },
+  "torch_imported_by_audit": false
+}

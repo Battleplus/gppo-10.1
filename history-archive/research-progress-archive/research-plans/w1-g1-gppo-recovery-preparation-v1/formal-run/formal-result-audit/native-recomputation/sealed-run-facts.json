@@ -1,0 +1,109 @@
+{
+  "attempt": "w1-g1-gppo-recovery-v1-once",
+  "audit_environment_calls": 0,
+  "audit_model_forwards": 0,
+  "audit_model_initializations": 0,
+  "audit_utc": "2026-10-05T00:49:55.842343+00:00",
+  "checkpoint_complete_count": 9,
+  "decision_cost_records": 3352,
+  "first_error": null,
+  "frozen_inputs_unchanged": true,
+  "gates": {
+    "cost_gate": {
+      "G1_only": {
+        "active_decision_count": 693,
+        "cpu_mean_ms": 51.07337600296035,
+        "sample_count": 1014,
+        "status": "evaluated",
+        "wall_p95_ms": 150.7048269850202,
+        "world_model_forwards": 1014
+      },
+      "pass": false,
+      "status": "evaluated"
+    },
+    "research_success": false,
+    "status": "task_gain_gate_stop",
+    "task_gate": {
+      "checks": {
+        "G1_vs_G0": false,
+        "G1_vs_H": false,
+        "G1_vs_T": false,
+        "coverage": true,
+        "parent_bootstrap": false,
+        "parent_stability": false,
+        "seed_stability": false
+      },
+      "pass": false
+    }
+  },
+  "launch_exit_code": 0,
+  "metrics_recomputed_and_matched": true,
+  "new_training_checkpoint_count": 2,
+  "reused_checkpoint_count": 7,
+  "task_episode_records": 240,
+  "torch_imported": false,
+  "verified_export_payload_count": 35,
+  "worker_status": {
+    "attempt": "w1-g1-gppo-recovery-v1-once",
+    "automatic_retry": false,
+    "checkpoint_loaded": true,
+    "cost_gate": {
+      "G1_only": {
+        "active_decision_count": 693,
+        "cpu_mean_ms": 51.07337600296035,
+        "sample_count": 1014,
+        "status": "evaluated",
+        "wall_p95_ms": 150.7048269850202,
+        "world_model_forwards": 1014
+      },
+      "pass": false,
+      "status": "evaluated"
+    },
+    "environment_constructed": true,
+    "environment_construction_attempts": 538,
+    "environment_construction_status": "constructed",
+    "environment_construction_successes": 538,
+    "learning_call_evidence": {
+      "complete": {
+        "actor_sample_evaluations": 23586,
+        "checkpoint_loads": 15,
+        "checkpoint_writes": 2,
+        "encode_sample_evaluations": 23966,
+        "environment_steps": 7448,
+        "model_initializations_or_loads": 17,
+        "policy_backward_calls": 256,
+        "policy_optimizer_updates": 256,
+        "public_rule_decisions": 304,
+        "resets_upper": 538,
+        "task_comparison_calls": 1,
+        "task_episodes": 240,
+        "world_batch_forwards": 5110,
+        "world_sample_evaluations": 17202
+      },
+      "failed": {},
+      "pending": {}
+    },
+    "model_initialized": true,
+    "policy_training_started": true,
+    "research_success": false,
+    "schema": "w1-g1-gppo-task-validation-status/1.0.0",
+    "settlement_status": "task_gain_gate_stop",
+    "stage": "complete",
+    "status": "task_gain_gate_stop",
+    "task_comparison_executed": true,
+    "task_gate": {
+      "checks": {
+        "G1_vs_G0": false,
+        "G1_vs_H": false,
+        "G1_vs_T": false,
+        "coverage": true,
+        "parent_bootstrap": false,
+        "parent_stability": false,
+        "seed_stability": false
+      },
+      "pass": false
+    },
+    "training_started": true,
+    "world_training_started": false
+  }
+}

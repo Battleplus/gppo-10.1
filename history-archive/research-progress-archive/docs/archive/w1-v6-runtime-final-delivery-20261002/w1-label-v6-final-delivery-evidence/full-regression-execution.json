@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "wsl.exe",
+    "--distribution",
+    "Ubuntu-24.04",
+    "--exec",
+    "/home/asus/w1-action-relative-auxiliary-runtime-dependency-repair-v1-runtime/bin/python",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    ".",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "cwd": "E:\\Z博士\\research-plans\\w1-action-conditioned-task-outcome-label-repair-v6-dependency-cpu-settlement",
+  "exit_code": 0
+}

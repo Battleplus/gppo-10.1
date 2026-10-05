@@ -1,0 +1,123 @@
+{
+  "call_resources": {
+    "actor_sample_evaluations": {
+      "cumulative_upper_with_old_recorded_reserved": 102727,
+      "new_cap": 28464,
+      "old_reserved_including_unknown_pending": 74263
+    },
+    "checkpoint_loads": {
+      "cumulative_upper_with_old_recorded_reserved": 18,
+      "new_cap": 15,
+      "old_reserved_including_unknown_pending": 3
+    },
+    "checkpoint_writes": {
+      "cumulative_upper_with_old_recorded_reserved": 9,
+      "new_cap": 2,
+      "old_reserved_including_unknown_pending": 7
+    },
+    "encode_sample_evaluations": {
+      "cumulative_upper_with_old_recorded_reserved": 104186,
+      "new_cap": 28464,
+      "old_reserved_including_unknown_pending": 75722
+    },
+    "environment_steps": {
+      "cumulative_upper_with_old_recorded_reserved": 23264,
+      "new_cap": 8416,
+      "old_reserved_including_unknown_pending": 14848
+    },
+    "model_initializations_or_loads": {
+      "cumulative_upper_with_old_recorded_reserved": 28,
+      "new_cap": 17,
+      "old_reserved_including_unknown_pending": 11
+    },
+    "new_world_data_collection_steps": {
+      "cumulative_upper_with_old_recorded_reserved": 0,
+      "new_cap": 0,
+      "old_reserved_including_unknown_pending": 0
+    },
+    "policy_backward_calls": {
+      "cumulative_upper_with_old_recorded_reserved": 1181,
+      "new_cap": 256,
+      "old_reserved_including_unknown_pending": 925
+    },
+    "policy_optimizer_updates": {
+      "cumulative_upper_with_old_recorded_reserved": 1181,
+      "new_cap": 256,
+      "old_reserved_including_unknown_pending": 925
+    },
+    "public_rule_decisions": {
+      "cumulative_upper_with_old_recorded_reserved": 432,
+      "new_cap": 432,
+      "old_reserved_including_unknown_pending": 0
+    },
+    "resets_upper": {
+      "cumulative_upper_with_old_recorded_reserved": 5411,
+      "new_cap": 4338,
+      "old_reserved_including_unknown_pending": 1073
+    },
+    "task_comparison_calls": {
+      "cumulative_upper_with_old_recorded_reserved": 1,
+      "new_cap": 1,
+      "old_reserved_including_unknown_pending": 0
+    },
+    "task_episodes": {
+      "cumulative_upper_with_old_recorded_reserved": 240,
+      "new_cap": 240,
+      "old_reserved_including_unknown_pending": 0
+    },
+    "world_backward_calls": {
+      "cumulative_upper_with_old_recorded_reserved": 0,
+      "new_cap": 0,
+      "old_reserved_including_unknown_pending": 0
+    },
+    "world_batch_forwards": {
+      "cumulative_upper_with_old_recorded_reserved": 7952,
+      "new_cap": 5392,
+      "old_reserved_including_unknown_pending": 2560
+    },
+    "world_model_training_updates": {
+      "cumulative_upper_with_old_recorded_reserved": 0,
+      "new_cap": 0,
+      "old_reserved_including_unknown_pending": 0
+    },
+    "world_optimizer_updates": {
+      "cumulative_upper_with_old_recorded_reserved": 0,
+      "new_cap": 0,
+      "old_reserved_including_unknown_pending": 0
+    },
+    "world_sample_evaluations": {
+      "cumulative_upper_with_old_recorded_reserved": 143295,
+      "new_cap": 134800,
+      "old_reserved_including_unknown_pending": 8495
+    }
+  },
+  "cpu_gaps": [
+    "Windows WSL bridge CPU not measured",
+    "controller final write and exit tail not measured",
+    "CPU polled; no delegated cgroup hard enforcement"
+  ],
+  "cumulative_completed_updates_if_success": 1180,
+  "cumulative_measured_old_wall_plus_new_cap": 8299.3990414,
+  "cumulative_measured_scope_old_cpu_plus_new_cap": 6889.067967,
+  "cumulative_reserved_updates_upper": 1181,
+  "cumulative_steps_upper": 23264,
+  "extra_steps_due_to_unrecoverable_partial_route": 512,
+  "full_resource_acceptance": false,
+  "historical_storage_preserved_separately": true,
+  "new_authorization_required": true,
+  "new_cpu_cap": 4390,
+  "new_environment_steps_cap": 8416,
+  "new_updates_cap": 256,
+  "new_wall_cap": 4670,
+  "old_completed_steps": 14848,
+  "old_completed_updates": 924,
+  "old_native_inclusive_cpu_seconds": 2499.036717,
+  "old_unknown_pending_updates": 1,
+  "old_windows_launch_wall_seconds": 3629.3990414,
+  "old_windows_self_cpu_seconds": 0.03125,
+  "original_environment_step_cap": 22752,
+  "peak_memory_storage_not_additive_over_time": true,
+  "previous_authorization_or_token_transfer": false,
+  "proposed_attempt": "w1-g1-gppo-recovery-v1-once",
+  "source_attempt": "w1-g1-gppo-phase-accounting-repair-v1-once"
+}

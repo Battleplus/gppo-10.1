@@ -1,0 +1,25 @@
+{
+  "schema": "w1-remote-runtime-audit-binding/1.0.0",
+  "scope": "future-audit-only",
+  "runtime_package": "../../w1-remote-runtime-dependency-repair-v1",
+  "runtime_identity_file": "runtime-identity-v2.json",
+  "runtime_identity_sha256": "af32685059d7c3107ab6d0d2f34bc0e9e71c118ec8179d394a216798d7b62cb1",
+  "delivery_hashes_file": "delivery-hashes.json",
+  "delivery_hashes_sha256": "d5ff5bfffa37934dd96b55fb32d407e817bfbb95a9d38ff4d66d7945a07194d6",
+  "readonly_preflight_evidence": {
+    "file": "final-remote-preflight-summary.json",
+    "sha256": "d53a04fc43d3024fa3a18cca1a23ca055e95217aec920c69319000dc59b3a76e",
+    "exit_code": 0,
+    "status": "pass",
+    "local_remote_file_identity_equal": true,
+    "before_after_file_identity_equal": true,
+    "file_count_including_outer_manifest": 27,
+    "runtime_identity_only": true,
+    "torch_imported": false,
+    "staging_started": false,
+    "worker_started": false,
+    "formal_attempt_created": false,
+    "training_authorization": false,
+    "exclusive_resource_allocation_proven": false
+  }
+}

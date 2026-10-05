@@ -1,0 +1,8 @@
+{
+  "checkpoint_loads": 0,
+  "environment_steps": 0,
+  "exit_code": 0,
+  "model_forwards": 0,
+  "models_initialized": 0,
+  "scope": "stdlib contract and production checkpoint-merger tests; non-model files for the two new checkpoint identities"
+}

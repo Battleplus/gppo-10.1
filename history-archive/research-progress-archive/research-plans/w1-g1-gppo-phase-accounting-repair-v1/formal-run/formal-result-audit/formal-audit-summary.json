@@ -1,0 +1,86 @@
+{
+  "attempt": "w1-g1-gppo-phase-accounting-repair-v1-once",
+  "audit_cpu_scope": "separate post-run offline verification, not nested study CPU",
+  "audit_self_cpu_seconds": 0.484375,
+  "audit_wall_seconds": 0.47980689999531023,
+  "export_mismatches": [],
+  "frozen_mismatches": [],
+  "full_resource_acceptance": false,
+  "launch": {
+    "attempt": "w1-g1-gppo-phase-accounting-repair-v1-once",
+    "automatic_retry": false,
+    "command": [
+      "wsl",
+      "-d",
+      "Ubuntu-24.04",
+      "--",
+      "env",
+      "-u",
+      "LD_LIBRARY_PATH",
+      "-u",
+      "LD_PRELOAD",
+      "-u",
+      "PYTHONPATH",
+      "-u",
+      "PYTHONHOME",
+      "PYTHONNOUSERSITE=1",
+      "CUDA_VISIBLE_DEVICES=",
+      "OMP_NUM_THREADS=1",
+      "MKL_NUM_THREADS=1",
+      "OPENBLAS_NUM_THREADS=1",
+      "/home/asus/.venvs/w1-light-repaired-fair-rerun-py31116/bin/python",
+      "-I",
+      "-B",
+      "-X",
+      "pycache_prefix=/home/asus/.venvs/w1-light-repaired-fair-rerun-py31116/.w1-no-bytecode-cache",
+      "/mnt/e/Z博士/research-plans/w1-g1-gppo-phase-accounting-repair-v1/package/local_pipeline_controller.py"
+    ],
+    "error": null,
+    "exit_code": 1,
+    "frozen_contents_unchanged": true,
+    "full_resource_acceptance": false,
+    "measured_wall_pass": true,
+    "resource_gaps": [
+      "WSL bridge CPU and cross-clock reconciliation unmeasured"
+    ],
+    "wall_seconds": 3629.3990414,
+    "windows_controller_cpu_seconds": 0.03125,
+    "windows_cpu_reserve_pass": true
+  },
+  "native_controller": {
+    "active_native_bytes": 101491683,
+    "attempt": "w1-g1-gppo-phase-accounting-repair-v1-once",
+    "automatic_retry": false,
+    "controller_phases": [
+      {
+        "cpu_seconds": 5.480901,
+        "stage": "staging_and_zero_step_gate",
+        "wall_seconds": 11.5225218150008
+      },
+      {
+        "cpu_seconds": 1.0303549999998722,
+        "stage": "settlement_and_verified_export",
+        "wall_seconds": 6.047349557004054
+      }
+    ],
+    "cpu_no_double_count": "controller SELF + kernel waited CHILDREN; nested supervisor/worker totals reported only, not added",
+    "error": null,
+    "exit_code": 1,
+    "full_resource_acceptance": false,
+    "measured_controller_limits_pass": true,
+    "native_cpu_cap_excluding_windows_reserve": 7760,
+    "resource_gaps": [
+      "Windows WSL bridge CPU not measured",
+      "controller final write and exit tail not measured",
+      "CPU polled; no delegated cgroup hard enforcement"
+    ],
+    "self_cpu_seconds": 6.553573,
+    "self_plus_waited_cpu_seconds": 2499.036717,
+    "verified_export": "/mnt/e/Z博士/research-plans/w1-g1-gppo-phase-accounting-repair-v1/verified-export",
+    "verified_export_bytes": 88338076,
+    "waited_children_cpu_seconds": 2492.483144,
+    "wall_seconds": 3628.6199061640073
+  },
+  "task_evaluation": "未评价或未完成；保留首次失败，不补造结果",
+  "verified_export_files": 28
+}

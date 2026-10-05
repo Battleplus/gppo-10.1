@@ -1,0 +1,53 @@
+{
+  "checkpoints_not_uploaded": true,
+  "file_sha256": {
+    "RECOVERY_DELIVERY.md": "a27d9d9a12431eb06e739c4aa2af839e8f651d706eaa45c3aba6f123454b691c",
+    "audit/audit_recovery.py": "d4dc216d7b4d445036fa7f77135472df133ddeff9cdfb97f005278c72ca7f188",
+    "audit/dispatch-without-models.json": "56c4cb65bfaeeffbebe12658a386acceb88aec8733ac9fd9b99348adccf6a32c",
+    "audit/final-contract-tests.json": "ff946937df834a9daf70cdeac7648fea39a4b3d660be19e8b2d0f10820933e72",
+    "audit/final-delivery-verification.json": "1bbd4b0ec1b8f3e368a38e5d9eb08058ee1ce4bab6c70ce858c5fdd3de97a14e",
+    "audit/final-dispatch-without-models.invocation.json": "1640a7d440b963b6dbb3cd367e5dc0126f9f37089b424cbfc9e31e4cf0fb28ea",
+    "audit/final-frozen-input-hashes.json": "a7ffe61bcfe66db6c77c2407d2791c8609fd5b7a5da12f744ee3f30289188c74",
+    "audit/final-windows-readonly-preflight.invocation.json": "8c8c65b5517fe9d05df6c4526ed89ff32bf163a65dc3dc6777c2bd5ab0e66f4c",
+    "audit/final-wsl-source-readonly-preflight.invocation.json": "b504dd70e08bf9a5ab94d0a08b24ec339850bb30f3fb416af54524bcc217fc86",
+    "audit/native-unused-check.invocation.json": "56bb3aef907e2900d587a2dd1011c1cb81a5d2a529c4fecac44b13ab10c84233",
+    "audit/recovery-audit.json": "bf4abf6af64555266baa698667d33f61df4dd07e0f21bbcfd7d5c21fc65ff540",
+    "audit/recovery-audit.zh-CN.md": "1b2053e33bfbcd7cf742ae2e50f575398877c5f7a86b7d6fe9ec87c52d9c0856",
+    "audit/recovery-budget-basis-erratum.zh-CN.md": "5a664324b56f6d176b831ab5666bee546dae6d3911941a92c8a1c6405a4b0c03",
+    "audit/recovery-implementation.patch": "c3db99bdfb3c4a9326045528bcfd74f110898bc4280edcf37c2aad44e4e914b3",
+    "audit/recovery-independent-review.json": "314d535932929aa69541c253fb18fd186542c17142b968ac8c431f1d1fcd44bd",
+    "audit/recovery-independent-review.zh-CN.md": "6ef10604e6535eba1d97590944acddcf9a26402da9fb062b229557d5a07164d0",
+    "audit/recovery-invariants.json": "a3c57c2561c8db99d00b869ce4fd8da82168fb3d86b832ada4a3d5718a038285",
+    "audit/training-time-breakdown.md": "efb3fe6d5ed41d9a88ccf2b6300a17497ae1b83e671b7512ebb606f78a84f0ce",
+    "audit/wsl-no-model-tests.exit.json": "baf2a51afa18817f75efd6e083fa92404c77b7f96b8d1edcfe3922f43c7dc610",
+    "frozen-identity.json": "54200db3de1f5b92218e09e9525c6fdfd0f5cf42dc453fccaaf1cd8ad694ef1f",
+    "package/README.md": "8c56644fc2e14c00873735afbff3bcc520c85d84c17f025c11df09bb5b87f408",
+    "package/RECOVERY_PROTOCOL.md": "bfd02ebf478cdab357240c1ac9ce268056376fc073e6f533f3d16730db34f43e",
+    "package/RESOURCE_REQUEST.json": "7f62d4f5d09c935e0e13241e7468097d9f0f54b9a1e245e060a74d379491168d",
+    "package/cumulative-resource-contract.json": "1c30aee71c4e4df56009293e481bef8941029e546270e625384e703bfabb479e",
+    "package/execution-manifest.json": "71b86783224b00f5295778aa39c6880cda9a37d9113f2a7b2941446507d68d33",
+    "package/experiment-matrix.json": "164d6edacf00a094be2d7df633891e09127c6ea8c4012b83a393fd9d07b26c2c",
+    "package/hashes.json": "c7970d39e7aab5b43fe36512afb8cf73e008a26fa9b27e6bd36dae422d480b5f",
+    "package/launch-contract.json": "195a1bb5b543f1ce6d4718173f1bb3ccd2f3815acfcce252072afca5ac4c201b",
+    "package/parent-split.json": "9a8c80ceed0bc43b28b1a4f6a7a675456cc80892ba443fd0b8277b23af3f88c0",
+    "package/production_policy.py": "ea95c520e3a0fb5d409850ca5a0756d26724107e8db984a0849179d1e5789566",
+    "package/recovery_contract.py": "81fa63f134a39eb04bf9c3b21fc5d717af4200157a45d25ffcc1a9cc50c921ca",
+    "package/runtime_hooks.py": "205d04b909c9200886c39e2fa03a3447f4d2510e170cf404783df04b1b97c43a",
+    "package/task_contract.py": "c35592bf53b4b033910e26be8fb4fd64242899b1e231231156dba57040f83441",
+    "package/task_pipeline.py": "acc4b9186ac5f57581df964483484567db19d8bf275c012540563e315044dde3",
+    "package/test_recovery_contract.py": "51e096f193065b72a66c558573a0c76cbca0e2d81e9733622e86ebdd81f62243",
+    "package/unique-launch-command.md": "86175c1953e0872393166a862a7b458c85e6a6b31bd5b8cce0a3a2ed43f90760",
+    "preparation-source-invariants.json": "c3cea252c9e8c74bf033dc2498c0f74bb2d4f43c7dca1b7f4aec07135a300148"
+  },
+  "large_artifacts_omitted": {
+    "package/recovery-contract.json": {
+      "bytes": 6275582,
+      "reason": "large raw-derived audit; retained in complete local archive",
+      "sha256": "3eaa943f50d7aabe94129ea08ae21c43327c589922d17a9efa2db85f54df5b9f"
+    }
+  },
+  "local_complete_frozen_archive": "E:\\Z博士\\research-plans\\w1-g1-gppo-recovery-preparation-v1\\frozen-archive",
+  "secrets_not_uploaded": true,
+  "small_artifacts_only": true,
+  "sqlite_not_uploaded": true
+}

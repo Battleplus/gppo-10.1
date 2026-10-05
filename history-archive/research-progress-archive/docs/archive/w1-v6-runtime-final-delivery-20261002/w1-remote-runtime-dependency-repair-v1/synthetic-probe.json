@@ -1,0 +1,212 @@
+{
+  "checkpoint_reads": 0,
+  "checkpoint_writes": 0,
+  "cuda_available": true,
+  "devices": [
+    {
+      "capability": [
+        7,
+        5
+      ],
+      "free_bytes_before_probe": 10731913216,
+      "index": 0,
+      "name": "NVIDIA GeForce RTX 2080 Ti",
+      "total_bytes": 11546394624
+    },
+    {
+      "capability": [
+        7,
+        5
+      ],
+      "free_bytes_before_probe": 11358109696,
+      "index": 1,
+      "name": "NVIDIA GeForce RTX 2080 Ti",
+      "total_bytes": 11544035328
+    }
+  ],
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": null,
+    "LD_LIBRARY_PATH": null,
+    "LD_PRELOAD": null,
+    "PYTHONHOME": null,
+    "PYTHONNOUSERSITE": "1",
+    "PYTHONPATH": null
+  },
+  "formal_attempt_created": false,
+  "installed_distribution_identities": {
+    "Jinja2": {
+      "record_sha256": "9b5a86efc4f4a4d9fce05c6586c1d7d36358add798cfd99135247a2e4908ab09",
+      "version": "3.1.6"
+    },
+    "MarkupSafe": {
+      "record_sha256": "e4b9ef2a396d23539ec5695a589216366d63053a5f3971325a8fa6881f49c91f",
+      "version": "3.0.3"
+    },
+    "filelock": {
+      "record_sha256": "6a979fa0763c35d8fc614ebca027de9f665fbfc4a9bf3e8214cb633e3ef7fc06",
+      "version": "3.32.3"
+    },
+    "fsspec": {
+      "record_sha256": "eda3028cbb124322c8d7cd103470d6bbfbc0018d85393a970076df503bd16803",
+      "version": "2026.7.0"
+    },
+    "mpmath": {
+      "record_sha256": "205c72eaa5058bc221713222d6533b28218df8104321e6fb945137b639a06527",
+      "version": "1.3.0"
+    },
+    "networkx": {
+      "record_sha256": "441c9c9d2aeac36e6e07f100f389b7b266d885482602bdda189ea2463353299f",
+      "version": "3.4.2"
+    },
+    "numpy": {
+      "record_sha256": "0d9c33d6c9a806b9b7c3efd34921eeb9a99ed7f6b7a02696e520fd57d1f7e2f3",
+      "version": "1.26.4"
+    },
+    "nvidia-cublas-cu12": {
+      "record_sha256": "b40b51b94e203bb1ecf8d18169b4e9a9dbaafaac26e0902706d2c604a3890920",
+      "version": "12.1.3.1"
+    },
+    "nvidia-cuda-cupti-cu12": {
+      "record_sha256": "b9fe1a8b4362c3705d740e7294eba791937187c1893757021e760e422ca3f8df",
+      "version": "12.1.105"
+    },
+    "nvidia-cuda-nvrtc-cu12": {
+      "record_sha256": "a69af8206d04c879998e05108c6f233922e62f27f440e7645b3837cc763fdb63",
+      "version": "12.1.105"
+    },
+    "nvidia-cuda-runtime-cu12": {
+      "record_sha256": "aec72f6b14530b9036d793d3937272e4198d4fb60db61177c0b457b834c31157",
+      "version": "12.1.105"
+    },
+    "nvidia-cudnn-cu12": {
+      "record_sha256": "ee612ae4ce09ab6b6796e577ab8ce406c6af28ff92886817da8c9aef83478bc0",
+      "version": "9.1.0.70"
+    },
+    "nvidia-cufft-cu12": {
+      "record_sha256": "6bf35fd0deaa0a3943083682be181a0f8e39f7b455a8dcd8be96c43e4b3ecafb",
+      "version": "11.0.2.54"
+    },
+    "nvidia-curand-cu12": {
+      "record_sha256": "7d2b09179f0ddaa6c05be8af24a728e960f9fa8fda7b96ee05410e4dc1411bfd",
+      "version": "10.3.2.106"
+    },
+    "nvidia-cusolver-cu12": {
+      "record_sha256": "ba98c8982fc706af887796d4e9fbdccc7eeca383c72c0e810f51b45dde8b0e9d",
+      "version": "11.4.5.107"
+    },
+    "nvidia-cusparse-cu12": {
+      "record_sha256": "c5113c921c0b8dbebdc7ac63ecac698236eb6ba67f5ba52ac590ab2cb8e7a35a",
+      "version": "12.1.0.106"
+    },
+    "nvidia-nccl-cu12": {
+      "record_sha256": "83fef63acaf9d857aedd63fadfb365d38ab11e6212118d6d9b18ccf2ea1b1852",
+      "version": "2.21.5"
+    },
+    "nvidia-nvjitlink-cu12": {
+      "record_sha256": "436938f9cb6bb1384566740a6a0c4a3dfa9ae0e4345c44762f3ce2a6e439260d",
+      "version": "12.1.105"
+    },
+    "nvidia-nvtx-cu12": {
+      "record_sha256": "5fbb0514e35cb81072b22f1352088e6bb43450860b885bba74609a028287b463",
+      "version": "12.1.105"
+    },
+    "pip": {
+      "record_sha256": "21e087dc49498ba060c84745cf0082df425c3b200d5826d18bcac76f568cfcbb",
+      "version": "22.0.2"
+    },
+    "setuptools": {
+      "record_sha256": "50cdf118076dc2915d3f3c1c3b06af7a1d37e86c5763bd66c1cb7796d19f94d5",
+      "version": "59.6.0"
+    },
+    "sympy": {
+      "record_sha256": "0efeaa31dba1f4994d6e2a1bf2cf43176ba85279cec726dfe568fa93d3a4d65b",
+      "version": "1.13.1"
+    },
+    "torch": {
+      "record_sha256": "dbed98e3dcee8d6419e18c3b7f3395a1f57c078845f0fee9e21284e7cca4a0fe",
+      "version": "2.5.1+cu121"
+    },
+    "triton": {
+      "record_sha256": "9dc0fa690da07b67ce62dd70a356d8ab140da5409fdee0bc1948df38852c7dd8",
+      "version": "3.1.0"
+    },
+    "typing_extensions": {
+      "record_sha256": "64951562feccc6ed53bc5bab5a8a471e7bff2fa704eb84308e1bcb5255f4121d",
+      "version": "4.16.0"
+    }
+  },
+  "loaded_cuda_libraries": [
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cublas/lib/libcublas.so.12",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cublas/lib/libcublasLt.so.12",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cuda_runtime/lib/libcudart.so.12",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cudnn/lib/libcudnn.so.9",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cudnn/lib/libcudnn_graph.so.9",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cusparse/lib/libcusparse.so.12",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/nvjitlink/lib/libnvJitLink.so.12",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/torch/lib/libcusparseLt-f80c68d1.so.0",
+    "/usr/lib/x86_64-linux-gnu/libcuda.so.535.161.08"
+  ],
+  "max_rss_kib": 839416,
+  "model_forwards": 0,
+  "model_initializations": 0,
+  "numpy_path": "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/numpy/__init__.py",
+  "numpy_version": "1.26.4",
+  "nvidia_smi": "0, GPU-cd03c61b-a80e-2539-8a8a-88b3b53c2030, NVIDIA GeForce RTX 2080 Ti, 535.161.08, 11264 MiB, 832 MiB\n1, GPU-7b708ead-e044-6ce7-a530-6b3093ac905e, NVIDIA GeForce RTX 2080 Ti, 535.161.08, 11264 MiB, 241 MiB\n",
+  "process_cpu_seconds": 1.745344719,
+  "python_base_prefix": "/usr",
+  "python_binary_sha256": "caec073da847da0ba8e22059a61a877b38b25e0454c2d83520dea2b25c88bbec",
+  "python_executable": "/home/user1/.venvs/w1-runtime-v1/bin/python",
+  "python_path": [
+    "/usr/lib/python310.zip",
+    "/usr/lib/python3.10",
+    "/usr/lib/python3.10/lib-dynload",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages",
+    "/tmp/tmpfq21i1ji"
+  ],
+  "python_prefix": "/home/user1/.venvs/w1-runtime-v1",
+  "python_version": "3.10.12",
+  "requirements_lock_sha256": "d645d8db4f408bdd851bcb81254bc17e37347f8266bf6ac06df789c3adfcf50d",
+  "research_data_read": false,
+  "runtime_probe_sha256": "e9daeeedb9fa27149bcaf7ae67ef0ce77ae7c78ea1c481e94df97c235a38d39c",
+  "schema": "w1-remote-runtime-synthetic-probe/1.0.0",
+  "status": "pass",
+  "synthetic_counts": {
+    "backwards": 1,
+    "optimizer_initializations": 1,
+    "optimizer_updates": 1,
+    "tensor_forward_checks": 3
+  },
+  "tensor_checks": [
+    {
+      "checksum": 3680.0,
+      "device": "cpu",
+      "shape": [
+        4,
+        4
+      ]
+    },
+    {
+      "checksum": 3680.0,
+      "device": "cuda:0",
+      "shape": [
+        4,
+        4
+      ]
+    },
+    {
+      "backward_and_update": "pass",
+      "checksum": 3680.0,
+      "device": "cuda:1",
+      "shape": [
+        4,
+        4
+      ]
+    }
+  ],
+  "torch_build": "PyTorch built with:\n  - GCC 9.3\n  - C++ Version: 201703\n  - Intel(R) oneAPI Math Kernel Library Version 2024.2-Product Build 20240605 for Intel(R) 64 architecture applications\n  - Intel(R) MKL-DNN v3.5.3 (Git Hash 66f0cb9eb66affd2da3bf5f8d897376f04aae6af)\n  - OpenMP 201511 (a.k.a. OpenMP 4.5)\n  - LAPACK is enabled (usually provided by MKL)\n  - NNPACK is enabled\n  - CPU capability usage: AVX2\n  - CUDA Runtime 12.1\n  - NVCC architecture flags: -gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_70,code=sm_70;-gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_80,code=sm_80;-gencode;arch=compute_86,code=sm_86;-gencode;arch=compute_90,code=sm_90\n  - CuDNN 90.1  (built against CUDA 12.4)\n  - Magma 2.6.1\n  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, CUDA_VERSION=12.1, CUDNN_VERSION=9.1.0, CXX_COMPILER=/opt/rh/devtoolset-9/root/usr/bin/c++, CXX_FLAGS= -D_GLIBCXX_USE_CXX11_ABI=0 -fabi-version=11 -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -DNDEBUG -DUSE_KINETO -DLIBKINETO_NOROCTRACER -DLIBKINETO_NOXPUPTI=ON -DUSE_FBGEMM -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -DSYMBOLICATE_MOBILE_DEBUG_HANDLE -O2 -fPIC -Wall -Wextra -Werror=return-type -Werror=non-virtual-dtor -Werror=bool-operation -Wnarrowing -Wno-missing-field-initializers -Wno-type-limits -Wno-array-bounds -Wno-unknown-pragmas -Wno-unused-parameter -Wno-strict-overflow -Wno-strict-aliasing -Wno-stringop-overflow -Wsuggest-override -Wno-psabi -Wno-error=old-style-cast -Wno-missing-braces -fdiagnostics-color=always -faligned-new -Wno-unused-but-set-variable -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, TORCH_VERSION=2.5.1, USE_CUDA=ON, USE_CUDNN=ON, USE_CUSPARSELT=1, USE_EXCEPTION_PTR=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_GLOO=ON, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=1, USE_NNPACK=ON, USE_OPENMP=ON, USE_ROCM=OFF, USE_ROCM_KERNEL_ASSERT=OFF, \n",
+  "torch_cuda_version": "12.1",
+  "torch_path": "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/torch/__init__.py",
+  "torch_version": "2.5.1+cu121",
+  "utc_started": "2026-10-02T02:37:43Z",
+  "wall_seconds": 2.1142387751024216
+}

@@ -1,0 +1,10 @@
+{
+  "checkpoint_bytes_copied": 7,
+  "environment_steps": 0,
+  "models_initialized": 0,
+  "new_attempt_created": false,
+  "old_authorization_not_copied": true,
+  "old_export_hashes_match": true,
+  "old_frozen_files_unchanged": true,
+  "torch_load_calls": 0
+}

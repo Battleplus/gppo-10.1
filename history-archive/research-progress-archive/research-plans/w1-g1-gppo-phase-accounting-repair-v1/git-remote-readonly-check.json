@@ -1,0 +1,14 @@
+{
+  "command": ["git", "-C", "E:\\Z博士\\research-progress-archive", "ls-remote", "--heads", "origin"],
+  "exit_code": null,
+  "status": "timeout",
+  "timeout_seconds": 25,
+  "exception_type": "subprocess.TimeoutExpired",
+  "error": "Command timed out after 25 seconds; no remote refs were verified in this check",
+  "signed_commit_created": false,
+  "remote_archive_verified": false,
+  "remote_state": "unverified",
+  "signing_required": true,
+  "ssh_agent_status": "Stopped",
+  "signature_requirement_disabled": false
+}

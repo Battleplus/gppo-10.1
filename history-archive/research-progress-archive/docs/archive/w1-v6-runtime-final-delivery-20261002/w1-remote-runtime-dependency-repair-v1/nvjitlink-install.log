@@ -1,0 +1,9 @@
+Collecting nvidia-nvjitlink-cu12==12.1.105
+  Downloading nvidia_nvjitlink_cu12-12.1.105-py3-none-manylinux1_x86_64.whl (19.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 19.8/19.8 MB 10.7 MB/s eta 0:00:00
+Installing collected packages: nvidia-nvjitlink-cu12
+  Attempting uninstall: nvidia-nvjitlink-cu12
+    Found existing installation: nvidia-nvjitlink-cu12 12.9.86
+    Uninstalling nvidia-nvjitlink-cu12-12.9.86:
+      Successfully uninstalled nvidia-nvjitlink-cu12-12.9.86
+Successfully installed nvidia-nvjitlink-cu12-12.1.105

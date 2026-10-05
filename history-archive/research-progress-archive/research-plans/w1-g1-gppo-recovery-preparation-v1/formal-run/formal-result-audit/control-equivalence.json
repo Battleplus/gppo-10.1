@@ -1,0 +1,664 @@
+{
+  "T_legal_prior_max_spread": 0.0030698608607053757,
+  "T_prior_logit_max_abs": 0.0266666691750288,
+  "identical_action_episode_count": 72,
+  "identical_public_input_episode_count": 72,
+  "identical_reward_episode_count": 72,
+  "pair_count": 72,
+  "pairs": [
+    {
+      "actions_identical": true,
+      "parent": "train-0104",
+      "public_input_hashes_identical": true,
+      "repeat": 0,
+      "seed": 8301,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0104",
+      "public_input_hashes_identical": true,
+      "repeat": 0,
+      "seed": 8302,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0104",
+      "public_input_hashes_identical": true,
+      "repeat": 0,
+      "seed": 8303,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0104",
+      "public_input_hashes_identical": true,
+      "repeat": 1,
+      "seed": 8301,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0104",
+      "public_input_hashes_identical": true,
+      "repeat": 1,
+      "seed": 8302,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0104",
+      "public_input_hashes_identical": true,
+      "repeat": 1,
+      "seed": 8303,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0104",
+      "public_input_hashes_identical": true,
+      "repeat": 2,
+      "seed": 8301,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0104",
+      "public_input_hashes_identical": true,
+      "repeat": 2,
+      "seed": 8302,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0104",
+      "public_input_hashes_identical": true,
+      "repeat": 2,
+      "seed": 8303,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0105",
+      "public_input_hashes_identical": true,
+      "repeat": 0,
+      "seed": 8301,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0105",
+      "public_input_hashes_identical": true,
+      "repeat": 0,
+      "seed": 8302,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0105",
+      "public_input_hashes_identical": true,
+      "repeat": 0,
+      "seed": 8303,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0105",
+      "public_input_hashes_identical": true,
+      "repeat": 1,
+      "seed": 8301,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0105",
+      "public_input_hashes_identical": true,
+      "repeat": 1,
+      "seed": 8302,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0105",
+      "public_input_hashes_identical": true,
+      "repeat": 1,
+      "seed": 8303,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0105",
+      "public_input_hashes_identical": true,
+      "repeat": 2,
+      "seed": 8301,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0105",
+      "public_input_hashes_identical": true,
+      "repeat": 2,
+      "seed": 8302,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0105",
+      "public_input_hashes_identical": true,
+      "repeat": 2,
+      "seed": 8303,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0106",
+      "public_input_hashes_identical": true,
+      "repeat": 0,
+      "seed": 8301,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0106",
+      "public_input_hashes_identical": true,
+      "repeat": 0,
+      "seed": 8302,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0106",
+      "public_input_hashes_identical": true,
+      "repeat": 0,
+      "seed": 8303,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0106",
+      "public_input_hashes_identical": true,
+      "repeat": 1,
+      "seed": 8301,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0106",
+      "public_input_hashes_identical": true,
+      "repeat": 1,
+      "seed": 8302,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0106",
+      "public_input_hashes_identical": true,
+      "repeat": 1,
+      "seed": 8303,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0106",
+      "public_input_hashes_identical": true,
+      "repeat": 2,
+      "seed": 8301,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0106",
+      "public_input_hashes_identical": true,
+      "repeat": 2,
+      "seed": 8302,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0106",
+      "public_input_hashes_identical": true,
+      "repeat": 2,
+      "seed": 8303,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0107",
+      "public_input_hashes_identical": true,
+      "repeat": 0,
+      "seed": 8301,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0107",
+      "public_input_hashes_identical": true,
+      "repeat": 0,
+      "seed": 8302,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0107",
+      "public_input_hashes_identical": true,
+      "repeat": 0,
+      "seed": 8303,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0107",
+      "public_input_hashes_identical": true,
+      "repeat": 1,
+      "seed": 8301,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0107",
+      "public_input_hashes_identical": true,
+      "repeat": 1,
+      "seed": 8302,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0107",
+      "public_input_hashes_identical": true,
+      "repeat": 1,
+      "seed": 8303,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0107",
+      "public_input_hashes_identical": true,
+      "repeat": 2,
+      "seed": 8301,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0107",
+      "public_input_hashes_identical": true,
+      "repeat": 2,
+      "seed": 8302,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0107",
+      "public_input_hashes_identical": true,
+      "repeat": 2,
+      "seed": 8303,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0108",
+      "public_input_hashes_identical": true,
+      "repeat": 0,
+      "seed": 8301,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0108",
+      "public_input_hashes_identical": true,
+      "repeat": 0,
+      "seed": 8302,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0108",
+      "public_input_hashes_identical": true,
+      "repeat": 0,
+      "seed": 8303,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0108",
+      "public_input_hashes_identical": true,
+      "repeat": 1,
+      "seed": 8301,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0108",
+      "public_input_hashes_identical": true,
+      "repeat": 1,
+      "seed": 8302,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0108",
+      "public_input_hashes_identical": true,
+      "repeat": 1,
+      "seed": 8303,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0108",
+      "public_input_hashes_identical": true,
+      "repeat": 2,
+      "seed": 8301,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0108",
+      "public_input_hashes_identical": true,
+      "repeat": 2,
+      "seed": 8302,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0108",
+      "public_input_hashes_identical": true,
+      "repeat": 2,
+      "seed": 8303,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0109",
+      "public_input_hashes_identical": true,
+      "repeat": 0,
+      "seed": 8301,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0109",
+      "public_input_hashes_identical": true,
+      "repeat": 0,
+      "seed": 8302,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0109",
+      "public_input_hashes_identical": true,
+      "repeat": 0,
+      "seed": 8303,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0109",
+      "public_input_hashes_identical": true,
+      "repeat": 1,
+      "seed": 8301,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0109",
+      "public_input_hashes_identical": true,
+      "repeat": 1,
+      "seed": 8302,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0109",
+      "public_input_hashes_identical": true,
+      "repeat": 1,
+      "seed": 8303,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0109",
+      "public_input_hashes_identical": true,
+      "repeat": 2,
+      "seed": 8301,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0109",
+      "public_input_hashes_identical": true,
+      "repeat": 2,
+      "seed": 8302,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0109",
+      "public_input_hashes_identical": true,
+      "repeat": 2,
+      "seed": 8303,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0110",
+      "public_input_hashes_identical": true,
+      "repeat": 0,
+      "seed": 8301,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0110",
+      "public_input_hashes_identical": true,
+      "repeat": 0,
+      "seed": 8302,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0110",
+      "public_input_hashes_identical": true,
+      "repeat": 0,
+      "seed": 8303,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0110",
+      "public_input_hashes_identical": true,
+      "repeat": 1,
+      "seed": 8301,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0110",
+      "public_input_hashes_identical": true,
+      "repeat": 1,
+      "seed": 8302,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0110",
+      "public_input_hashes_identical": true,
+      "repeat": 1,
+      "seed": 8303,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0110",
+      "public_input_hashes_identical": true,
+      "repeat": 2,
+      "seed": 8301,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0110",
+      "public_input_hashes_identical": true,
+      "repeat": 2,
+      "seed": 8302,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0110",
+      "public_input_hashes_identical": true,
+      "repeat": 2,
+      "seed": 8303,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0111",
+      "public_input_hashes_identical": true,
+      "repeat": 0,
+      "seed": 8301,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0111",
+      "public_input_hashes_identical": true,
+      "repeat": 0,
+      "seed": 8302,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0111",
+      "public_input_hashes_identical": true,
+      "repeat": 0,
+      "seed": 8303,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0111",
+      "public_input_hashes_identical": true,
+      "repeat": 1,
+      "seed": 8301,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0111",
+      "public_input_hashes_identical": true,
+      "repeat": 1,
+      "seed": 8302,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0111",
+      "public_input_hashes_identical": true,
+      "repeat": 1,
+      "seed": 8303,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0111",
+      "public_input_hashes_identical": true,
+      "repeat": 2,
+      "seed": 8301,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0111",
+      "public_input_hashes_identical": true,
+      "repeat": 2,
+      "seed": 8302,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    },
+    {
+      "actions_identical": true,
+      "parent": "train-0111",
+      "public_input_hashes_identical": true,
+      "repeat": 2,
+      "seed": 8303,
+      "utility_identical": true,
+      "vector_rewards_identical": true
+    }
+  ],
+  "per_seed_policy_state_hash_equal": {
+    "8301": false,
+    "8302": false,
+    "8303": false
+  },
+  "scope": "Saved evaluation traces only; no new forwards, no implementation changes, no post-hoc gate changes."
+}

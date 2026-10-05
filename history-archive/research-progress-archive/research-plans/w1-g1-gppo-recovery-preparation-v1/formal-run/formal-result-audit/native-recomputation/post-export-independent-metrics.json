@@ -1,0 +1,3573 @@
+{
+  "bootstrap_g1_minus_t": {
+    "lower_95": -0.02332409617653882,
+    "n": 8,
+    "percentile_rule": "nearest rank",
+    "samples": 10000,
+    "seed": 8401,
+    "unit": "paired parent",
+    "upper_95": 0.008297714979061916
+  },
+  "complete_matrix": true,
+  "complete_parent_count": 8,
+  "complete_parents": [
+    "train-0104",
+    "train-0105",
+    "train-0106",
+    "train-0107",
+    "train-0108",
+    "train-0109",
+    "train-0110",
+    "train-0111"
+  ],
+  "decision_costs": {
+    "by_method": {
+      "G0": {
+        "active_decision_count": 708,
+        "cpu_mean_ms": 27.158799906588783,
+        "sample_count": 1017,
+        "status": "evaluated",
+        "wall_p95_ms": 90.57398501317948,
+        "world_model_forwards": 0
+      },
+      "G1": {
+        "active_decision_count": 693,
+        "cpu_mean_ms": 51.07337600296035,
+        "sample_count": 1014,
+        "status": "evaluated",
+        "wall_p95_ms": 150.7048269850202,
+        "world_model_forwards": 1014
+      },
+      "H": {
+        "active_decision_count": 163,
+        "cpu_mean_ms": 12.484351677631809,
+        "sample_count": 304,
+        "status": "evaluated",
+        "wall_p95_ms": 45.08964001433924,
+        "world_model_forwards": 0
+      },
+      "T": {
+        "active_decision_count": 708,
+        "cpu_mean_ms": 28.83491466273317,
+        "sample_count": 1017,
+        "status": "evaluated",
+        "wall_p95_ms": 98.9737109921407,
+        "world_model_forwards": 0
+      }
+    },
+    "by_method_parent_repeat": {
+      "G0|train-0104|0": {
+        "active_decision_count": 29,
+        "cpu_mean_ms": 12.357088302319108,
+        "sample_count": 43,
+        "status": "evaluated",
+        "wall_p95_ms": 59.610302007058635,
+        "world_model_forwards": 0
+      },
+      "G0|train-0104|1": {
+        "active_decision_count": 29,
+        "cpu_mean_ms": 13.44970909090002,
+        "sample_count": 44,
+        "status": "evaluated",
+        "wall_p95_ms": 69.24841698491946,
+        "world_model_forwards": 0
+      },
+      "G0|train-0104|2": {
+        "active_decision_count": 28,
+        "cpu_mean_ms": 13.522925214283802,
+        "sample_count": 42,
+        "status": "evaluated",
+        "wall_p95_ms": 60.93361700186506,
+        "world_model_forwards": 0
+      },
+      "G0|train-0105|0": {
+        "active_decision_count": 25,
+        "cpu_mean_ms": 14.541613973682686,
+        "sample_count": 38,
+        "status": "evaluated",
+        "wall_p95_ms": 60.1933510042727,
+        "world_model_forwards": 0
+      },
+      "G0|train-0105|1": {
+        "active_decision_count": 22,
+        "cpu_mean_ms": 16.308080128202946,
+        "sample_count": 39,
+        "status": "evaluated",
+        "wall_p95_ms": 59.89793100161478,
+        "world_model_forwards": 0
+      },
+      "G0|train-0105|2": {
+        "active_decision_count": 29,
+        "cpu_mean_ms": 19.535875046507723,
+        "sample_count": 43,
+        "status": "evaluated",
+        "wall_p95_ms": 72.86537002073601,
+        "world_model_forwards": 0
+      },
+      "G0|train-0106|0": {
+        "active_decision_count": 28,
+        "cpu_mean_ms": 20.63608807693002,
+        "sample_count": 39,
+        "status": "evaluated",
+        "wall_p95_ms": 74.78091900702566,
+        "world_model_forwards": 0
+      },
+      "G0|train-0106|1": {
+        "active_decision_count": 30,
+        "cpu_mean_ms": 20.450591707318413,
+        "sample_count": 41,
+        "status": "evaluated",
+        "wall_p95_ms": 74.44553100503981,
+        "world_model_forwards": 0
+      },
+      "G0|train-0106|2": {
+        "active_decision_count": 27,
+        "cpu_mean_ms": 21.129125046516407,
+        "sample_count": 43,
+        "status": "evaluated",
+        "wall_p95_ms": 69.90289597888477,
+        "world_model_forwards": 0
+      },
+      "G0|train-0107|0": {
+        "active_decision_count": 25,
+        "cpu_mean_ms": 24.27786656098012,
+        "sample_count": 41,
+        "status": "evaluated",
+        "wall_p95_ms": 75.75252698734403,
+        "world_model_forwards": 0
+      },
+      "G0|train-0107|1": {
+        "active_decision_count": 28,
+        "cpu_mean_ms": 26.523368282610086,
+        "sample_count": 46,
+        "status": "evaluated",
+        "wall_p95_ms": 86.37373699457385,
+        "world_model_forwards": 0
+      },
+      "G0|train-0107|2": {
+        "active_decision_count": 29,
+        "cpu_mean_ms": 24.912846866672883,
+        "sample_count": 45,
+        "status": "evaluated",
+        "wall_p95_ms": 71.43042897223495,
+        "world_model_forwards": 0
+      },
+      "G0|train-0108|0": {
+        "active_decision_count": 35,
+        "cpu_mean_ms": 24.67115979545492,
+        "sample_count": 44,
+        "status": "evaluated",
+        "wall_p95_ms": 72.95114800217561,
+        "world_model_forwards": 0
+      },
+      "G0|train-0108|1": {
+        "active_decision_count": 40,
+        "cpu_mean_ms": 31.50118797826266,
+        "sample_count": 46,
+        "status": "evaluated",
+        "wall_p95_ms": 89.3752159900032,
+        "world_model_forwards": 0
+      },
+      "G0|train-0108|2": {
+        "active_decision_count": 33,
+        "cpu_mean_ms": 30.562454674415495,
+        "sample_count": 43,
+        "status": "evaluated",
+        "wall_p95_ms": 88.14444599556737,
+        "world_model_forwards": 0
+      },
+      "G0|train-0109|0": {
+        "active_decision_count": 31,
+        "cpu_mean_ms": 32.71215295237761,
+        "sample_count": 42,
+        "status": "evaluated",
+        "wall_p95_ms": 89.0985379810445,
+        "world_model_forwards": 0
+      },
+      "G0|train-0109|1": {
+        "active_decision_count": 26,
+        "cpu_mean_ms": 33.22880354999853,
+        "sample_count": 40,
+        "status": "evaluated",
+        "wall_p95_ms": 82.39193700137548,
+        "world_model_forwards": 0
+      },
+      "G0|train-0109|2": {
+        "active_decision_count": 31,
+        "cpu_mean_ms": 36.43252279070915,
+        "sample_count": 43,
+        "status": "evaluated",
+        "wall_p95_ms": 94.6051090140827,
+        "world_model_forwards": 0
+      },
+      "G0|train-0110|0": {
+        "active_decision_count": 29,
+        "cpu_mean_ms": 32.94764856818233,
+        "sample_count": 44,
+        "status": "evaluated",
+        "wall_p95_ms": 80.5471109924838,
+        "world_model_forwards": 0
+      },
+      "G0|train-0110|1": {
+        "active_decision_count": 32,
+        "cpu_mean_ms": 35.07003192105099,
+        "sample_count": 38,
+        "status": "evaluated",
+        "wall_p95_ms": 91.50709700770676,
+        "world_model_forwards": 0
+      },
+      "G0|train-0110|2": {
+        "active_decision_count": 33,
+        "cpu_mean_ms": 41.777587212770435,
+        "sample_count": 47,
+        "status": "evaluated",
+        "wall_p95_ms": 109.30080199614167,
+        "world_model_forwards": 0
+      },
+      "G0|train-0111|0": {
+        "active_decision_count": 29,
+        "cpu_mean_ms": 36.18253824999442,
+        "sample_count": 40,
+        "status": "evaluated",
+        "wall_p95_ms": 85.88275400688872,
+        "world_model_forwards": 0
+      },
+      "G0|train-0111|1": {
+        "active_decision_count": 30,
+        "cpu_mean_ms": 40.60075173172264,
+        "sample_count": 41,
+        "status": "evaluated",
+        "wall_p95_ms": 94.27088699885644,
+        "world_model_forwards": 0
+      },
+      "G0|train-0111|2": {
+        "active_decision_count": 30,
+        "cpu_mean_ms": 45.24682088888817,
+        "sample_count": 45,
+        "status": "evaluated",
+        "wall_p95_ms": 110.25825000251643,
+        "world_model_forwards": 0
+      },
+      "G1|train-0104|0": {
+        "active_decision_count": 27,
+        "cpu_mean_ms": 23.79453758140133,
+        "sample_count": 43,
+        "status": "evaluated",
+        "wall_p95_ms": 93.72922600596212,
+        "world_model_forwards": 43
+      },
+      "G1|train-0104|1": {
+        "active_decision_count": 29,
+        "cpu_mean_ms": 25.34463550000015,
+        "sample_count": 46,
+        "status": "evaluated",
+        "wall_p95_ms": 105.31446701497771,
+        "world_model_forwards": 46
+      },
+      "G1|train-0104|2": {
+        "active_decision_count": 27,
+        "cpu_mean_ms": 25.896947268290383,
+        "sample_count": 41,
+        "status": "evaluated",
+        "wall_p95_ms": 89.60827501141466,
+        "world_model_forwards": 41
+      },
+      "G1|train-0105|0": {
+        "active_decision_count": 24,
+        "cpu_mean_ms": 27.41698497297537,
+        "sample_count": 37,
+        "status": "evaluated",
+        "wall_p95_ms": 101.45039402414113,
+        "world_model_forwards": 37
+      },
+      "G1|train-0105|1": {
+        "active_decision_count": 22,
+        "cpu_mean_ms": 33.557198625007345,
+        "sample_count": 40,
+        "status": "evaluated",
+        "wall_p95_ms": 110.30759700224735,
+        "world_model_forwards": 40
+      },
+      "G1|train-0105|2": {
+        "active_decision_count": 30,
+        "cpu_mean_ms": 35.34082946512013,
+        "sample_count": 43,
+        "status": "evaluated",
+        "wall_p95_ms": 119.26869198214263,
+        "world_model_forwards": 43
+      },
+      "G1|train-0106|0": {
+        "active_decision_count": 29,
+        "cpu_mean_ms": 35.03138797436396,
+        "sample_count": 39,
+        "status": "evaluated",
+        "wall_p95_ms": 118.71467699529603,
+        "world_model_forwards": 39
+      },
+      "G1|train-0106|1": {
+        "active_decision_count": 30,
+        "cpu_mean_ms": 38.424252488372865,
+        "sample_count": 43,
+        "status": "evaluated",
+        "wall_p95_ms": 111.38280198792927,
+        "world_model_forwards": 43
+      },
+      "G1|train-0106|2": {
+        "active_decision_count": 26,
+        "cpu_mean_ms": 39.52873709301965,
+        "sample_count": 43,
+        "status": "evaluated",
+        "wall_p95_ms": 116.62713999976404,
+        "world_model_forwards": 43
+      },
+      "G1|train-0107|0": {
+        "active_decision_count": 26,
+        "cpu_mean_ms": 47.84456460465054,
+        "sample_count": 43,
+        "status": "evaluated",
+        "wall_p95_ms": 134.88885699189268,
+        "world_model_forwards": 43
+      },
+      "G1|train-0107|1": {
+        "active_decision_count": 31,
+        "cpu_mean_ms": 47.2017105777771,
+        "sample_count": 45,
+        "status": "evaluated",
+        "wall_p95_ms": 139.5360649912618,
+        "world_model_forwards": 45
+      },
+      "G1|train-0107|2": {
+        "active_decision_count": 24,
+        "cpu_mean_ms": 45.08176681396128,
+        "sample_count": 43,
+        "status": "evaluated",
+        "wall_p95_ms": 117.76977698900737,
+        "world_model_forwards": 43
+      },
+      "G1|train-0108|0": {
+        "active_decision_count": 33,
+        "cpu_mean_ms": 56.58878646511709,
+        "sample_count": 43,
+        "status": "evaluated",
+        "wall_p95_ms": 150.1841559947934,
+        "world_model_forwards": 43
+      },
+      "G1|train-0108|1": {
+        "active_decision_count": 36,
+        "cpu_mean_ms": 59.64638393477937,
+        "sample_count": 46,
+        "status": "evaluated",
+        "wall_p95_ms": 160.09188001044095,
+        "world_model_forwards": 46
+      },
+      "G1|train-0108|2": {
+        "active_decision_count": 35,
+        "cpu_mean_ms": 52.33391809302348,
+        "sample_count": 43,
+        "status": "evaluated",
+        "wall_p95_ms": 125.62610098393634,
+        "world_model_forwards": 43
+      },
+      "G1|train-0109|0": {
+        "active_decision_count": 29,
+        "cpu_mean_ms": 58.71940575000423,
+        "sample_count": 40,
+        "status": "evaluated",
+        "wall_p95_ms": 127.78278900077567,
+        "world_model_forwards": 40
+      },
+      "G1|train-0109|1": {
+        "active_decision_count": 30,
+        "cpu_mean_ms": 68.6081690227279,
+        "sample_count": 44,
+        "status": "evaluated",
+        "wall_p95_ms": 178.45320000196807,
+        "world_model_forwards": 44
+      },
+      "G1|train-0109|2": {
+        "active_decision_count": 31,
+        "cpu_mean_ms": 61.48568229268565,
+        "sample_count": 41,
+        "status": "evaluated",
+        "wall_p95_ms": 142.21934700617567,
+        "world_model_forwards": 41
+      },
+      "G1|train-0110|0": {
+        "active_decision_count": 27,
+        "cpu_mean_ms": 66.24845990244545,
+        "sample_count": 41,
+        "status": "evaluated",
+        "wall_p95_ms": 149.42341099958867,
+        "world_model_forwards": 41
+      },
+      "G1|train-0110|1": {
+        "active_decision_count": 30,
+        "cpu_mean_ms": 76.10533577501144,
+        "sample_count": 40,
+        "status": "evaluated",
+        "wall_p95_ms": 185.7628290017601,
+        "world_model_forwards": 40
+      },
+      "G1|train-0110|2": {
+        "active_decision_count": 30,
+        "cpu_mean_ms": 66.9967917142945,
+        "sample_count": 42,
+        "status": "evaluated",
+        "wall_p95_ms": 135.67388299270533,
+        "world_model_forwards": 42
+      },
+      "G1|train-0111|0": {
+        "active_decision_count": 28,
+        "cpu_mean_ms": 69.3090268536552,
+        "sample_count": 41,
+        "status": "evaluated",
+        "wall_p95_ms": 152.42532701813616,
+        "world_model_forwards": 41
+      },
+      "G1|train-0111|1": {
+        "active_decision_count": 29,
+        "cpu_mean_ms": 86.00412199999627,
+        "sample_count": 41,
+        "status": "evaluated",
+        "wall_p95_ms": 216.6644939861726,
+        "world_model_forwards": 41
+      },
+      "G1|train-0111|2": {
+        "active_decision_count": 30,
+        "cpu_mean_ms": 77.50354073912445,
+        "sample_count": 46,
+        "status": "evaluated",
+        "wall_p95_ms": 157.08212900790386,
+        "world_model_forwards": 46
+      },
+      "H|train-0104|0": {
+        "active_decision_count": 7,
+        "cpu_mean_ms": 5.482936461532972,
+        "sample_count": 13,
+        "status": "evaluated",
+        "wall_p95_ms": 36.62703899317421,
+        "world_model_forwards": 0
+      },
+      "H|train-0104|1": {
+        "active_decision_count": 6,
+        "cpu_mean_ms": 5.318017083335273,
+        "sample_count": 12,
+        "status": "evaluated",
+        "wall_p95_ms": 29.42989900475368,
+        "world_model_forwards": 0
+      },
+      "H|train-0104|2": {
+        "active_decision_count": 6,
+        "cpu_mean_ms": 5.17358133333327,
+        "sample_count": 12,
+        "status": "evaluated",
+        "wall_p95_ms": 28.49466001498513,
+        "world_model_forwards": 0
+      },
+      "H|train-0105|0": {
+        "active_decision_count": 6,
+        "cpu_mean_ms": 6.644984000001841,
+        "sample_count": 10,
+        "status": "evaluated",
+        "wall_p95_ms": 30.72308501577936,
+        "world_model_forwards": 0
+      },
+      "H|train-0105|1": {
+        "active_decision_count": 6,
+        "cpu_mean_ms": 8.158018600005335,
+        "sample_count": 10,
+        "status": "evaluated",
+        "wall_p95_ms": 33.66069999174215,
+        "world_model_forwards": 0
+      },
+      "H|train-0105|2": {
+        "active_decision_count": 6,
+        "cpu_mean_ms": 9.376719846146058,
+        "sample_count": 13,
+        "status": "evaluated",
+        "wall_p95_ms": 35.454483004286885,
+        "world_model_forwards": 0
+      },
+      "H|train-0106|0": {
+        "active_decision_count": 7,
+        "cpu_mean_ms": 8.65024449999415,
+        "sample_count": 12,
+        "status": "evaluated",
+        "wall_p95_ms": 41.72582502360456,
+        "world_model_forwards": 0
+      },
+      "H|train-0106|1": {
+        "active_decision_count": 7,
+        "cpu_mean_ms": 8.778461230773562,
+        "sample_count": 13,
+        "status": "evaluated",
+        "wall_p95_ms": 30.97151400288567,
+        "world_model_forwards": 0
+      },
+      "H|train-0106|2": {
+        "active_decision_count": 6,
+        "cpu_mean_ms": 9.632721153847204,
+        "sample_count": 13,
+        "status": "evaluated",
+        "wall_p95_ms": 32.45666099246591,
+        "world_model_forwards": 0
+      },
+      "H|train-0107|0": {
+        "active_decision_count": 6,
+        "cpu_mean_ms": 12.350906076925675,
+        "sample_count": 13,
+        "status": "evaluated",
+        "wall_p95_ms": 45.1731990033295,
+        "world_model_forwards": 0
+      },
+      "H|train-0107|1": {
+        "active_decision_count": 6,
+        "cpu_mean_ms": 9.723397384623066,
+        "sample_count": 13,
+        "status": "evaluated",
+        "wall_p95_ms": 36.06291697360575,
+        "world_model_forwards": 0
+      },
+      "H|train-0107|2": {
+        "active_decision_count": 7,
+        "cpu_mean_ms": 10.732415714276808,
+        "sample_count": 14,
+        "status": "evaluated",
+        "wall_p95_ms": 43.43267099466175,
+        "world_model_forwards": 0
+      },
+      "H|train-0108|0": {
+        "active_decision_count": 9,
+        "cpu_mean_ms": 12.204916785719888,
+        "sample_count": 14,
+        "status": "evaluated",
+        "wall_p95_ms": 42.78638502000831,
+        "world_model_forwards": 0
+      },
+      "H|train-0108|1": {
+        "active_decision_count": 7,
+        "cpu_mean_ms": 15.196625818181143,
+        "sample_count": 11,
+        "status": "evaluated",
+        "wall_p95_ms": 43.963159987470135,
+        "world_model_forwards": 0
+      },
+      "H|train-0108|2": {
+        "active_decision_count": 7,
+        "cpu_mean_ms": 12.385026769231025,
+        "sample_count": 13,
+        "status": "evaluated",
+        "wall_p95_ms": 40.80498401890509,
+        "world_model_forwards": 0
+      },
+      "H|train-0109|0": {
+        "active_decision_count": 7,
+        "cpu_mean_ms": 13.78747427272422,
+        "sample_count": 11,
+        "status": "evaluated",
+        "wall_p95_ms": 43.83999700075947,
+        "world_model_forwards": 0
+      },
+      "H|train-0109|1": {
+        "active_decision_count": 7,
+        "cpu_mean_ms": 16.390234799996506,
+        "sample_count": 15,
+        "status": "evaluated",
+        "wall_p95_ms": 51.165518001653254,
+        "world_model_forwards": 0
+      },
+      "H|train-0109|2": {
+        "active_decision_count": 8,
+        "cpu_mean_ms": 14.969935200004633,
+        "sample_count": 15,
+        "status": "evaluated",
+        "wall_p95_ms": 58.625851990655065,
+        "world_model_forwards": 0
+      },
+      "H|train-0110|0": {
+        "active_decision_count": 7,
+        "cpu_mean_ms": 17.545754076930002,
+        "sample_count": 13,
+        "status": "evaluated",
+        "wall_p95_ms": 48.17326698685065,
+        "world_model_forwards": 0
+      },
+      "H|train-0110|1": {
+        "active_decision_count": 7,
+        "cpu_mean_ms": 17.042481249992154,
+        "sample_count": 12,
+        "status": "evaluated",
+        "wall_p95_ms": 62.48404399957508,
+        "world_model_forwards": 0
+      },
+      "H|train-0110|2": {
+        "active_decision_count": 7,
+        "cpu_mean_ms": 18.18391909093655,
+        "sample_count": 11,
+        "status": "evaluated",
+        "wall_p95_ms": 59.27557501127012,
+        "world_model_forwards": 0
+      },
+      "H|train-0111|0": {
+        "active_decision_count": 7,
+        "cpu_mean_ms": 18.000658428572283,
+        "sample_count": 14,
+        "status": "evaluated",
+        "wall_p95_ms": 51.24072398757562,
+        "world_model_forwards": 0
+      },
+      "H|train-0111|1": {
+        "active_decision_count": 7,
+        "cpu_mean_ms": 21.281569285715054,
+        "sample_count": 14,
+        "status": "evaluated",
+        "wall_p95_ms": 63.26511499355547,
+        "world_model_forwards": 0
+      },
+      "H|train-0111|2": {
+        "active_decision_count": 7,
+        "cpu_mean_ms": 18.776106999981632,
+        "sample_count": 13,
+        "status": "evaluated",
+        "wall_p95_ms": 45.642099023098126,
+        "world_model_forwards": 0
+      },
+      "T|train-0104|0": {
+        "active_decision_count": 29,
+        "cpu_mean_ms": 13.193112860461115,
+        "sample_count": 43,
+        "status": "evaluated",
+        "wall_p95_ms": 55.6009910069406,
+        "world_model_forwards": 0
+      },
+      "T|train-0104|1": {
+        "active_decision_count": 29,
+        "cpu_mean_ms": 15.916186545458736,
+        "sample_count": 44,
+        "status": "evaluated",
+        "wall_p95_ms": 67.20963900443166,
+        "world_model_forwards": 0
+      },
+      "T|train-0104|2": {
+        "active_decision_count": 28,
+        "cpu_mean_ms": 14.673285261904669,
+        "sample_count": 42,
+        "status": "evaluated",
+        "wall_p95_ms": 60.93892300850712,
+        "world_model_forwards": 0
+      },
+      "T|train-0105|0": {
+        "active_decision_count": 25,
+        "cpu_mean_ms": 16.560741236842983,
+        "sample_count": 38,
+        "status": "evaluated",
+        "wall_p95_ms": 64.70764501136728,
+        "world_model_forwards": 0
+      },
+      "T|train-0105|1": {
+        "active_decision_count": 22,
+        "cpu_mean_ms": 16.91963684615489,
+        "sample_count": 39,
+        "status": "evaluated",
+        "wall_p95_ms": 68.35529598174617,
+        "world_model_forwards": 0
+      },
+      "T|train-0105|2": {
+        "active_decision_count": 29,
+        "cpu_mean_ms": 21.527337488373366,
+        "sample_count": 43,
+        "status": "evaluated",
+        "wall_p95_ms": 72.928787994897,
+        "world_model_forwards": 0
+      },
+      "T|train-0106|0": {
+        "active_decision_count": 28,
+        "cpu_mean_ms": 22.455108051281933,
+        "sample_count": 39,
+        "status": "evaluated",
+        "wall_p95_ms": 87.33985899016261,
+        "world_model_forwards": 0
+      },
+      "T|train-0106|1": {
+        "active_decision_count": 30,
+        "cpu_mean_ms": 22.170567609758262,
+        "sample_count": 41,
+        "status": "evaluated",
+        "wall_p95_ms": 83.40834997943603,
+        "world_model_forwards": 0
+      },
+      "T|train-0106|2": {
+        "active_decision_count": 27,
+        "cpu_mean_ms": 21.529658930228113,
+        "sample_count": 43,
+        "status": "evaluated",
+        "wall_p95_ms": 65.94728800700977,
+        "world_model_forwards": 0
+      },
+      "T|train-0107|0": {
+        "active_decision_count": 25,
+        "cpu_mean_ms": 27.379039682926294,
+        "sample_count": 41,
+        "status": "evaluated",
+        "wall_p95_ms": 81.80047798668966,
+        "world_model_forwards": 0
+      },
+      "T|train-0107|1": {
+        "active_decision_count": 28,
+        "cpu_mean_ms": 27.99325017391242,
+        "sample_count": 46,
+        "status": "evaluated",
+        "wall_p95_ms": 88.27323099831119,
+        "world_model_forwards": 0
+      },
+      "T|train-0107|2": {
+        "active_decision_count": 29,
+        "cpu_mean_ms": 26.445610311112787,
+        "sample_count": 45,
+        "status": "evaluated",
+        "wall_p95_ms": 74.75713398889638,
+        "world_model_forwards": 0
+      },
+      "T|train-0108|0": {
+        "active_decision_count": 35,
+        "cpu_mean_ms": 25.906386113639066,
+        "sample_count": 44,
+        "status": "evaluated",
+        "wall_p95_ms": 78.76465999288484,
+        "world_model_forwards": 0
+      },
+      "T|train-0108|1": {
+        "active_decision_count": 40,
+        "cpu_mean_ms": 31.9743294565233,
+        "sample_count": 46,
+        "status": "evaluated",
+        "wall_p95_ms": 97.62850700644776,
+        "world_model_forwards": 0
+      },
+      "T|train-0108|2": {
+        "active_decision_count": 33,
+        "cpu_mean_ms": 30.098432209300416,
+        "sample_count": 43,
+        "status": "evaluated",
+        "wall_p95_ms": 85.875867982395,
+        "world_model_forwards": 0
+      },
+      "T|train-0109|0": {
+        "active_decision_count": 31,
+        "cpu_mean_ms": 30.14061073810126,
+        "sample_count": 42,
+        "status": "evaluated",
+        "wall_p95_ms": 74.77107501472346,
+        "world_model_forwards": 0
+      },
+      "T|train-0109|1": {
+        "active_decision_count": 26,
+        "cpu_mean_ms": 36.59220400000578,
+        "sample_count": 40,
+        "status": "evaluated",
+        "wall_p95_ms": 96.59302199725062,
+        "world_model_forwards": 0
+      },
+      "T|train-0109|2": {
+        "active_decision_count": 31,
+        "cpu_mean_ms": 37.79792253487548,
+        "sample_count": 43,
+        "status": "evaluated",
+        "wall_p95_ms": 102.56380200735293,
+        "world_model_forwards": 0
+      },
+      "T|train-0110|0": {
+        "active_decision_count": 29,
+        "cpu_mean_ms": 34.77491375000403,
+        "sample_count": 44,
+        "status": "evaluated",
+        "wall_p95_ms": 85.51763001014479,
+        "world_model_forwards": 0
+      },
+      "T|train-0110|1": {
+        "active_decision_count": 32,
+        "cpu_mean_ms": 40.77228557893202,
+        "sample_count": 38,
+        "status": "evaluated",
+        "wall_p95_ms": 114.71520300256088,
+        "world_model_forwards": 0
+      },
+      "T|train-0110|2": {
+        "active_decision_count": 33,
+        "cpu_mean_ms": 42.09476172340427,
+        "sample_count": 47,
+        "status": "evaluated",
+        "wall_p95_ms": 127.01726300292648,
+        "world_model_forwards": 0
+      },
+      "T|train-0111|0": {
+        "active_decision_count": 29,
+        "cpu_mean_ms": 38.653304574998515,
+        "sample_count": 40,
+        "status": "evaluated",
+        "wall_p95_ms": 105.38891499163583,
+        "world_model_forwards": 0
+      },
+      "T|train-0111|1": {
+        "active_decision_count": 30,
+        "cpu_mean_ms": 48.36893465852793,
+        "sample_count": 41,
+        "status": "evaluated",
+        "wall_p95_ms": 135.98034900496714,
+        "world_model_forwards": 0
+      },
+      "T|train-0111|2": {
+        "active_decision_count": 30,
+        "cpu_mean_ms": 45.96825920000356,
+        "sample_count": 45,
+        "status": "evaluated",
+        "wall_p95_ms": 108.19334100233391,
+        "world_model_forwards": 0
+      }
+    }
+  },
+  "episode_count": 240,
+  "expected_episode_count": 240,
+  "g1_minus_g0_macro_utility": -0.008791918188701838,
+  "g1_minus_h_macro_utility": -0.0992006605643127,
+  "g1_minus_t_macro_utility": -0.008791918188701838,
+  "lifecycle_unevaluated_episode_count": 0,
+  "paired_parent_differences": {
+    "G0": {
+      "train-0104": 0.012137669331035272,
+      "train-0105": -0.027563710208925174,
+      "train-0106": -0.026793013202886323,
+      "train-0107": -0.015617523421871615,
+      "train-0108": 0.0010528360919608293,
+      "train-0109": 0.040798254745714496,
+      "train-0110": -0.028039139284426057,
+      "train-0111": -0.026310719560216134
+    },
+    "H": {
+      "train-0104": -0.02225741017692695,
+      "train-0105": -0.08906110333975736,
+      "train-0106": -0.10021788760700426,
+      "train-0107": -0.06319876527729817,
+      "train-0108": -0.13390694474716852,
+      "train-0109": -0.08574494487139239,
+      "train-0110": -0.17376603139927096,
+      "train-0111": -0.12545219709568303
+    },
+    "T": {
+      "train-0104": 0.012137669331035272,
+      "train-0105": -0.027563710208925174,
+      "train-0106": -0.026793013202886323,
+      "train-0107": -0.015617523421871615,
+      "train-0108": 0.0010528360919608293,
+      "train-0109": 0.040798254745714496,
+      "train-0110": -0.028039139284426057,
+      "train-0111": -0.026310719560216134
+    }
+  },
+  "parent_macro_utility": {
+    "G0": 0.24563692826733957,
+    "G1": 0.23684501007863776,
+    "H": 0.3360456706429505,
+    "T": 0.24563692826733957
+  },
+  "parents_g1_no_worse_than_t": 3,
+  "per_parent": {
+    "train-0104": {
+      "G0": 0.26619201642421336,
+      "G1": 0.27832968575524863,
+      "H": 0.3005870959321756,
+      "T": 0.26619201642421336
+    },
+    "train-0105": {
+      "G0": 0.28245060615822126,
+      "G1": 0.2548868959492961,
+      "H": 0.34394799928905345,
+      "T": 0.28245060615822126
+    },
+    "train-0106": {
+      "G0": 0.2652397842471333,
+      "G1": 0.23844677104424697,
+      "H": 0.3386646586512512,
+      "T": 0.2652397842471333
+    },
+    "train-0107": {
+      "G0": 0.2940107873410885,
+      "G1": 0.27839326391921687,
+      "H": 0.34159202919651505,
+      "T": 0.2940107873410885
+    },
+    "train-0108": {
+      "G0": 0.20821922291466732,
+      "G1": 0.20927205900662815,
+      "H": 0.3431790037537967,
+      "T": 0.20821922291466732
+    },
+    "train-0109": {
+      "G0": 0.21086573274126094,
+      "G1": 0.25166398748697544,
+      "H": 0.33740893235836783,
+      "T": 0.21086573274126094
+    },
+    "train-0110": {
+      "G0": 0.19731753086301795,
+      "G1": 0.1692783915785919,
+      "H": 0.34304442297786286,
+      "T": 0.19731753086301795
+    },
+    "train-0111": {
+      "G0": 0.24079974544911412,
+      "G1": 0.21448902588889798,
+      "H": 0.339941222984581,
+      "T": 0.24079974544911412
+    }
+  },
+  "reward_recomputation": [
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        0,
+        "G0",
+        8301
+      ],
+      "recorded_utility": 0.2143216118870684,
+      "utility": 0.2143216118870684
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        0,
+        "G0",
+        8302
+      ],
+      "recorded_utility": 0.32773049423822703,
+      "utility": 0.32773049423822703
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        0,
+        "G0",
+        8303
+      ],
+      "recorded_utility": 0.21626665052177432,
+      "utility": 0.21626665052177432
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        0,
+        "T",
+        8301
+      ],
+      "recorded_utility": 0.2143216118870684,
+      "utility": 0.2143216118870684
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        0,
+        "T",
+        8302
+      ],
+      "recorded_utility": 0.32773049423822703,
+      "utility": 0.32773049423822703
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        0,
+        "T",
+        8303
+      ],
+      "recorded_utility": 0.21626665052177432,
+      "utility": 0.21626665052177432
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        0,
+        "G1",
+        8301
+      ],
+      "recorded_utility": 0.2143216118870684,
+      "utility": 0.2143216118870684
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        0,
+        "G1",
+        8302
+      ],
+      "recorded_utility": 0.32773049423822703,
+      "utility": 0.32773049423822703
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        0,
+        "G1",
+        8303
+      ],
+      "recorded_utility": 0.33334120002359485,
+      "utility": 0.33334120002359485
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        0,
+        "H",
+        null
+      ],
+      "recorded_utility": 0.2134315576147243,
+      "utility": 0.2134315576147243
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        1,
+        "G0",
+        8301
+      ],
+      "recorded_utility": 0.21176436607741117,
+      "utility": 0.21176436607741117
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        1,
+        "G0",
+        8302
+      ],
+      "recorded_utility": 0.2089543360292775,
+      "utility": 0.2089543360292775
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        1,
+        "G0",
+        8303
+      ],
+      "recorded_utility": 0.3404722538794027,
+      "utility": 0.3404722538794027
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        1,
+        "T",
+        8301
+      ],
+      "recorded_utility": 0.21176436607741117,
+      "utility": 0.21176436607741117
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        1,
+        "T",
+        8302
+      ],
+      "recorded_utility": 0.2089543360292775,
+      "utility": 0.2089543360292775
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        1,
+        "T",
+        8303
+      ],
+      "recorded_utility": 0.3404722538794027,
+      "utility": 0.3404722538794027
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        1,
+        "G1",
+        8301
+      ],
+      "recorded_utility": 0.21492309462745657,
+      "utility": 0.21492309462745657
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        1,
+        "G1",
+        8302
+      ],
+      "recorded_utility": 0.2089543360292775,
+      "utility": 0.2089543360292775
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        1,
+        "G1",
+        8303
+      ],
+      "recorded_utility": 0.3267481222325367,
+      "utility": 0.3267481222325367
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        1,
+        "H",
+        null
+      ],
+      "recorded_utility": 0.3456793354942658,
+      "utility": 0.3456793354942658
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        2,
+        "G0",
+        8301
+      ],
+      "recorded_utility": 0.335381785724062,
+      "utility": 0.335381785724062
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        2,
+        "G0",
+        8302
+      ],
+      "recorded_utility": 0.2126800086549609,
+      "utility": 0.2126800086549609
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        2,
+        "G0",
+        8303
+      ],
+      "recorded_utility": 0.32815664080573625,
+      "utility": 0.32815664080573625
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        2,
+        "T",
+        8301
+      ],
+      "recorded_utility": 0.335381785724062,
+      "utility": 0.335381785724062
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        2,
+        "T",
+        8302
+      ],
+      "recorded_utility": 0.2126800086549609,
+      "utility": 0.2126800086549609
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        2,
+        "T",
+        8303
+      ],
+      "recorded_utility": 0.32815664080573625,
+      "utility": 0.32815664080573625
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        2,
+        "G1",
+        8301
+      ],
+      "recorded_utility": 0.3381116632983795,
+      "utility": 0.3381116632983795
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        2,
+        "G1",
+        8302
+      ],
+      "recorded_utility": 0.2126800086549609,
+      "utility": 0.2126800086549609
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        2,
+        "G1",
+        8303
+      ],
+      "recorded_utility": 0.32815664080573625,
+      "utility": 0.32815664080573625
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0104",
+        2,
+        "H",
+        null
+      ],
+      "recorded_utility": 0.34265039468753666,
+      "utility": 0.34265039468753666
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        0,
+        "G0",
+        8301
+      ],
+      "recorded_utility": 0.33941746134532685,
+      "utility": 0.33941746134532685
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        0,
+        "G0",
+        8302
+      ],
+      "recorded_utility": 0.33883550889695885,
+      "utility": 0.33883550889695885
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        0,
+        "G0",
+        8303
+      ],
+      "recorded_utility": 0.09303975567217312,
+      "utility": 0.09303975567217312
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        0,
+        "T",
+        8301
+      ],
+      "recorded_utility": 0.33941746134532685,
+      "utility": 0.33941746134532685
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        0,
+        "T",
+        8302
+      ],
+      "recorded_utility": 0.33883550889695885,
+      "utility": 0.33883550889695885
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        0,
+        "T",
+        8303
+      ],
+      "recorded_utility": 0.09303975567217312,
+      "utility": 0.09303975567217312
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        0,
+        "G1",
+        8301
+      ],
+      "recorded_utility": 0.33941746134532685,
+      "utility": 0.33941746134532685
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        0,
+        "G1",
+        8302
+      ],
+      "recorded_utility": 0.33883550889695885,
+      "utility": 0.33883550889695885
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        0,
+        "G1",
+        8303
+      ],
+      "recorded_utility": 0.09646342252598568,
+      "utility": 0.09646342252598568
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        0,
+        "H",
+        null
+      ],
+      "recorded_utility": 0.3484706206389615,
+      "utility": 0.3484706206389615
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        1,
+        "G0",
+        8301
+      ],
+      "recorded_utility": 0.34246844462554793,
+      "utility": 0.34246844462554793
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        1,
+        "G0",
+        8302
+      ],
+      "recorded_utility": 0.3387208867288138,
+      "utility": 0.3387208867288138
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        1,
+        "G0",
+        8303
+      ],
+      "recorded_utility": 0.33259553158645705,
+      "utility": 0.33259553158645705
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        1,
+        "T",
+        8301
+      ],
+      "recorded_utility": 0.34246844462554793,
+      "utility": 0.34246844462554793
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        1,
+        "T",
+        8302
+      ],
+      "recorded_utility": 0.3387208867288138,
+      "utility": 0.3387208867288138
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        1,
+        "T",
+        8303
+      ],
+      "recorded_utility": 0.33259553158645705,
+      "utility": 0.33259553158645705
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        1,
+        "G1",
+        8301
+      ],
+      "recorded_utility": 0.3398619732141002,
+      "utility": 0.3398619732141002
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        1,
+        "G1",
+        8302
+      ],
+      "recorded_utility": 0.3387208867288138,
+      "utility": 0.3387208867288138
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        1,
+        "G1",
+        8303
+      ],
+      "recorded_utility": 0.33259553158645705,
+      "utility": 0.33259553158645705
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        1,
+        "H",
+        null
+      ],
+      "recorded_utility": 0.3451301253786223,
+      "utility": 0.3451301253786223
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        2,
+        "G0",
+        8301
+      ],
+      "recorded_utility": 0.33431332243296413,
+      "utility": 0.33431332243296413
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        2,
+        "G0",
+        8302
+      ],
+      "recorded_utility": 0.2101048599145587,
+      "utility": 0.2101048599145587
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        2,
+        "G0",
+        8303
+      ],
+      "recorded_utility": 0.21255968422119065,
+      "utility": 0.21255968422119065
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        2,
+        "T",
+        8301
+      ],
+      "recorded_utility": 0.33431332243296413,
+      "utility": 0.33431332243296413
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        2,
+        "T",
+        8302
+      ],
+      "recorded_utility": 0.2101048599145587,
+      "utility": 0.2101048599145587
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        2,
+        "T",
+        8303
+      ],
+      "recorded_utility": 0.21255968422119065,
+      "utility": 0.21255968422119065
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        2,
+        "G1",
+        8301
+      ],
+      "recorded_utility": 0.2132018536859657,
+      "utility": 0.2132018536859657
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        2,
+        "G1",
+        8302
+      ],
+      "recorded_utility": 0.2101048599145587,
+      "utility": 0.2101048599145587
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        2,
+        "G1",
+        8303
+      ],
+      "recorded_utility": 0.08478056564549814,
+      "utility": 0.08478056564549814
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0105",
+        2,
+        "H",
+        null
+      ],
+      "recorded_utility": 0.3382432518495766,
+      "utility": 0.3382432518495766
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        0,
+        "G0",
+        8301
+      ],
+      "recorded_utility": 0.3374069564297145,
+      "utility": 0.3374069564297145
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        0,
+        "G0",
+        8302
+      ],
+      "recorded_utility": 0.1996480709849107,
+      "utility": 0.1996480709849107
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        0,
+        "G0",
+        8303
+      ],
+      "recorded_utility": 0.3382493344632596,
+      "utility": 0.3382493344632596
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        0,
+        "T",
+        8301
+      ],
+      "recorded_utility": 0.3374069564297145,
+      "utility": 0.3374069564297145
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        0,
+        "T",
+        8302
+      ],
+      "recorded_utility": 0.1996480709849107,
+      "utility": 0.1996480709849107
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        0,
+        "T",
+        8303
+      ],
+      "recorded_utility": 0.3382493344632596,
+      "utility": 0.3382493344632596
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        0,
+        "G1",
+        8301
+      ],
+      "recorded_utility": 0.3374069564297145,
+      "utility": 0.3374069564297145
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        0,
+        "G1",
+        8302
+      ],
+      "recorded_utility": 0.1996480709849107,
+      "utility": 0.1996480709849107
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        0,
+        "G1",
+        8303
+      ],
+      "recorded_utility": 0.2171397564613349,
+      "utility": 0.2171397564613349
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        0,
+        "H",
+        null
+      ],
+      "recorded_utility": 0.34280577587491773,
+      "utility": 0.34280577587491773
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        1,
+        "G0",
+        8301
+      ],
+      "recorded_utility": 0.09310258808437134,
+      "utility": 0.09310258808437134
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        1,
+        "G0",
+        8302
+      ],
+      "recorded_utility": 0.33677687069862355,
+      "utility": 0.33677687069862355
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        1,
+        "G0",
+        8303
+      ],
+      "recorded_utility": 0.2131170131909079,
+      "utility": 0.2131170131909079
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        1,
+        "T",
+        8301
+      ],
+      "recorded_utility": 0.09310258808437134,
+      "utility": 0.09310258808437134
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        1,
+        "T",
+        8302
+      ],
+      "recorded_utility": 0.33677687069862355,
+      "utility": 0.33677687069862355
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        1,
+        "T",
+        8303
+      ],
+      "recorded_utility": 0.2131170131909079,
+      "utility": 0.2131170131909079
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        1,
+        "G1",
+        8301
+      ],
+      "recorded_utility": 0.09256250239867214,
+      "utility": 0.09256250239867214
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        1,
+        "G1",
+        8302
+      ],
+      "recorded_utility": 0.33677687069862355,
+      "utility": 0.33677687069862355
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        1,
+        "G1",
+        8303
+      ],
+      "recorded_utility": 0.08777072508544204,
+      "utility": 0.08777072508544204
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        1,
+        "H",
+        null
+      ],
+      "recorded_utility": 0.33156678124500544,
+      "utility": 0.33156678124500544
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        2,
+        "G0",
+        8301
+      ],
+      "recorded_utility": 0.32415680359545795,
+      "utility": 0.32415680359545795
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        2,
+        "G0",
+        8302
+      ],
+      "recorded_utility": 0.2069501699070116,
+      "utility": 0.2069501699070116
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        2,
+        "G0",
+        8303
+      ],
+      "recorded_utility": 0.3377502508699428,
+      "utility": 0.3377502508699428
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        2,
+        "T",
+        8301
+      ],
+      "recorded_utility": 0.32415680359545795,
+      "utility": 0.32415680359545795
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        2,
+        "T",
+        8302
+      ],
+      "recorded_utility": 0.2069501699070116,
+      "utility": 0.2069501699070116
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        2,
+        "T",
+        8303
+      ],
+      "recorded_utility": 0.3377502508699428,
+      "utility": 0.3377502508699428
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        2,
+        "G1",
+        8301
+      ],
+      "recorded_utility": 0.33528300530319083,
+      "utility": 0.33528300530319083
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        2,
+        "G1",
+        8302
+      ],
+      "recorded_utility": 0.2069501699070116,
+      "utility": 0.2069501699070116
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        2,
+        "G1",
+        8303
+      ],
+      "recorded_utility": 0.3324828821293227,
+      "utility": 0.3324828821293227
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0106",
+        2,
+        "H",
+        null
+      ],
+      "recorded_utility": 0.34162141883383046,
+      "utility": 0.34162141883383046
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        0,
+        "G0",
+        8301
+      ],
+      "recorded_utility": 0.3366427307748494,
+      "utility": 0.3366427307748494
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        0,
+        "G0",
+        8302
+      ],
+      "recorded_utility": 0.3287771705145227,
+      "utility": 0.3287771705145227
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        0,
+        "G0",
+        8303
+      ],
+      "recorded_utility": 0.2142156528101027,
+      "utility": 0.2142156528101027
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        0,
+        "T",
+        8301
+      ],
+      "recorded_utility": 0.3366427307748494,
+      "utility": 0.3366427307748494
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        0,
+        "T",
+        8302
+      ],
+      "recorded_utility": 0.3287771705145227,
+      "utility": 0.3287771705145227
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        0,
+        "T",
+        8303
+      ],
+      "recorded_utility": 0.2142156528101027,
+      "utility": 0.2142156528101027
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        0,
+        "G1",
+        8301
+      ],
+      "recorded_utility": 0.3366427307748494,
+      "utility": 0.3366427307748494
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        0,
+        "G1",
+        8302
+      ],
+      "recorded_utility": 0.3287771705145227,
+      "utility": 0.3287771705145227
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        0,
+        "G1",
+        8303
+      ],
+      "recorded_utility": 0.07952200278160526,
+      "utility": 0.07952200278160526
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        0,
+        "H",
+        null
+      ],
+      "recorded_utility": 0.3391450743876574,
+      "utility": 0.3391450743876574
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        1,
+        "G0",
+        8301
+      ],
+      "recorded_utility": 0.33082018806014174,
+      "utility": 0.33082018806014174
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        1,
+        "G0",
+        8302
+      ],
+      "recorded_utility": 0.21580497867744738,
+      "utility": 0.21580497867744738
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        1,
+        "G0",
+        8303
+      ],
+      "recorded_utility": 0.33529170263848973,
+      "utility": 0.33529170263848973
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        1,
+        "T",
+        8301
+      ],
+      "recorded_utility": 0.33082018806014174,
+      "utility": 0.33082018806014174
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        1,
+        "T",
+        8302
+      ],
+      "recorded_utility": 0.21580497867744738,
+      "utility": 0.21580497867744738
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        1,
+        "T",
+        8303
+      ],
+      "recorded_utility": 0.33529170263848973,
+      "utility": 0.33529170263848973
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        1,
+        "G1",
+        8301
+      ],
+      "recorded_utility": 0.33082018806014174,
+      "utility": 0.33082018806014174
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        1,
+        "G1",
+        8302
+      ],
+      "recorded_utility": 0.21580497867744738,
+      "utility": 0.21580497867744738
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        1,
+        "G1",
+        8303
+      ],
+      "recorded_utility": 0.21348390664823358,
+      "utility": 0.21348390664823358
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        1,
+        "H",
+        null
+      ],
+      "recorded_utility": 0.3437416938032538,
+      "utility": 0.3437416938032538
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        2,
+        "G0",
+        8301
+      ],
+      "recorded_utility": 0.33583936675277826,
+      "utility": 0.33583936675277826
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        2,
+        "G0",
+        8302
+      ],
+      "recorded_utility": 0.33443553604430976,
+      "utility": 0.33443553604430976
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        2,
+        "G0",
+        8303
+      ],
+      "recorded_utility": 0.2142697597971549,
+      "utility": 0.2142697597971549
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        2,
+        "T",
+        8301
+      ],
+      "recorded_utility": 0.33583936675277826,
+      "utility": 0.33583936675277826
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        2,
+        "T",
+        8302
+      ],
+      "recorded_utility": 0.33443553604430976,
+      "utility": 0.33443553604430976
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        2,
+        "T",
+        8303
+      ],
+      "recorded_utility": 0.2142697597971549,
+      "utility": 0.2142697597971549
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        2,
+        "G1",
+        8301
+      ],
+      "recorded_utility": 0.33860542922818615,
+      "utility": 0.33860542922818615
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        2,
+        "G1",
+        8302
+      ],
+      "recorded_utility": 0.33443553604430976,
+      "utility": 0.33443553604430976
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        2,
+        "G1",
+        8303
+      ],
+      "recorded_utility": 0.3274474325436561,
+      "utility": 0.3274474325436561
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0107",
+        2,
+        "H",
+        null
+      ],
+      "recorded_utility": 0.3418893193986339,
+      "utility": 0.3418893193986339
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        0,
+        "G0",
+        8301
+      ],
+      "recorded_utility": 0.2036612111359525,
+      "utility": 0.2036612111359525
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        0,
+        "G0",
+        8302
+      ],
+      "recorded_utility": 0.3271504126859596,
+      "utility": 0.3271504126859596
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        0,
+        "G0",
+        8303
+      ],
+      "recorded_utility": 0.09082978108535905,
+      "utility": 0.09082978108535905
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        0,
+        "T",
+        8301
+      ],
+      "recorded_utility": 0.2036612111359525,
+      "utility": 0.2036612111359525
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        0,
+        "T",
+        8302
+      ],
+      "recorded_utility": 0.3271504126859596,
+      "utility": 0.3271504126859596
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        0,
+        "T",
+        8303
+      ],
+      "recorded_utility": 0.09082978108535905,
+      "utility": 0.09082978108535905
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        0,
+        "G1",
+        8301
+      ],
+      "recorded_utility": 0.21184847152852526,
+      "utility": 0.21184847152852526
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        0,
+        "G1",
+        8302
+      ],
+      "recorded_utility": 0.3271504126859596,
+      "utility": 0.3271504126859596
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        0,
+        "G1",
+        8303
+      ],
+      "recorded_utility": 0.08395488252239834,
+      "utility": 0.08395488252239834
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        0,
+        "H",
+        null
+      ],
+      "recorded_utility": 0.34183757362582234,
+      "utility": 0.34183757362582234
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        1,
+        "G0",
+        8301
+      ],
+      "recorded_utility": 0.09237823399671521,
+      "utility": 0.09237823399671521
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        1,
+        "G0",
+        8302
+      ],
+      "recorded_utility": 0.08937803863500504,
+      "utility": 0.08937803863500504
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        1,
+        "G0",
+        8303
+      ],
+      "recorded_utility": 0.0739096878481775,
+      "utility": 0.0739096878481775
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        1,
+        "T",
+        8301
+      ],
+      "recorded_utility": 0.09237823399671521,
+      "utility": 0.09237823399671521
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        1,
+        "T",
+        8302
+      ],
+      "recorded_utility": 0.08937803863500504,
+      "utility": 0.08937803863500504
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        1,
+        "T",
+        8303
+      ],
+      "recorded_utility": 0.0739096878481775,
+      "utility": 0.0739096878481775
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        1,
+        "G1",
+        8301
+      ],
+      "recorded_utility": 0.3250094500409209,
+      "utility": 0.3250094500409209
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        1,
+        "G1",
+        8302
+      ],
+      "recorded_utility": 0.08937803863500504,
+      "utility": 0.08937803863500504
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        1,
+        "G1",
+        8303
+      ],
+      "recorded_utility": -0.03236349947831413,
+      "utility": -0.03236349947831413
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        1,
+        "H",
+        null
+      ],
+      "recorded_utility": 0.3430230520420021,
+      "utility": 0.3430230520420021
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        2,
+        "G0",
+        8301
+      ],
+      "recorded_utility": 0.3328283117447002,
+      "utility": 0.3328283117447002
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        2,
+        "G0",
+        8302
+      ],
+      "recorded_utility": 0.328495368336439,
+      "utility": 0.328495368336439
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        2,
+        "G0",
+        8303
+      ],
+      "recorded_utility": 0.33534196076369777,
+      "utility": 0.33534196076369777
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        2,
+        "T",
+        8301
+      ],
+      "recorded_utility": 0.3328283117447002,
+      "utility": 0.3328283117447002
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        2,
+        "T",
+        8302
+      ],
+      "recorded_utility": 0.328495368336439,
+      "utility": 0.328495368336439
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        2,
+        "T",
+        8303
+      ],
+      "recorded_utility": 0.33534196076369777,
+      "utility": 0.33534196076369777
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        2,
+        "G1",
+        8301
+      ],
+      "recorded_utility": 0.33339165330871645,
+      "utility": 0.33339165330871645
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        2,
+        "G1",
+        8302
+      ],
+      "recorded_utility": 0.328495368336439,
+      "utility": 0.328495368336439
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        2,
+        "G1",
+        8303
+      ],
+      "recorded_utility": 0.21658375348000306,
+      "utility": 0.21658375348000306
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0108",
+        2,
+        "H",
+        null
+      ],
+      "recorded_utility": 0.34467638559356545,
+      "utility": 0.34467638559356545
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        0,
+        "G0",
+        8301
+      ],
+      "recorded_utility": 0.21378290101150302,
+      "utility": 0.21378290101150302
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        0,
+        "G0",
+        8302
+      ],
+      "recorded_utility": 0.2131846617723999,
+      "utility": 0.2131846617723999
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        0,
+        "G0",
+        8303
+      ],
+      "recorded_utility": 0.21283298525355576,
+      "utility": 0.21283298525355576
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        0,
+        "T",
+        8301
+      ],
+      "recorded_utility": 0.21378290101150302,
+      "utility": 0.21378290101150302
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        0,
+        "T",
+        8302
+      ],
+      "recorded_utility": 0.2131846617723999,
+      "utility": 0.2131846617723999
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        0,
+        "T",
+        8303
+      ],
+      "recorded_utility": 0.21283298525355576,
+      "utility": 0.21283298525355576
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        0,
+        "G1",
+        8301
+      ],
+      "recorded_utility": 0.3354753608611433,
+      "utility": 0.3354753608611433
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        0,
+        "G1",
+        8302
+      ],
+      "recorded_utility": 0.2131846617723999,
+      "utility": 0.2131846617723999
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        0,
+        "G1",
+        8303
+      ],
+      "recorded_utility": 0.21283298525355576,
+      "utility": 0.21283298525355576
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        0,
+        "H",
+        null
+      ],
+      "recorded_utility": 0.3419972654469823,
+      "utility": 0.3419972654469823
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        1,
+        "G0",
+        8301
+      ],
+      "recorded_utility": 0.3426775831829274,
+      "utility": 0.3426775831829274
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        1,
+        "G0",
+        8302
+      ],
+      "recorded_utility": 0.20284516117599927,
+      "utility": 0.20284516117599927
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        1,
+        "G0",
+        8303
+      ],
+      "recorded_utility": 0.20959342719718008,
+      "utility": 0.20959342719718008
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        1,
+        "T",
+        8301
+      ],
+      "recorded_utility": 0.3426775831829274,
+      "utility": 0.3426775831829274
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        1,
+        "T",
+        8302
+      ],
+      "recorded_utility": 0.20284516117599927,
+      "utility": 0.20284516117599927
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        1,
+        "T",
+        8303
+      ],
+      "recorded_utility": 0.20959342719718008,
+      "utility": 0.20959342719718008
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        1,
+        "G1",
+        8301
+      ],
+      "recorded_utility": 0.3363534374053249,
+      "utility": 0.3363534374053249
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        1,
+        "G1",
+        8302
+      ],
+      "recorded_utility": 0.20284516117599927,
+      "utility": 0.20284516117599927
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        1,
+        "G1",
+        8303
+      ],
+      "recorded_utility": 0.3309094356204261,
+      "utility": 0.3309094356204261
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        1,
+        "H",
+        null
+      ],
+      "recorded_utility": 0.33512961350672177,
+      "utility": 0.33512961350672177
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        2,
+        "G0",
+        8301
+      ],
+      "recorded_utility": 0.08338901964755802,
+      "utility": 0.08338901964755802
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        2,
+        "G0",
+        8302
+      ],
+      "recorded_utility": 0.20737830284246747,
+      "utility": 0.20737830284246747
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        2,
+        "G0",
+        8303
+      ],
+      "recorded_utility": 0.21210755258775754,
+      "utility": 0.21210755258775754
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        2,
+        "T",
+        8301
+      ],
+      "recorded_utility": 0.08338901964755802,
+      "utility": 0.08338901964755802
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        2,
+        "T",
+        8302
+      ],
+      "recorded_utility": 0.20737830284246747,
+      "utility": 0.20737830284246747
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        2,
+        "T",
+        8303
+      ],
+      "recorded_utility": 0.21210755258775754,
+      "utility": 0.21210755258775754
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        2,
+        "G1",
+        8301
+      ],
+      "recorded_utility": 0.21388898986370478,
+      "utility": 0.21388898986370478
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        2,
+        "G1",
+        8302
+      ],
+      "recorded_utility": 0.20737830284246747,
+      "utility": 0.20737830284246747
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        2,
+        "G1",
+        8303
+      ],
+      "recorded_utility": 0.21210755258775754,
+      "utility": 0.21210755258775754
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0109",
+        2,
+        "H",
+        null
+      ],
+      "recorded_utility": 0.3350999181213995,
+      "utility": 0.3350999181213995
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        0,
+        "G0",
+        8301
+      ],
+      "recorded_utility": 0.33573136431232314,
+      "utility": 0.33573136431232314
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        0,
+        "G0",
+        8302
+      ],
+      "recorded_utility": 0.33136846506727513,
+      "utility": 0.33136846506727513
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        0,
+        "G0",
+        8303
+      ],
+      "recorded_utility": 0.20459097869680026,
+      "utility": 0.20459097869680026
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        0,
+        "T",
+        8301
+      ],
+      "recorded_utility": 0.33573136431232314,
+      "utility": 0.33573136431232314
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        0,
+        "T",
+        8302
+      ],
+      "recorded_utility": 0.33136846506727513,
+      "utility": 0.33136846506727513
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        0,
+        "T",
+        8303
+      ],
+      "recorded_utility": 0.20459097869680026,
+      "utility": 0.20459097869680026
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        0,
+        "G1",
+        8301
+      ],
+      "recorded_utility": 0.33573136431232314,
+      "utility": 0.33573136431232314
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        0,
+        "G1",
+        8302
+      ],
+      "recorded_utility": 0.33136846506727513,
+      "utility": 0.33136846506727513
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        0,
+        "G1",
+        8303
+      ],
+      "recorded_utility": 0.089332838074274,
+      "utility": 0.089332838074274
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        0,
+        "H",
+        null
+      ],
+      "recorded_utility": 0.3399508243774469,
+      "utility": 0.3399508243774469
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        1,
+        "G0",
+        8301
+      ],
+      "recorded_utility": 0.09626195730310923,
+      "utility": 0.09626195730310923
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        1,
+        "G0",
+        8302
+      ],
+      "recorded_utility": 0.08306686207546798,
+      "utility": 0.08306686207546798
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        1,
+        "G0",
+        8303
+      ],
+      "recorded_utility": 0.2193980438117069,
+      "utility": 0.2193980438117069
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        1,
+        "T",
+        8301
+      ],
+      "recorded_utility": 0.09626195730310923,
+      "utility": 0.09626195730310923
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        1,
+        "T",
+        8302
+      ],
+      "recorded_utility": 0.08306686207546798,
+      "utility": 0.08306686207546798
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        1,
+        "T",
+        8303
+      ],
+      "recorded_utility": 0.2193980438117069,
+      "utility": 0.2193980438117069
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        1,
+        "G1",
+        8301
+      ],
+      "recorded_utility": 0.09137133311109022,
+      "utility": 0.09137133311109022
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        1,
+        "G1",
+        8302
+      ],
+      "recorded_utility": 0.20187490551481008,
+      "utility": 0.20187490551481008
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        1,
+        "G1",
+        8303
+      ],
+      "recorded_utility": 0.21504105826566625,
+      "utility": 0.21504105826566625
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        1,
+        "H",
+        null
+      ],
+      "recorded_utility": 0.3417659892844367,
+      "utility": 0.3417659892844367
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        2,
+        "G0",
+        8301
+      ],
+      "recorded_utility": 0.2078990516367652,
+      "utility": 0.2078990516367652
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        2,
+        "G0",
+        8302
+      ],
+      "recorded_utility": 0.08143531122964327,
+      "utility": 0.08143531122964327
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        2,
+        "G0",
+        8303
+      ],
+      "recorded_utility": 0.2161057436340705,
+      "utility": 0.2161057436340705
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        2,
+        "T",
+        8301
+      ],
+      "recorded_utility": 0.2078990516367652,
+      "utility": 0.2078990516367652
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        2,
+        "T",
+        8302
+      ],
+      "recorded_utility": 0.08143531122964327,
+      "utility": 0.08143531122964327
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        2,
+        "T",
+        8303
+      ],
+      "recorded_utility": 0.2161057436340705,
+      "utility": 0.2161057436340705
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        2,
+        "G1",
+        8301
+      ],
+      "recorded_utility": 0.08267061717809962,
+      "utility": 0.08267061717809962
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        2,
+        "G1",
+        8302
+      ],
+      "recorded_utility": 0.08143531122964327,
+      "utility": 0.08143531122964327
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        2,
+        "G1",
+        8303
+      ],
+      "recorded_utility": 0.09467963145414558,
+      "utility": 0.09467963145414558
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0110",
+        2,
+        "H",
+        null
+      ],
+      "recorded_utility": 0.34741645527170484,
+      "utility": 0.34741645527170484
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        0,
+        "G0",
+        8301
+      ],
+      "recorded_utility": 0.09265364582151304,
+      "utility": 0.09265364582151304
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        0,
+        "G0",
+        8302
+      ],
+      "recorded_utility": 0.2151630839848519,
+      "utility": 0.2151630839848519
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        0,
+        "G0",
+        8303
+      ],
+      "recorded_utility": 0.3281360071391967,
+      "utility": 0.3281360071391967
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        0,
+        "T",
+        8301
+      ],
+      "recorded_utility": 0.09265364582151304,
+      "utility": 0.09265364582151304
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        0,
+        "T",
+        8302
+      ],
+      "recorded_utility": 0.2151630839848519,
+      "utility": 0.2151630839848519
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        0,
+        "T",
+        8303
+      ],
+      "recorded_utility": 0.3281360071391967,
+      "utility": 0.3281360071391967
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        0,
+        "G1",
+        8301
+      ],
+      "recorded_utility": 0.21379380109219787,
+      "utility": 0.21379380109219787
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        0,
+        "G1",
+        8302
+      ],
+      "recorded_utility": 0.2151630839848519,
+      "utility": 0.2151630839848519
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        0,
+        "G1",
+        8303
+      ],
+      "recorded_utility": 0.33520603993880216,
+      "utility": 0.33520603993880216
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        0,
+        "H",
+        null
+      ],
+      "recorded_utility": 0.3393869891425185,
+      "utility": 0.3393869891425185
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        1,
+        "G0",
+        8301
+      ],
+      "recorded_utility": 0.3378156846948218,
+      "utility": 0.3378156846948218
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        1,
+        "G0",
+        8302
+      ],
+      "recorded_utility": 0.2150503152079971,
+      "utility": 0.2150503152079971
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        1,
+        "G0",
+        8303
+      ],
+      "recorded_utility": 0.21936547664511502,
+      "utility": 0.21936547664511502
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        1,
+        "T",
+        8301
+      ],
+      "recorded_utility": 0.3378156846948218,
+      "utility": 0.3378156846948218
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        1,
+        "T",
+        8302
+      ],
+      "recorded_utility": 0.2150503152079971,
+      "utility": 0.2150503152079971
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        1,
+        "T",
+        8303
+      ],
+      "recorded_utility": 0.21936547664511502,
+      "utility": 0.21936547664511502
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        1,
+        "G1",
+        8301
+      ],
+      "recorded_utility": 0.3330415428999674,
+      "utility": 0.3330415428999674
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        1,
+        "G1",
+        8302
+      ],
+      "recorded_utility": 0.2150503152079971,
+      "utility": 0.2150503152079971
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        1,
+        "G1",
+        8303
+      ],
+      "recorded_utility": 0.21818253331812926,
+      "utility": 0.21818253331812926
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        1,
+        "H",
+        null
+      ],
+      "recorded_utility": 0.33942955461102564,
+      "utility": 0.33942955461102564
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        2,
+        "G0",
+        8301
+      ],
+      "recorded_utility": 0.21878105441016404,
+      "utility": 0.21878105441016404
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        2,
+        "G0",
+        8302
+      ],
+      "recorded_utility": 0.3274460218881635,
+      "utility": 0.3274460218881635
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        2,
+        "G0",
+        8303
+      ],
+      "recorded_utility": 0.21278641925020414,
+      "utility": 0.21278641925020414
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        2,
+        "T",
+        8301
+      ],
+      "recorded_utility": 0.21878105441016404,
+      "utility": 0.21878105441016404
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        2,
+        "T",
+        8302
+      ],
+      "recorded_utility": 0.3274460218881635,
+      "utility": 0.3274460218881635
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        2,
+        "T",
+        8303
+      ],
+      "recorded_utility": 0.21278641925020414,
+      "utility": 0.21278641925020414
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        2,
+        "G1",
+        8301
+      ],
+      "recorded_utility": 0.21878105441016404,
+      "utility": 0.21878105441016404
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        2,
+        "G1",
+        8302
+      ],
+      "recorded_utility": 0.0913007207156267,
+      "utility": 0.0913007207156267
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        2,
+        "G1",
+        8303
+      ],
+      "recorded_utility": 0.08988214143234531,
+      "utility": 0.08988214143234531
+    },
+    {
+      "absolute_error": 0.0,
+      "key": [
+        "train-0111",
+        2,
+        "H",
+        null
+      ],
+      "recorded_utility": 0.34100712520019877,
+      "utility": 0.34100712520019877
+    }
+  ],
+  "schema": "w1-g1-gppo-independent-task-metrics/1.0.0",
+  "seed_g1_minus_t": {
+    "8301": 0.015375829232395138,
+    "8302": -0.00488905240554978,
+    "8303": -0.036862531392950856
+  },
+  "unknown_episode_count": 0
+}

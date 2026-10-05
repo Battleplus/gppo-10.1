@@ -1,0 +1,25 @@
+{
+  "accounting_reserves": {
+    "cross_system_wall_seconds": 30,
+    "windows_post_preflight_process_cpu_seconds": 30
+  },
+  "attempt": "w1-g1-gppo-recovery-v1-once",
+  "authorization_status": "NOT_APPROVED",
+  "automatic_retry": false,
+  "cpu_affinity": [
+    0
+  ],
+  "frozen_windows_entry": "run_g1_task_validation.py",
+  "host": "local-Windows-WSL-Ubuntu-24.04",
+  "integration_test": false,
+  "native_entry": "local_research_entry.py",
+  "native_execution_root": "/home/asus/w1-g1-gppo-recovery-v1-once/package",
+  "native_python": "/home/asus/.venvs/w1-light-repaired-fair-rerun-py31116/bin/python",
+  "native_source_mount": "/mnt/e/Z博士/research-plans/w1-g1-gppo-recovery-preparation-v1/package",
+  "one_shot": true,
+  "resource_request_sha256": "7f62d4f5d09c935e0e13241e7468097d9f0f54b9a1e245e060a74d379491168d",
+  "runtime_identity_sha256": "2100e84a69a34b85c54d7a75a3c3c57fea48c1e7df7004fc05d759def3b7dea2",
+  "runtime_mode": "local_wsl_g1_gppo_cpu",
+  "schema": "w1-eawm-jepa-launch-contract/2.1.0",
+  "user": "asus"
+}

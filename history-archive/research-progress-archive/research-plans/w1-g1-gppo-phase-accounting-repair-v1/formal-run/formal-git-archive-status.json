@@ -1,0 +1,78 @@
+{
+  "archive_hashes": {
+    "audit_formal_results.py": "f05e36b888df1aea91307441b646233243a03cb87703eb40b7a5c6b92fde577c",
+    "formal-luna-result-review.json": "83778413837f6356e3248d691388dd97adea225788c2873d4ac8b4f2cc526580",
+    "formal-result-audit/formal-audit-summary.json": "eb66ac2a5d3576c18a47772bf259f60b70a9c8a6b4fb81bf6d933040e5f42bd3",
+    "formal-result-audit/ledger-audit.json": "380e98ddce2650f85c970b942c9e247188a18a7a8f990e64d35e10196bd30e4f",
+    "formal-result-audit/native-final-readonly.json": "10ffaefcdf652f0b05410e6883d3766cfb13887e206f93ca7e0d2367beb41fe4",
+    "formal-result-audit/sealed-run-facts.json": "62f3f65b2e086fd36cb77b559988d0ff7213b85b55195cad3fb4bee875c59085",
+    "formal-result-audit/token-cleanup.json": "42820f477f790699ce9868f51c13abf73dceeaa30a38d64c60094abc33471792",
+    "formal-result-audit/training-metrics-descriptive.json": "1a9755fda580721bd9c2d5a050a415e75614716d49f85b799a784b37faae0bf2",
+    "formal-run-report.md": "da62f1d9a98e991db70b0d4d87131fde4f915536ed65514e527b9743332ecd19",
+    "launch-evidence.json": "6c4f1e205b81e600e53c9efe0f358bdbe63f5cdcc4c5b012b547b6c4fd063f2e",
+    "native-controller-settlement.json": "067179566de5cfba34d910d6d271e2b35a36ba0bf3cbd2eafde75f6a028c9b83",
+    "native_final_readonly.py": "3e8785fe1f284c1698b3a25d0bd166d7d8ff54f1c9831c38dad0d7b9484d447a",
+    "seal_formal_evidence.py": "8eae704ac8f69adaf3063dd128bae5ffc4f7aded8cbcc66574ff8706824ef875",
+    "verified-export/export-hashes.json": "d093d90fd1c7e5fe1e8ddbaa89bca3282b3239460325b164a612fbee564c36cd",
+    "verified-export/outer-incomplete-settlement.json": "66d47994f197048a4f1be89362f76dab9a5ca56f5193873b4bdf6e53b68c079c",
+    "verified-export/run-once/resource-settlement.json": "66d47994f197048a4f1be89362f76dab9a5ca56f5193873b4bdf6e53b68c079c",
+    "verified-export/run-once/status.json": "0fae6a6bee5b72638ea6d22ad9f2b1b963d48125abaa8e20e54cde0f3649653d",
+    "verified-export/supervisor-first-error.json": "1eb974fa976b5f4dc969802190fa1eabdf8394c768e086f3894a59220ad35920",
+    "verified-export/supervisor-status.json": "0dfc32af023c18ba0ba8f11e804e308d3abcc92e6b6d26b02236cbc89d008def"
+  },
+  "artifact_count": 20,
+  "blocking_reason": "signed commit failed or timed out",
+  "commit_attempt": {
+    "command": [
+      "git",
+      "commit",
+      "--only",
+      "-m",
+      "docs: seal G1 GPPO phase-accounting attempt stopped at training wall limit",
+      "--",
+      "research-plans/w1-g1-gppo-phase-accounting-repair-v1/formal-run"
+    ],
+    "exit_code": null,
+    "stderr": "warning: in the working copy of 'research-plans/w1-g1-gppo-phase-accounting-repair-v1/formal-run/audit_formal_results.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'research-plans/w1-g1-gppo-phase-accounting-repair-v1/formal-run/formal-luna-result-review.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'research-plans/w1-g1-gppo-phase-accounting-repair-v1/formal-run/formal-result-audit/native-final-readonly.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'research-plans/w1-g1-gppo-phase-accounting-repair-v1/formal-run/formal-run-report.md', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'research-plans/w1-g1-gppo-phase-accounting-repair-v1/formal-run/native-controller-settlement.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'research-plans/w1-g1-gppo-phase-accounting-repair-v1/formal-run/native_final_readonly.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'research-plans/w1-g1-gppo-phase-accounting-repair-v1/formal-run/seal_formal_evidence.py', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'research-plans/w1-g1-gppo-phase-accounting-repair-v1/formal-run/verified-export/export-hashes.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'research-plans/w1-g1-gppo-phase-accounting-repair-v1/formal-run/verified-export/outer-incomplete-settlement.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'research-plans/w1-g1-gppo-phase-accounting-repair-v1/formal-run/verified-export/run-once/resource-settlement.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'research-plans/w1-g1-gppo-phase-accounting-repair-v1/formal-run/verified-export/run-once/status.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'research-plans/w1-g1-gppo-phase-accounting-repair-v1/formal-run/verified-export/supervisor-first-error.json', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'research-plans/w1-g1-gppo-phase-accounting-repair-v1/formal-run/verified-export/supervisor-status.json', LF will be replaced by CRLF the next time Git touches it\nerror: \nfatal: failed to write commit object\n",
+    "stdout": "",
+    "timeout": true,
+    "wall_seconds": 232.4027952000033
+  },
+  "commit_signing_kept_enabled": true,
+  "formal_attempt_restarted": false,
+  "head_after": "6aa16410b0e69aaceb7dee0b4d260eaf76d03e02",
+  "head_before": "6aa16410b0e69aaceb7dee0b4d260eaf76d03e02",
+  "local_archive": "E:\\Z博士\\research-progress-archive\\research-plans\\w1-g1-gppo-phase-accounting-repair-v1\\formal-run",
+  "network_status": "remote branch read succeeded; signed commit blocked",
+  "preexisting_staged_entries_preserved": true,
+  "push_attempt": null,
+  "remote_archive_status": "远端未归档",
+  "remote_readonly_check": {
+    "command": [
+      "git",
+      "-c",
+      "http.lowSpeedLimit=1",
+      "-c",
+      "http.lowSpeedTime=10",
+      "ls-remote",
+      "--heads",
+      "origin",
+      "archive/research-progress"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "bd82fa77c3003756f5f3e4f7d5850911fc40dbd9\trefs/heads/archive/research-progress\n",
+    "wall_seconds": 1.3324987000087276
+  },
+  "remote_verified": false,
+  "scope": "allowlisted small nonsecret artifacts; no SQLite/checkpoint/raw traces/authorization/token uploaded",
+  "signing_timeout_cleanup": {
+    "index_lock_deleted": false,
+    "no_other_job_touched": true,
+    "observed_commit_call_wall_seconds": 232.4027952000033,
+    "only_this_archive_commit_and_signer_children_stopped": true,
+    "reason": "Windows git launcher exited on timeout but signer descendant kept capture pipe open",
+    "requested_timeout_seconds": 25
+  },
+  "ssh_agent_status": "Stopped"
+}

@@ -1,0 +1,9 @@
+{
+  "exit_code": 0,
+  "test_count": 10,
+  "torch_imported": false,
+  "model_initializations": 0,
+  "checkpoint_deserializations": 0,
+  "environment_calls": 0,
+  "scope": "stdlib-only recovery contract tests on frozen WSL Python; no research execution"
+}

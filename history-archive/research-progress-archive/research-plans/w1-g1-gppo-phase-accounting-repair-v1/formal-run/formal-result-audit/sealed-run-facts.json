@@ -1,0 +1,410 @@
+{
+  "accounting_limits": {
+    "cpu_totals_are_nested_not_additive": true,
+    "full_resource_acceptance": false,
+    "gaps": [
+      "Windows WSL bridge CPU not measured",
+      "controller final write and exit tail not measured",
+      "CPU polled; no delegated cgroup hard enforcement"
+    ],
+    "measured_controller_limits_pass": true,
+    "pending_update_may_have_partially_executed": "unknown; never counted as completed or zero",
+    "phase_stage_resource_pass": false,
+    "settlement_status": "incomplete",
+    "worker_final_settlement_missing": true
+  },
+  "attempt": "w1-g1-gppo-phase-accounting-repair-v1-once",
+  "audit_self_cpu_seconds": 0.390625,
+  "audit_wall_seconds": 0.3248461000039242,
+  "automatic_retry": false,
+  "completed_checkpoint_count": 7,
+  "completion_expiration_confirmation_energy_comparison": "未评价",
+  "cost_gate": "未评价",
+  "decision_costs": {
+    "G0": {
+      "cpu_mean_ms": null,
+      "samples": 0,
+      "status": "未评价",
+      "wall_p95_ms": null
+    },
+    "G1": {
+      "cpu_mean_ms": null,
+      "samples": 0,
+      "status": "未评价",
+      "wall_p95_ms": null
+    },
+    "H": {
+      "cpu_mean_ms": null,
+      "samples": 0,
+      "status": "未评价",
+      "wall_p95_ms": null
+    },
+    "T": {
+      "cpu_mean_ms": null,
+      "samples": 0,
+      "status": "未评价",
+      "wall_p95_ms": null
+    }
+  },
+  "exit_code": 1,
+  "first_error": {
+    "automatic_retry": false,
+    "error": "conditional_policy_training wall shutdown reserve",
+    "exception_type": "RuntimeError",
+    "phase_rejection": null,
+    "schema": "w1-supervisor-first-error/1.0.0",
+    "stage": "conditional_policy_training",
+    "status": "technical_stop",
+    "traceback": "Traceback (most recent call last):\n  File \"/home/asus/w1-g1-gppo-phase-accounting-repair-v1-once/package/supervise.py\", line 486, in main\n    guard(limits,stage,run,wall,cpu,disk,starts,run_starts)\n  File \"/home/asus/w1-g1-gppo-phase-accounting-repair-v1-once/package/supervise.py\", line 181, in guard\n    if wall-start[0]>=caps['wall_seconds']-res['wall_seconds']:raise RuntimeError(name+' wall shutdown reserve')\n                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: conditional_policy_training wall shutdown reserve\n"
+  },
+  "ledger_amounts_by_status": {
+    "complete": {
+      "actor_sample_evaluations": 74199,
+      "checkpoint_loads": 3,
+      "checkpoint_writes": 7,
+      "encode_sample_evaluations": 75658,
+      "environment_steps": 14848,
+      "model_initializations_or_loads": 11,
+      "policy_backward_calls": 924,
+      "policy_optimizer_updates": 924,
+      "resets_upper": 1073,
+      "world_batch_forwards": 2560,
+      "world_sample_evaluations": 8495
+    },
+    "pending": {
+      "actor_sample_evaluations": 64,
+      "encode_sample_evaluations": 64,
+      "policy_backward_calls": 1,
+      "policy_optimizer_updates": 1
+    }
+  },
+  "ledger_call_count": 51017,
+  "measured_resources": {
+    "active_native_bytes": 101491683,
+    "launch_wall_seconds": 3629.3990414,
+    "native_controller_self_plus_waited_cpu_seconds": 2499.036717,
+    "native_controller_wall_seconds": 3628.6199061640073,
+    "peak_rss_bytes": 1279746048,
+    "training_stage_tail": {
+      "cpu_attribution_status": "worker_journal_matches_server_commit",
+      "cpu_scope": "included once in supervisor SELF plus waited-children total; phase rows are non-additive views",
+      "cpu_seconds": 2478.8917340000003,
+      "cpu_tail_measurement_reversed": false,
+      "event": "unconfirmed_stage_tail",
+      "measurement_status": "measured_incomplete",
+      "stage": "conditional_policy_training",
+      "stage_cpu_seconds": 2478.8917340000003,
+      "stage_resource_cap_pass": false,
+      "stage_wall_seconds": 3600.830220251999,
+      "transition_committed": false,
+      "wall_seconds": 3600.830220251999
+    },
+    "verified_export_bytes": 88338076,
+    "windows_controller_self_cpu_seconds": 0.03125
+  },
+  "parent_seed_stability": "未评价",
+  "post_run_monitor_cpu": {
+    "records": [
+      {
+        "cpu_seconds": 0.16933299999999998,
+        "file": "formal-monitor-20261004-195104.stdout.json"
+      },
+      {
+        "cpu_seconds": 0.081011,
+        "file": "formal-monitor-20261004-195533.stdout.json"
+      },
+      {
+        "cpu_seconds": 0.068454,
+        "file": "formal-monitor-20261004-195932.stdout.json"
+      },
+      {
+        "cpu_seconds": 0.08930099999999999,
+        "file": "formal-monitor-20261004-200313.stdout.json"
+      },
+      {
+        "cpu_seconds": 0.083704,
+        "file": "formal-monitor-20261004-200718.stdout.json"
+      },
+      {
+        "cpu_seconds": 0.078723,
+        "file": "formal-monitor-20261004-200922.stdout.json"
+      },
+      {
+        "cpu_seconds": 0.083243,
+        "file": "formal-monitor-20261004-201106.stdout.json"
+      },
+      {
+        "cpu_seconds": 0.073192,
+        "file": "formal-monitor-20261004-201302.stdout.json"
+      },
+      {
+        "cpu_seconds": 0.085228,
+        "file": "formal-monitor-20261004-201531.stdout.json"
+      },
+      {
+        "cpu_seconds": 0.10483899999999999,
+        "file": "formal-monitor-20261004-201759.stdout.json"
+      },
+      {
+        "cpu_seconds": 0.09593399999999999,
+        "file": "formal-monitor-20261004-202016.stdout.json"
+      },
+      {
+        "cpu_seconds": 0.08704799999999999,
+        "file": "formal-monitor-20261004-202202.stdout.json"
+      },
+      {
+        "cpu_seconds": 0.091014,
+        "file": "formal-monitor-20261004-202409.stdout.json"
+      },
+      {
+        "cpu_seconds": 0.091927,
+        "file": "formal-monitor-20261004-202621.stdout.json"
+      },
+      {
+        "cpu_seconds": 0.10199899999999999,
+        "file": "formal-monitor-20261004-202825.stdout.json"
+      },
+      {
+        "cpu_seconds": 0.107885,
+        "file": "formal-monitor-20261004-203006.stdout.json"
+      },
+      {
+        "cpu_seconds": 0.211456,
+        "file": "formal-monitor-20261004-203129.stdout.json"
+      },
+      {
+        "cpu_seconds": 0.099886,
+        "file": "formal-monitor-20261004-203251.stdout.json"
+      },
+      {
+        "cpu_seconds": 0.10241499999999999,
+        "file": "formal-monitor-20261004-203434.stdout.json"
+      },
+      {
+        "cpu_seconds": 0.107361,
+        "file": "formal-monitor-20261004-203611.stdout.json"
+      },
+      {
+        "cpu_seconds": 0.12019899999999999,
+        "file": "formal-monitor-20261004-203829.stdout.json"
+      },
+      {
+        "cpu_seconds": 0.10019800000000001,
+        "file": "formal-monitor-20261004-204024.stdout.json"
+      },
+      {
+        "cpu_seconds": 0.116349,
+        "file": "formal-monitor-20261004-204219.stdout.json"
+      },
+      {
+        "cpu_seconds": 0.114843,
+        "file": "formal-monitor-20261004-204436.stdout.json"
+      }
+    ],
+    "saved_monitor_count": 24,
+    "saved_self_cpu_sum_seconds": 2.465542,
+    "scope": "separate readonly monitor processes, not nested formal CPU; unpersisted monitor output reported separately"
+  },
+  "research_conclusion": "本次未完成任务评价，不能判断G1是否改善GPPO，也不能判断实用成本；不改写此前排序实验。",
+  "route_summary": [
+    {
+      "checkpoint_relative": "run-once/policy-checkpoints/G0-seed-8301.pt",
+      "checkpoint_restoration": "未评价",
+      "checkpoint_sha256": "f8d2f540e6b7e33d9a6c0d88031401f790e7cb48a2cbc2732317637efb694b73",
+      "method": "G0",
+      "seed": 8301,
+      "status": "complete_checkpoint_saved",
+      "steps_complete": 2048,
+      "summary_fields": [
+        "decision_summary",
+        "environment_steps",
+        "policy_optimizer_updates",
+        "raw_decisions",
+        "recurrent_hidden_replay_groups",
+        "recurrent_hidden_replay_observations",
+        "recurrent_hidden_replay_traces",
+        "route",
+        "world_model_frozen",
+        "world_model_updates"
+      ],
+      "updates_complete": 128,
+      "updates_pending_unknown": 0,
+      "world_model_frozen_recorded": false,
+      "world_model_seed": null
+    },
+    {
+      "checkpoint_relative": "run-once/policy-checkpoints/G0-seed-8302.pt",
+      "checkpoint_restoration": "未评价",
+      "checkpoint_sha256": "2e796ba14199f909314b39e554b29a208e6872b20499df5a7933f1d1003126a8",
+      "method": "G0",
+      "seed": 8302,
+      "status": "complete_checkpoint_saved",
+      "steps_complete": 2048,
+      "summary_fields": [
+        "decision_summary",
+        "environment_steps",
+        "policy_optimizer_updates",
+        "raw_decisions",
+        "recurrent_hidden_replay_groups",
+        "recurrent_hidden_replay_observations",
+        "recurrent_hidden_replay_traces",
+        "route",
+        "world_model_frozen",
+        "world_model_updates"
+      ],
+      "updates_complete": 128,
+      "updates_pending_unknown": 0,
+      "world_model_frozen_recorded": false,
+      "world_model_seed": null
+    },
+    {
+      "checkpoint_relative": "run-once/policy-checkpoints/G0-seed-8303.pt",
+      "checkpoint_restoration": "未评价",
+      "checkpoint_sha256": "8d5ba4e6de24eac7ea3f8ad72e0b3b4bc33158f55bc96339ea9e4f3707b2b20a",
+      "method": "G0",
+      "seed": 8303,
+      "status": "complete_checkpoint_saved",
+      "steps_complete": 2048,
+      "summary_fields": [
+        "decision_summary",
+        "environment_steps",
+        "policy_optimizer_updates",
+        "raw_decisions",
+        "recurrent_hidden_replay_groups",
+        "recurrent_hidden_replay_observations",
+        "recurrent_hidden_replay_traces",
+        "route",
+        "world_model_frozen",
+        "world_model_updates"
+      ],
+      "updates_complete": 128,
+      "updates_pending_unknown": 0,
+      "world_model_frozen_recorded": false,
+      "world_model_seed": null
+    },
+    {
+      "checkpoint_relative": "run-once/policy-checkpoints/T-seed-8301.pt",
+      "checkpoint_restoration": "未评价",
+      "checkpoint_sha256": "9ff5b92d8519971cbe120687959d1d3b35d955b85d1c06f6cdbfb240c567b895",
+      "method": "T",
+      "seed": 8301,
+      "status": "complete_checkpoint_saved",
+      "steps_complete": 2048,
+      "summary_fields": [
+        "decision_summary",
+        "environment_steps",
+        "policy_optimizer_updates",
+        "raw_decisions",
+        "recurrent_hidden_replay_groups",
+        "recurrent_hidden_replay_observations",
+        "recurrent_hidden_replay_traces",
+        "route",
+        "world_model_frozen",
+        "world_model_updates"
+      ],
+      "updates_complete": 128,
+      "updates_pending_unknown": 0,
+      "world_model_frozen_recorded": false,
+      "world_model_seed": null
+    },
+    {
+      "checkpoint_relative": "run-once/policy-checkpoints/T-seed-8302.pt",
+      "checkpoint_restoration": "未评价",
+      "checkpoint_sha256": "720e05811cca898fd6ede0d27430bc37c0b97656056e6b03f7fecfa76abd59d1",
+      "method": "T",
+      "seed": 8302,
+      "status": "complete_checkpoint_saved",
+      "steps_complete": 2048,
+      "summary_fields": [
+        "decision_summary",
+        "environment_steps",
+        "policy_optimizer_updates",
+        "raw_decisions",
+        "recurrent_hidden_replay_groups",
+        "recurrent_hidden_replay_observations",
+        "recurrent_hidden_replay_traces",
+        "route",
+        "world_model_frozen",
+        "world_model_updates"
+      ],
+      "updates_complete": 128,
+      "updates_pending_unknown": 0,
+      "world_model_frozen_recorded": false,
+      "world_model_seed": null
+    },
+    {
+      "checkpoint_relative": "run-once/policy-checkpoints/T-seed-8303.pt",
+      "checkpoint_restoration": "未评价",
+      "checkpoint_sha256": "dd55477a0b85d8e2d9dcb7ac9573f74a4a789a993387cd92341355c750c86a7e",
+      "method": "T",
+      "seed": 8303,
+      "status": "complete_checkpoint_saved",
+      "steps_complete": 2048,
+      "summary_fields": [
+        "decision_summary",
+        "environment_steps",
+        "policy_optimizer_updates",
+        "raw_decisions",
+        "recurrent_hidden_replay_groups",
+        "recurrent_hidden_replay_observations",
+        "recurrent_hidden_replay_traces",
+        "route",
+        "world_model_frozen",
+        "world_model_updates"
+      ],
+      "updates_complete": 128,
+      "updates_pending_unknown": 0,
+      "world_model_frozen_recorded": false,
+      "world_model_seed": null
+    },
+    {
+      "checkpoint_relative": "run-once/policy-checkpoints/G1-seed-8301.pt",
+      "checkpoint_restoration": "未评价",
+      "checkpoint_sha256": "687d9bbc396252b5ff337d021431c932662926dd784aabd7dcb2823031cc1f16",
+      "method": "G1",
+      "seed": 8301,
+      "status": "complete_checkpoint_saved",
+      "steps_complete": 2048,
+      "summary_fields": [
+        "decision_summary",
+        "environment_steps",
+        "policy_optimizer_updates",
+        "raw_decisions",
+        "recurrent_hidden_replay_groups",
+        "recurrent_hidden_replay_observations",
+        "recurrent_hidden_replay_traces",
+        "route",
+        "world_model_frozen",
+        "world_model_updates"
+      ],
+      "updates_complete": 128,
+      "updates_pending_unknown": 0,
+      "world_model_frozen_recorded": true,
+      "world_model_seed": 8201
+    },
+    {
+      "checkpoint_restoration": "未评价",
+      "method": "G1",
+      "seed": 8302,
+      "status": "partial_interrupted",
+      "steps_complete": 512,
+      "updates_complete": 28,
+      "updates_pending_unknown": 1
+    },
+    {
+      "checkpoint_restoration": "未评价",
+      "method": "G1",
+      "seed": 8303,
+      "status": "not_started",
+      "steps_complete": 0,
+      "updates_complete": 0,
+      "updates_pending_unknown": 0
+    }
+  ],
+  "status": "technical_stop",
+  "task_comparison_calls": 0,
+  "task_episodes": 0,
+  "task_gate": "未评价",
+  "task_utility": "未评价"
+}

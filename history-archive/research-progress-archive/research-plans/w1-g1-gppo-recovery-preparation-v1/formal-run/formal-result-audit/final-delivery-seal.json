@@ -1,0 +1,22 @@
+{
+  "G1_cost_gate_pass": false,
+  "additional_dynamic_run": false,
+  "all_available_call_and_resource_caps_pass": true,
+  "attempt": "w1-g1-gppo-recovery-v1-once",
+  "frozen_source_and_archive_unchanged": true,
+  "full_240_episode_matrix_verified": true,
+  "full_resource_acceptance": false,
+  "native_metric_and_gate_recomputation_exact": true,
+  "nine_final_models_verified": true,
+  "old_failure_and_settlement_unchanged": true,
+  "plaintext_token_cleanup": {
+    "attempt": "w1-g1-gppo-recovery-v1-once",
+    "attempt_consumed_no_retry": true,
+    "cleanup_error": null,
+    "old_token_used": false,
+    "plaintext_token_exists": false,
+    "plaintext_token_removed": true
+  },
+  "research_status": "task_gain_gate_stop",
+  "task_gate_pass": false
+}

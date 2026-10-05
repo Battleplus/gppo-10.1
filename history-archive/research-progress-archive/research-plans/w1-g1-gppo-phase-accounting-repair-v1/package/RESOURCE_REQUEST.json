@@ -1,0 +1,98 @@
+{
+  "accounting_reserves": {
+    "cross_system_wall_seconds": 30,
+    "windows_post_preflight_process_cpu_seconds": 30
+  },
+  "attempt": "w1-g1-gppo-phase-accounting-repair-v1-once",
+  "budget_basis": "9 routes x2048 steps x128 updates; 8 parents x3 repeats x(3 methods x3 seeds + shared H) x18steps; bootstrap worst-case at every training step; models paired one per policy seed; no new world training",
+  "policy_or_task_comparison": true,
+  "research_training": true,
+  "resource_gaps_not_passed_by_default": [
+    "Windows WSL bridge CPU",
+    "final controller write/exit tail",
+    "shared CPU load and cross-clock domain difference"
+  ],
+  "runner_ready": true,
+  "runtime": {
+    "cuda": "12.8",
+    "python": "3.11.16",
+    "python_executable": "/home/asus/.venvs/w1-light-repaired-fair-rerun-py31116/bin/python",
+    "torch": "2.7.0+cu128"
+  },
+  "schema": "w1-g1-gppo-task-resource-request/1.0.0",
+  "stages": {
+    "conditional_policy_training": {
+      "active_storage_bytes": 2147483648,
+      "actor_sample_evaluations": 110592,
+      "checkpoint_loads": 3,
+      "checkpoint_writes": 9,
+      "complete_process_cpu_seconds": 6000,
+      "encode_sample_evaluations": 110592,
+      "environment_steps": 18432,
+      "model_initializations_or_loads": 12,
+      "policy_backward_calls": 1152,
+      "policy_optimizer_updates": 1152,
+      "resets_upper": 18441,
+      "wall_seconds": 3600,
+      "world_batch_forwards": 6144,
+      "world_sample_evaluations": 153600
+    },
+    "conditional_task_confirmation": {
+      "active_storage_bytes": 2147483648,
+      "actor_sample_evaluations": 3888,
+      "checkpoint_loads": 12,
+      "complete_process_cpu_seconds": 1600,
+      "encode_sample_evaluations": 3888,
+      "environment_steps": 4320,
+      "model_initializations_or_loads": 12,
+      "public_rule_decisions": 432,
+      "resets_upper": 240,
+      "task_comparison_calls": 1,
+      "task_episodes": 240,
+      "wall_seconds": 1200,
+      "world_batch_forwards": 1296,
+      "world_sample_evaluations": 32400
+    },
+    "settlement_and_verified_export": {
+      "active_storage_bytes": 2147483648,
+      "complete_process_cpu_seconds": 80,
+      "wall_seconds": 120
+    },
+    "staging_and_zero_step_gate": {
+      "active_storage_bytes": 2147483648,
+      "complete_process_cpu_seconds": 80,
+      "wall_seconds": 120
+    }
+  },
+  "status": "NOT_APPROVED",
+  "stops": [
+    "identity/runtime/budget/nonfinite/partial_matrix/technical_failure_no_retry"
+  ],
+  "totals": {
+    "active_storage_bytes": 2147483648,
+    "actor_sample_evaluations": 114480,
+    "aggregate_native_plus_verified_export_bytes": 4294967296,
+    "all_resident_rss_bytes": 4294967296,
+    "checkpoint_loads": 15,
+    "checkpoint_writes": 9,
+    "complete_process_cpu_seconds": 7790,
+    "encode_sample_evaluations": 114480,
+    "environment_steps": 22752,
+    "gpu_devices": 0,
+    "gpu_memory_bytes": 0,
+    "model_initializations_or_loads": 24,
+    "new_world_data_collection_steps": 0,
+    "policy_backward_calls": 1152,
+    "policy_optimizer_updates": 1152,
+    "public_rule_decisions": 432,
+    "resets_upper": 18681,
+    "task_comparison_calls": 1,
+    "task_episodes": 240,
+    "wall_seconds": 5070,
+    "world_backward_calls": 0,
+    "world_batch_forwards": 7440,
+    "world_model_training_updates": 0,
+    "world_optimizer_updates": 0,
+    "world_sample_evaluations": 186000
+  }
+}

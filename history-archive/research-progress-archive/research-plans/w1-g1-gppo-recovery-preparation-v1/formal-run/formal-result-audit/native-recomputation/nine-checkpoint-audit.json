@@ -1,0 +1,3166 @@
+{
+  "complete_count": 9,
+  "reuse_count": 7,
+  "routes": [
+    {
+      "facts": {
+        "archive_bytes": 5194543,
+        "archive_sha256": "f8d2f540e6b7e33d9a6c0d88031401f790e7cb48a2cbc2732317637efb694b73",
+        "byteorder": "little",
+        "method": "G0",
+        "optimizer_group_parameter_counts": [
+          35
+        ],
+        "optimizer_lrs": [
+          0.0003
+        ],
+        "optimizer_state_slot_count": 33,
+        "optimizer_step_values": [
+          128.0
+        ],
+        "pickle_globals_allowed": [
+          "collections.OrderedDict",
+          "torch._utils._rebuild_tensor_v2 (inert stub)",
+          "torch.*Storage (metadata token only)"
+        ],
+        "recomputed_state_sha256": "21e6776fe7630386599d1a011ff4a34e2e0a7ae9d4f3413611ef782d048b893d",
+        "schema": "w1-policy-checkpoint/1.0.0",
+        "seed": 8301,
+        "state_hash_matches_stored": true,
+        "state_tensor_count": 35,
+        "state_tensors": [
+          {
+            "dtype": "torch.float32",
+            "name": "base.critic.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "22"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.critic.weight",
+            "shape": [
+              1,
+              128
+            ],
+            "storage_key": "21"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "8"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.0.weight",
+            "shape": [
+              64,
+              132
+            ],
+            "storage_key": "7"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.2.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "10"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.2.weight",
+            "shape": [
+              64,
+              64
+            ],
+            "storage_key": "9"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.graph_projection.0.bias",
+            "shape": [
+              128
+            ],
+            "storage_key": "6"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.graph_projection.0.weight",
+            "shape": [
+              128,
+              64
+            ],
+            "storage_key": "5"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.bias_hh_l0",
+            "shape": [
+              384
+            ],
+            "storage_key": "20"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.bias_ih_l0",
+            "shape": [
+              384
+            ],
+            "storage_key": "19"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.weight_hh_l0",
+            "shape": [
+              384,
+              128
+            ],
+            "storage_key": "18"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.weight_ih_l0",
+            "shape": [
+              384,
+              128
+            ],
+            "storage_key": "17"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.noop_actor.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "16"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.noop_actor.weight",
+            "shape": [
+              1,
+              128
+            ],
+            "storage_key": "15"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "12"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.0.weight",
+            "shape": [
+              64,
+              192
+            ],
+            "storage_key": "11"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.2.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "14"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.2.weight",
+            "shape": [
+              1,
+              64
+            ],
+            "storage_key": "13"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "1"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.0.weight",
+            "shape": [
+              64,
+              32
+            ],
+            "storage_key": "0"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.2.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "3"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.2.weight",
+            "shape": [
+              64,
+              64
+            ],
+            "storage_key": "2"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.type_embedding.weight",
+            "shape": [
+              5,
+              64
+            ],
+            "storage_key": "4"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.0.bias",
+            "shape": [
+              32
+            ],
+            "storage_key": "28"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.0.weight",
+            "shape": [
+              32,
+              17
+            ],
+            "storage_key": "27"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.2.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "30"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.2.weight",
+            "shape": [
+              1,
+              32
+            ],
+            "storage_key": "29"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "24"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.0.weight",
+            "shape": [
+              64,
+              130
+            ],
+            "storage_key": "23"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.2.bias",
+            "shape": [
+              25
+            ],
+            "storage_key": "26"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.2.weight",
+            "shape": [
+              25,
+              64
+            ],
+            "storage_key": "25"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.0.bias",
+            "shape": [
+              128
+            ],
+            "storage_key": "32"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.0.weight",
+            "shape": [
+              128,
+              130
+            ],
+            "storage_key": "31"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.2.bias",
+            "shape": [
+              2
+            ],
+            "storage_key": "34"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.2.weight",
+            "shape": [
+              2,
+              128
+            ],
+            "storage_key": "33"
+          }
+        ],
+        "stored_state_sha256": "21e6776fe7630386599d1a011ff4a34e2e0a7ae9d4f3413611ef782d048b893d",
+        "summary_environment_steps": 2048,
+        "summary_optimizer_updates": 128,
+        "summary_raw_decision_count": 2048,
+        "summary_recurrent_replay_groups": 32,
+        "summary_route": "G0:8301",
+        "summary_world_model_frozen": false,
+        "summary_world_model_updates": 0,
+        "top_level_keys": [
+          "method",
+          "optimizer_state_dict",
+          "schema",
+          "seed",
+          "state_dict",
+          "state_dict_sha256",
+          "summary"
+        ]
+      },
+      "file": "/mnt/e/Z博士/research-plans/w1-g1-gppo-recovery-preparation-v1/package/frozen-models/reused-policy/G0-seed-8301.pt",
+      "method": "G0",
+      "reuse": true,
+      "seed": 8301,
+      "source_attempt": "w1-g1-gppo-phase-accounting-repair-v1-once",
+      "status": "complete"
+    },
+    {
+      "facts": {
+        "archive_bytes": 5153903,
+        "archive_sha256": "2e796ba14199f909314b39e554b29a208e6872b20499df5a7933f1d1003126a8",
+        "byteorder": "little",
+        "method": "G0",
+        "optimizer_group_parameter_counts": [
+          35
+        ],
+        "optimizer_lrs": [
+          0.0003
+        ],
+        "optimizer_state_slot_count": 33,
+        "optimizer_step_values": [
+          128.0
+        ],
+        "pickle_globals_allowed": [
+          "collections.OrderedDict",
+          "torch._utils._rebuild_tensor_v2 (inert stub)",
+          "torch.*Storage (metadata token only)"
+        ],
+        "recomputed_state_sha256": "dfa5c8f5680b07fde56af1d2d4c0ad24dbb9499fb773e365b398528f812a3edb",
+        "schema": "w1-policy-checkpoint/1.0.0",
+        "seed": 8302,
+        "state_hash_matches_stored": true,
+        "state_tensor_count": 35,
+        "state_tensors": [
+          {
+            "dtype": "torch.float32",
+            "name": "base.critic.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "22"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.critic.weight",
+            "shape": [
+              1,
+              128
+            ],
+            "storage_key": "21"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "8"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.0.weight",
+            "shape": [
+              64,
+              132
+            ],
+            "storage_key": "7"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.2.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "10"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.2.weight",
+            "shape": [
+              64,
+              64
+            ],
+            "storage_key": "9"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.graph_projection.0.bias",
+            "shape": [
+              128
+            ],
+            "storage_key": "6"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.graph_projection.0.weight",
+            "shape": [
+              128,
+              64
+            ],
+            "storage_key": "5"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.bias_hh_l0",
+            "shape": [
+              384
+            ],
+            "storage_key": "20"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.bias_ih_l0",
+            "shape": [
+              384
+            ],
+            "storage_key": "19"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.weight_hh_l0",
+            "shape": [
+              384,
+              128
+            ],
+            "storage_key": "18"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.weight_ih_l0",
+            "shape": [
+              384,
+              128
+            ],
+            "storage_key": "17"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.noop_actor.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "16"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.noop_actor.weight",
+            "shape": [
+              1,
+              128
+            ],
+            "storage_key": "15"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "12"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.0.weight",
+            "shape": [
+              64,
+              192
+            ],
+            "storage_key": "11"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.2.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "14"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.2.weight",
+            "shape": [
+              1,
+              64
+            ],
+            "storage_key": "13"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "1"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.0.weight",
+            "shape": [
+              64,
+              32
+            ],
+            "storage_key": "0"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.2.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "3"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.2.weight",
+            "shape": [
+              64,
+              64
+            ],
+            "storage_key": "2"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.type_embedding.weight",
+            "shape": [
+              5,
+              64
+            ],
+            "storage_key": "4"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.0.bias",
+            "shape": [
+              32
+            ],
+            "storage_key": "28"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.0.weight",
+            "shape": [
+              32,
+              17
+            ],
+            "storage_key": "27"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.2.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "30"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.2.weight",
+            "shape": [
+              1,
+              32
+            ],
+            "storage_key": "29"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "24"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.0.weight",
+            "shape": [
+              64,
+              130
+            ],
+            "storage_key": "23"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.2.bias",
+            "shape": [
+              25
+            ],
+            "storage_key": "26"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.2.weight",
+            "shape": [
+              25,
+              64
+            ],
+            "storage_key": "25"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.0.bias",
+            "shape": [
+              128
+            ],
+            "storage_key": "32"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.0.weight",
+            "shape": [
+              128,
+              130
+            ],
+            "storage_key": "31"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.2.bias",
+            "shape": [
+              2
+            ],
+            "storage_key": "34"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.2.weight",
+            "shape": [
+              2,
+              128
+            ],
+            "storage_key": "33"
+          }
+        ],
+        "stored_state_sha256": "dfa5c8f5680b07fde56af1d2d4c0ad24dbb9499fb773e365b398528f812a3edb",
+        "summary_environment_steps": 2048,
+        "summary_optimizer_updates": 128,
+        "summary_raw_decision_count": 2048,
+        "summary_recurrent_replay_groups": 32,
+        "summary_route": "G0:8302",
+        "summary_world_model_frozen": false,
+        "summary_world_model_updates": 0,
+        "top_level_keys": [
+          "method",
+          "optimizer_state_dict",
+          "schema",
+          "seed",
+          "state_dict",
+          "state_dict_sha256",
+          "summary"
+        ]
+      },
+      "file": "/mnt/e/Z博士/research-plans/w1-g1-gppo-recovery-preparation-v1/package/frozen-models/reused-policy/G0-seed-8302.pt",
+      "method": "G0",
+      "reuse": true,
+      "seed": 8302,
+      "source_attempt": "w1-g1-gppo-phase-accounting-repair-v1-once",
+      "status": "complete"
+    },
+    {
+      "facts": {
+        "archive_bytes": 5217711,
+        "archive_sha256": "8d5ba4e6de24eac7ea3f8ad72e0b3b4bc33158f55bc96339ea9e4f3707b2b20a",
+        "byteorder": "little",
+        "method": "G0",
+        "optimizer_group_parameter_counts": [
+          35
+        ],
+        "optimizer_lrs": [
+          0.0003
+        ],
+        "optimizer_state_slot_count": 33,
+        "optimizer_step_values": [
+          128.0
+        ],
+        "pickle_globals_allowed": [
+          "collections.OrderedDict",
+          "torch._utils._rebuild_tensor_v2 (inert stub)",
+          "torch.*Storage (metadata token only)"
+        ],
+        "recomputed_state_sha256": "f6924b897cdf013ef29751e07f5b1c44f34e55509829e87bd567f96502aa22ee",
+        "schema": "w1-policy-checkpoint/1.0.0",
+        "seed": 8303,
+        "state_hash_matches_stored": true,
+        "state_tensor_count": 35,
+        "state_tensors": [
+          {
+            "dtype": "torch.float32",
+            "name": "base.critic.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "22"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.critic.weight",
+            "shape": [
+              1,
+              128
+            ],
+            "storage_key": "21"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "8"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.0.weight",
+            "shape": [
+              64,
+              132
+            ],
+            "storage_key": "7"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.2.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "10"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.2.weight",
+            "shape": [
+              64,
+              64
+            ],
+            "storage_key": "9"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.graph_projection.0.bias",
+            "shape": [
+              128
+            ],
+            "storage_key": "6"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.graph_projection.0.weight",
+            "shape": [
+              128,
+              64
+            ],
+            "storage_key": "5"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.bias_hh_l0",
+            "shape": [
+              384
+            ],
+            "storage_key": "20"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.bias_ih_l0",
+            "shape": [
+              384
+            ],
+            "storage_key": "19"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.weight_hh_l0",
+            "shape": [
+              384,
+              128
+            ],
+            "storage_key": "18"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.weight_ih_l0",
+            "shape": [
+              384,
+              128
+            ],
+            "storage_key": "17"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.noop_actor.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "16"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.noop_actor.weight",
+            "shape": [
+              1,
+              128
+            ],
+            "storage_key": "15"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "12"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.0.weight",
+            "shape": [
+              64,
+              192
+            ],
+            "storage_key": "11"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.2.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "14"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.2.weight",
+            "shape": [
+              1,
+              64
+            ],
+            "storage_key": "13"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "1"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.0.weight",
+            "shape": [
+              64,
+              32
+            ],
+            "storage_key": "0"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.2.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "3"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.2.weight",
+            "shape": [
+              64,
+              64
+            ],
+            "storage_key": "2"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.type_embedding.weight",
+            "shape": [
+              5,
+              64
+            ],
+            "storage_key": "4"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.0.bias",
+            "shape": [
+              32
+            ],
+            "storage_key": "28"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.0.weight",
+            "shape": [
+              32,
+              17
+            ],
+            "storage_key": "27"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.2.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "30"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.2.weight",
+            "shape": [
+              1,
+              32
+            ],
+            "storage_key": "29"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "24"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.0.weight",
+            "shape": [
+              64,
+              130
+            ],
+            "storage_key": "23"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.2.bias",
+            "shape": [
+              25
+            ],
+            "storage_key": "26"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.2.weight",
+            "shape": [
+              25,
+              64
+            ],
+            "storage_key": "25"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.0.bias",
+            "shape": [
+              128
+            ],
+            "storage_key": "32"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.0.weight",
+            "shape": [
+              128,
+              130
+            ],
+            "storage_key": "31"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.2.bias",
+            "shape": [
+              2
+            ],
+            "storage_key": "34"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.2.weight",
+            "shape": [
+              2,
+              128
+            ],
+            "storage_key": "33"
+          }
+        ],
+        "stored_state_sha256": "f6924b897cdf013ef29751e07f5b1c44f34e55509829e87bd567f96502aa22ee",
+        "summary_environment_steps": 2048,
+        "summary_optimizer_updates": 128,
+        "summary_raw_decision_count": 2048,
+        "summary_recurrent_replay_groups": 32,
+        "summary_route": "G0:8303",
+        "summary_world_model_frozen": false,
+        "summary_world_model_updates": 0,
+        "top_level_keys": [
+          "method",
+          "optimizer_state_dict",
+          "schema",
+          "seed",
+          "state_dict",
+          "state_dict_sha256",
+          "summary"
+        ]
+      },
+      "file": "/mnt/e/Z博士/research-plans/w1-g1-gppo-recovery-preparation-v1/package/frozen-models/reused-policy/G0-seed-8303.pt",
+      "method": "G0",
+      "reuse": true,
+      "seed": 8303,
+      "source_attempt": "w1-g1-gppo-phase-accounting-repair-v1-once",
+      "status": "complete"
+    },
+    {
+      "facts": {
+        "archive_bytes": 5780195,
+        "archive_sha256": "9ff5b92d8519971cbe120687959d1d3b35d955b85d1c06f6cdbfb240c567b895",
+        "byteorder": "little",
+        "method": "T",
+        "optimizer_group_parameter_counts": [
+          35
+        ],
+        "optimizer_lrs": [
+          0.0003
+        ],
+        "optimizer_state_slot_count": 33,
+        "optimizer_step_values": [
+          128.0
+        ],
+        "pickle_globals_allowed": [
+          "collections.OrderedDict",
+          "torch._utils._rebuild_tensor_v2 (inert stub)",
+          "torch.*Storage (metadata token only)"
+        ],
+        "recomputed_state_sha256": "ad850bc1cd0a27491526495ff75943f1a16fc756aadad8e3f0a32b42b29b9c47",
+        "schema": "w1-policy-checkpoint/1.0.0",
+        "seed": 8301,
+        "state_hash_matches_stored": true,
+        "state_tensor_count": 35,
+        "state_tensors": [
+          {
+            "dtype": "torch.float32",
+            "name": "base.critic.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "22"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.critic.weight",
+            "shape": [
+              1,
+              128
+            ],
+            "storage_key": "21"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "8"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.0.weight",
+            "shape": [
+              64,
+              132
+            ],
+            "storage_key": "7"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.2.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "10"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.2.weight",
+            "shape": [
+              64,
+              64
+            ],
+            "storage_key": "9"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.graph_projection.0.bias",
+            "shape": [
+              128
+            ],
+            "storage_key": "6"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.graph_projection.0.weight",
+            "shape": [
+              128,
+              64
+            ],
+            "storage_key": "5"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.bias_hh_l0",
+            "shape": [
+              384
+            ],
+            "storage_key": "20"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.bias_ih_l0",
+            "shape": [
+              384
+            ],
+            "storage_key": "19"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.weight_hh_l0",
+            "shape": [
+              384,
+              128
+            ],
+            "storage_key": "18"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.weight_ih_l0",
+            "shape": [
+              384,
+              128
+            ],
+            "storage_key": "17"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.noop_actor.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "16"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.noop_actor.weight",
+            "shape": [
+              1,
+              128
+            ],
+            "storage_key": "15"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "12"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.0.weight",
+            "shape": [
+              64,
+              192
+            ],
+            "storage_key": "11"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.2.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "14"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.2.weight",
+            "shape": [
+              1,
+              64
+            ],
+            "storage_key": "13"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "1"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.0.weight",
+            "shape": [
+              64,
+              32
+            ],
+            "storage_key": "0"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.2.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "3"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.2.weight",
+            "shape": [
+              64,
+              64
+            ],
+            "storage_key": "2"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.type_embedding.weight",
+            "shape": [
+              5,
+              64
+            ],
+            "storage_key": "4"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.0.bias",
+            "shape": [
+              32
+            ],
+            "storage_key": "28"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.0.weight",
+            "shape": [
+              32,
+              17
+            ],
+            "storage_key": "27"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.2.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "30"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.2.weight",
+            "shape": [
+              1,
+              32
+            ],
+            "storage_key": "29"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "24"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.0.weight",
+            "shape": [
+              64,
+              130
+            ],
+            "storage_key": "23"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.2.bias",
+            "shape": [
+              25
+            ],
+            "storage_key": "26"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.2.weight",
+            "shape": [
+              25,
+              64
+            ],
+            "storage_key": "25"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.0.bias",
+            "shape": [
+              128
+            ],
+            "storage_key": "32"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.0.weight",
+            "shape": [
+              128,
+              130
+            ],
+            "storage_key": "31"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.2.bias",
+            "shape": [
+              2
+            ],
+            "storage_key": "34"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.2.weight",
+            "shape": [
+              2,
+              128
+            ],
+            "storage_key": "33"
+          }
+        ],
+        "stored_state_sha256": "ad850bc1cd0a27491526495ff75943f1a16fc756aadad8e3f0a32b42b29b9c47",
+        "summary_environment_steps": 2048,
+        "summary_optimizer_updates": 128,
+        "summary_raw_decision_count": 2048,
+        "summary_recurrent_replay_groups": 32,
+        "summary_route": "T:8301",
+        "summary_world_model_frozen": false,
+        "summary_world_model_updates": 0,
+        "top_level_keys": [
+          "method",
+          "optimizer_state_dict",
+          "schema",
+          "seed",
+          "state_dict",
+          "state_dict_sha256",
+          "summary"
+        ]
+      },
+      "file": "/mnt/e/Z博士/research-plans/w1-g1-gppo-recovery-preparation-v1/package/frozen-models/reused-policy/T-seed-8301.pt",
+      "method": "T",
+      "reuse": true,
+      "seed": 8301,
+      "source_attempt": "w1-g1-gppo-phase-accounting-repair-v1-once",
+      "status": "complete"
+    },
+    {
+      "facts": {
+        "archive_bytes": 5703651,
+        "archive_sha256": "720e05811cca898fd6ede0d27430bc37c0b97656056e6b03f7fecfa76abd59d1",
+        "byteorder": "little",
+        "method": "T",
+        "optimizer_group_parameter_counts": [
+          35
+        ],
+        "optimizer_lrs": [
+          0.0003
+        ],
+        "optimizer_state_slot_count": 33,
+        "optimizer_step_values": [
+          128.0
+        ],
+        "pickle_globals_allowed": [
+          "collections.OrderedDict",
+          "torch._utils._rebuild_tensor_v2 (inert stub)",
+          "torch.*Storage (metadata token only)"
+        ],
+        "recomputed_state_sha256": "e481e661315132bd11b808d45a19e00de9a8ac928633c83de0aefcfd6d44163e",
+        "schema": "w1-policy-checkpoint/1.0.0",
+        "seed": 8302,
+        "state_hash_matches_stored": true,
+        "state_tensor_count": 35,
+        "state_tensors": [
+          {
+            "dtype": "torch.float32",
+            "name": "base.critic.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "22"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.critic.weight",
+            "shape": [
+              1,
+              128
+            ],
+            "storage_key": "21"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "8"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.0.weight",
+            "shape": [
+              64,
+              132
+            ],
+            "storage_key": "7"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.2.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "10"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.2.weight",
+            "shape": [
+              64,
+              64
+            ],
+            "storage_key": "9"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.graph_projection.0.bias",
+            "shape": [
+              128
+            ],
+            "storage_key": "6"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.graph_projection.0.weight",
+            "shape": [
+              128,
+              64
+            ],
+            "storage_key": "5"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.bias_hh_l0",
+            "shape": [
+              384
+            ],
+            "storage_key": "20"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.bias_ih_l0",
+            "shape": [
+              384
+            ],
+            "storage_key": "19"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.weight_hh_l0",
+            "shape": [
+              384,
+              128
+            ],
+            "storage_key": "18"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.weight_ih_l0",
+            "shape": [
+              384,
+              128
+            ],
+            "storage_key": "17"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.noop_actor.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "16"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.noop_actor.weight",
+            "shape": [
+              1,
+              128
+            ],
+            "storage_key": "15"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "12"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.0.weight",
+            "shape": [
+              64,
+              192
+            ],
+            "storage_key": "11"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.2.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "14"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.2.weight",
+            "shape": [
+              1,
+              64
+            ],
+            "storage_key": "13"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "1"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.0.weight",
+            "shape": [
+              64,
+              32
+            ],
+            "storage_key": "0"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.2.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "3"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.2.weight",
+            "shape": [
+              64,
+              64
+            ],
+            "storage_key": "2"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.type_embedding.weight",
+            "shape": [
+              5,
+              64
+            ],
+            "storage_key": "4"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.0.bias",
+            "shape": [
+              32
+            ],
+            "storage_key": "28"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.0.weight",
+            "shape": [
+              32,
+              17
+            ],
+            "storage_key": "27"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.2.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "30"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.2.weight",
+            "shape": [
+              1,
+              32
+            ],
+            "storage_key": "29"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "24"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.0.weight",
+            "shape": [
+              64,
+              130
+            ],
+            "storage_key": "23"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.2.bias",
+            "shape": [
+              25
+            ],
+            "storage_key": "26"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.2.weight",
+            "shape": [
+              25,
+              64
+            ],
+            "storage_key": "25"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.0.bias",
+            "shape": [
+              128
+            ],
+            "storage_key": "32"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.0.weight",
+            "shape": [
+              128,
+              130
+            ],
+            "storage_key": "31"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.2.bias",
+            "shape": [
+              2
+            ],
+            "storage_key": "34"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.2.weight",
+            "shape": [
+              2,
+              128
+            ],
+            "storage_key": "33"
+          }
+        ],
+        "stored_state_sha256": "e481e661315132bd11b808d45a19e00de9a8ac928633c83de0aefcfd6d44163e",
+        "summary_environment_steps": 2048,
+        "summary_optimizer_updates": 128,
+        "summary_raw_decision_count": 2048,
+        "summary_recurrent_replay_groups": 32,
+        "summary_route": "T:8302",
+        "summary_world_model_frozen": false,
+        "summary_world_model_updates": 0,
+        "top_level_keys": [
+          "method",
+          "optimizer_state_dict",
+          "schema",
+          "seed",
+          "state_dict",
+          "state_dict_sha256",
+          "summary"
+        ]
+      },
+      "file": "/mnt/e/Z博士/research-plans/w1-g1-gppo-recovery-preparation-v1/package/frozen-models/reused-policy/T-seed-8302.pt",
+      "method": "T",
+      "reuse": true,
+      "seed": 8302,
+      "source_attempt": "w1-g1-gppo-phase-accounting-repair-v1-once",
+      "status": "complete"
+    },
+    {
+      "facts": {
+        "archive_bytes": 5824227,
+        "archive_sha256": "dd55477a0b85d8e2d9dcb7ac9573f74a4a789a993387cd92341355c750c86a7e",
+        "byteorder": "little",
+        "method": "T",
+        "optimizer_group_parameter_counts": [
+          35
+        ],
+        "optimizer_lrs": [
+          0.0003
+        ],
+        "optimizer_state_slot_count": 33,
+        "optimizer_step_values": [
+          128.0
+        ],
+        "pickle_globals_allowed": [
+          "collections.OrderedDict",
+          "torch._utils._rebuild_tensor_v2 (inert stub)",
+          "torch.*Storage (metadata token only)"
+        ],
+        "recomputed_state_sha256": "f9fb32d223bf3ebc567cdea98339e734c0c7fe4c9a983018bf5cab65e616039e",
+        "schema": "w1-policy-checkpoint/1.0.0",
+        "seed": 8303,
+        "state_hash_matches_stored": true,
+        "state_tensor_count": 35,
+        "state_tensors": [
+          {
+            "dtype": "torch.float32",
+            "name": "base.critic.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "22"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.critic.weight",
+            "shape": [
+              1,
+              128
+            ],
+            "storage_key": "21"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "8"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.0.weight",
+            "shape": [
+              64,
+              132
+            ],
+            "storage_key": "7"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.2.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "10"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.2.weight",
+            "shape": [
+              64,
+              64
+            ],
+            "storage_key": "9"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.graph_projection.0.bias",
+            "shape": [
+              128
+            ],
+            "storage_key": "6"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.graph_projection.0.weight",
+            "shape": [
+              128,
+              64
+            ],
+            "storage_key": "5"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.bias_hh_l0",
+            "shape": [
+              384
+            ],
+            "storage_key": "20"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.bias_ih_l0",
+            "shape": [
+              384
+            ],
+            "storage_key": "19"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.weight_hh_l0",
+            "shape": [
+              384,
+              128
+            ],
+            "storage_key": "18"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.weight_ih_l0",
+            "shape": [
+              384,
+              128
+            ],
+            "storage_key": "17"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.noop_actor.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "16"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.noop_actor.weight",
+            "shape": [
+              1,
+              128
+            ],
+            "storage_key": "15"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "12"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.0.weight",
+            "shape": [
+              64,
+              192
+            ],
+            "storage_key": "11"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.2.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "14"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.2.weight",
+            "shape": [
+              1,
+              64
+            ],
+            "storage_key": "13"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "1"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.0.weight",
+            "shape": [
+              64,
+              32
+            ],
+            "storage_key": "0"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.2.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "3"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.2.weight",
+            "shape": [
+              64,
+              64
+            ],
+            "storage_key": "2"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.type_embedding.weight",
+            "shape": [
+              5,
+              64
+            ],
+            "storage_key": "4"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.0.bias",
+            "shape": [
+              32
+            ],
+            "storage_key": "28"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.0.weight",
+            "shape": [
+              32,
+              17
+            ],
+            "storage_key": "27"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.2.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "30"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.2.weight",
+            "shape": [
+              1,
+              32
+            ],
+            "storage_key": "29"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "24"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.0.weight",
+            "shape": [
+              64,
+              130
+            ],
+            "storage_key": "23"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.2.bias",
+            "shape": [
+              25
+            ],
+            "storage_key": "26"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.2.weight",
+            "shape": [
+              25,
+              64
+            ],
+            "storage_key": "25"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.0.bias",
+            "shape": [
+              128
+            ],
+            "storage_key": "32"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.0.weight",
+            "shape": [
+              128,
+              130
+            ],
+            "storage_key": "31"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.2.bias",
+            "shape": [
+              2
+            ],
+            "storage_key": "34"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.2.weight",
+            "shape": [
+              2,
+              128
+            ],
+            "storage_key": "33"
+          }
+        ],
+        "stored_state_sha256": "f9fb32d223bf3ebc567cdea98339e734c0c7fe4c9a983018bf5cab65e616039e",
+        "summary_environment_steps": 2048,
+        "summary_optimizer_updates": 128,
+        "summary_raw_decision_count": 2048,
+        "summary_recurrent_replay_groups": 32,
+        "summary_route": "T:8303",
+        "summary_world_model_frozen": false,
+        "summary_world_model_updates": 0,
+        "top_level_keys": [
+          "method",
+          "optimizer_state_dict",
+          "schema",
+          "seed",
+          "state_dict",
+          "state_dict_sha256",
+          "summary"
+        ]
+      },
+      "file": "/mnt/e/Z博士/research-plans/w1-g1-gppo-recovery-preparation-v1/package/frozen-models/reused-policy/T-seed-8303.pt",
+      "method": "T",
+      "reuse": true,
+      "seed": 8303,
+      "source_attempt": "w1-g1-gppo-phase-accounting-repair-v1-once",
+      "status": "complete"
+    },
+    {
+      "facts": {
+        "archive_bytes": 6677167,
+        "archive_sha256": "687d9bbc396252b5ff337d021431c932662926dd784aabd7dcb2823031cc1f16",
+        "byteorder": "little",
+        "method": "G1",
+        "optimizer_group_parameter_counts": [
+          35
+        ],
+        "optimizer_lrs": [
+          0.0003
+        ],
+        "optimizer_state_slot_count": 33,
+        "optimizer_step_values": [
+          128.0
+        ],
+        "pickle_globals_allowed": [
+          "collections.OrderedDict",
+          "torch._utils._rebuild_tensor_v2 (inert stub)",
+          "torch.*Storage (metadata token only)"
+        ],
+        "recomputed_state_sha256": "09772d0e79d5cf664e4db763261b40dcb33f24cdb1a543f48cb86f669d56d907",
+        "schema": "w1-policy-checkpoint/1.0.0",
+        "seed": 8301,
+        "state_hash_matches_stored": true,
+        "state_tensor_count": 35,
+        "state_tensors": [
+          {
+            "dtype": "torch.float32",
+            "name": "base.critic.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "22"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.critic.weight",
+            "shape": [
+              1,
+              128
+            ],
+            "storage_key": "21"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "8"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.0.weight",
+            "shape": [
+              64,
+              132
+            ],
+            "storage_key": "7"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.2.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "10"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.2.weight",
+            "shape": [
+              64,
+              64
+            ],
+            "storage_key": "9"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.graph_projection.0.bias",
+            "shape": [
+              128
+            ],
+            "storage_key": "6"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.graph_projection.0.weight",
+            "shape": [
+              128,
+              64
+            ],
+            "storage_key": "5"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.bias_hh_l0",
+            "shape": [
+              384
+            ],
+            "storage_key": "20"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.bias_ih_l0",
+            "shape": [
+              384
+            ],
+            "storage_key": "19"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.weight_hh_l0",
+            "shape": [
+              384,
+              128
+            ],
+            "storage_key": "18"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.weight_ih_l0",
+            "shape": [
+              384,
+              128
+            ],
+            "storage_key": "17"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.noop_actor.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "16"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.noop_actor.weight",
+            "shape": [
+              1,
+              128
+            ],
+            "storage_key": "15"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "12"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.0.weight",
+            "shape": [
+              64,
+              192
+            ],
+            "storage_key": "11"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.2.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "14"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.2.weight",
+            "shape": [
+              1,
+              64
+            ],
+            "storage_key": "13"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "1"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.0.weight",
+            "shape": [
+              64,
+              32
+            ],
+            "storage_key": "0"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.2.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "3"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.2.weight",
+            "shape": [
+              64,
+              64
+            ],
+            "storage_key": "2"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.type_embedding.weight",
+            "shape": [
+              5,
+              64
+            ],
+            "storage_key": "4"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.0.bias",
+            "shape": [
+              32
+            ],
+            "storage_key": "28"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.0.weight",
+            "shape": [
+              32,
+              17
+            ],
+            "storage_key": "27"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.2.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "30"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.2.weight",
+            "shape": [
+              1,
+              32
+            ],
+            "storage_key": "29"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "24"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.0.weight",
+            "shape": [
+              64,
+              130
+            ],
+            "storage_key": "23"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.2.bias",
+            "shape": [
+              25
+            ],
+            "storage_key": "26"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.2.weight",
+            "shape": [
+              25,
+              64
+            ],
+            "storage_key": "25"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.0.bias",
+            "shape": [
+              128
+            ],
+            "storage_key": "32"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.0.weight",
+            "shape": [
+              128,
+              130
+            ],
+            "storage_key": "31"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.2.bias",
+            "shape": [
+              2
+            ],
+            "storage_key": "34"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.2.weight",
+            "shape": [
+              2,
+              128
+            ],
+            "storage_key": "33"
+          }
+        ],
+        "stored_state_sha256": "09772d0e79d5cf664e4db763261b40dcb33f24cdb1a543f48cb86f669d56d907",
+        "summary_environment_steps": 2048,
+        "summary_optimizer_updates": 128,
+        "summary_raw_decision_count": 2048,
+        "summary_recurrent_replay_groups": 32,
+        "summary_route": "G1:8301",
+        "summary_world_model_frozen": true,
+        "summary_world_model_updates": 0,
+        "top_level_keys": [
+          "method",
+          "optimizer_state_dict",
+          "schema",
+          "seed",
+          "state_dict",
+          "state_dict_sha256",
+          "summary"
+        ]
+      },
+      "file": "/mnt/e/Z博士/research-plans/w1-g1-gppo-recovery-preparation-v1/package/frozen-models/reused-policy/G1-seed-8301.pt",
+      "method": "G1",
+      "reuse": true,
+      "seed": 8301,
+      "source_attempt": "w1-g1-gppo-phase-accounting-repair-v1-once",
+      "status": "complete"
+    },
+    {
+      "facts": {
+        "archive_bytes": 6607535,
+        "archive_sha256": "b06dab3d822575ec8cb2720a7f208493426cbf517645362cb3f535c8bcedd0a1",
+        "byteorder": "little",
+        "method": "G1",
+        "optimizer_group_parameter_counts": [
+          35
+        ],
+        "optimizer_lrs": [
+          0.0003
+        ],
+        "optimizer_state_slot_count": 33,
+        "optimizer_step_values": [
+          128.0
+        ],
+        "pickle_globals_allowed": [
+          "collections.OrderedDict",
+          "torch._utils._rebuild_tensor_v2 (inert stub)",
+          "torch.*Storage (metadata token only)"
+        ],
+        "recomputed_state_sha256": "6af849aca062dff17da41b9df310c62af4c3614a54a9d86e1b01c712a5cf5b03",
+        "schema": "w1-policy-checkpoint/1.0.0",
+        "seed": 8302,
+        "state_hash_matches_stored": true,
+        "state_tensor_count": 35,
+        "state_tensors": [
+          {
+            "dtype": "torch.float32",
+            "name": "base.critic.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "22"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.critic.weight",
+            "shape": [
+              1,
+              128
+            ],
+            "storage_key": "21"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "8"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.0.weight",
+            "shape": [
+              64,
+              132
+            ],
+            "storage_key": "7"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.2.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "10"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.2.weight",
+            "shape": [
+              64,
+              64
+            ],
+            "storage_key": "9"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.graph_projection.0.bias",
+            "shape": [
+              128
+            ],
+            "storage_key": "6"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.graph_projection.0.weight",
+            "shape": [
+              128,
+              64
+            ],
+            "storage_key": "5"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.bias_hh_l0",
+            "shape": [
+              384
+            ],
+            "storage_key": "20"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.bias_ih_l0",
+            "shape": [
+              384
+            ],
+            "storage_key": "19"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.weight_hh_l0",
+            "shape": [
+              384,
+              128
+            ],
+            "storage_key": "18"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.weight_ih_l0",
+            "shape": [
+              384,
+              128
+            ],
+            "storage_key": "17"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.noop_actor.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "16"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.noop_actor.weight",
+            "shape": [
+              1,
+              128
+            ],
+            "storage_key": "15"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "12"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.0.weight",
+            "shape": [
+              64,
+              192
+            ],
+            "storage_key": "11"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.2.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "14"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.2.weight",
+            "shape": [
+              1,
+              64
+            ],
+            "storage_key": "13"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "1"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.0.weight",
+            "shape": [
+              64,
+              32
+            ],
+            "storage_key": "0"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.2.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "3"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.2.weight",
+            "shape": [
+              64,
+              64
+            ],
+            "storage_key": "2"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.type_embedding.weight",
+            "shape": [
+              5,
+              64
+            ],
+            "storage_key": "4"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.0.bias",
+            "shape": [
+              32
+            ],
+            "storage_key": "28"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.0.weight",
+            "shape": [
+              32,
+              17
+            ],
+            "storage_key": "27"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.2.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "30"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.2.weight",
+            "shape": [
+              1,
+              32
+            ],
+            "storage_key": "29"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "24"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.0.weight",
+            "shape": [
+              64,
+              130
+            ],
+            "storage_key": "23"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.2.bias",
+            "shape": [
+              25
+            ],
+            "storage_key": "26"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.2.weight",
+            "shape": [
+              25,
+              64
+            ],
+            "storage_key": "25"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.0.bias",
+            "shape": [
+              128
+            ],
+            "storage_key": "32"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.0.weight",
+            "shape": [
+              128,
+              130
+            ],
+            "storage_key": "31"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.2.bias",
+            "shape": [
+              2
+            ],
+            "storage_key": "34"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.2.weight",
+            "shape": [
+              2,
+              128
+            ],
+            "storage_key": "33"
+          }
+        ],
+        "stored_state_sha256": "6af849aca062dff17da41b9df310c62af4c3614a54a9d86e1b01c712a5cf5b03",
+        "summary_environment_steps": 2048,
+        "summary_optimizer_updates": 128,
+        "summary_raw_decision_count": 2048,
+        "summary_recurrent_replay_groups": 32,
+        "summary_route": "G1:8302",
+        "summary_world_model_frozen": true,
+        "summary_world_model_updates": 0,
+        "top_level_keys": [
+          "method",
+          "optimizer_state_dict",
+          "schema",
+          "seed",
+          "state_dict",
+          "state_dict_sha256",
+          "summary"
+        ]
+      },
+      "file": "/mnt/e/Z博士/research-plans/w1-g1-gppo-recovery-preparation-v1/verified-export/run-once/policy-checkpoints/G1-seed-8302.pt",
+      "method": "G1",
+      "reuse": false,
+      "seed": 8302,
+      "source_attempt": "w1-g1-gppo-recovery-v1-once",
+      "status": "complete"
+    },
+    {
+      "facts": {
+        "archive_bytes": 6779631,
+        "archive_sha256": "50b142e7714c4d91178a0e12debda8324bdec28b6a0b0738f2ee4e34784fe772",
+        "byteorder": "little",
+        "method": "G1",
+        "optimizer_group_parameter_counts": [
+          35
+        ],
+        "optimizer_lrs": [
+          0.0003
+        ],
+        "optimizer_state_slot_count": 33,
+        "optimizer_step_values": [
+          128.0
+        ],
+        "pickle_globals_allowed": [
+          "collections.OrderedDict",
+          "torch._utils._rebuild_tensor_v2 (inert stub)",
+          "torch.*Storage (metadata token only)"
+        ],
+        "recomputed_state_sha256": "2370f8cee9262d596b52f4845b81c571304e0679c752e0a7131365823d0a0fa6",
+        "schema": "w1-policy-checkpoint/1.0.0",
+        "seed": 8303,
+        "state_hash_matches_stored": true,
+        "state_tensor_count": 35,
+        "state_tensors": [
+          {
+            "dtype": "torch.float32",
+            "name": "base.critic.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "22"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.critic.weight",
+            "shape": [
+              1,
+              128
+            ],
+            "storage_key": "21"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "8"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.0.weight",
+            "shape": [
+              64,
+              132
+            ],
+            "storage_key": "7"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.2.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "10"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.edge_encoder.2.weight",
+            "shape": [
+              64,
+              64
+            ],
+            "storage_key": "9"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.graph_projection.0.bias",
+            "shape": [
+              128
+            ],
+            "storage_key": "6"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.graph_projection.0.weight",
+            "shape": [
+              128,
+              64
+            ],
+            "storage_key": "5"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.bias_hh_l0",
+            "shape": [
+              384
+            ],
+            "storage_key": "20"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.bias_ih_l0",
+            "shape": [
+              384
+            ],
+            "storage_key": "19"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.weight_hh_l0",
+            "shape": [
+              384,
+              128
+            ],
+            "storage_key": "18"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.gru.weight_ih_l0",
+            "shape": [
+              384,
+              128
+            ],
+            "storage_key": "17"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.noop_actor.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "16"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.noop_actor.weight",
+            "shape": [
+              1,
+              128
+            ],
+            "storage_key": "15"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "12"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.0.weight",
+            "shape": [
+              64,
+              192
+            ],
+            "storage_key": "11"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.2.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "14"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.pair_actor.2.weight",
+            "shape": [
+              1,
+              64
+            ],
+            "storage_key": "13"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "1"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.0.weight",
+            "shape": [
+              64,
+              32
+            ],
+            "storage_key": "0"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.2.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "3"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.token_encoder.2.weight",
+            "shape": [
+              64,
+              64
+            ],
+            "storage_key": "2"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "base.type_embedding.weight",
+            "shape": [
+              5,
+              64
+            ],
+            "storage_key": "4"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.0.bias",
+            "shape": [
+              32
+            ],
+            "storage_key": "28"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.0.weight",
+            "shape": [
+              32,
+              17
+            ],
+            "storage_key": "27"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.2.bias",
+            "shape": [
+              1
+            ],
+            "storage_key": "30"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "candidate_actor.2.weight",
+            "shape": [
+              1,
+              32
+            ],
+            "storage_key": "29"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.0.bias",
+            "shape": [
+              64
+            ],
+            "storage_key": "24"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.0.weight",
+            "shape": [
+              64,
+              130
+            ],
+            "storage_key": "23"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.2.bias",
+            "shape": [
+              25
+            ],
+            "storage_key": "26"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "preference_actor.2.weight",
+            "shape": [
+              25,
+              64
+            ],
+            "storage_key": "25"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.0.bias",
+            "shape": [
+              128
+            ],
+            "storage_key": "32"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.0.weight",
+            "shape": [
+              128,
+              130
+            ],
+            "storage_key": "31"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.2.bias",
+            "shape": [
+              2
+            ],
+            "storage_key": "34"
+          },
+          {
+            "dtype": "torch.float32",
+            "name": "vector_value.2.weight",
+            "shape": [
+              2,
+              128
+            ],
+            "storage_key": "33"
+          }
+        ],
+        "stored_state_sha256": "2370f8cee9262d596b52f4845b81c571304e0679c752e0a7131365823d0a0fa6",
+        "summary_environment_steps": 2048,
+        "summary_optimizer_updates": 128,
+        "summary_raw_decision_count": 2048,
+        "summary_recurrent_replay_groups": 32,
+        "summary_route": "G1:8303",
+        "summary_world_model_frozen": true,
+        "summary_world_model_updates": 0,
+        "top_level_keys": [
+          "method",
+          "optimizer_state_dict",
+          "schema",
+          "seed",
+          "state_dict",
+          "state_dict_sha256",
+          "summary"
+        ]
+      },
+      "file": "/mnt/e/Z博士/research-plans/w1-g1-gppo-recovery-preparation-v1/verified-export/run-once/policy-checkpoints/G1-seed-8303.pt",
+      "method": "G1",
+      "reuse": false,
+      "seed": 8303,
+      "source_attempt": "w1-g1-gppo-recovery-v1-once",
+      "status": "complete"
+    }
+  ],
+  "torch_imported": false
+}

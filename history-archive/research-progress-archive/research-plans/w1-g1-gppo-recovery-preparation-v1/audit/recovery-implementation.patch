@@ -1,0 +1,145 @@
+--- old/production_policy.py
++++ new/production_policy.py
+@@ -188,7 +188,8 @@
+         steps = int(fixture.get("policy_training_steps_per_method_seed", steps))
+         rollout = int(fixture.get("policy_rollout_steps", rollout))
+         updates = int(fixture.get("policy_optimizer_updates_per_method_seed", updates))
+-    route_count = len(POLICY_METHODS) * len(seeds)
++    from recovery_contract import training_route_keys
++    route_count = len(training_route_keys(matrix))
+     stage = request.get("stages", {}).get("conditional_policy_training", {})
+     if not fixture_enabled and (steps, rollout, updates) != (2048, 64, 128):
+         raise PolicyProductionError("POLICY_TRAINING_BUDGET_MISMATCH")
+@@ -762,7 +763,8 @@
+                         input_builder: Callable[[Any], Mapping[str, Any]],
+                         transparent_scorer: Callable[[Any, Mapping[str, Any]], Any] | None,
+                         world_predictor: Callable[[str, Any, Any, torch.Tensor, torch.Tensor], Any] | None,
+-                        output_dir: str | Path | None = None, clock: Any = time) -> dict[str, Any]:
++                        output_dir: str | Path | None = None, clock: Any = time,
++                        reused_routes: Mapping[tuple[str, int], Mapping[str, Any]] | None = None) -> dict[str, Any]:
+     """Run the frozen 3-policy-method × 3-seed stage through supplied native ops."""
+     schedule = policy_schedule(matrix, request)
+     calls = CallAccounting(ledger, boundary)
+@@ -789,7 +791,25 @@
+     routes: list[dict[str, Any]] = []
+     policies: dict[tuple[str, int], PriorConditionedPolicy] = {}
+     checkpoint_paths: dict[tuple[str, int], str] = {}
++    from recovery_contract import training_route_keys, REUSE_KEYS
++    allowed_training = training_route_keys(matrix)
++    reuse = dict(reused_routes or {})
++    expected_reuse = REUSE_KEYS if 'recovery' in matrix else set()
++    if set(reuse) != expected_reuse:
++        raise PolicyProductionError('POLICY_REUSE_ROUTE_SET_MISMATCH')
+     for route in schedule.routes():
++        key = (route.method, route.seed)
++        if key in reuse:
++            row = dict(reuse[key])
++            if _file_sha256(row['checkpoint']) != row['checkpoint_sha256']:
++                raise PolicyProductionError('REUSED_CHECKPOINT_CHANGED')
++            routes.append(row)
++            checkpoint_paths[key] = row['checkpoint']
++            if output is not None:
++                durable_append_jsonl(output / 'policy-reused-routes.jsonl', row)
++            continue
++        if key not in allowed_training:
++            raise PolicyProductionError('POLICY_UNAPPROVED_TRAIN_ROUTE')
+         before = calls.snapshot()
+         base = calls.call(
+             "model", f"initialize_policy:{route.method}:{route.seed}",
+@@ -891,7 +911,7 @@
+                 durable_append_jsonl(output / "policy-training-traces.jsonl", trace)
+             durable_append_jsonl(output / "policy-training-routes.jsonl", row)
+     expected = {(method, seed) for method in POLICY_METHODS for seed in POLICY_SEEDS}
+-    if set(policies) != expected or len(routes) != 9:
++    if set(checkpoint_paths) != expected or set(policies) != allowed_training or len(routes) != 9:
+         raise PolicyProductionError("POLICY_TRAINING_ROUTE_SET_MISMATCH")
+     final_world_model_hashes = {
+         key: state_dict_sha256(model.state_dict()) for key, model in frozen_models.items()
+--- old/runtime_hooks.py
++++ new/runtime_hooks.py
+@@ -887,6 +887,8 @@
+                             output_dir: str | Path | None = None,
+                             clock: Any = time) -> dict[str, Any]:
+         from production_policy import train_policy_routes
++        from recovery_contract import reused_route_records
++        reused = reused_route_records(self.root, matrix, request)
+         result = train_policy_routes(
+             matrix=matrix, request=request, ledger=ledger,
+             boundary=self.adapter.boundary if boundary is None else boundary,
+@@ -900,6 +902,7 @@
+             transparent_scorer=self.transparent_scorer,
+             world_predictor=self.world_predictor,
+             output_dir=output_dir, clock=clock,
++            reused_routes=reused,
+         )
+         hashes = {}
+         state_hashes = {}
+--- old/task_contract.py
++++ new/task_contract.py
+@@ -42,7 +42,9 @@
+         if not path.is_relative_to(root) or not path.is_file() or sha(path)!=r['checkpoint_sha256']:raise TaskContractError('G1_CHECKPOINT_IDENTITY_MISMATCH')
+         metadata=r['checkpoint_metadata']
+         if metadata.get('continuation_id')!='hungarian-v1-fixed' or metadata.get('variant')!='G1' or metadata.get('seed')!=r['world_seed'] or metadata.get('architecture')!=matrix['world_model_architecture']:raise TaskContractError('G1_METADATA_CONTRACT_MISMATCH')
+-    if request['stages']['conditional_policy_training']['policy_optimizer_updates']!=1152 or request['stages']['conditional_task_confirmation']['task_episodes']!=240:raise TaskContractError('TASK_BUDGET_BINDING_MISMATCH')
++    from recovery_contract import training_route_keys, verify_recovery
++    verify_recovery(root,matrix,request)
++    if request['stages']['conditional_policy_training']['policy_optimizer_updates']!=128*len(training_route_keys(matrix)) or request['stages']['conditional_task_confirmation']['task_episodes']!=240:raise TaskContractError('TASK_BUDGET_BINDING_MISMATCH')
+     config=read(root/'environment-config-contract.json')
+     if canonical(config['config'])!=config['config_sha256'] or (config['config']['task_completion_mode'],config['config']['deadline_basis'])!=('arrival_to_region','physical_arrival'):raise TaskContractError('TASK_SEMANTICS_MISMATCH')
+     q=read(root/'g1-prediction-qualification.json')
+--- old/task_pipeline.py
++++ new/task_pipeline.py
+@@ -120,10 +120,12 @@
+     stages = request.get("stages")
+     if not isinstance(stages, Mapping) or set(stages) != set(REQUIRED_STAGES):
+         raise TaskPipelineError("TASK_STAGE_SET_MISMATCH")
++    from recovery_contract import training_route_keys
++    train_count = len(training_route_keys(matrix))
+     expected_limits = {
+         "conditional_policy_training": {
+-            "policy_optimizer_updates": len(POLICY_METHODS) * len(POLICY_SEEDS) * route_updates,
+-            "checkpoint_writes": len(POLICY_METHODS) * len(POLICY_SEEDS),
++            "policy_optimizer_updates": train_count * route_updates,
++            "checkpoint_writes": train_count,
+         },
+         "conditional_task_confirmation": {"task_episodes": 240,
+                                            "task_comparison_calls": 1},
+@@ -162,7 +164,7 @@
+         raise TaskPipelineError("TASK_GATE_CONTRACT_MISMATCH")
+ 
+ 
+-def _validated_checkpoints(training: Mapping[str, Any], output: Path, *,
++def _validated_checkpoints(training: Mapping[str, Any], output: Path, *, root: Path | None = None,
+                            expected_steps: int = 2048,
+                            expected_updates: int = 128) -> tuple[dict[tuple[str, int], str], dict[str, str]]:
+     routes = training.get("routes")
+@@ -205,7 +207,10 @@
+         if route_path != mapped_path:
+             raise TaskPipelineError(f"POLICY_CHECKPOINT_ROUTE_MAP_MISMATCH:{key[0]}:{key[1]}")
+         resolved = route_path.resolve()
+-        if not resolved.is_relative_to(output_root) or not resolved.is_file():
++        if root is not None and route_by_key[key].get('reuse') is True:
++            from recovery_contract import validate_checkpoint_location
++            resolved = validate_checkpoint_location(root, output, route_by_key[key])
++        elif not resolved.is_relative_to(output_root) or not resolved.is_file():
+             raise TaskPipelineError(f"POLICY_CHECKPOINT_PATH_INVALID:{key[0]}:{key[1]}")
+         actual_digest = hashlib.sha256(resolved.read_bytes()).hexdigest()
+         expected_digest = route_by_key[key].get("checkpoint_sha256")
+@@ -303,7 +308,7 @@
+     if not isinstance(training, Mapping):
+         raise TaskPipelineError("POLICY_TRAINING_RESULT_INVALID")
+     checkpoints, checkpoint_hashes = _validated_checkpoints(
+-        training, output, expected_steps=route_steps, expected_updates=route_updates,
++        training, output, root=root, expected_steps=route_steps, expected_updates=route_updates,
+     )
+     adapter.policy_checkpoint_hashes = checkpoint_hashes
+     durable_atomic_json(output / "policy-training-summary.json", {
+@@ -316,6 +321,8 @@
+             "training_steps": route_steps, "optimizer_updates": route_updates,
+             "checkpoint": checkpoints[(method, seed)],
+             "checkpoint_sha256": checkpoint_hashes[checkpoints[(method, seed)]],
++            "reuse": next(r.get('reuse', False) for r in training['routes'] if (r['method'], r['seed']) == (method, seed)),
++            "source_attempt": next(r.get('source_attempt') for r in training['routes'] if (r['method'], r['seed']) == (method, seed)),
+         } for method, seed in sorted(checkpoints)],
+         "checkpoint_sha256_by_path": checkpoint_hashes,
+         "resource_amounts": dict(training.get("resource_amounts", {})),

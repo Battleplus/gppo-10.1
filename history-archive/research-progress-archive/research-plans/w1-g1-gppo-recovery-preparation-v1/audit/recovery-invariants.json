@@ -1,0 +1,59 @@
+{
+  "dynamic_calls": 0,
+  "models_initialized": 0,
+  "modified_inherited_files": [
+    "G1-GPPO-PROTOCOL.md",
+    "README.md",
+    "RESOURCE_REQUEST.json",
+    "experiment-matrix.json",
+    "launch-contract.json",
+    "parent-split.json",
+    "production_policy.py",
+    "runtime_hooks.py",
+    "task_contract.py",
+    "task_pipeline.py",
+    "unique-launch-command.md"
+  ],
+  "new_task_evaluation_design_unchanged": true,
+  "new_training_routes": [
+    [
+      "G1",
+      8302
+    ],
+    [
+      "G1",
+      8303
+    ]
+  ],
+  "old_source_evidence_unchanged": true,
+  "reuse_checkpoint_count": 7,
+  "science_identical_except_attempt_and_recovery": true,
+  "torch_load_calls": 0,
+  "training_updates": 0,
+  "unchanged_execution_accounting_and_task_gate_files": {
+    "budget_ledger.py": "972e8fe783920e354da6a5d02d454587372c667409c32431c34b1eaa1098cda8",
+    "environment-config-contract.json": "71baa9a044afad72d8c51760d87ec0bc1590a5d7ef00b2e03161538974301986",
+    "g1-model-binding.json": "d84905b3b4224da8a62576b94a6c649abb4bae42ea068f366c9a0b2748537e86",
+    "independent_task_recompute.py": "15e075af45721a5da5ba9667859eb529d0577762ead2fc75f23f29d9a7c24515",
+    "local-runtime-identity.json": "2100e84a69a34b85c54d7a75a3c3c57fea48c1e7df7004fc05d759def3b7dea2",
+    "local_pipeline_controller.py": "84b7b8f2c4fb495fa133eee57c830abe0b78be05176b8b6375b7c4440bae6baa",
+    "local_research_entry.py": "b3133fcdd02120445f381581d84ac10a1f4befc1e1c083a017e0c6963ffdc97d",
+    "phase_handshake.py": "1caf20f66bb553fbe8fd584f215d06ac0a9f3264ae77632e921da9cd12a1e011",
+    "runner.py": "38cf2671ec23c169da5d8f0fb0980da828f4ecc57a7effa30bd28fdc4551e874",
+    "supervise.py": "59fd55a725c0f05088cfb47dceeca0733e0fa4ce7fcd25443d39946a7c2b5e6f"
+  },
+  "unchanged_production_symbols": {
+    "production_policy.py:DecisionPriorPolicy": true,
+    "production_policy.py:PriorConditionedPolicy": true,
+    "production_policy.py:evaluate_task_confirmation": true,
+    "production_policy.py:recompute_task_metrics": true,
+    "runtime_hooks.py:checkpoint_writer": true,
+    "runtime_hooks.py:episode_runner": true,
+    "runtime_hooks.py:optimizer_factory": true,
+    "runtime_hooks.py:policy_factory": true,
+    "runtime_hooks.py:policy_loader": true,
+    "runtime_hooks.py:ppo_update_fn": true,
+    "runtime_hooks.py:route_runner": true,
+    "runtime_hooks.py:world_predictor": true
+  }
+}

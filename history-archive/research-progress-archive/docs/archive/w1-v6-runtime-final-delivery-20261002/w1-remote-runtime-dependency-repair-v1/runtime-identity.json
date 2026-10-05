@@ -1,0 +1,187 @@
+{
+  "critical_files": {
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/numpy/__init__.py": "22cd1535fa14d74ef6f457cca149ffdc80875f460be313b8f895273f78bc402e",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cublas/lib/libcublas.so.12": "37d1141111d6b935aa84156ad61fd3575350cad8d69d0916e9db7d37eef9b816",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cublas/lib/libcublasLt.so.12": "f97bfc2cf75dc40da650eb97aff63d3e195f500cc623c74f3fe33ce2ce2b71f4",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cublas/lib/libnvblas.so.12": "f85e945ef531cc36603989041594f3bb71a1ae22abd7b258bde0c4813aebc561",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cuda_cupti/lib/libcheckpoint.so": "1626ff119582bca46605bc6d49769ab75314b9993dd647bd64a90dec747bc843",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cuda_cupti/lib/libcupti.so.12": "abc63100e9cf516b8ed1fa25354ae53dbfe8df4838ac525d8d738332c2198dc2",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cuda_cupti/lib/libnvperf_host.so": "95cec42ae770c1f2251d204b03e12d56fdb2e5561e4898c07b40382fe2474589",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cuda_cupti/lib/libnvperf_target.so": "fa2587c8d211fbc85e8b88cca0bcebe78c8cc40c81b0c3763ce57ac9e63f0669",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cuda_cupti/lib/libpcsamplingutil.so": "5c609cb4c755e6485cd47b4b74afe29a1f1a7a933cf06273d2ae8270f26d6f79",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cuda_nvrtc/lib/libnvrtc-builtins.so.12.1": "6c5639ce397a9f5b82cd277432d146370674358334a4ce0d33fa9a5ca090ac8a",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cuda_nvrtc/lib/libnvrtc.so.12": "83ec9ad7775e89f6280286ba11eb9d28cafe49c2f777a3e051bcc881de7449fc",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cuda_runtime/lib/libcudart.so.12": "9335f6a29ca91010e2da9f40e82fb4b28e3a4ae22fd385e1293e93bf3c46c9e6",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cudnn/lib/libcudnn.so.9": "74a4c495a26d5104150241e84a10842442c024c129cdc274ad8b6a7a8794980e",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cudnn/lib/libcudnn_adv.so.9": "be8174726a8d152bcf6e136b2d1f81763876deb1d2b7329bbc7d2a52635b0202",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cudnn/lib/libcudnn_cnn.so.9": "3f8c3b8f7c994be7fb1ce60bd567a2b49e169891d3515cc1e59533e9703b6f2c",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cudnn/lib/libcudnn_engines_precompiled.so.9": "ee54836e8a3d0480f2ab54118770a97cb7f02f1f428d5a5d0471c6b89b90cfcc",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cudnn/lib/libcudnn_engines_runtime_compiled.so.9": "519ff41513a3a8155f430f085acc58a5f85dc16c865b8287d5482409507ee2c0",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cudnn/lib/libcudnn_graph.so.9": "8fd845207c7477700e56a0395a4a746a0dc6181358535080240819bb67f1a138",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cudnn/lib/libcudnn_heuristic.so.9": "94fab98c15040558c3c80f2c1a2f5fda9baa72afc39a88bdcc82185f49d241c3",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cudnn/lib/libcudnn_ops.so.9": "242b9dba953ae2e4878d66032624135a9118a1616ca24588ed586d4bcc475c69",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cufft/lib/libcufft.so.11": "9203da41484a93c1da684567bf6d732687b9b1307e3098256cb69225d6f575e4",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cufft/lib/libcufftw.so.11": "ab06d9dfcfaf88ec2bcfb4c16b76ff0bf3b2728370d212e28607f53e1d40eff5",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/curand/lib/libcurand.so.10": "41a8780d7760aa91cca7232d085f55183c7e6cfaecabc2f32e719260831035fc",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cusolver/lib/libcusolver.so.11": "10287abc7ce9c5fc7e7c163761566b599eae1b362c47e1000911d198443d6d52",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cusolver/lib/libcusolverMg.so.11": "d1fdee2bc35084c005b50e6befa5020293fb72807bc161b6a5038c87544c9b06",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/cusparse/lib/libcusparse.so.12": "500466a2f559de622a71bb920d3d2923e69135245747a2742ee13edff0ba6085",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/nccl/lib/libnccl.so.2": "78df2f31f6db8142ec546a1e5a31cb066f7892d12d2f665b448f8069a08ef807",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/nvjitlink/lib/libnvJitLink.so.12": "08cf148e1ac323d5cebd04d98a5287c4adea4024cc1996999290c7586f9a22bd",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/nvidia/nvtx/lib/libnvToolsExt.so.1": "847d78f275c8cc97442a278073204bdc1a0009ffc2559bf7248c70d92105dfdc",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/torch/_C.cpython-310-x86_64-linux-gnu.so": "9bff1e657687df0e8c79c45700cc355186860df8a5e1f69d3b4601211ff3c18b",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/torch/__init__.py": "e1b5bf4151bd246a21e3ac5318f6edfcf2e6ef0fd4f233bfb77a264698ec1319",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/torch/lib/libc10.so": "40ccaf104db53dcef70bc32b9b007e3ef805c98f29f83094df73d3364351a86d",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/torch/lib/libc10_cuda.so": "f0906c9df3c454f5262a7066a592e3aa426c6c42dd9ebe006aaece0292165da6",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/torch/lib/libcaffe2_nvrtc.so": "b118bd099149cfbefa9c876e4a6226d012b8dc1978b4d787918588490b148278",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/torch/lib/libcusparseLt-f80c68d1.so.0": "be6f24534f1aa85998fb58a61b9e7124281ab539cbde11f0f40d9d25795c8728",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/torch/lib/libgomp-a34b3233.so.1": "9eb01021bb58ec36925daeb5a56606bfab558332eb5f5119e990e4c208ed2581",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/torch/lib/libshm.so": "d294a465cc948d2e88c6c086472d522feb4ccf705c6d15528b77a4f34141d9ad",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/torch/lib/libtorch.so": "853e427fa7f4523bbde3cdf4c4b1a09075b428e223e4848dd6d292b5ea8a7388",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so": "f1b4eb8448a3e0cadbbef929667c7ddab6eb1141aa96faf90eab4da8f9687edf",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/torch/lib/libtorch_cuda.so": "e4d8a8872fca060df8e6f03b2703296501b9e4ba7fc152c2cb983fb251979175",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/torch/lib/libtorch_cuda_linalg.so": "bd463daf90d9b53b880e178f44c459a4d76c6897959f66c09a5d41382014172b",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/torch/lib/libtorch_global_deps.so": "f80c0344a1235051f95af6232bda19e8cc517eaf5ea2356e5426b089d65cb1dd",
+    "/home/user1/.venvs/w1-runtime-v1/lib/python3.10/site-packages/torch/lib/libtorch_python.so": "51a231862971d56e3ae597fb176f1b0424d349d7652d91dac0ede2bea66c432b",
+    "/home/user1/.venvs/w1-runtime-v1/pyvenv.cfg": "db6c8a96f25493eda9f74f23f0b5f248a8b50a5b469b15c5ee7313875b416364"
+  },
+  "default_python_repaired": false,
+  "exclusive_gpu_allocation": "not_proven",
+  "formal_attempt_created": false,
+  "gpu_identities": [
+    [
+      "GPU-cd03c61b-a80e-2539-8a8a-88b3b53c2030",
+      "NVIDIA GeForce RTX 2080 Ti",
+      "535.161.08"
+    ],
+    [
+      "GPU-7b708ead-e044-6ce7-a530-6b3093ac905e",
+      "NVIDIA GeForce RTX 2080 Ti",
+      "535.161.08"
+    ]
+  ],
+  "installed_distribution_identities": {
+    "Jinja2": {
+      "record_sha256": "9b5a86efc4f4a4d9fce05c6586c1d7d36358add798cfd99135247a2e4908ab09",
+      "version": "3.1.6"
+    },
+    "MarkupSafe": {
+      "record_sha256": "e4b9ef2a396d23539ec5695a589216366d63053a5f3971325a8fa6881f49c91f",
+      "version": "3.0.3"
+    },
+    "filelock": {
+      "record_sha256": "6a979fa0763c35d8fc614ebca027de9f665fbfc4a9bf3e8214cb633e3ef7fc06",
+      "version": "3.32.3"
+    },
+    "fsspec": {
+      "record_sha256": "eda3028cbb124322c8d7cd103470d6bbfbc0018d85393a970076df503bd16803",
+      "version": "2026.7.0"
+    },
+    "mpmath": {
+      "record_sha256": "205c72eaa5058bc221713222d6533b28218df8104321e6fb945137b639a06527",
+      "version": "1.3.0"
+    },
+    "networkx": {
+      "record_sha256": "441c9c9d2aeac36e6e07f100f389b7b266d885482602bdda189ea2463353299f",
+      "version": "3.4.2"
+    },
+    "numpy": {
+      "record_sha256": "0d9c33d6c9a806b9b7c3efd34921eeb9a99ed7f6b7a02696e520fd57d1f7e2f3",
+      "version": "1.26.4"
+    },
+    "nvidia-cublas-cu12": {
+      "record_sha256": "b40b51b94e203bb1ecf8d18169b4e9a9dbaafaac26e0902706d2c604a3890920",
+      "version": "12.1.3.1"
+    },
+    "nvidia-cuda-cupti-cu12": {
+      "record_sha256": "b9fe1a8b4362c3705d740e7294eba791937187c1893757021e760e422ca3f8df",
+      "version": "12.1.105"
+    },
+    "nvidia-cuda-nvrtc-cu12": {
+      "record_sha256": "a69af8206d04c879998e05108c6f233922e62f27f440e7645b3837cc763fdb63",
+      "version": "12.1.105"
+    },
+    "nvidia-cuda-runtime-cu12": {
+      "record_sha256": "aec72f6b14530b9036d793d3937272e4198d4fb60db61177c0b457b834c31157",
+      "version": "12.1.105"
+    },
+    "nvidia-cudnn-cu12": {
+      "record_sha256": "ee612ae4ce09ab6b6796e577ab8ce406c6af28ff92886817da8c9aef83478bc0",
+      "version": "9.1.0.70"
+    },
+    "nvidia-cufft-cu12": {
+      "record_sha256": "6bf35fd0deaa0a3943083682be181a0f8e39f7b455a8dcd8be96c43e4b3ecafb",
+      "version": "11.0.2.54"
+    },
+    "nvidia-curand-cu12": {
+      "record_sha256": "7d2b09179f0ddaa6c05be8af24a728e960f9fa8fda7b96ee05410e4dc1411bfd",
+      "version": "10.3.2.106"
+    },
+    "nvidia-cusolver-cu12": {
+      "record_sha256": "ba98c8982fc706af887796d4e9fbdccc7eeca383c72c0e810f51b45dde8b0e9d",
+      "version": "11.4.5.107"
+    },
+    "nvidia-cusparse-cu12": {
+      "record_sha256": "c5113c921c0b8dbebdc7ac63ecac698236eb6ba67f5ba52ac590ab2cb8e7a35a",
+      "version": "12.1.0.106"
+    },
+    "nvidia-nccl-cu12": {
+      "record_sha256": "83fef63acaf9d857aedd63fadfb365d38ab11e6212118d6d9b18ccf2ea1b1852",
+      "version": "2.21.5"
+    },
+    "nvidia-nvjitlink-cu12": {
+      "record_sha256": "436938f9cb6bb1384566740a6a0c4a3dfa9ae0e4345c44762f3ce2a6e439260d",
+      "version": "12.1.105"
+    },
+    "nvidia-nvtx-cu12": {
+      "record_sha256": "5fbb0514e35cb81072b22f1352088e6bb43450860b885bba74609a028287b463",
+      "version": "12.1.105"
+    },
+    "pip": {
+      "record_sha256": "21e087dc49498ba060c84745cf0082df425c3b200d5826d18bcac76f568cfcbb",
+      "version": "22.0.2"
+    },
+    "setuptools": {
+      "record_sha256": "50cdf118076dc2915d3f3c1c3b06af7a1d37e86c5763bd66c1cb7796d19f94d5",
+      "version": "59.6.0"
+    },
+    "sympy": {
+      "record_sha256": "0efeaa31dba1f4994d6e2a1bf2cf43176ba85279cec726dfe568fa93d3a4d65b",
+      "version": "1.13.1"
+    },
+    "torch": {
+      "record_sha256": "dbed98e3dcee8d6419e18c3b7f3395a1f57c078845f0fee9e21284e7cca4a0fe",
+      "version": "2.5.1+cu121"
+    },
+    "triton": {
+      "record_sha256": "9dc0fa690da07b67ce62dd70a356d8ab140da5409fdee0bc1948df38852c7dd8",
+      "version": "3.1.0"
+    },
+    "typing_extensions": {
+      "record_sha256": "64951562feccc6ed53bc5bab5a8a471e7bff2fa704eb84308e1bcb5255f4121d",
+      "version": "4.16.0"
+    }
+  },
+  "numpy_version": "1.26.4",
+  "purpose": "runtime_candidate_only_not_training_authorization",
+  "python_binary_sha256": "caec073da847da0ba8e22059a61a877b38b25e0454c2d83520dea2b25c88bbec",
+  "python_executable": "/home/user1/.venvs/w1-runtime-v1/bin/python",
+  "python_flags": [
+    "-I",
+    "-B"
+  ],
+  "python_prefix": "/home/user1/.venvs/w1-runtime-v1",
+  "python_version": "3.10.12",
+  "required_environment": {
+    "LD_LIBRARY_PATH": null,
+    "LD_PRELOAD": null,
+    "PYTHONHOME": null,
+    "PYTHONNOUSERSITE": "1",
+    "PYTHONPATH": null
+  },
+  "requirements_lock_sha256": "d645d8db4f408bdd851bcb81254bc17e37347f8266bf6ac06df789c3adfcf50d",
+  "schema": "w1-remote-runtime-identity/1.0.0",
+  "synthetic_probe_sha256": "bb577960d235a78c769f8a102373af4c4b823dceddfb8a7be155f5779baddad2",
+  "torch_cuda_version": "12.1",
+  "torch_version": "2.5.1+cu121"
+}

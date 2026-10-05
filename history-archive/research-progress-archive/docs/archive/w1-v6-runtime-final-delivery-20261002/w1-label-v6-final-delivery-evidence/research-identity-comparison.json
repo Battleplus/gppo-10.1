@@ -1,0 +1,24 @@
+{
+  "attempt_changed_only_in_research_json": true,
+  "comparisons": {
+    "RESOURCE_REQUEST.json": true,
+    "environment-config-contract.json": true,
+    "experiment-matrix.json": true,
+    "parent-split.json": true,
+    "public_event_targets.py": true,
+    "public_history.py": true,
+    "public_transition_contract.py": true,
+    "task_outcome_contract.py": true
+  },
+  "formal_attempt_created": false,
+  "old_content_file_count": 45,
+  "old_frozen_files_verified": true,
+  "old_outer_identity": {
+    "RESOURCE_REQUEST.json": "8be3d85904c904f2e6003bc8a19dac81177e68c0f4df70bd997a33afaa428162",
+    "execution-manifest.json": "e4703e4be26f5e3d2bffd40f7c9c768d52c3c4a2465fcf9d3719dce58fe5edf4",
+    "hashes.json": "ebc75ab39bd93a73b17909c73912bdf0a62c90918ce9641976d776db46d4b5ec"
+  },
+  "research_budget_changed": false,
+  "research_semantics_changed": false,
+  "resource_request_status": "NOT_APPROVED"
+}

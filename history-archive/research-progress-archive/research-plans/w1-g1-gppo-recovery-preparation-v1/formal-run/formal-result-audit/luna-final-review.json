@@ -1,0 +1,159 @@
+{
+  "schema": "w1-g1-gppo-luna-final-review/1.0.0",
+  "review_mode": "stdlib_only_read_only_raw_artifacts",
+  "attempt": "w1-g1-gppo-recovery-v1-once",
+  "conclusion": {
+    "formal_runner_exit_code": 0,
+    "formal_status": "task_gain_gate_stop",
+    "research_success": false,
+    "task_gate_pass": false,
+    "cost_gate_pass": false,
+    "cumulative_resource_acceptance": false
+  },
+  "checkpoints": {
+    "logical_route_count": 9,
+    "reused_final_count": 7,
+    "new_final_count": 2,
+    "new_final_routes": [
+      ["G1", 8302],
+      ["G1", 8303]
+    ],
+    "all_route_schedules": {
+      "training_steps": 2048,
+      "optimizer_updates": 128
+    },
+    "raw_checkpoint_file_hashes_matched_route_records": true,
+    "restricted_audit_archive_and_state_hash_checks_complete": true,
+    "restricted_audit_torch_imported": false,
+    "routes": [
+      {"method":"G0","seed":8301,"reused":true},
+      {"method":"G0","seed":8302,"reused":true},
+      {"method":"G0","seed":8303,"reused":true},
+      {"method":"T","seed":8301,"reused":true},
+      {"method":"T","seed":8302,"reused":true},
+      {"method":"T","seed":8303,"reused":true},
+      {"method":"G1","seed":8301,"reused":true},
+      {"method":"G1","seed":8302,"reused":false},
+      {"method":"G1","seed":8303,"reused":false}
+    ]
+  },
+  "task_matrix": {
+    "episode_count": 240,
+    "policy_episode_count": 216,
+    "shared_h_episode_count": 24,
+    "parent_count": 8,
+    "repeats_per_parent": 3,
+    "rows_per_parent_repeat": 10,
+    "unknown_or_invalid_outcomes": 0,
+    "unknown_or_invalid_utilities": 0,
+    "frozen_python": "3.11.16",
+    "independent_metrics_match_post_export_json_exactly": true,
+    "reward_recomputation_count": 240,
+    "reward_recomputation_max_abs_error": 0.0
+  },
+  "utility_results": {
+    "parent_macro_utility": {
+      "G0": 0.24563692826733957,
+      "G1": 0.23684501007863776,
+      "H": 0.3360456706429505,
+      "T": 0.24563692826733957
+    },
+    "g1_minus_g0_macro": -0.008791918188701838,
+    "g1_minus_t_macro": -0.008791918188701838,
+    "g1_minus_h_macro": -0.0992006605643127,
+    "seed_g1_minus_t": {
+      "8301": 0.015375829232395138,
+      "8302": -0.00488905240554978,
+      "8303": -0.036862531392950856
+    },
+    "positive_seed_count_vs_t": 1,
+    "parents_g1_no_worse_than_t": 3,
+    "parent_bootstrap_g1_minus_t_lower_95": -0.02332409617653882,
+    "gate_checks": {
+      "coverage": true,
+      "G1_vs_G0": false,
+      "G1_vs_T": false,
+      "G1_vs_H": false,
+      "parent_stability": false,
+      "seed_stability": false,
+      "parent_bootstrap": false
+    }
+  },
+  "cost_results": {
+    "G1_cost_status": "evaluated",
+    "G1_sample_count": 1014,
+    "G1_cost_eligible_active_decisions": 693,
+    "cpu_mean_ms": 51.07337600296035,
+    "wall_p95_ms": 150.7048269850202,
+    "raw_decision_cost_recomputation_matches": true,
+    "cost_gate_pass": false
+  },
+  "ledger_and_cumulative_resources": {
+    "new_sqlite_call_count": 28702,
+    "new_sqlite_status_counts": {"complete":28702,"failed":0,"pending":0},
+    "new_settlement_pending_calls": 0,
+    "new_complete_task_episodes": 240,
+    "new_complete_optimizer_updates": 256,
+    "old_pending_update_not_assumed_complete": true,
+    "old_pending_policy_updates": 1,
+    "old_pending_actor_sample_evaluations": 64,
+    "old_pending_encode_sample_evaluations": 64,
+    "cumulative_policy_updates_complete": 1180,
+    "cumulative_policy_updates_reserved": 1181,
+    "new_launch_exit_code": 0,
+    "new_launch_measured_wall_pass": true,
+    "new_launch_wall_seconds": 1175.9259505000082,
+    "new_attempt_wall_cap_seconds": 4670,
+    "old_launch_measured_wall_seconds": 3629.3990414,
+    "cumulative_launch_wall_seconds": 4805.324991900008,
+    "authorized_cumulative_measured_old_wall_plus_new_cap_seconds": 8299.3990414,
+    "cumulative_wall_within_authorized_envelope": true,
+    "cumulative_wall_envelope_headroom_seconds": 3494.074049499992,
+    "full_resource_acceptance": false,
+    "full_resource_acceptance_basis": "Disclosed resource measurement gaps and unresolved old-attempt settlement; not a new-attempt wall overrun.",
+    "resource_gaps": [
+      "Windows/WSL bridge CPU",
+      "controller final write/exit tail",
+      "outside-entry prelaunch and offline audit/monitoring process lifetime not comprehensively measured"
+    ]
+  },
+  "windows_float_audit": {
+    "scope": "separate post-run Windows audit, not the formal experiment",
+    "python": "3.14.4",
+    "difference_count": 22,
+    "maximum_absolute_numeric_error": 8.326672684688674e-17,
+    "first_error": "POST_EXPORT_METRICS_DISAGREE",
+    "experiment_restarted": false,
+    "production_evidence_changed": false,
+    "distinguished_from_formal_exit_zero": true
+  },
+  "review_constraints_observed": {
+    "torch_imported_by_reviewer": false,
+    "model_or_environment_initialized": false,
+    "forward_pass_or_training_run": false,
+    "new_attempt_created": false,
+    "raw_task_results_modified": false,
+    "only_review_files_written": true
+  },
+  "evidence_files": [
+    "verified-export/run-once/policy-training-summary.json",
+    "verified-export/run-once/policy-training-routes.jsonl",
+    "verified-export/run-once/policy-reused-routes.jsonl",
+    "verified-export/run-once/policy-checkpoints/*.pt",
+    "verified-export/run-once/task-confirmation.jsonl",
+    "verified-export/run-once/task-metrics.json",
+    "verified-export/run-once/independent-task-metrics.json",
+    "verified-export/run-once/task-cost-summary.jsonl",
+    "verified-export/run-once/decision-costs.jsonl",
+    "verified-export/run-once/budget.sqlite3",
+    "verified-export/run-once/resource-settlement.json",
+    "verified-export/run-once/local-runtime-execution.json",
+    "formal-result-audit/native-recomputation/nine-checkpoint-audit.json",
+    "formal-result-audit/native-recomputation/ledger-audit.json",
+    "formal-result-audit/native-recomputation/cumulative-resource-audit.json",
+    "formal-result-audit/native-recomputation/post-export-independent-metrics.json",
+    "formal-result-audit/native-recomputation/post-export-gates.json",
+    "formal-result-audit/windows-native-metric-roundoff.json",
+    "formal-result-audit/windows-audit-first-error.json"
+  ]
+}

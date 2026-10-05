@@ -1,0 +1,12 @@
+{
+  "scope": "post-run offline Windows artifact audit, not the formal experiment",
+  "first_exception": "AssertionError: POST_EXPORT_METRICS_DISAGREE",
+  "first_location": "audit_formal_recovery_result.py:89",
+  "formal_entry_exit_code": 0,
+  "complete_task_episode_count": 240,
+  "formal_experiment_restarted": false,
+  "production_evidence_modified": false,
+  "diagnosed_difference_count": 22,
+  "maximum_absolute_numeric_error": 8.326672684688674e-17,
+  "next_action": "Use the frozen native Python 3.11.16 for byte-exact offline recomputation, retaining the Windows diagnosis; no models or environment calls."
+}

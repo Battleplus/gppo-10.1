@@ -1,0 +1,14 @@
+{
+  "command": [
+    "C:\\Python314\\python.exe",
+    "-B",
+    "E:\\Z博士\\research-plans\\w1-g1-gppo-recovery-preparation-v1\\package\\run_g1_task_validation.py",
+    "--preflight-only",
+    "--authorization-file",
+    "E:\\Z博士\\research-plans\\w1-g1-gppo-recovery-preparation-v1\\external-authorization.json"
+  ],
+  "exit_code": 0,
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "3e46e3191c10f0ff70a548e838585958259aa51b25a390dd0914dd93ea3989f3",
+  "wall_seconds": 1.165072899995721
+}

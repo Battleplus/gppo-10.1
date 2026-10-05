@@ -1,0 +1,19 @@
+{
+  "G1_cost_gate_pass": false,
+  "attempt": "w1-g1-gppo-recovery-v1-once",
+  "export_35_payload_hashes_unchanged": true,
+  "formal_exit_code": 0,
+  "frozen_227_files_and_preparation_archive_unchanged": true,
+  "full_resource_acceptance": false,
+  "luna_review_completed_and_budget_scope_corrected": true,
+  "new_measured_wall_cap_pass": true,
+  "no_experiment_restart": true,
+  "old_failure_evidence_and_settlement_unchanged": true,
+  "plaintext_token_absent": true,
+  "remote_archived": false,
+  "research_status": "task_gain_gate_stop",
+  "task_episodes": 240,
+  "task_gate_pass": false,
+  "this_finalizer_environment_or_model_calls": 0,
+  "torch_imported": false
+}
