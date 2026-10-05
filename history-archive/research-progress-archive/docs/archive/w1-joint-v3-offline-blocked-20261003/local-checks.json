@@ -1,0 +1,35 @@
+{
+  "schema": "w1-local-development-checks/1.0.0",
+  "date": "2026-10-02",
+  "regression": {
+    "command": [
+      "E:\\Z博士\\.runtime-tools\\w1-ssh-controller-v1\\Scripts\\python.exe",
+      "-B", "-m", "unittest", "test_server_acceptance_entry", "-v"
+    ],
+    "workdir": "E:\\Z博士\\research-plans\\w1-task-outcome-g1-g2-joint-production-acceptance-v3-metered-remote",
+    "exit_code": 0,
+    "tests_run": 22,
+    "unittest_wall_seconds": 0.032,
+    "model_calls": 0,
+    "real_environment_calls": 0,
+    "scope": "Local acceptance boundary tests, including actual run_formal routing to the controller runtime check and a substituted TCP connect failure. Not server acceptance."
+  },
+  "local_route": {
+    "remote_ip": "172.17.27.173",
+    "interface": "WLAN",
+    "selected_destination_prefix": "0.0.0.0/0",
+    "next_hop": "192.168.0.1",
+    "remote_reachability_proven": false,
+    "interpretation": "Selected local route only. Does not establish whether server, VPN, firewall or another network component caused the timeout."
+  },
+  "git": {
+    "directory": "E:\\Z博士\\research-progress-archive",
+    "index_sha256_before_archive": "401ea4494d8a47cada77d4687bb3119f2a111d2b771433f69a96c5b2464ff421",
+    "staged_files": 535,
+    "ssh_agent_status": "Stopped",
+    "ssh_agent_start_type": "Disabled",
+    "new_commit_created": false,
+    "push_attempted": false,
+    "remote_archived": false
+  }
+}

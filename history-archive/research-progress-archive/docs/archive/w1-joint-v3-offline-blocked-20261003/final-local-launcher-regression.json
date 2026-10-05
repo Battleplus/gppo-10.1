@@ -1,0 +1,21 @@
+{
+  "schema": "w1-local-launcher-regression/1.0.0",
+  "command": [
+    "E:\\Z博士\\.runtime-tools\\w1-ssh-controller-v1\\Scripts\\python.exe",
+    "-B", "-m", "unittest", "test_server_acceptance_entry", "-v"
+  ],
+  "workdir": "E:\\Z博士\\research-plans\\w1-task-outcome-g1-g2-joint-production-acceptance-v3-metered-remote",
+  "exit_code": 0,
+  "tests_run": 23,
+  "unittest_wall_seconds": 0.026,
+  "affected_changes": [
+    "Controller runtime verification is imported from its actual defining module.",
+    "The launcher shares the strict JSON reader that rejects duplicate fields."
+  ],
+  "actual_formal_routing_test": "ServerAcceptanceLauncherTests.test_formal_route_checks_controller_runtime_before_connect",
+  "boundary_substitution": "TCP connect raises a deterministic TimeoutError; upload and token read must not occur.",
+  "server_acceptance_proven": false,
+  "model_calls": 0,
+  "environment_calls": 0,
+  "checkpoint_io": 0
+}

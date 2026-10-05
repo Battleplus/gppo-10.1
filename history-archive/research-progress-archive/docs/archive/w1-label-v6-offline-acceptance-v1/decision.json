@@ -1,0 +1,32 @@
+{
+  "schema": "w1-v6-offline-research-decision/1.0.0",
+  "primary_conclusion": "DATA_PRIMARY_LABELS_CORRECT_SUPERVISION_INSUFFICIENT",
+  "scope": "development evidence from eight consumed qualification windows, not independent confirmation",
+  "original_coverage_pass": true,
+  "original_technical_stop_preserved": true,
+  "all_primary_terminal_labels_independently_checked": true,
+  "attribution_audit_defect_count": 9,
+  "independently_confirmed_training_value": "not_evaluated",
+  "current_formal_training_request": "none",
+  "next_action": "Repair attribution/return recording and settlement in an independent successor, then seek a bounded data-only collection approval. Do not rerun v6.",
+  "why_limited_collection_is_worth_preparing": [
+    "100 non-NOOP candidates have valid physical/expiry terminal evidence, including both classes.",
+    "13 of 25 same-task UAV candidate groups differ in physical outcome, distributed across seven parents.",
+    "Whole-continuation reward, all-task results and energy cannot be reconstructed from the saved records.",
+    "The next collection can resolve a concrete missing data contract with fixed identities and no model calls."
+  ],
+  "training_package_branch_applicable_now": false,
+  "conditions_before_training_application": [
+    "Legal, explicit next-observation and horizon targets with complete return accounting.",
+    "Independent parent roles and honest historical use exclusions.",
+    "Production learner actually consumes the new schema and masks, with fixed continuation identity.",
+    "Production E2E and remote/runtime resource verification; no fake-backend readiness claim."
+  ],
+  "world_model_prediction": "not_evaluated",
+  "event_supervision_increment": "not_evaluated",
+  "gppo_task_utility": "not_evaluated",
+  "practical_cost_acceptance": "not_evaluated",
+  "new_environment_calls": 0,
+  "new_model_calls": 0,
+  "formal_attempt_created": false
+}

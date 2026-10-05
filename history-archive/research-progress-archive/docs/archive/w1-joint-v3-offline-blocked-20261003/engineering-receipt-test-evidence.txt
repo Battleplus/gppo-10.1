@@ -1,0 +1,24 @@
+Engineering receipt verifier test run
+Date: 2026-10-03 (Asia/Shanghai)
+Working directory: E:\Z博士\research-plans\w1-task-outcome-g1-g2-joint-production-acceptance-v3-metered-remote
+Command: python -B -m unittest test_engineering_receipt.py -v
+Output capture: the exec tool returned stdout/stderr combined; separate streams were not retained.
+
+Observed output:
+test_controlled_export_payload_hash_is_checked (test_engineering_receipt.EngineeringReceiptTests.test_controlled_export_payload_hash_is_checked) ... ok
+test_current_launcher_technical_stop_is_not_an_engineering_receipt (test_engineering_receipt.EngineeringReceiptTests.test_current_launcher_technical_stop_is_not_an_engineering_receipt) ... ok
+test_current_transport_scope_report_is_a_hard_block (test_engineering_receipt.EngineeringReceiptTests.test_current_transport_scope_report_is_a_hard_block) ... ok
+test_evidence_manifest_is_checked_against_actual_bytes (test_engineering_receipt.EngineeringReceiptTests.test_evidence_manifest_is_checked_against_actual_bytes) ... ok
+test_external_complete_claim_with_runner_ready_true_is_rejected (test_engineering_receipt.EngineeringReceiptTests.test_external_complete_claim_with_runner_ready_true_is_rejected) ... ok
+test_handwritten_pass_boolean_is_not_an_allowed_receipt_field (test_engineering_receipt.EngineeringReceiptTests.test_handwritten_pass_boolean_is_not_an_allowed_receipt_field) ... ok
+test_missing_external_receipt_is_rejected (test_engineering_receipt.EngineeringReceiptTests.test_missing_external_receipt_is_rejected) ... ok
+test_receipt_inside_frozen_package_is_rejected (test_engineering_receipt.EngineeringReceiptTests.test_receipt_inside_frozen_package_is_rejected) ... ok
+test_remote_stdout_must_match_manifest_bytes (test_engineering_receipt.EngineeringReceiptTests.test_remote_stdout_must_match_manifest_bytes) ... ok
+test_unrecognized_claimed_complete_scope_is_rejected (test_engineering_receipt.EngineeringReceiptTests.test_unrecognized_claimed_complete_scope_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.064s
+
+OK
+
+Exit code: 0

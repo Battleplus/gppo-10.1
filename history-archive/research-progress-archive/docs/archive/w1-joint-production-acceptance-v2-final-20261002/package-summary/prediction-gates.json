@@ -1,0 +1,16 @@
+{
+  "confirmation_parents": 8,
+  "g1_vs_transparent": {
+    "noninferior_parent_minimum": 6,
+    "positive_improvement_seed_minimum": 2,
+    "regret_improvement_minimum": 0.005
+  },
+  "g2_vs_g1": {
+    "noninferior_parent_minimum": 6,
+    "positive_improvement_seed_minimum": 2,
+    "regret_improvement_minimum": 0.005
+  },
+  "inference": "exploratory within-study held-out parents; report paired parent differences and bootstrap uncertainty; no population efficacy claim",
+  "next_gppo": "separate application only; no branch runs GPPO in this protocol",
+  "schema": "w1-joint-world-model-prospective-gates/1.0.0"
+}

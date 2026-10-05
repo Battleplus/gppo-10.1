@@ -1,0 +1,40 @@
+{
+  "schema": "w1-development-boundary-regression/1.0.0",
+  "date": "2026-10-03",
+  "working_directory": "E:\\Z博士\\research-plans\\w1-task-outcome-g1-g2-joint-production-acceptance-v3-metered-remote",
+  "runs": [
+    {
+      "command": ["E:\\Z博士\\.runtime-tools\\w1-ssh-controller-v1\\Scripts\\python.exe", "-B", "-m", "unittest", "test_registration_production_wiring", "test_registration_start_handshake", "test_server_acceptance_entry", "test_engineering_receipt", "-v"],
+      "exit_code": 0,
+      "tests_run": 42,
+      "unittest_wall_seconds": 0.141,
+      "result": "OK",
+      "receipt_test_snapshot": "9 tests at discovery, before the worker added the payload mutation regression"
+    },
+    {
+      "command": ["E:\\Z博士\\.runtime-tools\\w1-ssh-controller-v1\\Scripts\\python.exe", "-B", "-m", "unittest", "test_engineering_receipt.EngineeringReceiptTests.test_controlled_export_payload_hash_is_checked", "-v"],
+      "exit_code": 0,
+      "tests_run": 1,
+      "unittest_wall_seconds": 0.012,
+      "result": "OK"
+    }
+  ],
+  "production_functions_exercised": [
+    "launch_server_acceptance.run_formal: runtime verification and connect-failure recording before staging",
+    "launch_joint_once.execute_registered: keep remote stdin open, report receipt, send bound ACK, then read final output",
+    "acceptance_entry.run_registered_once: ACK failure records FAILED and makes no GPU/workload boundary call"
+  ],
+  "substitutions": [
+    "SSH channel and stdin/stdout boundaries",
+    "Persisted registration fixture and no-computation operation-boundary callbacks",
+    "JSON/file-only evidence fixtures, not real server completion evidence"
+  ],
+  "native_server_registration_tested": false,
+  "real_environment_calls": 0,
+  "model_calls": 0,
+  "checkpoint_reads_or_writes": 0,
+  "gpu_contexts": 0,
+  "formal_attempts": 0,
+  "server_acceptance_proven": false,
+  "scope_note": "Only local boundary regression; not full server engineering acceptance, and not a scientific model evaluation. Local process CPU is nonzero and is not claimed as zero resource consumption."
+}

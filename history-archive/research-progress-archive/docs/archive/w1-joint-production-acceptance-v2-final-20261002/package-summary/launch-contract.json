@@ -1,0 +1,21 @@
+{
+  "accounting_reserves": {
+    "cross_system_wall_seconds": 30,
+    "windows_post_preflight_process_cpu_seconds": 30
+  },
+  "attempt": "w1-task-outcome-g1-g2-joint-v2-once",
+  "authorization_status": "NOT_APPROVED",
+  "automatic_retry": false,
+  "frozen_windows_entry": "launch_joint_once.py",
+  "host": "172.17.27.173",
+  "integration_test": false,
+  "native_entry": "metered_joint_entry.py",
+  "native_execution_root": "/home/user1/w1-task-outcome-g1-g2-joint-v2-once",
+  "native_python": "/home/user1/.venvs/w1-runtime-v1/bin/python",
+  "one_shot": true,
+  "resource_request_sha256": "54b473d3b765daac00edc5d59449a3619c5d1eb446901a317bcad14026bc5b5a",
+  "runtime_identity_sha256": "af32685059d7c3107ab6d0d2f34bc0e9e71c118ec8179d394a216798d7b62cb1",
+  "runtime_mode": "remote_joint",
+  "schema": "w1-eawm-jepa-launch-contract/2.1.0",
+  "user": "user1"
+}

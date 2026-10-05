@@ -1,0 +1,99 @@
+{
+  "accounting_reserves": {
+    "cross_system_wall_seconds": 30,
+    "windows_post_preflight_process_cpu_seconds": 30
+  },
+  "attempt": "w1-task-outcome-g1-g2-joint-v2-once",
+  "budget_basis": "collection from inclusive v6 measurement scaled by max bounds and factor3; learning times require synthetic production benchmark before runner_ready",
+  "gpu": {
+    "aggregate_gpu_process_accounting": "owned worker only; no DDP; one GPU",
+    "exclusive_allocation_required": true,
+    "free_memory_minimum_bytes": 9663676416,
+    "logical_device": "cuda:0",
+    "peak_allocated_memory_bytes": 8589934592,
+    "physical_device": 1
+  },
+  "policy_or_task_comparison": false,
+  "research_training": true,
+  "runner_ready": false,
+  "schema": "w1-joint-data-world-model-request/1.0.0",
+  "stages": {
+    "label_qualification": {
+      "active_storage_bytes": 2147483648,
+      "branch_snapshot_copies": 1000,
+      "branches": 1000,
+      "candidate_scans": 1000,
+      "complete_process_cpu_seconds": 445,
+      "environment_steps": 14160,
+      "forced_first_actions": 1000,
+      "public_rule_decisions": 13160,
+      "resets_upper": 40,
+      "snapshot_captures": 40,
+      "wall_seconds": 828
+    },
+    "prediction_confirmation": {
+      "active_storage_bytes": 2147483648,
+      "checkpoint_loads": 6,
+      "complete_process_cpu_seconds": 360,
+      "model_initializations_or_loads": 6,
+      "wall_seconds": 180,
+      "world_batch_forwards": 48,
+      "world_sample_evaluations": 1200
+    },
+    "settlement_and_verified_export": {
+      "active_storage_bytes": 2147483648,
+      "complete_process_cpu_seconds": 80,
+      "wall_seconds": 120
+    },
+    "staging_and_zero_step_gate": {
+      "active_storage_bytes": 2147483648,
+      "complete_process_cpu_seconds": 80,
+      "wall_seconds": 180
+    },
+    "world_model_training_and_selection": {
+      "active_storage_bytes": 2147483648,
+      "checkpoint_writes": 6,
+      "complete_process_cpu_seconds": 3600,
+      "model_initializations_or_loads": 6,
+      "wall_seconds": 1800,
+      "world_backward_calls": 2880,
+      "world_batch_forwards": 6720,
+      "world_optimizer_updates": 2880,
+      "world_sample_evaluations": 168000
+    }
+  },
+  "status": "NOT_APPROVED",
+  "stops": [
+    "identity_or_runtime_mismatch",
+    "data_gate_not_passed",
+    "nonfinite",
+    "budget_failure",
+    "technical_failure_no_retry"
+  ],
+  "totals": {
+    "active_storage_bytes": 2147483648,
+    "aggregate_native_plus_verified_export_bytes": 4294967296,
+    "all_resident_rss_bytes": 4294967296,
+    "branch_snapshot_copies": 1000,
+    "branches": 1000,
+    "candidate_scans": 1000,
+    "checkpoint_loads": 6,
+    "checkpoint_writes": 6,
+    "complete_process_cpu_seconds": 4595,
+    "environment_steps": 14160,
+    "forced_first_actions": 1000,
+    "gppo_updates": 0,
+    "gpu_devices": 1,
+    "gpu_memory_bytes": 8589934592,
+    "model_initializations_or_loads": 12,
+    "public_rule_decisions": 13160,
+    "resets_upper": 40,
+    "snapshot_captures": 40,
+    "task_comparison_calls": 0,
+    "wall_seconds": 3138,
+    "world_backward_calls": 2880,
+    "world_batch_forwards": 6768,
+    "world_optimizer_updates": 2880,
+    "world_sample_evaluations": 169200
+  }
+}

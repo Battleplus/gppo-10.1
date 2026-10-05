@@ -1,0 +1,37 @@
+{
+  "schema": "w1-v6-offline-goal-branch-audit/1.0.0",
+  "chosen_research_branch": "primary_data_correct_but_sequence_supervision_and_independent_roles_insufficient",
+  "evidence": {
+    "consumed_attempt_not_restarted": "native-final-status-evidence-v2.json: stopped/export_failed, old PIDs absent; original run-once retained",
+    "original_frozen_identity": "analysis.json and full source-identities-before/after.json: package content unchanged, original manifest/hashes match",
+    "actual_configuration_and_scene_identity": "analysis.json: provenance and environment_config_sha256",
+    "counts_and_unknown": "analysis.json, candidate-table.csv: eight parents, 108 candidates, explicit valid masks and unknown reasons",
+    "decision_input_boundary": "analysis.json: raw public and feature digests rederived; receipt/measurement times checked; production source reviewed by Luna",
+    "candidate_task_continuation_trace": "analyze_v6.py validation of persisted lifecycle/time/first-command/continuation evidence; missing initial snapshot explicitly recorded",
+    "original_coverage_rule": "analysis.json: coverage_pass_original_rule=true with no new gate",
+    "ledger": "analysis.json: mode=ro&immutable=1, 1238 complete calls, exact settlement totals",
+    "cpu_resource_and_native_final": "native-final-status-evidence-v2.json and luna-resource-review.md: inclusive scopes, nested CPU not added, budget upper bounds within caps, reconciliation failed",
+    "export_identity": "analysis.json: 119 bytes/digest checks; native final failure separated from copied early payload snapshot",
+    "candidate_difference_and_learnability": "13/25 same-task groups, seven parents, one realization; public fields exist but learnability/probabilities unknown",
+    "attribution_defect_and_previous_claim": "attribution-erratum.json and previous-claim-erratum.json: nine audit-only false positives, primary labels unchanged",
+    "explicit_research_decision": "decision.json and report.md: limited additional data worth preparing, no formal training application now",
+    "finite_collection_purpose_rule_budget_stops": "RESOURCE_REQUEST-proposal.json and parent-split-proposal.json: deterministic 24/8/8 roles, derived 14160 steps, all model calls zero, NOT_APPROVED non-executable proposal",
+    "independent_reviews": "luna-label-review.md and luna-resource-review.md: fresh Luna Max read-only same-family provisional; main thread independently corroborated",
+    "remote_runtime_limit": "report.md and prior remote-runtime-followup report: candidate runtime only, exclusive allocation/production GPU chain unproven",
+    "local_archive_and_remote_block": "archive-status.json and finalizer output: pre-existing index entries preserved, exact copies; signing disabled/network reset, no new remote commit"
+  },
+  "conditional_training_package": {
+    "applicable_on_this_branch": false,
+    "reason": "Existing labels establish the terminal target-task contract but lack complete continuation scheduling-return supervision and an unconsumed confirmation split. Preparing an executable formal model experiment from the blocked inherited draft would overstate readiness.",
+    "inherited_draft_unchanged_and_not_approved": true
+  },
+  "limitations_not_claimed_complete": [
+    "Full reconstruction of missing prefix/initial private state and whole-continuation returns.",
+    "All historical CPU costs or gaps retrospectively settled.",
+    "New collector CPU repair, executable supplement, new training package or actual model/GPPO validation.",
+    "Global historical novelty or exclusive remote allocation.",
+    "GitHub signed remote archival."
+  ],
+  "formal_training_or_collection_authorization_requested_this_turn": false,
+  "formal_attempt_created": false
+}

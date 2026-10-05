@@ -1,0 +1,17 @@
+{
+  "schema": "w1-joint-cpu-lifetime-and-phase-contract/1.0.0",
+  "authoritative_total": "waited inner process lifetime plus disjoint outer self and bounded closing reserve",
+  "short_children": "Linux waited-descendant ticks and subreaper; missing or nonmonotonic ownership is a technical stop",
+  "phase_boundary": "authenticated synchronous quiescent-worker handshake; no live child permitted when changing phase",
+  "inner_tail": "native terminal deferral, final writes, export and exit included in outer waited lifetime",
+  "outer_closing_cpu_reserve_seconds": 3,
+  "outer_closing_wall_reserve_seconds": 5,
+  "reserve_charged_to": "settlement_and_verified_export",
+  "reserve_increases_existing_budget": false,
+  "outer_closing_cpu_enforcement": "single-threaded parent RLIMIT_CPU floor(self)+2 seconds; charged reserve includes signal granularity",
+  "outer_closing_wall_enforcement": "5 second alarm; uninterruptible kernel I/O cannot be guaranteed to end by this timer",
+  "unmeasured": "per-operation parent closing write/fsync/terminal registration is upper-bounded rather than individually measured; kernel D-state can delay termination",
+  "unmeasured_cost_is_zero": false,
+  "historical_0_274925_seconds_source": "not retrospectively identifiable without preserved boundaries; historical erratum retained",
+  "no_tolerance_relaxation": true
+}

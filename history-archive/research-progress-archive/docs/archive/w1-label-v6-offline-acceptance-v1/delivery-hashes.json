@@ -1,0 +1,31 @@
+{
+  "files": {
+    "RESOURCE_REQUEST-proposal.json": "3f4185ec9acdfc3b6019542a27b6213ff3c9b906931b746419fecb14b71fb751",
+    "analysis-plan.md": "242c3424d8661bc1b96cfbbbaace8045bc85366335fae20f9d600d2a8100ad1a",
+    "analysis.json": "74a7f2fe6e363fe9f6296e6ada6d968aaccdf62c5149776f5481c7dc0845fa43",
+    "analyze_v6.py": "556d817cac950904f819857a417dbbd74ff8727e12293e7acf7248b84c9886c1",
+    "archive-status.json": "7b38ea0361acab9b2ebd4dc9ef791fe29fe97846941272be258a16b834119a35",
+    "attribution-erratum.json": "d8d78b24d4576367b36cb5273959be7ed801b8e2478307ccad3789dfb209e8b0",
+    "candidate-table.csv": "502a21ec1d5f8aa61f4647569785f8e4f0365ba3068ed7c76eeb0ffa09dcc7de",
+    "capture_native_final.py": "76d3441fb3484e9f8a75303ed032cb8fa7bf502a5f422101500064099f919d20",
+    "completion-audit.json": "b6a1edde77c0ac1eacfd3e3161c60c099721d3d6d9f3127172a97634c84511bf",
+    "decision.json": "2900ddbee765f152f2129765a05d8ba0d6a7dfbfe700c877c185ec87100db14d",
+    "finalize_archive.py": "a954342c7cc031d15f306a84f93fbb9dea7e4e7e2dcc59320bf7b30796e46ec6",
+    "luna-label-review.md": "c8ba2e6568abd794744e5b0eac031881bbcfcea3c7c613c6c3acea572abca5af",
+    "luna-resource-review.md": "2a27ba1e38320f85dc29200c3b946261e65a970d3e8070c0f397174d076ce3fb",
+    "native-final-status-evidence-v2.json": "dc23c17a55e4444a5ebb62de8296f79054e2a800c23bcb7b06c11b1fda8a63c1",
+    "native-final-status-evidence.json": "11aefe05dba0344726ae5f87abb9e7fb7dac89448b1feaa8c50ca52a316af191",
+    "native-read-decoding-error.md": "ddc674a1524b9f4ae19216799ac1c4b4476f6c3c5a9671fdd121feabcfb35576",
+    "parent-split-proposal.json": "681513914f08df85d0db70a22819839de4018ff51a083583a00a375a9c168232",
+    "prepare_collection_proposal.py": "59356bf2081404082fa0792526d93d4f7e3c3d1986f12c750ac2c8727f4e0b4d",
+    "previous-claim-erratum.json": "5e1802312afabd59a5224c20b9982a6d537e2563d5ed6170b3a5ce96193bc220",
+    "report.md": "6b677e245e0018a4659d01ca660e793fcc8b07ff7f00b0083526c502b752b7f9",
+    "source-identities-after.json": "c7fb2443b8c7f953118c660e101895c827f07e0c4c03d1624030378250021509",
+    "source-identities-before.json": "c7fb2443b8c7f953118c660e101895c827f07e0c4c03d1624030378250021509",
+    "test-evidence.json": "e7acf83ba703521df5002e806b77925decc31b36ba1534edd6e72bf1d15cd33a",
+    "test_offline_acceptance.py": "9b0a35d0f55ac6f60f3ee027647a1089c62591cd577a545dd5e2e46f4586e688"
+  },
+  "purpose": "offline analysis evidence, not an experimental execution manifest",
+  "schema": "w1-offline-label-acceptance-delivery/1.0.0",
+  "source_data_sha256": "30b773cf5e8870b8c4abed9f2daa2939d09cfdd7b02359bf2ede910d518115fc"
+}

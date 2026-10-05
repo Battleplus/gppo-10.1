@@ -1,0 +1,116 @@
+{
+  "derivation": "For the listed expired rows only, first-command physical completion and identifiability are false because no completion occurred; do not treat the final execution token as completion evidence.",
+  "original_data_changed": false,
+  "primary_labels_changed": false,
+  "rows": [
+    {
+      "action_id": 13,
+      "candidate_id": "action-13",
+      "derived_action_specific_effect_identifiable": false,
+      "derived_completion_by_first_command": false,
+      "expired": true,
+      "original_action_specific_effect_identifiable": true,
+      "original_completion_by_first_command": true,
+      "parent": "train-0057",
+      "physical_completed": false,
+      "reason": "identity_match_without_physical_completion"
+    },
+    {
+      "action_id": 1,
+      "candidate_id": "action-1",
+      "derived_action_specific_effect_identifiable": false,
+      "derived_completion_by_first_command": false,
+      "expired": true,
+      "original_action_specific_effect_identifiable": true,
+      "original_completion_by_first_command": true,
+      "parent": "train-0058",
+      "physical_completed": false,
+      "reason": "identity_match_without_physical_completion"
+    },
+    {
+      "action_id": 1,
+      "candidate_id": "action-1",
+      "derived_action_specific_effect_identifiable": false,
+      "derived_completion_by_first_command": false,
+      "expired": true,
+      "original_action_specific_effect_identifiable": true,
+      "original_completion_by_first_command": true,
+      "parent": "train-0059",
+      "physical_completed": false,
+      "reason": "identity_match_without_physical_completion"
+    },
+    {
+      "action_id": 1,
+      "candidate_id": "action-1",
+      "derived_action_specific_effect_identifiable": false,
+      "derived_completion_by_first_command": false,
+      "expired": true,
+      "original_action_specific_effect_identifiable": true,
+      "original_completion_by_first_command": true,
+      "parent": "train-0060",
+      "physical_completed": false,
+      "reason": "identity_match_without_physical_completion"
+    },
+    {
+      "action_id": 7,
+      "candidate_id": "action-7",
+      "derived_action_specific_effect_identifiable": false,
+      "derived_completion_by_first_command": false,
+      "expired": true,
+      "original_action_specific_effect_identifiable": true,
+      "original_completion_by_first_command": true,
+      "parent": "train-0060",
+      "physical_completed": false,
+      "reason": "identity_match_without_physical_completion"
+    },
+    {
+      "action_id": 13,
+      "candidate_id": "action-13",
+      "derived_action_specific_effect_identifiable": false,
+      "derived_completion_by_first_command": false,
+      "expired": true,
+      "original_action_specific_effect_identifiable": true,
+      "original_completion_by_first_command": true,
+      "parent": "train-0060",
+      "physical_completed": false,
+      "reason": "identity_match_without_physical_completion"
+    },
+    {
+      "action_id": 19,
+      "candidate_id": "action-19",
+      "derived_action_specific_effect_identifiable": false,
+      "derived_completion_by_first_command": false,
+      "expired": true,
+      "original_action_specific_effect_identifiable": true,
+      "original_completion_by_first_command": true,
+      "parent": "train-0060",
+      "physical_completed": false,
+      "reason": "identity_match_without_physical_completion"
+    },
+    {
+      "action_id": 1,
+      "candidate_id": "action-1",
+      "derived_action_specific_effect_identifiable": false,
+      "derived_completion_by_first_command": false,
+      "expired": true,
+      "original_action_specific_effect_identifiable": true,
+      "original_completion_by_first_command": true,
+      "parent": "train-0061",
+      "physical_completed": false,
+      "reason": "identity_match_without_physical_completion"
+    },
+    {
+      "action_id": 19,
+      "candidate_id": "action-19",
+      "derived_action_specific_effect_identifiable": false,
+      "derived_completion_by_first_command": false,
+      "expired": true,
+      "original_action_specific_effect_identifiable": true,
+      "original_completion_by_first_command": true,
+      "parent": "train-0063",
+      "physical_completed": false,
+      "reason": "identity_match_without_physical_completion"
+    }
+  ],
+  "source_data_sha256": "30b773cf5e8870b8c4abed9f2daa2939d09cfdd7b02359bf2ede910d518115fc"
+}

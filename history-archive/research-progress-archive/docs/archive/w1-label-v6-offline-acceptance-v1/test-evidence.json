@@ -1,0 +1,30 @@
+{
+  "scope": "offline persisted-evidence and corruption tests only",
+  "command": "python -B -m unittest -v test_offline_acceptance",
+  "working_directory": "E:\\Z博士\\research-plans\\w1-label-v6-offline-acceptance-v1",
+  "exit_code": 0,
+  "tests": 8,
+  "reported_test_wall_seconds": 0.444,
+  "results": {
+    "saved_qualification_and_attribution_defect": "pass",
+    "unknown_not_imputed_as_failure": "pass",
+    "future_public_receipt_with_recomputed_hash_rejected": "pass",
+    "candidate_identity_mismatch_rejected": "pass",
+    "noop_task_target_rejected": "pass",
+    "host_receipt_after_cutoff_rejected": "pass",
+    "nonfinite_timeline_rejected": "pass",
+    "no_torch_numpy_or_environment_module_import": "pass"
+  },
+  "analysis_command": "python -B analyze_v6.py",
+  "analysis_exit_code": 0,
+  "proposal_command": "python -B prepare_collection_proposal.py",
+  "proposal_exit_code": 0,
+  "research_environment_calls": 0,
+  "model_initializations": 0,
+  "model_forwards": 0,
+  "backward_calls": 0,
+  "optimizer_updates": 0,
+  "checkpoint_reads_writes": 0,
+  "formal_attempts_created": 0,
+  "warning": "Does not claim production collector reexecution or training-package E2E acceptance. Previous turns' nonzero synthetic model tests remain separately recorded."
+}

@@ -1,0 +1,40 @@
+{
+  "credentials_saved": false,
+  "distributions": {
+    "PyNaCl": {
+      "record_sha256": "f7c2eb0aab53846170dcd5b06e27518d42e1a5ab974b333de780897c430c3895",
+      "version": "1.6.2"
+    },
+    "bcrypt": {
+      "record_sha256": "f8afcc4e072d0293cf5e3175b6dbab840ee5b6b2ce5b12012b12e241b93ef9c6",
+      "version": "5.0.0"
+    },
+    "cffi": {
+      "record_sha256": "c12c69a8f8ac1c2d2a65fb758ac2be7507c13debd8905e917774c5b4a7a80be4",
+      "version": "2.1.1"
+    },
+    "cryptography": {
+      "record_sha256": "b4eabcea8d37b4d6bf9ee4bfb81b3e3552b4b2a26193848042d53524f6d46bef",
+      "version": "50.0.2"
+    },
+    "invoke": {
+      "record_sha256": "66e0a39002e416e31ca76dcf34558ba59ce734f5c30e029e92d77a33709c3128",
+      "version": "3.0.3"
+    },
+    "paramiko": {
+      "record_sha256": "15fec0590e35fc491f5d07fecaf06df782591e458255f35737a86025dc06a25a",
+      "version": "4.0.0"
+    },
+    "pycparser": {
+      "record_sha256": "05cc572b90575a00791e1425f397e7a0e80b7f4f0c948dbcac2bf38e47872de2",
+      "version": "3.0"
+    }
+  },
+  "installation_during_experiment": false,
+  "model_execution": false,
+  "python_binary_sha256": "4b8c3912806b3c1591ba3cb403bff77ad309c3fe5756f87c20b7a6f8f0174262",
+  "python_executable": "E:\\Z\u535a\u58eb\\.runtime-tools\\w1-ssh-controller-v1\\Scripts\\python.exe",
+  "python_prefix": "E:\\Z\u535a\u58eb\\.runtime-tools\\w1-ssh-controller-v1",
+  "python_version": "3.14.4 (tags/v3.14.4:23116f9, Apr  7 2026, 14:10:54) [MSC v.1944 64 bit (AMD64)]",
+  "schema": "w1-windows-ssh-controller-runtime/1.0.0"
+}

@@ -1,0 +1,26 @@
+{
+  "affected_report": "E:\\Z博士\\research-plans\\w1-action-conditioned-task-outcome-label-repair-v6-postrun-analysis-20261002\\postrun-analysis.md",
+  "original_report_modified": false,
+  "original_data_modified": false,
+  "coverage_rule_changed": false,
+  "original_prediction_gate_stop_changed": false,
+  "errata": [
+    {
+      "claim": "83/108 candidates identify an action-specific completion effect",
+      "status": "withdraw_overbroad_interpretation",
+      "reason": "Nine expired rows match execution command identity without any physical completion.",
+      "replacement": "74 original true flags also have physical completion evidence; identity association still does not prove a unique causal effect. See attribution-erratum.json."
+    },
+    {
+      "claim": "Data contract supports moving directly to an independent training preparation application",
+      "status": "narrow_scope_after_additional_evidence_review",
+      "reason": "Target-task terminal labels exist, but saved utility is one-step energy only, whole-continuation multi-objective supervision is absent, and the eight inspected parents are development evidence.",
+      "replacement": "Primary terminal labels support pipeline/development analysis. Prepare bounded completion of sequence supervision and disjoint roles before formal training; no dynamic authorization is inferred."
+    },
+    {
+      "claim": "EXPORT_COMPLETE alone establishes successful final controlled export",
+      "status": "clarify_scope",
+      "replacement": "119 copied payload files match the export manifest; native final export/resource state is failed and was not included in the copied snapshot."
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "blocked-draft WSL CPU structural preflight only; not remote training acceptance",
+  "status": "pass",
+  "command": [
+    "C:\\Python314\\python.exe",
+    "-B",
+    "E:\\Z博士\\research-plans\\w1-eawm-jepa-world-model-training-v1-preparation\\launch_once.py",
+    "--authorization-file",
+    "E:\\Z博士\\research-plans\\w1-remote-runtime-followup-20261002\\draft-preflight-authorization.json",
+    "--preflight-only"
+  ],
+  "exit_code": 0,
+  "all_file_identity_unchanged": true,
+  "execution_manifest_sha256": "800aeb6e68d0053dd7d9b2451a6339726713b73242d4ab69f63627cf329d44be",
+  "hashes_sha256": "bb90f44051526a42560a704c6918c78890123bb51bd12afbef793dfe5bd5d89c",
+  "manifest_sha256_reverified": "800aeb6e68d0053dd7d9b2451a6339726713b73242d4ab69f63627cf329d44be",
+  "resource_request_sha256": "838e5935a68b01476d6186a6b22cebdd2db6ea1920494aa3cfcf2d1e4a9e3b55",
+  "formal_attempt_created": false,
+  "runner_ready": false
+}

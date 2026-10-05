@@ -1,0 +1,21 @@
+{
+  "commit_gpgsign": true,
+  "gpg_format": "ssh",
+  "last_previously_verified_remote_main": "6aa16410b0e69aaceb7dee0b4d260eaf76d03e02",
+  "last_sha_is_not_a_current_verification_or_this_delivery_commit": true,
+  "local_archive": "E:\\Z博士\\research-progress-archive\\docs\\archive\\w1-label-v6-offline-acceptance-v1",
+  "local_small_files_copied_and_staged": true,
+  "new_commit_created": false,
+  "next_external_action": "Restore the authorized SSH signing agent and existing signing key, then recheck remote changes and safely create a signed archive commit. Do not disable signing or force-push.",
+  "preexisting_index_entries_unchanged": true,
+  "preexisting_index_entry_count": 515,
+  "push_attempted": false,
+  "remote_archived": false,
+  "remote_read_this_turn": {
+    "command": "git ls-remote origin refs/heads/main",
+    "exit_code": 1,
+    "stderr": "error: RPC failed; curl 56 Recv failure: Connection was reset\nfatal: expected flush after ref listing\n"
+  },
+  "secrets_raw_data_sqlite_checkpoints_uploaded": false,
+  "signing_agent": "Disabled/Stopped"
+}

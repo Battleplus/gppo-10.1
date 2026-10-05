@@ -1,0 +1,22 @@
+{
+  "schema": "w1-remote-runtime-followup-observation/1.0.0",
+  "provenance": "actual SSH tool stdout and exit status in this turn; ANSI console control codes omitted",
+  "exit_code": 0,
+  "status": "pass",
+  "python_executable": "/home/user1/.venvs/w1-runtime-v1/bin/python",
+  "runtime_identity_sha256": "af32685059d7c3107ab6d0d2f34bc0e9e71c118ec8179d394a216798d7b62cb1",
+  "tensor_calls": 0,
+  "model_calls": 0,
+  "optimizer_updates": 0,
+  "staging_started": false,
+  "worker_started": false,
+  "formal_attempt_created": false,
+  "exclusive_resource_allocation_proven": false,
+  "gpu_free_mib": [10388, 10988],
+  "gpu_used_mib": [622, 20],
+  "load_average": [56.23, 53.79, 49.20],
+  "logical_cpus": 32,
+  "host_available_memory_bytes": 26169651200,
+  "historical_synthetic_probe_reused_not_rerun": true,
+  "training_authorization": false
+}

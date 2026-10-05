@@ -1,0 +1,42 @@
+{
+  "schema": "w1-readonly-server-connection-evidence/1.0.0",
+  "date": "2026-10-02",
+  "real_name": "hzy",
+  "command": [
+    "E:\\Z博士\\.runtime-tools\\w1-ssh-controller-v1\\Scripts\\python.exe",
+    "-B",
+    "E:\\Z博士\\diagnostic-work\\w1-joint-production-acceptance-v3-20261002\\readonly_server_audit.py"
+  ],
+  "failures": [
+    {
+      "phase": "local_controller_runtime_check",
+      "exit_code": 1,
+      "error_type": "AttributeError",
+      "error": "module 'launch_joint_once' has no attribute 'verify_controller_runtime'",
+      "source_call": "controller.verify_controller_runtime()",
+      "ssh_connection_attempted": false,
+      "repair": "Import verify_controller_runtime directly from controller_runtime in independent development copy and audit script."
+    },
+    {
+      "phase": "tcp_connect_before_ssh_authentication",
+      "exit_code": 1,
+      "error_type": "TimeoutError",
+      "error": "timed out",
+      "traceback_site": "paramiko/client.py:384 sock.connect(addr)",
+      "configured_tcp_connect_timeout_seconds": 15,
+      "ssh_authentication_reached": false,
+      "remote_commands_started": false,
+      "retry_performed": false
+    }
+  ],
+  "remote_inventory_available": false,
+  "engineering_job_created": false,
+  "research_attempt_created": false,
+  "token_created_or_consumed": false,
+  "environment_calls": 0,
+  "model_calls": 0,
+  "checkpoint_io": 0,
+  "training_updates": 0,
+  "local_audit_cpu_fully_measured": false,
+  "scope_note": "Local failed read-only process launches are not claimed as zero CPU. No remote execution was reached."
+}

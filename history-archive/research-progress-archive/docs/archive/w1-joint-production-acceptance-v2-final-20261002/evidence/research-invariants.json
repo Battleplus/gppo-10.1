@@ -1,0 +1,20 @@
+{
+  "checks": {
+    "RESOURCE_REQUEST.json": true,
+    "data-gate.json": true,
+    "experiment-matrix.json": true,
+    "parent-split.json": true,
+    "prediction-gates.json": true,
+    "production_data.py": true,
+    "production_world.py": true,
+    "task_outcome_contract.py": true,
+    "w1_graph_jepa.py": true,
+    "w1_training.py": true
+  },
+  "old_identity": {
+    "RESOURCE_REQUEST.json": "b7eeb1f02b8a492da916e988ae029f9dea6b7544386e65822d8eb0b99c4b8fb4",
+    "execution-manifest.json": "95cbf2088480140f140ee9a7eac65d314328549503360a7d44d400d6e892fb90",
+    "hashes.json": "1f66e6a1a0df76144d0a02b077f51ec7a472d2bb5dd662585f16554d3c040b8d"
+  },
+  "pass": true
+}

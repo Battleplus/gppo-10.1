@@ -1,0 +1,106 @@
+{
+  "derivation": {
+    "environment_steps": "40*4 + 40*25*14 = 14160",
+    "measured_label_cpu_seconds": 11.568852549999999,
+    "measured_tree_wall_seconds": 21.550224889000674,
+    "memory_storage": "Retain explicit 2 GiB RSS, 512 MiB active and 1 GiB aggregate hard caps; these are limits, not evidence that extended records fit. Source payload and 40 windows must fit; serialize/size-test production fixtures before submission, never raise caps silently.",
+    "public_rule_decisions": "40*4 + 40*25*13 = 13160; forced first actions counted separately",
+    "resource_scale": "max(14160/1106 steps, 1000/108 branches, 40/8 resets); multiply measured inclusive v6 label-stage CPU and native-tree wall by that scale and by 3, then ceil. No supervisor CPU is added to the inclusive tree.",
+    "scale": 12.802893309222423
+  },
+  "matrix": {
+    "branch_steps_upper": 14,
+    "continuation_id": "hungarian-v1-fixed",
+    "horizon_seconds": 18,
+    "legal_candidates_upper": 25,
+    "model_selection": 8,
+    "no_opportunity": "Retain missing with reason, no replacement or zero imputation.",
+    "parents": 40,
+    "prediction_confirmation": 8,
+    "prefix_steps_upper": 4,
+    "repeats_per_parent": 1,
+    "train": 24,
+    "windows_upper": 40
+  },
+  "parent_split_proposal_sha256": "681513914f08df85d0db70a22819839de4018ff51a083583a00a375a9c168232",
+  "preconditions_before_new_approval": [
+    "Implement and test attribution and aggregate-return records in an independent successor; keep all v6 evidence intact.",
+    "Fix CPU scope/serialization tail accounting without weakening the old tolerance or double-counting; rederive bounds if measured scopes change.",
+    "Keep immutable package inputs separate from runtime accounting output; validate final isolated staged collector closure and controlled export.",
+    "Do not inspect proposed prediction-confirmation outcomes during development. Historical usage identity audit remains required.",
+    "Freeze a new executable manifest, NOT_APPROVED request, one-shot external authorization and unique command only after final tests."
+  ],
+  "proposed_attempt": "w1-action-conditioned-task-outcome-sequence-supervision-v1-proposed-once",
+  "proposed_attempt_path_absent_at_preparation": true,
+  "purpose": "Complete branch-level multi-objective and causal audit supervision; acquire disjoint candidate-data roles, not train models or establish world-model benefit.",
+  "required_new_records": [
+    "Initial target lifecycle and execution identity, label-side only.",
+    "Per continuation step: real scalar reward, independent multi-objective reward components, all-task outcome counts and aggregate energy before/after; include forced first action.",
+    "Target and global terminal lifecycle, observation cutoff, native terminated/truncated, original reward/preference and each fixed-continuation action.",
+    "Separate one-step public-state target from horizon task label; explicit target time/horizon and masks.",
+    "Completion identity must refer to observed physical completion, not just the last accepted execution token."
+  ],
+  "reserves": {
+    "cross_system_wall_seconds": 2,
+    "windows_post_preflight_cpu_seconds": 1
+  },
+  "runner_ready": false,
+  "runtime": "CPU label collector; remote GPU training is outside this proposal",
+  "schema": "w1-task-outcome-sequence-data-proposal/1.0.0",
+  "stages": {
+    "label_collection": {
+      "branch_snapshot_copies": 1000,
+      "branches": 1000,
+      "candidate_scans": 1000,
+      "checkpoint_loads_or_writes": 0,
+      "complete_process_cpu_seconds": 445,
+      "environment_steps": 14160,
+      "forced_first_actions": 1000,
+      "gppo_training": 0,
+      "model_forwards": 0,
+      "model_initializations_or_loads": 0,
+      "optimizer_updates": 0,
+      "public_rule_decisions": 13160,
+      "resets_upper": 40,
+      "snapshot_captures": 40,
+      "task_comparison": 0,
+      "wall_seconds": 828
+    },
+    "settlement_and_verified_export": {
+      "complete_process_cpu_seconds": 39,
+      "wall_seconds": 38
+    },
+    "staging_and_zero_step_gate": {
+      "complete_process_cpu_seconds": 20,
+      "wall_seconds": 20
+    }
+  },
+  "status": "NOT_APPROVED",
+  "stops": [
+    "Any identity, timeline, non-finite, ledger, budget or export violation stops and seals, without repair/retry.",
+    "No-opportunity remains missing; no outcome-based replacement or extra repeat.",
+    "Complete collection does not authorize world-model or GPPO training."
+  ],
+  "submission_status": "NOT_EXECUTABLE_PENDING_PRODUCTION_REPAIR_AND_ACCEPTANCE",
+  "totals": {
+    "active_storage_bytes": 536870912,
+    "aggregate_native_plus_export_bytes": 1073741824,
+    "all_resident_rss_bytes": 2147483648,
+    "branch_snapshot_copies": 1000,
+    "branches": 1000,
+    "candidate_scans": 1000,
+    "checkpoint_loads_or_writes": 0,
+    "complete_process_cpu_seconds": 505,
+    "environment_steps": 14160,
+    "forced_first_actions": 1000,
+    "gppo_training": 0,
+    "model_forwards": 0,
+    "model_initializations_or_loads": 0,
+    "optimizer_updates": 0,
+    "public_rule_decisions": 13160,
+    "resets_upper": 40,
+    "snapshot_captures": 40,
+    "task_comparison": 0,
+    "wall_seconds": 888
+  }
+}
