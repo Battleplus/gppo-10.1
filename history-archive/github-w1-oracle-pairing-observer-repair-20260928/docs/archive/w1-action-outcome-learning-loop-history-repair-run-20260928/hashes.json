@@ -1,0 +1,40 @@
+{
+  "files": [
+    {
+      "bytes": 22348,
+      "path": "analyze_postrun.py",
+      "sha256": "3ec0119775fceb19345e712d06962fb6b3379a24e10c6f4dfdbb290b2fd1cc67"
+    },
+    {
+      "bytes": 501,
+      "path": "checks.json",
+      "sha256": "6c955e76eca0c0b5559f5681983a2f89fec3ca3fb8996642f1549bb47117a21c"
+    },
+    {
+      "bytes": 3345,
+      "path": "input-index.json",
+      "sha256": "c3cb7e3408decb2403db7f51c20c8cae60331608ec8aa891e7f461180756565f"
+    },
+    {
+      "bytes": 2668,
+      "path": "ledger-summary.json",
+      "sha256": "174c6c35e4aaf159acb0b3376f94b6189fc1cde938dfe542775d80195b9a13e2"
+    },
+    {
+      "bytes": 3153,
+      "path": "report.md",
+      "sha256": "33bc12be3c16f0577b748fd75209736289810db105795e116242cde6bb669850"
+    },
+    {
+      "bytes": 1899,
+      "path": "resource-settlement.json",
+      "sha256": "ee20125569b38fbb6689e8ef96d6c1bf1c556605b8f36901304810e6419417c4"
+    },
+    {
+      "bytes": 4324,
+      "path": "result-summary.json",
+      "sha256": "5365117d5cdef0c8c366e2fabdae35656407dbb8e5c526c116381d55f7017f7c"
+    }
+  ],
+  "schema": "w1-action-outcome-learning-loop-postrun-hashes/1.0.0"
+}

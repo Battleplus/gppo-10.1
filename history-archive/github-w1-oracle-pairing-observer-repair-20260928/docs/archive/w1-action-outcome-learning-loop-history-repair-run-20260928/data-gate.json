@@ -1,0 +1,19 @@
+{
+  "failures": {},
+  "minimum_parent_coverage": {
+    "model_selection": 6,
+    "prediction_evaluation": 6,
+    "train": 18
+  },
+  "parent_coverage": {
+    "model_selection": 8,
+    "prediction_evaluation": 8,
+    "train": 24
+  },
+  "pass": true,
+  "records": {
+    "model_selection": 68,
+    "prediction_evaluation": 111,
+    "train": 219
+  }
+}

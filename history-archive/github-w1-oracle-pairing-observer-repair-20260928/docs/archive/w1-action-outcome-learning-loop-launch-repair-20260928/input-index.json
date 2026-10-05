@@ -1,0 +1,54 @@
+{
+  "existing_label_interpretation": {
+    "admitted_to_new_training_split": 0,
+    "factual_executed_labels": 774,
+    "fixed_hungarian_oracle_branches": 144,
+    "reason": "development provenance and continuation/split boundaries; labels remain real"
+  },
+  "inputs": [
+    {
+      "bytes": 4103,
+      "path": "E:\\Z\u535a\u58eb\\research-plans\\w1-action-outcome-prior-prototype-v1\\execution-manifest.json",
+      "sha256": "4e826928ec9f9ea57b927f7fe21262fbb60b41fc860b04508ad1f47b51e2a074"
+    },
+    {
+      "bytes": 1904,
+      "path": "E:\\Z\u535a\u58eb\\runs\\w1-action-outcome-learning-loop-v1-once\\technical-stop.json",
+      "sha256": "c21addcab8c1325b8d5ffb37d050022bb7bb8bb088a16f95ca3b0af10c4f30f8"
+    },
+    {
+      "bytes": 9193,
+      "path": "E:\\Z\u535a\u58eb\\research-plans\\w1-light-repaired-fair-rerun-infra-repair-v1\\execution-manifest.json",
+      "sha256": "961016499ba5229112c116313ff80a87305eda48342c869212b696f280833a12"
+    },
+    {
+      "bytes": 5906,
+      "path": "E:\\Z\u535a\u58eb\\research-plans\\w1-action-consequence-oracle-remaining-23-preparation-v1\\execution-manifest.json",
+      "sha256": "2bf84e49d151c0fa3be4a723df97eb5b41f1571bbd88def0c04c196c2e401843"
+    },
+    {
+      "bytes": 32855,
+      "path": "E:\\Z\u535a\u58eb\\runs\\w1-action-consequence-oracle-remaining-23-v1-once\\run-once\\analysis.json",
+      "sha256": "6da3a92af9af2917b39a574f62d4c7e9b31ab497cd7d287279c372b076608062"
+    },
+    {
+      "bytes": 24011472,
+      "path": "E:\\Z\u535a\u58eb\\research-plans\\w1-action-outcome-learning-loop-launch-repair-v1\\diagnostic-records.jsonl",
+      "sha256": "a4aa05dbd0f3e7042e87693383bba5b91c255e6aebb4fd995636acc4a69e20f7"
+    },
+    {
+      "bytes": 3083757,
+      "path": "E:\\Z\u535a\u58eb\\research-plans\\w1-action-outcome-learning-loop-launch-repair-v1\\public-contexts.jsonl",
+      "sha256": "33822cafcd9a126bf2353a3bd2b04e9179f5143ee13ce3f4597f63426dce5a33"
+    }
+  ],
+  "preparation_calls": {
+    "checkpoint_loads": 0,
+    "environment": 0,
+    "model_forwards": 0,
+    "model_initializations": 0,
+    "resets": 0,
+    "training_updates": 0
+  },
+  "schema": "w1-action-outcome-learning-launch-repair-input-index/1.0.0"
+}

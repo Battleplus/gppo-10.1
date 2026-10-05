@@ -1,0 +1,12 @@
+{
+  "schema": "w1-action-conditioned-task-outcome-source-check-hashes/1.0.0",
+  "status": "STATIC_ONLY",
+  "parent_preparation_hashes_sha256": "018a82b4399009132737409ee980e9256712ddb5fd56081c114be2d11cf49016",
+  "files": {
+    "README.md": "5a894539b3d565bfc56283fe263e86768bcd5bc77d577209da0c3374a339920e",
+    "report.md": "ca9d23192e7be6b480b37ebcb6206c8d566d95470e684ee92b516b1b1f796a06",
+    "source_contract_check.py": "70e9628872101965af1204256bbc54def757830a40668c63a2e16647bf836c92",
+    "test_source_contract_check.py": "84a8ff915f3c5167c00952b93bb9f0d6606e4339a8fe3f96ff8e1fe46096d380",
+    "test-evidence.md": "ebecd515a8634c52824805f0346a60f1724d8f182af1b7d5dde83ba6f8c695a5"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "active_call_totals": {
+    "branch_snapshot_copies": 2200,
+    "branches": 2200,
+    "candidate_scans": 2880,
+    "checkpoint_writes": 3,
+    "environment_steps": 42480,
+    "forced_first_actions": 2200,
+    "model_batch_forwards": 7902,
+    "model_initializations_or_loads": 6,
+    "model_sample_evaluations": 483600,
+    "offline_predictor_updates": 5700,
+    "public_rule_decisions": 40280,
+    "resets_upper": 160,
+    "snapshot_captures": 88
+  },
+  "matrix_counts": {
+    "data_parent_repeat_units": 88,
+    "maximum_label_branches": 2200,
+    "maximum_label_windows": 88,
+    "maximum_model_selection_records": 400,
+    "maximum_prediction_evaluation_records": 600,
+    "maximum_train_records": 1200,
+    "task_episodes": 72,
+    "task_parent_repeat_units": 24
+  },
+  "stage_dynamic_counts": {
+    "conditional_task_comparison": {
+      "candidate_scans": 1296,
+      "environment_steps": 1296,
+      "model_batch_forwards": 72,
+      "model_initializations_or_loads": 0,
+      "model_sample_evaluations": 1800,
+      "offline_predictor_updates": 0,
+      "public_rule_decisions": 1296,
+      "resets_upper": 72
+    },
+    "independent_prediction_evaluation": {
+      "environment_steps": 0,
+      "model_batch_forwards": 30,
+      "model_initializations_or_loads": 3,
+      "model_sample_evaluations": 1800,
+      "offline_predictor_updates": 0,
+      "resets_upper": 0
+    },
+    "label_collection": {
+      "branch_snapshot_copies": 2200,
+      "branches": 2200,
+      "candidate_scans": 1584,
+      "environment_steps": 41184,
+      "forced_first_actions": 2200,
+      "model_batch_forwards": 0,
+      "model_initializations_or_loads": 0,
+      "offline_predictor_updates": 0,
+      "public_rule_decisions": 38984,
+      "resets_upper": 88,
+      "snapshot_captures": 88
+    },
+    "supervised_training_and_selection": {
+      "checkpoint_writes": 3,
+      "environment_steps": 0,
+      "model_batch_forwards": 7800,
+      "model_initializations_or_loads": 3,
+      "model_sample_evaluations": 480000,
+      "offline_predictor_updates": 5700,
+      "resets_upper": 0
+    }
+  }
+}

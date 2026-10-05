@@ -1,0 +1,33 @@
+{
+  "schema": "w1-action-outcome-learning-loop-resource-settlement/1.0.0",
+  "attempt": "w1-action-outcome-learning-loop-launch-repair-v1-once",
+  "classification": "technical_stop",
+  "worker_returncode": 1,
+  "automatic_retry": false,
+  "worker_relaunched": false,
+  "observed_limits_exceeded": false,
+  "supervisor_final_resource_pass": false,
+  "cumulative_resource_acceptance": false,
+  "timing_seconds": {
+    "windows_preflight_wall": 0.5445489999838173,
+    "windows_preflight_cpu": 0.046875,
+    "supervisor_wall": 11.512490393986809,
+    "supervisor_complete_process_cpu": 4.398725000000001,
+    "combined_budget_wall": 16.2431349879771,
+    "combined_budget_cpu": 4.827071418000001,
+    "windows_outer_wall": 18.723807200003648,
+    "windows_outer_cpu": 0.046875
+  },
+  "peak_rss_upper_bound_bytes": 606052352,
+  "supervisor_artifact_bytes": 11153,
+  "final_native_bytes": 331003,
+  "windows_export_file_count": 64,
+  "windows_export_total_bytes": 338431,
+  "controlled_export_payload_bytes": 330929,
+  "controlled_export_manifest_files": 62,
+  "controlled_export_verified": true,
+  "exported_launcher_status": "running",
+  "native_final_launcher_status": "stopped",
+  "exported_launcher_status_is_final": false,
+  "resource_request_status_at_launch": "NOT_APPROVED_WITH_EXTERNAL_ONE_SHOT_TOKEN"
+}

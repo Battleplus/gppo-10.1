@@ -1,0 +1,77 @@
+{
+  "schema": "w1-action-conditioned-task-outcome-label-repair-hashes/1.0.0",
+  "status": "NOT_APPROVED",
+  "source_export_sha256": "932b9f6638dbe332359301b26b098db411d5f75cee93ec239114fb0ac421bb51",
+  "files": [
+    {
+      "name": "audit_saved_windows.py",
+      "sha256": "28109851dcc9cdefd39e2208e72ca7a02b6e818a7b9303f6bcf1a988aa7c18a0",
+      "bytes": 6528
+    },
+    {
+      "name": "BLOCKERS.md",
+      "sha256": "9fe73aab4ec93a4b4cc967642c87c2764f09f6c4553fc1dcebfaa1b7b52dd8f6",
+      "bytes": 1516
+    },
+    {
+      "name": "data-availability-audit.json",
+      "sha256": "e9030c9ed2a4e1a23a93ee2b2a8cd0c2b677c6e6c3d973f69fe5776d59e633d7",
+      "bytes": 4783
+    },
+    {
+      "name": "experiment-design.md",
+      "sha256": "ab7273082fba5c51fe992f864f50aac005fdc13b239099457f66d433b06a9dbc",
+      "bytes": 2605
+    },
+    {
+      "name": "README.md",
+      "sha256": "ecc1babe53179470f17f9cf2ddba574583569ca491c6d9052595fb695aee3c56",
+      "bytes": 488
+    },
+    {
+      "name": "report.md",
+      "sha256": "115b571f8134564b9d0d79fc4035765a2e77e81b1fda4cb342742e2852cdc442",
+      "bytes": 2669
+    },
+    {
+      "name": "RESOURCE_REQUEST.json",
+      "sha256": "c73282c80eb14381c7abeae79473ca1c82056feb305d2cae8ee8abf2139cd109",
+      "bytes": 1047
+    },
+    {
+      "name": "run_offline_audit.ps1",
+      "sha256": "281c9627fbfc3cdda34bc401af2443d8fb911e3d7c29c758a9dca82e67652dd0",
+      "bytes": 499
+    },
+    {
+      "name": "target-contract.md",
+      "sha256": "3de242333d09de3d67f3c72d3363ba4aae80af22daa8d87fdc4c814ef59eb6c2",
+      "bytes": 2086
+    },
+    {
+      "name": "task_outcome_label_contract.py",
+      "sha256": "da719a40b9596e234f85c584cc0e6b7a061f6bc7487d19a50c8e6df0ae410c5d",
+      "bytes": 8052
+    },
+    {
+      "name": "test_audit_scope.py",
+      "sha256": "6cc13d3fa5343e3d241bb061a66b9b65b07c1d98b6aba030188712ca431e2967",
+      "bytes": 1551
+    },
+    {
+      "name": "test_task_outcome_label_contract.py",
+      "sha256": "c4c783a1a86ceae796e722091964d94cb732d2837895580d5fb5191ed0b12850",
+      "bytes": 4274
+    },
+    {
+      "name": "test-output.txt",
+      "sha256": "15330be0000667ba29f1521b7866270744af1611728f939e4da96fb147575275",
+      "bytes": 1548
+    },
+    {
+      "name": "test-results.md",
+      "sha256": "c20c4d07b012f0fc5eddc73b8ac6275ce50173d4b293836baaff9e7de01ab1bc",
+      "bytes": 1307
+    }
+  ]
+}

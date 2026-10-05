@@ -1,0 +1,59 @@
+{
+  "schema": "w1-action-outcome-data-availability/1.0.0",
+  "development_only": true,
+  "independent_validation_parents": 0,
+  "training_eligible_records": 0,
+  "factual": {
+    "factual_candidate_records": 4095,
+    "factual_decisions": 774,
+    "factual_episode_utility_reconstructions_verified": 56,
+    "factual_executed_candidate_records": 774,
+    "factual_first_command:accepted": 350,
+    "factual_first_command:command_transport_lost": 13,
+    "factual_first_command:noop": 402,
+    "factual_first_command:resource_unavailable": 9,
+    "factual_host_unknown_tasks": 1522,
+    "factual_task_state:completed": 4006,
+    "factual_task_state:unknown": 638,
+    "factual_unexecuted_candidate_records": 3321
+  },
+  "sealed_oracle": {
+    "oracle_branch_records": 144,
+    "oracle_first_command:accepted": 118,
+    "oracle_first_command:command_transport_lost": 2,
+    "oracle_first_command:noop": 24,
+    "oracle_host_unknown_tasks": 196,
+    "oracle_task_state:completed": 850,
+    "oracle_task_state:expired": 14
+  },
+  "continuation_identities": {
+    "factual-policy:FULL:saved-run-v2": 710,
+    "factual-policy:GPPO_noWM:saved-run-v2": 834,
+    "factual-policy:PPO:saved-run-v2": 497,
+    "factual-policy:earliest_deadline:saved-run-v2": 473,
+    "factual-policy:hungarian:saved-run-v2": 486,
+    "factual-policy:nearest:saved-run-v2": 467,
+    "factual-policy:search:saved-run-v2": 628,
+    "hungarian-v1-fixed": 144
+  },
+  "records": 4239,
+  "contexts": 774,
+  "label_boundary": {
+    "factual_executed": "labels apply only to the saved factual continuation",
+    "factual_unexecuted": "all labels unknown",
+    "oracle": "labels apply only to hungarian-v1-fixed at the sealed first qualifying window"
+  },
+  "decision": "NOT_TRAINING_READY",
+  "reasons": [
+    "no independent parent split",
+    "general legal candidates lack fixed-continuation labels",
+    "factual continuations differ by controller and visited state",
+    "sealed oracle covers a failed first-window mechanism and is development-only"
+  ],
+  "calls": {
+    "environment": 0,
+    "model": 0,
+    "checkpoint": 0,
+    "training": 0
+  }
+}

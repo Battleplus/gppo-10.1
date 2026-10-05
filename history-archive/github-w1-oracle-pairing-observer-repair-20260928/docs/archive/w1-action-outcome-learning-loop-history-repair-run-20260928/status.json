@@ -1,0 +1,8 @@
+{
+  "attempt": "w1-action-outcome-learning-loop-history-repair-v1-once",
+  "automatic_extension": false,
+  "automatic_retry": false,
+  "prediction_gate_passed": false,
+  "status": "prediction_gate_stop",
+  "task_comparison_executed": false
+}

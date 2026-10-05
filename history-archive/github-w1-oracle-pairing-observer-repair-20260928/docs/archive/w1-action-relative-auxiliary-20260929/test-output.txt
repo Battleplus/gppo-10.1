@@ -1,0 +1,8 @@
+python -m unittest discover -v -p test_*.py
+Ran 16 tests in 0.016s
+OK
+
+Coverage includes objective invariance and ranking behavior, equal window
+weighting, NOOP/unknown/nonfinite rejection, trace round-trip and completeness,
+independent metric reconstruction, source import restrictions, old-label audit,
+new-parent disjointness, NOT_APPROVED status, and manifest identity.

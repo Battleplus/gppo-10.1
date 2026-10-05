@@ -1,0 +1,17 @@
+{
+  "attempt_identity": true,
+  "data_gate_pass": true,
+  "final_overall_complete": true,
+  "global_dynamic_counters_within_limits": true,
+  "input_digests_match": true,
+  "ledger_settled": true,
+  "no_retry": true,
+  "not_technical_stop": true,
+  "pairing_pass": true,
+  "prediction_gate_failed": true,
+  "resource_pass": true,
+  "stage_dynamic_counters_within_limits": true,
+  "task_comparison_not_executed": true,
+  "verified_export": true,
+  "worker_prediction_gate_stop": true
+}

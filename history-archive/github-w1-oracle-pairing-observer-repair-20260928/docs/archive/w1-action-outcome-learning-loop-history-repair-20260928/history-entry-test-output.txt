@@ -1,0 +1,6 @@
+test_windows_entry_runs_fake_collector_to_verified_export (test_history_entry_integration.ProductionCollectorEntryIntegrationTest.test_windows_entry_runs_fake_collector_to_verified_export) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 19.700s
+
+OK

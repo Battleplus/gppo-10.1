@@ -1,0 +1,74 @@
+{
+  "attempt": "w1-action-outcome-learning-loop-history-repair-v1-once",
+  "inputs": [
+    {
+      "bytes": 676,
+      "path": "E:\\Z\u535a\u58eb\\runs\\w1-action-outcome-learning-loop-history-repair-v1-once\\FINAL_SETTLEMENT.json",
+      "sha256": "2ee8e33dd4af6102ea6712a02b4e42f374e24652921adca906e0224b5727b368"
+    },
+    {
+      "bytes": 250,
+      "path": "E:\\Z\u535a\u58eb\\runs\\w1-action-outcome-learning-loop-history-repair-v1-once\\EXPORT_COMPLETE.json",
+      "sha256": "0ffa5861c2ab3aae7bc798cb5f1fb9e6e3baa9bff1efc77e7e3dbb61ef26a88c"
+    },
+    {
+      "bytes": 9461,
+      "path": "E:\\Z\u535a\u58eb\\runs\\w1-action-outcome-learning-loop-history-repair-v1-once\\export-manifest.json",
+      "sha256": "d4c4eb8d2cf609b20eec4932d9a7a98b50750163048d32bc8d9cf6ecd3f2dab6"
+    },
+    {
+      "bytes": 1048,
+      "path": "E:\\Z\u535a\u58eb\\runs\\w1-action-outcome-learning-loop-history-repair-v1-once\\export-status.json",
+      "sha256": "0d6fb7b7a65cf9057634637844a1cb3efaa47b637bdbfc7c4b9f1579c5c8d849"
+    },
+    {
+      "bytes": 1532,
+      "path": "E:\\Z\u535a\u58eb\\runs\\w1-action-outcome-learning-loop-history-repair-v1-once\\supervisor-status.json",
+      "sha256": "6d05a29981e154634ae9c263e33512d248ed26680212a67b918060f35a9321a4"
+    },
+    {
+      "bytes": 242,
+      "path": "E:\\Z\u535a\u58eb\\runs\\w1-action-outcome-learning-loop-history-repair-v1-once\\run-once\\status.json",
+      "sha256": "bfdc4b186157467ab47d951e4b1351ef430c118578a4a2ef0beb5d96772c1c6d"
+    },
+    {
+      "bytes": 347,
+      "path": "E:\\Z\u535a\u58eb\\runs\\w1-action-outcome-learning-loop-history-repair-v1-once\\run-once\\data-gate.json",
+      "sha256": "2d510df277612363a7046c150b25f4472719e61b06468627a00113bcc57d4daf"
+    },
+    {
+      "bytes": 1231,
+      "path": "E:\\Z\u535a\u58eb\\runs\\w1-action-outcome-learning-loop-history-repair-v1-once\\run-once\\prediction-evaluation.json",
+      "sha256": "5c023fe0e64dc29375e75b9cd0620eedf074fc19a4a114f9be34d99678f00142"
+    },
+    {
+      "bytes": 726,
+      "path": "E:\\Z\u535a\u58eb\\runs\\w1-action-outcome-learning-loop-history-repair-v1-once\\run-once\\settlement.json",
+      "sha256": "9b57c536bae33afa0ece25ef3a0b413455bdd7d5e634f30f1a38f7da415b7408"
+    },
+    {
+      "bytes": 1019904,
+      "path": "E:\\Z\u535a\u58eb\\runs\\w1-action-outcome-learning-loop-history-repair-v1-once\\run-once\\budget.sqlite3",
+      "sha256": "a4650a664e630980f3b4d6a9c503cd0a7695f344d2514b3a5154581345975c31"
+    },
+    {
+      "bytes": 188468514,
+      "path": "E:\\Z\u535a\u58eb\\runs\\w1-action-outcome-learning-loop-history-repair-v1-once\\run-once\\data-units.jsonl",
+      "sha256": "66608d86bf9be78baf2a47696c4dcd43cf87df53fc0e795573630341c037398f"
+    },
+    {
+      "bytes": 1792623,
+      "path": "E:\\Z\u535a\u58eb\\runs\\w1-action-outcome-learning-loop-history-repair-v1-once\\run-once\\learning-records.jsonl",
+      "sha256": "c502768a0483b485c78e9d23ee0a63e9a5595717c3524d38a243f167ccdaeca4"
+    }
+  ],
+  "postrun_calls": {
+    "checkpoint_loads": 0,
+    "environment": 0,
+    "model_forwards": 0,
+    "model_initializations_or_loads": 0,
+    "resets": 0,
+    "training_updates": 0
+  },
+  "sealed_attempt_root": "E:\\Z\u535a\u58eb\\runs\\w1-action-outcome-learning-loop-history-repair-v1-once"
+}

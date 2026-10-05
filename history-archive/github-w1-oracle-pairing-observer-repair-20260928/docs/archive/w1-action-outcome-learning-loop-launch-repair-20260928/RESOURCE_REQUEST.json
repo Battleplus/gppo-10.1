@@ -1,0 +1,325 @@
+{
+  "all_resident_rss_bytes": 4294967296,
+  "attempt": "w1-action-outcome-learning-loop-launch-repair-v1-once",
+  "automatic_extension": false,
+  "automatic_retry": false,
+  "derived_dynamic_budget": {
+    "active_call_totals": {
+      "branch_snapshot_copies": 2200,
+      "branches": 2200,
+      "candidate_scans": 2880,
+      "checkpoint_writes": 3,
+      "environment_steps": 42480,
+      "forced_first_actions": 2200,
+      "model_batch_forwards": 7902,
+      "model_initializations_or_loads": 6,
+      "model_sample_evaluations": 483600,
+      "offline_predictor_updates": 5700,
+      "public_rule_decisions": 40280,
+      "resets_upper": 160,
+      "snapshot_captures": 88
+    },
+    "matrix_counts": {
+      "data_parent_repeat_units": 88,
+      "maximum_label_branches": 2200,
+      "maximum_label_windows": 88,
+      "maximum_model_selection_records": 400,
+      "maximum_prediction_evaluation_records": 600,
+      "maximum_train_records": 1200,
+      "task_episodes": 72,
+      "task_parent_repeat_units": 24
+    },
+    "stage_dynamic_counts": {
+      "conditional_task_comparison": {
+        "candidate_scans": 1296,
+        "environment_steps": 1296,
+        "model_batch_forwards": 72,
+        "model_initializations_or_loads": 0,
+        "model_sample_evaluations": 1800,
+        "offline_predictor_updates": 0,
+        "public_rule_decisions": 1296,
+        "resets_upper": 72
+      },
+      "independent_prediction_evaluation": {
+        "environment_steps": 0,
+        "model_batch_forwards": 30,
+        "model_initializations_or_loads": 3,
+        "model_sample_evaluations": 1800,
+        "offline_predictor_updates": 0,
+        "resets_upper": 0
+      },
+      "label_collection": {
+        "branch_snapshot_copies": 2200,
+        "branches": 2200,
+        "candidate_scans": 1584,
+        "environment_steps": 41184,
+        "forced_first_actions": 2200,
+        "model_batch_forwards": 0,
+        "model_initializations_or_loads": 0,
+        "offline_predictor_updates": 0,
+        "public_rule_decisions": 38984,
+        "resets_upper": 88,
+        "snapshot_captures": 88
+      },
+      "supervised_training_and_selection": {
+        "checkpoint_writes": 3,
+        "environment_steps": 0,
+        "model_batch_forwards": 7800,
+        "model_initializations_or_loads": 3,
+        "model_sample_evaluations": 480000,
+        "offline_predictor_updates": 5700,
+        "resets_upper": 0
+      }
+    }
+  },
+  "historical_credit": 0,
+  "launch_repair": {
+    "dynamic_limits_changed": false,
+    "measurement": "Linux artifacts persist combined staging and total timing; total CPU adds Windows preflight, Linux launcher, and supervisor worker-subtree CPU. Windows post-preflight process CPU and the cross-process start gap remain explicitly unavailable; the Windows wrapper separately checks its outer wall interval",
+    "reason": "Windows-to-WSL startup replaces invalid Windows-side POSIX staging and remains inside existing staging/export infrastructure ceilings",
+    "storage_limits_changed": false,
+    "time_limits_changed": false
+  },
+  "minimum_data_parent_coverage": {
+    "model_selection": 6,
+    "prediction_evaluation": 6,
+    "train": 18
+  },
+  "model_contract": {
+    "architecture": "827-128-64-1 tanh MLP",
+    "batch_size": 64,
+    "early_stopping_patience": 12,
+    "maximum_epochs": 100,
+    "primary_target": "remaining frozen utility under hungarian-v1-fixed",
+    "task_use": "three-seed mean once, followed by Hungarian continuation",
+    "training_seeds": [
+      7101,
+      7102,
+      7103
+    ]
+  },
+  "progression": {
+    "data_contract_failure": "stop before training",
+    "prediction_gate_failure": "stop before task comparison",
+    "task_comparison": "run only when learned three-seed mean strictly beats both public baselines in parent-macro MAE and beats transparent selected-action regret",
+    "task_materiality": {
+      "cpu_mean_seconds": 0.01,
+      "utility_delta": 0.01,
+      "wall_p95_seconds": 0.05
+    }
+  },
+  "purpose": "One finite fixed-continuation label, supervised learning, independent prediction evaluation, and gated one-shot task comparison loop.",
+  "resource_limit_basis": {
+    "classification": "conservative technical stop ceilings, not predicted consumption",
+    "dynamic_counts": "exact maxima derived from the frozen parent/repeat/candidate/epoch matrix",
+    "label_and_task_time": {
+      "label_ceiling": "41184 steps with additional snapshot/branch overhead: 24000 wall and 48000 complete CPU seconds",
+      "reference": "completed repaired fair rerun: 6918 environment steps, 3036.79 wall seconds, 3658.30 complete CPU seconds",
+      "task_ceiling": "1296 steps plus three-seed one-shot inference: 1200 wall and 2400 complete CPU seconds"
+    },
+    "storage": {
+      "active_ceiling": "24 GiB includes label artifacts, three checkpoints, analysis, settlement, and shutdown reserve",
+      "aggregate_ceiling": "48 GiB allows one native active copy and one verified Windows export",
+      "label_ceiling": "2200 branches project about 7.12 GB; 16 GiB allows more than 2x for snapshots, logs, and ledger state",
+      "reference": "completed 144-branch oracle archive: 465837556 bytes (about 3.24 MB per branch)"
+    },
+    "training_time": "5700 optimizer updates and 483600 maximum sample evaluations: 3600 wall and 7200 complete CPU seconds"
+  },
+  "schema": "w1-action-outcome-learning-loop-request/1.0.0",
+  "shutdown_reserve": {
+    "artifact_bytes_within_active_limit": 268435456,
+    "complete_process_cpu_seconds_within_each_dynamic_stage": 240,
+    "wall_seconds_within_each_dynamic_stage": 60
+  },
+  "stage_limits": {
+    "conditional_task_comparison": {
+      "artifact_bytes": 23622320128,
+      "branch_snapshot_copies": 0,
+      "branches": 0,
+      "candidate_scans": 1296,
+      "checkpoint_writes": 0,
+      "complete_process_cpu_seconds": 2400,
+      "environment_steps": 1296,
+      "forced_first_actions": 0,
+      "model_batch_forwards": 72,
+      "model_initializations_or_loads": 0,
+      "model_sample_evaluations": 1800,
+      "offline_predictor_updates": 0,
+      "public_rule_decisions": 1296,
+      "resets_upper": 72,
+      "snapshot_captures": 0,
+      "wall_seconds": 1200
+    },
+    "independent_prediction_evaluation": {
+      "artifact_bytes": 19327352832,
+      "branch_snapshot_copies": 0,
+      "branches": 0,
+      "candidate_scans": 0,
+      "checkpoint_writes": 0,
+      "complete_process_cpu_seconds": 1200,
+      "environment_steps": 0,
+      "forced_first_actions": 0,
+      "model_batch_forwards": 30,
+      "model_initializations_or_loads": 3,
+      "model_sample_evaluations": 1800,
+      "offline_predictor_updates": 0,
+      "public_rule_decisions": 0,
+      "resets_upper": 0,
+      "snapshot_captures": 0,
+      "wall_seconds": 600
+    },
+    "label_collection": {
+      "artifact_bytes": 17179869184,
+      "branch_snapshot_copies": 2200,
+      "branches": 2200,
+      "candidate_scans": 1584,
+      "checkpoint_writes": 0,
+      "complete_process_cpu_seconds": 48000,
+      "environment_steps": 41184,
+      "forced_first_actions": 2200,
+      "model_batch_forwards": 0,
+      "model_initializations_or_loads": 0,
+      "model_sample_evaluations": 0,
+      "offline_predictor_updates": 0,
+      "public_rule_decisions": 38984,
+      "resets_upper": 88,
+      "snapshot_captures": 88,
+      "wall_seconds": 24000
+    },
+    "settlement": {
+      "artifact_bytes": 25769803776,
+      "branch_snapshot_copies": 0,
+      "branches": 0,
+      "candidate_scans": 0,
+      "checkpoint_writes": 0,
+      "complete_process_cpu_seconds": 1200,
+      "environment_steps": 0,
+      "forced_first_actions": 0,
+      "model_batch_forwards": 0,
+      "model_initializations_or_loads": 0,
+      "model_sample_evaluations": 0,
+      "offline_predictor_updates": 0,
+      "public_rule_decisions": 0,
+      "resets_upper": 0,
+      "snapshot_captures": 0,
+      "wall_seconds": 600
+    },
+    "staging_and_zero_step_gate": {
+      "artifact_bytes": 268435456,
+      "branch_snapshot_copies": 0,
+      "branches": 0,
+      "candidate_scans": 0,
+      "checkpoint_writes": 0,
+      "complete_process_cpu_seconds": 1200,
+      "environment_steps": 0,
+      "forced_first_actions": 0,
+      "model_batch_forwards": 0,
+      "model_initializations_or_loads": 0,
+      "model_sample_evaluations": 0,
+      "offline_predictor_updates": 0,
+      "public_rule_decisions": 0,
+      "resets_upper": 0,
+      "snapshot_captures": 0,
+      "wall_seconds": 600
+    },
+    "supervised_training_and_selection": {
+      "artifact_bytes": 19327352832,
+      "branch_snapshot_copies": 0,
+      "branches": 0,
+      "candidate_scans": 0,
+      "checkpoint_writes": 3,
+      "complete_process_cpu_seconds": 7200,
+      "environment_steps": 0,
+      "forced_first_actions": 0,
+      "model_batch_forwards": 7800,
+      "model_initializations_or_loads": 3,
+      "model_sample_evaluations": 480000,
+      "offline_predictor_updates": 5700,
+      "public_rule_decisions": 0,
+      "resets_upper": 0,
+      "snapshot_captures": 0,
+      "wall_seconds": 3600
+    },
+    "verified_export": {
+      "artifact_bytes": 25769803776,
+      "branch_snapshot_copies": 0,
+      "branches": 0,
+      "candidate_scans": 0,
+      "checkpoint_writes": 0,
+      "complete_process_cpu_seconds": 1200,
+      "environment_steps": 0,
+      "forced_first_actions": 0,
+      "model_batch_forwards": 0,
+      "model_initializations_or_loads": 0,
+      "model_sample_evaluations": 0,
+      "offline_predictor_updates": 0,
+      "public_rule_decisions": 0,
+      "resets_upper": 0,
+      "snapshot_captures": 0,
+      "wall_seconds": 600
+    }
+  },
+  "stages": {
+    "conditional_task_comparison": {
+      "artifact_bytes": 23622320128,
+      "complete_process_cpu_seconds": 2400,
+      "wall_seconds": 1200
+    },
+    "independent_prediction_evaluation": {
+      "artifact_bytes": 19327352832,
+      "complete_process_cpu_seconds": 1200,
+      "wall_seconds": 600
+    },
+    "label_collection": {
+      "artifact_bytes": 17179869184,
+      "complete_process_cpu_seconds": 48000,
+      "wall_seconds": 24000
+    },
+    "settlement": {
+      "artifact_bytes": 25769803776,
+      "complete_process_cpu_seconds": 1200,
+      "wall_seconds": 600
+    },
+    "staging_and_zero_step_gate": {
+      "artifact_bytes": 268435456,
+      "complete_process_cpu_seconds": 1200,
+      "wall_seconds": 600
+    },
+    "supervised_training_and_selection": {
+      "artifact_bytes": 19327352832,
+      "complete_process_cpu_seconds": 7200,
+      "wall_seconds": 3600
+    },
+    "verified_export": {
+      "artifact_bytes": 25769803776,
+      "complete_process_cpu_seconds": 1200,
+      "wall_seconds": 600
+    }
+  },
+  "status": "NOT_APPROVED",
+  "storage_contract": {
+    "active_state": "WSL native ext4 only",
+    "export": "single per-file SHA-256 verified Windows export after worker settlement"
+  },
+  "totals": {
+    "aggregate_native_plus_verified_export_bytes": 51539607552,
+    "all_resident_rss_bytes": 4294967296,
+    "artifact_bytes": 25769803776,
+    "branch_snapshot_copies": 2200,
+    "branches": 2200,
+    "candidate_scans": 2880,
+    "checkpoint_writes": 3,
+    "complete_process_cpu_seconds": 62400,
+    "environment_steps": 42480,
+    "forced_first_actions": 2200,
+    "model_batch_forwards": 7902,
+    "model_initializations_or_loads": 6,
+    "model_sample_evaluations": 483600,
+    "offline_predictor_updates": 5700,
+    "public_rule_decisions": 40280,
+    "resets_upper": 160,
+    "snapshot_captures": 88,
+    "wall_seconds": 31200
+  },
+  "unused_credit_transfer": false
+}

@@ -1,0 +1,28 @@
+{
+  "schema": "w1-action-conditioned-task-outcome-label-repair-resource-request/1.0.0",
+  "status": "NOT_APPROVED",
+  "purpose": "label_availability_confirmation_only",
+  "dynamic_attempt": null,
+  "research_training": false,
+  "model_forward": false,
+  "checkpoint_load": false,
+  "parent_scenarios": 8,
+  "repeats_per_parent": 3,
+  "decision_windows_upper": 24,
+  "candidate_branches_upper": 600,
+  "resets_upper": 24,
+  "continuation_steps_per_branch_upper": 18,
+  "environment_steps": "DERIVE_AFTER_FIXTURE_CALIBRATION",
+  "rule_decisions": "DERIVE_AFTER_FIXTURE_CALIBRATION",
+  "wall_seconds": "DERIVE_AFTER_FIXTURE_CALIBRATION",
+  "cpu_seconds": "DERIVE_AFTER_FIXTURE_CALIBRATION",
+  "active_storage_bytes": "DERIVE_AFTER_TRACE_SCHEMA_FREEZE",
+  "approval_basis": "new_parent_identity_and_fixture_costs_not_yet_frozen",
+  "stops": [
+    "missing_parent_coverage",
+    "future_information_or_identity_mismatch",
+    "completion_or_confirmation_record_contract_failure",
+    "unknown_imputed_as_failure",
+    "budget_or_ledger_mismatch"
+  ]
+}

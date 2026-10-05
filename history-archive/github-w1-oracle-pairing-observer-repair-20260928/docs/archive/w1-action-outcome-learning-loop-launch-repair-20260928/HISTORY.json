@@ -1,0 +1,13 @@
+{
+  "schema": "w1-action-outcome-history/1.0.0",
+  "historical_results_preserved": [
+    "repaired fair rerun FULL negative result",
+    "first-window oracle coverage failure",
+    "historical technical stops and accounting differences",
+    "10 ms decision-cost failure",
+    "w1-action-outcome-learning-loop-v1-once pre-dynamic staging technical stop and 820-byte partial directory"
+  ],
+  "historical_credit": 0,
+  "old_7344_step_feasibility_request": "withdrawn and not executable",
+  "current_request_status": "NOT_APPROVED"
+}

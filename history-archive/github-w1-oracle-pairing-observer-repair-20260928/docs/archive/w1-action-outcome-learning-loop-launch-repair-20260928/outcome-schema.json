@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "w1-action-outcome-record/1.0.0",
+  "title": "Conditional W1 action outcome record",
+  "type": "object",
+  "required": [
+    "schema",
+    "decision_id",
+    "source",
+    "input",
+    "candidate",
+    "legal_actions",
+    "continuation_id",
+    "provenance",
+    "labels",
+    "training_eligible",
+    "eligibility_reasons"
+  ],
+  "properties": {
+    "schema": {"const": "w1-action-outcome-record/1.0.0"},
+    "decision_id": {"type": "string", "minLength": 1},
+    "source": {
+      "type": "object",
+      "description": "Parent, repeat, method/branch, source path and line, decision time, and development-only split identity."
+    },
+    "input": {
+      "type": "object",
+      "description": "Decision-time public context reference/payload, legal public-history references, and own prior submitted actions only. Post-decision feedback and hidden events are forbidden."
+    },
+    "candidate": {
+      "type": "object",
+      "required": ["action", "kind", "uav_id", "task_id"]
+    },
+    "legal_actions": {
+      "type": "array",
+      "items": {"type": "integer", "minimum": 0, "maximum": 24},
+      "uniqueItems": true,
+      "minItems": 1
+    },
+    "continuation_id": {
+      "type": "string",
+      "description": "Labels are conditional on this continuation and cannot be pooled across identities."
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["is_executed", "is_true_branch", "label_scope"]
+    },
+    "labels": {
+      "type": "object",
+      "description": "Every scalar/category is represented as {value, valid, source}; invalid values must remain null."
+    },
+    "training_eligible": {"const": false},
+    "eligibility_reasons": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,31 @@
+{
+  "schema": "w1-action-outcome-learning-loop-postrun-hashes/1.0.0",
+  "attempt": "w1-action-outcome-learning-loop-launch-repair-v1-once",
+  "files": [
+    {
+      "path": "checks.json",
+      "bytes": 1226,
+      "sha256": "100471eea04b831a6d9abce9ff2562de858e0236deebee87caa2baebeb4e7db7"
+    },
+    {
+      "path": "input-index.json",
+      "bytes": 1934,
+      "sha256": "2611d1ac892a7c792af44875f0d2e70982212563f856b0a7e80db7c5d2d8bbf3"
+    },
+    {
+      "path": "ledger-summary.json",
+      "bytes": 1034,
+      "sha256": "06f8f467e2035509aafeed2dc95dca151159bf9e788914d0e7642ce02b6c7278"
+    },
+    {
+      "path": "report.md",
+      "bytes": 4024,
+      "sha256": "ec10374a59071a1c676dee0db31d142b07a39fe7db56fc69dd1390e667967b4a"
+    },
+    {
+      "path": "resource-settlement.json",
+      "bytes": 1309,
+      "sha256": "9f9d1be734ca4ac9041fd92ce4b7d3d4e089da986bce1cc1b6ddd478df3763ed"
+    }
+  ]
+}

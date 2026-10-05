@@ -1,0 +1,26 @@
+{
+  "automatic_extension": false,
+  "automatic_retry": false,
+  "historical_10ms_cost_failure_preserved": true,
+  "historical_negative_results_preserved": true,
+  "ledger": {
+    "failed_calls": 0,
+    "pending_calls": 0,
+    "totals": {
+      "branch_snapshot_copies": 398,
+      "branches": 398,
+      "candidate_scans": 508,
+      "checkpoint_writes": 3,
+      "environment_steps": 3529,
+      "forced_first_actions": 398,
+      "model_batch_forwards": 708,
+      "model_initializations_or_loads": 6,
+      "model_sample_evaluations": 33912,
+      "offline_predictor_updates": 468,
+      "public_rule_decisions": 3131,
+      "resets_upper": 88,
+      "snapshot_captures": 88
+    }
+  },
+  "status": "prediction_gate_stop"
+}

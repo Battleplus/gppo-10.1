@@ -1,0 +1,22 @@
+{
+  "attempt": "w1-action-outcome-learning-loop-launch-repair-v1-once",
+  "automatic_extension": false,
+  "automatic_retry": false,
+  "error": "LearningContractError: public history contains a future observation",
+  "ledger": {
+    "failed_calls": 0,
+    "pending_calls": 0,
+    "totals": {
+      "branch_snapshot_copies": 1,
+      "branches": 1,
+      "candidate_scans": 8,
+      "environment_steps": 12,
+      "forced_first_actions": 1,
+      "public_rule_decisions": 11,
+      "resets_upper": 1,
+      "snapshot_captures": 1
+    }
+  },
+  "status": "technical_stop_no_retry",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/asus/w1-runs/w1-action-outcome-learning-loop-launch-repair-v1-once/runner.py\", line 37, in main\n    result = execute_pipeline(backend, OUT)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/asus/w1-runs/w1-action-outcome-learning-loop-launch-repair-v1-once/pipeline.py\", line 43, in execute_pipeline\n    data_path = backend.collect_fixed_continuation_labels()\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/asus/w1-runs/w1-action-outcome-learning-loop-launch-repair-v1-once/runtime_backend.py\", line 410, in collect_fixed_continuation_labels\n    records, unit = self._collect_unit(role, identity[\"parent\"], repeat)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/asus/w1-runs/w1-action-outcome-learning-loop-launch-repair-v1-once/runtime_backend.py\", line 345, in _collect_unit\n    record, summary = self._run_label_branch(\n                      ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/asus/w1-runs/w1-action-outcome-learning-loop-launch-repair-v1-once/runtime_backend.py\", line 308, in _run_label_branch\n    \"history\": list(history_features(prior_history, float(public_obs[\"time\"]))),\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/asus/w1-runs/w1-action-outcome-learning-loop-launch-repair-v1-once/learning_schema.py\", line 46, in history_features\n    raise LearningContractError(\"public history contains a future observation\")\nlearning_schema.LearningContractError: public history contains a future observation\n"
+}

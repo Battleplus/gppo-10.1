@@ -1,0 +1,40 @@
+{
+  "schema": "w1-action-outcome-learning-loop-postrun-input-index/1.0.0",
+  "attempt": "w1-action-outcome-learning-loop-launch-repair-v1-once",
+  "inputs": [
+    {
+      "path": "E:\\Z博士\\research-plans\\w1-action-outcome-learning-loop-launch-repair-v1\\execution-manifest.json",
+      "sha256": "dbf171fdea8aed798308b2c4f46527d5df9e7e38be50f94f6f691708edb18485"
+    },
+    {
+      "path": "E:\\Z博士\\research-plans\\w1-action-outcome-learning-loop-launch-repair-v1\\hashes.json",
+      "sha256": "259063e0fcbd8d5625d0861daf15e5ef2fc5d20187cb7b5dfe5c33f4d9ee66d1"
+    },
+    {
+      "path": "E:\\Z博士\\runs\\w1-action-outcome-learning-loop-launch-repair-v1-once\\EXPORT_COMPLETE.json",
+      "sha256": "bc830e4b0e5911f28fb7cd698cdefa4b477694631b40c8b843ddc432f57e2403"
+    },
+    {
+      "path": "E:\\Z博士\\runs\\w1-action-outcome-learning-loop-launch-repair-v1-once\\export-manifest.json",
+      "sha256": "7118794f2eb73859e74f91a35782c13d4677bcfb083e294a5675e76f863d90fd"
+    },
+    {
+      "path": "E:\\Z博士\\runs\\w1-action-outcome-learning-loop-launch-repair-v1-once\\run-once\\status.json",
+      "sha256": "45ae649c28f02b5374c2cf5e6a280ec6f03f85deefa90d56f7a05e887133079c"
+    },
+    {
+      "path": "E:\\Z博士\\runs\\w1-action-outcome-learning-loop-launch-repair-v1-once\\run-once\\budget.sqlite3",
+      "sha256": "e75abd8e176470c404d750e5c864e6b1a78113fa2df3d43da19b0b8159cd82c9"
+    },
+    {
+      "path": "E:\\Z博士\\runs\\w1-action-outcome-learning-loop-launch-repair-v1-once\\launcher-status.json",
+      "sha256": "578eda7441b008d0fc295e650079c02ea836136f3dc98cd71870119986acb1c2",
+      "state": "pre-final exported snapshot"
+    },
+    {
+      "path": "/home/asus/w1-runs/w1-action-outcome-learning-loop-launch-repair-v1-once/launcher-status.json",
+      "sha256": "856800f98f50dd940af371eb52f30bec49365a100092ec0ea09eabdec0b89602",
+      "state": "authoritative native final status"
+    }
+  ]
+}

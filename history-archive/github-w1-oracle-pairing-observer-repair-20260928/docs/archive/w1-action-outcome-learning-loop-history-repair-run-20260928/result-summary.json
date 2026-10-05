@@ -1,0 +1,145 @@
+{
+  "attempt": "w1-action-outcome-learning-loop-history-repair-v1-once",
+  "data_gate": {
+    "failures": {},
+    "minimum_parent_coverage": {
+      "model_selection": 6,
+      "prediction_evaluation": 6,
+      "train": 18
+    },
+    "parent_coverage": {
+      "model_selection": 8,
+      "prediction_evaluation": 8,
+      "train": 24
+    },
+    "pass": true,
+    "records": {
+      "model_selection": 68,
+      "prediction_evaluation": 111,
+      "train": 219
+    }
+  },
+  "decision": "PREDICTION_GATE_NOT_PASSED",
+  "decision_cost": {
+    "cpu_10ms_pass": null,
+    "cpu_mean_seconds": null,
+    "reason": "conditional task comparison and its full decision-cost instrumentation did not run",
+    "status": "NOT_EVALUATED",
+    "wall_50ms_pass": null,
+    "wall_p95_seconds": null
+  },
+  "derived_prediction_differences": {
+    "mae_reduction_vs_current_public": 0.1562431920229665,
+    "mae_reduction_vs_transparent_history": 0.16321848330417646,
+    "mae_relative_reduction_vs_current_public": 0.7722419206353663,
+    "mae_relative_reduction_vs_transparent_history": 0.7798323801102963,
+    "selected_regret_change_vs_current_public": 0.0007225325229051451,
+    "selected_regret_change_vs_transparent_history": 0.0007225325229051451,
+    "top1_accuracy_change_vs_current_public": -0.12500000000000006,
+    "top1_accuracy_change_vs_transparent_history": -0.12500000000000006
+  },
+  "label_audit": {
+    "branches": 398,
+    "decision_input_digest_mismatches": 0,
+    "first_acceptance_class": {
+      "accepted": 288,
+      "command_transport_lost": 10,
+      "noop": 87,
+      "unknown": 13
+    },
+    "first_feedback": {
+      "accepted": 288,
+      "command_lost": 10,
+      "noop": 87,
+      "resource_unavailable": 13
+    },
+    "pairing_failures": 0,
+    "parents_with_labels": {
+      "model_selection": 8,
+      "prediction_evaluation": 8,
+      "train": 24
+    },
+    "task_host_confirmation_before_deadline": {
+      "False": 67,
+      "None": 638,
+      "True": 1683
+    },
+    "task_physical_arrival_before_deadline": {
+      "None": 104,
+      "True": 2284
+    },
+    "task_status": {
+      "completed": 1750,
+      "expired": 104,
+      "unknown": 534
+    },
+    "terminated_branches": 398,
+    "truncated_branches": 0,
+    "unit_status": {
+      "LABELED": 88
+    },
+    "unit_status_by_role": {
+      "model_selection:LABELED": 16,
+      "prediction_evaluation:LABELED": 24,
+      "train:LABELED": 48
+    },
+    "units": 88
+  },
+  "prediction_evaluation": {
+    "comparison": {
+      "current_public": {
+        "decisions": 24,
+        "parent_macro_mae": 0.20232415237755616,
+        "parent_macro_rmse": 0.21059651917760228,
+        "parent_macro_selected_regret": 0.006897737578033708,
+        "parent_macro_top1_accuracy": 0.5,
+        "parents": 8,
+        "records": 111
+      },
+      "learned_three_seed_mean": {
+        "decisions": 24,
+        "parent_macro_mae": 0.04608096035458966,
+        "parent_macro_rmse": 0.05561700552587361,
+        "parent_macro_selected_regret": 0.007620270100938853,
+        "parent_macro_top1_accuracy": 0.37499999999999994,
+        "parents": 8,
+        "records": 111
+      },
+      "transparent_history": {
+        "decisions": 24,
+        "parent_macro_mae": 0.20929944365876613,
+        "parent_macro_rmse": 0.2194270896274829,
+        "parent_macro_selected_regret": 0.006897737578033708,
+        "parent_macro_top1_accuracy": 0.5,
+        "parents": 8,
+        "records": 111
+      }
+    },
+    "gate": {
+      "checks": {
+        "mae_better_than_current_public": true,
+        "mae_better_than_transparent_history": true,
+        "selection_regret_better_than_transparent_history": false
+      },
+      "meaning": "strict aggregate development gate; it is not task-benefit evidence",
+      "pass": false
+    }
+  },
+  "task_comparison": {
+    "parent_coverage": null,
+    "reason": "frozen prediction gate did not pass",
+    "status": "NOT_EVALUATED",
+    "utility_delta_vs_hungarian": null,
+    "utility_delta_vs_transparent": null
+  },
+  "technical_stop": false,
+  "training": {
+    "checkpoint_writes": 3,
+    "completed_seeds": [
+      7101,
+      7102,
+      7103
+    ],
+    "optimizer_updates": 468
+  }
+}

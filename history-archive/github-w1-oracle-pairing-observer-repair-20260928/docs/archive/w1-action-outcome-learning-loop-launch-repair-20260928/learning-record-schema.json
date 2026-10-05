@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "w1-action-outcome-learning-record/1.0.0",
+  "type": "object",
+  "required": ["sample_id", "parent", "repeat", "decision_id", "split_role", "action", "legal_actions", "flat", "history", "remaining_utility", "current_public_score", "transparent_history_score", "continuation_id", "is_true_branch", "training_eligible"],
+  "properties": {
+    "split_role": {"enum": ["train", "model_selection", "prediction_evaluation"]},
+    "action": {"type": "integer", "minimum": 0, "maximum": 24},
+    "legal_actions": {"type": "array", "minItems": 1, "maxItems": 25, "uniqueItems": true},
+    "flat": {"type": "array", "minItems": 770, "maxItems": 770},
+    "history": {"type": "array", "minItems": 32, "maxItems": 32},
+    "remaining_utility": {"type": "number"},
+    "current_public_score": {"type": "number"},
+    "transparent_history_score": {"type": "number"},
+    "continuation_id": {"const": "hungarian-v1-fixed"},
+    "is_true_branch": {"const": true},
+    "training_eligible": {"const": true}
+  },
+  "additionalProperties": true
+}

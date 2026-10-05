@@ -1,0 +1,14 @@
+test_scope_and_missing_task_heads_are_counted (test_audit_scope.AuditScopeTests.test_scope_and_missing_task_heads_are_counted) ... ok
+test_expiry_requires_explicit_task_state (test_task_outcome_label_contract.TaskOutcomeContractTests.test_expiry_requires_explicit_task_state) ... ok
+test_explicit_completion_and_confirmation_are_valid (test_task_outcome_label_contract.TaskOutcomeContractTests.test_explicit_completion_and_confirmation_are_valid) ... ok
+test_future_or_mismatched_continuation_is_rejected (test_task_outcome_label_contract.TaskOutcomeContractTests.test_future_or_mismatched_continuation_is_rejected) ... ok
+test_missing_records_stay_unknown (test_task_outcome_label_contract.TaskOutcomeContractTests.test_missing_records_stay_unknown) ... ok
+test_noop_masks_all_task_labels (test_task_outcome_label_contract.TaskOutcomeContractTests.test_noop_masks_all_task_labels) ... ok
+test_other_command_completion_is_not_attributed_to_first_action (test_task_outcome_label_contract.TaskOutcomeContractTests.test_other_command_completion_is_not_attributed_to_first_action) ... ok
+test_partial_continuation_keeps_even_observed_completion_unknown (test_task_outcome_label_contract.TaskOutcomeContractTests.test_partial_continuation_keeps_even_observed_completion_unknown) ... ok
+test_service_completion_source_is_supported (test_task_outcome_label_contract.TaskOutcomeContractTests.test_service_completion_source_is_supported) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.007s
+
+OK

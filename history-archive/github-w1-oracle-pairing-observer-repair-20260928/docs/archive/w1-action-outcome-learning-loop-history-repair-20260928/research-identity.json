@@ -1,0 +1,37 @@
+{
+  "schema": "w1-action-outcome-history-repair-research-identity/1.0.0",
+  "reference_package": "E:\\Z博士\\research-plans\\w1-action-outcome-learning-loop-launch-repair-v1",
+  "unrelated_research_files_byte_identical": true,
+  "research_files": {
+    "budget_ledger.py": "bb1e5499f6d56caaf9ceb54e6fe69bd14fd8a4bba3a06b9f0855dd49a14661f4",
+    "experiment_matrix.py": "f31cc6f855891cfa4032abc8389cf2cc3d6d0381713fbff0c04b78461a3d9eac",
+    "learning.py": "861dad8195edce3a60d189e98f365b8b2e042576f68d10caf917b921030b2680",
+    "learning_schema.py": "cf35fd08e184c6debaa137902947dcb13d09a5eb3f1b85f4c4b96a7aad9a45c0",
+    "one_shot_policy.py": "51ad5641dd7cd356717682806b673e8ec4be52cef376fe28fe064992d99c5019",
+    "outcome_contract.py": "0ed6d6d9f25cbd3c16f9049d601b7d99ed9d75c5f670f27cf91a4ed47b044336",
+    "pipeline.py": "6baa3bb834b799d86b5b639af541edd3ce40638988ccfe944608f174aef7c561",
+    "prediction_evaluation.py": "b2761561b4c4d21b38ee40918f7f70cbe917c4039fc10f66b366c6b11b2a8362",
+    "predictor.py": "1f9ededf60682734696733bf9938df978588ab9be1bbdc6cd85bdf124c512c52",
+    "prior_adapter.py": "9e08a95808d933b055376806a2ae017b163d6ea4b812e3e6d83cff1f0b881c18",
+    "transparent_baselines.py": "dfa0631a38c0beb92c38dd1a81c18989f0e56a7a01dc63a99ca752dd05c8e9e9"
+  },
+  "intentional_changes": {
+    "runtime_backend.py": {
+      "before_sha256": "faca7b8dd77ba18072b989550c166a14218e19ea59f317feb387035f7dcdc173",
+      "after_sha256": "b5e53586c75d1f1f639c2e79576b143d6f278aff177fd2fec7821a840e445b7f",
+      "scope": "freeze decision-time public input before candidate branches"
+    },
+    "wsl_stage_and_launch.py": {
+      "before_sha256": "9cb4031b182fa30171041347deef2aed9451dec86e28ac9853d2789c6bfb57f8",
+      "after_sha256": "3705c7627c8aa609d3673e0bd91ebc94fc768e02a5b9023a3dce4c85014821e8",
+      "scope": "add final settlement record after final launcher status"
+    }
+  },
+  "experiment_matrix_sha256": "2ede516db7941a569cfba74d3850393cbcc605561a82844574e1e4c271365f5a",
+  "derived_budget_sha256": "a826183ae9eef885ad809cf5e4d9cb976fca0c83b986816cb635375360d2b8a0",
+  "dynamic_limits_changed": false,
+  "time_limits_changed": false,
+  "storage_limits_changed": false,
+  "attempt_identity_changed": true,
+  "attempt": "w1-action-outcome-learning-loop-history-repair-v1-once"
+}

@@ -1,0 +1,103 @@
+{
+  "diagnostic_parent_status": "none of the eight parents is in the prior prediction-evaluation set",
+  "excluded_prior_matrix_parent_count": 48,
+  "independence_limit": "historical use by other strategy runs is not proven absent by the available manifests",
+  "parents": [
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0000|repeat-0",
+      "generator_split": "train",
+      "name": "mixed",
+      "parent": "train-0000",
+      "scenario_sha256": "16bc9370addbbed6530e0135fc21af5ff3cf103cf8b5a0ee17660e334cd1c350",
+      "structural_sha256": "88ace39fb62b822cb5c59bc54d7fba912dfa598fbaa91bffa80d0e27bbb07084",
+      "tape_index": 0
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0001|repeat-0",
+      "generator_split": "train",
+      "name": "mixed",
+      "parent": "train-0001",
+      "scenario_sha256": "4f0dadf1b656c872a7d47b24035b8b67116592294850fde0326ee2e3f465032e",
+      "structural_sha256": "f7fb77e9e184bce4464421d75138c63a5f3fed407d30c9a09327f29d36171c3a",
+      "tape_index": 1
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0002|repeat-0",
+      "generator_split": "train",
+      "name": "mixed",
+      "parent": "train-0002",
+      "scenario_sha256": "23fa50ccf35f61c1b4f9530cd9685c95de47a73d80e634741b52d514df0e5a61",
+      "structural_sha256": "0472b2ceb2c92199cdce72f756fc04b65d58e11e02ecd593daced420da000850",
+      "tape_index": 2
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0003|repeat-0",
+      "generator_split": "train",
+      "name": "mixed",
+      "parent": "train-0003",
+      "scenario_sha256": "ccfab1e3f0ee1d34037f43bbcd15216a09c64710e92ff54cc13295c7c02b4d87",
+      "structural_sha256": "228f93bde6f0f21e3ae549e4b1d6e8db6ad1050f0b80b6584c7b0f02094c2dcc",
+      "tape_index": 3
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0004|repeat-0",
+      "generator_split": "train",
+      "name": "mixed",
+      "parent": "train-0004",
+      "scenario_sha256": "6bc578fb3e7703e66526a0697045e1dfe524e59ec39e46658e172dddbe832f2f",
+      "structural_sha256": "1b24748b9eeb1df81db26c7b3320b13b52df1c266d743bfb9e508fed131d51b5",
+      "tape_index": 4
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0005|repeat-0",
+      "generator_split": "train",
+      "name": "mixed",
+      "parent": "train-0005",
+      "scenario_sha256": "befdabd8bd5e1add28ac9b75a32ae4d2b4228da3daf39ee0bd9f62b14ae1a895",
+      "structural_sha256": "de52b420fe33a781a4aea290cf53f9293a2d519d2f24082a2ce823999aea3710",
+      "tape_index": 5
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0006|repeat-0",
+      "generator_split": "train",
+      "name": "mixed",
+      "parent": "train-0006",
+      "scenario_sha256": "4c6b574e8e7476327bbde910491816f7a3e276a070c06bec0d1511a1ee1c96c1",
+      "structural_sha256": "85ec0e2d3758546ad41d2c264e1f3b8af6070e6303d188f5251f25d998ada9db",
+      "tape_index": 6
+    },
+    {
+      "condition": "W1",
+      "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0007|repeat-0",
+      "generator_split": "train",
+      "name": "mixed",
+      "parent": "train-0007",
+      "scenario_sha256": "138772eadfcc1e6c4a6fa66e47762f2896fa760c7e2433c81bddda032f75dd3b",
+      "structural_sha256": "c79e733bdba501f9e3c1dce62fec9e0720f437e17a00d4dee3e9aae660434c57",
+      "tape_index": 7
+    }
+  ],
+  "repeats": 3,
+  "schema": "w1-action-relative-auxiliary-new-prediction-parents/1.0.0",
+  "sealed_task_parents": [
+    "train-0104",
+    "train-0646",
+    "train-0766",
+    "train-1004",
+    "train-1712",
+    "train-1773",
+    "train-1791",
+    "train-1921"
+  ],
+  "sealed_task_repeats": 3,
+  "selection_rule": "sort frozen train tape by tape_index after excluding all 48 parents in the prior matrix; take the first eight before observing outcomes",
+  "source_tape_sha256": "f2e6f7b2d7590989e305be5d7c6faf685369e15563a7b2fefb18c0468e7aa510",
+  "task_comparison_status": "the sealed task-comparison parents remain excluded and unexecuted"
+}

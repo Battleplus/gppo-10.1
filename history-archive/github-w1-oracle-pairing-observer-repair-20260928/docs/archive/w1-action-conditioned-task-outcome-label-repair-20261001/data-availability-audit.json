@@ -1,0 +1,134 @@
+{
+  "branch_count_summaries": {
+    "model_selection:completed:0": 108,
+    "model_selection:expired:0": 108,
+    "model_selection:rejected:0": 106,
+    "model_selection:rejected:1": 2,
+    "prediction_confirmation:completed:0": 330,
+    "prediction_confirmation:expired:0": 330,
+    "prediction_confirmation:rejected:0": 278,
+    "prediction_confirmation:rejected:1": 50,
+    "prediction_confirmation:rejected:2": 2,
+    "train:completed:0": 333,
+    "train:expired:0": 333,
+    "train:rejected:0": 317,
+    "train:rejected:1": 16
+  },
+  "candidate_rows_by_split": {
+    "model_selection": 108,
+    "prediction_confirmation": 330,
+    "train": 333
+  },
+  "completion_message_records": 0,
+  "event_valid_counts": {
+    "model_selection:event_index_0": 17,
+    "model_selection:event_index_1": 108,
+    "model_selection:event_index_2": 108,
+    "prediction_confirmation:event_index_0": 98,
+    "prediction_confirmation:event_index_1": 330,
+    "prediction_confirmation:event_index_2": 330,
+    "train:event_index_0": 115,
+    "train:event_index_1": 333,
+    "train:event_index_2": 333
+  },
+  "legacy_event_dimensions": {
+    "0": "public_field_change",
+    "1": "new_measurement_received",
+    "2": "continuation_publicly_confirmed",
+    "3": "physical_completion_observed",
+    "4": "host_confirmation_observed"
+  },
+  "legacy_missing_event_valid_counts": {
+    "host_confirmation_observed": 0,
+    "physical_completion_observed": 0
+  },
+  "nonempty_completion_record_branches": 0,
+  "outcome_valid_counts": {
+    "model_selection:outcome_index_0": 98,
+    "model_selection:outcome_index_1": 100,
+    "model_selection:outcome_index_3": 108,
+    "model_selection:outcome_index_4": 108,
+    "model_selection:outcome_index_5": 108,
+    "prediction_confirmation:outcome_index_0": 299,
+    "prediction_confirmation:outcome_index_1": 306,
+    "prediction_confirmation:outcome_index_3": 330,
+    "prediction_confirmation:outcome_index_4": 330,
+    "prediction_confirmation:outcome_index_5": 330,
+    "train:outcome_index_0": 294,
+    "train:outcome_index_1": 309,
+    "train:outcome_index_3": 333,
+    "train:outcome_index_4": 333,
+    "train:outcome_index_5": 333
+  },
+  "parents_by_split": {
+    "model_selection": 8,
+    "prediction_confirmation": 8,
+    "train": 24
+  },
+  "reconstruction": {
+    "expiry": "NOT_RECONSTRUCTABLE_FROM_SAVED_EXPORT",
+    "host_confirmation": "NOT_RECONSTRUCTABLE_FROM_SAVED_EXPORT",
+    "physical_completion": "NOT_RECONSTRUCTABLE_FROM_SAVED_EXPORT",
+    "reason_codes": [
+      "COLLECTOR_WRITES_NULL_COMPLETION_FIELDS",
+      "SINGLE_POST_ACTION_STEP_ONLY",
+      "NO_TERMINAL_OR_TRUNCATED_BRANCHES",
+      "NO_COMPLETION_RECORDS_OR_COMPLETION_MESSAGES"
+    ]
+  },
+  "rows_by_split": {
+    "model_selection": 8,
+    "prediction_confirmation": 24,
+    "train": 24
+  },
+  "schema": "w1-action-conditioned-task-outcome-label-audit/1.0.0",
+  "scope_relation": {
+    "all_complete_windows": 56,
+    "prediction_confirmation_parents": 8,
+    "prediction_confirmation_repeats_per_parent": 3,
+    "prediction_confirmation_windows": 24
+  },
+  "source": {
+    "path": "E:\\Z博士\\.codex-exports\\w1-eawm-jepa-world-model-production-repair-v4-e2e-integration-auth-repair-v1-once\\run-once\\world-model-windows.jsonl",
+    "sha256": "932b9f6638dbe332359301b26b098db411d5f75cee93ec239114fb0ac421bb51"
+  },
+  "source_code_evidence": {
+    "hits": [
+      {
+        "line": 167,
+        "text": "def _event_target(current_observation: Mapping[str, Any], next_observation: Mapping[str, Any],"
+      },
+      {
+        "line": 182,
+        "text": "physical_completion=None, host_confirmation=None,"
+      },
+      {
+        "line": 326,
+        "text": "branch.step, int(action),"
+      }
+    ],
+    "path": "E:\\Z博士\\research-plans\\w1-eawm-jepa-world-model-production-repair-v4-e2e-integration-auth-repair-v1\\production_data.py",
+    "sha256": "371cead307b345d250ed0a294aec0204d55761725158360d7e7f66742b7d9c4c"
+  },
+  "status_by_split": {
+    "model_selection:complete": 8,
+    "prediction_confirmation:complete": 24,
+    "train:complete": 24
+  },
+  "task_state_summaries": {
+    "model_selection:assigned": 89,
+    "model_selection:pending": 399,
+    "model_selection:unreleased": 160,
+    "prediction_confirmation:assigned": 284,
+    "prediction_confirmation:pending": 1237,
+    "prediction_confirmation:unreleased": 459,
+    "train:assigned": 270,
+    "train:pending": 1221,
+    "train:unreleased": 507
+  },
+  "termination_summaries": {
+    "model_selection:terminated=False:truncated=False": 108,
+    "prediction_confirmation:terminated=False:truncated=False": 330,
+    "train:terminated=False:truncated=False": 333
+  }
+}

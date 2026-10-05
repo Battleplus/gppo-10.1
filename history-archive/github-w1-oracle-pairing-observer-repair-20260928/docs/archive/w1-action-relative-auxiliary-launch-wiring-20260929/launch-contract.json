@@ -1,0 +1,21 @@
+{
+  "argument_probe": "\u4e2d\u6587 path with spaces 'quoted'",
+  "attempt": "w1-action-relative-auxiliary-launch-wiring-v1-once",
+  "authorization_status": "NOT_APPROVED",
+  "external_token_sha256": "2dc6c170d7a83c091af9a7ce9b6a98cddf01af082e441d0a5784ce516cf2e589",
+  "integration_fault": null,
+  "integration_test": false,
+  "linux_stage_entry": "wsl_stage_and_launch.py",
+  "native_child_python": "/usr/bin/python3",
+  "native_entry": "native_launch.py",
+  "native_execution_root": "/home/asus/w1-action-relative-auxiliary-launch-wiring-v1-once",
+  "native_python": "/usr/bin/python3",
+  "one_shot": true,
+  "resource_request_sha256": "d349d423a9a0048ff468f0910195eed75df0677cf2f7cdaab7e0470f4339944d",
+  "schema": "w1-action-relative-auxiliary-launch-contract/2.0.0",
+  "windows_export_root": "/mnt/e/Z\u535a\u58eb/.codex-exports/w1-action-relative-auxiliary-launch-wiring-v1-once",
+  "windows_source_root": "E:\\Z\u535a\u58eb\\research-plans\\w1-action-relative-auxiliary-launch-wiring-v1",
+  "wsl_distribution": "Ubuntu-24.04",
+  "wsl_executable": "wsl.exe",
+  "wsl_source_root": "/mnt/e/Z\u535a\u58eb/research-plans/w1-action-relative-auxiliary-launch-wiring-v1"
+}

@@ -1,0 +1,17 @@
+{
+  "complete_candidate_windows_validated": true,
+  "historical_policy_use_of_new_parents": "not established by the available manifests; claim limited to disjointness from this package's train/model-selection/diagnostic sets",
+  "old_prediction_evaluation_parents": 8,
+  "old_prediction_evaluation_records": 111,
+  "old_prediction_evaluation_used_for_training": false,
+  "parent_identity_matches_prior_matrix": true,
+  "reused_continuation": "hungarian-v1-fixed",
+  "reused_model_selection_parents": 8,
+  "reused_model_selection_records": 68,
+  "reused_training_parents": 24,
+  "reused_training_records": 219,
+  "schema": "w1-action-relative-auxiliary-data-reuse/1.0.0",
+  "training_eligible_unknown_targets": 0,
+  "valid_targets_and_training_flags_validated": true,
+  "validated_record_count": 398
+}

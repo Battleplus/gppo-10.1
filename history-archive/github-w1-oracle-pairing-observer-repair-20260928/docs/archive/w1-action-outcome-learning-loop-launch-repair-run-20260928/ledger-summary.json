@@ -1,0 +1,40 @@
+{
+  "schema": "w1-action-outcome-learning-loop-ledger-summary/1.0.0",
+  "attempt": "w1-action-outcome-learning-loop-launch-repair-v1-once",
+  "stage": "label_collection",
+  "rows": 36,
+  "status_counts": {
+    "complete": 36,
+    "failed": 0,
+    "pending": 0,
+    "unknown": 0
+  },
+  "call_counts": {
+    "branch.deepcopy": 1,
+    "branch.force_first": 1,
+    "branch.register": 1,
+    "candidate.scan": 8,
+    "environment.reset": 1,
+    "environment.step": 12,
+    "hungarian.continuation": 4,
+    "hungarian.prefix": 7,
+    "snapshot.capture": 1
+  },
+  "reserved_totals": {
+    "branch_snapshot_copies": 1,
+    "branches": 1,
+    "candidate_scans": 8,
+    "environment_steps": 12,
+    "forced_first_actions": 1,
+    "public_rule_decisions": 11,
+    "resets_upper": 1,
+    "snapshot_captures": 1,
+    "model_initializations_or_loads": 0,
+    "model_batch_forwards": 0,
+    "model_sample_evaluations": 0,
+    "offline_predictor_updates": 0,
+    "checkpoint_writes": 0
+  },
+  "persisted_training_labels": 0,
+  "covered_parents": 0
+}

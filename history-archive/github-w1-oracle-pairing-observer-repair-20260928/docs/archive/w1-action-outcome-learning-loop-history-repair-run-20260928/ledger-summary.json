@@ -1,0 +1,82 @@
+{
+  "call_status": {
+    "complete": 9723
+  },
+  "calls": 9723,
+  "calls_by_stage": {
+    "independent_prediction_evaluation": 9,
+    "label_collection": 8538,
+    "supervised_training_and_selection": 1176
+  },
+  "counters_by_stage": {
+    "independent_prediction_evaluation": {
+      "model_batch_forwards": 6,
+      "model_initializations_or_loads": 3,
+      "model_sample_evaluations": 333
+    },
+    "label_collection": {
+      "branch_snapshot_copies": 398,
+      "branches": 398,
+      "candidate_scans": 508,
+      "environment_steps": 3529,
+      "forced_first_actions": 398,
+      "public_rule_decisions": 3131,
+      "resets_upper": 88,
+      "snapshot_captures": 88
+    },
+    "supervised_training_and_selection": {
+      "checkpoint_writes": 3,
+      "model_batch_forwards": 702,
+      "model_initializations_or_loads": 3,
+      "model_sample_evaluations": 33579,
+      "offline_predictor_updates": 468
+    }
+  },
+  "database_sha256": "a4650a664e630980f3b4d6a9c503cd0a7695f344d2514b3a5154581345975c31",
+  "failed_calls": 0,
+  "pending_calls": 0,
+  "settled_totals": {
+    "branch_snapshot_copies": 398,
+    "branches": 398,
+    "candidate_scans": 508,
+    "checkpoint_writes": 3,
+    "environment_steps": 3529,
+    "forced_first_actions": 398,
+    "model_batch_forwards": 708,
+    "model_initializations_or_loads": 6,
+    "model_sample_evaluations": 33912,
+    "offline_predictor_updates": 468,
+    "public_rule_decisions": 3131,
+    "resets_upper": 88,
+    "snapshot_captures": 88
+  },
+  "training_by_seed": [
+    {
+      "batch_forwards_including_selection": 456,
+      "checkpoint": "run-once/checkpoints/seed-7101.pt",
+      "checkpoint_sha256": "439a2530cd80a152b542c0162a4ff699e2f03dd68898169246f4a9166d987236",
+      "model_initializations": 1,
+      "optimizer_updates": 304,
+      "sample_evaluations_including_selection": 21812,
+      "seed": 7101
+    },
+    {
+      "batch_forwards_including_selection": 120,
+      "checkpoint": "run-once/checkpoints/seed-7102.pt",
+      "checkpoint_sha256": "8272e7ef109ccfadd9d4fcee03c5aeaa84b544662e25ae477be4cd548b5cf7d0",
+      "model_initializations": 1,
+      "optimizer_updates": 80,
+      "sample_evaluations_including_selection": 5740,
+      "seed": 7102
+    },
+    {
+      "batch_forwards_including_selection": 126,
+      "checkpoint": "run-once/checkpoints/seed-7103.pt",
+      "checkpoint_sha256": "e52032929c75403140151c27e049590ee399b15f99668be173ed4a8f72f89327",
+      "model_initializations": 1,
+      "optimizer_updates": 84,
+      "sample_evaluations_including_selection": 6027,
+      "seed": 7103
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "schema": "w1-action-outcome-learning-loop-postrun-checks/1.0.0",
+  "checks": {
+    "frozen_manifest_identity_match": true,
+    "frozen_hash_index_identity_match": true,
+    "single_authorized_attempt_only": true,
+    "automatic_retry": false,
+    "worker_relaunched": false,
+    "ledger_rows": 36,
+    "ledger_complete_rows": 36,
+    "ledger_pending_rows": 0,
+    "ledger_failed_rows": 0,
+    "export_manifest_files": 62,
+    "export_file_hash_mismatches": 0,
+    "export_manifest_sha_match": true,
+    "export_complete_verified": true,
+    "final_settlement_included": "export-status.json",
+    "exported_launcher_status_is_final": false,
+    "native_final_launcher_status": "stopped",
+    "supervisor_final_resource_pass": false,
+    "cumulative_resource_acceptance": false,
+    "real_environment_calls_after_stop": 0,
+    "model_or_training_calls": 0
+  },
+  "interpretation": "The environment calls counted in the ledger occurred before the contract stop; no calls occurred after the stop and no retry was made. Observed counters are within caps, but formal complete resource acceptance is false. The verified export contains a pre-final launcher-status snapshot; the native final launcher status is authoritative."
+}
