@@ -1,0 +1,177 @@
+{
+  "all_common_communication_fates_paired": true,
+  "analysis_boundary": {
+    "checkpoint_loads": 0,
+    "environment_calls": 0,
+    "model_forwards": 0,
+    "model_initializations": 0,
+    "sealed_task_set_read": false,
+    "training_updates": 0
+  },
+  "attempt": "w1-action-relative-auxiliary-task-cost-attribution-repair-v1-once",
+  "current_confirmed_continuation_identity_available": false,
+  "direction_reversals_within_disagreement_windows": {
+    "train-0005": [
+      {
+        "delta": -0.0027528001761897014,
+        "direction": "transparent_better",
+        "learned_action": 3,
+        "repeat": 1,
+        "same_full_public_input_hash_in_another_repeat": false,
+        "transparent_action": 1
+      },
+      {
+        "delta": 0.13271233423858575,
+        "direction": "learned_better",
+        "learned_action": 14,
+        "repeat": 2,
+        "same_full_public_input_hash_in_another_repeat": false,
+        "transparent_action": 2
+      }
+    ],
+    "train-0007": [
+      {
+        "delta": 0.12873988312523704,
+        "direction": "learned_better",
+        "learned_action": 14,
+        "repeat": 0,
+        "same_full_public_input_hash_in_another_repeat": false,
+        "transparent_action": 3
+      },
+      {
+        "delta": 0.13167410285509798,
+        "direction": "learned_better",
+        "learned_action": 14,
+        "repeat": 1,
+        "same_full_public_input_hash_in_another_repeat": false,
+        "transparent_action": 2
+      },
+      {
+        "delta": -0.12801112485238697,
+        "direction": "transparent_better",
+        "learned_action": 14,
+        "repeat": 2,
+        "same_full_public_input_hash_in_another_repeat": false,
+        "transparent_action": 8
+      }
+    ]
+  },
+  "disagreement_windows": 10,
+  "learned_better_windows": 5,
+  "limitations": [
+    "The readable current public observation and continuation identity were not persisted; flat/history vectors and their hash were persisted.",
+    "The saved per-step task vector is net (success-expired)/6. Positive and negative signed components cannot distinguish simultaneous success and expiry in one step.",
+    "Exact public-input hashes differ across repeats; reduced-feature resemblance is descriptive and is not an independent causal test."
+  ],
+  "schema": "w1-relative-auxiliary-mechanism-analysis/1.0.0",
+  "seed_disagreement_windows": {
+    "A": [
+      "prediction_evaluation:train-0000:r0:s4",
+      "prediction_evaluation:train-0000:r1:s5",
+      "prediction_evaluation:train-0000:r2:s4",
+      "prediction_evaluation:train-0001:r0:s6",
+      "prediction_evaluation:train-0001:r1:s4",
+      "prediction_evaluation:train-0002:r0:s4",
+      "prediction_evaluation:train-0003:r0:s7",
+      "prediction_evaluation:train-0003:r2:s5",
+      "prediction_evaluation:train-0004:r1:s4",
+      "prediction_evaluation:train-0004:r2:s4",
+      "prediction_evaluation:train-0005:r0:s5",
+      "prediction_evaluation:train-0005:r1:s5",
+      "prediction_evaluation:train-0005:r2:s4",
+      "prediction_evaluation:train-0006:r0:s4",
+      "prediction_evaluation:train-0006:r1:s4",
+      "prediction_evaluation:train-0006:r2:s4",
+      "prediction_evaluation:train-0007:r0:s5",
+      "prediction_evaluation:train-0007:r1:s5",
+      "prediction_evaluation:train-0007:r2:s4"
+    ],
+    "B": [
+      "prediction_evaluation:train-0000:r0:s4",
+      "prediction_evaluation:train-0000:r1:s5",
+      "prediction_evaluation:train-0000:r2:s4",
+      "prediction_evaluation:train-0001:r0:s6",
+      "prediction_evaluation:train-0001:r1:s4",
+      "prediction_evaluation:train-0002:r0:s4",
+      "prediction_evaluation:train-0003:r0:s7",
+      "prediction_evaluation:train-0003:r2:s5",
+      "prediction_evaluation:train-0004:r1:s4",
+      "prediction_evaluation:train-0004:r2:s4",
+      "prediction_evaluation:train-0005:r0:s5",
+      "prediction_evaluation:train-0005:r1:s5",
+      "prediction_evaluation:train-0005:r2:s4",
+      "prediction_evaluation:train-0006:r0:s4",
+      "prediction_evaluation:train-0006:r1:s4",
+      "prediction_evaluation:train-0006:r2:s4",
+      "prediction_evaluation:train-0007:r0:s5",
+      "prediction_evaluation:train-0007:r1:s5",
+      "prediction_evaluation:train-0007:r2:s4"
+    ]
+  },
+  "seed_summary": [
+    {
+      "decisions": 24,
+      "parent_macro_regret": 0.022813754974223485,
+      "predictor": "seed:7101",
+      "top1_accuracy": 0.5416666666666666,
+      "variant": "A"
+    },
+    {
+      "decisions": 24,
+      "parent_macro_regret": 0.02486416821104991,
+      "predictor": "seed:7102",
+      "top1_accuracy": 0.25,
+      "variant": "A"
+    },
+    {
+      "decisions": 24,
+      "parent_macro_regret": 0.024699108208755614,
+      "predictor": "seed:7103",
+      "top1_accuracy": 0.16666666666666666,
+      "variant": "A"
+    },
+    {
+      "decisions": 24,
+      "parent_macro_regret": 0.024674480730902813,
+      "predictor": "ensemble",
+      "top1_accuracy": 0.2916666666666667,
+      "variant": "A"
+    },
+    {
+      "decisions": 24,
+      "parent_macro_regret": 0.02288319941866793,
+      "predictor": "seed:7101",
+      "top1_accuracy": 0.5,
+      "variant": "B"
+    },
+    {
+      "decisions": 24,
+      "parent_macro_regret": 0.02436022167392129,
+      "predictor": "seed:7102",
+      "top1_accuracy": 0.2916666666666667,
+      "variant": "B"
+    },
+    {
+      "decisions": 24,
+      "parent_macro_regret": 0.024335360078215944,
+      "predictor": "seed:7103",
+      "top1_accuracy": 0.25,
+      "variant": "B"
+    },
+    {
+      "decisions": 24,
+      "parent_macro_regret": 0.024674480730902813,
+      "predictor": "ensemble",
+      "top1_accuracy": 0.2916666666666667,
+      "variant": "B"
+    }
+  ],
+  "source_hashes": {
+    "E:\\Z\u535a\u58eb\\.codex-exports\\w1-action-relative-auxiliary-task-cost-attribution-repair-v1-once\\run-once\\data-units.jsonl": "475e21efc528ca53934c3868e2afc91aeae3fd656d7e925f2a2d7d183c652714",
+    "E:\\Z\u535a\u58eb\\.codex-exports\\w1-action-relative-auxiliary-task-cost-attribution-repair-v1-once\\run-once\\learning-records.jsonl": "f74c66bac43727dc20c7719bc4d8d1e41a31dbe2ac2aed0d4d0e3d206de4ec9b",
+    "E:\\Z\u535a\u58eb\\.codex-exports\\w1-action-relative-auxiliary-task-cost-attribution-repair-v1-once\\run-once\\per-candidate-predictions.jsonl": "e0346a59f502df14b8cf372c797940f1b4639527943289c12956cc75bc4c7ff1"
+  },
+  "sum_learned_minus_transparent_utility": 0.25788316432511615,
+  "tie_windows": 0,
+  "transparent_better_windows": 5
+}

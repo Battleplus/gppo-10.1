@@ -1,0 +1,21 @@
+{
+  "argument_probe": "\u4e2d\u6587 path with spaces 'quoted'",
+  "attempt": "w1-action-relative-auxiliary-runtime-dependency-repair-v1-once",
+  "authorization_status": "NOT_APPROVED",
+  "external_token_sha256": "b05685d7b343b35a88e1fa97e34b79147601635598d7f7fb4b7463674ce57077",
+  "integration_fault": null,
+  "integration_test": false,
+  "linux_stage_entry": "wsl_stage_and_launch.py",
+  "native_child_python": "/home/asus/w1-action-relative-auxiliary-runtime-dependency-repair-v1-runtime/bin/python",
+  "native_entry": "native_launch.py",
+  "native_execution_root": "/home/asus/w1-action-relative-auxiliary-runtime-dependency-repair-v1-once",
+  "native_python": "/home/asus/w1-action-relative-auxiliary-runtime-dependency-repair-v1-runtime/bin/python",
+  "one_shot": true,
+  "resource_request_sha256": "2ba32f0d4db23aa62ff8c038771693904c4cab135cfb208d70e628a65e077732",
+  "schema": "w1-action-relative-auxiliary-launch-contract/2.0.0",
+  "windows_export_root": "/mnt/e/Z\u535a\u58eb/.codex-exports/w1-action-relative-auxiliary-runtime-dependency-repair-v1-once",
+  "windows_source_root": "E:\\Z\u535a\u58eb\\research-plans\\w1-action-relative-auxiliary-runtime-dependency-repair-v1",
+  "wsl_distribution": "Ubuntu-24.04",
+  "wsl_executable": "wsl.exe",
+  "wsl_source_root": "/mnt/e/Z\u535a\u58eb/research-plans/w1-action-relative-auxiliary-runtime-dependency-repair-v1"
+}

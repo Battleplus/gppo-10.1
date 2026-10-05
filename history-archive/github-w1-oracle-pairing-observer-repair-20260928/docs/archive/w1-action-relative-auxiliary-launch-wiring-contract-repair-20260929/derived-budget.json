@@ -1,0 +1,41 @@
+{
+  "historical_credit": 0,
+  "max_candidates_per_unit": 25,
+  "new_prediction_units": 24,
+  "no_budget_borrowing": true,
+  "schema": "w1-action-relative-auxiliary-derived-budget/1.0.0",
+  "stage_dynamic_counts": {
+    "conditional_task_comparison": {
+      "candidate_scans": 1728,
+      "environment_steps": 1728,
+      "model_batch_forwards": 144,
+      "model_sample_evaluations": 3600,
+      "public_rule_decisions": 1728,
+      "resets_upper": 96,
+      "task_episodes": 96,
+      "task_parent_count": 8
+    },
+    "independent_prediction_evaluation": {
+      "model_batch_forwards": 144,
+      "model_initializations_or_loads": 6,
+      "model_sample_evaluations": 3600
+    },
+    "new_prediction_confirmation": {
+      "branch_snapshot_copies": 600,
+      "branches": 600,
+      "candidate_scans": 432,
+      "environment_steps": 11232,
+      "forced_first_actions": 600,
+      "public_rule_decisions": 10632,
+      "resets_upper": 24,
+      "snapshot_captures": 24
+    },
+    "supervised_training_and_selection": {
+      "checkpoint_writes": 6,
+      "model_batch_forwards": 38400,
+      "model_initializations_or_loads": 6,
+      "model_sample_evaluations": 172200,
+      "offline_predictor_updates": 28800
+    }
+  }
+}

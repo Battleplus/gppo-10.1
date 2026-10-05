@@ -1,0 +1,33 @@
+{
+  "excluded": [
+    "sealed old prediction-evaluation labels",
+    "sealed task-comparison parents and outcomes",
+    "checkpoints and budget SQLite"
+  ],
+  "inputs": [
+    {
+      "bytes": 7434704,
+      "path": "E:\\Z\u535a\u58eb\\research-plans\\w1-light-repaired-fair-rerun-infra-repair-v1\\tapes-train.json",
+      "sha256": "f2e6f7b2d7590989e305be5d7c6faf685369e15563a7b2fefb18c0468e7aa510"
+    },
+    {
+      "bytes": 16045,
+      "path": "E:\\Z\u535a\u58eb\\research-plans\\w1-action-outcome-prior-prototype-v1\\experiment-matrix.json",
+      "sha256": "2ede516db7941a569cfba74d3850393cbcc605561a82844574e1e4c271365f5a"
+    },
+    {
+      "bytes": 1792623,
+      "path": "E:\\Z\u535a\u58eb\\runs\\w1-action-outcome-learning-loop-history-repair-v1-once\\run-once\\learning-records.jsonl",
+      "sha256": "c502768a0483b485c78e9d23ee0a63e9a5595717c3524d38a243f167ccdaeca4"
+    }
+  ],
+  "read_only_analysis": {
+    "checkpoint_loads": 0,
+    "environment_calls": 0,
+    "model_forwards": 0,
+    "model_initializations": 0,
+    "reset_or_step_calls": 0,
+    "training_updates": 0
+  },
+  "schema": "w1-action-relative-auxiliary-input-index/1.0.0"
+}

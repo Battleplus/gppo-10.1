@@ -1,0 +1,20 @@
+{
+  "schema": "w1-relative-auxiliary-mechanism-checks/1.0.0",
+  "attempt": "w1-action-relative-auxiliary-task-cost-attribution-repair-v1-once",
+  "prediction_gate_stop_preserved": true,
+  "disagreement_windows": 10,
+  "window_evidence_rows": 20,
+  "seed_selection_rows": 192,
+  "utility_components_reconstruct_saved_utility": true,
+  "prediction_feature_hashes_recomputed": true,
+  "common_communication_pairing_clean_for_all_10": true,
+  "current_continuation_identity_readable": false,
+  "environment_calls": 0,
+  "model_initializations": 0,
+  "checkpoint_loads": 0,
+  "model_forwards": 0,
+  "training_updates": 0,
+  "sealed_task_set_read": false,
+  "deterministic_rerun_exit_code": 0,
+  "deterministic_outputs_match": true
+}

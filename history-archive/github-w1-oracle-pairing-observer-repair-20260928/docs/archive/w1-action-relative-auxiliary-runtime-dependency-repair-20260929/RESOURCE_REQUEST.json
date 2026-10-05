@@ -1,0 +1,249 @@
+{
+  "attempt": "w1-action-relative-auxiliary-runtime-dependency-repair-v1-once",
+  "automatic_extension": false,
+  "automatic_retry": false,
+  "derived_dynamic_budget": {
+    "historical_credit": 0,
+    "max_candidates_per_unit": 25,
+    "new_prediction_units": 24,
+    "no_budget_borrowing": true,
+    "schema": "w1-action-relative-auxiliary-derived-budget/1.0.0",
+    "stage_dynamic_counts": {
+      "conditional_task_comparison": {
+        "candidate_scans": 1728,
+        "environment_steps": 1728,
+        "model_batch_forwards": 144,
+        "model_sample_evaluations": 3600,
+        "public_rule_decisions": 1728,
+        "resets_upper": 96,
+        "task_episodes": 96,
+        "task_parent_count": 8
+      },
+      "independent_prediction_evaluation": {
+        "model_batch_forwards": 144,
+        "model_initializations_or_loads": 6,
+        "model_sample_evaluations": 3600
+      },
+      "new_prediction_confirmation": {
+        "branch_snapshot_copies": 600,
+        "branches": 600,
+        "candidate_scans": 432,
+        "environment_steps": 11232,
+        "forced_first_actions": 600,
+        "public_rule_decisions": 10632,
+        "resets_upper": 24,
+        "snapshot_captures": 24
+      },
+      "supervised_training_and_selection": {
+        "checkpoint_writes": 6,
+        "model_batch_forwards": 38400,
+        "model_initializations_or_loads": 6,
+        "model_sample_evaluations": 172200,
+        "offline_predictor_updates": 28800
+      }
+    }
+  },
+  "historical_credit": 0,
+  "model_contract": {
+    "architecture": "827-128-64-1 tanh MLP",
+    "continuation_id": "hungarian-v1-fixed",
+    "maximum_epochs": 100,
+    "selection_forward_accounting": "one counted forward per complete selection window per epoch",
+    "training_seeds": [
+      7101,
+      7102,
+      7103
+    ],
+    "window_weighting": "equal per complete decision window for A and B",
+    "windows_per_update": 1
+  },
+  "prior_decision": "PREDICTION_GATE_NOT_PASSED",
+  "progression": {
+    "confirmation_failure": "settle and stop before training",
+    "data_reuse_failure": "stop before any new collection",
+    "prediction_gate": {
+      "basis": "0.005 is one half of the frozen 0.01 task-materiality threshold, used as a predeclared prediction-stage effect size",
+      "primary": "B minus A parent-macro selected regret <= -0.005 and B is no worse in at least 4 of 8 parents",
+      "secondary": "report B minus transparent regret; it is not silently substituted for the primary comparison",
+      "uncertainty": "report parent-level percentile bootstrap interval and per-parent/per-repeat values; eight parents support development interpretation only"
+    },
+    "task_comparison": "run only when the A/B effect gate passes and B is strictly better than transparent history; otherwise task calls remain zero"
+  },
+  "purpose": "One fixed-continuation A/B objective comparison with one new prediction confirmation and a gated conditional task comparison.",
+  "schema": "w1-action-relative-auxiliary-resource-request/1.0.0",
+  "shutdown_reserve": {
+    "artifact_bytes_within_active_limit": 268435456,
+    "complete_process_cpu_seconds_within_each_dynamic_stage": 240,
+    "wall_seconds_within_each_dynamic_stage": 60
+  },
+  "stage_limits": {
+    "conditional_task_comparison": {
+      "artifact_bytes": 21474836480,
+      "candidate_scans": 1728,
+      "complete_process_cpu_seconds": 3600,
+      "environment_steps": 1728,
+      "model_batch_forwards": 144,
+      "model_sample_evaluations": 3600,
+      "public_rule_decisions": 1728,
+      "resets_upper": 96,
+      "task_episodes": 96,
+      "task_parent_count": 8,
+      "wall_seconds": 1800
+    },
+    "data_reuse_audit": {
+      "artifact_bytes": 268435456,
+      "complete_process_cpu_seconds": 600,
+      "environment_steps": 0,
+      "model_forwards": 0,
+      "training_updates": 0,
+      "wall_seconds": 300
+    },
+    "independent_prediction_evaluation": {
+      "artifact_bytes": 19327352832,
+      "complete_process_cpu_seconds": 2400,
+      "model_batch_forwards": 144,
+      "model_initializations_or_loads": 6,
+      "model_sample_evaluations": 3600,
+      "wall_seconds": 1200
+    },
+    "new_prediction_confirmation": {
+      "artifact_bytes": 12884901888,
+      "branch_snapshot_copies": 600,
+      "branches": 600,
+      "candidate_scans": 432,
+      "complete_process_cpu_seconds": 14400,
+      "environment_steps": 11232,
+      "forced_first_actions": 600,
+      "public_rule_decisions": 10632,
+      "resets_upper": 24,
+      "snapshot_captures": 24,
+      "wall_seconds": 7200
+    },
+    "settlement": {
+      "artifact_bytes": 25769803776,
+      "complete_process_cpu_seconds": 1200,
+      "wall_seconds": 600
+    },
+    "staging_and_zero_step_gate": {
+      "artifact_bytes": 268435456,
+      "complete_process_cpu_seconds": 1200,
+      "wall_seconds": 600
+    },
+    "supervised_training_and_selection": {
+      "artifact_bytes": 19327352832,
+      "checkpoint_writes": 6,
+      "complete_process_cpu_seconds": 24000,
+      "model_batch_forwards": 38400,
+      "model_initializations_or_loads": 6,
+      "model_sample_evaluations": 172200,
+      "offline_predictor_updates": 28800,
+      "wall_seconds": 12000
+    },
+    "verified_export": {
+      "artifact_bytes": 25769803776,
+      "complete_process_cpu_seconds": 1200,
+      "wall_seconds": 600
+    }
+  },
+  "stages": {
+    "conditional_task_comparison": {
+      "artifact_bytes": 21474836480,
+      "candidate_scans": 1728,
+      "complete_process_cpu_seconds": 3600,
+      "environment_steps": 1728,
+      "model_batch_forwards": 144,
+      "model_sample_evaluations": 3600,
+      "public_rule_decisions": 1728,
+      "resets_upper": 96,
+      "task_episodes": 96,
+      "task_parent_count": 8,
+      "wall_seconds": 1800
+    },
+    "data_reuse_audit": {
+      "artifact_bytes": 268435456,
+      "complete_process_cpu_seconds": 600,
+      "environment_steps": 0,
+      "model_forwards": 0,
+      "training_updates": 0,
+      "wall_seconds": 300
+    },
+    "independent_prediction_evaluation": {
+      "artifact_bytes": 19327352832,
+      "complete_process_cpu_seconds": 2400,
+      "model_batch_forwards": 144,
+      "model_initializations_or_loads": 6,
+      "model_sample_evaluations": 3600,
+      "wall_seconds": 1200
+    },
+    "new_prediction_confirmation": {
+      "artifact_bytes": 12884901888,
+      "branch_snapshot_copies": 600,
+      "branches": 600,
+      "candidate_scans": 432,
+      "complete_process_cpu_seconds": 14400,
+      "environment_steps": 11232,
+      "forced_first_actions": 600,
+      "public_rule_decisions": 10632,
+      "resets_upper": 24,
+      "snapshot_captures": 24,
+      "wall_seconds": 7200
+    },
+    "settlement": {
+      "artifact_bytes": 25769803776,
+      "complete_process_cpu_seconds": 1200,
+      "wall_seconds": 600
+    },
+    "staging_and_zero_step_gate": {
+      "artifact_bytes": 268435456,
+      "complete_process_cpu_seconds": 1200,
+      "wall_seconds": 600
+    },
+    "supervised_training_and_selection": {
+      "artifact_bytes": 19327352832,
+      "checkpoint_writes": 6,
+      "complete_process_cpu_seconds": 24000,
+      "model_batch_forwards": 38400,
+      "model_initializations_or_loads": 6,
+      "model_sample_evaluations": 172200,
+      "offline_predictor_updates": 28800,
+      "wall_seconds": 12000
+    },
+    "verified_export": {
+      "artifact_bytes": 25769803776,
+      "complete_process_cpu_seconds": 1200,
+      "wall_seconds": 600
+    }
+  },
+  "status": "NOT_APPROVED",
+  "storage_contract": {
+    "active_state": "WSL native ext4 only",
+    "export": "single SHA-256 verified export after settlement"
+  },
+  "totals": {
+    "aggregate_native_plus_verified_export_bytes": 51539607552,
+    "all_resident_rss_bytes": 4294967296,
+    "artifact_bytes": 25769803776,
+    "branch_snapshot_copies": 600,
+    "branches": 600,
+    "candidate_scans": 2160,
+    "checkpoint_writes": 6,
+    "complete_process_cpu_seconds": 48600,
+    "environment_steps": 12960,
+    "forced_first_actions": 600,
+    "model_batch_forwards": 38688,
+    "model_initializations_or_loads": 12,
+    "model_sample_evaluations": 179400,
+    "offline_predictor_updates": 28800,
+    "public_rule_decisions": 12360,
+    "resets_upper": 120,
+    "snapshot_captures": 24,
+    "wall_seconds": 24300
+  },
+  "unused_credit_transfer": false,
+  "variants": {
+    "A": "absolute remaining utility SmoothL1",
+    "B": "absolute SmoothL1 plus window-centered SmoothL1",
+    "auxiliary_weight": 0.25,
+    "beta": 1.0
+  }
+}

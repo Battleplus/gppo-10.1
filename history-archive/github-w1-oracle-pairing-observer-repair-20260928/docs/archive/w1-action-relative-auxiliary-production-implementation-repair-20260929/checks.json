@@ -1,0 +1,14 @@
+{
+  "new_confirmation_repeats_3": true,
+  "new_parent_count_8": true,
+  "new_parents_disjoint_from_prior_matrix": true,
+  "no_environment_or_model_calls_in_preparation": true,
+  "old_prediction_records_excluded": true,
+  "research_gate_preserved": true,
+  "resource_request_not_approved": true,
+  "reused_parent_identity_matches_matrix": true,
+  "reused_records_schema_validated": true,
+  "reused_selection_records_68": true,
+  "reused_train_records_219": true,
+  "sealed_task_parent_binding_present": true
+}

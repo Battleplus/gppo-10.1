@@ -1,0 +1,50 @@
+{
+  "schema": "w1-relative-auxiliary-mechanism-hashes/1.0.0",
+  "attempt": "w1-action-relative-auxiliary-task-cost-attribution-repair-v1-once",
+  "files": {
+    "analyze_mechanisms.py": {
+      "bytes": 25263,
+      "sha256": "5f8982c2cd5382edf8125f93fd1f7c85c569056e7559aae57c4cde96f988f39c"
+    },
+    "archive-status.md": {
+      "bytes": 1069,
+      "sha256": "e231983a55f1797941395ea1a8d3615090dfdd9ae324af59c4dedf153edda3b9"
+    },
+    "checks.json": {
+      "bytes": 728,
+      "sha256": "a0ee48b40f0c403f8cdd05b02652a4c5859705c8cd41bffba56ddc35dea039ad"
+    },
+    "disagreement-windows.csv": {
+      "bytes": 21597,
+      "sha256": "fb2d00ec6a0c8474c8a681dd5d71059716175543a510afb7af4d013c83516948"
+    },
+    "focus-repeat-comparison.csv": {
+      "bytes": 1217,
+      "sha256": "8af3b7ab02b4ecd4c80a2963e35fb5033230f1d60236f0eca3dd5ea511350cb7"
+    },
+    "luna-readonly-review.md": {
+      "bytes": 1327,
+      "sha256": "21b4b4770208483f7a9285621f64d90487b2db3d6d14d8f319534b04f0c94600"
+    },
+    "mechanism-report.md": {
+      "bytes": 8088,
+      "sha256": "edf29a2cf214d5075967fa604ed550d946360cbc0cbc5c9cee58e9b1b1286951"
+    },
+    "README.md": {
+      "bytes": 473,
+      "sha256": "c532591ac88843d529f3e2208fb0b87ddd6235180dbded62bbbe0c4dd7dd5443"
+    },
+    "seed-selections.csv": {
+      "bytes": 20788,
+      "sha256": "32c14954f2bd7ad55589860cc25fa04bf356de29eede8de0846c6c74da9fc8e3"
+    },
+    "summary.json": {
+      "bytes": 6615,
+      "sha256": "100313897d7c36d54e4656fa682ec347b19338ff39922c5243ce7008c2dee875"
+    },
+    "window-evidence.csv": {
+      "bytes": 7082,
+      "sha256": "144e6db8c854566e1331d8607d13182049d4b9566f507b4a3bdb85a6f09cae88"
+    }
+  }
+}

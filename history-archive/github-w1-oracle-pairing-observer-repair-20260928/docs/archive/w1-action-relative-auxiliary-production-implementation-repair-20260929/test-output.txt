@@ -1,0 +1,19 @@
+python -m unittest -v test_production_implementation_repairs.py
+Ran 5 tests in 3.716s
+OK
+
+python -m unittest -v test_production_backend_completion.py
+Ran 3 tests in 6.846s
+OK
+
+python -m pytest -q test_production_implementation_repairs.py test_production_backend_completion.py test_windows_wsl_production_chain.py
+9 passed, 2 subtests passed in 33.23s
+
+The Windows-to-WSL production-chain fixture uses the frozen eight-parent
+confirmation selection and callable batch-model substitutes. It reached the
+production prediction loop, settlement, and verified export without a real
+environment, checkpoint load, model initialization, or training call.
+
+Direct reused-label audit: pass; records=398; train=219; model_selection=68;
+old prediction_evaluation=111; source SHA-256 verified;
+training/model-loading/task calls during the audit: 0.

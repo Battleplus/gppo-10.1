@@ -1,0 +1,21 @@
+{
+  "argument_probe": "\u4e2d\u6587 path with spaces 'quoted'",
+  "attempt": "w1-action-relative-auxiliary-production-backend-completion-v1-once",
+  "authorization_status": "NOT_APPROVED",
+  "external_token_sha256": "eabcb427d6193219f2d7eed8a4a0c136c0e78f9e84a4e080697c2d4f30c6fc30",
+  "integration_fault": null,
+  "integration_test": false,
+  "linux_stage_entry": "wsl_stage_and_launch.py",
+  "native_child_python": "/usr/bin/python3",
+  "native_entry": "native_launch.py",
+  "native_execution_root": "/home/asus/w1-action-relative-auxiliary-production-backend-completion-v1-once",
+  "native_python": "/usr/bin/python3",
+  "one_shot": true,
+  "resource_request_sha256": "d90afe6acfd2151aa7a9c51e249b8c865c084f9dc09b2224008d6dd24da9b8aa",
+  "schema": "w1-action-relative-auxiliary-launch-contract/2.0.0",
+  "windows_export_root": "/mnt/e/Z\u535a\u58eb/.codex-exports/w1-action-relative-auxiliary-production-backend-completion-v1-once",
+  "windows_source_root": "E:\\Z\u535a\u58eb\\research-plans\\w1-action-relative-auxiliary-production-backend-completion-v1",
+  "wsl_distribution": "Ubuntu-24.04",
+  "wsl_executable": "wsl.exe",
+  "wsl_source_root": "/mnt/e/Z\u535a\u58eb/research-plans/w1-action-relative-auxiliary-production-backend-completion-v1"
+}
