@@ -20,8 +20,8 @@
     },
     {
       "path": "docs/CURRENT_STATUS.md",
-      "bytes": 4292,
-      "sha256": "a934c83dab7a3b81a4cf94759a374aac8a63c008d8876dd93d0039a935276dac"
+      "bytes": 6896,
+      "sha256": "c390460124d1d732bf1c9176aed9819833b912735d3677ff2d1da08aa3ddeb01"
     },
     {
       "path": "docs/NEXT_STEPS.md",
@@ -12195,8 +12195,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4554,
-      "sha256": "0037bee5313bb02c9f40bd3e690f80945430c75898e072da0575f7681dd3b5d2"
+      "bytes": 6413,
+      "sha256": "35e3b144f4e224c43c34ec39079153a2de4848365db62f8367e394f31987a41f"
     },
     {
       "path": "tools/verify_archive.py",
