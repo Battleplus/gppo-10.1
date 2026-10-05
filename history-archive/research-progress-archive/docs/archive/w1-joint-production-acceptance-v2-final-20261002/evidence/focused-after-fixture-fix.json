@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "wsl.exe",
+    "-d",
+    "Ubuntu-24.04",
+    "--",
+    "bash",
+    "-lc",
+    "cd '/mnt/e/Z博士/research-plans/w1-task-outcome-g1-g2-joint-production-acceptance-v2' && W1_TEST_EVIDENCE_DIR='/mnt/e/Z博士/diagnostic-work/w1-joint-production-acceptance-v2-20261002' /home/asus/w1-action-relative-auxiliary-runtime-dependency-repair-v1-runtime/bin/python -B -m unittest test_metered_joint_entry test_worker_phase_accounting test_joint_remote_native_settlement -v"
+  ],
+  "exit_code": 1,
+  "wall_seconds": 0.545032900001388,
+  "ssh_connected": false,
+  "formal_attempt_started": false
+}

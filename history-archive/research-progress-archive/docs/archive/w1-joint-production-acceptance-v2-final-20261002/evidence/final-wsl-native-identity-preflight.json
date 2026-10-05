@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "wsl.exe",
+    "-d",
+    "Ubuntu-24.04",
+    "--",
+    "bash",
+    "-lc",
+    "/home/asus/w1-action-relative-auxiliary-runtime-dependency-repair-v1-runtime/bin/python -B -c 'import sys,tempfile,shutil,json;from pathlib import Path;source=Path(sys.argv[1]);temp=tempfile.TemporaryDirectory(prefix='\"'\"'w1-readonly-delivery-'\"'\"');root=Path(temp.name)/'\"'\"'package'\"'\"';shutil.copytree(source,root);sys.path.insert(0,str(root));from manifest_contract import verify_package;checked=verify_package(root);print(json.dumps({'\"'\"'status'\"'\"':'\"'\"'native_copy_identity_pass'\"'\"','\"'\"'manifest_sha256'\"'\"':checked['\"'\"'manifest_sha256'\"'\"'],'\"'\"'hashes_sha256'\"'\"':checked['\"'\"'hashes_sha256'\"'\"'],'\"'\"'worker_started'\"'\"':False,'\"'\"'formal_attempt_started'\"'\"':False}));temp.cleanup()' '/mnt/e/Z博士/research-plans/w1-task-outcome-g1-g2-joint-production-acceptance-v2'"
+  ],
+  "exit_code": 0,
+  "formal_attempt_started": false,
+  "ssh_connected": false,
+  "staging_started": false,
+  "worker_started": false
+}

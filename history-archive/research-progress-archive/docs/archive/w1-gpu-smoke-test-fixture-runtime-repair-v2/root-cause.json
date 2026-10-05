@@ -1,0 +1,25 @@
+{
+  "classification": "GPU_SMOKE_TEST",
+  "first_error": "OSError: AF_UNIX path too long",
+  "source": "remote original stderr: supervise.py:176 -> phase_handshake.py:61 -> socket.bind",
+  "socket_path": "/home/user1/w1-gpu-smoke-test-fixture-runtime-repair-v2-evidence/work/w1-supervised-cpu-o62199jf/.phase-accounting.sock",
+  "utf8_path_bytes": 119,
+  "linux_sockaddr_un_sun_path_capacity_bytes": 108,
+  "secondary_error": "FileNotFoundError reading console.log before supervisor launched worker",
+  "models_started": false,
+  "first_error_not_gpu_or_model_failure": true,
+  "subsequent_raw_call_totals": {
+    "cuda_context_initializations": 1,
+    "minimum_cuda_allocations": 1,
+    "models": 0,
+    "forwards": 0,
+    "backwards": 0,
+    "updates": 0,
+    "checkpoints": 0,
+    "real_environment": 0,
+    "synthetic_collector": 0
+  },
+  "no_automatic_retry": true,
+  "no_frozen_input_changed": true,
+  "future_repair_option_not_executed": "use a short private authenticated socket directory and retain boundary ownership/token checks; preserve pre-worker error state without assuming console.log exists"
+}

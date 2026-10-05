@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "wsl.exe",
+    "-d",
+    "Ubuntu-24.04",
+    "--",
+    "bash",
+    "-lc",
+    "cd '/mnt/e/Z博士/research-plans/w1-task-outcome-g1-g2-joint-preparation-v1' && /home/asus/w1-action-relative-auxiliary-runtime-dependency-repair-v1-runtime/bin/python -B '/mnt/e/Z博士/diagnostic-work/w1-joint-preparation-local-evidence-20261002/validate_native_snapshot.py' '/mnt/e/Z博士/research-plans/w1-task-outcome-g1-g2-joint-preparation-v1' '/mnt/e/Z博士/diagnostic-work/w1-joint-preparation-local-evidence-20261002/authorization-not-approved.json' '/mnt/e/Z博士/diagnostic-work/w1-joint-preparation-local-evidence-20261002'"
+  ],
+  "exit_code": 0,
+  "wall_seconds": 2.2554517000025953
+}

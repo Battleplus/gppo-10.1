@@ -1,0 +1,66 @@
+{
+  "all_file_count": 202,
+  "attempt": "w1-task-outcome-g1-g2-joint-v1-once",
+  "authorization_consumed": false,
+  "changed_files": [],
+  "diagnostic_native_copy_created": true,
+  "dynamic_package_paths": [],
+  "execution_manifest_sha256": "95cbf2088480140f140ee9a7eac65d314328549503360a7d44d400d6e892fb90",
+  "formal_authorization_validated": false,
+  "hashes_sha256": "1f66e6a1a0df76144d0a02b077f51ec7a472d2bb5dd662585f16554d3c040b8d",
+  "package": "E:\\Z博士\\research-plans\\w1-task-outcome-g1-g2-joint-preparation-v1",
+  "real_research_environment_calls": 0,
+  "regression": {
+    "argv": [
+      "wsl.exe",
+      "-d",
+      "Ubuntu-24.04",
+      "--",
+      "bash",
+      "-lc",
+      "cd '/mnt/e/Z博士/research-plans/w1-task-outcome-g1-g2-joint-preparation-v1' && W1_TEST_EVIDENCE_DIR='/mnt/e/Z博士/diagnostic-work/w1-joint-preparation-local-evidence-20261002' /home/asus/w1-action-relative-auxiliary-runtime-dependency-repair-v1-runtime/bin/python -B -m unittest discover -s . -p 'test_*.py' -v"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 37.02221099999588
+  },
+  "resource_request_sha256": "b7eeb1f02b8a492da916e988ae029f9dea6b7544386e65822d8eb0b99c4b8fb4",
+  "resource_request_status": "NOT_APPROVED",
+  "runner_ready": false,
+  "ssh_connected": false,
+  "staging_started": false,
+  "status": "development_snapshot_not_accepted",
+  "synthetic_model_calls_nonzero": true,
+  "unverified": [
+    "target server GPU/registration/SSH production chain",
+    "GPU benchmark budget basis",
+    "terminal-registration and post-sample accounting tails",
+    "continuous CPU stage accounting"
+  ],
+  "windows_structure_preflight": {
+    "argv": [
+      "E:\\Z博士\\.runtime-tools\\w1-ssh-controller-v1\\Scripts\\python.exe",
+      "-B",
+      "E:\\Z博士\\research-plans\\w1-task-outcome-g1-g2-joint-preparation-v1\\launch_joint_once.py",
+      "--authorization-file",
+      "E:\\Z博士\\diagnostic-work\\w1-joint-preparation-local-evidence-20261002\\authorization-not-approved.json",
+      "--preflight-only",
+      "--structure-only"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 0.42091899999650195
+  },
+  "worker_started": false,
+  "wsl_structure_preflight": {
+    "argv": [
+      "wsl.exe",
+      "-d",
+      "Ubuntu-24.04",
+      "--",
+      "bash",
+      "-lc",
+      "cd '/mnt/e/Z博士/research-plans/w1-task-outcome-g1-g2-joint-preparation-v1' && /home/asus/w1-action-relative-auxiliary-runtime-dependency-repair-v1-runtime/bin/python -B '/mnt/e/Z博士/diagnostic-work/w1-joint-preparation-local-evidence-20261002/validate_native_snapshot.py' '/mnt/e/Z博士/research-plans/w1-task-outcome-g1-g2-joint-preparation-v1' '/mnt/e/Z博士/diagnostic-work/w1-joint-preparation-local-evidence-20261002/authorization-not-approved.json' '/mnt/e/Z博士/diagnostic-work/w1-joint-preparation-local-evidence-20261002'"
+    ],
+    "exit_code": 0,
+    "wall_seconds": 2.2554517000025953
+  }
+}

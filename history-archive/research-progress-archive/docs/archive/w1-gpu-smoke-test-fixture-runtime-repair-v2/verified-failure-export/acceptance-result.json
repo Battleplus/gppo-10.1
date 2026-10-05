@@ -1,0 +1,143 @@
+{
+  "authorization_id": "gpu-smoke-fixture-runtime-repair-v2-user-authorized",
+  "automatic_retry": false,
+  "cpu_running_registration_skipped": true,
+  "cuda_context_initializations": 1,
+  "engineering_job_consumed": true,
+  "engineering_job_id": "w1-gpu-smoke-test-fixture-runtime-repair-v2-once",
+  "error_type": "AcceptanceError",
+  "exception_chain": "Traceback (most recent call last):\n  File \"/home/user1/w1-gpu-smoke-test-fixture-runtime-repair-v2-once/acceptance_entry.py\", line 964, in _run_server_acceptance\n    job, result = run_registered_once(\n  File \"/home/user1/w1-gpu-smoke-test-fixture-runtime-repair-v2-once/acceptance_entry.py\", line 706, in run_registered_once\n    result = run_workload(job)\n  File \"/home/user1/w1-gpu-smoke-test-fixture-runtime-repair-v2-once/acceptance_entry.py\", line 911, in run_workload\n    results = _run_bounded_tests(\n  File \"/home/user1/w1-gpu-smoke-test-fixture-runtime-repair-v2-once/acceptance_entry.py\", line 663, in _run_bounded_tests\n    raise AcceptanceError(\"SERVER_ACCEPTANCE_TEST_FAILED:\" + phase)\nAcceptanceError: SERVER_ACCEPTANCE_TEST_FAILED:supervised_phase_sync\n",
+  "formal_research_attempt_created": false,
+  "gpu_after_context": {
+    "boundary": "post_cuda_context",
+    "gpu_exclusive_allocation_observed": true,
+    "gpu_owned_compute_process_pids": [
+      1376809
+    ],
+    "gpu_owned_process_memory_bytes": 163577856,
+    "gpu_physical_device": 1,
+    "gpu_uuid": "GPU-7b708ead-e044-6ce7-a530-6b3093ac905e",
+    "phase": "initialization"
+  },
+  "gpu_exclusive_allocation_scope": "not_authoritatively_proven",
+  "gpu_resource_evidence": {
+    "ceiling_bytes": 8589934592,
+    "framework_peak_allocated_bytes": 512,
+    "framework_peak_reserved_bytes": 2097152,
+    "framework_samples": "torch.cuda.max_memory_allocated/reserved at production call boundaries; no extra model forwards",
+    "observed_owned_process_memory_peak_bytes": 163577856,
+    "process_samples": [
+      {
+        "boundary": "post_cuda_context",
+        "gpu_exclusive_allocation_observed": true,
+        "gpu_owned_compute_process_pids": [
+          1376809
+        ],
+        "gpu_owned_process_memory_bytes": 163577856,
+        "gpu_physical_device": 1,
+        "gpu_uuid": "GPU-7b708ead-e044-6ce7-a530-6b3093ac905e",
+        "phase": "initialization"
+      },
+      {
+        "boundary": "start",
+        "gpu_exclusive_allocation_observed": true,
+        "gpu_owned_compute_process_pids": [
+          1376809
+        ],
+        "gpu_owned_process_memory_bytes": 163577856,
+        "gpu_physical_device": 1,
+        "gpu_uuid": "GPU-7b708ead-e044-6ce7-a530-6b3093ac905e",
+        "phase": "cpu_scope_regression"
+      },
+      {
+        "boundary": "end",
+        "gpu_exclusive_allocation_observed": true,
+        "gpu_owned_compute_process_pids": [
+          1376809
+        ],
+        "gpu_owned_process_memory_bytes": 163577856,
+        "gpu_physical_device": 1,
+        "gpu_uuid": "GPU-7b708ead-e044-6ce7-a530-6b3093ac905e",
+        "phase": "cpu_scope_regression"
+      },
+      {
+        "boundary": "start",
+        "gpu_exclusive_allocation_observed": true,
+        "gpu_owned_compute_process_pids": [
+          1376809
+        ],
+        "gpu_owned_process_memory_bytes": 163577856,
+        "gpu_physical_device": 1,
+        "gpu_uuid": "GPU-7b708ead-e044-6ce7-a530-6b3093ac905e",
+        "phase": "supervised_phase_sync"
+      },
+      {
+        "boundary": "end",
+        "gpu_exclusive_allocation_observed": true,
+        "gpu_owned_compute_process_pids": [
+          1376809
+        ],
+        "gpu_owned_process_memory_bytes": 163577856,
+        "gpu_physical_device": 1,
+        "gpu_uuid": "GPU-7b708ead-e044-6ce7-a530-6b3093ac905e",
+        "phase": "supervised_phase_sync"
+      }
+    ]
+  },
+  "gpu_smoke_test": true,
+  "initial_gpu_snapshot": {
+    "gpu_compute_process_count": 0,
+    "gpu_exclusive_allocation_observed": true,
+    "gpu_free_memory_bytes": 11521753088,
+    "gpu_logical_device": "cuda:0",
+    "gpu_owned_compute_process_pids": [],
+    "gpu_owned_process_memory_bytes": 0,
+    "gpu_owned_process_memory_current_bytes": 0,
+    "gpu_physical_device": 1,
+    "gpu_total_memory_bytes": 11811160064,
+    "gpu_utilization_percent": 0,
+    "gpu_uuid": "GPU-7b708ead-e044-6ce7-a530-6b3093ac905e"
+  },
+  "name_id": "hzy",
+  "package_identity": {
+    "execution_manifest_sha256": "b625bdb58847375140176a1a21becb368d84b7c21d0160cf7f33bced536b8b3d",
+    "hashes_sha256": "346a192d57d7ac96a53a03e595579a50391db82eac39609121f9cd8cb90e29da",
+    "server_acceptance_request_sha256": "7c87a44e1f144a2a1c46a89f822996037af3ef19aac457ed355fa12abcc5662e"
+  },
+  "registration_scope": "explicitly_skipped_by_smoke_test_authorization",
+  "registration_skip_reason": "explicit_gpu_smoke_test_scope",
+  "registration_skipped": true,
+  "registration_terminal_event": "FAILED",
+  "research_success": false,
+  "resource_request_status": "NOT_APPROVED",
+  "resources_at_stop": {
+    "active_storage_peak_bytes": 0,
+    "aggregate_storage_peak_bytes": 1485,
+    "complete_process_cpu_scope": "RUSAGE_SELF plus RUSAGE_CHILDREN, including waited/reaped descendants",
+    "complete_process_cpu_seconds": 11.106864,
+    "current_active_storage_bytes": 0,
+    "current_aggregate_storage_bytes": 1485,
+    "root_process_rss_high_water_bytes": 508653568,
+    "rss_measurement_scope": "root process /proc/self/status VmRSS and VmHWM only; sampled checks; excludes descendants",
+    "wall_seconds": 15.721878582146019
+  },
+  "run_status": "technical_stop",
+  "runtime_preflight": {
+    "exclusive_resource_allocation_proven": false,
+    "formal_attempt_created": false,
+    "gpu_snapshot": "GPU-cd03c61b-a80e-2539-8a8a-88b3b53c2030, NVIDIA GeForce RTX 2080 Ti, 535.161.08, 10384\nGPU-7b708ead-e044-6ce7-a530-6b3093ac905e, NVIDIA GeForce RTX 2080 Ti, 535.161.08, 10988\n",
+    "model_calls": 0,
+    "optimizer_updates": 0,
+    "python_executable": "/home/user1/.venvs/w1-runtime-v1/bin/python",
+    "runtime_identity_only": true,
+    "staging_started": false,
+    "status": "pass",
+    "tensor_calls": 0,
+    "worker_started": false
+  },
+  "schema": "w1-server-synthetic-acceptance-result/1.0.0",
+  "started_monotonic": 1919318.888509271,
+  "terminal_registration_skip_reason": "explicit_gpu_smoke_test_scope",
+  "terminal_registration_skipped": true,
+  "transport_cpu_scope": "not_measured_for_full_ssh_sftp_lifetime"
+}

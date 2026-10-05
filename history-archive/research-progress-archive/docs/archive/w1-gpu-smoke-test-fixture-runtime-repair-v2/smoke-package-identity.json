@@ -1,0 +1,10 @@
+{
+  "engineering_job_id": "w1-gpu-smoke-test-fixture-runtime-repair-v2-once",
+  "manifest_sha256": "b625bdb58847375140176a1a21becb368d84b7c21d0160cf7f33bced536b8b3d",
+  "hashes_sha256": "346a192d57d7ac96a53a03e595579a50391db82eac39609121f9cd8cb90e29da",
+  "server_acceptance_request_sha256": "7c87a44e1f144a2a1c46a89f822996037af3ef19aac457ed355fa12abcc5662e",
+  "resource_request_sha256": "9636a630f7ab4cfa16e890e0e316f189941ae87f9d87f1d21655891ff198fe1f",
+  "classification": "GPU_SMOKE_TEST",
+  "old_evidence_preserved": true,
+  "budgets_profile_model_and_training_sources_unchanged": true
+}

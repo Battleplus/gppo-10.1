@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "E:\\Z博士\\.runtime-tools\\w1-ssh-controller-v1\\Scripts\\python.exe",
+    "-B",
+    "E:\\Z博士\\research-plans\\w1-task-outcome-g1-g2-joint-production-acceptance-v2\\freeze_joint_package.py"
+  ],
+  "exit_code": 0,
+  "formal_attempt_started": false,
+  "ssh_connected": false,
+  "staging_started": false,
+  "worker_started": false
+}

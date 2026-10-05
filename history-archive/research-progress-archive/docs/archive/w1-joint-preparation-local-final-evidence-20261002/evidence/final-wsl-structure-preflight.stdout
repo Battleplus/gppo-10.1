@@ -1,0 +1,1 @@
+{"attempt": "w1-task-outcome-g1-g2-joint-v1-once", "preflight_scope": "package_identity_and_joint_inputs_only", "runtime_mode": "remote_joint", "schema": "w1-native-preflight/1.0.0", "staging_started": false, "status": "preflight_pass", "worker_started": false}

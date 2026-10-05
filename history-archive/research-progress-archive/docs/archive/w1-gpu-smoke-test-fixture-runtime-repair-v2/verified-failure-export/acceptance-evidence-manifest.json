@@ -1,0 +1,22 @@
+{
+  "engineering_job_consumed": true,
+  "engineering_job_id": "w1-gpu-smoke-test-fixture-runtime-repair-v2-once",
+  "files": {
+    "acceptance-result.json": {
+      "bytes": 6385,
+      "sha256": "b0cfa91cb6e9b440a5361cc996f3590fbf05eb3759baadc5cc1d50a8d6017c4b"
+    },
+    "cpu_scope_regression.log": {
+      "bytes": 212,
+      "sha256": "73050d061b98bd749ecc34e21ae9fc0368b1f2f95b6f661b01451e5e994fb228"
+    },
+    "supervised_phase_sync.log": {
+      "bytes": 1273,
+      "sha256": "50d520220d5c771abc7062b7303f2d11b22fa48a566784deb4d266720a455778"
+    }
+  },
+  "formal_research_attempt_created": false,
+  "run_status": "technical_stop",
+  "schema": "w1-server-synthetic-acceptance-evidence/1.0.0",
+  "verified": true
+}

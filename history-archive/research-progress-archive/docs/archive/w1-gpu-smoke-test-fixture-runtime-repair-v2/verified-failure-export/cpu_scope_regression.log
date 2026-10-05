@@ -1,0 +1,6 @@
+test_monitor_charges_live_delta_and_reaped_short_child_once (test_cpu_scope_contract.CpuScopeContractTests) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK

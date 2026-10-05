@@ -1,0 +1,16 @@
+{
+  "schema": "w1-local-archive-status/1.0.0",
+  "remote_archived": false,
+  "remote_query_command": "git ls-remote origin HEAD",
+  "remote_query_exit_code": 1,
+  "remote_query_error": "Recv failure: Connection was reset",
+  "last_verified_remote_commit_prior_to_this_turn": "6aa16410b0e69aaceb7dee0b4d260eaf76d03e02",
+  "current_remote_commit_verified": false,
+  "local_head": "6aa16410b0e69aaceb7dee0b4d260eaf76d03e02",
+  "ssh_agent_status": "Stopped",
+  "ssh_agent_start_type": "Disabled",
+  "signed_commit_attempted": false,
+  "unsigned_commit_created": false,
+  "signing_requirement_changed": false,
+  "same_failure_retried": false
+}

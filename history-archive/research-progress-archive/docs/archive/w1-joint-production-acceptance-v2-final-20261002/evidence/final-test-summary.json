@@ -1,0 +1,34 @@
+{
+  "aggregate_recorded_synthetic_model_calls_this_turn": {
+    "checkpoint_loads": 18,
+    "checkpoint_writes": 18,
+    "model_initializations_or_loads": 36,
+    "world_backward_calls": 30,
+    "world_batch_forwards": 234,
+    "world_optimizer_updates": 30,
+    "world_sample_evaluations": 1170
+  },
+  "formal_attempts_created": 0,
+  "gppo_updates": 0,
+  "real_research_environment_calls": 0,
+  "remote_computation_calls": 0,
+  "scope": "full regression + affected real worker regression; numerical tests are development evidence",
+  "test_runs": {
+    "final-cpu-wiring": {
+      "exit_code": 0,
+      "test_count": 33
+    },
+    "final-server-entry-tests": {
+      "exit_code": 0,
+      "test_count": 21
+    },
+    "full-v2-regression": {
+      "exit_code": 0,
+      "test_count": 141
+    },
+    "production-worker-provenance": {
+      "exit_code": 0,
+      "test_count": 16
+    }
+  }
+}

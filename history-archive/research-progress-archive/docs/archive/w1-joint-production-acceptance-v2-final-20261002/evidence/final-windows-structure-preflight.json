@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "E:\\Z博士\\.runtime-tools\\w1-ssh-controller-v1\\Scripts\\python.exe",
+    "-B",
+    "E:\\Z博士\\research-plans\\w1-task-outcome-g1-g2-joint-production-acceptance-v2\\launch_joint_once.py",
+    "--authorization-file",
+    "E:\\Z博士\\diagnostic-work\\w1-joint-production-acceptance-v2-20261002\\research-authorization-NOT_APPROVED.json",
+    "--preflight-only",
+    "--structure-only"
+  ],
+  "exit_code": 0,
+  "formal_attempt_started": false,
+  "ssh_connected": false,
+  "staging_started": false,
+  "worker_started": false
+}
