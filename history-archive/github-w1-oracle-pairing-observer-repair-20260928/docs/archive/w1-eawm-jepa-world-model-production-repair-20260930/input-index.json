@@ -1,0 +1,19 @@
+{
+  "schema": "w1-eawm-jepa-input-index/1.0.0",
+  "sources": [
+    {"path": "refine-logs/EAWM-JEPA-reuse-audit-20260929.md", "role": "reuse and negative-result audit"},
+    {"path": "refine-logs/EAWM-JEPA-reuse-inventory-20260929.json", "role": "reviewed source identities"},
+    {"path": "refine-logs/EAWM-paper-to-W1-20260929.md", "role": "EAWM migration semantics"},
+    {"path": "refine-logs/EXPERIMENT_PLAN-20260929-eawm-jepa.md", "role": "prior design draft"},
+    {"path": "runs/w1-light-repaired-fair-rerun-v2-nativefs-once/native/gppo_world/graph5.py", "role": "Graph-5/25-action production contract"},
+    {"path": "runs/w1-light-repaired-fair-rerun-v2-nativefs-once/native/gppo_world/joint_gppo.py", "role": "current historical joint model reference"},
+    {"path": "runs/w1-light-repaired-fair-rerun-v2-nativefs-once/native/gppo_world/m10_environment.py", "role": "public observation and continuation sidecar source"},
+    {"path": "runs/w1-light-repaired-fair-rerun-v2-nativefs-once/native/gppo_world/telemetry.py", "role": "measurement/receipt time source"},
+    {"path": "runs/w1-light-repaired-fair-rerun-v2-nativefs-once/native/gppo_world/task_policy_view.py", "role": "received-only field validity source"},
+    {"path": "research-plans/world-model-interface-log-audit-v1/world-model-chain.md", "role": "current interface and evidence limits"}
+    ,{"path": "research-plans/w1-action-relative-auxiliary-task-cost-attribution-repair-v1", "role": "reviewed Windows-WSL-native staging, ledger, settlement and export infrastructure only; old A/B research backend not reused"}
+    ,{"path": "research-plans/w1-eawm-jepa-world-model-production-repair-v1/parent-split.json", "role": "deterministic parent identity split generated before outcomes"}
+  ],
+  "heldout_or_task_set_read": false,
+  "source_data_rewritten": false
+}

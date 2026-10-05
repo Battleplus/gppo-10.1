@@ -1,0 +1,20 @@
+{
+  "schema": "w1-eawm-jepa-runtime-inputs/1.0.0",
+  "source_run": {
+    "windows_root": "E:\\Z博士\\runs\\w1-light-repaired-fair-rerun-v2-nativefs-once",
+    "wsl_root": "/mnt/e/Z博士/runs/w1-light-repaired-fair-rerun-v2-nativefs-once",
+    "execution_manifest_sha256": "961016499ba5229112c116313ff80a87305eda48342c869212b696f280833a12",
+    "train_tape_file": "tapes-train.json",
+    "train_tape_sha256": "f2e6f7b2d7590989e305be5d7c6faf685369e15563a7b2fefb18c0468e7aa510"
+  },
+  "production_modules": {
+    "classical_baselines.py": "424e17682004737e7ff700a70c9cc62bfd2988e16b2cdc8c9055c57d941bf53d",
+    "public_controller.py": "d796ec67e6c62f9f297f4f48fe09ea1d16a160bc13b15c3c102674ae02263d8f",
+    "native/gppo_world/joint_training.py": "808b1de65e676ad45480843c152874248be1fe91c1ce56e1a015fddf81bfd4d1",
+    "native/gppo_world/m10_environment.py": "0f4615d11604a7cd1cc74c94f0258dfc6cb59748f64a075276ec90941db094b1",
+    "native/gppo_world/graph5.py": "a4a2c701d8a36306b4e57eb3d24930bae985dea7d11d95afbcdc08968231af09",
+    "native/gppo_world/joint_gppo.py": "3c799cfe12050971e1b11da6b2c04fa6a7c244a36935578861c5db533396f55e"
+  },
+  "dynamic_calls_during_preparation": 0,
+  "heldout_read": false
+}
