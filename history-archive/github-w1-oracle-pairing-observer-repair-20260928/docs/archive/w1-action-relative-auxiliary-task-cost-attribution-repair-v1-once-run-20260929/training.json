@@ -1,0 +1,1242 @@
+[
+  {
+    "checkpoint": "/home/asus/w1-action-relative-auxiliary-task-cost-attribution-repair-v1-once/run-once/checkpoints/A-seed-7101.pt",
+    "metadata": {
+      "best_epoch": 3,
+      "history": [
+        {
+          "epoch": 0,
+          "optimizer_updates": 48,
+          "selection_mae": 0.06814140040660277,
+          "training_absolute": 0.0105905609666479,
+          "training_centered": 0.0005318708533016784,
+          "training_total": 0.0105905609666479
+        },
+        {
+          "epoch": 1,
+          "optimizer_updates": 96,
+          "selection_mae": 0.07990681868977845,
+          "training_absolute": 0.005204049990841971,
+          "training_centered": 0.0005278686367984342,
+          "training_total": 0.005204049990841971
+        },
+        {
+          "epoch": 2,
+          "optimizer_updates": 144,
+          "selection_mae": 0.05877465195953846,
+          "training_absolute": 0.0021999139638827123,
+          "training_centered": 0.0005279897316632365,
+          "training_total": 0.0021999139638827123
+        },
+        {
+          "epoch": 3,
+          "optimizer_updates": 192,
+          "selection_mae": 0.05214347076253034,
+          "training_absolute": 0.0020015537876858502,
+          "training_centered": 0.0005280159611048182,
+          "training_total": 0.0020015537876858502
+        },
+        {
+          "epoch": 4,
+          "optimizer_updates": 240,
+          "selection_mae": 0.06153775278653484,
+          "training_absolute": 0.002288901128541928,
+          "training_centered": 0.0005260470172530063,
+          "training_total": 0.002288901128541928
+        },
+        {
+          "epoch": 5,
+          "optimizer_updates": 288,
+          "selection_mae": 0.0608986527658999,
+          "training_absolute": 0.002403950925895515,
+          "training_centered": 0.0005257577083443247,
+          "training_total": 0.002403950925895515
+        },
+        {
+          "epoch": 6,
+          "optimizer_updates": 336,
+          "selection_mae": 0.059710174798965454,
+          "training_absolute": 0.0015732464159678254,
+          "training_centered": 0.000524070988195291,
+          "training_total": 0.0015732464159678254
+        },
+        {
+          "epoch": 7,
+          "optimizer_updates": 384,
+          "selection_mae": 0.06456812768010423,
+          "training_absolute": 0.001589844918408782,
+          "training_centered": 0.0005209827249495665,
+          "training_total": 0.001589844918408782
+        },
+        {
+          "epoch": 8,
+          "optimizer_updates": 432,
+          "selection_mae": 0.05474616138963029,
+          "training_absolute": 0.0016169144919426042,
+          "training_centered": 0.0005192709495434045,
+          "training_total": 0.0016169144919426042
+        },
+        {
+          "epoch": 9,
+          "optimizer_updates": 480,
+          "selection_mae": 0.05253202670428436,
+          "training_absolute": 0.0018555602228171135,
+          "training_centered": 0.000518668192222016,
+          "training_total": 0.0018555602228171135
+        },
+        {
+          "epoch": 10,
+          "optimizer_updates": 528,
+          "selection_mae": 0.05517864336434286,
+          "training_absolute": 0.0012496340012357148,
+          "training_centered": 0.0005190433686135995,
+          "training_total": 0.0012496340012357148
+        },
+        {
+          "epoch": 11,
+          "optimizer_updates": 576,
+          "selection_mae": 0.0877415417926386,
+          "training_absolute": 0.0010790201600698879,
+          "training_centered": 0.0005139873695362654,
+          "training_total": 0.0010790201600698879
+        },
+        {
+          "epoch": 12,
+          "optimizer_updates": 624,
+          "selection_mae": 0.058723012916743755,
+          "training_absolute": 0.0012673635616190875,
+          "training_centered": 0.0005143117824856583,
+          "training_total": 0.0012673635616190875
+        },
+        {
+          "epoch": 13,
+          "optimizer_updates": 672,
+          "selection_mae": 0.056392837315797806,
+          "training_absolute": 0.0010390487979445122,
+          "training_centered": 0.0005123707281411427,
+          "training_total": 0.0010390487979445122
+        },
+        {
+          "epoch": 14,
+          "optimizer_updates": 720,
+          "selection_mae": 0.06432679062709212,
+          "training_absolute": 0.001151173443057966,
+          "training_centered": 0.00050826738927127,
+          "training_total": 0.001151173443057966
+        },
+        {
+          "epoch": 15,
+          "optimizer_updates": 768,
+          "selection_mae": 0.056490831542760134,
+          "training_absolute": 0.0016695030548513994,
+          "training_centered": 0.000507516175367743,
+          "training_total": 0.0016695030548513994
+        }
+      ],
+      "model_spec": {
+        "activation": "tanh",
+        "continuation_id": "hungarian-v1-fixed",
+        "hidden_dims": [
+          128,
+          64
+        ],
+        "input_dim": 827,
+        "output_dim": 1
+      },
+      "optimizer_updates": 768,
+      "schema": "w1-action-outcome-windowed-mlp/1.0.0",
+      "seed": 7101,
+      "selection_mae": 0.05214347076253034,
+      "selection_parents": [
+        "train-0902",
+        "train-1028",
+        "train-1102",
+        "train-1338",
+        "train-1451",
+        "train-1522",
+        "train-1603",
+        "train-1755"
+      ],
+      "train_parents": [
+        "train-0082",
+        "train-0098",
+        "train-0116",
+        "train-0140",
+        "train-0213",
+        "train-0371",
+        "train-0376",
+        "train-0715",
+        "train-0876",
+        "train-0929",
+        "train-1041",
+        "train-1136",
+        "train-1174",
+        "train-1293",
+        "train-1425",
+        "train-1481",
+        "train-1534",
+        "train-1563",
+        "train-1581",
+        "train-1595",
+        "train-1762",
+        "train-1820",
+        "train-1840",
+        "train-2024"
+      ],
+      "training_config": {
+        "auxiliary_weight": 0.25,
+        "beta": 1.0,
+        "early_stopping_patience": 12,
+        "learning_rate": 0.0003,
+        "max_epochs": 100,
+        "minimum_delta": 0.0,
+        "seeds": [
+          7101,
+          7102,
+          7103
+        ],
+        "weight_decay": 0.0,
+        "windows_per_update": 1
+      },
+      "variant": "absolute"
+    },
+    "seed": 7101,
+    "variant": "A"
+  },
+  {
+    "checkpoint": "/home/asus/w1-action-relative-auxiliary-task-cost-attribution-repair-v1-once/run-once/checkpoints/A-seed-7102.pt",
+    "metadata": {
+      "best_epoch": 2,
+      "history": [
+        {
+          "epoch": 0,
+          "optimizer_updates": 48,
+          "selection_mae": 0.07095674911397509,
+          "training_absolute": 0.012241667410634705,
+          "training_centered": 0.000531619634578521,
+          "training_total": 0.012241667410634705
+        },
+        {
+          "epoch": 1,
+          "optimizer_updates": 96,
+          "selection_mae": 0.06841374468058348,
+          "training_absolute": 0.004644118594247478,
+          "training_centered": 0.0005328358478788134,
+          "training_total": 0.004644118594247478
+        },
+        {
+          "epoch": 2,
+          "optimizer_updates": 144,
+          "selection_mae": 0.053387079933600035,
+          "training_absolute": 0.002218889501646023,
+          "training_centered": 0.0005327368682201961,
+          "training_total": 0.002218889501646023
+        },
+        {
+          "epoch": 3,
+          "optimizer_updates": 192,
+          "selection_mae": 0.061291569989407435,
+          "training_absolute": 0.002180197158639411,
+          "training_centered": 0.0005317708149120137,
+          "training_total": 0.002180197158639411
+        },
+        {
+          "epoch": 4,
+          "optimizer_updates": 240,
+          "selection_mae": 0.05817170487716794,
+          "training_absolute": 0.0016006287779267343,
+          "training_centered": 0.0005301949145050852,
+          "training_total": 0.0016006287779267343
+        },
+        {
+          "epoch": 5,
+          "optimizer_updates": 288,
+          "selection_mae": 0.061882882786449045,
+          "training_absolute": 0.0015612920310559275,
+          "training_centered": 0.0005271126642045765,
+          "training_total": 0.0015612920310559275
+        },
+        {
+          "epoch": 6,
+          "optimizer_updates": 336,
+          "selection_mae": 0.059819106303621083,
+          "training_absolute": 0.0011506943878134557,
+          "training_centered": 0.0005225530978763734,
+          "training_total": 0.0011506943878134557
+        },
+        {
+          "epoch": 7,
+          "optimizer_updates": 384,
+          "selection_mae": 0.05917590291937813,
+          "training_absolute": 0.001240138061440632,
+          "training_centered": 0.0005210072417534869,
+          "training_total": 0.001240138061440632
+        },
+        {
+          "epoch": 8,
+          "optimizer_updates": 432,
+          "selection_mae": 0.063909777047229,
+          "training_absolute": 0.0011926155703700185,
+          "training_centered": 0.0005179342476472707,
+          "training_total": 0.0011926155703700185
+        },
+        {
+          "epoch": 9,
+          "optimizer_updates": 480,
+          "selection_mae": 0.08031438842590433,
+          "training_absolute": 0.0012482135355374642,
+          "training_centered": 0.0005142117155274573,
+          "training_total": 0.0012482135355374642
+        },
+        {
+          "epoch": 10,
+          "optimizer_updates": 528,
+          "selection_mae": 0.060845843952847645,
+          "training_absolute": 0.0013640762911772224,
+          "training_centered": 0.0005169541455391687,
+          "training_total": 0.0013640762911772224
+        },
+        {
+          "epoch": 11,
+          "optimizer_updates": 576,
+          "selection_mae": 0.06542474904563278,
+          "training_absolute": 0.0011972047896027977,
+          "training_centered": 0.0005147946083373008,
+          "training_total": 0.0011972047896027977
+        },
+        {
+          "epoch": 12,
+          "optimizer_updates": 624,
+          "selection_mae": 0.05544284537609201,
+          "training_absolute": 0.0017572371867373704,
+          "training_centered": 0.0005143867497794155,
+          "training_total": 0.0017572371867373704
+        },
+        {
+          "epoch": 13,
+          "optimizer_updates": 672,
+          "selection_mae": 0.05753673704020912,
+          "training_absolute": 0.0014295186564865503,
+          "training_centered": 0.0005156430085940059,
+          "training_total": 0.0014295186564865503
+        },
+        {
+          "epoch": 14,
+          "optimizer_updates": 720,
+          "selection_mae": 0.06277324783150107,
+          "training_absolute": 0.0013703962613611509,
+          "training_centered": 0.0005098565115038145,
+          "training_total": 0.0013703962613611509
+        }
+      ],
+      "model_spec": {
+        "activation": "tanh",
+        "continuation_id": "hungarian-v1-fixed",
+        "hidden_dims": [
+          128,
+          64
+        ],
+        "input_dim": 827,
+        "output_dim": 1
+      },
+      "optimizer_updates": 720,
+      "schema": "w1-action-outcome-windowed-mlp/1.0.0",
+      "seed": 7102,
+      "selection_mae": 0.053387079933600035,
+      "selection_parents": [
+        "train-0902",
+        "train-1028",
+        "train-1102",
+        "train-1338",
+        "train-1451",
+        "train-1522",
+        "train-1603",
+        "train-1755"
+      ],
+      "train_parents": [
+        "train-0082",
+        "train-0098",
+        "train-0116",
+        "train-0140",
+        "train-0213",
+        "train-0371",
+        "train-0376",
+        "train-0715",
+        "train-0876",
+        "train-0929",
+        "train-1041",
+        "train-1136",
+        "train-1174",
+        "train-1293",
+        "train-1425",
+        "train-1481",
+        "train-1534",
+        "train-1563",
+        "train-1581",
+        "train-1595",
+        "train-1762",
+        "train-1820",
+        "train-1840",
+        "train-2024"
+      ],
+      "training_config": {
+        "auxiliary_weight": 0.25,
+        "beta": 1.0,
+        "early_stopping_patience": 12,
+        "learning_rate": 0.0003,
+        "max_epochs": 100,
+        "minimum_delta": 0.0,
+        "seeds": [
+          7101,
+          7102,
+          7103
+        ],
+        "weight_decay": 0.0,
+        "windows_per_update": 1
+      },
+      "variant": "absolute"
+    },
+    "seed": 7102,
+    "variant": "A"
+  },
+  {
+    "checkpoint": "/home/asus/w1-action-relative-auxiliary-task-cost-attribution-repair-v1-once/run-once/checkpoints/A-seed-7103.pt",
+    "metadata": {
+      "best_epoch": 5,
+      "history": [
+        {
+          "epoch": 0,
+          "optimizer_updates": 48,
+          "selection_mae": 0.055489054200734245,
+          "training_absolute": 0.009526472016356516,
+          "training_centered": 0.00053710261053778,
+          "training_total": 0.009526472016356516
+        },
+        {
+          "epoch": 1,
+          "optimizer_updates": 96,
+          "selection_mae": 0.060979303292697296,
+          "training_absolute": 0.0029233682807519776,
+          "training_centered": 0.0005338605529801773,
+          "training_total": 0.0029233682807519776
+        },
+        {
+          "epoch": 2,
+          "optimizer_updates": 144,
+          "selection_mae": 0.06749050156213343,
+          "training_absolute": 0.002298812875173084,
+          "training_centered": 0.0005336629762027201,
+          "training_total": 0.002298812875173084
+        },
+        {
+          "epoch": 3,
+          "optimizer_updates": 192,
+          "selection_mae": 0.05609811830800027,
+          "training_absolute": 0.0019011100395971425,
+          "training_centered": 0.000532115003170223,
+          "training_total": 0.0019011100395971425
+        },
+        {
+          "epoch": 4,
+          "optimizer_updates": 240,
+          "selection_mae": 0.08873251026670914,
+          "training_absolute": 0.002312113522028388,
+          "training_centered": 0.0005302554729979351,
+          "training_total": 0.002312113522028388
+        },
+        {
+          "epoch": 5,
+          "optimizer_updates": 288,
+          "selection_mae": 0.05467407112882938,
+          "training_absolute": 0.0020709775852623125,
+          "training_centered": 0.0005280987741166735,
+          "training_total": 0.0020709775852623125
+        },
+        {
+          "epoch": 6,
+          "optimizer_updates": 336,
+          "selection_mae": 0.05668160750064999,
+          "training_absolute": 0.0021298290298924862,
+          "training_centered": 0.000526965833825758,
+          "training_total": 0.0021298290298924862
+        },
+        {
+          "epoch": 7,
+          "optimizer_updates": 384,
+          "selection_mae": 0.05688314535655081,
+          "training_absolute": 0.001680973466704927,
+          "training_centered": 0.0005246728227980372,
+          "training_total": 0.001680973466704927
+        },
+        {
+          "epoch": 8,
+          "optimizer_updates": 432,
+          "selection_mae": 0.06523030751850456,
+          "training_absolute": 0.001545890710635452,
+          "training_centered": 0.0005216181620169754,
+          "training_total": 0.001545890710635452
+        },
+        {
+          "epoch": 9,
+          "optimizer_updates": 480,
+          "selection_mae": 0.06096841994440183,
+          "training_absolute": 0.0012697507266731616,
+          "training_centered": 0.0005185313002636546,
+          "training_total": 0.0012697507266731616
+        },
+        {
+          "epoch": 10,
+          "optimizer_updates": 528,
+          "selection_mae": 0.10361191106494516,
+          "training_absolute": 0.0016538542732765411,
+          "training_centered": 0.0005162654306163361,
+          "training_total": 0.0016538542732765411
+        },
+        {
+          "epoch": 11,
+          "optimizer_updates": 576,
+          "selection_mae": 0.06899122020695359,
+          "training_absolute": 0.0014833257683394645,
+          "training_centered": 0.0005197616758048085,
+          "training_total": 0.0014833257683394645
+        },
+        {
+          "epoch": 12,
+          "optimizer_updates": 624,
+          "selection_mae": 0.07759109907783568,
+          "training_absolute": 0.0013803898393310494,
+          "training_centered": 0.0005148421696872241,
+          "training_total": 0.0013803898393310494
+        },
+        {
+          "epoch": 13,
+          "optimizer_updates": 672,
+          "selection_mae": 0.07088976496015675,
+          "training_absolute": 0.0015724055274001596,
+          "training_centered": 0.0005123867852233251,
+          "training_total": 0.0015724055274001596
+        },
+        {
+          "epoch": 14,
+          "optimizer_updates": 720,
+          "selection_mae": 0.07180199601134518,
+          "training_absolute": 0.0019327040525875343,
+          "training_centered": 0.0005127188811438662,
+          "training_total": 0.0019327040525875343
+        },
+        {
+          "epoch": 15,
+          "optimizer_updates": 768,
+          "selection_mae": 0.06063299032393843,
+          "training_absolute": 0.0016793262460860585,
+          "training_centered": 0.0005153936668083799,
+          "training_total": 0.0016793262460860585
+        },
+        {
+          "epoch": 16,
+          "optimizer_updates": 816,
+          "selection_mae": 0.062003181876207236,
+          "training_absolute": 0.001692505541304475,
+          "training_centered": 0.0005133637778607832,
+          "training_total": 0.001692505541304475
+        },
+        {
+          "epoch": 17,
+          "optimizer_updates": 864,
+          "selection_mae": 0.05747987772338092,
+          "training_absolute": 0.001145155365860499,
+          "training_centered": 0.0005118553905516521,
+          "training_total": 0.001145155365860499
+        }
+      ],
+      "model_spec": {
+        "activation": "tanh",
+        "continuation_id": "hungarian-v1-fixed",
+        "hidden_dims": [
+          128,
+          64
+        ],
+        "input_dim": 827,
+        "output_dim": 1
+      },
+      "optimizer_updates": 864,
+      "schema": "w1-action-outcome-windowed-mlp/1.0.0",
+      "seed": 7103,
+      "selection_mae": 0.05467407112882938,
+      "selection_parents": [
+        "train-0902",
+        "train-1028",
+        "train-1102",
+        "train-1338",
+        "train-1451",
+        "train-1522",
+        "train-1603",
+        "train-1755"
+      ],
+      "train_parents": [
+        "train-0082",
+        "train-0098",
+        "train-0116",
+        "train-0140",
+        "train-0213",
+        "train-0371",
+        "train-0376",
+        "train-0715",
+        "train-0876",
+        "train-0929",
+        "train-1041",
+        "train-1136",
+        "train-1174",
+        "train-1293",
+        "train-1425",
+        "train-1481",
+        "train-1534",
+        "train-1563",
+        "train-1581",
+        "train-1595",
+        "train-1762",
+        "train-1820",
+        "train-1840",
+        "train-2024"
+      ],
+      "training_config": {
+        "auxiliary_weight": 0.25,
+        "beta": 1.0,
+        "early_stopping_patience": 12,
+        "learning_rate": 0.0003,
+        "max_epochs": 100,
+        "minimum_delta": 0.0,
+        "seeds": [
+          7101,
+          7102,
+          7103
+        ],
+        "weight_decay": 0.0,
+        "windows_per_update": 1
+      },
+      "variant": "absolute"
+    },
+    "seed": 7103,
+    "variant": "A"
+  },
+  {
+    "checkpoint": "/home/asus/w1-action-relative-auxiliary-task-cost-attribution-repair-v1-once/run-once/checkpoints/B-seed-7101.pt",
+    "metadata": {
+      "best_epoch": 3,
+      "history": [
+        {
+          "epoch": 0,
+          "optimizer_updates": 48,
+          "selection_mae": 0.06811760313576087,
+          "training_absolute": 0.010591376610591396,
+          "training_centered": 0.0005317669494839805,
+          "training_total": 0.010724318354126202
+        },
+        {
+          "epoch": 1,
+          "optimizer_updates": 96,
+          "selection_mae": 0.07992211729288101,
+          "training_absolute": 0.0052045165816707595,
+          "training_centered": 0.0005273587533904944,
+          "training_total": 0.00533635627334661
+        },
+        {
+          "epoch": 2,
+          "optimizer_updates": 144,
+          "selection_mae": 0.05877692165086046,
+          "training_absolute": 0.0022003509505831667,
+          "training_centered": 0.0005272661078944788,
+          "training_total": 0.0023321674773531718
+        },
+        {
+          "epoch": 3,
+          "optimizer_updates": 192,
+          "selection_mae": 0.05210889103182126,
+          "training_absolute": 0.0020005163793802203,
+          "training_centered": 0.0005269204683007919,
+          "training_total": 0.0021322465055533257
+        },
+        {
+          "epoch": 4,
+          "optimizer_updates": 240,
+          "selection_mae": 0.06161733884073328,
+          "training_absolute": 0.002290641614327645,
+          "training_centered": 0.0005246134318416621,
+          "training_total": 0.002421794966011248
+        },
+        {
+          "epoch": 5,
+          "optimizer_updates": 288,
+          "selection_mae": 0.06097087706439197,
+          "training_absolute": 0.0024058659548605497,
+          "training_centered": 0.0005239487447337154,
+          "training_total": 0.0025368531782561377
+        },
+        {
+          "epoch": 6,
+          "optimizer_updates": 336,
+          "selection_mae": 0.059669822570867836,
+          "training_absolute": 0.0015742891111851047,
+          "training_centered": 0.0005218178309410367,
+          "training_total": 0.0017047435796560724
+        },
+        {
+          "epoch": 7,
+          "optimizer_updates": 384,
+          "selection_mae": 0.06460377475013956,
+          "training_absolute": 0.0015860234512767117,
+          "training_centered": 0.0005183900236822581,
+          "training_total": 0.0017156209559251086
+        },
+        {
+          "epoch": 8,
+          "optimizer_updates": 432,
+          "selection_mae": 0.054730913252569735,
+          "training_absolute": 0.0016189981445980568,
+          "training_centered": 0.0005162786305454858,
+          "training_total": 0.0017480677978483072
+        },
+        {
+          "epoch": 9,
+          "optimizer_updates": 480,
+          "selection_mae": 0.05244379650685005,
+          "training_absolute": 0.0018393325253806363,
+          "training_centered": 0.0005155234160496569,
+          "training_total": 0.0019682133796289727
+        },
+        {
+          "epoch": 10,
+          "optimizer_updates": 528,
+          "selection_mae": 0.05485512521408964,
+          "training_absolute": 0.0012446675192485657,
+          "training_centered": 0.0005159530695363715,
+          "training_total": 0.0013736557900602502
+        },
+        {
+          "epoch": 11,
+          "optimizer_updates": 576,
+          "selection_mae": 0.08703607297502458,
+          "training_absolute": 0.0010717964717178081,
+          "training_centered": 0.0005101165029327929,
+          "training_total": 0.0011993255873813762
+        },
+        {
+          "epoch": 12,
+          "optimizer_updates": 624,
+          "selection_mae": 0.05855660357337911,
+          "training_absolute": 0.001251227962868029,
+          "training_centered": 0.0005103691696358714,
+          "training_total": 0.0013788202485519225
+        },
+        {
+          "epoch": 13,
+          "optimizer_updates": 672,
+          "selection_mae": 0.056381854112260044,
+          "training_absolute": 0.0010328435456491054,
+          "training_centered": 0.0005080982054352182,
+          "training_total": 0.0011598680958684326
+        },
+        {
+          "epoch": 14,
+          "optimizer_updates": 720,
+          "selection_mae": 0.06422434755950235,
+          "training_absolute": 0.0011423167931354783,
+          "training_centered": 0.0005037095840876304,
+          "training_total": 0.001268244188973237
+        },
+        {
+          "epoch": 15,
+          "optimizer_updates": 768,
+          "selection_mae": 0.05625833343947306,
+          "training_absolute": 0.001633397368493661,
+          "training_centered": 0.0005031257870546924,
+          "training_total": 0.0017591788166176532
+        }
+      ],
+      "model_spec": {
+        "activation": "tanh",
+        "continuation_id": "hungarian-v1-fixed",
+        "hidden_dims": [
+          128,
+          64
+        ],
+        "input_dim": 827,
+        "output_dim": 1
+      },
+      "optimizer_updates": 768,
+      "schema": "w1-action-outcome-windowed-mlp/1.0.0",
+      "seed": 7101,
+      "selection_mae": 0.05210889103182126,
+      "selection_parents": [
+        "train-0902",
+        "train-1028",
+        "train-1102",
+        "train-1338",
+        "train-1451",
+        "train-1522",
+        "train-1603",
+        "train-1755"
+      ],
+      "train_parents": [
+        "train-0082",
+        "train-0098",
+        "train-0116",
+        "train-0140",
+        "train-0213",
+        "train-0371",
+        "train-0376",
+        "train-0715",
+        "train-0876",
+        "train-0929",
+        "train-1041",
+        "train-1136",
+        "train-1174",
+        "train-1293",
+        "train-1425",
+        "train-1481",
+        "train-1534",
+        "train-1563",
+        "train-1581",
+        "train-1595",
+        "train-1762",
+        "train-1820",
+        "train-1840",
+        "train-2024"
+      ],
+      "training_config": {
+        "auxiliary_weight": 0.25,
+        "beta": 1.0,
+        "early_stopping_patience": 12,
+        "learning_rate": 0.0003,
+        "max_epochs": 100,
+        "minimum_delta": 0.0,
+        "seeds": [
+          7101,
+          7102,
+          7103
+        ],
+        "weight_decay": 0.0,
+        "windows_per_update": 1
+      },
+      "variant": "centered_auxiliary"
+    },
+    "seed": 7101,
+    "variant": "B"
+  },
+  {
+    "checkpoint": "/home/asus/w1-action-relative-auxiliary-task-cost-attribution-repair-v1-once/run-once/checkpoints/B-seed-7102.pt",
+    "metadata": {
+      "best_epoch": 2,
+      "history": [
+        {
+          "epoch": 0,
+          "optimizer_updates": 48,
+          "selection_mae": 0.07094241902814247,
+          "training_absolute": 0.012241040761480804,
+          "training_centered": 0.0005314823059509403,
+          "training_total": 0.012373911504624857
+        },
+        {
+          "epoch": 1,
+          "optimizer_updates": 96,
+          "selection_mae": 0.06840783479856327,
+          "training_absolute": 0.004642648332046899,
+          "training_centered": 0.0005324552354318465,
+          "training_total": 0.004775762146730737
+        },
+        {
+          "epoch": 2,
+          "optimizer_updates": 144,
+          "selection_mae": 0.05337966328806942,
+          "training_absolute": 0.002218336536062774,
+          "training_centered": 0.000532156059955278,
+          "training_total": 0.002351375526079854
+        },
+        {
+          "epoch": 3,
+          "optimizer_updates": 192,
+          "selection_mae": 0.06129266691277735,
+          "training_absolute": 0.002179728143730131,
+          "training_centered": 0.0005308937284458359,
+          "training_total": 0.002312451595192518
+        },
+        {
+          "epoch": 4,
+          "optimizer_updates": 240,
+          "selection_mae": 0.05815592943690717,
+          "training_absolute": 0.0015989777525646787,
+          "training_centered": 0.0005289980586825985,
+          "training_total": 0.0017312272642584503
+        },
+        {
+          "epoch": 5,
+          "optimizer_updates": 288,
+          "selection_mae": 0.061919019964989275,
+          "training_absolute": 0.0015545490063004763,
+          "training_centered": 0.0005254114411981092,
+          "training_total": 0.0016859018787158675
+        },
+        {
+          "epoch": 6,
+          "optimizer_updates": 336,
+          "selection_mae": 0.05979504599235952,
+          "training_absolute": 0.0011482026583558753,
+          "training_centered": 0.0005203296224007836,
+          "training_total": 0.001278285073970764
+        },
+        {
+          "epoch": 7,
+          "optimizer_updates": 384,
+          "selection_mae": 0.05915168608771637,
+          "training_absolute": 0.0012384811202004187,
+          "training_centered": 0.0005182504086865455,
+          "training_total": 0.0013680437265482699
+        },
+        {
+          "epoch": 8,
+          "optimizer_updates": 432,
+          "selection_mae": 0.06431668854202144,
+          "training_absolute": 0.0011872165262095298,
+          "training_centered": 0.0005147039404288142,
+          "training_total": 0.0013158925208453336
+        },
+        {
+          "epoch": 9,
+          "optimizer_updates": 480,
+          "selection_mae": 0.08075690973782912,
+          "training_absolute": 0.0012633767178490036,
+          "training_centered": 0.0005107978397906517,
+          "training_total": 0.0013910761728700056
+        },
+        {
+          "epoch": 10,
+          "optimizer_updates": 528,
+          "selection_mae": 0.06090737829799764,
+          "training_absolute": 0.0013701730737404698,
+          "training_centered": 0.0005136112628487677,
+          "training_total": 0.0014985759054345256
+        },
+        {
+          "epoch": 11,
+          "optimizer_updates": 576,
+          "selection_mae": 0.0649691883882042,
+          "training_absolute": 0.0011726266109211754,
+          "training_centered": 0.0005108811943301076,
+          "training_total": 0.0013003469112409978
+        },
+        {
+          "epoch": 12,
+          "optimizer_updates": 624,
+          "selection_mae": 0.05569641063630115,
+          "training_absolute": 0.0016857138298327357,
+          "training_centered": 0.0005103920597421633,
+          "training_total": 0.0018133118341528605
+        },
+        {
+          "epoch": 13,
+          "optimizer_updates": 672,
+          "selection_mae": 0.05804482129315147,
+          "training_absolute": 0.0014142345982672093,
+          "training_centered": 0.0005115349911134123,
+          "training_total": 0.0015421183415848343
+        },
+        {
+          "epoch": 14,
+          "optimizer_updates": 720,
+          "selection_mae": 0.06282081319659483,
+          "training_absolute": 0.0013866197258423085,
+          "training_centered": 0.0005049924195097422,
+          "training_total": 0.0015128678493230296
+        }
+      ],
+      "model_spec": {
+        "activation": "tanh",
+        "continuation_id": "hungarian-v1-fixed",
+        "hidden_dims": [
+          128,
+          64
+        ],
+        "input_dim": 827,
+        "output_dim": 1
+      },
+      "optimizer_updates": 720,
+      "schema": "w1-action-outcome-windowed-mlp/1.0.0",
+      "seed": 7102,
+      "selection_mae": 0.05337966328806942,
+      "selection_parents": [
+        "train-0902",
+        "train-1028",
+        "train-1102",
+        "train-1338",
+        "train-1451",
+        "train-1522",
+        "train-1603",
+        "train-1755"
+      ],
+      "train_parents": [
+        "train-0082",
+        "train-0098",
+        "train-0116",
+        "train-0140",
+        "train-0213",
+        "train-0371",
+        "train-0376",
+        "train-0715",
+        "train-0876",
+        "train-0929",
+        "train-1041",
+        "train-1136",
+        "train-1174",
+        "train-1293",
+        "train-1425",
+        "train-1481",
+        "train-1534",
+        "train-1563",
+        "train-1581",
+        "train-1595",
+        "train-1762",
+        "train-1820",
+        "train-1840",
+        "train-2024"
+      ],
+      "training_config": {
+        "auxiliary_weight": 0.25,
+        "beta": 1.0,
+        "early_stopping_patience": 12,
+        "learning_rate": 0.0003,
+        "max_epochs": 100,
+        "minimum_delta": 0.0,
+        "seeds": [
+          7101,
+          7102,
+          7103
+        ],
+        "weight_decay": 0.0,
+        "windows_per_update": 1
+      },
+      "variant": "centered_auxiliary"
+    },
+    "seed": 7102,
+    "variant": "B"
+  },
+  {
+    "checkpoint": "/home/asus/w1-action-relative-auxiliary-task-cost-attribution-repair-v1-once/run-once/checkpoints/B-seed-7103.pt",
+    "metadata": {
+      "best_epoch": 5,
+      "history": [
+        {
+          "epoch": 0,
+          "optimizer_updates": 48,
+          "selection_mae": 0.055495899519883096,
+          "training_absolute": 0.009525557898162637,
+          "training_centered": 0.000536953996289761,
+          "training_total": 0.009659796349675768
+        },
+        {
+          "epoch": 1,
+          "optimizer_updates": 96,
+          "selection_mae": 0.060964708420215175,
+          "training_absolute": 0.0029235929174925936,
+          "training_centered": 0.0005332623027634043,
+          "training_total": 0.0030569085001843632
+        },
+        {
+          "epoch": 2,
+          "optimizer_updates": 144,
+          "selection_mae": 0.0674631716683507,
+          "training_absolute": 0.002299547637212148,
+          "training_centered": 0.0005327070929093125,
+          "training_total": 0.002432724417027169
+        },
+        {
+          "epoch": 3,
+          "optimizer_updates": 192,
+          "selection_mae": 0.0560992673272267,
+          "training_absolute": 0.0019008907020842496,
+          "training_centered": 0.0005307560341945757,
+          "training_total": 0.002033579717486115
+        },
+        {
+          "epoch": 4,
+          "optimizer_updates": 240,
+          "selection_mae": 0.08866725822736043,
+          "training_absolute": 0.002308982871340959,
+          "training_centered": 0.0005284455792526899,
+          "training_total": 0.0024410942865150296
+        },
+        {
+          "epoch": 5,
+          "optimizer_updates": 288,
+          "selection_mae": 0.05465598822047468,
+          "training_absolute": 0.0020711344960773204,
+          "training_centered": 0.000526081941668218,
+          "training_total": 0.002202654982276897
+        },
+        {
+          "epoch": 6,
+          "optimizer_updates": 336,
+          "selection_mae": 0.056755767087452114,
+          "training_absolute": 0.0021318500654388117,
+          "training_centered": 0.0005248530412177802,
+          "training_total": 0.002263063321606751
+        },
+        {
+          "epoch": 7,
+          "optimizer_updates": 384,
+          "selection_mae": 0.05712509842123836,
+          "training_absolute": 0.0016700000925311542,
+          "training_centered": 0.000521976844502762,
+          "training_total": 0.0018004942934339851
+        },
+        {
+          "epoch": 8,
+          "optimizer_updates": 432,
+          "selection_mae": 0.06540067051537335,
+          "training_absolute": 0.0015366564816237844,
+          "training_centered": 0.0005186469676721946,
+          "training_total": 0.0016663182138406303
+        },
+        {
+          "epoch": 9,
+          "optimizer_updates": 480,
+          "selection_mae": 0.06079402516479604,
+          "training_absolute": 0.0012676575584009697,
+          "training_centered": 0.000515059351992401,
+          "training_total": 0.0013964223885902054
+        },
+        {
+          "epoch": 10,
+          "optimizer_updates": 528,
+          "selection_mae": 0.10199380980338901,
+          "training_absolute": 0.0016230805987310266,
+          "training_centered": 0.0005122344062653642,
+          "training_total": 0.0017511392100336327
+        },
+        {
+          "epoch": 11,
+          "optimizer_updates": 576,
+          "selection_mae": 0.0687046154635027,
+          "training_absolute": 0.0014522732877691642,
+          "training_centered": 0.0005161583218357505,
+          "training_total": 0.0015813128753722576
+        },
+        {
+          "epoch": 12,
+          "optimizer_updates": 624,
+          "selection_mae": 0.07664084224961698,
+          "training_absolute": 0.0013598701843496503,
+          "training_centered": 0.0005104033524716186,
+          "training_total": 0.0014874710288760677
+        },
+        {
+          "epoch": 13,
+          "optimizer_updates": 672,
+          "selection_mae": 0.06944246530474629,
+          "training_absolute": 0.0015311955982421448,
+          "training_centered": 0.0005077208770867259,
+          "training_total": 0.0016581258247564772
+        },
+        {
+          "epoch": 14,
+          "optimizer_updates": 720,
+          "selection_mae": 0.06853923291782849,
+          "training_absolute": 0.0018548039955798383,
+          "training_centered": 0.0005080442351778439,
+          "training_total": 0.0019818150470124842
+        },
+        {
+          "epoch": 15,
+          "optimizer_updates": 768,
+          "selection_mae": 0.06204955806606449,
+          "training_absolute": 0.0016503170588938094,
+          "training_centered": 0.0005116340827508262,
+          "training_total": 0.0017782255682353327
+        },
+        {
+          "epoch": 16,
+          "optimizer_updates": 816,
+          "selection_mae": 0.06461536209098995,
+          "training_absolute": 0.0016374759698199644,
+          "training_centered": 0.0005087792130667642,
+          "training_total": 0.0017646707843065694
+        },
+        {
+          "epoch": 17,
+          "optimizer_updates": 864,
+          "selection_mae": 0.05837145494297147,
+          "training_absolute": 0.0011073765764564314,
+          "training_centered": 0.0005072405011370407,
+          "training_total": 0.0012341866996242363
+        }
+      ],
+      "model_spec": {
+        "activation": "tanh",
+        "continuation_id": "hungarian-v1-fixed",
+        "hidden_dims": [
+          128,
+          64
+        ],
+        "input_dim": 827,
+        "output_dim": 1
+      },
+      "optimizer_updates": 864,
+      "schema": "w1-action-outcome-windowed-mlp/1.0.0",
+      "seed": 7103,
+      "selection_mae": 0.05465598822047468,
+      "selection_parents": [
+        "train-0902",
+        "train-1028",
+        "train-1102",
+        "train-1338",
+        "train-1451",
+        "train-1522",
+        "train-1603",
+        "train-1755"
+      ],
+      "train_parents": [
+        "train-0082",
+        "train-0098",
+        "train-0116",
+        "train-0140",
+        "train-0213",
+        "train-0371",
+        "train-0376",
+        "train-0715",
+        "train-0876",
+        "train-0929",
+        "train-1041",
+        "train-1136",
+        "train-1174",
+        "train-1293",
+        "train-1425",
+        "train-1481",
+        "train-1534",
+        "train-1563",
+        "train-1581",
+        "train-1595",
+        "train-1762",
+        "train-1820",
+        "train-1840",
+        "train-2024"
+      ],
+      "training_config": {
+        "auxiliary_weight": 0.25,
+        "beta": 1.0,
+        "early_stopping_patience": 12,
+        "learning_rate": 0.0003,
+        "max_epochs": 100,
+        "minimum_delta": 0.0,
+        "seeds": [
+          7101,
+          7102,
+          7103
+        ],
+        "weight_decay": 0.0,
+        "windows_per_update": 1
+      },
+      "variant": "centered_auxiliary"
+    },
+    "seed": 7103,
+    "variant": "B"
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "attempt": "w1-action-relative-auxiliary-runtime-dependency-repair-v1-once",
+  "dynamic_calls": {
+    "batch_forwards": 0,
+    "candidate_branches": 0,
+    "checkpoint_writes": 0,
+    "environment_steps": 0,
+    "model_initializations_or_loads": 0,
+    "model_sample_evaluations": 0,
+    "optimizer_updates": 0,
+    "resets": 0,
+    "rule_decisions": 0
+  },
+  "execution_manifest_sha256": "6a74e7ee3896e7ede69834b0bc07d13461065775f0b6903a62e910630ff72e5e",
+  "export": {
+    "file_count": 61,
+    "manifest_sha256": "5bbd92d7468d33c295e2d76cb7d2dbcddbf6d5fdbdbe8954aa9c4a3c66fd88b1",
+    "mismatch_count": 0,
+    "verified": true
+  },
+  "hashes_sha256": "f5fa342ed392d1aacc7ebff1a64ebac4a69a44d6e98cfd98b27b22a23fc77880",
+  "request_status": "NOT_APPROVED",
+  "runtime": {
+    "checkpoint_loaded": false,
+    "environment_constructed": false,
+    "model_initialized": false,
+    "numpy": "1.26.4",
+    "python": "3.12.3",
+    "torch": "2.8.0+cpu",
+    "training_started": false,
+    "worker_started": false
+  },
+  "schema": "w1-runtime-dependency-zero-step-validation/1.0.0",
+  "status": "pass"
+}

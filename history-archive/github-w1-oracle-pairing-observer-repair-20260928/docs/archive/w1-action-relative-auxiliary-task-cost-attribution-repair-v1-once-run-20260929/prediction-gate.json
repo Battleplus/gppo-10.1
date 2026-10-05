@@ -1,0 +1,7 @@
+{
+  "b_strictly_better_than_transparent_required": true,
+  "effect_gate_pass": false,
+  "minimum_non_worse_parents": 4,
+  "task_stage_condition_pass": true,
+  "threshold": -0.005
+}

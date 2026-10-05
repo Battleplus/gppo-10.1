@@ -1,0 +1,491 @@
+{
+  "candidate_continuation_id": "one-step-public-transition-v1",
+  "historical_use_elsewhere": "not proven absent by available manifests",
+  "hungarian_reuse": "one deterministic episode per parent/repeat; paired to all policy seeds",
+  "maximum_legal_candidates_per_window": 25,
+  "maximum_native_steps_per_prefix": 18,
+  "maximum_windows_per_parent_repeat": 1,
+  "methods": [
+    "G0",
+    "T",
+    "G1",
+    "G2",
+    "H"
+  ],
+  "missing_opportunity": "preserve; no replacement; no zero regret imputation",
+  "policy_seeds": [
+    8301,
+    8302,
+    8303
+  ],
+  "policy_training_steps_per_method_seed": 2048,
+  "repeats": {
+    "model_selection": 1,
+    "prediction_confirmation": 3,
+    "task_confirmation": 3,
+    "train": 1
+  },
+  "schema": "w1-eawm-jepa-experiment-matrix/1.0.0",
+  "selection_rule": "sort frozen train tape by tape_index after excluding the explicitly enumerated old prediction parents, reserved task parents, and all light-dev validation parents; assign contiguous blocks before observing outcomes",
+  "source_parent_split": "parent-split.json",
+  "source_parent_split_schema": "w1-eawm-jepa-parent-split/1.0.0",
+  "splits": {
+    "model_selection": [
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0032|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0032",
+        "scenario_sha256": "02c59b00a9ce7823c4d99e95e34c2fcbf242cd58f4b4475693967a215d1cced4",
+        "structural_sha256": "ee18c24e3d355c4146caa9fa75be15913e1e34a6d2e282109b77a295caf4d237",
+        "tape_index": 32
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0033|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0033",
+        "scenario_sha256": "20b610ceef7f87db2f10f612b8c4417829adabd6a9a39c9d85e51aee10c10456",
+        "structural_sha256": "1ca9fba6506ff939815fac0235724e2166746d3431c38eb42a68074cf5ee6bde",
+        "tape_index": 33
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0034|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0034",
+        "scenario_sha256": "a3086b786e91aba595b7339d7eb6b55e5f94883bc62d2eec1e3ccf5a854ce2ce",
+        "structural_sha256": "38deffca3fa0b0870ebde6d1a53007386ca1fa7e28986d89f52e84e085e1c73b",
+        "tape_index": 34
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0035|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0035",
+        "scenario_sha256": "a887b42d2683511866d94ddd9e49ac394e1a9e9a3ebbdd9f324e882ea903484b",
+        "structural_sha256": "2616f9b203aa0cfdb5560044072c8aa0faacd3f0841cd83187d532d015756d76",
+        "tape_index": 35
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0036|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0036",
+        "scenario_sha256": "7f0aa958d57d68e3f071c235b444faad029174968c42f62d030a11d15b41aff8",
+        "structural_sha256": "5b398b77188683ad65bdf8578346e1862874eecbe8215bd331423cc26d6c74b6",
+        "tape_index": 36
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0037|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0037",
+        "scenario_sha256": "adab93c4440071cff238f4fc622f2162ae01f92b9e743b99e9b4a17737440aab",
+        "structural_sha256": "37a67ed4a4b049ba3d67515c3a657451b64685f15e1114509bda4c77827d2cd4",
+        "tape_index": 37
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0038|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0038",
+        "scenario_sha256": "f5c75936b0d05bbfa2f8412b8cd797bc917aa3e569101fff092c4a183b96b202",
+        "structural_sha256": "51f9458e6f4de0ef9c67f952fa774f707780b2d0b08cad3c88e3d02ac735592d",
+        "tape_index": 38
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0039|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0039",
+        "scenario_sha256": "08aa8d6b91a7ba56a2c5acf06e4b6f62834a38f97386d6d289ec595d0fc49f2a",
+        "structural_sha256": "e6f6539bafeaefc71751aebbed4e8e8e295d2e65d04634fd290f1137608a4a8a",
+        "tape_index": 39
+      }
+    ],
+    "prediction_confirmation": [
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0040|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0040",
+        "scenario_sha256": "d30e614bd8e5ee7b44c1d89cd06d43c1ef9b8dd5be2d3b3935d767ca7402f7fa",
+        "structural_sha256": "c529e7b328eebcdbca000ff27a55ce073842ab0a92b9c67acfaa426c2ed556ff",
+        "tape_index": 40
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0041|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0041",
+        "scenario_sha256": "d0e5e3543f4db06bfc154f5834782a53b313abc5c8e7455117b85b3e75d73dd0",
+        "structural_sha256": "13117376e17685f34454ef417c09717e81ca35c20e55bcc0169db11f756c0940",
+        "tape_index": 41
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0042|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0042",
+        "scenario_sha256": "7b468b0cf6c923399c562104ecec239ed470967158608b5dcc0117a770db1545",
+        "structural_sha256": "4b3d5e7154282234d35eefe2aef21bab4ba9898ad1074ed6942a7629856bcc18",
+        "tape_index": 42
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0043|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0043",
+        "scenario_sha256": "584b09bb9a4ed0f2f4c896daade1e382ff0892f6032836d767f369523c89609d",
+        "structural_sha256": "2f599560ca2a2a7a20346d826a8ce197b165a62fec566e3af3072b5068fc55bd",
+        "tape_index": 43
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0044|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0044",
+        "scenario_sha256": "bc42044e252089cec7710e42a94e5bedfb722bd9462b79a98efe606dd612722a",
+        "structural_sha256": "7488eb4d29f77721dfeb43386a36eef9ead40b2f5bcea8e1f019197b5a7735ef",
+        "tape_index": 44
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0045|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0045",
+        "scenario_sha256": "4a70d58d58ef7e0bdea100e2a13109a3b6b1d14c4a1f6c3a084dd05441b738af",
+        "structural_sha256": "65f895c91735aa212341c991a743dd9ecdbd8f1fe34e92891d112702b4d5c171",
+        "tape_index": 45
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0046|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0046",
+        "scenario_sha256": "fd33feecef7b14e28f838a8e84511117eef757b341beba204844b76b32caa81c",
+        "structural_sha256": "5aabe97b9aa2ced9877091503df94e819a75b333f89c940cfdc20f2dcf9fb921",
+        "tape_index": 46
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0047|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0047",
+        "scenario_sha256": "58f76b0f70fa5ade63acce156c5b4aceab70380235e8f4a5f2967bc02e99c79f",
+        "structural_sha256": "713cd4a4937205460c47d036fac5f0caab5194ca7d9e2b891ea3994d0c7a71a0",
+        "tape_index": 47
+      }
+    ],
+    "task_confirmation": [
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0048|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0048",
+        "scenario_sha256": "07eb8143ed0596e085887ecf23c21bdc087ddd256a3e96b3df1135fa7eae9f79",
+        "structural_sha256": "2b81490ecedb7eb56c9f924858ac56cb12ff16000506c5117afed0693ed5623e",
+        "tape_index": 48
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0049|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0049",
+        "scenario_sha256": "d276c13824ffa342564749e9297f0ebfb62dd53afcefabb115ff4fa8774a3aeb",
+        "structural_sha256": "ed83afda557f9b8e48e1d033dcb179b0ca909bb323eca1a838860322df52c60d",
+        "tape_index": 49
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0050|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0050",
+        "scenario_sha256": "5c7cdeb6ea622bd068db90d9f9c50f99abcd4ab71f2874a9362186503976c1c5",
+        "structural_sha256": "c1faa3a629bb88987bc44347c4f3a1288bad25d441a23dc64d5c624d93ceeda4",
+        "tape_index": 50
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0051|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0051",
+        "scenario_sha256": "48974564efd3d9c62afe8d62a38cd021dd1477f5ce456ecbac8a577df313a0a1",
+        "structural_sha256": "e88c4d343ee6a0fd2e5696eb668fbb82acbdb6b863b17bdb25d9617e5a13d263",
+        "tape_index": 51
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0052|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0052",
+        "scenario_sha256": "f6a247e3f8e59e1a79d6bf6a00e18fb41bb6346b17db5a46f6bc08becc409101",
+        "structural_sha256": "fee746bf8a4360ceda59fc83d2140bed330ce789a1d684c7c4fe624167fd2622",
+        "tape_index": 52
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0053|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0053",
+        "scenario_sha256": "34ca798ce38cbe174b085c3cddd702a207de60c9566aaca9dbfe81683ffc9457",
+        "structural_sha256": "6e981ebc66fd8c1313dae27a837a9240920ef04b44e787fdc671280221628dcb",
+        "tape_index": 53
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0054|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0054",
+        "scenario_sha256": "d9fb16638e77a358052f6070aa2ce91cfb91e2a55fa0855e463af540bad03b00",
+        "structural_sha256": "ead0deb824e7ef4eb9c725a118ad6d8d8d0bd2acbb4bf5b13fadc2e97063504a",
+        "tape_index": 54
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0055|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0055",
+        "scenario_sha256": "69a305d5d2dd99eac65bb810ceab3f1565b723946b0f7d1aed129e950cd13862",
+        "structural_sha256": "1c2dcd7fd6e3916e8b59500135e8cf7ff3499fd65366a22d7382c7c4a463e785",
+        "tape_index": 55
+      }
+    ],
+    "train": [
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0008|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0008",
+        "scenario_sha256": "8dfeaaa09ed36703923c8dff1e84d70cf44469cf5ab1f4edb587b2ee747b1040",
+        "structural_sha256": "c21c33d5548e38e3927b2d2913d9fca8202d22a14bfead5ae901531a0d34bdcb",
+        "tape_index": 8
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0009|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0009",
+        "scenario_sha256": "5a1eb90f53e8f956e3991f86c31c1441e99dfa175226819a3357b2b152daa2d3",
+        "structural_sha256": "f6ee9acaeaf3acb23a5e7dee6f0c31cc9649c06d152ba77b2fa3d1b11dcd86e9",
+        "tape_index": 9
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0010|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0010",
+        "scenario_sha256": "e9defc4364190321bd05c44f48cdd650d4cee417935eaf54e3c6d22b49ee5769",
+        "structural_sha256": "c5fea7a98cfa9eb637a86ac5cd70944d9108918c44ba0b01de473dced4294349",
+        "tape_index": 10
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0011|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0011",
+        "scenario_sha256": "b1a59911840533fbd60e4c2b230ccbde7c27ec4429d9c1b465a31cb52feffca9",
+        "structural_sha256": "1cd2903bbd94c04636130aad1c939c1d1821ac97eade17e0a6f3bb7dfdcaa3e2",
+        "tape_index": 11
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0012|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0012",
+        "scenario_sha256": "e3e1b7e32a295aa08784ca00f5799eaec278c232c5c4fd8cefe36cb9a37d3638",
+        "structural_sha256": "da4d077eb45b279f922358cbf954d7b40fe260495e0a89979e2cc2036a77c6cd",
+        "tape_index": 12
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0013|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0013",
+        "scenario_sha256": "52486ebc95b8e82464815ebb19f058e0e4abffcc42f7e87b56d8aea455118f3d",
+        "structural_sha256": "9c544b66f19108f1dd444facfff3a435fd6fe6ed6edc955129af8bf2eebde6b3",
+        "tape_index": 13
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0014|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0014",
+        "scenario_sha256": "ee98e48361ebe83fcae975027da9db6d0963e73080c0cd9f797c754d50046937",
+        "structural_sha256": "a091a8ea9d9baa21e1ffbed0de98dc309f560fdda6ca5347f193e4c5dc3215a7",
+        "tape_index": 14
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0015|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0015",
+        "scenario_sha256": "2a3eedd473179627f23607dcf6bf5078830a3794aa8f62b3178bb203dceb473d",
+        "structural_sha256": "301af41551c3c5aaa52af7b268593df83395e93deacb5cdda33d040e3cdbac31",
+        "tape_index": 15
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0016|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0016",
+        "scenario_sha256": "37cc5259a79adb609f644b7ebedf6b9977f73b8abdb8a5dfb1b48d52c536939d",
+        "structural_sha256": "5fb42e0596e3511f5b8a43e1eee08f64b87e57c9842abedff3b344432e7d4461",
+        "tape_index": 16
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0017|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0017",
+        "scenario_sha256": "587927b350d6339013ab64040ef958fddca84288c4bdfa4f78127b305362716d",
+        "structural_sha256": "959c3d8b0b5dd893908eb0090fb1a1f2e0c30f4a33ee57a3219c8991981611d7",
+        "tape_index": 17
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0018|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0018",
+        "scenario_sha256": "8953e47700f776199fa189ab93354ad7698d2b3a46402a07d5e51286caf65793",
+        "structural_sha256": "74d07f7014133e7ef21d9af5f32f5045e07fcb94918ebd638cdd05ea2f9a774d",
+        "tape_index": 18
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0019|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0019",
+        "scenario_sha256": "4dc5d240f4b9c9fa82ccb410383dd66db662165b5f14017684a48f475d812cfe",
+        "structural_sha256": "64a0eaa26f8d61b77351f1c54b6bf0004bc3a9a217a7b69218daf7653322c5ec",
+        "tape_index": 19
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0020|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0020",
+        "scenario_sha256": "ba936c544c88c74364f5a4f40dd42d1fac4dd10cef088c6043b873eea334bf91",
+        "structural_sha256": "845408394bd901b267ead83788ced5dec9538e635cc0ea2ca6db9f26ed6b27c0",
+        "tape_index": 20
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0021|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0021",
+        "scenario_sha256": "c579407c91b6126509e5a471dc9f66217ff907c924ef12edcfcb8a38076c0917",
+        "structural_sha256": "4e4adc1143785e875119d755d1f8d83a2a792917781249a873ba38e2bfdf8f7b",
+        "tape_index": 21
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0022|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0022",
+        "scenario_sha256": "aa851732c7fbd4f6c8d0cef763dfc883abf1573c124522c99677db7832c8c6b3",
+        "structural_sha256": "b3afed390966eb568c50f75a1cf90409dfec80428ac9a9df4fabe055123cd1cd",
+        "tape_index": 22
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0023|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0023",
+        "scenario_sha256": "cc2e75e141c608b42b7e3ef22deff87ddb76ad35ba3f0d297f900b126365de1e",
+        "structural_sha256": "1e0815bd3fe668907ec9b9ae685c25450194a9ad6012b355c33e442c46b59931",
+        "tape_index": 23
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0024|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0024",
+        "scenario_sha256": "0e367c00e25516bf33fc892e28de4568f172ae1d0cfd1ac0891cf568fad77f66",
+        "structural_sha256": "644668d2d617c8075943efd202a4117ef08787368ad19edcccc0cfeceee6546e",
+        "tape_index": 24
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0025|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0025",
+        "scenario_sha256": "4a41243cc1d76055323eff77cffda630a8672c9df7f4acd6ef06402dd8e8b4b7",
+        "structural_sha256": "d3db29e66b26c3bb0c794a081c39b7e4d5e0a197a938fc1957811e91023e7b61",
+        "tape_index": 25
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0026|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0026",
+        "scenario_sha256": "646cccc4577b2b075bf00fbb36d79a858930711c533fa54689b36755c970c14a",
+        "structural_sha256": "4a935fe7424697199862680dd73ec59b277a37cbb852ade0fc558360aa4d2bf2",
+        "tape_index": 26
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0027|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0027",
+        "scenario_sha256": "2479d461e0cd997a8a0259622f25cc436ddb90b657a6beb0fc5b232bb5b6e7c9",
+        "structural_sha256": "c0f555c204ea0d4ab5fdaef8f332f02899332791bd1acc4223fca00d85dfa528",
+        "tape_index": 27
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0028|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0028",
+        "scenario_sha256": "f2fefaad6c6fa40487742880b7d95d7ae6cb360d4faedfb897d327f11a35b5b0",
+        "structural_sha256": "c4e1ada9fe77934edaddb7733830e6dc1d23ea969f859f11e45d9039d38afb7d",
+        "tape_index": 28
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0029|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0029",
+        "scenario_sha256": "6e2a1ebb6e20328afaf113fed7f321c48f387a77538f8e008730b5a595e0a599",
+        "structural_sha256": "e8051e89708ad0da1bbbc01701356ec1f64991f58daae09aec6babadf07b0428",
+        "tape_index": 29
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0030|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0030",
+        "scenario_sha256": "638a73831f6c85396046bc8e4781c270df318b01ba187bb75cfc1ba37aef3a0d",
+        "structural_sha256": "2f2e105d9886489c00df715232d180e1419e53d073578cbdf72b5e06208bd9d2",
+        "tape_index": 30
+      },
+      {
+        "condition": "W1",
+        "exogenous_key": "fair-classical-ppo-gppo-20260925-v1|train|train-0031|repeat-0",
+        "generator_split": "train",
+        "parent": "train-0031",
+        "scenario_sha256": "a5adff1ade9519c920f46cb282301f6ecad32880acc5dddee4361709d9ebcb27",
+        "structural_sha256": "81cca189c29ecf62051ea3d2a9972688d60450c2190ced490b55aba15cf0400e",
+        "tape_index": 31
+      }
+    ]
+  },
+  "task_episode_count": 312,
+  "task_episode_max_steps": 18,
+  "transition_horizon": "one native decision interval",
+  "window_selection_rule": "earliest decision step >=4 with at least two legal non-NOOP candidates; no opportunity is retained and not replaced",
+  "world_model_batch_size": 32,
+  "world_model_maximum_epochs": 100,
+  "world_model_maximum_train_candidate_rows": 600,
+  "world_model_maximum_updates_per_variant_seed": 1900,
+  "world_model_seeds": [
+    8201,
+    8202,
+    8203
+  ],
+  "world_model_variants": {
+    "G1": "event_loss_disabled",
+    "G2": "event_loss_enabled"
+  }
+}

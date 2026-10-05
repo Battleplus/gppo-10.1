@@ -1,0 +1,21 @@
+{
+  "argument_probe": "\u4e2d\u6587 path with spaces 'quoted'",
+  "attempt": "w1-action-relative-auxiliary-wiring-contract-repair-v1-once",
+  "authorization_status": "NOT_APPROVED",
+  "external_token_sha256": "bc44f3e8d6f88ff3c34d7bfdfaef6df128738d642328621264de18f49a47289b",
+  "integration_fault": null,
+  "integration_test": false,
+  "linux_stage_entry": "wsl_stage_and_launch.py",
+  "native_child_python": "/usr/bin/python3",
+  "native_entry": "native_launch.py",
+  "native_execution_root": "/home/asus/w1-action-relative-auxiliary-wiring-contract-repair-v1-once",
+  "native_python": "/usr/bin/python3",
+  "one_shot": true,
+  "resource_request_sha256": "fe61b952c8c2543dfa0b78386fef02bdc1082572fe58d2e711e55f21c4e38bf3",
+  "schema": "w1-action-relative-auxiliary-launch-contract/2.0.0",
+  "windows_export_root": "/mnt/e/Z\u535a\u58eb/.codex-exports/w1-action-relative-auxiliary-wiring-contract-repair-v1-once",
+  "windows_source_root": "E:\\Z\u535a\u58eb\\research-plans\\w1-action-relative-auxiliary-launch-wiring-contract-repair-v1",
+  "wsl_distribution": "Ubuntu-24.04",
+  "wsl_executable": "wsl.exe",
+  "wsl_source_root": "/mnt/e/Z\u535a\u58eb/research-plans/w1-action-relative-auxiliary-launch-wiring-contract-repair-v1"
+}

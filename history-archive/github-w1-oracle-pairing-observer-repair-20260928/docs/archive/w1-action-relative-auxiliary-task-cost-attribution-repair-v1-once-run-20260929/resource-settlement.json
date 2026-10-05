@@ -1,0 +1,49 @@
+{
+  "attempt": "w1-action-relative-auxiliary-task-cost-attribution-repair-v1-once",
+  "schema": "w1-relative-auxiliary-resource-settlement/1.0.0",
+  "status": "complete",
+  "final_resource_pass": true,
+  "automatic_retry": false,
+  "worker_relaunched": false,
+  "ledger": {
+    "pending_calls": 0,
+    "failed_calls": 0,
+    "environment_steps": 1020,
+    "resets": 24,
+    "branches": 113,
+    "branch_snapshot_copies": 113,
+    "forced_first_actions": 113,
+    "candidate_scans": 134,
+    "rule_decisions": 907,
+    "model_initializations_or_loads": 12,
+    "optimizer_updates": 4704,
+    "model_batch_forwards": 6416,
+    "model_sample_evaluations": 28804,
+    "checkpoint_writes": 6
+  },
+  "observed_resources": {
+    "supervisor_cpu_seconds": 731.448532,
+    "supervisor_wall_seconds": 341.67857651599843,
+    "combined_cpu_seconds": 732.931509469,
+    "combined_wall_seconds": 348.7482563670019,
+    "peak_rss_bytes": 639823872,
+    "active_artifact_bytes": 66962035,
+    "export_payload_bytes": 67293665
+  },
+  "frozen_global_limits": {
+    "environment_steps": 12960,
+    "resets": 120,
+    "branches": 600,
+    "rule_decisions": 12360,
+    "model_initializations_or_loads": 12,
+    "optimizer_updates": 28800,
+    "model_batch_forwards": 38688,
+    "model_sample_evaluations": 179400,
+    "checkpoint_writes": 6,
+    "wall_seconds": 24300,
+    "cpu_seconds": 48600,
+    "rss_bytes": 4294967296,
+    "active_storage_bytes": 25769803776,
+    "aggregate_storage_bytes": 51539607552
+  }
+}

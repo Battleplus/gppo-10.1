@@ -1,0 +1,34 @@
+{
+  "legacy_runtime_root": "E:\\Z博士\\research-plans\\w1-action-relative-auxiliary-production-backend-completion-v1",
+  "legacy_runtime_root_linux": "/mnt/e/Z博士/research-plans/w1-action-relative-auxiliary-production-backend-completion-v1",
+  "reused_labels_path": "E:\\Z博士\\runs\\w1-action-outcome-learning-loop-history-repair-v1-once\\run-once\\learning-records.jsonl",
+  "reused_labels_path_linux": "/mnt/e/Z博士/runs/w1-action-outcome-learning-loop-history-repair-v1-once/run-once/learning-records.jsonl",
+  "reused_labels_sha256": "c502768a0483b485c78e9d23ee0a63e9a5595717c3524d38a243f167ccdaeca4",
+  "schema": "w1-action-outcome-runtime-inputs/1.0.0",
+  "packages": [
+    {
+      "id": "repaired_runtime",
+      "execution_manifest_sha256": "961016499ba5229112c116313ff80a87305eda48342c869212b696f280833a12"
+    },
+    {
+      "id": "oracle_runner",
+      "execution_manifest_sha256": "2bf84e49d151c0fa3be4a723df97eb5b41f1571bbd88def0c04c196c2e401843"
+    }
+  ],
+  "platforms": {
+    "windows": {
+      "repaired_runtime": "E:\\Z博士\\research-plans\\w1-light-repaired-fair-rerun-infra-repair-v1",
+      "oracle_runner": "E:\\Z博士\\research-plans\\w1-action-consequence-oracle-remaining-23-preparation-v1"
+    },
+    "linux": {
+      "repaired_runtime": "/mnt/e/Z博士/research-plans/w1-light-repaired-fair-rerun-infra-repair-v1",
+      "oracle_runner": "/mnt/e/Z博士/research-plans/w1-action-consequence-oracle-remaining-23-preparation-v1"
+    }
+  },
+  "preparation_calls": {
+    "environment": 0,
+    "model_initializations": 0,
+    "model_forwards": 0,
+    "training_updates": 0
+  }
+}

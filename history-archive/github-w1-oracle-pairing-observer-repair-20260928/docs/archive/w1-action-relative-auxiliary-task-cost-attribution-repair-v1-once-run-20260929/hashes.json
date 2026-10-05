@@ -1,0 +1,82 @@
+{
+  "schema": "w1-relative-auxiliary-postrun-hashes/1.0.0",
+  "attempt": "w1-action-relative-auxiliary-task-cost-attribution-repair-v1-once",
+  "files": {
+    "archive-status.md": {
+      "bytes": 918,
+      "sha256": "50e67eb3ad862c9208bcc8c8c678b7c8e4f03ece70adad451fb1fd1b9c1219d3"
+    },
+    "EXPORT_COMPLETE.json": {
+      "bytes": 246,
+      "sha256": "8d9062c9ab89ebbf6ea74f0c05090b7c6d2f586201b1a31d4b725ddaf922720e"
+    },
+    "export-manifest.json": {
+      "bytes": 10444,
+      "sha256": "06028c6b2f96af987a3e0af7880a4a45374362168d1651436665dcbf9b60860a"
+    },
+    "export-status.json": {
+      "bytes": 1053,
+      "sha256": "4e965dec02e317bdd6f00e5885d2167bb2a77f0747376bad23d07ca96b9883e6"
+    },
+    "infrastructure-settlement.json": {
+      "bytes": 461,
+      "sha256": "1203005a4c90a4aa0ea63a129243632617f35cba77b2497fd8b7cf0219415dd1"
+    },
+    "luna-final-review.md": {
+      "bytes": 1021,
+      "sha256": "817914bf5a15a5b96190240b2a81e72dd20e76c5b7b1de708bf566b2561d082a"
+    },
+    "native-settlement.json": {
+      "bytes": 523,
+      "sha256": "2ee3d028f130e5b5d6f005968fe76beadb46001704a100e47d592c634290a9a8"
+    },
+    "per-candidate-predictions.jsonl": {
+      "bytes": 135382,
+      "sha256": "e0346a59f502df14b8cf372c797940f1b4639527943289c12956cc75bc4c7ff1"
+    },
+    "prediction-gate.json": {
+      "bytes": 181,
+      "sha256": "9add1a99a309d5d6e748d4f1ca4b7b8f3927b216c82a81eea594152b81abb10a"
+    },
+    "prediction-metrics.json": {
+      "bytes": 38601,
+      "sha256": "f715001c4f0d8b05bda9e1de7396ec93a46b2c3453e91db1e0f3d4a2e6e82961"
+    },
+    "production-result.json": {
+      "bytes": 106,
+      "sha256": "7275807ab5a4d687c23dbce0ba3bc6a197aea34a11e61545fd9414375e125850"
+    },
+    "README.md": {
+      "bytes": 444,
+      "sha256": "d2f0854e2c57a6b35fe597fe0132e2989b8c190c6ce357a6983b4b3d930aa74e"
+    },
+    "report.md": {
+      "bytes": 5379,
+      "sha256": "ee882325dad3086c7c5840da14fd508009cba183f77a32f11e610b90d0d3c58f"
+    },
+    "resource-settlement.json": {
+      "bytes": 1494,
+      "sha256": "479bdf76063db486cbf8045f96e20b93915f67d5ec452ac5649fb7a236683ea8"
+    },
+    "result-summary.json": {
+      "bytes": 2773,
+      "sha256": "7a5413d854e1e09b3016522574635d85e754ce2e7f04044f53da7b06d514b25a"
+    },
+    "status.json": {
+      "bytes": 58,
+      "sha256": "688cff1241776a6d1d68c12ddcc3a94dc6d3846760e2134922d39ce4c974d2ed"
+    },
+    "supervisor-status.json": {
+      "bytes": 816,
+      "sha256": "aa6598567153441cb3340a1eb09bcf727b204b70c9462c56c9ab16c8a608c62a"
+    },
+    "task-cost-status.json": {
+      "bytes": 525,
+      "sha256": "dc934d01b4e9460805cdf6e839c0b4b2477a4349c155988b030a349e2aee6888"
+    },
+    "training.json": {
+      "bytes": 38666,
+      "sha256": "f540009a3aa06677e33d6e9c4e8cbc967b5e554488ea5f12e85f567bfb163bae"
+    }
+  }
+}

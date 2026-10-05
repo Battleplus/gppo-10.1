@@ -1,0 +1,8 @@
+{
+  "files": {
+    "luna-independent-review.md": "5651062bb4f2f61b22e45ee74ce1ec74859bba0cd817d1f96cb80a4a3ec4bf80",
+    "validation-report.md": "b8994059b92461011cf392742115556cffd974908da0d7714fd57d300bc8ebd8",
+    "validation-summary.json": "1cd8039ddf7ed68fe99954041eb94885d01a60c3bf0f68e1d0836cb83a4d90ee"
+  },
+  "schema": "w1-runtime-dependency-zero-step-evidence-hashes/1.0.0"
+}

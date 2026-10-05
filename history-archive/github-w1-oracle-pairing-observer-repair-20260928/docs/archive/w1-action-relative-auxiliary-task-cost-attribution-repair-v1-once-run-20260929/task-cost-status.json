@@ -1,0 +1,19 @@
+{
+  "schema": "w1-relative-auxiliary-task-cost-status/1.0.0",
+  "attempt": "w1-action-relative-auxiliary-task-cost-attribution-repair-v1-once",
+  "task_stage_executed": false,
+  "task_calls": 0,
+  "reason": "prediction_gate_stop",
+  "raw_cost_record_file_generated": false,
+  "A": {
+    "sample_count": 0,
+    "cpu_mean_ms": "not_evaluated",
+    "wall_p95_ms": "not_evaluated"
+  },
+  "B": {
+    "sample_count": 0,
+    "cpu_mean_ms": "not_evaluated",
+    "wall_p95_ms": "not_evaluated",
+    "cost_gate": "not_evaluated"
+  }
+}

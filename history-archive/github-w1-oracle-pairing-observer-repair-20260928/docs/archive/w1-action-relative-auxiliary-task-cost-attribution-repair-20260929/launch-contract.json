@@ -1,0 +1,21 @@
+{
+  "argument_probe": "\u4e2d\u6587 path with spaces 'quoted'",
+  "attempt": "w1-action-relative-auxiliary-task-cost-attribution-repair-v1-once",
+  "authorization_status": "NOT_APPROVED",
+  "external_token_sha256": "ccaa2994079e6d76e94d6db482dbcb6ae0c21c1f6cceee8c2a6935ec51810281",
+  "integration_fault": null,
+  "integration_test": false,
+  "linux_stage_entry": "wsl_stage_and_launch.py",
+  "native_child_python": "/home/asus/w1-action-relative-auxiliary-runtime-dependency-repair-v1-runtime/bin/python",
+  "native_entry": "native_launch.py",
+  "native_execution_root": "/home/asus/w1-action-relative-auxiliary-task-cost-attribution-repair-v1-once",
+  "native_python": "/home/asus/w1-action-relative-auxiliary-runtime-dependency-repair-v1-runtime/bin/python",
+  "one_shot": true,
+  "resource_request_sha256": "585d2fe331a33fb1308b2a402487b52e7b6761ee1763a52fb2a05ce14eabb292",
+  "schema": "w1-action-relative-auxiliary-launch-contract/2.0.0",
+  "windows_export_root": "/mnt/e/Z\u535a\u58eb/.codex-exports/w1-action-relative-auxiliary-task-cost-attribution-repair-v1-once",
+  "windows_source_root": "E:\\Z\u535a\u58eb\\research-plans\\w1-action-relative-auxiliary-task-cost-attribution-repair-v1",
+  "wsl_distribution": "Ubuntu-24.04",
+  "wsl_executable": "wsl.exe",
+  "wsl_source_root": "/mnt/e/Z\u535a\u58eb/research-plans/w1-action-relative-auxiliary-task-cost-attribution-repair-v1"
+}

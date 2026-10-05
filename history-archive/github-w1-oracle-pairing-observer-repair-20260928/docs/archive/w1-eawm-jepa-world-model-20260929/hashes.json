@@ -1,0 +1,146 @@
+{
+  "files": {
+    "BLOCKERS.md": {
+      "bytes": 1561,
+      "sha256": "c6d565cd389d59fdc346834b128af1419721ce0e5b9a1e61de0637f7b4e8419e"
+    },
+    "RESOURCE_REQUEST.json": {
+      "bytes": 4565,
+      "sha256": "e1763d6b846e4c7da294c6c62f185b3706cda8e54c2834ccae806dc9068eb9d0"
+    },
+    "archive-status.md": {
+      "bytes": 761,
+      "sha256": "74dad486dffab1307eeae06566e76df7c53e999da207c7f3a984e32f132039b3"
+    },
+    "budget-derivation.md": {
+      "bytes": 2922,
+      "sha256": "7ffbce823e52df609f1c4659af7b8c7882372b69f4531eacc0453e3ebcd895bb"
+    },
+    "checks.json": {
+      "bytes": 13759,
+      "sha256": "aa908caf426fd03cd991b958445de200711f93db3940154cada9589dd8b9fee8"
+    },
+    "data-availability.md": {
+      "bytes": 3051,
+      "sha256": "3c56f98741053106af70f9ee8d6f04c74f9c07606443ba832436dcd47e1672d8"
+    },
+    "event_jepa_losses.py": {
+      "bytes": 3440,
+      "sha256": "fd9753f62bc2fd88bcb5797554dfb787a8f56b2e5088848cebd6ac27e00b3aae"
+    },
+    "experiment-design.md": {
+      "bytes": 2462,
+      "sha256": "9a990f75639f4068bbcd3c4b976e7cd8944cce84886deffd3dc8f4772543b059"
+    },
+    "experiment-matrix.json": {
+      "bytes": 22479,
+      "sha256": "19c0e7d07b1343342c80445f39502da811b4fabe943d2a1c7a1160a501bf9d12"
+    },
+    "freeze_experiment_matrix.py": {
+      "bytes": 2188,
+      "sha256": "c13adcd0d8393ed62a3ca2dd9ac07de6909d1452fa33f89eecf5bb9c6ad9d079"
+    },
+    "freeze_parent_split.py": {
+      "bytes": 3306,
+      "sha256": "27c9ce1ee0553d4f9335e611570cb7c308c1706ab4f7369212eb18fbde83e4cc"
+    },
+    "gppo_jepa_adapter.py": {
+      "bytes": 3313,
+      "sha256": "25614b77eb9fe383b63864e2594c209868be1f8f4a5c08f9df2edab7993d7637"
+    },
+    "gppo_w1_integration.py": {
+      "bytes": 9327,
+      "sha256": "55d89904de668ae964e4eaf5509845cfba49d60b55b269c2096d05928a8ccd5c"
+    },
+    "hash_package.py": {
+      "bytes": 976,
+      "sha256": "e5042aa62f28f2f48d1299352d98e3d48d135102082db61e85e18338172e8126"
+    },
+    "input-index.json": {
+      "bytes": 1818,
+      "sha256": "f094443798d8d306e59fb5fc34e3ff25885b5fe4f81e6144d00cdcefda782c14"
+    },
+    "luna-independent-review.md": {
+      "bytes": 2364,
+      "sha256": "2e19de0b419076a8c03e830c433b65d310ee20c58dd99702847ccebc6d4ffac6"
+    },
+    "meeting-matrix.md": {
+      "bytes": 1127,
+      "sha256": "dec82c4639ce7bd2c2a3d37cf36c7fac36cacd7c392ef6f1cf1b11926fc6273b"
+    },
+    "parent-split.json": {
+      "bytes": 21670,
+      "sha256": "af24bdaf4eb2a2b1156a689b7629f493b918c8fb7b283dd34cb967a8a75b39b3"
+    },
+    "production_chain_check.py": {
+      "bytes": 2378,
+      "sha256": "d018b567f935278821e94f0c51cfafe8b86ecee7136287d9ddcb19627d789c4f"
+    },
+    "protocol.md": {
+      "bytes": 3636,
+      "sha256": "ddd1492eb8d7f0a6e0df3be34cd26d5528b607e7212b5fc263e6d1c6d27f7531"
+    },
+    "public_event_targets.py": {
+      "bytes": 3010,
+      "sha256": "fe4c9856d286bdd5105ea8da21f632cfc584dbd0d2a3b073073249ea8108d632"
+    },
+    "public_transition_contract.py": {
+      "bytes": 7580,
+      "sha256": "e11ef0d242535a810ce6ae459a1cabd0d2afa533ce78e07cceb7164810425e3d"
+    },
+    "report.md": {
+      "bytes": 3574,
+      "sha256": "8e716623511d5daeca5321447c9500d022f676a0c34b0199b0126f23c02415e9"
+    },
+    "research-identity.json": {
+      "bytes": 757,
+      "sha256": "80f94c0fd5a5d3a51c2236242a1490258ba0fc1879bb2188d07604a6e9684433"
+    },
+    "reuse-map.md": {
+      "bytes": 2348,
+      "sha256": "e229b4394b01044f5e72801f50ee0814af9fb5f16200671230fb8a003018fd44"
+    },
+    "run_static_checks.py": {
+      "bytes": 1787,
+      "sha256": "1d25588a0eb91a2f54298ce7ee6ecc122027f2d40bc18e86e867841fb7bc553d"
+    },
+    "static-audit.json": {
+      "bytes": 7255,
+      "sha256": "fd24c0d33b0009b0d537d83c482d2657d278154d974987980cce7bda08fe1844"
+    },
+    "static_audit.py": {
+      "bytes": 4210,
+      "sha256": "51b5b62da0d3659b15febba5e0445e19e23991ab8f27073fd68240d9f59c97ce"
+    },
+    "test_w1_world_model.py": {
+      "bytes": 14313,
+      "sha256": "753bb6f16dcacfd8a0f0debb898554f051921b0b33e485b7b57baa8c4a7b8eee"
+    },
+    "unique-launch-command.md": {
+      "bytes": 687,
+      "sha256": "b02715351be7f77e19e08ecefe8f11da057d00d6060016d541b1b97305f54267"
+    },
+    "validate_resource_request.py": {
+      "bytes": 1652,
+      "sha256": "caa85ed8939036ccffcceee20492ff345b85c25b3858779106f5030ddade1764"
+    },
+    "w1_graph_jepa.py": {
+      "bytes": 6475,
+      "sha256": "84f8b4ef6ba2c7b7d26dd64fbd8d027a68847c1aedd05e053a7110410dc42eba"
+    },
+    "w1_public_adapter.py": {
+      "bytes": 11206,
+      "sha256": "00860b1443a1a44e4e56d10a6fa772e5838902f2c1c6d8601caebceaed69b253"
+    },
+    "w1_training.py": {
+      "bytes": 3725,
+      "sha256": "b41833e6c154f200fd946622fa4984470640b98e5bfc80a04eb84e3db49a445a"
+    },
+    "world_model_pipeline.py": {
+      "bytes": 3927,
+      "sha256": "9cb7207dec776a1e970f7b3fc594815c780cdcd40c7b4be2792ed543ff942a5d"
+    }
+  },
+  "package": "w1-eawm-jepa-world-model-v1",
+  "schema": "w1-eawm-jepa-hashes/1.0.0"
+}

@@ -1,0 +1,23 @@
+{
+  "attempt": "w1-action-relative-auxiliary-wiring-contract-repair-v1-once",
+  "status": "technical_stop",
+  "stop_reason": "runner.py hard-coded attempt differs from frozen request attempt",
+  "environment_steps": 0,
+  "resets": 0,
+  "branches": 0,
+  "rule_decisions": 0,
+  "model_initializations": 0,
+  "batch_forwards": 0,
+  "sample_evaluations": 0,
+  "optimizer_updates": 0,
+  "checkpoint_writes": 0,
+  "task_stage_executed": false,
+  "prediction_gate_evaluated": false,
+  "combined_cpu_seconds": 0.529277123,
+  "combined_wall_seconds": 2.6485621509982593,
+  "peak_rss_upper_bound_bytes": 55488512,
+  "staging_bytes": 231692,
+  "export_payload_bytes": 234847,
+  "automatic_retry": false,
+  "export_verified": true
+}
