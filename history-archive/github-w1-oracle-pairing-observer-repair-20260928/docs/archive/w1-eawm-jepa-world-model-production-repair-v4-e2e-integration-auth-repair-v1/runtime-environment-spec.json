@@ -1,0 +1,19 @@
+{
+  "base": "Ubuntu-24.04 WSL native ext4, Python 3.12.3 venv",
+  "cuda_required": false,
+  "install_source": "https://download.pytorch.org/whl/cpu",
+  "interpreter": "/home/asus/w1-action-relative-auxiliary-runtime-dependency-repair-v1-runtime/bin/python",
+  "packages": {
+    "numpy": "1.26.4",
+    "torch": "2.8.0+cpu"
+  },
+  "schema": "w1-runtime-environment-spec/1.0.0",
+  "smoke": {
+    "imports": [
+      "numpy",
+      "torch"
+    ],
+    "requires_cpu_only_build": true,
+    "requires_venv_prefix_match": true
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "w1-eawm-jepa-run-summary/1.0.0",
+  "attempt": "w1-eawm-jepa-world-model-production-repair-v4-e2e-integration-auth-repair-v1-once",
+  "status": "prediction_gate_stop",
+  "policy_training_executed": false,
+  "task_comparison_executed": false,
+  "prediction_gate": {
+    "coverage_pass": true,
+    "valid_parent_count": 8,
+    "g1_transparent_gate_pass": false,
+    "g2_event_increment_gate_pass": false,
+    "pass": false,
+    "thresholds": {
+      "g1_regret_margin": 0.005,
+      "g2_regret_margin": 0.0025,
+      "g2_event_brier_margin": 0.01,
+      "parents_no_worse": 4
+    }
+  },
+  "prediction_metrics": {
+    "g1_minus_transparent_macro_regret": -0.00006944444418574374,
+    "g2_minus_g1_macro_regret": -0.0010600252581449848,
+    "g2_minus_g1_event_brier": -0.21939296915625683,
+    "parents_g1_no_worse_than_transparent": 7,
+    "parents_g2_no_worse_than_g1": 8,
+    "parent_macro_denominator": 8,
+    "g1_ensemble_parent_macro_regret": 0.0014072474790737034,
+    "g2_ensemble_parent_macro_regret": 0.0003472222209287187,
+    "transparent_parent_macro_regret": 0.0014766919232594472,
+    "g1_ensemble_pairwise_direction_accuracy": 0.17344599844599845,
+    "g2_ensemble_pairwise_direction_accuracy": 0.8645493395493395,
+    "g1_ensemble_outcome_mae": 0.07262733526775741,
+    "g2_ensemble_outcome_mae": 0.06893864020665964,
+    "g1_ensemble_event_brier": 0.2457994995606104,
+    "g2_ensemble_event_brier": 0.026406530404353555
+  },
+  "task_result": "未评价",
+  "cost_result": "未评价"
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "w1-oracle-remaining-23-github-artifact-index/1.0.0",
+  "local_package": "E:\\Z博士\\research-plans\\w1-action-consequence-oracle-remaining-23-preparation-v1",
+  "package_execution_manifest_sha256": "2bf84e49d151c0fa3be4a723df97eb5b41f1571bbd88def0c04c196c2e401843",
+  "package_hashes_sha256": "d0e0388174dce35787b18cc377e5455f6fc8874673b73b5e79a973147fb97ac1",
+  "github_scope": "Preparation contracts, changed execution and analysis code, tests, test output, and hash manifests. This is not a deployable runtime or a full evidence backup.",
+  "excluded_reused_evidence": [
+    {"path": "reused-first-unit/branch-summaries.jsonl", "bytes": 4956232, "sha256": "b6e50f71efb0593b04f1a08ffb7eee08e15155241561bc58d612a22700c8e8e2"},
+    {"path": "reused-first-unit/candidate-decisions.jsonl", "bytes": 1082, "sha256": "73c02041ca88aa7beb51e3ad7ced8ff508e4e628791a1573f8547eb8d0969739"},
+    {"path": "reused-first-unit/communication-pairing.jsonl", "bytes": 519, "sha256": "3db36921398c00c8dc6741767299cf184240c1ed1b2359078e2af48b93442df1"},
+    {"path": "reused-first-unit/source-execution-manifest.json", "bytes": 4616, "sha256": "99643974f96681ebd1d70a24bfd1190218caf7868a08bb80fc5fdb38e98b9353"},
+    {"path": "reused-first-unit/source-hashes.json", "bytes": 4162, "sha256": "694e7fefabf7ac1139741b4cb742d520ac7ce6a5540ad3872b366a39e443bed4"},
+    {"path": "reused-first-unit/status.json", "bytes": 2192, "sha256": "b8c69b4c167c946e8c4c21e64ea508e6fb5cdd40db91d5627991d2345d47a2ba"},
+    {"path": "reused-first-unit/steps.jsonl", "bytes": 21077232, "sha256": "539e1c704221715c8f7c561ec0a7fee21f6f16ef1b3e2dfb1b14736c25412549"},
+    {"path": "reused-first-unit/technical-gate.json", "bytes": 2133, "sha256": "614d9373d3c2db15a9066268d87d8eb3b6fc888c87ed9a60fc720cf4950b3d2f"}
+  ],
+  "other_exclusions": [
+    "raw one-shot launch token",
+    "credentials and authorization secrets",
+    "unchanged native runtime files already identified by the parent archive",
+    "SQLite ledgers, checkpoints, and future dynamic outputs"
+  ]
+}

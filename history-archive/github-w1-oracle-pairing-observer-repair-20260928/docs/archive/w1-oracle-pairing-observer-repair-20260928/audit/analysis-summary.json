@@ -1,0 +1,58 @@
+{
+  "arms": [
+    "action-00",
+    "action-01",
+    "action-06",
+    "action-07",
+    "action-18",
+    "action-19",
+    "action-24"
+  ],
+  "external_fate_status_counts": {
+    "not_comparable_under_frozen_key": 14,
+    "saved=pass;offline=pass": 135
+  },
+  "frozen_verifier_reproduction": {
+    "common_identities": 983,
+    "duplicates_preserved": true,
+    "mismatched_arm_comparisons": 388,
+    "mismatched_unique_identities": 149,
+    "mismatches_by_link": {
+      "ack": 6,
+      "command": 8,
+      "telemetry": 135
+    }
+  },
+  "hard_zero_this_audit": {
+    "environment_instances": 0,
+    "environment_resets": 0,
+    "environment_steps": 0,
+    "model_forwards": 0,
+    "model_initializations": 0,
+    "training_updates": 0
+  },
+  "historical_scope": {
+    "completed_fair_rerun": "not_invalidated; verifier defect is in the oracle runner",
+    "oracle_7_branches": "invalid_for_oracle_analysis_until_a_new_authorized_gate_passes",
+    "shared_runtime_hash_identity": {
+      "fair_rerun_environment_manifest": "0f4615d11604a7cd1cc74c94f0258dfc6cb59748f64a075276ec90941db094b1",
+      "oracle_communication": "fcaada4fea48446aae509fb97f4b6b8275d5b6b9dda3bcdef00c5c392e6011ce",
+      "oracle_environment": "0f4615d11604a7cd1cc74c94f0258dfc6cb59748f64a075276ec90941db094b1",
+      "technical_environment": "0f4615d11604a7cd1cc74c94f0258dfc6cb59748f64a075276ec90941db094b1"
+    },
+    "two_parent_technical_validation": "not_invalidated; it compared primitive call identity and fate"
+  },
+  "input_branch_count": 7,
+  "interpretation": {
+    "actual_external_pairing_failure_found": false,
+    "all_149_accounted_for": true,
+    "original_gate_retroactively_passed": false,
+    "snapshot_contamination_evidence_found": false,
+    "technical_stop_was_false_positive_for_external_pairing": true
+  },
+  "root_cause_counts": {
+    "downstream_stage_overcomparison": 135,
+    "wrong_identity_grouping": 14
+  },
+  "schema": "w1-oracle-pairing-root-cause/1.0.0"
+}

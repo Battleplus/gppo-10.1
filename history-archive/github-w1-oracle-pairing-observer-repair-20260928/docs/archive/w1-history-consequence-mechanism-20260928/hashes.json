@@ -1,0 +1,49 @@
+{
+  "files": [
+    {
+      "file": "audit.py",
+      "bytes": 4198,
+      "sha256": "c57ede73450fbcfe9efad16d32e947679c29f88fe25180f125091d749f24a44c"
+    },
+    {
+      "file": "capability-audit.md",
+      "bytes": 2610,
+      "sha256": "9c95a0b43309ac81ddd52009cf3475b0e7d706a9d1ae9c328dfd397fc024ed9b"
+    },
+    {
+      "file": "checks.json",
+      "bytes": 373,
+      "sha256": "d08f8641e64344d3cc7b1d09d09b6f5dc2aa5468ea90008046dceb508e0921cd"
+    },
+    {
+      "file": "decision-evidence.jsonl",
+      "bytes": 430238,
+      "sha256": "eb0790dcd77f6bc7cd85e2326fe463b66d68cc729862ea9c020781475666601c"
+    },
+    {
+      "file": "input-index.json",
+      "bytes": 1185,
+      "sha256": "643f1b8ed19173cf381abd05a20479f166d13b9b5273e2e3f7a8876c78f3c301"
+    },
+    {
+      "file": "mechanism-proposal.md",
+      "bytes": 4946,
+      "sha256": "fdf158eddbb5539eb813c037244784f72d1277275c0021a3879cb98091d8bf45"
+    },
+    {
+      "file": "README.md",
+      "bytes": 1143,
+      "sha256": "4ce0f50bf4e6b92bd25a29ea787ef030bb443c36288fd88fd3cdce2e2f39e617"
+    },
+    {
+      "file": "summary.json",
+      "bytes": 3590,
+      "sha256": "f729e0a798821d36e32beb1b384d2badc434c707c95b28e1392539b1a5a9bde0"
+    },
+    {
+      "file": "verification.txt",
+      "bytes": 3687,
+      "sha256": "1c872363ef4c3b822fa85465c036b31fad4520b7a22422644795de837d6e7f46"
+    }
+  ]
+}

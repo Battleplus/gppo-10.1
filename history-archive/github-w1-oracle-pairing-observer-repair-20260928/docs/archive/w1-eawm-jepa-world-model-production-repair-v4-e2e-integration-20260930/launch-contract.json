@@ -1,0 +1,20 @@
+{
+  "argument_probe": "中文 path with spaces 'quoted'",
+  "attempt": "w1-eawm-jepa-world-model-production-repair-v4-e2e-integration-once",
+  "authorization_status": "NOT_APPROVED",
+  "integration_fault": null,
+  "integration_test": false,
+  "linux_stage_entry": "wsl_stage_and_launch.py",
+  "native_child_python": "/home/asus/w1-action-relative-auxiliary-runtime-dependency-repair-v1-runtime/bin/python",
+  "native_entry": "native_launch.py",
+  "native_execution_root": "/home/asus/w1-eawm-jepa-world-model-production-repair-v4-e2e-integration-once",
+  "native_python": "/home/asus/w1-action-relative-auxiliary-runtime-dependency-repair-v1-runtime/bin/python",
+  "one_shot": true,
+  "resource_request_sha256": "5bdfe851823b8e9eb5c956e025e9305e59cb5565adb6eac615d461e45a34b6d6",
+  "schema": "w1-eawm-jepa-launch-contract/2.1.0",
+  "windows_export_root": "/mnt/e/Z博士/.codex-exports/w1-eawm-jepa-world-model-production-repair-v4-e2e-integration-once",
+  "windows_source_root": "E:\\Z博士\\research-plans\\w1-eawm-jepa-world-model-production-repair-v4-e2e-integration",
+  "wsl_distribution": "Ubuntu-24.04",
+  "wsl_executable": "wsl.exe",
+  "wsl_source_root": "/mnt/e/Z博士/research-plans/w1-eawm-jepa-world-model-production-repair-v4-e2e-integration"
+}

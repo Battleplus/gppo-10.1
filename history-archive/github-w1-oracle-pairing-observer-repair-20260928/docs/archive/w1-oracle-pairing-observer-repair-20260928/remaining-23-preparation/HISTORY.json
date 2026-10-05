@@ -1,0 +1,55 @@
+{
+  "schema": "w1-oracle-remaining-23-history/1.0.0",
+  "credit_to_new_request": 0,
+  "completed_observer_gate": {
+    "attempt": "w1-action-consequence-oracle-observer-single-unit-gate-v1-once",
+    "environment_steps": 90,
+    "resets": 1,
+    "public_rule_decisions": 84,
+    "branches": 7,
+    "verified_calls": 199,
+    "unknown_calls": 0,
+    "wall_seconds": 10.019395564988372,
+    "complete_process_cpu_seconds": 2.870652114,
+    "peak_rss_upper_bound_bytes": 87965696,
+    "aggregate_native_plus_export_bytes": 52778012,
+    "research_sample_reuse": "count exactly once as validation-0000/repeat-0 after zero-call audit",
+    "budget_credit": 0
+  },
+  "prior_stopped_oracle_attempt": {
+    "attempt": "w1-action-consequence-oracle-ceiling-v1-once",
+    "status": "technical_stop_no_retry",
+    "environment_steps": 90,
+    "resets": 1,
+    "public_rule_decisions": 84,
+    "branches": 7,
+    "research_sample_reuse": "prohibited",
+    "budget_credit": 0
+  },
+  "historical_recorded_cumulative": {
+    "scope": "Recorded cumulative accounting through the completed observer gate; known work outside indexed sources is not reconstructed.",
+    "reserved_consumption": {
+      "actor_sample_evaluations": 273508,
+      "classical_decisions": 2120,
+      "encode_sample_evaluations": 282471,
+      "environment_steps": 51206,
+      "model_loads_or_initializations": 61,
+      "policy_optimizer_steps": 2848,
+      "resets_upper": 3708,
+      "world_batch_invocations": 6184,
+      "world_optimizer_steps": 560,
+      "world_sample_evaluations": 145080
+    },
+    "wall_seconds_upper": 27647.208186807645,
+    "cpu_seconds_upper": 55287.547361454005,
+    "unknown_calls_preserved": true,
+    "historical_scope_complete": false,
+    "cumulative_resource_acceptance": false
+  },
+  "cost_standard": {
+    "mean_cpu_ms_per_decision": 10.0,
+    "p95_wall_ms_per_decision": 50.0,
+    "status": "Historical FULL CPU cost failure remains; thresholds unchanged."
+  },
+  "accounting_rule": "The future attempt reports its new calls separately and historical costs cumulatively. No old consumption becomes available budget."
+}

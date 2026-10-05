@@ -1,0 +1,30 @@
+{
+  "base_manifest_sha256": "238a5157947cd98a7fb6c0ea5440b9583383d27dc9bbeb9c7d8f7818f49af28a",
+  "changed_root_files": [
+    "BLOCKERS.md",
+    "RESOURCE_REQUEST.json",
+    "archive-status.md",
+    "checks.json",
+    "e2e-engineering-report.md",
+    "execution-manifest.json",
+    "freeze_runner_package.py",
+    "hashes.json",
+    "launch-contract.json",
+    "luna-independent-review.md",
+    "manifest_contract.py",
+    "report.md",
+    "research-identity.json",
+    "static-audit.json",
+    "test_launch_authorization.py",
+    "unique-launch-command.md"
+  ],
+  "new_hashes_sha256": "24da3ecd62baea3340d38c9b27db599fb074d275beda952c405202277761253b",
+  "new_manifest_sha256": "db17669cbeb472415b550015d5272f04574e7daeebb923a6f39f001613e39c6a",
+  "old_package_unchanged": true,
+  "protected_research_files_same_sha256": true,
+  "resource_request_new_attempt": "w1-eawm-jepa-world-model-production-repair-v4-e2e-integration-auth-repair-v1-once",
+  "resource_request_old_attempt": "w1-eawm-jepa-world-model-production-repair-v4-e2e-integration-once",
+  "resource_request_values_unchanged_except_attempt": true,
+  "schema": "w1-auth-repair-source-diff/1.0.0",
+  "unexpected_changed_files": []
+}

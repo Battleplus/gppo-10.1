@@ -1,0 +1,22 @@
+{
+  "schema": "w1-eawm-jepa-export-identity-summary/1.0.0",
+  "attempt": "w1-eawm-jepa-world-model-production-repair-v4-e2e-integration-auth-repair-v1-once",
+  "execution_manifest_sha256": "db17669cbeb472415b550015d5272f04574e7daeebb923a6f39f001613e39c6a",
+  "hashes_sha256": "24da3ecd62baea3340d38c9b27db599fb074d275beda952c405202277761253b",
+  "resource_request_sha256": "69c9252598567832cd07640f3420a9ff07e523648fce8aa3fcd9db73119b9ce5",
+  "controlled_export": {
+    "status": "verified",
+    "file_count": 96,
+    "payload_bytes": 131278846,
+    "export_manifest_sha256": "2c78ad80e4a90e5578b8deb15bc964f086f1ba53468f04d06693ce4243f61d05"
+  },
+  "local_export_path": "E:\\Z博士\\.codex-exports\\w1-eawm-jepa-world-model-production-repair-v4-e2e-integration-auth-repair-v1-once",
+  "excluded_from_git": [
+    "candidate trace",
+    "checkpoints",
+    "SQLite ledger",
+    "authorization",
+    "one-time token",
+    "large raw logs"
+  ]
+}

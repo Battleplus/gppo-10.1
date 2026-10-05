@@ -1,0 +1,13 @@
+{
+  "schema": "w1-eawm-jepa-research-identity/1.0.0",
+  "research": "W1 transparent dynamics assisted task-relevant action-conditioned world model",
+  "package": "w1-eawm-jepa-world-model-production-repair-v1",
+  "status": "PREPARATION_COMPLETE_NOT_APPROVED",
+  "action_contract": {"candidates": 24, "noop": 24, "total": 25},
+  "world_model": "Graph-JEPA with public state and event heads",
+  "event_supervision": "independently switchable; GES excluded from first matrix",
+  "policy_integration": "frozen candidate prior with original reward and legal mask unchanged",
+  "dynamic_calls": {"environment": 0, "model_initialization": 0, "checkpoint_load": 0, "training_update": 0},
+  "historical_negative_results_preserved": true,
+  "resource_request_status": "NOT_APPROVED"
+}

@@ -1,0 +1,2 @@
+{"attempt": "w1-eawm-jepa-world-model-production-repair-v4-e2e-integration-auth-repair-v1-once", "schema": "w1-linux-preflight/2.0.0", "staging_started": false, "status": "preflight_pass", "worker_started": false}
+{"attempt": "w1-eawm-jepa-world-model-production-repair-v4-e2e-integration-auth-repair-v1-once", "dependency_probe": {"cpu_only": true, "python": "/usr/bin/python3.12", "torch": "2.8.0+cpu"}, "elapsed_wall_seconds": 3.4048945000004096, "staging_started": false, "status": "preflight_pass", "worker_started": false, "wsl_returncode": 0}

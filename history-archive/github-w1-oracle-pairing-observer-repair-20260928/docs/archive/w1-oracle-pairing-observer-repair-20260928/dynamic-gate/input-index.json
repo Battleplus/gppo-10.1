@@ -1,0 +1,17 @@
+{
+  "schema": "w1-oracle-observer-single-unit-postrun-input-index/1.0.0",
+  "inputs": [
+    {"role":"frozen_execution_manifest","path":"E:\\Z博士\\research-plans\\w1-action-consequence-oracle-pairing-observer-repair-v1\\execution-manifest.json","sha256":"99643974f96681ebd1d70a24bfd1190218caf7868a08bb80fc5fdb38e98b9353"},
+    {"role":"frozen_hashes","path":"E:\\Z博士\\research-plans\\w1-action-consequence-oracle-pairing-observer-repair-v1\\hashes.json","sha256":"694e7fefabf7ac1139741b4cb742d520ac7ce6a5540ad3872b366a39e443bed4"},
+    {"role":"supervisor_status","path":"E:\\Z博士\\runs\\w1-action-consequence-oracle-observer-single-unit-gate-v1-once\\supervisor-status.json","sha256":"5abfd343f0aa568b2a28d2ed700c5232fcf83e048113c5ee5fb081f75983d238"},
+    {"role":"worker_status","path":"E:\\Z博士\\runs\\w1-action-consequence-oracle-observer-single-unit-gate-v1-once\\run-once\\status.json","sha256":"b8c69b4c167c946e8c4c21e64ea508e6fb5cdd40db91d5627991d2345d47a2ba"},
+    {"role":"technical_gate","path":"E:\\Z博士\\runs\\w1-action-consequence-oracle-observer-single-unit-gate-v1-once\\run-once\\technical-gate.json","sha256":"614d9373d3c2db15a9066268d87d8eb3b6fc888c87ed9a60fc720cf4950b3d2f"},
+    {"role":"communication_pairing","path":"E:\\Z博士\\runs\\w1-action-consequence-oracle-observer-single-unit-gate-v1-once\\run-once\\communication-pairing.jsonl","sha256":"3db36921398c00c8dc6741767299cf184240c1ed1b2359078e2af48b93442df1"},
+    {"role":"branch_summaries","path":"E:\\Z博士\\runs\\w1-action-consequence-oracle-observer-single-unit-gate-v1-once\\run-once\\branch-summaries.jsonl","sha256":"b6e50f71efb0593b04f1a08ffb7eee08e15155241561bc58d612a22700c8e8e2"},
+    {"role":"export_manifest","path":"E:\\Z博士\\runs\\w1-action-consequence-oracle-observer-single-unit-gate-v1-once\\export-manifest.json","sha256":"c1124832a421c46283e9f45ed2c53c0569b53b552c5358f5aa606464e6d1f86b"},
+    {"role":"export_completion","path":"E:\\Z博士\\runs\\w1-action-consequence-oracle-observer-single-unit-gate-v1-once\\EXPORT_COMPLETE.json","sha256":"463c2acf286b2d655bfb8659ff2c1dd2b4045ebf3bb1b728e4bccd955a624edc"}
+  ],
+  "environment_instances_during_postrun_analysis": 0,
+  "model_calls_during_postrun_analysis": 0,
+  "training_updates_during_postrun_analysis": 0
+}

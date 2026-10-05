@@ -1,0 +1,48 @@
+{
+  "attempt": "w1-eawm-jepa-world-model-production-repair-v4-e2e-integration-auth-repair-v1-once",
+  "attempt_manifest_hashes_request_all_match": true,
+  "authorization_fields": [
+    "attempt",
+    "execution_manifest_sha256",
+    "hashes_sha256",
+    "resource_request_sha256",
+    "schema",
+    "status",
+    "token_sha256"
+  ],
+  "authorization_file_sha256": "488633775b732bc9732747d5cda03cb06945ddfdb346e522583861a3517116d0",
+  "authorization_no_trailing_nonwhitespace": true,
+  "authorization_single_object": true,
+  "authorization_status": "NOT_APPROVED",
+  "authorization_token_digest_is_null": true,
+  "authorization_types": {
+    "attempt": "string",
+    "execution_manifest_sha256": "string",
+    "hashes_sha256": "string",
+    "resource_request_sha256": "string",
+    "schema": "string",
+    "status": "string",
+    "token_sha256": "null"
+  },
+  "dependency_probe": {
+    "cpu_only": true,
+    "python": "/usr/bin/python3.12",
+    "torch": "2.8.0+cpu"
+  },
+  "formal_authorization_granted": false,
+  "formal_experiment_started": false,
+  "hashes_sha256": "24da3ecd62baea3340d38c9b27db599fb074d275beda952c405202277761253b",
+  "linux_preflight_status": "preflight_pass",
+  "linux_staging_started": false,
+  "linux_worker_started": false,
+  "manifest_bound_root_file_count": 70,
+  "manifest_sha256": "db17669cbeb472415b550015d5272f04574e7daeebb923a6f39f001613e39c6a",
+  "resource_request_sha256": "69c9252598567832cd07640f3420a9ff07e523648fce8aa3fcd9db73119b9ce5",
+  "resource_request_status": "NOT_APPROVED",
+  "resource_request_values_unchanged_except_attempt": true,
+  "schema": "w1-auth-repair-final-verification/1.0.0",
+  "staging_started": false,
+  "windows_preflight_exit_code": 0,
+  "windows_preflight_status": "preflight_pass",
+  "worker_started": false
+}

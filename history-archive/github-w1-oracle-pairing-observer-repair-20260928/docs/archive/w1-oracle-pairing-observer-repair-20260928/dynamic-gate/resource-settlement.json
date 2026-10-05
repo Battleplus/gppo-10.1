@@ -1,0 +1,61 @@
+{
+  "schema": "w1-oracle-observer-single-unit-resource-settlement/1.0.0",
+  "attempt": "w1-action-consequence-oracle-observer-single-unit-gate-v1-once",
+  "status": "technical_gate_complete",
+  "final_resource_pass": true,
+  "actual_calls": {
+    "environment_steps": 90,
+    "resets": 1,
+    "candidate_scans": 2,
+    "public_rule_decisions": 84,
+    "snapshot_captures": 1,
+    "branch_snapshot_copies": 7,
+    "branches": 7,
+    "forced_first_actions": 7,
+    "model_initializations_or_loads": 0,
+    "encode_forwards": 0,
+    "actor_forwards": 0,
+    "world_forwards": 0,
+    "policy_updates": 0,
+    "world_updates": 0,
+    "offline_predictor_updates": 0
+  },
+  "accounting": {
+    "verified_calls": 199,
+    "pending_calls": 0,
+    "unknown_calls": 0,
+    "integrity": "ok",
+    "automatic_retry": false,
+    "worker_relaunched": false
+  },
+  "resources": {
+    "worker_wall_seconds": 5.886063554993598,
+    "worker_complete_process_cpu_seconds": 2.522477,
+    "combined_wall_seconds": 10.019395564988372,
+    "combined_complete_process_cpu_seconds": 2.870652114,
+    "peak_rss_bytes": 83021824,
+    "peak_rss_upper_bound_bytes": 87965696,
+    "active_artifact_bytes": 26072779,
+    "export_payload_bytes": 26389006,
+    "aggregate_native_plus_export_bytes": 52778012
+  },
+  "limits": {
+    "environment_steps": 450,
+    "resets": 1,
+    "public_rule_decisions": 426,
+    "branches": 25,
+    "wall_seconds": 660,
+    "complete_process_cpu_seconds": 1320,
+    "all_resident_rss_bytes": 4294967296,
+    "active_artifact_bytes": 536870912,
+    "aggregate_native_plus_verified_export_bytes": 1073741824
+  },
+  "export": {
+    "status": "verified",
+    "file_count": 54,
+    "manifest_sha256": "c1124832a421c46283e9f45ed2c53c0569b53b552c5358f5aa606464e6d1f86b",
+    "independent_mismatch_count": 0
+  },
+  "historical_credit": 0,
+  "historical_10ms_cost_failure_preserved": true
+}

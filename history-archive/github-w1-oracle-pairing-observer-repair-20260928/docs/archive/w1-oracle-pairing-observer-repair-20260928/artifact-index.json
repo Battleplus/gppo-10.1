@@ -1,0 +1,85 @@
+{
+  "schema": "w1-oracle-observer-repair-github-archive-index/1.0.0",
+  "date": "2026-09-28",
+  "repository": "Battleplus/GPPO_WORLD_9.20",
+  "branch": "archive/w1-oracle-pairing-observer-repair-20260928",
+  "local_packages": [
+    {
+      "role": "root_cause_audit",
+      "path": "E:\\Z博士\\research-plans\\w1-oracle-pairing-root-cause-v1",
+      "hashes_json_sha256": "24a12e8cf7582258e85d4a1c8764588450897754e7f505df0e2ba0f941eef911"
+    },
+    {
+      "role": "observer_repair_and_single_unit_gate",
+      "path": "E:\\Z博士\\research-plans\\w1-action-consequence-oracle-pairing-observer-repair-v1",
+      "execution_manifest_sha256": "99643974f96681ebd1d70a24bfd1190218caf7868a08bb80fc5fdb38e98b9353",
+      "hashes_json_sha256": "694e7fefabf7ac1139741b4cb742d520ac7ce6a5540ad3872b366a39e443bed4",
+      "status": "CONSUMED_BY_COMPLETED_SINGLE_UNIT_GATE"
+    },
+    {
+      "role": "remaining_23_preparation",
+      "path": "E:\\Z博士\\research-plans\\w1-action-consequence-oracle-remaining-23-preparation-v1",
+      "execution_manifest_sha256": "2bf84e49d151c0fa3be4a723df97eb5b41f1571bbd88def0c04c196c2e401843",
+      "hashes_json_sha256": "d0e0388174dce35787b18cc377e5455f6fc8874673b73b5e79a973147fb97ac1",
+      "status": "CONSUMED_BY_COMPLETED_ONE_SHOT_ATTEMPT"
+    },
+    {
+      "role": "remaining_23_postrun",
+      "path": "E:\\Z博士\\research-plans\\w1-action-consequence-oracle-remaining-23-v1-postrun",
+      "hashes_json_sha256": "3401fbc6d4c5dc0cac14f1c6a2d3e34ab3d8845dd2e9424d471ea424c5f31736",
+      "status": "COMPLETE_GATE_FAILED"
+    }
+  ],
+  "excluded_raw_artifacts": [
+    {
+      "reason": "large raw environment step log",
+      "path": "E:\\Z博士\\runs\\w1-action-consequence-oracle-ceiling-v1-once\\run-once\\steps.jsonl",
+      "bytes": 21077142,
+      "sha256": "afbfc6cab6074e1997a0dbd5b4ae8416d12a2af0b7d68729a9159e3dde67529c"
+    },
+    {
+      "reason": "large raw branch summaries",
+      "path": "E:\\Z博士\\runs\\w1-action-consequence-oracle-ceiling-v1-once\\run-once\\branch-summaries.jsonl",
+      "bytes": 2640037,
+      "sha256": "f3616136ff6c3f022a1eebda162cd148cadf95cda682aa40324196466bce1bcf"
+    },
+    {
+      "reason": "large derived mismatch table; audit summary and sealed hash are archived",
+      "path": "E:\\Z博士\\research-plans\\w1-oracle-pairing-root-cause-v1\\message-mismatch-table.csv",
+      "bytes": 1711420,
+      "sha256": "e96a9577adb279c286a9eeee7b399030a92404e14292e768d3004e0d0ff68e90"
+    },
+    {
+      "reason": "mutable-format execution ledger is retained locally",
+      "path": "E:\\Z博士\\runs\\w1-action-consequence-oracle-ceiling-v1-once\\run-once\\budget.sqlite3",
+      "bytes": 32768,
+      "sha256": "7ff0d0c2fc1bf702f34b762bb5eb6e3b1b21d825820680ee398fe6606c894438"
+    },
+    {
+      "reason": "large raw environment step log retained locally",
+      "path": "E:\\Z博士\\runs\\w1-action-consequence-oracle-remaining-23-v1-once\\run-once\\steps.jsonl",
+      "bytes": 351165617,
+      "sha256": "c9a4dca78ef913f4898ef350cd12f89ebca94207f553195d6218a09c4e93a66a"
+    },
+    {
+      "reason": "large raw branch summaries retained locally",
+      "path": "E:\\Z博士\\runs\\w1-action-consequence-oracle-remaining-23-v1-once\\run-once\\branch-summaries.jsonl",
+      "bytes": 87784151,
+      "sha256": "5a44d7efe0331dc22ccb6f41cb1ae0b76ef6fceaab02a81d569e84ee20445157"
+    },
+    {
+      "reason": "mutable-format execution ledger is retained locally",
+      "path": "E:\\Z博士\\runs\\w1-action-consequence-oracle-remaining-23-v1-once\\run-once\\budget.sqlite3",
+      "bytes": 405504,
+      "sha256": "b7f6d2bb12d68686f9dc25f213def09fe0cca7ea32689ea098178d0f216d42d5"
+    }
+  ],
+  "excluded_sensitive_or_binary_classes": [
+    "raw one-shot authorization token",
+    "credentials and personal secrets",
+    "checkpoints",
+    "SQLite ledgers",
+    "Python bytecode and caches"
+  ],
+  "backup_claim": "This repository archive is an evidence and source snapshot, not a complete backup of local experimental artifacts."
+}

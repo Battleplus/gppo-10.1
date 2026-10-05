@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "checks": [
+    "56 episode coverage in evidence",
+    "367 complete assignment rows",
+    "all choices legal under reconstructed public memory",
+    "strictly prior action history",
+    "no future known measurement",
+    "age and asynchronous-position counts reconciled"
+  ],
+  "environment_calls": 0,
+  "model_calls": 0,
+  "training_updates": 0
+}

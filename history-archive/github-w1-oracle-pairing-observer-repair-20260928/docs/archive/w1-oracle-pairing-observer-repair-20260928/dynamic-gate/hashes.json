@@ -1,0 +1,30 @@
+{
+  "schema": "w1-oracle-observer-single-unit-postrun-hashes/1.0.0",
+  "created_date": "2026-09-28",
+  "outputs": {
+    "artifact-index.json": {
+      "bytes": 2735,
+      "sha256": "6a37f1860485f3d460cf9b4c8f475b2ec5f205f84f84ca6df8705a420508c317"
+    },
+    "communication-coverage.json": {
+      "bytes": 1346,
+      "sha256": "1ecc2e3037a345ef5a98490421093fcc9d856be4dbb602b96072f7d5f2173ef3"
+    },
+    "input-index.json": {
+      "bytes": 2286,
+      "sha256": "2c744b9c419b475f5ea7530b5a56d5af04bd422d55b9af85435262e93625cd39"
+    },
+    "resource-settlement.json": {
+      "bytes": 1881,
+      "sha256": "6d4179d7f5b5b29dc6cbe2aac4a73641d04247caa2673e3478b54834cb9df84d"
+    },
+    "technical-gate-report.md": {
+      "bytes": 3206,
+      "sha256": "23e0c0a44e877bc804eaded83f30ade5c21dca0801c51e5e83af8f62deca432e"
+    }
+  },
+  "preparation_environment_calls": 0,
+  "postrun_analysis_environment_calls": 0,
+  "postrun_analysis_model_calls": 0,
+  "postrun_analysis_training_updates": 0
+}

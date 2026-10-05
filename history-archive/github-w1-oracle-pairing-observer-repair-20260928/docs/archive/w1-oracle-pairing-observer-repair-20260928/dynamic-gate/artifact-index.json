@@ -1,0 +1,22 @@
+{
+  "schema": "w1-oracle-observer-single-unit-artifact-index/1.0.0",
+  "attempt_root": "E:\\Z博士\\runs\\w1-action-consequence-oracle-observer-single-unit-gate-v1-once",
+  "native_root": "/home/asus/w1-runs/w1-action-consequence-oracle-observer-single-unit-gate-v1-once",
+  "artifacts": [
+    {"role":"supervisor_status","path":"supervisor-status.json","bytes":4289,"sha256":"5abfd343f0aa568b2a28d2ed700c5232fcf83e048113c5ee5fb081f75983d238","github_include":true},
+    {"role":"worker_status","path":"run-once/status.json","bytes":2192,"sha256":"b8c69b4c167c946e8c4c21e64ea508e6fb5cdd40db91d5627991d2345d47a2ba","github_include":true},
+    {"role":"technical_gate","path":"run-once/technical-gate.json","bytes":2133,"sha256":"614d9373d3c2db15a9066268d87d8eb3b6fc888c87ed9a60fc720cf4950b3d2f","github_include":true},
+    {"role":"communication_pairing","path":"run-once/communication-pairing.jsonl","bytes":519,"sha256":"3db36921398c00c8dc6741767299cf184240c1ed1b2359078e2af48b93442df1","github_include":true},
+    {"role":"candidate_decision","path":"run-once/candidate-decisions.jsonl","bytes":1082,"sha256":"73c02041ca88aa7beb51e3ad7ced8ff508e4e628791a1573f8547eb8d0969739","github_include":true},
+    {"role":"branch_summaries","path":"run-once/branch-summaries.jsonl","bytes":4956232,"sha256":"b6e50f71efb0593b04f1a08ffb7eee08e15155241561bc58d612a22700c8e8e2","github_include":false,"exclusion":"large raw evidence"},
+    {"role":"step_log","path":"run-once/steps.jsonl","bytes":21077232,"sha256":"539e1c704221715c8f7c561ec0a7fee21f6f16ef1b3e2dfb1b14736c25412549","github_include":false,"exclusion":"large raw evidence"},
+    {"role":"budget_ledger","path":"run-once/budget.sqlite3","bytes":32768,"sha256":"bc9f7c3434c2bcd2e0bd629cde0d8930dfccdebcc172a28cc30e4e82bec4cf0f","github_include":false,"exclusion":"SQLite ledger retained locally"},
+    {"role":"export_manifest","path":"export-manifest.json","bytes":6537,"sha256":"c1124832a421c46283e9f45ed2c53c0569b53b552c5358f5aa606464e6d1f86b","github_include":true},
+    {"role":"export_completion","path":"EXPORT_COMPLETE.json","bytes":197,"sha256":"463c2acf286b2d655bfb8659ff2c1dd2b4045ebf3bb1b728e4bccd955a624edc","github_include":true},
+    {"role":"infrastructure_settlement","path":"infrastructure-settlement.json","bytes":388,"sha256":"2d440f674efc08249204b0cc460b4e51a3ea8790c7a9559c47339bfea8ae503e","github_include":true},
+    {"role":"native_export_status","path":"export-status.json","bytes":618,"sha256":"9f27f06e83dba7902e7dfd7cf8312cbf427fc10c40ae6d22a58af97a07bec761","github_include":true,"location":"native_root_only"}
+  ],
+  "github_archive_is_complete_backup": false,
+  "credentials_or_authorization_tokens_included": false,
+  "checkpoints_included": false
+}

@@ -1,0 +1,40 @@
+{
+  "schema": "w1-eawm-jepa-resource-settlement-summary/1.0.0",
+  "attempt": "w1-eawm-jepa-world-model-production-repair-v4-e2e-integration-auth-repair-v1-once",
+  "status": "complete",
+  "automatic_retry": false,
+  "failed_calls": 0,
+  "pending_calls": 0,
+  "ledger_totals": {
+    "resets_upper": 56,
+    "environment_steps": 995,
+    "public_rule_decisions": 224,
+    "snapshot_captures": 56,
+    "branches": 771,
+    "candidate_scans": 771,
+    "forced_first_actions": 771,
+    "model_initializations_or_loads": 12,
+    "world_batch_forwards": 5210,
+    "world_sample_evaluations": 117306,
+    "world_optimizer_updates": 1937,
+    "checkpoint_writes": 6,
+    "task_calls": 0
+  },
+  "runtime": {
+    "wall_seconds_upper": 318.1155764409996,
+    "complete_process_cpu_seconds": 629.981761477,
+    "peak_rss_upper_bound_bytes": 995348480,
+    "artifact_bytes": 130651452,
+    "final_resource_pass": true
+  },
+  "calls": {
+    "total": 14642,
+    "complete": 14642,
+    "failed": 0,
+    "stages": {
+      "world_model_data_collection": 1163,
+      "world_model_training_and_selection": 13167,
+      "prediction_confirmation": 312
+    }
+  }
+}

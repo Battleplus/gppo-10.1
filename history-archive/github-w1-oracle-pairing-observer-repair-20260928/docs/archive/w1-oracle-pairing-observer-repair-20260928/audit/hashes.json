@@ -1,0 +1,61 @@
+{
+  "created_date": "2026-09-28",
+  "outputs": [
+    {
+      "bytes": 17481,
+      "path": "E:\\Z博士\\research-plans\\w1-oracle-pairing-root-cause-v1\\analyze_pairing.py",
+      "sha256": "b4dab1ed9939d0c05f32bd9b19c32090329686b871faf555b84c5ed193ce1f81"
+    },
+    {
+      "bytes": 2021,
+      "path": "E:\\Z博士\\research-plans\\w1-oracle-pairing-root-cause-v1\\analysis-summary.json",
+      "sha256": "ac52d63d7aef9b23946eaad68a9471e296b482b79d0204a3bc77ecde8faa9fde"
+    },
+    {
+      "bytes": 1711420,
+      "path": "E:\\Z博士\\research-plans\\w1-oracle-pairing-root-cause-v1\\message-mismatch-table.csv",
+      "sha256": "e96a9577adb279c286a9eeee7b399030a92404e14292e768d3004e0d0ff68e90"
+    },
+    {
+      "bytes": 4997,
+      "path": "E:\\Z博士\\research-plans\\w1-oracle-pairing-root-cause-v1\\root-cause-report.md",
+      "sha256": "0e649751094c217f71fa686c8f1d6e208b2e915e83ef2ed0f018fa73d5b9e9d2"
+    },
+    {
+      "bytes": 3727,
+      "path": "E:\\Z博士\\research-plans\\w1-oracle-pairing-root-cause-v1\\pairing-contract-review.md",
+      "sha256": "0b8a68f22ef316abb7bf8fc822bcb5c7e0bc0706f0ff9e9d0be99d3622607337"
+    },
+    {
+      "bytes": 2158,
+      "path": "E:\\Z博士\\research-plans\\w1-oracle-pairing-root-cause-v1\\historical-impact.md",
+      "sha256": "e1a849880446b826e0193a094b9792362b7afbe879f4b17baedd4f3947e01d6a"
+    },
+    {
+      "bytes": 2762,
+      "path": "E:\\Z博士\\research-plans\\w1-oracle-pairing-root-cause-v1\\minimal-remediation.md",
+      "sha256": "48f9bb2babe646cc78c0979c74715df0d22d850d677e472c2fb70f72147b37e8"
+    },
+    {
+      "bytes": 5482,
+      "path": "E:\\Z博士\\research-plans\\w1-oracle-pairing-root-cause-v1\\test_pairing_analysis.py",
+      "sha256": "404cb76903c37049071538202bc4fe259db7bce6184412492ad39c23108b58e8"
+    },
+    {
+      "bytes": 101,
+      "path": "E:\\Z博士\\research-plans\\w1-oracle-pairing-root-cause-v1\\test-output.txt",
+      "sha256": "b200e2f77851f0e997e5dbff6b54435302992f8e849869f7187d606a38cc496d"
+    },
+    {
+      "bytes": 3544,
+      "path": "E:\\Z博士\\research-plans\\w1-oracle-pairing-root-cause-v1\\seal.py",
+      "sha256": "f68f7e4278c7186148f5068f722ea663029d2f2a65722e221138eabfb8c072b0"
+    },
+    {
+      "bytes": 3230,
+      "path": "E:\\Z博士\\research-plans\\w1-oracle-pairing-root-cause-v1\\input-index.json",
+      "sha256": "ab760d9dd90f503904694b03045ed47576ee8f3f11645f1e43eb50198794d96b"
+    }
+  ],
+  "schema": "w1-oracle-pairing-root-cause-hashes/1.0.0"
+}

@@ -1,0 +1,141 @@
+{
+  "attempt": "w1-eawm-jepa-world-model-production-repair-v4-e2e-integration-auth-repair-v1-once",
+  "environment_model_or_training_call_retry": false,
+  "file_operation_retry": {
+    "attempts": 3,
+    "max_elapsed_seconds": 2.0,
+    "scope": "staging, state publication and verified export only"
+  },
+  "forbidden_until_approval": [
+    "environment_reset_step",
+    "checkpoint_load",
+    "training_update",
+    "task_comparison",
+    "heldout_read"
+  ],
+  "historical_credit": 0,
+  "matrix": "experiment-matrix.json",
+  "notes": [
+    "Data collection is 56 frozen parent/repeat windows times at most 18 prefix steps plus 25 one-step candidate branches.",
+    "World-model training uses at most 600 training candidate rows: ceil(600/32)=19 updates per epoch times 100 frozen maximum epochs times two variants times three seeds; selection reserves eight candidate-batch forwards per epoch and model.",
+    "Conditional policy training is four GPPO arms times three seeds times 2048 environment steps; only G1/G2 reserve one 25-candidate world-model batch per decision.",
+    "Conditional task confirmation is four GPPO methods times three seeds times 24 parent/repeat units plus 24 shared deterministic Hungarian units: 312 episodes times at most 18 steps.",
+    "G1-versus-transparent and G2-versus-G1 prediction gates are recorded separately. Only complete coverage plus both frozen gates runs the full G0/T/G1/G2/H task matrix; otherwise policy/task stages are not evaluated. The application reserves the full worst-case matrix, and stage caps cannot borrow."
+  ],
+  "parent_split": {
+    "file": "parent-split.json",
+    "historical_use_elsewhere": "not_proven_absent",
+    "model_selection_parents": 8,
+    "prediction_confirmation_parents": 8,
+    "repeats": {
+      "model_selection": 1,
+      "prediction_confirmation": 3,
+      "task_confirmation": 3,
+      "train": 1
+    },
+    "task_confirmation_parents": 8,
+    "train_parents": 24
+  },
+  "retry": false,
+  "schema": "w1-eawm-jepa-world-model-resource-request/2.0.0",
+  "stages": {
+    "conditional_policy_training": {
+      "actor_sample_evaluations": 147456,
+      "artifact_bytes": 25769803776,
+      "checkpoint_writes": 12,
+      "complete_process_cpu_seconds": 52800,
+      "encode_sample_evaluations": 245760,
+      "environment_steps": 24576,
+      "model_initializations_or_loads": 18,
+      "policy_optimizer_updates": 1536,
+      "resets_upper": 24576,
+      "wall_seconds": 26400,
+      "world_batch_forwards": 12288,
+      "world_sample_evaluations": 307200
+    },
+    "conditional_task_confirmation": {
+      "actor_sample_evaluations": 5184,
+      "artifact_bytes": 25769803776,
+      "complete_process_cpu_seconds": 7200,
+      "encode_sample_evaluations": 5184,
+      "environment_steps": 5616,
+      "model_initializations_or_loads": 18,
+      "public_rule_decisions": 432,
+      "resets_upper": 312,
+      "task_episodes": 312,
+      "wall_seconds": 3600,
+      "world_batch_forwards": 2592,
+      "world_sample_evaluations": 64800
+    },
+    "prediction_confirmation": {
+      "artifact_bytes": 19327352832,
+      "complete_process_cpu_seconds": 2400,
+      "environment_steps": 0,
+      "model_initializations_or_loads": 6,
+      "wall_seconds": 1200,
+      "world_batch_forwards": 144,
+      "world_sample_evaluations": 3600
+    },
+    "settlement_and_verified_export": {
+      "artifact_bytes": 25769803776,
+      "complete_process_cpu_seconds": 2400,
+      "environment_steps": 0,
+      "wall_seconds": 1200
+    },
+    "staging_and_zero_step_gate": {
+      "artifact_bytes": 268435456,
+      "branches": 0,
+      "complete_process_cpu_seconds": 1200,
+      "environment_steps": 0,
+      "resets_upper": 0,
+      "wall_seconds": 600
+    },
+    "world_model_data_collection": {
+      "artifact_bytes": 12884901888,
+      "branches": 1400,
+      "candidate_scans": 1400,
+      "complete_process_cpu_seconds": 18000,
+      "environment_steps": 2408,
+      "forced_first_actions": 1400,
+      "public_rule_decisions": 1008,
+      "resets_upper": 56,
+      "snapshot_captures": 56,
+      "wall_seconds": 9000
+    },
+    "world_model_training_and_selection": {
+      "artifact_bytes": 19327352832,
+      "checkpoint_writes": 6,
+      "complete_process_cpu_seconds": 24000,
+      "environment_steps": 0,
+      "model_initializations_or_loads": 6,
+      "wall_seconds": 12000,
+      "world_batch_forwards": 27600,
+      "world_optimizer_updates": 11400,
+      "world_sample_evaluations": 840000
+    }
+  },
+  "status": "NOT_APPROVED",
+  "totals": {
+    "active_storage_bytes": 25769803776,
+    "actor_sample_evaluations": 152640,
+    "aggregate_native_plus_verified_export_bytes": 51539607552,
+    "all_resident_rss_bytes": 4294967296,
+    "branches": 1400,
+    "candidate_scans": 1400,
+    "checkpoint_writes": 18,
+    "complete_process_cpu_seconds": 108000,
+    "encode_sample_evaluations": 250944,
+    "environment_steps": 32600,
+    "forced_first_actions": 1400,
+    "model_initializations_or_loads": 48,
+    "policy_optimizer_updates": 1536,
+    "public_rule_decisions": 1440,
+    "resets_upper": 24944,
+    "snapshot_captures": 56,
+    "wall_seconds": 54000,
+    "world_batch_forwards": 42624,
+    "world_optimizer_updates": 11400,
+    "world_sample_evaluations": 1215600
+  },
+  "unused_credit_transfer": false
+}

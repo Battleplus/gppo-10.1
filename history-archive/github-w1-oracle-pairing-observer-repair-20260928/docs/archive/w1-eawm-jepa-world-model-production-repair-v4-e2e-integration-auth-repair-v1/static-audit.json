@@ -1,0 +1,266 @@
+{
+  "all_reuse_hashes_match": true,
+  "checkpoint_loads": 0,
+  "current_contract": {
+    "action_count_25": true,
+    "adapter_has_no_environment_import": true,
+    "event_names_present": true,
+    "public_future_target_separation": true,
+    "public_observation_adapter": true,
+    "strict_candidate_entry": true
+  },
+  "dynamic_calls": 0,
+  "environment_calls": 0,
+  "external_authorization": {
+    "contract_schema_current": true,
+    "shared_verifier_used_by_windows_wsl_native": true,
+    "token_hash_not_frozen_in_package": true
+  },
+  "heldout_read": false,
+  "model_initializations": 0,
+  "package_files": [
+    ".gitattributes",
+    "BLOCKERS.md",
+    "RESOURCE_REQUEST.json",
+    "archive-status.md",
+    "budget-derivation.md",
+    "budget_ledger.py",
+    "checks.json",
+    "data-availability.md",
+    "dependency_probe.py",
+    "e2e-engineering-report.md",
+    "e2e-stage-wiring.md",
+    "e2e_worker.py",
+    "event_jepa_losses.py",
+    "execution-manifest.json",
+    "experiment-design.md",
+    "experiment-matrix.json",
+    "freeze_experiment_matrix.py",
+    "freeze_parent_split.py",
+    "freeze_runner_package.py",
+    "gppo_jepa_adapter.py",
+    "gppo_w1_integration.py",
+    "hash_package.py",
+    "hashes.json",
+    "infra_io.py",
+    "input-index.json",
+    "integration_native_launch.py",
+    "integration_worker.py",
+    "launch-contract.json",
+    "launch_once.py",
+    "luna-independent-review.md",
+    "manifest_contract.py",
+    "meeting-matrix.md",
+    "native_launch.py",
+    "parent-split.json",
+    "production-wiring.md",
+    "production_chain_check.py",
+    "production_data.py",
+    "production_policy.py",
+    "production_world.py",
+    "protocol.md",
+    "public_event_targets.py",
+    "public_history.py",
+    "public_transition_contract.py",
+    "report.md",
+    "research-identity.json",
+    "reuse-map.md",
+    "run_static_checks.py",
+    "run_windows_wsl_production_integration.py",
+    "runner.py",
+    "runtime-dependency-lock.txt",
+    "runtime-environment-ledger.md",
+    "runtime-environment-spec.json",
+    "runtime-inputs.json",
+    "runtime_backend.py",
+    "runtime_hooks.py",
+    "static-audit.json",
+    "static_audit.py",
+    "supervise.py",
+    "test_launch_authorization.py",
+    "test_production_policy.py",
+    "test_production_runtime.py",
+    "test_production_world_metrics.py",
+    "test_review_repairs.py",
+    "test_w1_world_model.py",
+    "unique-launch-command.md",
+    "validate_resource_request.py",
+    "w1_graph_jepa.py",
+    "w1_public_adapter.py",
+    "w1_training.py",
+    "worker_bootstrap.py",
+    "world_model_pipeline.py",
+    "wsl_stage_and_launch.py"
+  ],
+  "parent_split": {
+    "counts": {
+      "model_selection": 8,
+      "prediction_confirmation": 8,
+      "task_confirmation": 8,
+      "train": 24
+    },
+    "historical_use_elsewhere": "not proven absent by available manifests",
+    "overlap_count": 0,
+    "present": true
+  },
+  "passed": true,
+  "production_backend": {
+    "collector_call": true,
+    "native_resource_digest_resolver_imported": true,
+    "placeholder_errors_removed": true,
+    "policy_training_call": true,
+    "runtime_hook_environment_construction_uses_boundary": true,
+    "task_evaluation_call": true,
+    "world_evaluation_call": true,
+    "world_training_call": true
+  },
+  "production_preflight": {
+    "attempt_created": false,
+    "checkpoint_loaded": false,
+    "checks": {
+      "graph5_25_action": true,
+      "preflight_mode": true,
+      "wsl_linux_guard": true
+    },
+    "dynamic_calls": 0,
+    "files": {
+      "native_graph5": {
+        "path": "E:\\Z博士\\runs\\w1-light-repaired-fair-rerun-v2-nativefs-once\\native\\gppo_world\\graph5.py",
+        "present": true,
+        "sha256": "a4a2c701d8a36306b4e57eb3d24930bae985dea7d11d95afbcdc08968231af09"
+      },
+      "native_jepa": {
+        "path": "E:\\Z博士\\runs\\w1-light-repaired-fair-rerun-v2-nativefs-once\\native\\gppo_world\\jepa.py",
+        "present": true,
+        "sha256": "3c3ce3cc995c1b2a80be2c37107dadd922531116cb8aaaad0f8511760fcfeb54"
+      },
+      "native_joint_gppo": {
+        "path": "E:\\Z博士\\runs\\w1-light-repaired-fair-rerun-v2-nativefs-once\\native\\gppo_world\\joint_gppo.py",
+        "present": true,
+        "sha256": "3c799cfe12050971e1b11da6b2c04fa6a7c244a36935578861c5db533396f55e"
+      },
+      "run_manifest": {
+        "path": "E:\\Z博士\\runs\\w1-light-repaired-fair-rerun-v2-nativefs-once\\execution-manifest.json",
+        "present": true,
+        "sha256": "961016499ba5229112c116313ff80a87305eda48342c869212b696f280833a12"
+      },
+      "runtime_dependency_launcher": {
+        "path": "E:\\Z博士\\research-plans\\w1-action-relative-auxiliary-runtime-dependency-repair-v1\\launch_once.py",
+        "present": true,
+        "sha256": "e7e0211d11648a4afa9d4ccb19f99d7dea636ec12abed11658478b048b79c1eb"
+      },
+      "runtime_dependency_wsl": {
+        "path": "E:\\Z博士\\research-plans\\w1-action-relative-auxiliary-runtime-dependency-repair-v1\\wsl_stage_and_launch.py",
+        "present": true,
+        "sha256": "984ca622640cb52059d33427485e9dadc0a11b0a6c9df41846d52f0e5cd8c1df"
+      }
+    },
+    "passed": true,
+    "schema": "w1-production-chain-preflight/1.0.0",
+    "worker_started": false
+  },
+  "production_source_tree": {
+    "all_files_bound_by_source_manifest": true,
+    "passed": true,
+    "verified_python_files": 44
+  },
+  "reuse_modules": [
+    {
+      "file": "jepa.py",
+      "matches_reviewed_archive": true,
+      "old_and_current_identical_per_inventory": true,
+      "present": true,
+      "sha256": "3c3ce3cc995c1b2a80be2c37107dadd922531116cb8aaaad0f8511760fcfeb54"
+    },
+    {
+      "file": "jepa_two_stage.py",
+      "matches_reviewed_archive": true,
+      "old_and_current_identical_per_inventory": true,
+      "present": true,
+      "sha256": "15064c42882a37f6e339cbb98a8e18fbac0b81d6ad688cedf28011059d69b0b2"
+    },
+    {
+      "file": "events.py",
+      "matches_reviewed_archive": true,
+      "old_and_current_identical_per_inventory": true,
+      "present": true,
+      "sha256": "84cc0e1850d2ddb62967df4b96d23def57bf58dad5ab41308bae7167c438b077"
+    },
+    {
+      "file": "event_training.py",
+      "matches_reviewed_archive": true,
+      "old_and_current_identical_per_inventory": true,
+      "present": true,
+      "sha256": "5f613d40c34fa8381ccd27a36b7048cdb92b53692bb58eebc6f24efb523e2afc"
+    },
+    {
+      "file": "model.py",
+      "matches_reviewed_archive": true,
+      "old_and_current_identical_per_inventory": true,
+      "present": true,
+      "sha256": "4bfd4deb85165e7eeeb0338beab17d2a1c76582248cb893f76cfd4db73a19ce7"
+    },
+    {
+      "file": "phase_data.py",
+      "matches_reviewed_archive": true,
+      "old_and_current_identical_per_inventory": true,
+      "present": true,
+      "sha256": "42bf58bcad83e1480ccff80459978a690412175880651e63f58ce7d96b6c35d8"
+    },
+    {
+      "file": "phase_learning.py",
+      "matches_reviewed_archive": true,
+      "old_and_current_identical_per_inventory": true,
+      "present": true,
+      "sha256": "bce4203320d7b8e184200f78bdb83084bd37d9f1cfcb0cba7800c6f2707d4e20"
+    },
+    {
+      "file": "gppo_adapter.py",
+      "matches_reviewed_archive": true,
+      "old_and_current_identical_per_inventory": true,
+      "present": true,
+      "sha256": "ea0b763106cb8c1a45c8cd16fe52307d0a8de4023c69aa550aa14273c62993e3"
+    },
+    {
+      "file": "gppo_shadow_env.py",
+      "matches_reviewed_archive": true,
+      "old_and_current_identical_per_inventory": true,
+      "present": true,
+      "sha256": "426aeefcbf9f5275dceb8f36959c65d46c17b83d28a4134ee9ec228553ab6bab"
+    },
+    {
+      "file": "gppo_trainer.py",
+      "matches_reviewed_archive": true,
+      "old_and_current_identical_per_inventory": true,
+      "present": true,
+      "sha256": "ec2c6f0fb8038b9e6ada5247b3b51da5c2eeabd670acabcd6a518ad24e4db2ab"
+    },
+    {
+      "file": "shadow.py",
+      "matches_reviewed_archive": true,
+      "old_and_current_identical_per_inventory": true,
+      "present": true,
+      "sha256": "bd81fd1a6289186f0a6c57697159a88c2d0bae07e455fddff9d21c97ec1f970a"
+    },
+    {
+      "file": "registry.py",
+      "matches_reviewed_archive": true,
+      "old_and_current_identical_per_inventory": true,
+      "present": true,
+      "sha256": "516af07f6a7b013f463d0aac4c5606c3925a6089c71327c5f6be478c51940db6"
+    },
+    {
+      "file": "data.py",
+      "matches_reviewed_archive": true,
+      "old_and_current_identical_per_inventory": true,
+      "present": true,
+      "sha256": "ed45cfab16e08b66bee55839e5c55a1dd711faa5380f4f5643fbd01a86e4b807"
+    }
+  ],
+  "review_documents_present": true,
+  "runner_blocker_documented": true,
+  "runner_ready": false,
+  "runner_ready_scope": "engineering fixture orchestration only; formal W1 matrix and effects remain unevaluated",
+  "schema": "w1-eawm-jepa-static-audit/1.0.0",
+  "training_updates": 0
+}

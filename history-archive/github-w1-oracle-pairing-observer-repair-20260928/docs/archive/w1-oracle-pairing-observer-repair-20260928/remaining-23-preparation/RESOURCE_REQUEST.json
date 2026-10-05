@@ -1,0 +1,94 @@
+{
+  "schema": "w1-oracle-remaining-23-request/1.0.0",
+  "status": "NOT_APPROVED",
+  "attempt": "w1-action-consequence-oracle-remaining-23-v1-once",
+  "purpose": "Execute only the remaining 23 frozen oracle units and combine them with the separately completed observer-gate unit for one fixed 8x3 development analysis.",
+  "fixed_matrix": {
+    "parents": ["validation-0000", "validation-0001", "validation-0002", "validation-0003", "validation-0004", "validation-0005", "validation-0006", "validation-0007"],
+    "repeats_per_parent": 3,
+    "total_units": 24,
+    "reused_unit": {"parent": "validation-0000", "repeat": 0},
+    "new_units": 23,
+    "reused_unit_must_not_run": true,
+    "maximum_non_noop_assignments_per_opportunity": 24,
+    "maximum_total_branches_including_legal_noop": 25,
+    "native_horizon_steps": 18
+  },
+  "stages": {
+    "staging_and_zero_step_gate": {
+      "environment_steps": 0, "resets": 0, "candidate_scans": 0, "public_rule_decisions": 0,
+      "snapshot_captures": 0, "branch_snapshot_copies": 0, "branches": 0, "forced_first_actions": 0,
+      "model_initializations_or_loads": 0, "encode_forwards": 0, "actor_forwards": 0, "world_forwards": 0,
+      "policy_updates": 0, "world_updates": 0, "offline_predictor_updates": 0,
+      "wall_seconds": 300, "complete_process_cpu_seconds": 600, "artifact_bytes": 268435456
+    },
+    "remaining_fixed_units": {
+      "environment_steps": 10350, "resets": 23, "candidate_scans": 414, "public_rule_decisions": 9798,
+      "snapshot_captures": 23, "branch_snapshot_copies": 575, "branches": 575, "forced_first_actions": 575,
+      "model_initializations_or_loads": 0, "encode_forwards": 0, "actor_forwards": 0, "world_forwards": 0,
+      "policy_updates": 0, "world_updates": 0, "offline_predictor_updates": 0,
+      "wall_seconds": 3300, "complete_process_cpu_seconds": 6600, "artifact_bytes": 3489660928
+    },
+    "settlement": {
+      "environment_steps": 0, "resets": 0, "candidate_scans": 0, "public_rule_decisions": 0,
+      "snapshot_captures": 0, "branch_snapshot_copies": 0, "branches": 0, "forced_first_actions": 0,
+      "model_initializations_or_loads": 0, "encode_forwards": 0, "actor_forwards": 0, "world_forwards": 0,
+      "policy_updates": 0, "world_updates": 0, "offline_predictor_updates": 0,
+      "wall_seconds": 300, "complete_process_cpu_seconds": 600, "artifact_bytes": 4294967296
+    },
+    "verified_export": {
+      "environment_steps": 0, "resets": 0, "candidate_scans": 0, "public_rule_decisions": 0,
+      "snapshot_captures": 0, "branch_snapshot_copies": 0, "branches": 0, "forced_first_actions": 0,
+      "model_initializations_or_loads": 0, "encode_forwards": 0, "actor_forwards": 0, "world_forwards": 0,
+      "policy_updates": 0, "world_updates": 0, "offline_predictor_updates": 0,
+      "wall_seconds": 300, "complete_process_cpu_seconds": 600, "artifact_bytes": 4294967296
+    }
+  },
+  "active_call_totals": {
+    "environment_steps": 10350, "resets": 23, "candidate_scans": 414, "public_rule_decisions": 9798,
+    "snapshot_captures": 23, "branch_snapshot_copies": 575, "branches": 575, "forced_first_actions": 575,
+    "model_initializations_or_loads": 0, "encode_forwards": 0, "actor_forwards": 0, "world_forwards": 0,
+    "policy_updates": 0, "world_updates": 0, "offline_predictor_updates": 0
+  },
+  "totals": {
+    "environment_steps": 10350, "resets": 23, "candidate_scans": 414, "public_rule_decisions": 9798,
+    "snapshot_captures": 23, "branch_snapshot_copies": 575, "branches": 575, "forced_first_actions": 575,
+    "model_initializations_or_loads": 0, "encode_forwards": 0, "actor_forwards": 0, "world_forwards": 0,
+    "policy_updates": 0, "world_updates": 0, "offline_predictor_updates": 0,
+    "wall_seconds": 4200, "complete_process_cpu_seconds": 8400,
+    "all_resident_rss_bytes": 4294967296, "artifact_bytes": 4294967296,
+    "aggregate_native_plus_verified_export_bytes": 8589934592
+  },
+  "active_artifact_bytes": 4294967296,
+  "storage_contract": {
+    "active_state_location": "WSL native ext4 only",
+    "windows_write_policy": "single verified export after worker exit and final settlement",
+    "aggregate_native_plus_verified_export_bytes": 8589934592,
+    "per_file_sha256_verification_required": true
+  },
+  "shutdown_reserve": {
+    "wall_seconds_within_each_dynamic_stage": 60,
+    "complete_process_cpu_seconds_within_each_dynamic_stage": 240,
+    "artifact_bytes_within_active_limit": 134217728
+  },
+  "file_operation_retry": {
+    "attempts": 3,
+    "maximum_total_elapsed_seconds": 2.0,
+    "scope": "staging, atomic state publication, settlement, and export only",
+    "environment_rule_branch_or_analysis_retry": false
+  },
+  "historical_credit": 0,
+  "unused_credit_transfer": false,
+  "automatic_retry": false,
+  "automatic_extension": false,
+  "notes": [
+    "The reused validation-0000/repeat-0 unit is verified before environment construction and is never re-executed.",
+    "The environment-step maximum is 23 units times the per-unit maximum of 450 steps.",
+    "Candidate scans allow 18 prefix scans per remaining unit.",
+    "Public rule decisions allow 426 per remaining unit.",
+    "No-opportunity units remain in the fixed 24-unit denominator and consume only actual prefix calls.",
+    "The request supplies no model, checkpoint, forward, training, or offline predictor budget.",
+    "Stage caps are independent and cannot borrow from each other.",
+    "The completed technical unit, stopped attempts, and 10 ms CPU cost failure receive zero budget credit and remain cumulative."
+  ]
+}

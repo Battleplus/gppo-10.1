@@ -1,0 +1,43 @@
+{
+  "schema": "w1-oracle-observer-single-unit-communication-coverage/1.0.0",
+  "attempt": "w1-action-consequence-oracle-observer-single-unit-gate-v1-once",
+  "parent": "validation-0000",
+  "repeat": 0,
+  "decision_step": 1,
+  "actions": [0, 1, 6, 7, 18, 19, 24],
+  "branch_count": 7,
+  "total_recorded_primitive_calls": 6157,
+  "primitive_calls_by_method": {
+    "telemetry": 5778,
+    "command_delivered": 89,
+    "ack_delivered": 166,
+    "renewal": 124
+  },
+  "actual_callsites": {
+    "m10_environment.py:409:_apply_renewal": 117,
+    "m10_environment.py:637:_renew_active_leases": 124,
+    "m10_environment.py:686:_send": 5778,
+    "m10_environment.py:936:step": 89,
+    "m10_environment.py:944:step": 49
+  },
+  "returned_calls": 6157,
+  "raised_calls": 0,
+  "missing_identity_calls": 0,
+  "exact_common_call_keys": 1006,
+  "action_specific_call_keys": 70,
+  "common_result_mismatches": 0,
+  "parameter_conflicts": 0,
+  "multiplicity_mismatches": 0,
+  "execution_outcomes_compared_as_fate": false,
+  "duplicates_preserved": true,
+  "labels": {
+    "terminated_branches": 7,
+    "truncated_branches": 0,
+    "complete_task_records": 35,
+    "explicit_unknown_host_confirmation_records": 7,
+    "missing_branch_summaries": 0,
+    "missing_required_step_info": 0
+  },
+  "oracle_materiality_evaluated": false,
+  "analysis_json_created": false
+}
