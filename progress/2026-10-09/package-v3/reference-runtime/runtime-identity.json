@@ -1,0 +1,69 @@
+{
+  "status": "pass",
+  "source_manifest_sha256": "8d6361a6efa3814241e289cd14e54477c04fb75274c113b722a9aec9abade465",
+  "file_verification_count": 22664,
+  "all_original_files_match": true,
+  "storage_bytes": 6911739459,
+  "unique_allocated_runtime_bytes_including_old": 7637929984,
+  "observed": {
+    "python": "3.11.16 (main, Sep 24 2026, 17:56:40) [Clang 22.1.3 ]",
+    "executable": "/home/user1/w1-runtimes/w1-py31116-torch270cu128-v2/w1-light-repaired-fair-rerun-py31116/bin/python",
+    "prefix": "/home/user1/w1-runtimes/w1-py31116-torch270cu128-v2/w1-light-repaired-fair-rerun-py31116",
+    "torch": "2.7.0+cu128",
+    "numpy": "1.26.0",
+    "threads": 1,
+    "interop_threads": 1,
+    "CPU_affinity": [
+      0
+    ],
+    "CUDA_VISIBLE_DEVICES": "",
+    "GPU_initialized": false,
+    "versions": {
+      "numpy": "1.26.0",
+      "torch": "2.7.0+cu128",
+      "nvidia-cusolver-cu12": "11.7.2.55",
+      "nvidia-cufile-cu12": "1.13.0.11",
+      "nvidia-cublas-cu12": "12.8.3.14",
+      "nvidia-nvtx-cu12": "12.8.55",
+      "triton": "3.3.0",
+      "typing-extensions": "4.16.0",
+      "nvidia-cuda-cupti-cu12": "12.8.57",
+      "markupsafe": "3.0.3",
+      "fsspec": "2026.7.0",
+      "nvidia-cudnn-cu12": "9.7.1.26",
+      "sympy": "1.14.0",
+      "filelock": "3.32.3",
+      "nvidia-cusparselt-cu12": "0.6.3",
+      "nvidia-cuda-nvrtc-cu12": "12.8.61",
+      "nvidia-cufft-cu12": "11.3.3.41",
+      "nvidia-cuda-runtime-cu12": "12.8.57",
+      "jinja2": "3.1.6",
+      "nvidia-cusparse-cu12": "12.5.7.53",
+      "mpmath": "1.3.0",
+      "nvidia-curand-cu12": "10.3.9.55",
+      "setuptools": "78.1.0",
+      "nvidia-nccl-cu12": "2.26.2",
+      "networkx": "3.6.1",
+      "nvidia-nvjitlink-cu12": "12.8.61"
+    }
+  },
+  "differences": {},
+  "documented_path_relocations": [
+    {
+      "file": "w1-light-repaired-fair-rerun-py31116/bin/python",
+      "source": "/home/asus/.local/share/uv/python/cpython-3.11.16-linux-x86_64-gnu/bin/python3.11",
+      "target": "/home/user1/w1-runtimes/w1-py31116-torch270cu128-v2/cpython-3.11.16-linux-x86_64-gnu/bin/python3.11"
+    },
+    {
+      "file": "w1-light-repaired-fair-rerun-py31116/pyvenv.cfg",
+      "source_sha256": "936a3fd293aa33317fe1e24b7303de2ce6054bac0eef6605d393e294cbb71a70",
+      "relocated_sha256": "6939686655ac7f2c4f718d0e2f5010c7217b1942a2e2ab1b63f2ae9e0fd7f3ff",
+      "normalized_equal": true,
+      "hardlink_detached_before_write": true
+    }
+  ],
+  "model_loads": 0,
+  "forwards": 0,
+  "environment_calls": 0,
+  "GPU_calls": 0
+}

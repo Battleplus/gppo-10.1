@@ -1,0 +1,15 @@
+{
+  "critical_runtime_files": {
+    "/home/user1/w1-runtimes/w1-py31116-torch270cu128-v2/cpython-3.11.16-linux-x86_64-gnu/bin/python3.11": "ec579de7512e84d960bc642a840de69c785c52d6adf89e3a15f51717b29be40f",
+    "/home/user1/w1-runtimes/w1-py31116-torch270cu128-v2/w1-light-repaired-fair-rerun-py31116/lib/python3.11/site-packages/numpy/__init__.py": "11a9455eb4297e45351657f5a60f198c21831c7a395f8c59a7361fb2edf785e5",
+    "/home/user1/w1-runtimes/w1-py31116-torch270cu128-v2/w1-light-repaired-fair-rerun-py31116/lib/python3.11/site-packages/numpy/core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so": "4ca8df14dc1be0bb092e86ebabdbfcb6c6f7abd9b3f1db9d257e555745541844",
+    "/home/user1/w1-runtimes/w1-py31116-torch270cu128-v2/w1-light-repaired-fair-rerun-py31116/lib/python3.11/site-packages/torch/_C.cpython-311-x86_64-linux-gnu.so": "8a272d68cbbf6206a63a587844803bf46ad87c0407d206368af2c4cf63135f57",
+    "/home/user1/w1-runtimes/w1-py31116-torch270cu128-v2/w1-light-repaired-fair-rerun-py31116/lib/python3.11/site-packages/torch/__init__.py": "9801e75447c7f585545f989f8a21940b60e0c4cc888effb2f08e739664b4b904",
+    "/home/user1/w1-runtimes/w1-py31116-torch270cu128-v2/w1-light-repaired-fair-rerun-py31116/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so": "41303df70bbbe3bbb3ceba591bf4076d97b5ae52e7d4628034e0cb4a11684a5b"
+  },
+  "interpreter": "/home/user1/w1-runtimes/w1-py31116-torch270cu128-v2/w1-light-repaired-fair-rerun-py31116/bin/python",
+  "original_files_verified": 22664,
+  "remote_identity_file": "/home/user1/w1-runtimes/w1-py31116-torch270cu128-v2/runtime-identity.json",
+  "runtime_identity_sha256": "15592fb4b9a05f6cdaee095b53f6fde42a910639e3f717bdeffc3be5a928f9a5",
+  "version_differences": {}
+}

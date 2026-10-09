@@ -1,0 +1,309 @@
+{
+  "status": "technical_stop",
+  "primary_outcome": "technical_stop",
+  "identity": {
+    "approval_status": "NOT_APPROVED",
+    "attempt": "w1-drone-action-consequence-world-model-v5-public-prefix-contract-repair-once",
+    "formal_attempt_created": false,
+    "formal_token_created": false,
+    "hashes_sha256": "593a766a9a496645b20fd081fab6e2afd5ca1bddf305e21e274b7ef1bc4f1c96",
+    "manifest_sha256": "09fb89773cec47f44e0ce697affee065386aa598985e18c715b76e2bc68c7d7f",
+    "resource_request_sha256": "2e6e1cba20c4ff92785ce92a92b5002cac409979085defd7cddf73b4d5f63aed"
+  },
+  "formal_submissions": 1,
+  "scientific_gate": null,
+  "offline_evaluation": null,
+  "data": {
+    "inventory_complete": true,
+    "window_files_retained": 288,
+    "windows_by_status": {
+      "complete": 174,
+      "no_opportunity": 114
+    },
+    "windows_by_split": {
+      "train": 96,
+      "calibration": 48,
+      "development": 48,
+      "evaluation": 96
+    }
+  },
+  "first_error": {
+    "automatic_retry": false,
+    "error": "world_training_and_restore CPU shutdown reserve",
+    "exception_type": "RuntimeError",
+    "phase_rejection": null,
+    "schema": "w1-supervisor-first-error/1.0.0",
+    "stage": "world_training_and_restore",
+    "status": "technical_stop",
+    "traceback": "Traceback (most recent call last):\n  File \"/home/user1/w1-pilot/runs/w1-drone-action-consequence-world-model-v5-public-prefix-contract-repair-once/package/supervise.py\", line 512, in main\n    guard(limits,stage,run,wall,cpu,disk,starts,run_starts)\n  File \"/home/user1/w1-pilot/runs/w1-drone-action-consequence-world-model-v5-public-prefix-contract-repair-once/package/supervise.py\", line 187, in guard\n    if cpu-start[1]>=caps['complete_process_cpu_seconds']-res['complete_process_cpu_seconds']:raise RuntimeError(name+' CPU shutdown reserve')\n                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: world_training_and_restore CPU shutdown reserve\n"
+  },
+  "ledger_reconciliation": {
+    "pass": true,
+    "SQLite_integrity": "ok",
+    "calls_by_outcome": {
+      "complete": 18027,
+      "pending": 2
+    },
+    "totals": {
+      "output_writes": 291,
+      "environment_constructions": 72,
+      "environment_resets": 72,
+      "candidate_scans": 6286,
+      "environment_steps": 6839,
+      "snapshot_writes": 174,
+      "candidate_branches": 727,
+      "candidate_snapshot_probes": 727,
+      "candidate_contract_audits": 1885,
+      "forced_first_actions": 727,
+      "model_initializations": 2,
+      "target_candidate_evaluations": 15315,
+      "target_forwards": 3454,
+      "world_model_updates": 476,
+      "training_candidate_evaluations": 15315,
+      "training_forwards": 476,
+      "checkpoint_writes": 1,
+      "checkpoint_loads": 1
+    },
+    "failed_and_pending": [
+      {
+        "id": 18028,
+        "stage": "world_training_and_restore",
+        "name": "world_update",
+        "status": "pending",
+        "error": null
+      },
+      {
+        "id": 18029,
+        "stage": "world_training_and_restore",
+        "name": "world_forward",
+        "status": "pending",
+        "error": null
+      }
+    ],
+    "reservations_match_all_calls": true,
+    "per_stage": {
+      "input_admission": {
+        "output_writes": 1
+      },
+      "paired_collection": {
+        "environment_constructions": 72,
+        "environment_resets": 72,
+        "candidate_scans": 6286,
+        "environment_steps": 6839,
+        "snapshot_writes": 174,
+        "candidate_branches": 727,
+        "candidate_snapshot_probes": 727,
+        "candidate_contract_audits": 1885,
+        "forced_first_actions": 727,
+        "output_writes": 290
+      },
+      "world_training_and_restore": {
+        "model_initializations": 2,
+        "target_candidate_evaluations": 15315,
+        "target_forwards": 3454,
+        "world_model_updates": 476,
+        "training_candidate_evaluations": 15315,
+        "training_forwards": 476,
+        "checkpoint_writes": 1,
+        "checkpoint_loads": 1
+      },
+      "offline_prediction": {},
+      "conditional_policy_training": {},
+      "conditional_task_confirmation": {},
+      "analysis_and_settlement": {},
+      "settlement_and_verified_export": {}
+    },
+    "worker_final_ledger": "unavailable_worker_final_missing",
+    "authoritative_source": "read-only SQLite calls and reservations",
+    "totals_scope": "recorded and reserved, including pending; not completed-work totals"
+  },
+  "controller": {
+    "CPU_scope": "dispatcher SELF/waited children + controller SELF/waited supervisor/export descendants counted once",
+    "Linux_evidence_retained": "/home/user1/w1-pilot/runs/w1-drone-action-consequence-world-model-v5-public-prefix-contract-repair-once",
+    "dispatch_CPU_seconds": 0.3372152259999999,
+    "exitcode": 1,
+    "export_CPU_seconds": 0.5657069899998532,
+    "export_wall_seconds": 1.1605997267179191,
+    "first_controller_error": null,
+    "hosting_receipt": "/home/user1/w1-pilot/hosting/w1-drone-action-consequence-world-model-v5-public-prefix-contract-repair-once.json",
+    "local_export": "/home/user1/w1-pilot/packages/w1-drone-action-consequence-world-model-v5-public-prefix-contract-repair/exports/w1-drone-action-consequence-world-model-v5-public-prefix-contract-repair-once",
+    "measured_Linux_CPU_seconds": 2335.6306550239997,
+    "reserves_are_not_measurements": true,
+    "resource_scope_complete": false,
+    "status": "stopped",
+    "unmeasured": [
+      "SSH/client transfer outside server research scope",
+      "systemd user-manager CPU",
+      "controller exit tail"
+    ],
+    "wall_seconds": 2423.3381745279767
+  },
+  "retrieval": {
+    "status": "verified_retrieval",
+    "automatic_retry": false,
+    "server_export_retained": true,
+    "terminal": {
+      "service": "Result=exit-code\nExecMainStatus=1\nActiveState=failed\n",
+      "controller": {
+        "CPU_scope": "dispatcher SELF/waited children + controller SELF/waited supervisor/export descendants counted once",
+        "Linux_evidence_retained": "/home/user1/w1-pilot/runs/w1-drone-action-consequence-world-model-v5-public-prefix-contract-repair-once",
+        "dispatch_CPU_seconds": 0.3372152259999999,
+        "exitcode": 1,
+        "export_CPU_seconds": 0.5657069899998532,
+        "export_wall_seconds": 1.1605997267179191,
+        "first_controller_error": null,
+        "hosting_receipt": "/home/user1/w1-pilot/hosting/w1-drone-action-consequence-world-model-v5-public-prefix-contract-repair-once.json",
+        "local_export": "/home/user1/w1-pilot/packages/w1-drone-action-consequence-world-model-v5-public-prefix-contract-repair/exports/w1-drone-action-consequence-world-model-v5-public-prefix-contract-repair-once",
+        "measured_Linux_CPU_seconds": 2335.6306550239997,
+        "reserves_are_not_measurements": true,
+        "resource_scope_complete": false,
+        "status": "stopped",
+        "unmeasured": [
+          "SSH/client transfer outside server research scope",
+          "systemd user-manager CPU",
+          "controller exit tail"
+        ],
+        "wall_seconds": 2423.3381745279767
+      }
+    },
+    "archive_bytes": 197611520,
+    "archive_sha256": "8763d12c4b2b19e327532e5c258badc365cf477b7a7d832bfc3811c5b9f90a31",
+    "files_verified": 806,
+    "export_payload_bytes": 196813022,
+    "wall_seconds": 81.10593628100469,
+    "client_CPU_seconds": 7.809052228,
+    "resource_scope_complete": false,
+    "gaps": [
+      "SSH master/daemon CPU",
+      "remote tar CPU",
+      "network service CPU"
+    ]
+  },
+  "worker_final_ledger_missing": true,
+  "task_result_summary": null,
+  "scope": "development_exploration_not_risk_certification",
+  "new_model_forwards_in_client_analysis": 0,
+  "automatic_formal_retry": false,
+  "old_evidence_preserved": true,
+  "cost_gaps": [
+    "systemd user-manager CPU",
+    "SSH master/daemon CPU",
+    "remote monitor and tar CPU",
+    "network service CPU",
+    "controller/operator exit tail"
+  ],
+  "Github_archive": "not_executed; did not block research",
+  "resource_reconciliation_detail": {
+    "SQLite_integrity": "ok",
+    "pending_rows": [
+      {
+        "id": 18028,
+        "stage": "world_training_and_restore",
+        "name": "world_update",
+        "amounts": "{\"target_candidate_evaluations\": 37, \"target_forwards\": 8, \"world_model_updates\": 1}",
+        "status": "pending",
+        "error": null
+      },
+      {
+        "id": 18029,
+        "stage": "world_training_and_restore",
+        "name": "world_forward",
+        "amounts": "{\"training_candidate_evaluations\": 37, \"training_forwards\": 1}",
+        "status": "pending",
+        "error": null
+      }
+    ],
+    "world_model_update_charges_by_status": {
+      "complete": 475,
+      "pending": 1
+    },
+    "world_training_forward_charges_by_status": {
+      "complete": 475,
+      "pending": 1
+    },
+    "world8201_checkpoint": {
+      "bytes": 2896861,
+      "sha256": "ebd9894270d6a32edec6892a912d11933c1a266c1a831294388ffb06be52d8b0"
+    },
+    "world_models_completed": 1,
+    "world_models_partially_trained_or_absent": {
+      "8202": "partial in-memory state; no checkpoint file",
+      "8203": "not started"
+    },
+    "total_limits": {
+      "action_samples": 22320,
+      "active_storage_bytes": 17179869184,
+      "all_resident_rss_bytes": 4294967296,
+      "analysis_calls": 1,
+      "behavior_snapshots": 288,
+      "bootstrap_forwards": 18432,
+      "candidate_branches": 7200,
+      "candidate_contract_audits": 226800,
+      "candidate_scans": 118224,
+      "candidate_snapshot_probes": 7200,
+      "checkpoint_loads": 18,
+      "checkpoint_writes": 12,
+      "complete_process_cpu_seconds": 14900,
+      "environment_constructions": 18753,
+      "environment_resets": 18753,
+      "environment_steps": 106416,
+      "forced_first_actions": 7200,
+      "model_initializations": 24,
+      "output_writes": 572,
+      "policy_forwards": 206640,
+      "policy_updates": 1152,
+      "replay_rows": 92160,
+      "snapshot_writes": 288,
+      "target_candidate_evaluations": 288000,
+      "target_forwards": 11520,
+      "task_episodes": 240,
+      "training_candidate_evaluations": 288000,
+      "training_forwards": 1440,
+      "update_rows": 73728,
+      "wall_seconds": 32500,
+      "world_model_batch_forwards": 41616,
+      "world_model_candidate_evaluations": 1040400,
+      "world_model_updates": 1440
+    },
+    "controller": {
+      "CPU_scope": "dispatcher SELF/waited children + controller SELF/waited supervisor/export descendants counted once",
+      "Linux_evidence_retained": "/home/user1/w1-pilot/runs/w1-drone-action-consequence-world-model-v5-public-prefix-contract-repair-once",
+      "dispatch_CPU_seconds": 0.3372152259999999,
+      "exitcode": 1,
+      "export_CPU_seconds": 0.5657069899998532,
+      "export_wall_seconds": 1.1605997267179191,
+      "first_controller_error": null,
+      "hosting_receipt": "/home/user1/w1-pilot/hosting/w1-drone-action-consequence-world-model-v5-public-prefix-contract-repair-once.json",
+      "local_export": "/home/user1/w1-pilot/packages/w1-drone-action-consequence-world-model-v5-public-prefix-contract-repair/exports/w1-drone-action-consequence-world-model-v5-public-prefix-contract-repair-once",
+      "measured_Linux_CPU_seconds": 2335.6306550239997,
+      "reserves_are_not_measurements": true,
+      "resource_scope_complete": false,
+      "status": "stopped",
+      "unmeasured": [
+        "SSH/client transfer outside server research scope",
+        "systemd user-manager CPU",
+        "controller exit tail"
+      ],
+      "wall_seconds": 2423.3381745279767
+    },
+    "unconfirmed_stage_tail": {
+      "cpu_attribution_status": "worker_journal_matches_server_commit",
+      "cpu_scope": "included once in supervisor SELF plus waited-children total; phase rows are non-additive views",
+      "cpu_seconds": 1600.2274009999996,
+      "cpu_tail_measurement_reversed": false,
+      "event": "unconfirmed_stage_tail",
+      "measurement_status": "measured_incomplete",
+      "stage": "world_training_and_restore",
+      "stage_cpu_seconds": 1600.2274009999996,
+      "stage_resource_cap_pass": false,
+      "stage_wall_seconds": 1605.1718239453621,
+      "transition_committed": false,
+      "wall_seconds": 1605.1718239453621
+    },
+    "stage_cpu_cap": 1600,
+    "stage_wall_cap": 2000,
+    "worker_final_ledger": "unavailable; derive only from SQLite",
+    "classification": "technical_stop; worker killed by CPU shutdown-reserve guard after measured stage tail crossed frozen stage CPU limit"
+  },
+  "research_conclusion": "technical_stop_before_offline_gate; no scientific effect evaluated"
+}

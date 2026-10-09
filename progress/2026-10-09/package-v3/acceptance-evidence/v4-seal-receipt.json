@@ -1,0 +1,679 @@
+{
+  "frozen_inventory_verified": 116,
+  "identity_consumed": true,
+  "old_identity": {
+    "approval_status": "NOT_APPROVED",
+    "attempt": "w1-drone-action-consequence-world-model-v4-event-signal-contract-repair-once",
+    "formal_attempt_created": false,
+    "formal_token_created": false,
+    "hashes_sha256": "d5860cd7b4c0b62dc2f022f34848ae1507096bbc8ad943d76cd0b19f1847f91e",
+    "manifest_sha256": "8b4f0f6caa51dc1c51a75807a7c7608386c65e14a828176fce74a3079b958f70",
+    "resource_request_sha256": "42b4083bfdafda2740e345b9369dca4b9299fe62b6f38676106dc94415875f6e"
+  },
+  "old_paths_modified": false,
+  "preserved_files": {
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\audit_stop.py": {
+      "bytes": 2887,
+      "sha256": "4be896b397114035133e6cb00f9286572641e3c48cb17d2e55a245c9c713848e"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\authorize_and_launch.py": {
+      "bytes": 3041,
+      "sha256": "f944dc3e01014c51388be7ea03542481a3da8df179db70643fefb3c61214f87b"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\bundle_evidence.py": {
+      "bytes": 2670,
+      "sha256": "a3707016631b345ed3fed332b6644d59c7fd78cc19a90b66b208d351a6855c76"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\controller-settlement.json": {
+      "bytes": 1110,
+      "sha256": "d2e5d16c669b39bc894fe4024d663eaffee58f20e508366ae16b3098e360d52f"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\hosting-logs\\stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\hosting-logs\\stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\hosting-receipt.json": {
+      "bytes": 981,
+      "sha256": "b58c84d15ff29ec2f1f1c21d74194e8069528a4437a44bb319779b7f9f3d0f4b"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\operator\\monitor-history.jsonl": {
+      "bytes": 14187,
+      "sha256": "6a0108b42597d647e666ef79e43228fe3d75b668f47943e85a8f88bfe5c47110"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\operator\\monitor-latest.json": {
+      "bytes": 15939,
+      "sha256": "4f372d928b6af9618a805662d348fad87266b2e0d7a4ba67edcab5c9b8b90616"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\operator\\submission-receipt.json": {
+      "bytes": 1709,
+      "sha256": "ec0361ae2bb754036fcef92439e94d54e3e75ea08b314b1d275143bf321552a7"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\BUDGET_BASIS.md": {
+      "bytes": 5351,
+      "sha256": "417c48dd3c0459a67afaf7987786a42efd76172c648ea51e6a4dab77ff65552b"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\EVENT_SIGNAL_CODE_DIFF.md": {
+      "bytes": 1078,
+      "sha256": "b8a48f4579858cfa271c24dcaeb14898b31d15e8e18de577d329ab1f50837be1"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\EVENT_SIGNAL_CONTRACT.md": {
+      "bytes": 1236,
+      "sha256": "bf0e7fa5f71b5e4f5fe22ee21d8146fb4a62aaad5122ef60e74674ba601f6d50"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\EVENT_SIGNAL_SEMANTIC_TRACE.json": {
+      "bytes": 2330,
+      "sha256": "0240ef7f53784e0c1b01383d70729b20a6ae4dccc70ed6d47d778bd3d459d0a9"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\LOSS_CONTRACT.json": {
+      "bytes": 605,
+      "sha256": "74f8ec68a6222b114b28375306b6c07f6ea3aa1f8d76b625a9e3294dea25db85"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\PRODUCTION_CALL_GRAPH.md": {
+      "bytes": 3179,
+      "sha256": "4a05136dd950cc13ec6ece16f9521c865b58724b24aac216aed7abc08ceab642"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\README.md": {
+      "bytes": 2560,
+      "sha256": "8a636400595a74a3b0ad76a4a7913100697b299d75eef351cce160179b0ab72b"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\REPAIR_REPORT.md": {
+      "bytes": 8718,
+      "sha256": "37b299c1a433bea56ee1f5ceca1289b9fdecad21648cc046428b6996a7eda0ba"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\RESOURCE_KEY_MAP.json": {
+      "bytes": 14727,
+      "sha256": "d71ad754fb531224e15010cbc9d0fe38aa9fed2a38a745786aa91bed6189e8e0"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\RESOURCE_REQUEST.json": {
+      "bytes": 14016,
+      "sha256": "42b4083bfdafda2740e345b9369dca4b9299fe62b6f38676106dc94415875f6e"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\RESOURCE_REVISION.md": {
+      "bytes": 2411,
+      "sha256": "9da1597ce319d0b14a783ffc972d4d9f01f7ab23c066293cb9858df7ca8fb80e"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\RESULT_DECISION_CONTRACT.md": {
+      "bytes": 2843,
+      "sha256": "5a874d997a40be7747ae0eb658630503fc2ea3b50ce2016202fa0c3f62f253b3"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\acceptance-evidence\\acceptance-first-error.json": {
+      "bytes": 1393,
+      "sha256": "04cd4ebc15e988cbfe02855f1b3b0f13299b538f4b8c0ba97c9d26cc2573a6c4"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\acceptance-evidence\\acceptance-summary.json": {
+      "bytes": 6266,
+      "sha256": "eafcbf7f473ce1ae8d539bb0dc26e2af1ee7fda9c2b17b8826b340f537838b72"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\acceptance-evidence\\controlled-evidence-hashes.json": {
+      "bytes": 1400,
+      "sha256": "598f7c2244997b1cf59b75ad33703dfb7ee8439f7a8d0aa147833343981f5b57"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\acceptance-evidence\\controlled-input-inventory.json": {
+      "bytes": 8157,
+      "sha256": "db52e92fdba4e55f042cbcdde53482dbb780bc086b0594d7b820d188a54865ff"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\acceptance-evidence\\controlled-resource-receipt.json": {
+      "bytes": 765,
+      "sha256": "c1d8c7c0e01994cde61e6c7fb2e896b33a25844662523fa240235087505f664b"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\acceptance-evidence\\engineering-resource-accounting.json": {
+      "bytes": 765,
+      "sha256": "c1d8c7c0e01994cde61e6c7fb2e896b33a25844662523fa240235087505f664b"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\acceptance-evidence\\test-output.json": {
+      "bytes": 6266,
+      "sha256": "eafcbf7f473ce1ae8d539bb0dc26e2af1ee7fda9c2b17b8826b340f537838b72"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\acceptance-evidence\\test-output.txt": {
+      "bytes": 6266,
+      "sha256": "eafcbf7f473ce1ae8d539bb0dc26e2af1ee7fda9c2b17b8826b340f537838b72"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\acceptance-evidence\\v2-first-error-identity-trace.json": {
+      "bytes": 1988,
+      "sha256": "dbb7f1c9e3c9953caf3352442775b03b15296af47c25dc65498e37ac5dc689d0"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\acceptance-evidence\\v3-first-error.json": {
+      "bytes": 1988,
+      "sha256": "dbb7f1c9e3c9953caf3352442775b03b15296af47c25dc65498e37ac5dc689d0"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\acceptance\\candidate_contract_acceptance.py": {
+      "bytes": 24728,
+      "sha256": "cbda793e2e6e78f1f18e0cb3c4695a164f45e9f2fcbf5061c6d29ac30f726ce3"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\acceptance\\controlled_environment.py": {
+      "bytes": 4308,
+      "sha256": "d54437306e7ad7a7c87be0734509f4d1410bedc7d0e83828470b7905dcd8318f"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\candidate-contract-diff.patch": {
+      "bytes": 77791,
+      "sha256": "08c1424129f28d35123a9a19f97ce46973a4b2e794972206c8a46ba0a760737b"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\candidate-key-contract.json": {
+      "bytes": 2072,
+      "sha256": "5d04e17d40882c14f2b2e67b28651387beb714a154222ed6b66c781ba182c6b5"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\consumed-identity.json": {
+      "bytes": 299,
+      "sha256": "8b26556af8c4dc70f3a33e0e0d29813a23a0f68826a0e299b925bafd7fe21367"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\controller-settlement.json": {
+      "bytes": 1110,
+      "sha256": "d2e5d16c669b39bc894fe4024d663eaffee58f20e508366ae16b3098e360d52f"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\evaluation-isolation-audit.json": {
+      "bytes": 49205,
+      "sha256": "c75480a28c46a3dea5f710d1a592ae01e96ecce0b6d90accfb3c8860c4c5d0c0"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\execution-manifest.json": {
+      "bytes": 10608,
+      "sha256": "8b4f0f6caa51dc1c51a75807a7c7608386c65e14a828176fce74a3079b958f70"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\experiment-matrix.json": {
+      "bytes": 1747,
+      "sha256": "1d7d32e99e9caa77894da61f9f651bf1a62fa97a9505bd9ab8e46ef9677f9e32"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\export-verification.json": {
+      "bytes": 22566,
+      "sha256": "00623862786274e65d4dd837c758d2d805a9d1874396e85d73460a09cdeeb2bf"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\export_artifacts.py": {
+      "bytes": 2809,
+      "sha256": "91d8d2a224708d12c2a3fea212feb9c575ea0d8fb5cf96d6129bf5cf4d0a95e9"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\freeze_v4.py": {
+      "bytes": 4700,
+      "sha256": "9a140314bb7099a29d049a3f4d69324164d6eba9acfd477ec1d53c43bfebeaf7"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\frozen-identity.json": {
+      "bytes": 474,
+      "sha256": "73a045ca7b048e14db72f119f6fe9cdfbe0339860bc2a591202a0810d6c88287"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\hashes.json": {
+      "bytes": 18132,
+      "sha256": "d5860cd7b4c0b62dc2f022f34848ae1507096bbc8ad943d76cd0b19f1847f91e"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\launch_pilot.py": {
+      "bytes": 13494,
+      "sha256": "428273cc646417bebae03ef2d690e7c044583a9dc487f8c2405e4d3212258b92"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\managed_host.py": {
+      "bytes": 4750,
+      "sha256": "04c21f28daa90cc69118691fc5e4326f4e255f72aaf8c88847cf7b192d606bc0"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\RESOURCE_REQUEST.json": {
+      "bytes": 14016,
+      "sha256": "42b4083bfdafda2740e345b9369dca4b9299fe62b6f38676106dc94415875f6e"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\budget_ledger.py": {
+      "bytes": 13506,
+      "sha256": "739a7a09b980cd612bb528f983b81dafa662ec9cda02e992f800fd60e1ae28a4"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\candidate_keys.py": {
+      "bytes": 11469,
+      "sha256": "0a74ec93607dd17a20af5bd6859b06e5d392e9046e3f4d242d81b7570ebc40dc"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\classical_baselines.py": {
+      "bytes": 6911,
+      "sha256": "424e17682004737e7ff700a70c9cc62bfd2988e16b2cdc8c9055c57d941bf53d"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\consequence_collection.py": {
+      "bytes": 13071,
+      "sha256": "0d45f46b54ec93d604cfd8b6d421e69f00c196950f9c85e62f1899a3dd2ff2ea"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\consequence_contract.py": {
+      "bytes": 11091,
+      "sha256": "ce2a4ee11609ff837251b5e3e81b719a007a6c94ac45fb7c996b862aed847b92"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\consequence_features.py": {
+      "bytes": 5328,
+      "sha256": "b0b3d0e59c9313d624fee7896b1512ae099ef666b9599d1c085e3eab8a123d9c"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\consequence_model.py": {
+      "bytes": 6951,
+      "sha256": "eb62cef01e4e1da32a04468c138691a82c679397199f086281cffd3b76ad2d5f"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\consequence_policy.py": {
+      "bytes": 4108,
+      "sha256": "018e6a1508ce93be6c36c47d97c3d942e87373bb7b59435df5bbc77fcdb8338a"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\consequence_replay.py": {
+      "bytes": 6016,
+      "sha256": "e361c0778357deda6639b0dccb4e93fa30e806cec59ef27055c37a42791233b8"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\consequence_training.py": {
+      "bytes": 10889,
+      "sha256": "d9601e252d830b92e9cc6ebc578df32b94adb8914fb33b55bff1bf4236469e45"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\console.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\environment-config-contract.json": {
+      "bytes": 1524,
+      "sha256": "71baa9a044afad72d8c51760d87ec0bc1590a5d7ef00b2e03161538974301986"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\evaluation-tape.json": {
+      "bytes": 88756,
+      "sha256": "2272c665654619f83a10bf9e1641a284e2afb7ac7ae2844f5d37b1d8ef24755f"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\event_signal_contract.py": {
+      "bytes": 1858,
+      "sha256": "ba7b154a9385b2285a3f7bbf5dc82911cc087e194b4b8d5338d4db6d8c88d194"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\execution.lock": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\experiment-matrix.json": {
+      "bytes": 1747,
+      "sha256": "1d7d32e99e9caa77894da61f9f651bf1a62fa97a9505bd9ab8e46ef9677f9e32"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\infra_io.py": {
+      "bytes": 15517,
+      "sha256": "fbd6533833f8845d49ce6ad28b793245e58f22467acbe83e7c45a14704db7ace"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\linux_process_scope.py": {
+      "bytes": 14027,
+      "sha256": "3cc229bd1d64971a029f6d1f37ea5f63e708224a04d9ed11537a9f2f8d4c0f21"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\__init__.py": {
+      "bytes": 823,
+      "sha256": "3883a8ec3d5294cc9348d9cbfa4af625b543def57a0381ba2115e8a4847dfb00"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\adapter_probe.py": {
+      "bytes": 3862,
+      "sha256": "07d71d87bb04703bb1fb017808956398b59cfd535b75b13270864133d74fe268"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\arrival_consequence_data.py": {
+      "bytes": 4121,
+      "sha256": "d4d97ee7a07f7fcb2a5ab4e8fada89001b4f88eb845085b5fa3aa0aca31e21ab"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\arrival_consequence_model.py": {
+      "bytes": 5387,
+      "sha256": "0ebfce661f6348e64cfddcdd56fc837de984287a511c1bdb8c8ec1746f69b3a2"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\arrival_gppo_fusion.py": {
+      "bytes": 14324,
+      "sha256": "6ea9d60955afd55be818172457a45b74bdb77519382651e389fc4e2f0ba28059"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\budget_executor.py": {
+      "bytes": 22576,
+      "sha256": "5a2a7536a0ebb0078638a1fd45491a5d13cd9a719c9f012f158b74f5050fd29b"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\calibration.py": {
+      "bytes": 10264,
+      "sha256": "6955676756f8ec2ff1bb937f3f3ded9a037cc38151122a7bfa58d5625ff0e57c"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\consequence_data.py": {
+      "bytes": 11298,
+      "sha256": "6bf909c4da3242cafb2af04437be6df6518d195088e407f33c164362b49edfb7"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\consequence_model.py": {
+      "bytes": 18732,
+      "sha256": "cdec5ff9b33ec3fc8202c2ebd8f9cc01ac418e4b9b5af349d9a3f97a3e230f12"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\contracts.py": {
+      "bytes": 10946,
+      "sha256": "c7a66851e2513524ac17be33a7f96f61b18dca6d7840fdcefda5ac3f6cfbe290"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\data.py": {
+      "bytes": 11987,
+      "sha256": "ed45cfab16e08b66bee55839e5c55a1dd711faa5380f4f5643fbd01a86e4b807"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\dataset.py": {
+      "bytes": 3378,
+      "sha256": "b296d8ce8aec9a4fff83cd2686d2e147b972a1255f51174479abda53230f4664"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\event_training.py": {
+      "bytes": 23984,
+      "sha256": "5f613d40c34fa8381ccd27a36b7048cdb92b53692bb58eebc6f24efb523e2afc"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\event_trigger_semimarkov.py": {
+      "bytes": 4201,
+      "sha256": "f348db4e865c945cae90d848bf2d859c443cfdea188f6a9db325a22aa33a25e8"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\events.py": {
+      "bytes": 17233,
+      "sha256": "84cc0e1850d2ddb62967df4b96d23def57bf58dad5ab41308bae7167c438b077"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\gppo_adapter.py": {
+      "bytes": 19252,
+      "sha256": "ea0b763106cb8c1a45c8cd16fe52307d0a8de4023c69aa550aa14273c62993e3"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\gppo_shadow_env.py": {
+      "bytes": 12531,
+      "sha256": "426aeefcbf9f5275dceb8f36959c65d46c17b83d28a4134ee9ec228553ab6bab"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\gppo_trainer.py": {
+      "bytes": 20387,
+      "sha256": "ec2c6f0fb8038b9e6ada5247b3b51da5c2eeabd670acabcd6a518ad24e4db2ab"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\graph5.py": {
+      "bytes": 6305,
+      "sha256": "bf469d0da2c3161294fbb1ad05871c602efc1943c1a7520914627ddcb132d5c0"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\jepa.py": {
+      "bytes": 6202,
+      "sha256": "3c3ce3cc995c1b2a80be2c37107dadd922531116cb8aaaad0f8511760fcfeb54"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\jepa_two_stage.py": {
+      "bytes": 6822,
+      "sha256": "15064c42882a37f6e339cbb98a8e18fbac0b81d6ad688cedf28011059d69b0b2"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\joint_consequence.py": {
+      "bytes": 11131,
+      "sha256": "34f377abdc5957125727fd71d870243ff273ac9988817beacd6cde6fcfde34ba"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\joint_consequence_baseline.py": {
+      "bytes": 5744,
+      "sha256": "38f6740baabcc856c37c3757797b341b4c22b9d94ebafefa24688293e99b2c37"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\joint_consequence_data.py": {
+      "bytes": 5108,
+      "sha256": "9e87b21b6cac74e441a0cfafbaffff5eee9085e605e97323fd126ffd902ee5e9"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\joint_consequence_model.py": {
+      "bytes": 3988,
+      "sha256": "7588fa49333a3bcf5dcce30cd3411ed7197bde0efae63d3123080e32316a0241"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\joint_gppo.py": {
+      "bytes": 20878,
+      "sha256": "3c799cfe12050971e1b11da6b2c04fa6a7c244a36935578861c5db533396f55e"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\joint_training.py": {
+      "bytes": 114181,
+      "sha256": "39d202d0c590875af25764001c99e39af7d4cc82d4f7689f6b12c3cc6213874e"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\m10_communication.py": {
+      "bytes": 9018,
+      "sha256": "fcaada4fea48446aae509fb97f4b6b8275d5b6b9dda3bcdef00c5c392e6011ce"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\m10_environment.py": {
+      "bytes": 57593,
+      "sha256": "6d79b1038ddca81188d648f7e5eb01820aa46733f737fd42807e3bedb49b2262"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\m10_training.py": {
+      "bytes": 55272,
+      "sha256": "20642fde3349692d5f0d48750a04c53a7b4df29f1e1f2830f7fc6bfefae45941"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\model.py": {
+      "bytes": 20179,
+      "sha256": "4bfd4deb85165e7eeeb0338beab17d2a1c76582248cb893f76cfd4db73a19ce7"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\phase_data.py": {
+      "bytes": 8463,
+      "sha256": "42bf58bcad83e1480ccff80459978a690412175880651e63f58ce7d96b6c35d8"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\phase_learning.py": {
+      "bytes": 3251,
+      "sha256": "bce4203320d7b8e184200f78bdb83084bd37d9f1cfcb0cba7800c6f2707d4e20"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\recorder.py": {
+      "bytes": 4057,
+      "sha256": "cea67089e9ca7b9d9c5a2415c912840bf33f4cf7c01ccb8857efea8267108023"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\registry.py": {
+      "bytes": 5059,
+      "sha256": "516af07f6a7b013f463d0aac4c5606c3925a6089c71327c5f6be478c51940db6"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\s1_r_contracts.py": {
+      "bytes": 4727,
+      "sha256": "772f8ba385d3c6ed8dccf8431d1019e506259350b40f40c8dc5970ddca9db719"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\service_clock.py": {
+      "bytes": 10947,
+      "sha256": "c5699bd117b442534725a88a0805704a0477217e8b918069152665f4bd1538f3"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\shadow.py": {
+      "bytes": 13873,
+      "sha256": "bd81fd1a6289186f0a6c57697159a88c2d0bae07e455fddff9d21c97ec1f970a"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\task_decision_bridge.py": {
+      "bytes": 1643,
+      "sha256": "dd066a4e1be16607e5005e66eed5b90b1b97b485e57d7c7236b46eb171f8b1fd"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\task_execution.py": {
+      "bytes": 6213,
+      "sha256": "87285ac5a20e761dc9e7c754c0701ba0d2d36725e70ea258343e8e6f7d2dc3ca"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\task_lifecycle.py": {
+      "bytes": 5133,
+      "sha256": "50248afa519fd18dbc5995ba0bbf7e58adc0833ae501760ea032ab91fca5ed89"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\task_policy_view.py": {
+      "bytes": 6648,
+      "sha256": "f5877b6582a02a5bb6c9c39b469dd222e9f5727390fd8080c01e160cd7b23317"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\telemetry.py": {
+      "bytes": 2838,
+      "sha256": "c52f2367c06625dc670f08211dc8e514caf2e005cce7d3b82c2ab1bd7cc556bc"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\native\\gppo_world\\training.py": {
+      "bytes": 18357,
+      "sha256": "6b358fc686118aaf29b9686ba23871c9565ad783849a012c19bc941ddc700f70"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\offline_metrics.py": {
+      "bytes": 4055,
+      "sha256": "e28d7cd3c9bd8d8cb161939a47898a11c45da3a841745f79fa79118ad3983438"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\parent-split.json": {
+      "bytes": 282629,
+      "sha256": "ec79640aceeca84e2c71f1f16bce8998e9b68ea138ecfe48f8c95cd790a35211"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\phase_handshake.py": {
+      "bytes": 32952,
+      "sha256": "cba29223018bec26972bd3f3352cf400cfa94fb98ef22cec2851291646817b43"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\prediction_diagnostics.py": {
+      "bytes": 2508,
+      "sha256": "ef66eda18c7a1a2debf902e2dfdfc341c064994882ae2ff2cd0169cae687768d"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\production_driver.py": {
+      "bytes": 42536,
+      "sha256": "e5b55a2e6085bab0c8b0ce1c7f757ba1c617de9dce5a6655c1fb9f4413ab7c54"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\public_controller.py": {
+      "bytes": 13264,
+      "sha256": "65cc8e02381dc6ecf0e08be9359ec5fec7f431e551cb766062f0dda6de1f353f"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\public_history.py": {
+      "bytes": 2690,
+      "sha256": "097da3b9ad0550989ab4748520a2a6737aa18aa06d9b46510ae79f3729e6fed8"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\resource-history.jsonl": {
+      "bytes": 3972,
+      "sha256": "099e591106c29ea18130dcd01511528e21377615dbc0c13f2a801ae4c44dbd8c"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\run-once\\activity.json": {
+      "bytes": 223,
+      "sha256": "3cdbe291ec47879a1afba0cca9848478f84ca46e964cd1c4456305334fa55a1b"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\run-once\\candidate-identity-audits.jsonl": {
+      "bytes": 10559,
+      "sha256": "58947dcdc854075f4602710ef8d5b086b9f67db1136ac50826d4fb501a9f3f1b"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\run-once\\first-error.json": {
+      "bytes": 1997,
+      "sha256": "72400e8648a6817257084346ead6d0d47c170756a9720d4dc2647fde44275437"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\run-once\\ledger.sqlite": {
+      "bytes": 28672,
+      "sha256": "71ecc8b5b9157d0a97541a23db804621fe69c51cbb079869ad10abea8ff9c5e0"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\run-once\\operation-measurements.jsonl": {
+      "bytes": 28108,
+      "sha256": "c21365abd94dbe3a5b5c97425815b339559b3af0407cdeb91085e7a121f55720"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\run-once\\research-identity.json": {
+      "bytes": 67,
+      "sha256": "c3c4ac1d4a6b46b25bdd9ad62a1d4e473fc015aa905454ba195d3e0cb8746a85"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\run-once\\resource-settlement.json": {
+      "bytes": 3169,
+      "sha256": "1316e6c800e26c39a637d2c4220eefc6a251b6b01c94350a6cafc52ded9a3b8f"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\run-once\\snapshots\\4842ea41e54d4fc687194f3d20d5022a5deb75b98c0c0789c96633539628ec08.json": {
+      "bytes": 514411,
+      "sha256": "bcd25a431c31d60c800cb0901fa8aa6ceb522a51b20be335b748be568677aca1"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\run-once\\snapshots\\4842ea41e54d4fc687194f3d20d5022a5deb75b98c0c0789c96633539628ec08.pickle": {
+      "bytes": 190083,
+      "sha256": "4842ea41e54d4fc687194f3d20d5022a5deb75b98c0c0789c96633539628ec08"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\run-once\\snapshots\\90fe62cdc0fb9a4a4609e56d83f2e2d080f9398eefaf7ebbfd4d9c4a67ae4b28.json": {
+      "bytes": 296178,
+      "sha256": "e09290af549b8287d5981dd99fbbf36fa156e33d0c5ba6ff03bea515a129bf8f"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\run-once\\snapshots\\90fe62cdc0fb9a4a4609e56d83f2e2d080f9398eefaf7ebbfd4d9c4a67ae4b28.pickle": {
+      "bytes": 118277,
+      "sha256": "90fe62cdc0fb9a4a4609e56d83f2e2d080f9398eefaf7ebbfd4d9c4a67ae4b28"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\run-once\\status.json": {
+      "bytes": 363,
+      "sha256": "ffa7f5b860a0fc7cda1908cff968f666ba838dc5379ffc38e03446b777d2bb97"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\run-once\\windows\\consequence-v1-world_and_policy_train-000--time-2.json.gz": {
+      "bytes": 150325,
+      "sha256": "ed78b59d558a234b281e992e5c55dec525f8058722daf9cfebbebf8e93b4f476"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\run-once\\worker-phase-accounting.jsonl": {
+      "bytes": 3054,
+      "sha256": "d8b7aa37c3ae17b681c9180956aea8c7d60d3912860ff5c7922c7d40819d149d"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\run-once\\worker-phase-protocol.jsonl": {
+      "bytes": 4782,
+      "sha256": "d94bdf74607ef839d957ff68147a96de0acad2b643d9848c3ef61fbb73a01650"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\run-once\\研究报告.md": {
+      "bytes": 533,
+      "sha256": "06a452f2c95b66ec85579f7d92f02154f58bf936efff34694756459357e2f2ad"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\stage_contract.py": {
+      "bytes": 1157,
+      "sha256": "cca3888d510988e96437f227e51ca11d9c8b0e0f6417247ca793a5b00b20e154"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\supervise.py": {
+      "bytes": 45875,
+      "sha256": "5a343752dc9e381b6e9132d2ad72f8d3788984fc93844afd5f64e434e06f6537"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\supervisor-console.log": {
+      "bytes": 492,
+      "sha256": "d4ed97d0b8d418fe53ebe350e60b6e9510312e8ccaac2c9c52790e6387f30aa6"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\supervisor-first-error.json": {
+      "bytes": 234,
+      "sha256": "dfc6430b19f639aa2809ec84489d8acf501936c8ce8a5db4fde4be58be915e9c"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\supervisor-phase-protocol.jsonl": {
+      "bytes": 8646,
+      "sha256": "36d6ff2d7ee399e5666d2d95c6f34a69f636fb2a636d8c25205931b0943b4b6e"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\supervisor-status.json": {
+      "bytes": 6635,
+      "sha256": "371557962df5edc95fd551bcb85b1aa225778c252fc807ce4edc1b5f88129ee6"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\tail_reserve.py": {
+      "bytes": 1393,
+      "sha256": "cf88e2014ac6bb311c14784bd2cf954c8ba7b2d84fe19f7546d964207f3cda8d"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\task_analysis.py": {
+      "bytes": 6128,
+      "sha256": "850dd90fe7e5852b96e22c956de9ee5b56f8455ddf2ecac78af6f203265a0445"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\vendor\\w1_graph_jepa.py": {
+      "bytes": 7466,
+      "sha256": "239ff4e78327d1e9d9b7fafad61b4b78e310de1e437758d51ca7290b564a2b63"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\package\\worker_bootstrap.py": {
+      "bytes": 516,
+      "sha256": "8725c94f93f23453f5aa59d2705e9cf695f8c19f01261101f186db59b1d31ae8"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\parent-split.json": {
+      "bytes": 282629,
+      "sha256": "ec79640aceeca84e2c71f1f16bce8998e9b68ea138ecfe48f8c95cd790a35211"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\prepare_and_freeze.py": {
+      "bytes": 14015,
+      "sha256": "2194fa8a526e253b2a68524122dc7f622d539fadbe27a35f62f9307b9e503b8b"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\protected-inputs.json": {
+      "bytes": 1169,
+      "sha256": "72c6ddcc9d7eee1ec98e4bbb8b5e94c46442ce35a92bc9062d42f5f433eebdc5"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\reference-runtime\\runtime-binding.json": {
+      "bytes": 1726,
+      "sha256": "e256c72635149633cb3035a3b230cc8d6d5050bd2e0f899848c962e3dcd4fa80"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\reference-runtime\\runtime-identity.json": {
+      "bytes": 2507,
+      "sha256": "15592fb4b9a05f6cdaee095b53f6fde42a910639e3f717bdeffc3be5a928f9a5"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\server-evidence\\runtime-binding.json": {
+      "bytes": 1726,
+      "sha256": "e256c72635149633cb3035a3b230cc8d6d5050bd2e0f899848c962e3dcd4fa80"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\server_runtime_contract.py": {
+      "bytes": 1388,
+      "sha256": "20f655d6ac0e5493303b92f31607a7323c5cde7a6881208b0c25f909dbea9079"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\summarize_controlled_evidence.py": {
+      "bytes": 5065,
+      "sha256": "d97df32499276c8530f27bc6b8174a04edbaa500f10abc2ced3bb474c7434b46"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\evidence\\verified-export\\unique-launch-command.md": {
+      "bytes": 1936,
+      "sha256": "73b188a621c98eedb5a056a53e8f119a928366a9a104dfabd42ca0fbd05773f3"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\final-delivery-hashes.json": {
+      "bytes": 31137,
+      "sha256": "efe070c3e70760923ecbb0a15ca398f3102d824ec8b02093f481e3250222849c"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\formal-evidence.tar.gz": {
+      "bytes": 648458,
+      "sha256": "f61fee48a30e2631a5e1a4840989cd2774c97823bb770b9bbb4af3c8f326e312"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\independent-stop-audit.json": {
+      "bytes": 3831,
+      "sha256": "92f5c17323e4065d134c9480c194c4094e823ad3964fcab3575bfa314c86fb30"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\local-verification.json": {
+      "bytes": 27736,
+      "sha256": "4056b88e3065c60f269ecc9dd4ba22980a041a9c54847fabd1abaf6d67195853"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\observe_server.py": {
+      "bytes": 1946,
+      "sha256": "4e43769f84848c72c7ef9b86061f502bcead6e842792769625e1c4bb4ee5ad28"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\retrieval-bundle-receipt.json": {
+      "bytes": 508,
+      "sha256": "159ae4d3875c579596a3624e4a4655cd7227912361bfb169909b4f0659891175"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\retrieve_and_verify.py": {
+      "bytes": 3390,
+      "sha256": "40bd42e125845ff31aff1aa6fc66277687d058042c2e81353a000e26bdb51ede"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\transfer-receipt.json": {
+      "bytes": 328,
+      "sha256": "3a2a588b0ca4e08725baaec56214105493ecebbfd9d5a14063bbf1e98ee85fcf"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\transfer-stderr.txt": {
+      "bytes": 1193,
+      "sha256": "73a4ef6e3075fca2a77ebebd9b97dabc5fcf2ce1e49f6c4df31e12eb6b76e916"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\transfer-stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "research-diagnostics\\w1-drone-consequence-v4-formal-run-20261008\\中文结论.md": {
+      "bytes": 4781,
+      "sha256": "4c30e56df009ff64b41b9e14e2d8778a5314c3d572a597bdb8a0ec1d4c015316"
+    }
+  },
+  "research_metrics": "未评价",
+  "status": "sealed_no_retry",
+  "v5_is_new_unapproved_identity": "w1-drone-action-consequence-world-model-v5-public-prefix-contract-repair-once"
+}

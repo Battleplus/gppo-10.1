@@ -1,0 +1,2742 @@
+{
+  "opened_after_nine_strict_restores": true,
+  "parents": [
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400724|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-000",
+      "repeat": 0,
+      "role": "policy_task_evaluation",
+      "scenario": {
+        "communication": {
+          "ack_loss_probability": 0.02,
+          "command_loss_probability": 0.02,
+          "name": "W1-light",
+          "renewal_duplicate_probability": 0.0,
+          "renewal_extra_delay": 0.0,
+          "renewal_reorder_window": 0.0,
+          "telemetry_duplicate_probability": 0.0,
+          "telemetry_extra_delay": 1.0,
+          "telemetry_loss_probability": 0.05,
+          "telemetry_outage_intervals": [],
+          "telemetry_reorder_window": 0.0
+        },
+        "events": [
+          {
+            "kind": "disconnect",
+            "resource": "uav-3",
+            "time": 6.831359083402028
+          },
+          {
+            "kind": "damage",
+            "resource": "uav-1",
+            "time": 7.594421324772117
+          },
+          {
+            "kind": "reconnect",
+            "resource": "uav-3",
+            "time": 8.831359083402027
+          }
+        ],
+        "name": "mixed",
+        "seed": 2032400724,
+        "split": "test",
+        "tape_id": "test-mixed-seed-2032400724-W1",
+        "tasks": [
+          {
+            "arrival": 0.0,
+            "deadline": 6.754834551306272,
+            "priority": 1.0916118214155728,
+            "region_id": 2,
+            "service": 1.2053946482179343,
+            "target_id": 2,
+            "task_id": "task-0",
+            "x": 1.2720366151016127,
+            "y": 0.45031603930288794
+          },
+          {
+            "arrival": 0.0,
+            "deadline": 7.766268678488045,
+            "priority": 1.5489200624805912,
+            "region_id": 2,
+            "service": 1.892446043304385,
+            "target_id": 2,
+            "task_id": "task-1",
+            "x": 2.486900525230583,
+            "y": 2.0575446819994583
+          },
+          {
+            "arrival": 1.8860978798458967,
+            "deadline": 10.621102605247623,
+            "priority": 1.1062090790429335,
+            "region_id": 2,
+            "service": 0.8397469976351922,
+            "target_id": 2,
+            "task_id": "task-2",
+            "x": 0.6278323103341663,
+            "y": 2.379110185938562
+          },
+          {
+            "arrival": 2.654583876590385,
+            "deadline": 11.824388498202865,
+            "priority": 1.7273662175092392,
+            "region_id": 0,
+            "service": 1.724938319788556,
+            "target_id": 0,
+            "task_id": "task-3",
+            "x": 2.828045837125955,
+            "y": 0.19055589888868074
+          },
+          {
+            "arrival": 5.35951166686329,
+            "deadline": 14.509749522725794,
+            "priority": 1.0514584757318184,
+            "region_id": 1,
+            "service": 1.0546786868753133,
+            "target_id": 2,
+            "task_id": "task-4",
+            "x": 1.1514863103147517,
+            "y": 2.728906105936372
+          },
+          {
+            "arrival": 7.379530942648801,
+            "deadline": 16.879796905736278,
+            "priority": 1.9432513245443075,
+            "region_id": 1,
+            "service": 1.5859784836904316,
+            "target_id": 1,
+            "task_id": "task-5",
+            "x": 3.3682182966817935,
+            "y": 3.0935315677266773
+          }
+        ]
+      },
+      "scenario_sha256": "308ac23f90b53b0496120c72f2db33c21b29a5107a77fb3c81169d4153347991",
+      "seed": 2032400724,
+      "split": "evaluation",
+      "structural_sha256": "289962f467152aaefa28043662f0ecda63f74a1a0f633fd2e2b0b3a0bf26048a"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400725|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-001",
+      "repeat": 0,
+      "role": "policy_task_evaluation",
+      "scenario": {
+        "communication": {
+          "ack_loss_probability": 0.02,
+          "command_loss_probability": 0.02,
+          "name": "W1-light",
+          "renewal_duplicate_probability": 0.0,
+          "renewal_extra_delay": 0.0,
+          "renewal_reorder_window": 0.0,
+          "telemetry_duplicate_probability": 0.0,
+          "telemetry_extra_delay": 1.0,
+          "telemetry_loss_probability": 0.05,
+          "telemetry_outage_intervals": [],
+          "telemetry_reorder_window": 0.0
+        },
+        "events": [
+          {
+            "kind": "disconnect",
+            "resource": "uav-1",
+            "time": 5.447849760473075
+          },
+          {
+            "kind": "damage",
+            "resource": "uav-0",
+            "time": 7.009024351465516
+          },
+          {
+            "kind": "reconnect",
+            "resource": "uav-1",
+            "time": 7.447849760473075
+          }
+        ],
+        "name": "mixed",
+        "seed": 2032400725,
+        "split": "test",
+        "tape_id": "test-mixed-seed-2032400725-W1",
+        "tasks": [
+          {
+            "arrival": 0.0,
+            "deadline": 6.375501497812528,
+            "priority": 0.9557684361932126,
+            "region_id": 1,
+            "service": 1.2353304328177845,
+            "target_id": 2,
+            "task_id": "task-0",
+            "x": 1.2389286082393274,
+            "y": 0.705706861375134
+          },
+          {
+            "arrival": 0.0,
+            "deadline": 8.236581424281722,
+            "priority": 1.6117657162349681,
+            "region_id": 2,
+            "service": 1.5657229043852636,
+            "target_id": 3,
+            "task_id": "task-1",
+            "x": 2.7988349970982083,
+            "y": 2.0056146619368636
+          },
+          {
+            "arrival": 2.259433886390492,
+            "deadline": 11.433587260898355,
+            "priority": 1.24436859816205,
+            "region_id": 1,
+            "service": 0.9423113149662232,
+            "target_id": 2,
+            "task_id": "task-2",
+            "x": 0.5601795821830164,
+            "y": 2.476617634514387
+          },
+          {
+            "arrival": 2.8748109154623154,
+            "deadline": 11.73508556246283,
+            "priority": 2.049623494730748,
+            "region_id": 0,
+            "service": 2.277827027176235,
+            "target_id": 2,
+            "task_id": "task-3",
+            "x": 3.117108930777909,
+            "y": 0.08277147277443121
+          },
+          {
+            "arrival": 4.8023064379575935,
+            "deadline": 15.540210728247645,
+            "priority": 1.1343006271883869,
+            "region_id": 2,
+            "service": 1.1450675401656598,
+            "target_id": 0,
+            "task_id": "task-4",
+            "x": 1.125563566103734,
+            "y": 3.04738998811919
+          },
+          {
+            "arrival": 7.3094062480376065,
+            "deadline": 17.424941120041172,
+            "priority": 2.030636277229519,
+            "region_id": 0,
+            "service": 1.496494514833168,
+            "target_id": 2,
+            "task_id": "task-5",
+            "x": 3.303275201490236,
+            "y": 3.1058595276562087
+          }
+        ]
+      },
+      "scenario_sha256": "80d0e3dc3a24fcea6c81ef5f1866a9190111d333e1ef0d3d8739763058d04279",
+      "seed": 2032400725,
+      "split": "evaluation",
+      "structural_sha256": "43a898fe53c20f9e3be27ce89497635dcaa997a2fc01288fe1c6c36dafeae04a"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400726|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-002",
+      "repeat": 0,
+      "role": "policy_task_evaluation",
+      "scenario": {
+        "communication": {
+          "ack_loss_probability": 0.02,
+          "command_loss_probability": 0.02,
+          "name": "W1-light",
+          "renewal_duplicate_probability": 0.0,
+          "renewal_extra_delay": 0.0,
+          "renewal_reorder_window": 0.0,
+          "telemetry_duplicate_probability": 0.0,
+          "telemetry_extra_delay": 1.0,
+          "telemetry_loss_probability": 0.05,
+          "telemetry_outage_intervals": [],
+          "telemetry_reorder_window": 0.0
+        },
+        "events": [
+          {
+            "kind": "disconnect",
+            "resource": "uav-3",
+            "time": 4.2214273848188455
+          },
+          {
+            "kind": "reconnect",
+            "resource": "uav-3",
+            "time": 6.2214273848188455
+          },
+          {
+            "kind": "damage",
+            "resource": "uav-1",
+            "time": 9.159241544765845
+          }
+        ],
+        "name": "mixed",
+        "seed": 2032400726,
+        "split": "test",
+        "tape_id": "test-mixed-seed-2032400726-W1",
+        "tasks": [
+          {
+            "arrival": 0.0,
+            "deadline": 6.5130721505827065,
+            "priority": 0.9843443405866988,
+            "region_id": 2,
+            "service": 1.2039989022521527,
+            "target_id": 3,
+            "task_id": "task-0",
+            "x": 1.591700319652179,
+            "y": 0.2724939846859603
+          },
+          {
+            "arrival": 0.0,
+            "deadline": 8.40265764442552,
+            "priority": 1.4443088938409856,
+            "region_id": 2,
+            "service": 1.9464511526740405,
+            "target_id": 2,
+            "task_id": "task-1",
+            "x": 2.3623248165960566,
+            "y": 2.3539257196561314
+          },
+          {
+            "arrival": 1.6366640089910613,
+            "deadline": 10.45379964985489,
+            "priority": 1.1001532619265209,
+            "region_id": 0,
+            "service": 1.0253855285064009,
+            "target_id": 3,
+            "task_id": "task-2",
+            "x": 0.7780153200461661,
+            "y": 2.5323980921410834
+          },
+          {
+            "arrival": 2.7364293418392758,
+            "deadline": 11.360791566754447,
+            "priority": 1.7723789097994866,
+            "region_id": 1,
+            "service": 2.2651824026036653,
+            "target_id": 1,
+            "task_id": "task-3",
+            "x": 2.8707069603877917,
+            "y": 0.05
+          },
+          {
+            "arrival": 4.847151858148671,
+            "deadline": 15.64342132098876,
+            "priority": 1.1603193779462686,
+            "region_id": 1,
+            "service": 1.2984385779153536,
+            "target_id": 3,
+            "task_id": "task-4",
+            "x": 0.9292158913361643,
+            "y": 3.115051657417676
+          },
+          {
+            "arrival": 7.396584701211414,
+            "deadline": 17.355093410634883,
+            "priority": 1.8292997555110142,
+            "region_id": 2,
+            "service": 1.8824374726695128,
+            "target_id": 3,
+            "task_id": "task-5",
+            "x": 3.465376187254458,
+            "y": 2.6871659792610867
+          }
+        ]
+      },
+      "scenario_sha256": "2d9a6c311a77ab071916d265be488e1fbaf1685d7c761c37dba63b9f28ef1f6d",
+      "seed": 2032400726,
+      "split": "evaluation",
+      "structural_sha256": "aade1e9ec760f9b26951738bb9dc0224efa1e9ebfdb435c822e6f9e461bad60e"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400727|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-003",
+      "repeat": 0,
+      "role": "policy_task_evaluation",
+      "scenario": {
+        "communication": {
+          "ack_loss_probability": 0.02,
+          "command_loss_probability": 0.02,
+          "name": "W1-light",
+          "renewal_duplicate_probability": 0.0,
+          "renewal_extra_delay": 0.0,
+          "renewal_reorder_window": 0.0,
+          "telemetry_duplicate_probability": 0.0,
+          "telemetry_extra_delay": 1.0,
+          "telemetry_loss_probability": 0.05,
+          "telemetry_outage_intervals": [],
+          "telemetry_reorder_window": 0.0
+        },
+        "events": [
+          {
+            "kind": "disconnect",
+            "resource": "uav-3",
+            "time": 5.08261168031866
+          },
+          {
+            "kind": "reconnect",
+            "resource": "uav-3",
+            "time": 7.08261168031866
+          },
+          {
+            "kind": "damage",
+            "resource": "uav-1",
+            "time": 9.419018604008993
+          }
+        ],
+        "name": "mixed",
+        "seed": 2032400727,
+        "split": "test",
+        "tape_id": "test-mixed-seed-2032400727-W1",
+        "tasks": [
+          {
+            "arrival": 0.0,
+            "deadline": 6.501893981706822,
+            "priority": 1.0794066970844838,
+            "region_id": 1,
+            "service": 1.3825065387071453,
+            "target_id": 2,
+            "task_id": "task-0",
+            "x": 1.5723287208353371,
+            "y": 0.40140631935549254
+          },
+          {
+            "arrival": 0.0,
+            "deadline": 8.644913437257816,
+            "priority": 1.8332366906531676,
+            "region_id": 2,
+            "service": 2.208674075271747,
+            "target_id": 3,
+            "task_id": "task-1",
+            "x": 2.5970441504998987,
+            "y": 1.7134178685883128
+          },
+          {
+            "arrival": 2.4428385999401474,
+            "deadline": 10.772109112947167,
+            "priority": 1.2293039915566308,
+            "region_id": 1,
+            "service": 0.9945178673648704,
+            "target_id": 3,
+            "task_id": "task-2",
+            "x": 0.40193820705785294,
+            "y": 2.6484876080545785
+          },
+          {
+            "arrival": 3.0884008973588677,
+            "deadline": 11.806209664305468,
+            "priority": 2.0188265071601257,
+            "region_id": 2,
+            "service": 2.105860055763013,
+            "target_id": 2,
+            "task_id": "task-3",
+            "x": 2.944620161655335,
+            "y": 0.05
+          },
+          {
+            "arrival": 5.391870065777459,
+            "deadline": 14.799020952078356,
+            "priority": 1.0806033537002844,
+            "region_id": 0,
+            "service": 0.975035715348941,
+            "target_id": 1,
+            "task_id": "task-4",
+            "x": 0.9506763125862214,
+            "y": 3.016601056172468
+          },
+          {
+            "arrival": 6.968484909318424,
+            "deadline": 17.467654917509805,
+            "priority": 1.6115643720168698,
+            "region_id": 0,
+            "service": 1.946077736628034,
+            "target_id": 3,
+            "task_id": "task-5",
+            "x": 2.9017951448091477,
+            "y": 2.5421569360814202
+          }
+        ]
+      },
+      "scenario_sha256": "b2650ec91ceb5faadcb6904e76b89cdfdafdf3f6601417cfdc4f79425d6ced47",
+      "seed": 2032400727,
+      "split": "evaluation",
+      "structural_sha256": "dbba88f09c330a6dc00deb8216f6043d385a23542c13d81127634a2268b73ab6"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400728|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-004",
+      "repeat": 0,
+      "role": "policy_task_evaluation",
+      "scenario": {
+        "communication": {
+          "ack_loss_probability": 0.02,
+          "command_loss_probability": 0.02,
+          "name": "W1-light",
+          "renewal_duplicate_probability": 0.0,
+          "renewal_extra_delay": 0.0,
+          "renewal_reorder_window": 0.0,
+          "telemetry_duplicate_probability": 0.0,
+          "telemetry_extra_delay": 1.0,
+          "telemetry_loss_probability": 0.05,
+          "telemetry_outage_intervals": [],
+          "telemetry_reorder_window": 0.0
+        },
+        "events": [
+          {
+            "kind": "disconnect",
+            "resource": "uav-2",
+            "time": 5.1429803941818495
+          },
+          {
+            "kind": "reconnect",
+            "resource": "uav-2",
+            "time": 7.1429803941818495
+          },
+          {
+            "kind": "damage",
+            "resource": "uav-3",
+            "time": 8.583820905327919
+          }
+        ],
+        "name": "mixed",
+        "seed": 2032400728,
+        "split": "test",
+        "tape_id": "test-mixed-seed-2032400728-W1",
+        "tasks": [
+          {
+            "arrival": 0.0,
+            "deadline": 6.475136716004639,
+            "priority": 0.8571438350264546,
+            "region_id": 0,
+            "service": 1.1141221671125412,
+            "target_id": 2,
+            "task_id": "task-0",
+            "x": 1.444590697863919,
+            "y": 0.5258089031200956
+          },
+          {
+            "arrival": 0.0,
+            "deadline": 7.554061644180146,
+            "priority": 1.5938138424492334,
+            "region_id": 0,
+            "service": 1.721682676099985,
+            "target_id": 0,
+            "task_id": "task-1",
+            "x": 2.324033801691586,
+            "y": 1.9643290489414815
+          },
+          {
+            "arrival": 1.9515413321524453,
+            "deadline": 10.874779901592154,
+            "priority": 1.0548588067630493,
+            "region_id": 2,
+            "service": 1.1189905274102805,
+            "target_id": 3,
+            "task_id": "task-2",
+            "x": 0.9728729784146529,
+            "y": 2.639193040304364
+          },
+          {
+            "arrival": 2.604726130897909,
+            "deadline": 11.364461003345362,
+            "priority": 1.7805805081635386,
+            "region_id": 1,
+            "service": 1.9465428941117866,
+            "target_id": 0,
+            "task_id": "task-3",
+            "x": 3.140762343944433,
+            "y": 0.10985575684977142
+          },
+          {
+            "arrival": 4.786169209389644,
+            "deadline": 15.603200338938072,
+            "priority": 1.2118135224622821,
+            "region_id": 0,
+            "service": 1.193982232357663,
+            "target_id": 1,
+            "task_id": "task-4",
+            "x": 0.9163326975130135,
+            "y": 3.0465627933676083
+          },
+          {
+            "arrival": 7.424048308859105,
+            "deadline": 16.35719409083263,
+            "priority": 1.8928160256627717,
+            "region_id": 0,
+            "service": 1.2881865649825492,
+            "target_id": 3,
+            "task_id": "task-5",
+            "x": 3.609630727962853,
+            "y": 2.7899937919602134
+          }
+        ]
+      },
+      "scenario_sha256": "726402e9a6c98f0ac8c6b28d2b501ce24bfd2b07821b7618a520b0a336e2e683",
+      "seed": 2032400728,
+      "split": "evaluation",
+      "structural_sha256": "cbdb3a9cafcdf75a13e566063b738cbdf3627b6017c8221071b19f56b6c5e918"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400729|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-005",
+      "repeat": 0,
+      "role": "policy_task_evaluation",
+      "scenario": {
+        "communication": {
+          "ack_loss_probability": 0.02,
+          "command_loss_probability": 0.02,
+          "name": "W1-light",
+          "renewal_duplicate_probability": 0.0,
+          "renewal_extra_delay": 0.0,
+          "renewal_reorder_window": 0.0,
+          "telemetry_duplicate_probability": 0.0,
+          "telemetry_extra_delay": 1.0,
+          "telemetry_loss_probability": 0.05,
+          "telemetry_outage_intervals": [],
+          "telemetry_reorder_window": 0.0
+        },
+        "events": [
+          {
+            "kind": "disconnect",
+            "resource": "uav-3",
+            "time": 4.887391449752476
+          },
+          {
+            "kind": "reconnect",
+            "resource": "uav-3",
+            "time": 6.887391449752476
+          },
+          {
+            "kind": "damage",
+            "resource": "uav-0",
+            "time": 9.415281653474892
+          }
+        ],
+        "name": "mixed",
+        "seed": 2032400729,
+        "split": "test",
+        "tape_id": "test-mixed-seed-2032400729-W1",
+        "tasks": [
+          {
+            "arrival": 0.0,
+            "deadline": 6.68663112155339,
+            "priority": 0.9483977523977107,
+            "region_id": 0,
+            "service": 1.3700635607990126,
+            "target_id": 3,
+            "task_id": "task-0",
+            "x": 1.6322836491424864,
+            "y": 0.5211405625400767
+          },
+          {
+            "arrival": 0.0,
+            "deadline": 8.027363297917239,
+            "priority": 1.4368281431930587,
+            "region_id": 2,
+            "service": 1.75984762885587,
+            "target_id": 2,
+            "task_id": "task-1",
+            "x": 2.361829574250412,
+            "y": 2.0782631129766087
+          },
+          {
+            "arrival": 2.1500273016985565,
+            "deadline": 10.401702362647868,
+            "priority": 1.3561124821456334,
+            "region_id": 1,
+            "service": 0.8175482592599743,
+            "target_id": 1,
+            "task_id": "task-2",
+            "x": 0.3641949473050114,
+            "y": 2.5467015512913944
+          },
+          {
+            "arrival": 2.598666526157425,
+            "deadline": 12.357477096664683,
+            "priority": 1.8734402667671994,
+            "region_id": 0,
+            "service": 2.2518119673284547,
+            "target_id": 2,
+            "task_id": "task-3",
+            "x": 3.294283415890582,
+            "y": 0.05
+          },
+          {
+            "arrival": 5.063271396160349,
+            "deadline": 14.930362450536709,
+            "priority": 1.165750212008713,
+            "region_id": 0,
+            "service": 0.9720130905542715,
+            "target_id": 2,
+            "task_id": "task-4",
+            "x": 1.158472662524883,
+            "y": 3.0033504086821514
+          },
+          {
+            "arrival": 7.427060983923627,
+            "deadline": 17.283434578345943,
+            "priority": 2.0141405000495145,
+            "region_id": 0,
+            "service": 1.7847303389400988,
+            "target_id": 2,
+            "task_id": "task-5",
+            "x": 2.8839192656749217,
+            "y": 2.5640657880120257
+          }
+        ]
+      },
+      "scenario_sha256": "6b03001dcd51a2519d8773a9a9ca7e72ffff640bd895225bd6cc94abbb7049aa",
+      "seed": 2032400729,
+      "split": "evaluation",
+      "structural_sha256": "d198546d249b90cf3e9fa8a4ce724ca9605dc326f5ce5ca37fae0116e36b74f4"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400730|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-006",
+      "repeat": 0,
+      "role": "policy_task_evaluation",
+      "scenario": {
+        "communication": {
+          "ack_loss_probability": 0.02,
+          "command_loss_probability": 0.02,
+          "name": "W1-light",
+          "renewal_duplicate_probability": 0.0,
+          "renewal_extra_delay": 0.0,
+          "renewal_reorder_window": 0.0,
+          "telemetry_duplicate_probability": 0.0,
+          "telemetry_extra_delay": 1.0,
+          "telemetry_loss_probability": 0.05,
+          "telemetry_outage_intervals": [],
+          "telemetry_reorder_window": 0.0
+        },
+        "events": [
+          {
+            "kind": "disconnect",
+            "resource": "uav-1",
+            "time": 6.777990897410244
+          },
+          {
+            "kind": "damage",
+            "resource": "uav-1",
+            "time": 8.239051307030524
+          },
+          {
+            "kind": "reconnect",
+            "resource": "uav-1",
+            "time": 8.777990897410245
+          }
+        ],
+        "name": "mixed",
+        "seed": 2032400730,
+        "split": "test",
+        "tape_id": "test-mixed-seed-2032400730-W1",
+        "tasks": [
+          {
+            "arrival": 0.0,
+            "deadline": 7.441073556750483,
+            "priority": 0.900962534413547,
+            "region_id": 2,
+            "service": 1.5195717175805332,
+            "target_id": 1,
+            "task_id": "task-0",
+            "x": 1.555466617306198,
+            "y": 0.6984357066500051
+          },
+          {
+            "arrival": 0.0,
+            "deadline": 7.932148763617778,
+            "priority": 1.543037261566882,
+            "region_id": 1,
+            "service": 1.6228204166088307,
+            "target_id": 0,
+            "task_id": "task-1",
+            "x": 2.483156033892329,
+            "y": 1.9686463626110036
+          },
+          {
+            "arrival": 2.416209638877112,
+            "deadline": 10.699461660599939,
+            "priority": 1.3583444764912054,
+            "region_id": 2,
+            "service": 0.8701399863557833,
+            "target_id": 2,
+            "task_id": "task-2",
+            "x": 0.5037182766650806,
+            "y": 2.3364057482220866
+          },
+          {
+            "arrival": 2.597088599224683,
+            "deadline": 12.605389305512173,
+            "priority": 1.9785966477177,
+            "region_id": 1,
+            "service": 1.9760156537959035,
+            "target_id": 2,
+            "task_id": "task-3",
+            "x": 3.027600187751365,
+            "y": 0.3282273638790132
+          },
+          {
+            "arrival": 5.444292904053035,
+            "deadline": 14.915788728822493,
+            "priority": 1.129544370527554,
+            "region_id": 0,
+            "service": 1.267855226127769,
+            "target_id": 1,
+            "task_id": "task-4",
+            "x": 1.0392235156784215,
+            "y": 2.892648292078678
+          },
+          {
+            "arrival": 6.693996044445879,
+            "deadline": 16.941759028704688,
+            "priority": 1.60279638502573,
+            "region_id": 2,
+            "service": 1.3898612368249295,
+            "target_id": 1,
+            "task_id": "task-5",
+            "x": 3.3274579283078847,
+            "y": 2.800513190291594
+          }
+        ]
+      },
+      "scenario_sha256": "24f929f7dc469d9980d1fa839316e30dc9642bcbdd2191ce0d81324b3215c027",
+      "seed": 2032400730,
+      "split": "evaluation",
+      "structural_sha256": "cf36aa6a29f970c8dbfb4784140b32cb41b8d788c93670b48f1b10015be02b8c"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400731|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-007",
+      "repeat": 0,
+      "role": "policy_task_evaluation",
+      "scenario": {
+        "communication": {
+          "ack_loss_probability": 0.02,
+          "command_loss_probability": 0.02,
+          "name": "W1-light",
+          "renewal_duplicate_probability": 0.0,
+          "renewal_extra_delay": 0.0,
+          "renewal_reorder_window": 0.0,
+          "telemetry_duplicate_probability": 0.0,
+          "telemetry_extra_delay": 1.0,
+          "telemetry_loss_probability": 0.05,
+          "telemetry_outage_intervals": [],
+          "telemetry_reorder_window": 0.0
+        },
+        "events": [
+          {
+            "kind": "disconnect",
+            "resource": "uav-3",
+            "time": 5.5334657222426955
+          },
+          {
+            "kind": "reconnect",
+            "resource": "uav-3",
+            "time": 7.5334657222426955
+          },
+          {
+            "kind": "damage",
+            "resource": "uav-2",
+            "time": 8.47473109630816
+          }
+        ],
+        "name": "mixed",
+        "seed": 2032400731,
+        "split": "test",
+        "tape_id": "test-mixed-seed-2032400731-W1",
+        "tasks": [
+          {
+            "arrival": 0.0,
+            "deadline": 6.471548399390654,
+            "priority": 1.1229371728498947,
+            "region_id": 0,
+            "service": 1.2125459838516788,
+            "target_id": 0,
+            "task_id": "task-0",
+            "x": 1.5664147412206657,
+            "y": 0.5040830916751694
+          },
+          {
+            "arrival": 0.0,
+            "deadline": 7.74857570843613,
+            "priority": 1.5867766270841117,
+            "region_id": 2,
+            "service": 2.1320042914603112,
+            "target_id": 1,
+            "task_id": "task-1",
+            "x": 2.702365193502549,
+            "y": 2.0365439747339833
+          },
+          {
+            "arrival": 1.6002845250446138,
+            "deadline": 10.569347880423702,
+            "priority": 1.0619303753726383,
+            "region_id": 1,
+            "service": 0.8440100954416395,
+            "target_id": 3,
+            "task_id": "task-2",
+            "x": 0.3521315795183285,
+            "y": 2.3539848768295824
+          },
+          {
+            "arrival": 2.7067519215087774,
+            "deadline": 11.55585575625282,
+            "priority": 1.9436470086186601,
+            "region_id": 1,
+            "service": 2.2293217208963245,
+            "target_id": 3,
+            "task_id": "task-3",
+            "x": 2.9735037292971,
+            "y": 0.1022650769210719
+          },
+          {
+            "arrival": 4.646837913105596,
+            "deadline": 14.962357581308012,
+            "priority": 1.1772046312117266,
+            "region_id": 1,
+            "service": 1.4429797609151267,
+            "target_id": 2,
+            "task_id": "task-4",
+            "x": 1.0696792539089877,
+            "y": 3.0463244757201537
+          },
+          {
+            "arrival": 7.0114466001838744,
+            "deadline": 16.86427179551749,
+            "priority": 1.6848974556752778,
+            "region_id": 0,
+            "service": 1.366545806376814,
+            "target_id": 2,
+            "task_id": "task-5",
+            "x": 3.037034625368476,
+            "y": 3.056938349457506
+          }
+        ]
+      },
+      "scenario_sha256": "1f29189e34a570f73846c270154daf5704cd0ba36551d40f27ed7b52b9539481",
+      "seed": 2032400731,
+      "split": "evaluation",
+      "structural_sha256": "bb2bcd43c2f822dc812669fa8cccea802b374ddc276aacab57fd71b96a8f9f7b"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400732|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-008",
+      "repeat": 0,
+      "role": "policy_task_evaluation",
+      "scenario": {
+        "communication": {
+          "ack_loss_probability": 0.02,
+          "command_loss_probability": 0.02,
+          "name": "W1-light",
+          "renewal_duplicate_probability": 0.0,
+          "renewal_extra_delay": 0.0,
+          "renewal_reorder_window": 0.0,
+          "telemetry_duplicate_probability": 0.0,
+          "telemetry_extra_delay": 1.0,
+          "telemetry_loss_probability": 0.05,
+          "telemetry_outage_intervals": [],
+          "telemetry_reorder_window": 0.0
+        },
+        "events": [
+          {
+            "kind": "disconnect",
+            "resource": "uav-3",
+            "time": 6.03119329403804
+          },
+          {
+            "kind": "reconnect",
+            "resource": "uav-3",
+            "time": 8.03119329403804
+          },
+          {
+            "kind": "damage",
+            "resource": "uav-3",
+            "time": 9.00912931121091
+          }
+        ],
+        "name": "mixed",
+        "seed": 2032400732,
+        "split": "test",
+        "tape_id": "test-mixed-seed-2032400732-W1",
+        "tasks": [
+          {
+            "arrival": 0.0,
+            "deadline": 7.632074497315636,
+            "priority": 0.8507382147068779,
+            "region_id": 0,
+            "service": 1.5018896128880654,
+            "target_id": 3,
+            "task_id": "task-0",
+            "x": 1.489472453676198,
+            "y": 0.862750464067598
+          },
+          {
+            "arrival": 0.0,
+            "deadline": 8.462664456545786,
+            "priority": 1.5232214868477494,
+            "region_id": 1,
+            "service": 2.1260077937438213,
+            "target_id": 1,
+            "task_id": "task-1",
+            "x": 2.6559501003562223,
+            "y": 1.9000948941405076
+          },
+          {
+            "arrival": 1.9989860952689122,
+            "deadline": 11.535816170446381,
+            "priority": 1.3156547610922276,
+            "region_id": 2,
+            "service": 1.2095369863354417,
+            "target_id": 2,
+            "task_id": "task-2",
+            "x": 0.5342335936860686,
+            "y": 2.6385539363069412
+          },
+          {
+            "arrival": 2.5754283253119157,
+            "deadline": 11.906746108154056,
+            "priority": 1.9571685214274441,
+            "region_id": 2,
+            "service": 2.2879317294735126,
+            "target_id": 3,
+            "task_id": "task-3",
+            "x": 3.2704254351203295,
+            "y": 0.05
+          },
+          {
+            "arrival": 4.57861858447016,
+            "deadline": 15.46712543206136,
+            "priority": 1.1620203764654446,
+            "region_id": 0,
+            "service": 1.2368320565417907,
+            "target_id": 0,
+            "task_id": "task-4",
+            "x": 1.1051064911770343,
+            "y": 2.921605751318687
+          },
+          {
+            "arrival": 7.228554536333235,
+            "deadline": 16.479770691199302,
+            "priority": 1.5704628706014745,
+            "region_id": 1,
+            "service": 1.3528824888374689,
+            "target_id": 2,
+            "task_id": "task-5",
+            "x": 3.146796112067026,
+            "y": 2.66142462681897
+          }
+        ]
+      },
+      "scenario_sha256": "88c01f52bd55849f5571dcbe88e63a53430ec01706e1833354afabff502876da",
+      "seed": 2032400732,
+      "split": "evaluation",
+      "structural_sha256": "ad9f0953e4d334122d344e3690bfc21597003688aa34cb1c6985669158a9b833"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400733|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-009",
+      "repeat": 0,
+      "role": "policy_task_evaluation",
+      "scenario": {
+        "communication": {
+          "ack_loss_probability": 0.02,
+          "command_loss_probability": 0.02,
+          "name": "W1-light",
+          "renewal_duplicate_probability": 0.0,
+          "renewal_extra_delay": 0.0,
+          "renewal_reorder_window": 0.0,
+          "telemetry_duplicate_probability": 0.0,
+          "telemetry_extra_delay": 1.0,
+          "telemetry_loss_probability": 0.05,
+          "telemetry_outage_intervals": [],
+          "telemetry_reorder_window": 0.0
+        },
+        "events": [
+          {
+            "kind": "disconnect",
+            "resource": "uav-1",
+            "time": 6.062025142501515
+          },
+          {
+            "kind": "damage",
+            "resource": "uav-0",
+            "time": 6.558472228277518
+          },
+          {
+            "kind": "reconnect",
+            "resource": "uav-1",
+            "time": 8.062025142501515
+          }
+        ],
+        "name": "mixed",
+        "seed": 2032400733,
+        "split": "test",
+        "tape_id": "test-mixed-seed-2032400733-W1",
+        "tasks": [
+          {
+            "arrival": 0.0,
+            "deadline": 7.006009445378594,
+            "priority": 0.8768088889543864,
+            "region_id": 0,
+            "service": 1.539549823718671,
+            "target_id": 1,
+            "task_id": "task-0",
+            "x": 1.5996331237259336,
+            "y": 0.5529339674998283
+          },
+          {
+            "arrival": 0.0,
+            "deadline": 7.5608724125555815,
+            "priority": 1.7110349610157911,
+            "region_id": 2,
+            "service": 2.1762596711256736,
+            "target_id": 0,
+            "task_id": "task-1",
+            "x": 2.499749579376296,
+            "y": 1.9690461046360317
+          },
+          {
+            "arrival": 2.04973797678611,
+            "deadline": 11.19079574665422,
+            "priority": 1.1180965717743727,
+            "region_id": 0,
+            "service": 0.9184080459535657,
+            "target_id": 1,
+            "task_id": "task-2",
+            "x": 0.3965790380269368,
+            "y": 2.4755575566056334
+          },
+          {
+            "arrival": 2.850501180824274,
+            "deadline": 11.517580003718367,
+            "priority": 1.9500998986220388,
+            "region_id": 1,
+            "service": 1.9696662940587812,
+            "target_id": 1,
+            "task_id": "task-3",
+            "x": 3.123364683833576,
+            "y": 0.12353562595274223
+          },
+          {
+            "arrival": 5.073180442969222,
+            "deadline": 14.38529435016958,
+            "priority": 1.2162482301414905,
+            "region_id": 1,
+            "service": 1.2121669163808666,
+            "target_id": 0,
+            "task_id": "task-4",
+            "x": 0.7901026578630708,
+            "y": 3.1216241625577617
+          },
+          {
+            "arrival": 7.444034301042813,
+            "deadline": 17.16312978122891,
+            "priority": 1.583306289479548,
+            "region_id": 0,
+            "service": 1.6079720211324078,
+            "target_id": 3,
+            "task_id": "task-5",
+            "x": 3.2709930344096825,
+            "y": 3.0127935034466486
+          }
+        ]
+      },
+      "scenario_sha256": "ac357350eb6abb7c61ce800b54ab0d456e1f7cf466d7129e0b6a0acdbfaa9266",
+      "seed": 2032400733,
+      "split": "evaluation",
+      "structural_sha256": "4c9278342562e864101fa6db8389b7e6c057094a38fa6d8a5d784ccf55485539"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400734|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-010",
+      "repeat": 0,
+      "role": "policy_task_evaluation",
+      "scenario": {
+        "communication": {
+          "ack_loss_probability": 0.02,
+          "command_loss_probability": 0.02,
+          "name": "W1-light",
+          "renewal_duplicate_probability": 0.0,
+          "renewal_extra_delay": 0.0,
+          "renewal_reorder_window": 0.0,
+          "telemetry_duplicate_probability": 0.0,
+          "telemetry_extra_delay": 1.0,
+          "telemetry_loss_probability": 0.05,
+          "telemetry_outage_intervals": [],
+          "telemetry_reorder_window": 0.0
+        },
+        "events": [
+          {
+            "kind": "disconnect",
+            "resource": "uav-2",
+            "time": 5.173332987359117
+          },
+          {
+            "kind": "reconnect",
+            "resource": "uav-2",
+            "time": 7.173332987359117
+          },
+          {
+            "kind": "damage",
+            "resource": "uav-1",
+            "time": 9.36729594403674
+          }
+        ],
+        "name": "mixed",
+        "seed": 2032400734,
+        "split": "test",
+        "tape_id": "test-mixed-seed-2032400734-W1",
+        "tasks": [
+          {
+            "arrival": 0.0,
+            "deadline": 6.355472417401117,
+            "priority": 1.109155423530483,
+            "region_id": 2,
+            "service": 1.09199011713811,
+            "target_id": 2,
+            "task_id": "task-0",
+            "x": 1.7000914940073641,
+            "y": 0.5471565766642048
+          },
+          {
+            "arrival": 0.0,
+            "deadline": 8.559263350611378,
+            "priority": 1.447988056692269,
+            "region_id": 1,
+            "service": 1.9237911190970816,
+            "target_id": 3,
+            "task_id": "task-1",
+            "x": 2.693302358754622,
+            "y": 1.8496693283217047
+          },
+          {
+            "arrival": 1.9315645003384967,
+            "deadline": 11.194545989287025,
+            "priority": 1.024305603427033,
+            "region_id": 2,
+            "service": 0.824764538860114,
+            "target_id": 0,
+            "task_id": "task-2",
+            "x": 0.6169762786986257,
+            "y": 2.700135290661451
+          },
+          {
+            "arrival": 2.7744840910446853,
+            "deadline": 12.12329858159769,
+            "priority": 1.7741861426341863,
+            "region_id": 2,
+            "service": 2.0022488041176607,
+            "target_id": 2,
+            "task_id": "task-3",
+            "x": 2.9612845861909025,
+            "y": 0.21984208556866897
+          },
+          {
+            "arrival": 5.007830055310953,
+            "deadline": 15.476123144691032,
+            "priority": 1.1539935325755202,
+            "region_id": 1,
+            "service": 1.1207732085209379,
+            "target_id": 3,
+            "task_id": "task-4",
+            "x": 0.8562431585750192,
+            "y": 2.9234286348461076
+          },
+          {
+            "arrival": 7.2563987767447715,
+            "deadline": 17.488733754193543,
+            "priority": 1.591949525418265,
+            "region_id": 1,
+            "service": 1.2916563010390636,
+            "target_id": 2,
+            "task_id": "task-5",
+            "x": 3.310711687800413,
+            "y": 2.9850190848089118
+          }
+        ]
+      },
+      "scenario_sha256": "53e51ff57e3f85088b1c0bc691eaa2ac43a851465a85014abd82946970abce1b",
+      "seed": 2032400734,
+      "split": "evaluation",
+      "structural_sha256": "d9bafaeb4cea8674031a60fe54fdbc2082d19f9d6f5961d9317b79230851f07a"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400735|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-011",
+      "repeat": 0,
+      "role": "policy_task_evaluation",
+      "scenario": {
+        "communication": {
+          "ack_loss_probability": 0.02,
+          "command_loss_probability": 0.02,
+          "name": "W1-light",
+          "renewal_duplicate_probability": 0.0,
+          "renewal_extra_delay": 0.0,
+          "renewal_reorder_window": 0.0,
+          "telemetry_duplicate_probability": 0.0,
+          "telemetry_extra_delay": 1.0,
+          "telemetry_loss_probability": 0.05,
+          "telemetry_outage_intervals": [],
+          "telemetry_reorder_window": 0.0
+        },
+        "events": [
+          {
+            "kind": "disconnect",
+            "resource": "uav-1",
+            "time": 3.8202722413431944
+          },
+          {
+            "kind": "reconnect",
+            "resource": "uav-1",
+            "time": 5.820272241343194
+          },
+          {
+            "kind": "damage",
+            "resource": "uav-1",
+            "time": 9.027446919430968
+          }
+        ],
+        "name": "mixed",
+        "seed": 2032400735,
+        "split": "test",
+        "tape_id": "test-mixed-seed-2032400735-W1",
+        "tasks": [
+          {
+            "arrival": 0.0,
+            "deadline": 7.543037566416264,
+            "priority": 0.917617672860427,
+            "region_id": 0,
+            "service": 1.1966780659858962,
+            "target_id": 1,
+            "task_id": "task-0",
+            "x": 1.5618290410439273,
+            "y": 0.6902382589530731
+          },
+          {
+            "arrival": 0.0,
+            "deadline": 7.873346499499377,
+            "priority": 1.5885271998550845,
+            "region_id": 2,
+            "service": 2.0816207555909743,
+            "target_id": 2,
+            "task_id": "task-1",
+            "x": 2.1646191748089647,
+            "y": 1.9471944446477856
+          },
+          {
+            "arrival": 1.9215062474761655,
+            "deadline": 11.137420552399385,
+            "priority": 1.2679175670607525,
+            "region_id": 2,
+            "service": 0.814814229474766,
+            "target_id": 0,
+            "task_id": "task-2",
+            "x": 0.21541919025690803,
+            "y": 2.315901588163169
+          },
+          {
+            "arrival": 2.9202831315094357,
+            "deadline": 11.702386818937722,
+            "priority": 2.2789904582491616,
+            "region_id": 0,
+            "service": 2.0965019254096755,
+            "target_id": 1,
+            "task_id": "task-3",
+            "x": 2.994934312873071,
+            "y": 0.05
+          },
+          {
+            "arrival": 5.246095676300989,
+            "deadline": 14.493300930304608,
+            "priority": 1.0216246077099564,
+            "region_id": 2,
+            "service": 1.225883913913086,
+            "target_id": 1,
+            "task_id": "task-4",
+            "x": 1.0334296338356792,
+            "y": 3.387976092647052
+          },
+          {
+            "arrival": 7.059820381225035,
+            "deadline": 16.563037585384123,
+            "priority": 1.6401072195015634,
+            "region_id": 1,
+            "service": 1.497207566455883,
+            "target_id": 3,
+            "task_id": "task-5",
+            "x": 3.072115261973402,
+            "y": 2.668838281218248
+          }
+        ]
+      },
+      "scenario_sha256": "69021e99581e705a7e6f37f42f26aa8b57cab5d773783926c7ef94501eae8e1c",
+      "seed": 2032400735,
+      "split": "evaluation",
+      "structural_sha256": "c2f7ddd108028cbe5147c7b126b8474d9ceba66d0cf44300bf1c9ece9c6f52eb"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400736|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-012",
+      "repeat": 0,
+      "role": "policy_task_evaluation",
+      "scenario": {
+        "communication": {
+          "ack_loss_probability": 0.02,
+          "command_loss_probability": 0.02,
+          "name": "W1-light",
+          "renewal_duplicate_probability": 0.0,
+          "renewal_extra_delay": 0.0,
+          "renewal_reorder_window": 0.0,
+          "telemetry_duplicate_probability": 0.0,
+          "telemetry_extra_delay": 1.0,
+          "telemetry_loss_probability": 0.05,
+          "telemetry_outage_intervals": [],
+          "telemetry_reorder_window": 0.0
+        },
+        "events": [
+          {
+            "kind": "disconnect",
+            "resource": "uav-1",
+            "time": 6.791338399625821
+          },
+          {
+            "kind": "damage",
+            "resource": "uav-0",
+            "time": 8.362163075427173
+          },
+          {
+            "kind": "reconnect",
+            "resource": "uav-1",
+            "time": 8.791338399625822
+          }
+        ],
+        "name": "mixed",
+        "seed": 2032400736,
+        "split": "test",
+        "tape_id": "test-mixed-seed-2032400736-W1",
+        "tasks": [
+          {
+            "arrival": 0.0,
+            "deadline": 7.081313304759293,
+            "priority": 1.038722105169,
+            "region_id": 0,
+            "service": 1.3241398822598953,
+            "target_id": 2,
+            "task_id": "task-0",
+            "x": 1.596164150156447,
+            "y": 0.8823371163875727
+          },
+          {
+            "arrival": 0.0,
+            "deadline": 7.815475872132905,
+            "priority": 1.6446471686410096,
+            "region_id": 1,
+            "service": 2.1518778316512286,
+            "target_id": 3,
+            "task_id": "task-1",
+            "x": 2.5051639271890687,
+            "y": 1.8581699638979765
+          },
+          {
+            "arrival": 1.711870598452292,
+            "deadline": 11.060296473724035,
+            "priority": 1.2192360878374624,
+            "region_id": 0,
+            "service": 1.225575546202946,
+            "target_id": 1,
+            "task_id": "task-2",
+            "x": 0.20843322072573367,
+            "y": 2.6170584427210115
+          },
+          {
+            "arrival": 3.127971239338089,
+            "deadline": 11.597594227602782,
+            "priority": 1.8686014050775273,
+            "region_id": 1,
+            "service": 2.364399177400679,
+            "target_id": 0,
+            "task_id": "task-3",
+            "x": 2.9959237365894036,
+            "y": 0.16527404571734397
+          },
+          {
+            "arrival": 4.90871474500771,
+            "deadline": 15.036621830491303,
+            "priority": 1.1240513990511787,
+            "region_id": 1,
+            "service": 1.1920413396674288,
+            "target_id": 0,
+            "task_id": "task-4",
+            "x": 0.8394945290426182,
+            "y": 2.999089675187067
+          },
+          {
+            "arrival": 6.990757416698557,
+            "deadline": 17.313453675129086,
+            "priority": 1.9033009878533196,
+            "region_id": 1,
+            "service": 1.3668668230180483,
+            "target_id": 1,
+            "task_id": "task-5",
+            "x": 3.564743386436686,
+            "y": 3.052950839059297
+          }
+        ]
+      },
+      "scenario_sha256": "2f727d1e6e4669388867b83823aff1636c3b944be61cc443782772e11a43d54f",
+      "seed": 2032400736,
+      "split": "evaluation",
+      "structural_sha256": "a4a91844f8b99e68ec91c3c58d9035f82ed2ab026744cb9b9f1af3adb0d3a54c"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400737|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-013",
+      "repeat": 0,
+      "role": "policy_task_evaluation",
+      "scenario": {
+        "communication": {
+          "ack_loss_probability": 0.02,
+          "command_loss_probability": 0.02,
+          "name": "W1-light",
+          "renewal_duplicate_probability": 0.0,
+          "renewal_extra_delay": 0.0,
+          "renewal_reorder_window": 0.0,
+          "telemetry_duplicate_probability": 0.0,
+          "telemetry_extra_delay": 1.0,
+          "telemetry_loss_probability": 0.05,
+          "telemetry_outage_intervals": [],
+          "telemetry_reorder_window": 0.0
+        },
+        "events": [
+          {
+            "kind": "disconnect",
+            "resource": "uav-3",
+            "time": 3.705606416461627
+          },
+          {
+            "kind": "reconnect",
+            "resource": "uav-3",
+            "time": 5.705606416461627
+          },
+          {
+            "kind": "damage",
+            "resource": "uav-3",
+            "time": 7.827010055995803
+          }
+        ],
+        "name": "mixed",
+        "seed": 2032400737,
+        "split": "test",
+        "tape_id": "test-mixed-seed-2032400737-W1",
+        "tasks": [
+          {
+            "arrival": 0.0,
+            "deadline": 7.349782606356031,
+            "priority": 1.0560853093466582,
+            "region_id": 0,
+            "service": 1.1781535640220175,
+            "target_id": 3,
+            "task_id": "task-0",
+            "x": 1.274847912499482,
+            "y": 0.42857999107335515
+          },
+          {
+            "arrival": 0.0,
+            "deadline": 7.389946329166724,
+            "priority": 1.8093353378841788,
+            "region_id": 0,
+            "service": 1.6980518884730842,
+            "target_id": 2,
+            "task_id": "task-1",
+            "x": 2.6032895196151005,
+            "y": 2.082236204593128
+          },
+          {
+            "arrival": 1.9992826443056582,
+            "deadline": 11.012658517016558,
+            "priority": 1.0264750931226974,
+            "region_id": 2,
+            "service": 1.0037732997179794,
+            "target_id": 0,
+            "task_id": "task-2",
+            "x": 0.933044967549133,
+            "y": 2.3932157655659054
+          },
+          {
+            "arrival": 2.9324942059283785,
+            "deadline": 12.243448434689022,
+            "priority": 1.9295693111624785,
+            "region_id": 2,
+            "service": 1.9813492125606815,
+            "target_id": 3,
+            "task_id": "task-3",
+            "x": 2.736669166622463,
+            "y": 0.10134280213101514
+          },
+          {
+            "arrival": 5.094106184983404,
+            "deadline": 15.093324726811167,
+            "priority": 1.2313378730239641,
+            "region_id": 2,
+            "service": 1.2932721113372112,
+            "target_id": 0,
+            "task_id": "task-4",
+            "x": 1.27657969373672,
+            "y": 2.670199921288061
+          },
+          {
+            "arrival": 6.920195227846221,
+            "deadline": 17.079538487561024,
+            "priority": 1.6794644162004626,
+            "region_id": 0,
+            "service": 1.8466947327489986,
+            "target_id": 1,
+            "task_id": "task-5",
+            "x": 3.3102489580969188,
+            "y": 2.695979994542245
+          }
+        ]
+      },
+      "scenario_sha256": "b1b592a06be110a673b581ab76a14ff795790145203e12b2984ed8a934a29593",
+      "seed": 2032400737,
+      "split": "evaluation",
+      "structural_sha256": "96ae45ab5bf2c843d6040c9c4d35aa3fd687f868434a9f4babd08ea184f563a0"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400738|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-014",
+      "repeat": 0,
+      "role": "policy_task_evaluation",
+      "scenario": {
+        "communication": {
+          "ack_loss_probability": 0.02,
+          "command_loss_probability": 0.02,
+          "name": "W1-light",
+          "renewal_duplicate_probability": 0.0,
+          "renewal_extra_delay": 0.0,
+          "renewal_reorder_window": 0.0,
+          "telemetry_duplicate_probability": 0.0,
+          "telemetry_extra_delay": 1.0,
+          "telemetry_loss_probability": 0.05,
+          "telemetry_outage_intervals": [],
+          "telemetry_reorder_window": 0.0
+        },
+        "events": [
+          {
+            "kind": "disconnect",
+            "resource": "uav-3",
+            "time": 5.662888597563421
+          },
+          {
+            "kind": "damage",
+            "resource": "uav-1",
+            "time": 7.586964781125583
+          },
+          {
+            "kind": "reconnect",
+            "resource": "uav-3",
+            "time": 7.662888597563421
+          }
+        ],
+        "name": "mixed",
+        "seed": 2032400738,
+        "split": "test",
+        "tape_id": "test-mixed-seed-2032400738-W1",
+        "tasks": [
+          {
+            "arrival": 0.0,
+            "deadline": 6.571014540251107,
+            "priority": 1.0073333935189108,
+            "region_id": 2,
+            "service": 1.5482578502033586,
+            "target_id": 2,
+            "task_id": "task-0",
+            "x": 1.8059023377354748,
+            "y": 0.6591417178551312
+          },
+          {
+            "arrival": 0.0,
+            "deadline": 7.769478903683184,
+            "priority": 1.5355127831296496,
+            "region_id": 1,
+            "service": 1.5902973548424124,
+            "target_id": 2,
+            "task_id": "task-1",
+            "x": 2.4986587215686904,
+            "y": 1.8913045645250421
+          },
+          {
+            "arrival": 2.3213394957454137,
+            "deadline": 11.306085015616304,
+            "priority": 1.1862119071462185,
+            "region_id": 0,
+            "service": 1.2115660310511913,
+            "target_id": 3,
+            "task_id": "task-2",
+            "x": 0.6170915982347043,
+            "y": 2.4622704973497793
+          },
+          {
+            "arrival": 2.6714465710489446,
+            "deadline": 11.545173564911936,
+            "priority": 1.9853793710959866,
+            "region_id": 0,
+            "service": 2.2175756800766413,
+            "target_id": 3,
+            "task_id": "task-3",
+            "x": 2.9394375359148386,
+            "y": 0.33459569514403453
+          },
+          {
+            "arrival": 5.4460805789281475,
+            "deadline": 14.89228427549491,
+            "priority": 0.9731647935070017,
+            "region_id": 1,
+            "service": 1.007073639215738,
+            "target_id": 1,
+            "task_id": "task-4",
+            "x": 1.1208088185024392,
+            "y": 2.9183463382939387
+          },
+          {
+            "arrival": 6.915820216929279,
+            "deadline": 17.02987137741065,
+            "priority": 1.5853332419342314,
+            "region_id": 2,
+            "service": 1.4403870706923019,
+            "target_id": 1,
+            "task_id": "task-5",
+            "x": 3.4034796907101326,
+            "y": 2.729805231744823
+          }
+        ]
+      },
+      "scenario_sha256": "4d5ccc462bfdbffc430b9ec40db0fb6694302c8c0c1e360ae312e7e760026ea2",
+      "seed": 2032400738,
+      "split": "evaluation",
+      "structural_sha256": "b60fe6e9997eb944845e97132d2270b557e72271e23c5ba8ecc4ec161fe7304f"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400739|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-015",
+      "repeat": 0,
+      "role": "policy_task_evaluation",
+      "scenario": {
+        "communication": {
+          "ack_loss_probability": 0.02,
+          "command_loss_probability": 0.02,
+          "name": "W1-light",
+          "renewal_duplicate_probability": 0.0,
+          "renewal_extra_delay": 0.0,
+          "renewal_reorder_window": 0.0,
+          "telemetry_duplicate_probability": 0.0,
+          "telemetry_extra_delay": 1.0,
+          "telemetry_loss_probability": 0.05,
+          "telemetry_outage_intervals": [],
+          "telemetry_reorder_window": 0.0
+        },
+        "events": [
+          {
+            "kind": "disconnect",
+            "resource": "uav-0",
+            "time": 6.8419993728478445
+          },
+          {
+            "kind": "damage",
+            "resource": "uav-2",
+            "time": 7.066502871196836
+          },
+          {
+            "kind": "reconnect",
+            "resource": "uav-0",
+            "time": 8.841999372847845
+          }
+        ],
+        "name": "mixed",
+        "seed": 2032400739,
+        "split": "test",
+        "tape_id": "test-mixed-seed-2032400739-W1",
+        "tasks": [
+          {
+            "arrival": 0.0,
+            "deadline": 7.320226225760978,
+            "priority": 1.0294259717843395,
+            "region_id": 0,
+            "service": 1.0525285697988016,
+            "target_id": 2,
+            "task_id": "task-0",
+            "x": 1.6280554138553571,
+            "y": 0.7712547074338882
+          },
+          {
+            "arrival": 0.0,
+            "deadline": 7.502833084797159,
+            "priority": 1.7040941945116719,
+            "region_id": 1,
+            "service": 1.8541037633182753,
+            "target_id": 3,
+            "task_id": "task-1",
+            "x": 2.5631501819193057,
+            "y": 1.8472626578011455
+          },
+          {
+            "arrival": 2.3662666003613624,
+            "deadline": 10.773704298847317,
+            "priority": 1.2724146500382376,
+            "region_id": 0,
+            "service": 1.1678059096199545,
+            "target_id": 3,
+            "task_id": "task-2",
+            "x": 0.3869550828181363,
+            "y": 2.745172164064417
+          },
+          {
+            "arrival": 2.712421581165777,
+            "deadline": 11.38419344175952,
+            "priority": 1.9559330756796192,
+            "region_id": 0,
+            "service": 1.6633034701723297,
+            "target_id": 2,
+            "task_id": "task-3",
+            "x": 3.056356692265268,
+            "y": 0.3191344439765562
+          },
+          {
+            "arrival": 5.0744547920192,
+            "deadline": 15.222621813508233,
+            "priority": 0.9789214534544726,
+            "region_id": 0,
+            "service": 1.3822710664195357,
+            "target_id": 3,
+            "task_id": "task-4",
+            "x": 1.2105648665607731,
+            "y": 3.204664001349817
+          },
+          {
+            "arrival": 7.11072645339107,
+            "deadline": 17.493450002042767,
+            "priority": 1.869150227759184,
+            "region_id": 1,
+            "service": 1.5135030789632475,
+            "target_id": 3,
+            "task_id": "task-5",
+            "x": 3.268284546614507,
+            "y": 2.7643465895646893
+          }
+        ]
+      },
+      "scenario_sha256": "a8e402c31d1ad95f53c9ca988d3b9641a73e82da9969693841f89d0f31a8f70e",
+      "seed": 2032400739,
+      "split": "evaluation",
+      "structural_sha256": "bbc2026e114f1a580ef00acae28dc2c5366f0f2cd6403573ed2340f1f1c1c556"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400740|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-016",
+      "repeat": 0,
+      "role": "policy_task_evaluation",
+      "scenario": {
+        "communication": {
+          "ack_loss_probability": 0.02,
+          "command_loss_probability": 0.02,
+          "name": "W1-light",
+          "renewal_duplicate_probability": 0.0,
+          "renewal_extra_delay": 0.0,
+          "renewal_reorder_window": 0.0,
+          "telemetry_duplicate_probability": 0.0,
+          "telemetry_extra_delay": 1.0,
+          "telemetry_loss_probability": 0.05,
+          "telemetry_outage_intervals": [],
+          "telemetry_reorder_window": 0.0
+        },
+        "events": [
+          {
+            "kind": "disconnect",
+            "resource": "uav-2",
+            "time": 3.7399403175526453
+          },
+          {
+            "kind": "reconnect",
+            "resource": "uav-2",
+            "time": 5.739940317552645
+          },
+          {
+            "kind": "damage",
+            "resource": "uav-3",
+            "time": 8.918189886588776
+          }
+        ],
+        "name": "mixed",
+        "seed": 2032400740,
+        "split": "test",
+        "tape_id": "test-mixed-seed-2032400740-W1",
+        "tasks": [
+          {
+            "arrival": 0.0,
+            "deadline": 7.390097943332537,
+            "priority": 1.119326899862191,
+            "region_id": 2,
+            "service": 1.3173720562393518,
+            "target_id": 2,
+            "task_id": "task-0",
+            "x": 1.5255483137455397,
+            "y": 0.4195146994996064
+          },
+          {
+            "arrival": 0.0,
+            "deadline": 7.760999460500426,
+            "priority": 1.8046868777907736,
+            "region_id": 2,
+            "service": 2.155425534239955,
+            "target_id": 0,
+            "task_id": "task-1",
+            "x": 2.4278349387531226,
+            "y": 2.2302481197265434
+          },
+          {
+            "arrival": 1.9382829672769373,
+            "deadline": 10.826646503857434,
+            "priority": 1.1729503544364002,
+            "region_id": 0,
+            "service": 1.124245559035432,
+            "target_id": 1,
+            "task_id": "task-2",
+            "x": 0.5329755351717661,
+            "y": 2.3106028637551757
+          },
+          {
+            "arrival": 2.6262590770909835,
+            "deadline": 11.410705093889968,
+            "priority": 1.95229607043933,
+            "region_id": 1,
+            "service": 2.238662537132539,
+            "target_id": 2,
+            "task_id": "task-3",
+            "x": 3.2294683484318685,
+            "y": 0.2209079003405382
+          },
+          {
+            "arrival": 5.230400752961204,
+            "deadline": 14.759523782781711,
+            "priority": 1.169458584768418,
+            "region_id": 0,
+            "service": 1.2569601042790124,
+            "target_id": 0,
+            "task_id": "task-4",
+            "x": 1.1918212340888306,
+            "y": 3.239581624328922
+          },
+          {
+            "arrival": 7.160469815029674,
+            "deadline": 16.77130573159715,
+            "priority": 1.7876598980891623,
+            "region_id": 0,
+            "service": 1.709223310194857,
+            "target_id": 3,
+            "task_id": "task-5",
+            "x": 3.124695152838198,
+            "y": 2.9490836580864808
+          }
+        ]
+      },
+      "scenario_sha256": "6711c1c1f0804cc93ef39a49061c6c28ec7ee46223d7a66bed39d22c5708a6b1",
+      "seed": 2032400740,
+      "split": "evaluation",
+      "structural_sha256": "9cd6da9708f0ebabde498426b04d5505a6eeaea47d06e0713a1f9bc42e190e31"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400741|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-017",
+      "repeat": 0,
+      "role": "policy_task_evaluation",
+      "scenario": {
+        "communication": {
+          "ack_loss_probability": 0.02,
+          "command_loss_probability": 0.02,
+          "name": "W1-light",
+          "renewal_duplicate_probability": 0.0,
+          "renewal_extra_delay": 0.0,
+          "renewal_reorder_window": 0.0,
+          "telemetry_duplicate_probability": 0.0,
+          "telemetry_extra_delay": 1.0,
+          "telemetry_loss_probability": 0.05,
+          "telemetry_outage_intervals": [],
+          "telemetry_reorder_window": 0.0
+        },
+        "events": [
+          {
+            "kind": "disconnect",
+            "resource": "uav-0",
+            "time": 5.00836027188917
+          },
+          {
+            "kind": "reconnect",
+            "resource": "uav-0",
+            "time": 7.00836027188917
+          },
+          {
+            "kind": "damage",
+            "resource": "uav-1",
+            "time": 9.429045256569031
+          }
+        ],
+        "name": "mixed",
+        "seed": 2032400741,
+        "split": "test",
+        "tape_id": "test-mixed-seed-2032400741-W1",
+        "tasks": [
+          {
+            "arrival": 0.0,
+            "deadline": 6.783389913028165,
+            "priority": 0.8663025953764378,
+            "region_id": 1,
+            "service": 1.600887853795741,
+            "target_id": 2,
+            "task_id": "task-0",
+            "x": 1.1375744811861925,
+            "y": 0.6369052370365832
+          },
+          {
+            "arrival": 0.0,
+            "deadline": 8.322387352417586,
+            "priority": 1.7584881098529097,
+            "region_id": 0,
+            "service": 2.073863059639201,
+            "target_id": 2,
+            "task_id": "task-1",
+            "x": 2.3630409100763106,
+            "y": 2.1762338033605864
+          },
+          {
+            "arrival": 2.075888323590081,
+            "deadline": 10.457921062427605,
+            "priority": 1.313514337468045,
+            "region_id": 0,
+            "service": 1.0738405898620942,
+            "target_id": 2,
+            "task_id": "task-2",
+            "x": 0.40726955113131696,
+            "y": 2.6178277205081995
+          },
+          {
+            "arrival": 3.059645552566329,
+            "deadline": 12.322409393839184,
+            "priority": 2.2354475578194855,
+            "region_id": 2,
+            "service": 2.3849129041670087,
+            "target_id": 2,
+            "task_id": "task-3",
+            "x": 2.7309444665782414,
+            "y": 0.05
+          },
+          {
+            "arrival": 4.959702308731369,
+            "deadline": 14.907009413505362,
+            "priority": 1.1645054786998432,
+            "region_id": 0,
+            "service": 1.3727540435593644,
+            "target_id": 2,
+            "task_id": "task-4",
+            "x": 0.9785181897317843,
+            "y": 2.961845668171441
+          },
+          {
+            "arrival": 7.176553651165561,
+            "deadline": 16.906140825931327,
+            "priority": 2.0096817454095532,
+            "region_id": 1,
+            "service": 1.3647072973537333,
+            "target_id": 1,
+            "task_id": "task-5",
+            "x": 3.1847629995563382,
+            "y": 2.7230881895834362
+          }
+        ]
+      },
+      "scenario_sha256": "e995b1be62b2943974661e45ad60f5b9036a3fc2fcdcd6b0ef5a729281d18929",
+      "seed": 2032400741,
+      "split": "evaluation",
+      "structural_sha256": "ebb2fb046b5cf292e2a05c28daa327b1ef3dc5d4828f783f734bc6c7de42bee8"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400742|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-018",
+      "repeat": 0,
+      "role": "policy_task_evaluation",
+      "scenario": {
+        "communication": {
+          "ack_loss_probability": 0.02,
+          "command_loss_probability": 0.02,
+          "name": "W1-light",
+          "renewal_duplicate_probability": 0.0,
+          "renewal_extra_delay": 0.0,
+          "renewal_reorder_window": 0.0,
+          "telemetry_duplicate_probability": 0.0,
+          "telemetry_extra_delay": 1.0,
+          "telemetry_loss_probability": 0.05,
+          "telemetry_outage_intervals": [],
+          "telemetry_reorder_window": 0.0
+        },
+        "events": [
+          {
+            "kind": "disconnect",
+            "resource": "uav-0",
+            "time": 6.785490270429337
+          },
+          {
+            "kind": "reconnect",
+            "resource": "uav-0",
+            "time": 8.785490270429337
+          },
+          {
+            "kind": "damage",
+            "resource": "uav-2",
+            "time": 9.181173147477715
+          }
+        ],
+        "name": "mixed",
+        "seed": 2032400742,
+        "split": "test",
+        "tape_id": "test-mixed-seed-2032400742-W1",
+        "tasks": [
+          {
+            "arrival": 0.0,
+            "deadline": 6.503886026763499,
+            "priority": 1.1009597675588965,
+            "region_id": 2,
+            "service": 1.2151806187945438,
+            "target_id": 1,
+            "task_id": "task-0",
+            "x": 1.3254938298044177,
+            "y": 0.44992761217012245
+          },
+          {
+            "arrival": 0.0,
+            "deadline": 7.956553671681177,
+            "priority": 1.8171519781120542,
+            "region_id": 1,
+            "service": 1.4995732449154267,
+            "target_id": 3,
+            "task_id": "task-1",
+            "x": 2.4058691335351226,
+            "y": 2.0155738363475693
+          },
+          {
+            "arrival": 1.9635146561970633,
+            "deadline": 10.473601733301408,
+            "priority": 1.3617041915554269,
+            "region_id": 2,
+            "service": 1.175628433066567,
+            "target_id": 2,
+            "task_id": "task-2",
+            "x": 0.8351780946189662,
+            "y": 2.339804357125014
+          },
+          {
+            "arrival": 2.659310881942337,
+            "deadline": 11.765128731077553,
+            "priority": 2.1582917024398203,
+            "region_id": 0,
+            "service": 2.0059053011039296,
+            "target_id": 2,
+            "task_id": "task-3",
+            "x": 2.8670501027741806,
+            "y": 0.391886185811514
+          },
+          {
+            "arrival": 5.074597200258429,
+            "deadline": 14.980361331021042,
+            "priority": 1.237783802144607,
+            "region_id": 1,
+            "service": 1.3073236645754227,
+            "target_id": 2,
+            "task_id": "task-4",
+            "x": 0.9789763736553948,
+            "y": 3.154348732518174
+          },
+          {
+            "arrival": 7.073287836251883,
+            "deadline": 16.616759090159775,
+            "priority": 1.6130711260407504,
+            "region_id": 1,
+            "service": 1.984023270974027,
+            "target_id": 2,
+            "task_id": "task-5",
+            "x": 2.9677916163240456,
+            "y": 2.812783246647914
+          }
+        ]
+      },
+      "scenario_sha256": "4795cfbc120c845f79694558aaaf7b3f352d9393fafbae0afd2e383eaaaf86b1",
+      "seed": 2032400742,
+      "split": "evaluation",
+      "structural_sha256": "511b5f20d10fce8606005a91a8e8cfdef851bdca0ee6c916e2d8cf5892442b34"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400743|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-019",
+      "repeat": 0,
+      "role": "policy_task_evaluation",
+      "scenario": {
+        "communication": {
+          "ack_loss_probability": 0.02,
+          "command_loss_probability": 0.02,
+          "name": "W1-light",
+          "renewal_duplicate_probability": 0.0,
+          "renewal_extra_delay": 0.0,
+          "renewal_reorder_window": 0.0,
+          "telemetry_duplicate_probability": 0.0,
+          "telemetry_extra_delay": 1.0,
+          "telemetry_loss_probability": 0.05,
+          "telemetry_outage_intervals": [],
+          "telemetry_reorder_window": 0.0
+        },
+        "events": [
+          {
+            "kind": "disconnect",
+            "resource": "uav-0",
+            "time": 5.934805824104778
+          },
+          {
+            "kind": "reconnect",
+            "resource": "uav-0",
+            "time": 7.934805824104778
+          },
+          {
+            "kind": "damage",
+            "resource": "uav-3",
+            "time": 8.720610199310784
+          }
+        ],
+        "name": "mixed",
+        "seed": 2032400743,
+        "split": "test",
+        "tape_id": "test-mixed-seed-2032400743-W1",
+        "tasks": [
+          {
+            "arrival": 0.0,
+            "deadline": 7.538640395797784,
+            "priority": 1.064047329521875,
+            "region_id": 0,
+            "service": 1.5330004139857,
+            "target_id": 3,
+            "task_id": "task-0",
+            "x": 1.6740393138115934,
+            "y": 0.367230536826768
+          },
+          {
+            "arrival": 0.0,
+            "deadline": 7.463020704658942,
+            "priority": 1.7714272339820896,
+            "region_id": 2,
+            "service": 2.1260784323407953,
+            "target_id": 0,
+            "task_id": "task-1",
+            "x": 2.655959711040515,
+            "y": 2.2426880003579197
+          },
+          {
+            "arrival": 1.5767355126728657,
+            "deadline": 11.329591599554771,
+            "priority": 1.3206401604236957,
+            "region_id": 1,
+            "service": 0.8428503475961494,
+            "target_id": 1,
+            "task_id": "task-2",
+            "x": 0.35430270496177363,
+            "y": 2.1840825837837436
+          },
+          {
+            "arrival": 2.8335811637945127,
+            "deadline": 12.159628503531005,
+            "priority": 1.7880419643285568,
+            "region_id": 0,
+            "service": 2.06973348513402,
+            "target_id": 1,
+            "task_id": "task-3",
+            "x": 2.8467857325921946,
+            "y": 0.13713977175491174
+          },
+          {
+            "arrival": 4.668367322368633,
+            "deadline": 15.092844813980776,
+            "priority": 1.086212344055677,
+            "region_id": 1,
+            "service": 1.4579337426766945,
+            "target_id": 3,
+            "task_id": "task-4",
+            "x": 1.4600248380172756,
+            "y": 3.1420994152107764
+          },
+          {
+            "arrival": 6.570230757729955,
+            "deadline": 16.65825864546426,
+            "priority": 1.8137191980774041,
+            "region_id": 1,
+            "service": 1.7159887415920647,
+            "target_id": 0,
+            "task_id": "task-5",
+            "x": 3.0642740262587136,
+            "y": 2.8029665241714667
+          }
+        ]
+      },
+      "scenario_sha256": "23c9515d55037822a217b9bc7e187e58580f4e01a5a1f54657ff38b04ef4e98e",
+      "seed": 2032400743,
+      "split": "evaluation",
+      "structural_sha256": "87ea585357f65b9e1fa10d3ca665d18b696919892e42ee3c3debb9ce05d82428"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400744|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-020",
+      "repeat": 0,
+      "role": "policy_task_evaluation",
+      "scenario": {
+        "communication": {
+          "ack_loss_probability": 0.02,
+          "command_loss_probability": 0.02,
+          "name": "W1-light",
+          "renewal_duplicate_probability": 0.0,
+          "renewal_extra_delay": 0.0,
+          "renewal_reorder_window": 0.0,
+          "telemetry_duplicate_probability": 0.0,
+          "telemetry_extra_delay": 1.0,
+          "telemetry_loss_probability": 0.05,
+          "telemetry_outage_intervals": [],
+          "telemetry_reorder_window": 0.0
+        },
+        "events": [
+          {
+            "kind": "disconnect",
+            "resource": "uav-2",
+            "time": 4.148301645690913
+          },
+          {
+            "kind": "reconnect",
+            "resource": "uav-2",
+            "time": 6.148301645690913
+          },
+          {
+            "kind": "damage",
+            "resource": "uav-0",
+            "time": 9.473361231483928
+          }
+        ],
+        "name": "mixed",
+        "seed": 2032400744,
+        "split": "test",
+        "tape_id": "test-mixed-seed-2032400744-W1",
+        "tasks": [
+          {
+            "arrival": 0.0,
+            "deadline": 7.375965875953901,
+            "priority": 1.0264980345882655,
+            "region_id": 0,
+            "service": 1.0804465548595852,
+            "target_id": 0,
+            "task_id": "task-0",
+            "x": 1.6877463340368477,
+            "y": 0.21271627439895668
+          },
+          {
+            "arrival": 0.0,
+            "deadline": 7.809165301270787,
+            "priority": 1.3828351334562399,
+            "region_id": 0,
+            "service": 1.7907668161170536,
+            "target_id": 2,
+            "task_id": "task-1",
+            "x": 2.5744075597451195,
+            "y": 2.1962263934710564
+          },
+          {
+            "arrival": 2.345223586576632,
+            "deadline": 10.665146832955205,
+            "priority": 1.255124534505211,
+            "region_id": 2,
+            "service": 1.0786208739208027,
+            "target_id": 2,
+            "task_id": "task-2",
+            "x": 0.3639332401168351,
+            "y": 2.712337834844032
+          },
+          {
+            "arrival": 3.236080810741954,
+            "deadline": 12.059352683670589,
+            "priority": 2.222567061765479,
+            "region_id": 1,
+            "service": 2.071459651138964,
+            "target_id": 3,
+            "task_id": "task-3",
+            "x": 2.7258468027838996,
+            "y": 0.05
+          },
+          {
+            "arrival": 4.684180418879536,
+            "deadline": 14.47580031811049,
+            "priority": 1.1410673149566242,
+            "region_id": 0,
+            "service": 1.02214383616206,
+            "target_id": 1,
+            "task_id": "task-4",
+            "x": 1.2232605059447494,
+            "y": 2.843648387830447
+          },
+          {
+            "arrival": 6.99218407406639,
+            "deadline": 17.108107028610938,
+            "priority": 1.5354824153077982,
+            "region_id": 1,
+            "service": 1.917012873281528,
+            "target_id": 1,
+            "task_id": "task-5",
+            "x": 3.0549027391883916,
+            "y": 2.7370394003698237
+          }
+        ]
+      },
+      "scenario_sha256": "9adae0154f65d80559e42f35ca72aa95e6919cb82f62dd24ccaa81820a9c0697",
+      "seed": 2032400744,
+      "split": "evaluation",
+      "structural_sha256": "8209c6c299efffab9699aa3bbe0c2ff45cfa2d3e6276d470c3f52b35fd14a972"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400745|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-021",
+      "repeat": 0,
+      "role": "policy_task_evaluation",
+      "scenario": {
+        "communication": {
+          "ack_loss_probability": 0.02,
+          "command_loss_probability": 0.02,
+          "name": "W1-light",
+          "renewal_duplicate_probability": 0.0,
+          "renewal_extra_delay": 0.0,
+          "renewal_reorder_window": 0.0,
+          "telemetry_duplicate_probability": 0.0,
+          "telemetry_extra_delay": 1.0,
+          "telemetry_loss_probability": 0.05,
+          "telemetry_outage_intervals": [],
+          "telemetry_reorder_window": 0.0
+        },
+        "events": [
+          {
+            "kind": "disconnect",
+            "resource": "uav-3",
+            "time": 5.366178980619911
+          },
+          {
+            "kind": "reconnect",
+            "resource": "uav-3",
+            "time": 7.366178980619911
+          },
+          {
+            "kind": "damage",
+            "resource": "uav-0",
+            "time": 8.439027381776842
+          }
+        ],
+        "name": "mixed",
+        "seed": 2032400745,
+        "split": "test",
+        "tape_id": "test-mixed-seed-2032400745-W1",
+        "tasks": [
+          {
+            "arrival": 0.0,
+            "deadline": 6.882108747234675,
+            "priority": 0.8740771019271901,
+            "region_id": 0,
+            "service": 1.0423893230467232,
+            "target_id": 2,
+            "task_id": "task-0",
+            "x": 1.3514237221074537,
+            "y": 0.5328453067690755
+          },
+          {
+            "arrival": 0.0,
+            "deadline": 7.9560126968874725,
+            "priority": 1.6828085496314895,
+            "region_id": 2,
+            "service": 1.7292613350623918,
+            "target_id": 3,
+            "task_id": "task-1",
+            "x": 2.89525827534113,
+            "y": 2.0945544217914414
+          },
+          {
+            "arrival": 1.9359222741123967,
+            "deadline": 10.537724367049579,
+            "priority": 1.321062140914393,
+            "region_id": 1,
+            "service": 1.0337462703316218,
+            "target_id": 1,
+            "task_id": "task-2",
+            "x": 0.7096039161543523,
+            "y": 2.456973091350376
+          },
+          {
+            "arrival": 3.312379314508921,
+            "deadline": 12.414484906812937,
+            "priority": 1.9869782989166813,
+            "region_id": 2,
+            "service": 1.9003901740941878,
+            "target_id": 1,
+            "task_id": "task-3",
+            "x": 3.147607114046325,
+            "y": 0.25382064197274845
+          },
+          {
+            "arrival": 5.338517948816791,
+            "deadline": 15.185424775726176,
+            "priority": 0.9654199827506593,
+            "region_id": 0,
+            "service": 1.303180143629158,
+            "target_id": 2,
+            "task_id": "task-4",
+            "x": 1.136201593710159,
+            "y": 2.953227564595566
+          },
+          {
+            "arrival": 6.7568904891705595,
+            "deadline": 16.977043614264378,
+            "priority": 1.9705248313961836,
+            "region_id": 1,
+            "service": 1.404797130565698,
+            "target_id": 3,
+            "task_id": "task-5",
+            "x": 3.0008845445868393,
+            "y": 2.585541756887976
+          }
+        ]
+      },
+      "scenario_sha256": "3ef6950617c8d45a8db1406c31e9487ef1eb14aff5dab6963644535c666a9ac8",
+      "seed": 2032400745,
+      "split": "evaluation",
+      "structural_sha256": "feefb2c548cb37d7c9a7ca4b3ce0b1341989763d42a1767b65e3be48af035e40"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400746|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-022",
+      "repeat": 0,
+      "role": "policy_task_evaluation",
+      "scenario": {
+        "communication": {
+          "ack_loss_probability": 0.02,
+          "command_loss_probability": 0.02,
+          "name": "W1-light",
+          "renewal_duplicate_probability": 0.0,
+          "renewal_extra_delay": 0.0,
+          "renewal_reorder_window": 0.0,
+          "telemetry_duplicate_probability": 0.0,
+          "telemetry_extra_delay": 1.0,
+          "telemetry_loss_probability": 0.05,
+          "telemetry_outage_intervals": [],
+          "telemetry_reorder_window": 0.0
+        },
+        "events": [
+          {
+            "kind": "disconnect",
+            "resource": "uav-2",
+            "time": 6.013426026862261
+          },
+          {
+            "kind": "damage",
+            "resource": "uav-1",
+            "time": 7.4465071825276805
+          },
+          {
+            "kind": "reconnect",
+            "resource": "uav-2",
+            "time": 8.01342602686226
+          }
+        ],
+        "name": "mixed",
+        "seed": 2032400746,
+        "split": "test",
+        "tape_id": "test-mixed-seed-2032400746-W1",
+        "tasks": [
+          {
+            "arrival": 0.0,
+            "deadline": 7.475639738187953,
+            "priority": 1.0430099570652664,
+            "region_id": 2,
+            "service": 1.6240986555952377,
+            "target_id": 0,
+            "task_id": "task-0",
+            "x": 1.6640176117719538,
+            "y": 0.2824954430797497
+          },
+          {
+            "arrival": 0.0,
+            "deadline": 8.41300194351438,
+            "priority": 1.6735479122682215,
+            "region_id": 0,
+            "service": 1.5799196798093298,
+            "target_id": 1,
+            "task_id": "task-1",
+            "x": 2.641768151150936,
+            "y": 1.6927373236992813
+          },
+          {
+            "arrival": 2.2675544218025574,
+            "deadline": 11.155333625630327,
+            "priority": 1.3654700838968334,
+            "region_id": 0,
+            "service": 1.1951771163010891,
+            "target_id": 2,
+            "task_id": "task-2",
+            "x": 0.30115163388761035,
+            "y": 2.4356394178717986
+          },
+          {
+            "arrival": 2.796108382573581,
+            "deadline": 11.354547142147215,
+            "priority": 2.2964418378071305,
+            "region_id": 0,
+            "service": 2.123343313401091,
+            "target_id": 1,
+            "task_id": "task-3",
+            "x": 2.929048885403899,
+            "y": 0.05
+          },
+          {
+            "arrival": 5.179548561211687,
+            "deadline": 14.923432650941425,
+            "priority": 1.0311170712188098,
+            "region_id": 2,
+            "service": 1.1671804069059468,
+            "target_id": 2,
+            "task_id": "task-4",
+            "x": 0.8927366792368283,
+            "y": 3.3409068713678014
+          },
+          {
+            "arrival": 6.750569229624685,
+            "deadline": 16.930007187030274,
+            "priority": 2.000512074984949,
+            "region_id": 2,
+            "service": 1.8416881827579488,
+            "target_id": 1,
+            "task_id": "task-5",
+            "x": 3.409983806520476,
+            "y": 3.0983117856328772
+          }
+        ]
+      },
+      "scenario_sha256": "bcad25ac97e0ff78229237d910b6bec8b4b862618cf41b9193868d85c42d5f43",
+      "seed": 2032400746,
+      "split": "evaluation",
+      "structural_sha256": "373278f8fe0e06e5fee4c1975442e3728c0356ccd58819ce01705388aa4b039e"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400747|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-023",
+      "repeat": 0,
+      "role": "policy_task_evaluation",
+      "scenario": {
+        "communication": {
+          "ack_loss_probability": 0.02,
+          "command_loss_probability": 0.02,
+          "name": "W1-light",
+          "renewal_duplicate_probability": 0.0,
+          "renewal_extra_delay": 0.0,
+          "renewal_reorder_window": 0.0,
+          "telemetry_duplicate_probability": 0.0,
+          "telemetry_extra_delay": 1.0,
+          "telemetry_loss_probability": 0.05,
+          "telemetry_outage_intervals": [],
+          "telemetry_reorder_window": 0.0
+        },
+        "events": [
+          {
+            "kind": "disconnect",
+            "resource": "uav-3",
+            "time": 5.097553059396818
+          },
+          {
+            "kind": "reconnect",
+            "resource": "uav-3",
+            "time": 7.097553059396818
+          },
+          {
+            "kind": "damage",
+            "resource": "uav-1",
+            "time": 8.6470312065709
+          }
+        ],
+        "name": "mixed",
+        "seed": 2032400747,
+        "split": "test",
+        "tape_id": "test-mixed-seed-2032400747-W1",
+        "tasks": [
+          {
+            "arrival": 0.0,
+            "deadline": 7.3793808611203975,
+            "priority": 0.9689988936507073,
+            "region_id": 1,
+            "service": 1.6177613463619096,
+            "target_id": 0,
+            "task_id": "task-0",
+            "x": 1.3053859130061907,
+            "y": 0.4041073887130706
+          },
+          {
+            "arrival": 0.0,
+            "deadline": 7.62220566370739,
+            "priority": 1.7630513039798217,
+            "region_id": 0,
+            "service": 1.6282270594297834,
+            "target_id": 3,
+            "task_id": "task-1",
+            "x": 2.505400844655873,
+            "y": 1.6360710986943263
+          },
+          {
+            "arrival": 2.441934676579095,
+            "deadline": 10.763288648711596,
+            "priority": 1.1180729586049416,
+            "region_id": 0,
+            "service": 1.0690703333970093,
+            "target_id": 1,
+            "task_id": "task-2",
+            "x": 0.22182983923214067,
+            "y": 2.6593199047945153
+          },
+          {
+            "arrival": 3.0372395217708994,
+            "deadline": 12.013129014882841,
+            "priority": 1.957297473816216,
+            "region_id": 2,
+            "service": 2.375501184047938,
+            "target_id": 2,
+            "task_id": "task-3",
+            "x": 2.9302711669827857,
+            "y": 0.05
+          },
+          {
+            "arrival": 5.244196848835855,
+            "deadline": 15.010363241379878,
+            "priority": 1.0899074230372203,
+            "region_id": 2,
+            "service": 1.0124355466323052,
+            "target_id": 0,
+            "task_id": "task-4",
+            "x": 1.1140308975005313,
+            "y": 3.3557841071760257
+          },
+          {
+            "arrival": 6.84046592547962,
+            "deadline": 16.589035848604265,
+            "priority": 1.8658783936469174,
+            "region_id": 0,
+            "service": 1.5472353882339553,
+            "target_id": 1,
+            "task_id": "task-5",
+            "x": 3.702397478894851,
+            "y": 2.8780275838580263
+          }
+        ]
+      },
+      "scenario_sha256": "2935389b91e29529c596feaa892957dcee493126c36720738dcdd12b2de0c2c5",
+      "seed": 2032400747,
+      "split": "evaluation",
+      "structural_sha256": "e0e34f5caa6033a1b73e25ab334aefcbb9e4516ba75605d9027776e20de563b0"
+    }
+  ],
+  "schema": "locked-final-task-tape/1"
+}

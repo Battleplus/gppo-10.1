@@ -1,0 +1,35 @@
+{
+  "schema": "w1-public-prefix/1",
+  "sole_serializer": "package/public_prefix.py:serialize_public_prefix",
+  "phase": "pre_action",
+  "field_order": ["candidate_key", "event_signal", "event_signal_valid", "legal_mask", "pre_action_public_state", "schema", "snapshot_identity", "task_slot", "time"],
+  "wire_format": "ASCII JSON; sorted object keys; compact separators; finite JSON numbers; list order preserved",
+  "pre_action_public_state": {
+    "graph.node_features": {"shape": [21, 32], "dtype": "float32", "wire": "list[list[float]]", "range": "finite"},
+    "graph.relations": {"shape": [4, 6, 4], "dtype": "float32", "wire": "list[list[list[float]]]", "range": "finite"},
+    "uavs": {"shape": [4, 24], "dtype": "float32", "wire": "list[list[float]]", "alignment": "graph rows 0:4, columns 0:24"},
+    "tasks": {"shape": [6, 32], "dtype": "float32", "wire": "list[list[float]]", "alignment": "graph rows 11:17"},
+    "public_entity_ids": "four unique UAV strings; zero to six unique task strings in public action-slot order",
+    "public_history": "optional causal 128 float32 values and fixed schema; no future labels"
+  },
+  "event_signal": {"type": "float", "shape": [], "range": [0.0, 1.0], "meaning": "any public semantic trigger at the saved pre-action observation boundary", "flat_offset": 769, "byte_offset": 3076},
+  "event_signal_valid": {"type": "bool", "shape": [], "false": "unknown; reject before flatten/model; never recode as an observed negative", "zero_when_valid_true": "observed absence of event"},
+  "candidate_key": {"contract": "w1-structured-candidate/1", "required_at_candidate_boundaries": true, "unbound_observation": "null only before candidate catalog binding; no current task slot"},
+  "time": {"type": "float", "shape": [], "unit": "simulator seconds", "range": "finite, nonnegative", "normalization": "divide by frozen horizon 18.0"},
+  "task_slot": {"type": "int or null", "range": [0, 5], "noop": "null; per-task/global consequences still allowed"},
+  "legal_mask": {"type": "list[bool]", "shape": [25], "action_index": "6*uav_slot+task_slot; NOOP=24", "effective_mask": "public safety filter output; must equal saved candidate catalog mask"},
+  "snapshot_identity": {
+    "source_header": ["schema", "phase", "generation_stage", "source_object", "horizon", "node_counts", "flat_dtype", "random_key_sha256", "source_sha256"],
+    "binding": ["parent", "repeat", "window_id", "time", "public_sha256", "context_prefix_sha256"],
+    "source_sha256_scope": "typed public graph/telemetry/time/version/event/IDs/continuation/public trigger record plus source header; effective mask and causal history separately bound in full prefix and candidate context",
+    "private_environment_snapshot": "separate strict payload/canonical digests and saved time/random key/history binding; never added to learned features"
+  },
+  "flat_layout": "flat-layout-manifest.json",
+  "flat_cache": "derived only; validate named fields and cached scalar sources before producing a new vector; float64/type/shape/mismatch rejected",
+  "native_conversion_boundary": "capture_observation only; native float32 arrays and native tuples explicitly converted to wire lists there; consumers validate types before any conversion",
+  "candidate_records": "complete public state once plus compact per-candidate prefix/source/key/snapshot digests; all records validated before tensor/model entry",
+  "restore": "snapshot_payload envelope; saved public state exclusively; no restored/current environment observation, private trigger inspection or branch-end input",
+  "failure": "named field/type/shape/value and producer/consumer source digests; no expected-value adjustment, no silent renaming",
+  "compatibility": "770 float32 public dimensions, candidate and adapter dimensions unchanged; new checkpoint and replay metadata mandatory",
+  "approval_status": "NOT_APPROVED"
+}

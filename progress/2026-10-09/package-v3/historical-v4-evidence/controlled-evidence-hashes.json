@@ -1,0 +1,41 @@
+{
+  "files": {
+    "acceptance-first-error.json": {
+      "bytes": 1393,
+      "sha256": "04cd4ebc15e988cbfe02855f1b3b0f13299b538f4b8c0ba97c9d26cc2573a6c4"
+    },
+    "acceptance-summary.json": {
+      "bytes": 6266,
+      "sha256": "eafcbf7f473ce1ae8d539bb0dc26e2af1ee7fda9c2b17b8826b340f537838b72"
+    },
+    "controlled-input-inventory.json": {
+      "bytes": 8157,
+      "sha256": "db52e92fdba4e55f042cbcdde53482dbb780bc086b0594d7b820d188a54865ff"
+    },
+    "controlled-resource-receipt.json": {
+      "bytes": 765,
+      "sha256": "c1d8c7c0e01994cde61e6c7fb2e896b33a25844662523fa240235087505f664b"
+    },
+    "engineering-resource-accounting.json": {
+      "bytes": 765,
+      "sha256": "c1d8c7c0e01994cde61e6c7fb2e896b33a25844662523fa240235087505f664b"
+    },
+    "test-output.json": {
+      "bytes": 6266,
+      "sha256": "eafcbf7f473ce1ae8d539bb0dc26e2af1ee7fda9c2b17b8826b340f537838b72"
+    },
+    "test-output.txt": {
+      "bytes": 6266,
+      "sha256": "eafcbf7f473ce1ae8d539bb0dc26e2af1ee7fda9c2b17b8826b340f537838b72"
+    },
+    "v2-first-error-identity-trace.json": {
+      "bytes": 1988,
+      "sha256": "dbb7f1c9e3c9953caf3352442775b03b15296af47c25dc65498e37ac5dc689d0"
+    },
+    "v3-first-error.json": {
+      "bytes": 1988,
+      "sha256": "dbb7f1c9e3c9953caf3352442775b03b15296af47c25dc65498e37ac5dc689d0"
+    }
+  },
+  "schema": "w1-event-signal-controlled-evidence-hashes/1"
+}

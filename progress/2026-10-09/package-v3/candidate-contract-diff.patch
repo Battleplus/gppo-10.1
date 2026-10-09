@@ -1,0 +1,1242 @@
+--- v2/acceptance/candidate_contract_acceptance.py
++++ v3/acceptance/candidate_contract_acceptance.py
+@@ -0,0 +1,377 @@
++"""Production candidate boundaries; synthetic environment only, no neural forward/update."""
++import ast
++import copy
++import json
++import os
++from pathlib import Path
++import resource
++import sqlite3
++import sys
++import threading
++import time
++from contextlib import contextmanager
++from types import SimpleNamespace
++
++ROOT = Path(__file__).resolve().parents[1]
++sys.path.insert(0, str(ROOT / 'package'))
++sys.path.insert(0, str(ROOT / 'package/native'))
++sys.path.insert(0, str(ROOT / 'acceptance'))
++import numpy as np
++import torch
++torch.set_num_threads(1); torch.set_num_interop_threads(1)
++os.sched_setaffinity(0, {0})
++from controlled_environment import Environment
++from production_driver import Driver
++from budget_ledger import BudgetLedger, BudgetError
++from phase_handshake import StageServer
++from linux_process_scope import proc_tree
++from infra_io import durable_atomic_json, sha256_file
++from consequence_contract import digest, admit_window, task_slots
++from consequence_collection import state_bytes, jsonable, restore_candidate
++from consequence_training import prepare_world_input, serialize_prediction, window_tensors
++from consequence_model import READOUT_DIM, AUX_DIM
++from consequence_features import build_features
++from consequence_policy import ConsequencePolicy, FEATURE_ID
++from consequence_replay import verify_update
++from candidate_keys import (context_for, catalog, key_digest, validate_catalog, audit, feature_binding,
++                            verify_model_inputs, verify_replay_candidate, encoded)
++
++START = time.monotonic()
++CPU_START = time.process_time()
++DIAG = Path(os.environ.get('W1_CANDIDATE_ACCEPTANCE_OUTPUT', str(ROOT.parent.parent / 'research-diagnostics' / 'w1-drone-consequence-v3-candidate-contract-repair-20261008')))
++if os.environ.get('W1_VERIFIED_ATTEMPT'):
++    raise ValueError('FORMAL_AUTHORIZATION_FORBIDDEN_IN_ACCEPTANCE')
++CASES = []
++
++
++class Fixture(Environment):
++    def _observation(self):
++        self.public_read_count = getattr(self, 'public_read_count', 0) + 1
++        state = super()._observation()
++        state['mask'][:24] = False
++        if self.clock.time < self.horizon and not self.noop:
++            for u in range(4):
++                t = (u + int(self.clock.time)) % self.n
++                state['mask'][u * 6 + t] = True
++        state['graph']['relations'][:, :, 2] = state['mask'][:24].reshape(4, 6)
++        state['flat'][-98:-2] = state['graph']['relations'].reshape(-1)
++        # Match the production bridge's observable private-state mutation without native environments.
++        self.issued_observation = {'read': self.public_read_count, 'time': self.clock.time}
++        return state
++
++
++class Factory:
++    def __call__(self, spec, config, purpose):
++        return Fixture(spec, config, purpose)
++
++
++class NoForwardTarget:
++    calls = 0
++    def target(self, nodes):
++        self.calls += 1
++        raise AssertionError('NEURAL_TARGET_FORWARD_FORBIDDEN')
++
++
++def case(name, function):
++    started = time.monotonic()
++    function()
++    CASES.append({'name': name, 'pass': True, 'wall_seconds': time.monotonic() - started})
++    print('PASS ' + name, flush=True)
++
++
++def rejects(function, names=None):
++    try:
++        function()
++    except (ValueError, BudgetError) as exc:
++        if names is not None and str(exc).split(':')[0] not in names:
++            raise AssertionError('Unexpected rejection: ' + str(exc)) from exc
++        return str(exc)
++    raise AssertionError('Invalid candidate was not rejected')
++
++
++@contextmanager
++def handshake(output, request):
++    own = resource.getrusage(resource.RUSAGE_SELF)
++    children = resource.getrusage(resource.RUSAGE_CHILDREN)
++    server = StageServer(output / 'phase.sock', request, tree_reader=proc_tree,
++        cpu_origin_seconds=own.ru_utime + own.ru_stime + children.ru_utime + children.ru_stime,
++        wall_origin_monotonic=START)
++    old = os.environ.get('W1_PHASE_ACCOUNTING_SOCKET')
++    os.environ['W1_PHASE_ACCOUNTING_SOCKET'] = str(server.path)
++    stop = threading.Event(); errors = []
++    def serve():
++        while not stop.is_set():
++            try: server.process_pending(os.getpid())
++            except BaseException as exc: errors.append(repr(exc))
++            stop.wait(.001)
++    thread = threading.Thread(target=serve); thread.start()
++    try:
++        yield server
++    finally:
++        stop.set(); thread.join(timeout=6)
++        assert not thread.is_alive()
++        server.close()
++        if old is None: os.environ.pop('W1_PHASE_ACCOUNTING_SOCKET', None)
++        else: os.environ['W1_PHASE_ACCOUNTING_SOCKET'] = old
++        durable_atomic_json(output / 'handshake-result.json', {'errors': errors, 'rows': server.rows})
++        assert not errors
++
++
++def setup():
++    workspace = DIAG / 'controlled-workspace'; workspace.mkdir(exist_ok=False)
++    source = json.loads((ROOT / 'RESOURCE_REQUEST.json').read_text())
++    allowed = {'environment_constructions': 12, 'environment_resets': 12, 'environment_steps': 7200,
++               'candidate_scans': 8000, 'candidate_branches': 400, 'snapshot_writes': 32,
++               'forced_first_actions': 400, 'output_writes': 64, 'candidate_snapshot_probes': 401,
++               'candidate_contract_audits': 2500}
++    for stage, limits in source['stages'].items():
++        for key, value in limits.items():
++            if type(value) is int:
++                limits[key] = allowed.get(key, 0)
++        limits.update(wall_seconds=120, complete_process_cpu_seconds=100,
++                      all_resident_rss_bytes=4 * 2**30, active_storage_bytes=512 * 2**20)
++    source['totals'] = dict(source['stages']['paired_collection'], wall_seconds=180, complete_process_cpu_seconds=120)
++    source.update(attempt='controlled-candidate-contract-only', approval_status='ENGINEERING_ONLY')
++    specs = []
++    for i, n in enumerate((3, 4, 6, 3)):
++        scenario = {'seed': 970100 + i, 'task_count': n, 'noop_only': i == 3}
++        specs.append({'parent': 'synthetic-parent-' + str(i), 'repeat': 0, 'split': 'train',
++                      'role': 'world_and_policy_train', 'scenario': scenario,
++                      'scenario_sha256': digest(scenario), 'exogenous_key': 'synthetic-key-' + str(i)})
++    matrix = json.loads((ROOT / 'experiment-matrix.json').read_text())
++    matrix.update(controlled=True, attempt='engineering-only-no-formal-identity')
++    for name, value in [('parent-split.json', {'parents': specs}), ('RESOURCE_REQUEST.json', source),
++                        ('experiment-matrix.json', matrix), ('evaluation-tape.json', {'parents': []})]:
++        durable_atomic_json(workspace / name, value)
++    (workspace / 'environment-config-contract.json').write_bytes((ROOT / 'package/environment-config-contract.json').read_bytes())
++    durable_atomic_json(DIAG / 'controlled-input-inventory.json', {
++        'data_source': 'four synthetic parents defined in acceptance source; no formal research result loaded',
++        'inputs': {p.name: {'sha256': sha256_file(p), 'bytes': p.stat().st_size} for p in workspace.iterdir() if p.is_file()},
++        'code_files': {p.relative_to(ROOT).as_posix(): sha256_file(p) for p in (ROOT / 'package').rglob('*.py')},
++        'synthetic_environment_only': True, 'formal_checkpoint_loads': 0})
++    return workspace, source, matrix
++
++
++def main():
++    workspace, request, matrix = setup()
++    output = workspace / 'controlled-output'; output.mkdir()
++    spy = NoForwardTarget()
++    with handshake(output, request) as server:
++        ledger = BudgetLedger(output / 'ledger.sqlite', request)
++        driver = Driver(workspace, output, matrix, ledger, Factory())
++        driver.phase('input_admission')
++        reuse = os.environ.get('W1_CANDIDATE_CONTROLLED_CACHE')
++        if reuse:
++            import gzip
++            previous = Path(reuse)
++            require(json.loads((previous.parent/'RESOURCE_REQUEST.json').read_text())['approval_status'] == 'ENGINEERING_ONLY')
++            inventory_source = json.loads((previous/'source-inventory.json').read_text())['windows']
++            lean = []
++            for entry in inventory_source:
++                path = previous/entry['path']
++                require(sha256_file(path) == entry['sha256'] and path.stat().st_size == entry['bytes'])
++                with gzip.open(path, 'rt', encoding='utf-8') as f: row = json.load(f)
++                derived = admit_window(row, driver.splits)
++                if row['status'] == 'complete':
++                    require(derived == row['labels']); lean.append(driver.compact(row))
++            driver.phase('paired_collection')
++            durable_atomic_json(output/'source-inventory.json', {'windows': inventory_source})
++            durable_atomic_json(output/'controlled-cache-reuse.json', {'source': str(previous),
++                'source_inventory_sha256': sha256_file(previous/'source-inventory.json'),
++                'hashes_labels_and_identity_verified': True, 'previous_live_driver_collection_reused': True,
++                'no_formal_data': True})
++        else:
++            lean = driver.collect()
++        case('actual_driver_collect_all_four_times_three_four_six_tasks',
++             lambda: check_windows(lean))
++        inventory = json.loads((output / 'source-inventory.json').read_text())['windows']
++        case('no_opportunity_preserved_not_failure_or_unknown',
++             lambda: require(sum(x['status'] == 'no_opportunity' for x in inventory) == 4))
++        first = lean[0]
++        state, context, keys = first['state_before'], first['candidate_context'], first['candidate_keys']
++        parts = driver.audit_window_input(first)
++        case('all_layers_share_structured_identity', lambda: check_layers(driver, first, parts))
++        for arm in ('G0', 'T', 'G1'):
++            case('production_feature_boundary_' + arm + '_no_model_available',
++                 lambda arm=arm: require(driver.features(state, arm, candidate_context=context, candidate_keys=keys)[-1]['world_model_calls'] == 0))
++
++        def invalid_row(change):
++            row = copy.deepcopy(first); change(row)
++            rejects(lambda: window_tensors(row, spy))
++            require(spy.calls == 0)
++        mutations = {
++            'missing_candidate': lambda r: r['branches'].pop(),
++            'duplicate_candidate': lambda r: r['branches'].__setitem__(1, copy.deepcopy(r['branches'][0])),
++            'branch_order_permutation': lambda r: r['branches'].reverse(),
++            'label_order_permutation': lambda r: r['labels'].reverse(),
++            'candidate_prefix_tamper': lambda r: r['branches'][0]['candidate_key'].__setitem__('prefix_sha256', '0'*64),
++            'same_action_wrong_parent': lambda r: r['branches'][0]['candidate_key'].__setitem__('parent', 'other-parent'),
++            'same_action_wrong_window': lambda r: r['branches'][0]['candidate_key'].__setitem__('window_id', 'time-99'),
++            'illegal_action': lambda r: r['branches'][0]['candidate_key'].__setitem__('action_index', 25),
++            'wrong_uav_slot': lambda r: r['branches'][0]['candidate_key'].__setitem__('uav_slot', 3),
++            'wrong_task_slot': lambda r: r['branches'][0]['candidate_key'].__setitem__('task_slot', 5),
++            'candidate_key_list_instead_of_object': lambda r: r['branches'][0].__setitem__('candidate_key', list(r['branches'][0]['candidate_key'].values())),
++            'candidate_catalog_tuple_rejected': lambda r: r.__setitem__('candidate_keys', tuple(r['candidate_keys'])),
++            'candidate_time_int_rejected': lambda r: r['branches'][0]['candidate_key'].__setitem__('time', 2),
++            'candidate_order_tamper': lambda r: r['branches'][0]['candidate_key'].__setitem__('candidate_order', 1),
++            'branch_action_bool_rejected': lambda r: r['branches'][0].__setitem__('action', True),
++        }
++        for name, mutate in mutations.items():
++            case(name + '_before_target_or_forward', lambda mutate=mutate: invalid_row(mutate))
++        case('strict_serialization_rejects_tuple', lambda: rejects(lambda: encoded(tuple(keys))))
++        case('action_order_permutation_rejected', lambda: rejects(lambda: validate_catalog(list(reversed(keys)), context, state)))
++        case('feature_pipeline_rejects_before_forward', lambda: rejects(lambda: build_features(state, None, None, 'G1', ledger,
++            candidate_context=context, candidate_keys=list(reversed(keys)))))
++        case('cached_feature_pipeline_still_checks_identity', lambda: rejects(lambda: driver.features(state, 'G1',
++            candidate_context=context, candidate_keys=list(reversed(keys)))))
++        nodes, history, actions, relations, _, _, _, binding = parts
++        case('relation_row_order_tamper_before_forward', lambda: rejects(lambda: verify_model_inputs([binding], nodes, history, actions, relations.flip(0))))
++        case('graph_node_order_tamper_before_forward', lambda: rejects(lambda: verify_model_inputs([binding],
++            dict(nodes, task=nodes['task'].flip(1)), history, actions, relations)))
++        case('model_action_order_tamper_before_forward', lambda: rejects(lambda: verify_model_inputs([binding], nodes, history, actions.flip(0), relations)))
++        case('unknown_and_absent_slot_masks_preserved', lambda: check_unknown(parts))
++        case('evaluation_tape_stays_locked', lambda: rejects(driver.evaluation_specs, {'TASK_EVALUATION_TAPE_LOCKED'}))
++
++        transition = make_replay(driver, first)
++        case('valid_replay_pre_model_identity_boundary', lambda: verify_replay_candidate(transition))
++        for name, change in {
++            'feature_order': lambda t: t.__setitem__('candidate_features', t['candidate_features'][::-1].copy()),
++            'key_order': lambda t: t['replay_evidence']['candidate_keys'].reverse(),
++            'prefix': lambda t: t['replay_evidence']['candidate_keys'][0].__setitem__('prefix_sha256', 'f'*64),
++            'mask': lambda t: t['mask'].__setitem__(t['replay_evidence']['candidate_keys'][0]['action_index'], False),
++            'mask_dtype': lambda t: t.__setitem__('mask', t['mask'].astype(np.float32)),
++            'action_type': lambda t: t.__setitem__('action', True),
++        }.items():
++            def invalid_replay(change=change):
++                t = copy.deepcopy(transition); change(t)
++                # The actual pre-update verifier rejects before accessing a policy or calling a forward.
++                rejects(lambda: verify_update(None, [t], torch.device('cpu')))
++            case('actual_replay_preupdate_rejects_' + name, invalid_replay)
++        case('native_GPPO_entry_calls_verifier_first_static', check_update_entries)
++
++        fired = []
++        case('real_ledger_unknown_key_rejects_before_operation', lambda: rejects(lambda:
++            ledger.call('invalid_resource_test', {'unknown_candidate_key': 1}, lambda: fired.append(True)), {'invalid or unbudgeted resource unknown_candidate_key'}))
++        require(not fired)
++        case('real_ledger_zero_neural_budget_rejects_before_operation', lambda: rejects(lambda:
++            ledger.call('forbidden_forward', {'world_model_batch_forwards': 1}, lambda: fired.append(True))))
++        require(not fired)
++
++        # Demonstrate why canonical checking after an observation can reject a pristine restore.
++        env, adapter, hist, public = driver.create_episode(driver.registry[0], 'paired_collection')
++        before = state_bytes((env, adapter, hist)); probe = copy.deepcopy((env, adapter, hist))
++        probe[0]._observation()
++        case('synthetic_observation_mutation_legacy_predicate_reproduced', lambda: require(state_bytes(probe) != before))
++        case('new_probe_does_not_mutate_branch', lambda: require(all(json.loads(line).get('audited_branch_unmodified', True)
++            for line in (output/'candidate-identity-audits.jsonl').read_text().splitlines())))
++
++        # A deliberate public mismatch exercises detailed first-field evidence and real failed reservation.
++        import pickle
++        bad_public = jsonable(public); bad_public['version'] += 1
++        bad_context = context_for('synthetic-mismatch', 0, 'time-0', bad_public)
++        bad_keys = catalog(bad_context, bad_public)
++        restore_payload = pickle.dumps((env, adapter, hist), protocol=4)
++        good_context = context_for('synthetic-valid-restore', 0, 'time-0', jsonable(public))
++        good_keys = catalog(good_context, jsonable(public))
++        good_restore = ledger.call('controlled_valid_restore', {'candidate_branches': 1}, restore_candidate,
++            restore_payload, before, jsonable(public), good_context, good_keys, good_keys[0], ledger, driver.record_candidate_audit)
++        case('current_restore_entry_preserves_full_state_and_candidate_identity', lambda: require(state_bytes(good_restore) == before))
++        before_failed = ledger.snapshot()['failed_calls']
++        error = rejects(lambda: ledger.call('controlled_bad_public_restore', {'candidate_branches': 1}, restore_candidate,
++            restore_payload, before, bad_public, bad_context, bad_keys, bad_keys[0], ledger, driver.record_candidate_audit),
++            {'CANDIDATE_PUBLIC_PREFIX_MISMATCH'})
++        durable_atomic_json(output / 'expected-public-mismatch.json', {'error': error, 'synthetic_only': True})
++        case('separated_public_failure_charged_and_saved', lambda: require(ledger.snapshot()['failed_calls'] == before_failed + 1))
++        settled = ledger.assert_settled()
++        driver.phase('analysis_and_settlement'); driver.phase('settlement_and_verified_export'); ledger.close()
++        require(server.stage == 'settlement_and_verified_export')
++        require(settled['pending_calls'] == 0 and settled['totals'].get('world_model_updates', 0) == 0)
++
++    cpu = time.process_time() - CPU_START
++    duration = time.monotonic() - START
++    assert duration <= 180 and cpu <= 120
++    summary = {'pass': True, 'tests_passed': len(CASES), 'tests': CASES,
++               'controlled_data_only': True, 'actual_driver_and_ledger_and_handshake': True,
++               'driver_replaced': False, 'ledger_replaced': False, 'phase_handshake_replaced': False,
++               'formal_checkpoint_loads': 0, 'neural_forwards': spy.calls, 'GPPO_updates': 0, 'formal_environment_steps': 0,
++               'synthetic_environment_steps': settled['totals'].get('environment_steps', 0), 'ledger': settled,
++               'controlled_collection_reused_after_test_fixture_repair': bool(reuse),
++               'GPPO_scope': 'production verifier and static entry order only; no update or probability evaluation executed',
++               'historical_root_cause': 'unknown; fixture reproduction is not historical attribution',
++               'world_contract_schema': 'w1-structured-candidate/1'}
++    durable_atomic_json(DIAG / 'acceptance-summary.json', summary)
++    durable_atomic_json(DIAG / 'controlled-resource-receipt.json', {
++        'wall_seconds': duration, 'CPU_seconds_self_after_import': cpu,
++        'process_CPU_seconds_including_import': time.process_time(),
++        'max_RSS_bytes': resource.getrusage(resource.RUSAGE_SELF).ru_maxrss * 1024,
++        'threads': torch.get_num_threads(), 'affinity': sorted(os.sched_getaffinity(0)),
++        'GPU_initialized': torch.cuda.is_initialized(), 'interpreter': sys.executable,
++        'versions': {'python': sys.version.split()[0], 'torch': torch.__version__, 'numpy': np.__version__},
++        'ledger': settled, 'scope': 'controlled engineering; no formal environment, model forward, training or GPPO'})
++    print(json.dumps({k: summary[k] for k in ('pass', 'tests_passed', 'synthetic_environment_steps', 'neural_forwards', 'GPPO_updates')}))
++
++
++def require(value):
++    if not value: raise AssertionError('Required condition failed')
++
++
++def check_windows(lean):
++    require(len(lean) == 12)
++    require({r['state_before']['time'] for r in lean} == {2., 4., 8., 12.})
++    require({len(r['state_before']['public_entity_ids']['tasks']) for r in lean} == {3, 4, 6})
++    require(all(any(k['noop'] for k in r['candidate_keys']) for r in lean))
++    require({k['uav_slot'] for r in lean for k in r['candidate_keys'] if not k['noop']} == {0, 1, 2, 3})
++    require({k['task_slot'] for r in lean for k in r['candidate_keys'] if not k['noop']} == set(range(6)))
++
++
++def check_layers(driver, row, parts):
++    validate_catalog(row['candidate_keys'], row['candidate_context'], row['state_before'])
++    predictions = [serialize_prediction(k, row['candidate_context'], row['state_before'], task_slots(row['state_before']),
++                    [0.] * READOUT_DIM, [False] * READOUT_DIM) for k in row['candidate_keys']]
++    require([p['candidate_key_sha256'] for p in predictions] == [key_digest(k) for k in row['candidate_keys']])
++    require(row['candidate_audits']['collector']['candidate_sequence_sha256'] == parts[-1]['audit']['candidate_sequence_sha256'])
++    require(all(l['candidate_key'] == k for l, k in zip(row['labels'], row['candidate_keys'])))
++    require([k['action_index'] for k in row['candidate_keys']] == parts[2].tolist())
++
++
++def check_unknown(parts):
++    masks = parts[5]
++    require(not masks['binary'][:, 4].any())
++    require(not masks['per_task'][:, 3:].any())
++    noop = int(torch.where(parts[2] == 24)[0][0])
++    require(not masks['binary'][noop, :3].any())
++
++
++def make_replay(driver, row):
++    state, context, keys = row['state_before'], row['candidate_context'], row['candidate_keys']
++    base, aux, valid, mask, available, trace = driver.features(state, 'T', candidate_context=context, candidate_keys=keys)
++    pack_context = SimpleNamespace(arm='T', normalization_mean=torch.zeros(AUX_DIM), normalization_scale=torch.ones(AUX_DIM))
++    packed = ConsequencePolicy.pack(pack_context, base, aux, valid, mask, available).numpy()
++    return {'candidate_features': packed, 'mask': mask.numpy(), 'action': keys[0]['action_index'],
++            'replay_evidence': {'candidate_state_before': state, 'candidate_context': context, 'candidate_keys': keys,
++                'candidate_feature_binding': feature_binding(keys, context, state, packed),
++                'candidate_audits': dict(trace['candidate_audits'], replay=audit('replay', keys, context, state)),
++                'counterfactual_identity': {'public_sha256': context['public_sha256'], 'feature_contract': FEATURE_ID}}}
++
++
++def check_update_entries():
++    source = (ROOT / 'package/native/gppo_world/joint_training.py').read_text()
++    tree = ast.parse(source)
++    for name in ('ppo_preference_update', 'ppo_weighted_preference_update'):
++        functions = [x for x in tree.body if isinstance(x, ast.FunctionDef) and x.name == name]
++        if not functions:
++            raise AssertionError('Native update entry missing')
++        body = functions[0].body
++        block = body[1] if isinstance(body[0], ast.Expr) and isinstance(body[0].value, ast.Constant) and type(body[0].value.value) is str else body[0]
++        require(isinstance(block, ast.If))
++        require(any(isinstance(x, ast.Call) and isinstance(x.func, ast.Name) and x.func.id == 'verify_update' for x in ast.walk(block)))
++
++
++if __name__ == '__main__':
++    try:
++        main()
++    except BaseException as exc:
++        import traceback
++        path = DIAG / 'acceptance-first-error.json'
++        if not path.exists(): durable_atomic_json(path, {'type': type(exc).__name__, 'message': str(exc), 'traceback': traceback.format_exc(), 'completed_tests': CASES})
++        raise
+--- v2/launch_pilot.py
++++ v3/launch_pilot.py
+@@ -40,6 +40,10 @@
+             or matrix.get('world_model_training_enabled') is not True
+             or matrix.get('critic_feature_contract',{}).get('packed_dim')!=507
+             or matrix.get('phase')!='critic_only'):raise ValueError('CONSEQUENCE_CRITIC_CONTRACT_REQUIRED')
++    if (matrix.get('candidate_key_contract') != 'w1-structured-candidate/1'
++            or manifest.get('candidate_key_contract') != 'candidate-key-contract.json'
++            or read(root/'candidate-key-contract.json').get('schema') != 'w1-structured-candidate/1'):
++        raise ValueError('STRUCTURED_CANDIDATE_CONTRACT_REQUIRED')
+     if matrix['world_seeds']!=[8201,8202,8203] or matrix['policy_seeds']!=[8301,8302,8303]:raise ValueError('FIXED_SEEDS')
+     if request['approval_status']!='NOT_APPROVED':raise ValueError('FROZEN_REQUEST_MUST_NOT_CONTAIN_APPROVAL')
+     return identity,request
+--- v2/package/candidate_keys.py
++++ v3/package/candidate_keys.py
+@@ -0,0 +1,223 @@
++"""Strict JSON candidate identities shared by every production boundary."""
++import hashlib
++import json
++import math
++
++SCHEMA = 'w1-structured-candidate/1'
++CONTEXT_SCHEMA = 'w1-candidate-context/1'
++CONTINUATION = 'public-joint-opportunity-rule/1'
++CONTEXT_FIELDS = {'schema', 'parent', 'repeat', 'window_id', 'time', 'public_sha256',
++                  'prefix_sha256', 'continuation_id', 'uav_ids', 'task_ids', 'legal_actions'}
++KEY_FIELDS = {'schema', 'parent', 'repeat', 'window_id', 'time', 'public_sha256', 'prefix_sha256',
++              'action_index', 'noop', 'candidate_order', 'uav_slot', 'uav_id', 'task_slot', 'task_id'}
++
++
++def encoded(value):
++    def check(x, path):
++        if type(x) is dict:
++            if any(type(k) is not str for k in x):
++                raise ValueError('CANDIDATE_JSON_KEY_TYPE:' + path)
++            for k, v in x.items():
++                check(v, path + '.' + k)
++        elif type(x) is list:
++            for i, v in enumerate(x):
++                check(v, path + '[' + str(i) + ']')
++        elif x is None or type(x) in (str, bool, int):
++            pass
++        elif type(x) is float and math.isfinite(x):
++            pass
++        else:
++            raise ValueError('CANDIDATE_JSON_TYPE:' + path + ':' + type(x).__name__)
++    check(value, '$')
++    return json.dumps(value, sort_keys=True, separators=(',', ':'), ensure_ascii=True, allow_nan=False).encode('ascii')
++
++
++def key_digest(value):
++    return hashlib.sha256(encoded(value)).hexdigest()
++
++
++def _same(actual, expected, path):
++    if type(actual) is not type(expected):
++        raise ValueError('CANDIDATE_TYPE:' + path + ':' + type(actual).__name__ + '!=' + type(expected).__name__)
++    if type(expected) is dict:
++        if set(actual) != set(expected):
++            raise ValueError('CANDIDATE_FIELDS:' + path)
++        for k in sorted(expected):
++            _same(actual[k], expected[k], path + '.' + k)
++    elif type(expected) is list:
++        if len(actual) != len(expected):
++            raise ValueError('CANDIDATE_LENGTH:' + path)
++        for i, v in enumerate(expected):
++            _same(actual[i], v, path + '[' + str(i) + ']')
++    elif actual != expected:
++        raise ValueError('CANDIDATE_VALUE:' + path + ':' + repr(actual) + '!=' + repr(expected))
++
++
++def context_for(parent, repeat, window_id, state):
++    from consequence_contract import task_slots, legal_actions, digest
++    if type(parent) is not str or not parent or type(window_id) is not str or not window_id:
++        raise ValueError('CANDIDATE_PARENT_WINDOW')
++    if type(repeat) is not int or repeat < 0:
++        raise ValueError('CANDIDATE_REPEAT')
++    if type(state['time']) is not float or not math.isfinite(state['time']) or state['time'] < 0:
++        raise ValueError('CANDIDATE_TIME_FLOAT_REQUIRED')
++    task_slots(state)
++    ids = state['public_entity_ids']
++    for field in ('tasks', 'uavs'):
++        if type(ids[field]) is not list or any(type(x) is not str or not x for x in ids[field]):
++            raise ValueError('CANDIDATE_PUBLIC_IDS_LIST_REQUIRED:' + field)
++    prefix = {'parent': parent, 'repeat': repeat, 'window_id': window_id, 'time': state['time'],
++              'public_sha256': digest(state), 'continuation_id': CONTINUATION}
++    return dict(prefix, schema=CONTEXT_SCHEMA, prefix_sha256=key_digest(prefix),
++                uav_ids=ids['uavs'].copy(), task_ids=ids['tasks'].copy(), legal_actions=legal_actions(state['mask']))
++
++
++def validate_context(context, state):
++    if type(context) is not dict or set(context) != CONTEXT_FIELDS:
++        raise ValueError('CANDIDATE_CONTEXT_FIELDS')
++    expected = context_for(context['parent'], context['repeat'], context['window_id'], state)
++    _same(context, expected, 'context')
++    return context
++
++
++def catalog(context, state):
++    validate_context(context, state)
++    keys = []
++    for order, action in enumerate(context['legal_actions']):
++        noop = action == 24
++        u, t = (None, None) if noop else divmod(action, 6)
++        key = {k: context[k] for k in ('parent', 'repeat', 'window_id', 'time', 'public_sha256', 'prefix_sha256')}
++        key.update(schema=SCHEMA, action_index=action, noop=noop, candidate_order=order,
++                   uav_slot=u, task_slot=t, uav_id=None if noop else context['uav_ids'][u],
++                   task_id=None if noop else context['task_ids'][t])
++        keys.append(key)
++    return keys
++
++
++def validate_catalog(keys, context, state):
++    expected = catalog(context, state)
++    _same(keys, expected, 'candidate_keys')
++    return [key_digest(k) for k in keys]
++
++
++def validate_key(key, context, state):
++    if type(key) is not dict or set(key) != KEY_FIELDS or type(key.get('candidate_order')) is not int:
++        raise ValueError('CANDIDATE_KEY_FIELDS')
++    expected = catalog(context, state)
++    order = key['candidate_order']
++    if not 0 <= order < len(expected):
++        raise ValueError('CANDIDATE_ORDER_RANGE')
++    _same(key, expected[order], 'candidate_key')
++    return key_digest(key)
++
++
++def audit(layer, keys, context, state):
++    hashes = validate_catalog(keys, context, state)
++    return {'layer': layer, 'context_sha256': key_digest(context), 'candidate_key_sha256': hashes,
++            'candidate_sequence_sha256': key_digest(keys)}
++
++
++def validate_audit(record, keys, context, state, layer):
++    _same(record, audit(layer, keys, context, state), 'candidate_audit')
++
++
++def validate_window(row, *, labels_required=True):
++    state, context, keys = row['state_before'], row['candidate_context'], row['candidate_keys']
++    validate_catalog(keys, context, state)
++    for name in ('parent', 'repeat', 'window_id'):
++        _same(row[name], context[name], 'window.' + name)
++    if row['status'] == 'no_opportunity':
++        if row.get('branches') or row.get('labels'):
++            raise ValueError('CANDIDATE_NO_OPPORTUNITY_BRANCHES')
++        validate_audit(row['candidate_audits']['collector'], keys, context, state, 'collector')
++        return keys
++    if row['status'] != 'complete':
++        raise ValueError('CANDIDATE_INCOMPLETE_WINDOW')
++    branches = row['branches']
++    if type(branches) is not list or len(branches) != len(keys):
++        raise ValueError('CANDIDATE_BRANCH_COUNT')
++    for key, branch in zip(keys, branches):
++        _same(branch['candidate_key'], key, 'branch.candidate_key')
++        _same(branch['action'], key['action_index'], 'branch.action')
++        if branch['candidate_key_sha256'] != key_digest(key) or branch['action'] != key['action_index']:
++            raise ValueError('CANDIDATE_BRANCH_KEY_ACTION')
++        validate_audit(branch['candidate_snapshot_audit'], keys, context, state, 'branch_snapshot')
++    validate_audit(row['candidate_audits']['collector'], keys, context, state, 'collector')
++    if labels_required:
++        if type(row['labels']) is not list or len(row['labels']) != len(keys):
++            raise ValueError('CANDIDATE_LABEL_COUNT')
++        for key, label in zip(keys, row['labels']):
++            _same(label['candidate_key'], key, 'label.candidate_key')
++            if label['candidate_key_sha256'] != key_digest(key):
++                raise ValueError('CANDIDATE_LABEL_DIGEST')
++        validate_audit(row['candidate_audits']['label_lookup'], keys, context, state, 'label_lookup')
++    return keys
++
++
++def tensor_digest(value):
++    if hasattr(value, 'detach'):
++        value = value.detach().cpu().contiguous().numpy()
++    if not hasattr(value, 'dtype') or not hasattr(value, 'shape') or not hasattr(value, 'tobytes'):
++        raise ValueError('CANDIDATE_TENSOR_REQUIRED')
++    header = {'dtype': str(value.dtype), 'shape': [int(n) for n in value.shape]}
++    return hashlib.sha256(encoded(header) + value.tobytes(order='C')).hexdigest()
++
++
++def bind_model_input(state, context, keys, nodes, history, actions, relations):
++    validate_catalog(keys, context, state)
++    if actions.tolist() != context['legal_actions']:
++        raise ValueError('CANDIDATE_GRAPH_ACTION_ORDER')
++    import torch
++    from gppo_world.graph5 import graph5_from_m10_observation
++    from public_history import history_vector
++    if actions.dtype != torch.long or history.dtype != torch.float32 or relations.dtype != torch.float32 or any(v.dtype != torch.float32 for v in nodes.values()):
++        raise ValueError('CANDIDATE_MODEL_INPUT_DTYPE')
++    graph = graph5_from_m10_observation(state)
++    expected_nodes = {k: v[None].expand(len(keys), -1, -1) for k, v in graph.nodes.items()}
++    expected_relations = torch.cat((graph.candidate_features, torch.zeros(1, 4)))[actions.cpu()]
++    expected_history = torch.tensor(history_vector(state))[None].expand(len(keys), -1)
++    if set(nodes) != set(expected_nodes) or any(not torch.equal(v.cpu(), expected_nodes[k]) for k, v in nodes.items()):
++        raise ValueError('CANDIDATE_GRAPH_NODE_MAPPING')
++    if not torch.equal(relations.cpu(), expected_relations) or not torch.equal(history.cpu(), expected_history):
++        raise ValueError('CANDIDATE_GRAPH_RELATION_HISTORY_MAPPING')
++    # Identity is carried beside tensors and never appended to learned public inputs.
++    return {'schema': SCHEMA, 'state_before': state, 'context': context, 'keys': keys,
++            'audit': audit('world_model_input', keys, context, state),
++            'tensor_hashes': {'nodes': {k: tensor_digest(v) for k, v in nodes.items()},
++                             'history': tensor_digest(history), 'actions': tensor_digest(actions),
++                             'relations': tensor_digest(relations)}}
++
++
++def verify_model_inputs(bindings, nodes, history, actions, relations):
++    if type(bindings) is not list or not bindings:
++        raise ValueError('CANDIDATE_MODEL_BINDING_REQUIRED')
++    offset = 0
++    for binding in bindings:
++        n = len(binding['keys'])
++        end = offset + n
++        ns = {k: v[offset:end] for k, v in nodes.items()}
++        expected = bind_model_input(binding['state_before'], binding['context'], binding['keys'],
++                                    ns, history[offset:end], actions[offset:end], relations[offset:end])
++        _same(binding, expected, 'model_binding')
++        offset = end
++    if offset != len(actions) or len(history) != offset or len(relations) != offset or any(len(v) != offset for v in nodes.values()):
++        raise ValueError('CANDIDATE_MODEL_BATCH_LENGTH')
++
++
++def feature_binding(keys, context, state, features):
++    return {'audit': audit('candidate_features', keys, context, state), 'features_sha256': tensor_digest(features)}
++
++
++def verify_replay_candidate(transition):
++    evidence = transition['replay_evidence']
++    state, context, keys = evidence['candidate_state_before'], evidence['candidate_context'], evidence['candidate_keys']
++    validate_catalog(keys, context, state)
++    if str(transition['mask'].dtype) != 'bool' or type(transition['action']) is not int or transition['mask'].tolist() != state['mask'] or transition['action'] not in context['legal_actions']:
++        raise ValueError('CANDIDATE_REPLAY_MASK_ACTION')
++    _same(evidence['candidate_feature_binding'], feature_binding(keys, context, state, transition['candidate_features']), 'replay.feature_binding')
++    validate_audit(evidence['candidate_audits']['replay'], keys, context, state, 'replay')
++    for layer, record in evidence['candidate_audits'].items():
++        validate_audit(record, keys, context, state, layer)
++    if evidence['counterfactual_identity']['public_sha256'] != context['public_sha256']:
++        raise ValueError('CANDIDATE_COUNTERFACTUAL_PUBLIC_IDENTITY')
++    return audit('GPPO', keys, context, state)
+--- v2/package/consequence_collection.py
++++ v3/package/consequence_collection.py
+@@ -7,8 +7,58 @@
+ from dataclasses import asdict
+ import numpy as np
+ from consequence_contract import digest, leaf, opportunity, task_slots, admit_window, GAMMA
++from candidate_keys import context_for, catalog, audit, validate_key, validate_catalog, key_digest
+ 
+ CONTINUATION_ID = "public-joint-opportunity-rule/1"
++
++
++def first_difference(a, b, path='$'):
++    if type(a) is not type(b):
++        return {'field': path, 'expected_type': type(a).__name__, 'actual_type': type(b).__name__,
++                'expected': a if type(a) in (str, float, int, bool) else None,
++                'actual': b if type(b) in (str, float, int, bool) else None}
++    if type(a) is dict:
++        if set(a) != set(b): return {'field': path, 'expected_keys': sorted(a), 'actual_keys': sorted(b)}
++        for k in sorted(a):
++            found = first_difference(a[k], b[k], path + '.' + k)
++            if found: return found
++    elif type(a) is list:
++        if len(a) != len(b): return {'field': path, 'expected_length': len(a), 'actual_length': len(b)}
++        for i, (x, y) in enumerate(zip(a, b)):
++            found = first_difference(x, y, path + '[' + str(i) + ']')
++            if found: return found
++    elif a != b:
++        return {'field': path, 'expected': a, 'actual': b}
++    return None
++
++
++def restore_candidate(payload, canonical, state, context, keys, key, ledger, evidence_store):
++    """Observe a separate probe; never mutate the branch while auditing its prefix."""
++    from public_controller import public_copy
++    validate_catalog(keys, context, state)
++    validate_key(key, context, state)
++    branch, adapter, history = pickle.loads(payload)
++    initial = state_bytes((branch, adapter, history))
++    canonical_ok = initial == canonical
++    def probe():
++        env_copy, adapter_copy, history_copy = copy.deepcopy((branch, adapter, history))
++        public = public_copy(env_copy._observation())
++        public['mask'] = [i in adapter_copy.memory.candidates(public) for i in range(25)]
++        return jsonable(history_copy.attach_current(public))
++    public = ledger.call('candidate_public_snapshot_probe', {'candidate_snapshot_probes': 1}, probe)
++    after = state_bytes((branch, adapter, history))
++    result = {'candidate_key': key, 'candidate_key_sha256': key_digest(key),
++              'candidate_audit': audit('branch_snapshot', keys, context, state),
++              'canonical_expected_sha256': digest(canonical), 'canonical_actual_sha256': digest(initial),
++              'canonical_equal': canonical_ok, 'public_expected_sha256': digest(state),
++              'public_actual_sha256': digest(public), 'public_equal': public == state,
++              'first_public_difference': first_difference(state, public),
++              'audited_branch_unmodified': after == initial}
++    evidence_store(result)
++    if not canonical_ok: raise ValueError('CANDIDATE_CANONICAL_PREFIX_MISMATCH')
++    if after != initial: raise ValueError('CANDIDATE_AUDIT_MUTATED_BRANCH')
++    if public != state: raise ValueError('CANDIDATE_PUBLIC_PREFIX_MISMATCH:' + str(result['first_public_difference']))
++    return branch, adapter, history
+ 
+ 
+ def jsonable(x):
+@@ -60,13 +110,16 @@
+     return result
+ 
+ 
+-def collect_window(env, observation, *, adapter, history, parent, repeat, split, window_id, ledger, snapshot_store):
++def collect_window(env, observation, *, adapter, history, parent, repeat, split, window_id, ledger, snapshot_store, evidence_store):
+     """Shared production collection hook; acceptance replaces only the environment."""
+     from pathlib import Path
+     from gppo_world.joint_training import _vector_reward
+     state = jsonable(observation)
+     slots = task_slots(state)
+     row = {"parent": parent, "repeat": repeat, "split": split, "window_id": window_id, "state_before": state}
++    context = context_for(parent, repeat, window_id, state)
++    keys = catalog(context, state)
++    row.update(candidate_context=context, candidate_keys=keys, candidate_audits={'collector': audit('collector', keys, context, state)})
+     if not opportunity(state["mask"]):
+         row.update(status="no_opportunity", branches=[])
+         return row
+@@ -83,17 +136,14 @@
+                     environment_sha256=digest(asdict(env.config)))
+     # A snapshot is stored once per window, never duplicated in candidate JSONL rows.
+     ledger.call("snapshot_store", {"snapshot_writes": 1}, snapshot_store,
+-                digest(restoration), restoration, {"identity": identity, "rng_hex": rng.hex(), "canonical_hex": canonical.hex()})
++                digest(restoration), restoration, {"identity": identity, "rng_hex": rng.hex(), "canonical_hex": canonical.hex(),
++                 'candidate_context': context, 'candidate_keys': keys, 'candidate_audit': audit('branch_snapshot', keys, context, state)})
+     baseline = ledger.call('baseline_scan', {'candidate_scans': 1}, choose_public, observation)
+     branches = []
+-    for a in [i for i, v in enumerate(state["mask"]) if v]:
+-        branch, branch_adapter, branch_history = ledger.call("restore_candidate", {"candidate_branches": 1}, pickle.loads, restoration)
+-        from public_controller import public_copy
+-        restored_public = public_copy(branch._observation())
+-        restored_public["mask"] = [i in branch_adapter.memory.candidates(restored_public) for i in range(25)]
+-        restored_public = branch_history.attach_current(restored_public)
+-        if state_bytes((branch, branch_adapter, branch_history)) != canonical or digest(jsonable(restored_public)) != digest(state):
+-            raise ValueError("CANDIDATE_PREFIX_MISMATCH")
++    for key in keys:
++        a = key['action_index']
++        branch, branch_adapter, branch_history = ledger.call('restore_candidate', {'candidate_branches': 1},
++            restore_candidate, restoration, canonical, state, context, keys, key, ledger, evidence_store)
+         previous_counts = {"completed": env._last_completed, "expired": env._last_expired}
+         previous_energy = sum(r.energy for r in env.clock.resources.values())
+         initial_energy = previous_energy
+@@ -130,10 +180,13 @@
+                "energy_used": leaf(initial_energy - previous_energy, True), "battery_remaining": leaf(previous_energy, True),
+                "damaged": leaf(new_damage, True), "collision": leaf(reason="simulator_not_implemented"),
+                "damage_count": leaf(damaged, True), "competition_count": leaf(competing, True)}
+-        b = dict(identity, action=a, candidate_id=f"action-{a}", target_task_id=None if a == 24 else slots[a % 6],
++        b = dict(identity, action=a, candidate_key=key, candidate_key_sha256=key_digest(key),
++                 candidate_snapshot_audit=audit('branch_snapshot', keys, context, state),
++                 target_task_id=key['task_id'],
+                  restore_verified=True, snapshot_ref=digest(restoration), trace=trace, trace_sha256=digest(trace),
+                  end_condition="terminated" if info["terminated"] else "horizon", outcome=out)
+         branches.append(b)
+     row.update(status="complete", pair_identity=identity, baseline_action=baseline, branches=branches)
+     row["labels"] = admit_window(row, {parent: split})
++    row['candidate_audits']['label_lookup'] = audit('label_lookup', keys, context, state)
+     return row
+--- v2/package/consequence_contract.py
++++ v3/package/consequence_contract.py
+@@ -2,6 +2,7 @@
+ import hashlib
+ import json
+ import math
++from candidate_keys import validate_key, validate_window, key_digest, audit
+ 
+ SCHEMA = "w1-drone-action-consequence/1"
+ SEEDS = (8201, 8202, 8203)
+@@ -101,7 +102,8 @@
+         if b.get("restore_verified") is not True:
+             raise ValueError("reproducibility_unknown")
+         a = b["action"]
+-        if type(a) is not int or a not in legal_actions(state["mask"]) or b["candidate_id"] != f"action-{a}":
++        validate_key(b['candidate_key'], expected['candidate_context'], state)
++        if type(a) is not int or a not in legal_actions(state["mask"]) or b['candidate_key']['action_index'] != a or b['candidate_key_sha256'] != key_digest(b['candidate_key']):
+             raise ValueError("CANDIDATE_IDENTITY")
+         if b["target_task_id"] != (None if a == 24 else slots[a % 6]):
+             raise ValueError("CANDIDATE_TARGET_SLOT")
+@@ -164,7 +166,8 @@
+                        ("damage_count_delta", "damage_count"), ("competition_delta", "competition_count")):
+         continuous[out] = difference(c[field], b[field])
+     continuous["global_utility_delta"] = leaf(c["utility"] - b["utility"], True)
+-    return {"binary": current, "continuous": continuous, "per_task": per_task,
++    return {"candidate_key": candidate['candidate_key'], 'candidate_key_sha256': candidate['candidate_key_sha256'],
++            "binary": current, "continuous": continuous, "per_task": per_task,
+             "slots": task_slots(state), "source_trace_sha256": candidate["trace_sha256"],
+             "baseline_trace_sha256": baseline["trace_sha256"]}
+ 
+@@ -186,6 +189,7 @@
+ 
+ 
+ def admit_window(row, split_by_parent):
++    validate_window(row, labels_required=False)
+     if row["split"] != split_by_parent[row["parent"]]:
+         raise ValueError("PARENT_SPLIT_MISMATCH")
+     state = row["state_before"]
+@@ -197,8 +201,12 @@
+     if row["status"] != "complete":
+         raise ValueError("WINDOW_INCOMPLETE")
+     branches = row["branches"]
+-    by_action = {b["action"]: b for b in branches}
+-    if len(by_action) != len(branches) or set(by_action) != set(legal_actions(state["mask"])):
++    by_key = {key_digest(b['candidate_key']): b for b in branches}
++    if len(by_key) != len(branches) or set(by_key) != {key_digest(k) for k in row['candidate_keys']}:
+         raise ValueError("MISSING_DUPLICATE_CANDIDATE")
+-    baseline = by_action[row["baseline_action"]]
+-    return [labels(by_action[a], baseline, state, row["pair_identity"]) for a in sorted(by_action)]
++    baseline_keys = [k for k in row['candidate_keys'] if k['action_index'] == row['baseline_action']]
++    if type(row['baseline_action']) is not int or len(baseline_keys) != 1:
++        raise ValueError('BASELINE_CANDIDATE_KEY_REQUIRED')
++    baseline = by_key[key_digest(baseline_keys[0])]
++    expected = dict(row['pair_identity'], candidate_context=row['candidate_context'])
++    return [labels(by_key[key_digest(key)], baseline, state, expected) for key in row['candidate_keys']]
+--- v2/package/consequence_features.py
++++ v3/package/consequence_features.py
+@@ -6,6 +6,7 @@
+ from gppo_world.graph5 import graph5_from_m10_observation
+ from gppo_world.joint_consequence_baseline import public_joint_action_score
+ from public_history import history_vector
++from candidate_keys import validate_catalog, audit, bind_model_input, verify_model_inputs
+ 
+ SUPPORT_TIMES = (2., 4., 8., 12.)
+ 
+@@ -21,8 +22,9 @@
+     return result
+ 
+ 
+-def build_features(state, ensemble, supported_readouts, arm, ledger=None):
++def build_features(state, ensemble, supported_readouts, arm, ledger=None, *, candidate_context, candidate_keys):
+     """Only public identity/presence/training support controls validity, never future labels."""
++    validate_catalog(candidate_keys, candidate_context, state)
+     slots = task_slots(state)
+     base = base_candidates(state)
+     aux = torch.zeros(25, AUX_DIM)
+@@ -32,6 +34,9 @@
+     available = torch.zeros(25, dtype=torch.bool)
+     trace = {"feature_contract": FEATURE_ID, "task_slots": slots,
+              "public_input_sha256": digest(state), "support_times": list(SUPPORT_TIMES), "world_model_calls": 0}
++    trace.update(candidate_context=candidate_context, candidate_keys=candidate_keys,
++                 candidate_audits={'graph_action_encoding': audit('graph_action_encoding', candidate_keys, candidate_context, state),
++                                   'candidate_features': audit('candidate_features', candidate_keys, candidate_context, state)})
+     if not opportunity(state["mask"]):
+         trace["gate"] = "no_opportunity"
+         return base, aux, valid, legal, available, trace
+@@ -65,7 +70,10 @@
+     nodes = {k: v[None].expand(len(actions), -1, -1).contiguous() for k, v in graph.nodes.items()}
+     history = torch.tensor(history_vector(state))[None].expand(len(actions), -1).contiguous()
+     relations = torch.cat((graph.candidate_features, torch.zeros(1, 4)))[actions]
+-    def infer(): return ensemble.predict(nodes, history, actions, relations, legal, support, transparent)
++    binding = bind_model_input(state, candidate_context, candidate_keys, nodes, history, actions, relations)
++    verify_model_inputs([binding], nodes, history, actions, relations)
++    trace['candidate_audits']['world_model_input'] = binding['audit']
++    def infer(): return ensemble.predict(nodes, history, actions, relations, legal, support, transparent, [binding])
+     result = (ledger.call("ensemble_candidate_batch", {"world_model_batch_forwards": 3,
+               "world_model_candidate_evaluations": 3*len(actions)}, infer) if ledger else infer())
+     x, v, outputs = result
+--- v2/package/consequence_model.py
++++ v3/package/consequence_model.py
+@@ -4,6 +4,7 @@
+ from torch.nn import functional as F
+ from vendor.w1_graph_jepa import W1GraphJEPA
+ from consequence_contract import BINARY, CONTINUOUS, SEEDS
++from candidate_keys import verify_model_inputs, key_digest
+ 
+ # Preregistered, never fitted on development/evaluation results.
+ WEIGHTS = {"latent": 1., "public": .1, "binary": 1., "continuous": 1.,
+@@ -14,7 +15,7 @@
+ 
+ 
+ class ConsequenceJEPA(W1GraphJEPA):
+-    format_version = "drone-action-consequence-jepa/1"
++    format_version = "drone-action-consequence-jepa/2-candidate-key"
+ 
+     def __init__(self):
+         super().__init__()
+@@ -24,12 +25,19 @@
+         self.increment_head = nn.Linear(64, len(CONTINUOUS))
+         self.externality_head = nn.Linear(64, 12)
+ 
+-    def forward(self, nodes, history, actions, relations):
++    def forward(self, nodes, history, actions, relations, candidate_bindings=None):
++        verify_model_inputs(candidate_bindings, nodes, history, actions, relations)
+         graph, h = self.encode(nodes, history)
+         z = self.predictor(torch.cat((graph, h, self.action_embedding(actions.long()),
+                                      self.relation_embedding(relations)), -1))
+-        return {"latent": z, "public": self.public_decoder(z), "binary": self.physical_head(z),
++        return {'candidate_keys': [key for binding in candidate_bindings for key in binding['keys']],
++                'candidate_key_sha256': [key_digest(key) for binding in candidate_bindings for key in binding['keys']],
++                "latent": z, "public": self.public_decoder(z), "binary": self.physical_head(z),
+                 "continuous": self.increment_head(z), "per_task": self.externality_head(z).reshape(-1, 6, 2)}
++
++    def predict_candidates(self, nodes, history, actions, relations, candidate_bindings=None):
++        verify_model_inputs(candidate_bindings, nodes, history, actions, relations)
++        return self.forward(nodes, history, actions, relations, candidate_bindings)
+ 
+ 
+ def masked_loss(prediction, target, valid, kind):
+@@ -93,7 +101,8 @@
+         return self
+ 
+     @torch.no_grad()
+-    def predict(self, nodes, history, actions, relations, legal_mask, support_mask, transparent):
++    def predict(self, nodes, history, actions, relations, legal_mask, support_mask, transparent, candidate_bindings=None):
++        verify_model_inputs(candidate_bindings, nodes, history, actions, relations)
+         if not opportunity_tensor(legal_mask):
+             raise ValueError("OUTSIDE_SUPPORT_MUST_SKIP_PREDICT")
+         expected = torch.where(legal_mask)[0]
+@@ -101,7 +110,10 @@
+             raise ValueError("LEGAL_CANDIDATE_BATCH_IDENTITY")
+         if support_mask.shape != (len(actions), READOUT_DIM) or support_mask.dtype != torch.bool:
+             raise ValueError("SUPERVISION_SUPPORT_MASK")
+-        out = [m.predict_candidates(nodes, history, actions, relations) for m in self.models]
++        out = [m.predict_candidates(nodes, history, actions, relations, candidate_bindings) for m in self.models]
++        expected_keys = [key for binding in candidate_bindings for key in binding['keys']]
++        if any(o['candidate_keys'] != expected_keys or o['candidate_key_sha256'] != [key_digest(k) for k in expected_keys] for o in out):
++            raise ValueError('CANDIDATE_PREDICTION_OUTPUT_IDENTITY')
+         self.calls += 3
+         reads = torch.stack([readout(p) for p in out])
+         aux = torch.cat((*[p["latent"] for p in out], reads.mean(0), reads.var(0, unbiased=False).sqrt(), transparent), -1)
+--- v2/package/consequence_replay.py
++++ v3/package/consequence_replay.py
+@@ -5,11 +5,13 @@
+ import weakref
+ import torch
+ from consequence_policy import FEATURE_ID
++from candidate_keys import verify_replay_candidate, audit, validate_audit
+ 
+ ATOL = 1e-6
+ REGISTRY = weakref.WeakKeyDictionary()
+ EVIDENCE_FIELDS = ("counterfactual_identity", "world_model_identity", "normalization_identity",
+-                   "hidden_source", "random_key", "gate", "task_slots", "feature_contract")
++                   "hidden_source", "random_key", "gate", "task_slots", "feature_contract",
++                   'candidate_state_before', 'candidate_context', 'candidate_keys', 'candidate_feature_binding', 'candidate_audits')
+ 
+ 
+ def fingerprint(value):
+@@ -66,6 +68,8 @@
+ 
+ 
+ def seal(policy, transition, evidence):
++    transition['replay_evidence'] = copy.deepcopy(evidence)
++    verify_replay_candidate(transition)
+     r = guard(policy)
+     if any(k not in evidence for k in EVIDENCE_FIELDS):
+         raise ValueError("MISSING_BEHAVIOR_EVIDENCE")
+@@ -95,6 +99,8 @@
+ 
+ 
+ def verify_update(policy, transitions, device):
++    for transition in transitions:
++        verify_replay_candidate(transition)
+     r = guard(policy)
+     if not transitions: raise ValueError("EMPTY_REPLAY")
+     from gppo_world.joint_training import _joint_logprob_rows
+@@ -102,6 +108,12 @@
+         row = r["rows"].get(t.get("replay_id"))
+         if row is None or fingerprint(record_fields(t)) != row["digest"]:
+             raise ValueError("BEHAVIOR_EVIDENCE_CHANGED")
++        candidate_audit = verify_replay_candidate(t)
++        t['candidate_GPPO_audit'] = candidate_audit
++        if r['ledger']:
++            from infra_io import durable_append_jsonl
++            r['ledger'].call('GPPO_candidate_identity_audit', {'candidate_contract_audits': 1},
++                durable_append_jsonl, r['ledger'].phase_path.parent/'candidate-identity-audits.jsonl', candidate_audit)
+         snapshot = r["snapshots"][row["snapshot"]]
+         if fingerprint(snapshot.state_dict()) != row["snapshot"]:
+             raise ValueError("BEHAVIOR_SNAPSHOT_CHANGED")
+--- v2/package/consequence_training.py
++++ v3/package/consequence_training.py
+@@ -9,6 +9,7 @@
+ from consequence_replay import fingerprint
+ from gppo_world.graph5 import graph5_from_m10_observation
+ from public_history import history_vector, public_state_vector
++from candidate_keys import SCHEMA as CANDIDATE_SCHEMA, validate_window, bind_model_input, verify_model_inputs, validate_key, key_digest
+ 
+ EPOCHS = 40
+ WINDOW_BATCH = 8
+@@ -43,7 +44,8 @@
+     return rows, seen
+ 
+ 
+-def window_tensors(row, model):
++def prepare_world_input(row):
++    validate_window(row)
+     graph = graph5_from_m10_observation(row["state_before"])
+     actions = torch.where(graph.action_mask)[0]
+     nodes = {k: v[None].expand(len(actions), -1, -1).contiguous() for k, v in graph.nodes.items()}
+@@ -53,22 +55,30 @@
+     values, validity = zip(*(tensor_targets(l) for l in labels))
+     targets = {k: torch.tensor([v[k] for v in values], dtype=torch.float32) for k in ("binary", "continuous", "per_task")}
+     masks = {k: torch.tensor([v[k] for v in validity], dtype=torch.bool) for k in targets}
+-    by_action = {b["action"]: b for b in row["branches"]}
+-    final = [by_action[int(a)]["final_public"] if row.get('admitted_lean') else
+-             by_action[int(a)]["trace"][-1]["public_after"] for a in actions]
++    by_key = {key_digest(b['candidate_key']): b for b in row['branches']}
++    final = [by_key[key_digest(key)]['final_public'] if row.get('admitted_lean') else
++             by_key[key_digest(key)]['trace'][-1]['public_after'] for key in row['candidate_keys']]
++    binding = bind_model_input(row['state_before'], row['candidate_context'], row['candidate_keys'], nodes, history, actions, relation)
++    verify_model_inputs([binding], nodes, history, actions, relation)
++    return nodes, history, actions, relation, targets, masks, final, binding
++
++
++def window_tensors(row, model):
++    nodes, history, actions, relation, targets, masks, final, binding = prepare_world_input(row)
+     targets["public"] = torch.tensor([public_state_vector(s).tolist() for s in final])
+     masks["public"] = torch.ones_like(targets["public"], dtype=torch.bool)
+     masks["public"][:, 0::4] = targets["public"][:, 2::4] > .5
+     future_graphs = [graph5_from_m10_observation(s) for s in final]
+-    future_nodes = {k: torch.stack([g.nodes[k] for g in future_graphs]) for k in graph.nodes}
++    future_nodes = {k: torch.stack([g.nodes[k] for g in future_graphs]) for k in nodes}
+     targets["latent"] = model.target(future_nodes).detach()
+     masks["latent"] = torch.ones_like(targets["latent"], dtype=torch.bool)
+-    return nodes, history, actions, relation, targets, masks
++    return nodes, history, actions, relation, targets, masks, binding
+ 
+ 
+ def support_from_training(train_rows):
+     masks = []
+     for row in train_rows:
++        validate_window(row)
+         if row["split"] != "train": raise ValueError("TRAIN_ONLY_SUPPORT_REQUIRED")
+         for label in row["labels"]:
+             _, v = tensor_targets(label)
+@@ -96,9 +106,11 @@
+                 h, a, rel = [torch.cat([t[i] for t in tensors]) for i in (1, 2, 3)]
+                 target = {k: torch.cat([t[4][k] for t in tensors]) for k in tensors[0][4]}
+                 valid = {k: torch.cat([t[5][k] for t in tensors]) for k in tensors[0][5]}
++                bindings = [t[6] for t in tensors]
++                verify_model_inputs(bindings, n, h, a, rel)
+                 window_ids = [f'{r["parent"]}/{r["window_id"]}' for r, t in zip(rows, tensors) for _ in t[2]]
+                 prediction = ledger.call('world_forward', {'training_forwards': 1,
+-                    'training_candidate_evaluations': len(a)}, model, n, h, a, rel)
++                    'training_candidate_evaluations': len(a)}, model, n, h, a, rel, bindings)
+                 loss, parts = consequence_loss(prediction, target, valid, window_ids)
+                 if not torch.isfinite(loss): raise ValueError("WORLD_LOSS_NONFINITE")
+                 optimizer.zero_grad(set_to_none=True); loss.backward()
+@@ -113,7 +125,8 @@
+         "selection_rule": "final_fixed_epoch_only", "weights": WEIGHTS, "task_capacity": 6,
+         "slot_contract": "public-action-graph-order", "support_mask": supported.tolist(), "support_counts": counts.tolist(),
+         "train_parents": sorted({r["parent"] for r in train_rows}), "continuation_id": "public-joint-opportunity-rule/1",
+-        "feature_contract": FEATURE_ID, "readout_dim": READOUT_DIM, "packed_dim": PACKED_DIM}
++        "feature_contract": FEATURE_ID, "candidate_key_contract": CANDIDATE_SCHEMA,
++        "readout_dim": READOUT_DIM, "packed_dim": PACKED_DIM}
+     payload = {"metadata": metadata, "state_dict": model.state_dict(), "optimizer": optimizer.state_dict(),
+                "optimizer_sha256": fingerprint(optimizer.state_dict()), 'metadata_sha256': digest(metadata),
+                "state_sha256": fingerprint(model.state_dict())}
+@@ -137,16 +150,18 @@
+     if fingerprint(payload["state_dict"]) != payload["state_sha256"]: raise ValueError("CHECKPOINT_INTERNAL_STATE_SHA256")
+     if digest(payload['metadata']) != payload['metadata_sha256']: raise ValueError('CHECKPOINT_METADATA_DIGEST')
+     if fingerprint(payload['optimizer']) != payload['optimizer_sha256']: raise ValueError('CHECKPOINT_OPTIMIZER_DIGEST')
+-    if payload["metadata"]["task_capacity"] != 6 or payload["metadata"]["packed_dim"] != PACKED_DIM:
++    if payload["metadata"].get('candidate_key_contract') != CANDIDATE_SCHEMA or payload["metadata"]["task_capacity"] != 6 or payload["metadata"]["packed_dim"] != PACKED_DIM:
+         raise ValueError("CHECKPOINT_MODEL_SLOT_CONTRACT")
+     return {"file_sha256": file_sha256, "state_sha256": payload["state_sha256"], "metadata": payload["metadata"]}
+ 
+ 
+-def serialize_prediction(action, candidate_id, task_ids, predicted, valid):
+-    if candidate_id != f"action-{action}" or len(task_ids) != 6 or len(predicted) != READOUT_DIM or len(valid) != READOUT_DIM:
++def serialize_prediction(candidate_key, context, state, task_ids, predicted, valid):
++    validate_key(candidate_key, context, state)
++    if task_ids != __import__('consequence_contract').task_slots(state) or len(predicted) != READOUT_DIM or len(valid) != READOUT_DIM:
+         raise ValueError("PREDICTION_IDENTITY_LAYOUT")
+     prefix = len(BINARY) + len(CONTINUOUS)
+-    return {"action": action, "candidate_id": candidate_id,
++    return {"action": candidate_key['action_index'], "candidate_key": candidate_key,
++        'candidate_key_sha256': key_digest(candidate_key),
+         "binary": {k: {"value": float(predicted[i]) if valid[i] else None, "valid": bool(valid[i])} for i, k in enumerate(BINARY)},
+         "continuous": {k: {"value": float(predicted[len(BINARY) + i]) if valid[len(BINARY) + i] else None,
+             "valid": bool(valid[len(BINARY) + i])} for i, k in enumerate(CONTINUOUS)},
+--- v2/package/production_driver.py
++++ v3/package/production_driver.py
+@@ -19,7 +19,7 @@
+ from consequence_collection import collect_window, choose_public, lifecycle, jsonable, state_bytes
+ from consequence_features import build_features, SUPPORT_TIMES
+ from consequence_model import ConsequenceJEPA, FrozenEnsemble, READOUT_DIM, AUX_DIM, PACKED_DIM
+-from consequence_training import train_final_world, admit_checkpoint, serialize_prediction, restore_optimizer_strict
++from consequence_training import train_final_world, admit_checkpoint, serialize_prediction, restore_optimizer_strict, prepare_world_input
+ from consequence_policy import ConsequencePolicy, FEATURE_ID
+ import consequence_replay as replay
+ from public_history import CausalPublicHistory
+@@ -27,6 +27,8 @@
+ from gppo_world.m10_environment import M10Config, M10Environment, scenario_from_dict
+ from gppo_world.joint_gppo import JointGraphPreferencePolicy, JointTrainConfig
+ from gppo_world.joint_training import _vector_reward, ppo_preference_update, _gae_vector
++from candidate_keys import (SCHEMA as CANDIDATE_SCHEMA, context_for, catalog, audit, validate_window,
++                            validate_audit, validate_catalog, feature_binding, key_digest)
+ 
+ POLICY_SEEDS = (8301, 8302, 8303)
+ ARMS = ('G0', 'T', 'G1')
+@@ -51,6 +53,7 @@
+         self.prediction_cache = {}; self.last_route = None
+         self.last_preparation_cost = (0., 0.)
+         self.pending_history_cost = (0., 0.)
++        self.active_parent = None; self.active_episode = -1
+         self.output.mkdir(parents=True, exist_ok=True)
+         self.started = time.monotonic()
+ 
+@@ -69,6 +72,7 @@
+         return self.ledger.call('json_output', {'output_writes': 1}, durable_atomic_json, self.output/name, obj)
+ 
+     def create_episode(self, spec, purpose):
++        self.active_parent = spec['parent']; self.active_episode += 1
+         env = self.ledger.call('environment_construct', {'environment_constructions': 1},
+                                self.env_factory, spec, self.config, purpose)
+         observation = self.ledger.call('environment_reset', {'environment_resets': 1}, env.reset)
+@@ -109,10 +113,25 @@
+             durable_atomic_json(p.with_suffix('.json'), audit)
+ 
+     def compact(self, row):
++        validate_window(row)
+         return {k: copy.deepcopy(v) for k, v in row.items() if k != 'branches'} | {
+-            'admitted_lean': True, 'branches': [{'action': b['action'], 'candidate_id': b['candidate_id'],
++            'admitted_lean': True, 'branches': [{'action': b['action'], 'candidate_key': b['candidate_key'],
++                'candidate_key_sha256': b['candidate_key_sha256'], 'candidate_snapshot_audit': b['candidate_snapshot_audit'],
+                 'trace_sha256': b['trace_sha256'], 'snapshot_ref': b['snapshot_ref'],
+                 'final_public': b['trace'][-1]['public_after']} for b in row['branches']]}
++
++    def record_candidate_audit(self, record):
++        return self.ledger.call('candidate_identity_audit', {'candidate_contract_audits': 1},
++            durable_append_jsonl, self.output/'candidate-identity-audits.jsonl', record)
++
++    def audit_window_input(self, row):
++        """Actual production pre-model entry, also callable by no-forward acceptance."""
++        validate_window(row)
++        pieces = prepare_world_input(row)
++        graph_audit = audit('graph_action_encoding', row['candidate_keys'], row['candidate_context'], row['state_before'])
++        self.record_candidate_audit(graph_audit)
++        self.record_candidate_audit(pieces[-1]['audit'])
++        return pieces
+ 
+     def collect(self):
+         self.phase('paired_collection'); lean = []
+@@ -130,7 +149,8 @@
+                 window_id = f'time-{scheduled:g}'
+                 if done and opportunity(state['mask']): raise ValueError('TERMINAL_STATE_HAS_ALLOCATION_OPPORTUNITY')
+                 row = collect_window(env, state, adapter=adapter, history=history, parent=spec['parent'], repeat=0,
+-                    split=spec['split'], window_id=window_id, ledger=self.ledger, snapshot_store=self.snapshot_store)
++                    split=spec['split'], window_id=window_id, ledger=self.ledger, snapshot_store=self.snapshot_store,
++                    evidence_store=self.record_candidate_audit)
+                 row['scheduled_time'] = scheduled
+                 row['terminal_before_scheduled_prefix'] = bool(done and state['time'] < scheduled)
+                 admitted = admit_window(row, self.splits)
+@@ -142,7 +162,14 @@
+                         import pickle
+                         restored = pickle.loads(payload)
+                         if digest(state_bytes(restored)) != b['prefix_sha256']: raise ValueError('SNAPSHOT_STATE_DIGEST')
++                        snapshot_audit = json.loads(snap.with_suffix('.json').read_text())
++                        validate_audit(snapshot_audit['candidate_audit'], row['candidate_keys'], row['candidate_context'], row['state_before'], 'branch_snapshot')
++                        if snapshot_audit['candidate_keys'] != row['candidate_keys'] or snapshot_audit['candidate_context'] != row['candidate_context']:
++                            raise ValueError('SNAPSHOT_CANDIDATE_CONTEXT')
+                     if row['labels'] != admitted: raise ValueError('LABEL_RECOMPUTE_MISMATCH')
++                    self.audit_window_input(row)
++                self.record_candidate_audit(row['candidate_audits']['collector'])
++                if row['status'] == 'complete': self.record_candidate_audit(row['candidate_audits']['label_lookup'])
+                 name = spec['parent']+'--'+window_id
+                 raw = json.dumps(row, sort_keys=True, allow_nan=False).encode()
+                 path = raw_dir/(name+'.json.gz'); temporary = path.with_suffix('.pending')
+@@ -186,6 +213,7 @@
+         self.save('three-world-restore-audit.json', {'pass': True, 'seeds': list(SEEDS), 'world_identity': self.world_identity})
+ 
+     def train_worlds(self, lean):
++        for row in lean: self.audit_window_input(row)
+         self.phase('world_training_and_restore'); folder = self.output/'world-models'; folder.mkdir()
+         train = [r for r in lean if r['split']=='train']; bindings = {}
+         for seed in SEEDS:
+@@ -200,11 +228,20 @@
+         if replay.fingerprint(self.ensemble.state_dict()) != self.world_identity or any(p.requires_grad or p.grad is not None for p in self.ensemble.parameters()):
+             raise ValueError('FROZEN_WORLD_BOUNDARY')
+ 
+-    def features(self, state, arm):
+-        key = (arm, digest(jsonable(state)))
++    def features(self, state, arm, *, candidate_context=None, candidate_keys=None):
++        state = jsonable(state)
++        if candidate_context is None:
++            if self.active_parent is None: raise ValueError('LIVE_CANDIDATE_PARENT_REQUIRED')
++            candidate_context = context_for(self.active_parent, 0,
++                f'episode-{self.active_episode}-time-{state["time"]:g}', state)
++        if candidate_keys is None: candidate_keys = catalog(candidate_context, state)
++        validate_catalog(candidate_keys, candidate_context, state)
++        key = (arm, key_digest(candidate_context))
+         if key not in self.prediction_cache:
+             self.prediction_cache[key] = self.ledger.call('candidate_feature_pipeline', {'candidate_scans': 1},
+-                build_features, jsonable(state), self.ensemble if arm=='G1' else None, self.support, arm, self.ledger)
++                build_features, state, self.ensemble if arm=='G1' else None, self.support, arm, self.ledger,
++                candidate_context=candidate_context, candidate_keys=candidate_keys)
++            for record in self.prediction_cache[key][-1]['candidate_audits'].values(): self.record_candidate_audit(record)
+         return self.prediction_cache[key]
+ 
+     def offline(self, lean):
+@@ -212,14 +249,16 @@
+         train_values = []; train_masks = []
+         role = {s['parent']: s['role'] for s in self.registry}
+         for row in lean:
++            self.audit_window_input(row)
+             state = row['state_before']; self.prediction_cache.clear()
+             start = time.monotonic(); cpu = time.process_time()
+-            _, aux, valid, legal, _, trace = self.features(state, 'G1')
++            _, aux, valid, legal, _, trace = self.features(state, 'G1', candidate_context=row['candidate_context'], candidate_keys=row['candidate_keys'])
+             costs = {'cpu_seconds': time.process_time()-cpu, 'wall_seconds': time.monotonic()-start}
+             actions = torch.where(legal)[0].tolist()
+             readouts = trace.get('seed_readouts')
+             if readouts is None: raise ValueError('OFFLINE_PREDICTION_MISSING')
+-            truth = {a: row['labels'][i]['continuous']['global_utility_delta']['value'] for i, a in enumerate(actions)}
++            label_by_key = {key_digest(label['candidate_key']): label for label in row['labels']}
++            truth = {key['action_index']: label_by_key[key_digest(key)]['continuous']['global_utility_delta']['value'] for key in row['candidate_keys']}
+             means = aux[actions, 192:192+READOUT_DIM].tolist(); stds = aux[actions, 192+READOUT_DIM:192+2*READOUT_DIM].tolist()
+             utility_index = len(BINARY)+CONTINUOUS.index('global_utility_delta')
+             selected_rows = by_role.setdefault(role[row['parent']], {s: [] for s in (*SEEDS, 'ensemble')})
+@@ -227,9 +266,14 @@
+                 score = {a: pred[i][utility_index] for i, a in enumerate(actions)}
+                 result = window_metrics(score, truth, actions, row['baseline_action'])
+                 selected_rows[seed].append(dict(result, parent=row['parent'], window_id=row['window_id']))
+-            pred_rows = [serialize_prediction(a, f'action-{a}', row['labels'][0]['slots'], means[i], valid[a,192:192+READOUT_DIM].tolist()) for i,a in enumerate(actions)]
++            pred_rows = [serialize_prediction(row['candidate_keys'][i], row['candidate_context'], state,
++                row['labels'][0]['slots'], means[i], valid[a,192:192+READOUT_DIM].tolist()) for i,a in enumerate(actions)]
++            prediction_audit = audit('prediction_export', row['candidate_keys'], row['candidate_context'], state)
++            self.record_candidate_audit(prediction_audit)
+             predictions.append({'parent': row['parent'], 'role': role[row['parent']], 'window_id': row['window_id'],
+-                'pair_identity': row['pair_identity'], 'candidate_predictions': pred_rows, 'seed_readouts': readouts,
++                'pair_identity': row['pair_identity'], 'candidate_context': row['candidate_context'],
++                'candidate_keys': row['candidate_keys'], 'candidate_audit': prediction_audit,
++                'candidate_predictions': pred_rows, 'seed_readouts': readouts,
+                 'ensemble_std': stds, 'labels': row['labels'], 'costs': costs})
+             if row['split']=='train': train_values.append(aux); train_masks.append(valid)
+         if not train_values: raise ScientificStop('data_coverage_gate_stop')
+@@ -275,6 +319,7 @@
+         pieces = self.features(state, policy.arm)
+         base, aux, valid, mask, available, trace = pieces
+         packed = policy.pack(base, aux, valid, mask, available)
++        trace['candidate_feature_binding'] = feature_binding(trace['candidate_keys'], trace['candidate_context'], jsonable(state), packed)
+         def forward():
+             with torch.no_grad():
+                 f, pair, next_hidden = policy.encode(torch.tensor(state['flat'], dtype=torch.float32)[None], hidden)
+@@ -312,7 +357,10 @@
+                 'continuation_id':'public-joint-opportunity-rule/1','feature_contract':FEATURE_ID},
+                 'world_model_identity':replay.REGISTRY[policy]['world_hash'],'normalization_identity':replay.normalization_id(policy),
+                 'hidden_source':'stored_behavior_hidden_per_transition','random_key':random_key,'gate':trace['gate'],
+-                'task_slots':trace['task_slots'],'feature_contract':FEATURE_ID})
++                'task_slots':trace['task_slots'],'feature_contract':FEATURE_ID,
++                'candidate_state_before':jsonable(state),'candidate_context':trace['candidate_context'],
++                'candidate_keys':trace['candidate_keys'],'candidate_feature_binding':trace['candidate_feature_binding'],
++                'candidate_audits':dict(trace['candidate_audits'], replay=audit('replay',trace['candidate_keys'],trace['candidate_context'],jsonable(state)))})
+             transitions.append(t)
+             durable_append_jsonl(self.output/'behavior-evidence.jsonl',jsonable(t))
+             self.progress(seed=seed, run=f'{policy.arm}:{seed}', steps=context['global_steps']+1)
+@@ -367,7 +415,7 @@
+         folder = self.output/'policy-models'; folder.mkdir(exist_ok=True)
+         path = folder/f'{arm}-{seed}.pt'
+         metadata = {'schema':'consequence-critic-policy/2','arm':arm,'seed':seed,'steps':steps,'updates':updates,
+-            'feature_contract':FEATURE_ID,'packed_dim':PACKED_DIM,'task_capacity':6,'phase':'critic_only',
++            'feature_contract':FEATURE_ID,'candidate_key_contract':CANDIDATE_SCHEMA,'packed_dim':PACKED_DIM,'task_capacity':6,'phase':'critic_only',
+             'world_identity':self.world_identity,'initial_state_sha256':self.initial_hashes[seed],
+             'normalization_identity':replay.normalization_id(policy),'optimizer_class':'Adam','lr':3e-4,
+             'GPPO_config':asdict(JointTrainConfig(seed=seed,rollout_steps=self.matrix['rollout_steps']))}
+@@ -385,7 +433,7 @@
+         meta = payload['metadata']
+         if meta['arm']!=arm or meta['seed']!=seed or meta['steps']!=self.matrix['policy_steps'] or meta['updates']!=self.matrix['policy_updates']:
+             raise ValueError('POLICY_FINAL_IDENTITY')
+-        if meta['world_identity']!=self.world_identity or meta['feature_contract']!=FEATURE_ID or meta['packed_dim']!=PACKED_DIM:
++        if meta.get('candidate_key_contract')!=CANDIDATE_SCHEMA or meta['world_identity']!=self.world_identity or meta['feature_contract']!=FEATURE_ID or meta['packed_dim']!=PACKED_DIM:
+             raise ValueError('POLICY_WORLD_FEATURE_IDENTITY')
+         if meta['initial_state_sha256']!=self.initial_hashes.get(seed): raise ValueError('POLICY_PAIRED_INITIAL_IDENTITY')
+         if replay.fingerprint(payload['state'])!=binding['state_sha256'] or replay.fingerprint(payload['optimizer'])!=binding['optimizer_sha256']:

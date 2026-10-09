@@ -1,0 +1,44 @@
+{
+  "schema": "w1-input-admission-output-contract/1",
+  "stage": "input_admission",
+  "formal_outputs": [
+    {
+      "name": "research-identity.json",
+      "call_point": "production_driver.Driver.run",
+      "purpose": "bind research_mode and controlled flag before input admission",
+      "ledger_operation": "json_output",
+      "count": 1,
+      "size": "measured_after_atomic_publish"
+    },
+    {
+      "name": "reused-source-inventory.json",
+      "call_point": "production_driver.Driver.collect/reuse_verified_windows",
+      "purpose": "record all 288 admitted cache files and source manifest digest",
+      "ledger_operation": "json_output",
+      "count": 1,
+      "size": "measured_after_atomic_publish"
+    },
+    {
+      "name": "lean-inputs.json",
+      "call_point": "production_driver.Driver.collect/reuse_verified_windows",
+      "purpose": "atomically publish 174 complete rows, 114 no_opportunity rows, split, candidate keys, labels and source summary",
+      "ledger_operation": "json_output",
+      "count": 1,
+      "size": "measured_after_atomic_publish"
+    }
+  ],
+  "formal_output_writes": 3,
+  "diagnostic_outputs": {
+    "accounting": "worker-phase-accounting.jsonl and operation-measurements.jsonl are supervisor/ledger protocol records, not input_admission json_output units",
+    "package_or_export": "hashes, audit copies, settlement and export artifacts are outside this stage and use their own stage budgets"
+  },
+  "atomic_contract": {
+    "reserve_before_write": true,
+    "write_function": "durable_atomic_json",
+    "postwrite_sha256_and_byte_check": true,
+    "identical_existing_file_is_idempotent": true,
+    "changed_existing_file_rejected": true,
+    "failed_write_no_partial_destination": true,
+    "failed_reservation_not_refunded": true
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "binary": "masked BCEWithLogits",
+  "collision": "unknown_simulator_not_implemented",
+  "continuous_and_per_task": "masked Huber beta1",
+  "host_ack": "auxiliary_not_physical_completion",
+  "ranking": "valid unequal delta utility pairs within the same paired window only softplus",
+  "unknown": "mask false numerical placeholders not targets",
+  "weight_source": "preregistered component constants; no development/evaluation search",
+  "weights": {
+    "anticollapse": 0.01,
+    "binary": 1.0,
+    "continuous": 1.0,
+    "latent": 1.0,
+    "per_task": 1.0,
+    "public": 0.1,
+    "ranking": 1.0
+  }
+}

@@ -1,0 +1,570 @@
+{
+  "bytecode_only_required_modules": [],
+  "critical_asset_comparison": [
+    {
+      "old_sha256": "ebd9894270d6a32edec6892a912d11933c1a266c1a831294388ffb06be52d8b0",
+      "path": "package/recovery-inputs/world-models/world-8201.pt",
+      "release_sha256": "ebd9894270d6a32edec6892a912d11933c1a266c1a831294388ffb06be52d8b0",
+      "status": "same"
+    },
+    {
+      "old_sha256": "d7f61c59c6d90a1b92c0aedf55ede1d58c0dc517255cb639a6ba8b817fcab81a",
+      "path": "package/recovery-inputs/window-cache-manifest.json",
+      "release_sha256": "d7f61c59c6d90a1b92c0aedf55ede1d58c0dc517255cb639a6ba8b817fcab81a",
+      "status": "same"
+    },
+    {
+      "old_sha256": "23257ebf8697c43ecf20a1a525f0f55b5156fba699b7427f7f03ebde22656dbb",
+      "path": "package/recovery-inputs/reused-world-8201-binding.json",
+      "release_sha256": "23257ebf8697c43ecf20a1a525f0f55b5156fba699b7427f7f03ebde22656dbb",
+      "status": "same"
+    },
+    {
+      "old_sha256": "ec79640aceeca84e2c71f1f16bce8998e9b68ea138ecfe48f8c95cd790a35211",
+      "path": "package/recovery-inputs/parent-split.json",
+      "release_sha256": "ec79640aceeca84e2c71f1f16bce8998e9b68ea138ecfe48f8c95cd790a35211",
+      "status": "same"
+    },
+    {
+      "old_sha256": "71baa9a044afad72d8c51760d87ec0bc1590a5d7ef00b2e03161538974301986",
+      "path": "package/environment-config-contract.json",
+      "release_sha256": "71baa9a044afad72d8c51760d87ec0bc1590a5d7ef00b2e03161538974301986",
+      "status": "same"
+    },
+    {
+      "old_sha256": "5d04e17d40882c14f2b2e67b28651387beb714a154222ed6b66c781ba182c6b5",
+      "path": "candidate-key-contract.json",
+      "release_sha256": "5d04e17d40882c14f2b2e67b28651387beb714a154222ed6b66c781ba182c6b5",
+      "status": "same"
+    },
+    {
+      "old_sha256": "c6d7b0a1193a4d33ed8d8ae2b72dde90f7fe014e477c1222589d8b0a8a00b7a9",
+      "path": "PUBLIC_PREFIX_CONTRACT.json",
+      "release_sha256": "c6d7b0a1193a4d33ed8d8ae2b72dde90f7fe014e477c1222589d8b0a8a00b7a9",
+      "status": "same"
+    },
+    {
+      "old_sha256": "92bcb0f2e21d36fb52136a6b912ee56b254d7fdd1744c14208e136b463f92c8b",
+      "path": "flat-layout-manifest.json",
+      "release_sha256": "92bcb0f2e21d36fb52136a6b912ee56b254d7fdd1744c14208e136b463f92c8b",
+      "status": "same"
+    }
+  ],
+  "old_attempt": "w1-drone-action-consequence-world-model-v5-recovery-v1-once",
+  "old_bytecode_file_count": 40,
+  "old_package_preserved": true,
+  "release_attempt": "w1-drone-action-consequence-world-model-v5-recovery-v1-linux-release-v2-once",
+  "release_contains_bytecode_cache": false,
+  "release_nonbytecode_file_count": 450,
+  "schema": "w1-recovery-release-comparison/1",
+  "source_comparison": [
+    {
+      "old_sha256": "063160c2eaaf7780389b7a4625694a2d2a251aff8d31968a235c28c9888a1bef",
+      "path": "acceptance/cached_integration_acceptance.py",
+      "release_sha256": "063160c2eaaf7780389b7a4625694a2d2a251aff8d31968a235c28c9888a1bef",
+      "status": "same"
+    },
+    {
+      "old_sha256": "c3b549136064b0300cf7a5f812a97579e2f6546a11d0f503ca3d5672a61991b4",
+      "path": "acceptance/candidate_contract_acceptance.py",
+      "release_sha256": "c3b549136064b0300cf7a5f812a97579e2f6546a11d0f503ca3d5672a61991b4",
+      "status": "same"
+    },
+    {
+      "old_sha256": "b399cc445d80680391a8c17bcb6134eb9d82d9555c16240824c7c947ed60e760",
+      "path": "acceptance/controlled_environment.py",
+      "release_sha256": "b399cc445d80680391a8c17bcb6134eb9d82d9555c16240824c7c947ed60e760",
+      "status": "same"
+    },
+    {
+      "old_sha256": "41ffa777b310a95b666d864333e101aa61f48bc7a08ba4bbbb7740dc2b0479b0",
+      "path": "acceptance/producer_boundary_acceptance.py",
+      "release_sha256": "41ffa777b310a95b666d864333e101aa61f48bc7a08ba4bbbb7740dc2b0479b0",
+      "status": "same"
+    },
+    {
+      "old_sha256": "ddb9ce24528bcf90d525f6c161e6bdc206c5a0916b3768d5c77efac6798124fc",
+      "path": "acceptance/public_prefix_acceptance.py",
+      "release_sha256": "ddb9ce24528bcf90d525f6c161e6bdc206c5a0916b3768d5c77efac6798124fc",
+      "status": "same"
+    },
+    {
+      "old_sha256": "91d8d2a224708d12c2a3fea212feb9c575ea0d8fb5cf96d6129bf5cf4d0a95e9",
+      "path": "export_artifacts.py",
+      "release_sha256": "91d8d2a224708d12c2a3fea212feb9c575ea0d8fb5cf96d6129bf5cf4d0a95e9",
+      "status": "same"
+    },
+    {
+      "old_sha256": "c5aa15f6d168ee96082fa3da979d4c70349e1da755b1d464e0884e73772c5562",
+      "path": "launch_pilot.py",
+      "release_sha256": "fe81d1764a3d23f3b2db36e734b40fac6003f6118b38fbe1a4ca4db4da60f0e4",
+      "status": "changed"
+    },
+    {
+      "old_sha256": "04c21f28daa90cc69118691fc5e4326f4e255f72aaf8c88847cf7b192d606bc0",
+      "path": "managed_host.py",
+      "release_sha256": "04c21f28daa90cc69118691fc5e4326f4e255f72aaf8c88847cf7b192d606bc0",
+      "status": "same"
+    },
+    {
+      "old_sha256": "49b4f7e7a0922a383cf5965c86289ce26b8325933e3baf8cc5137162beb31a9e",
+      "path": "package/acceptance/recovery_path_acceptance.py",
+      "release_sha256": "849705e4d6c2d79680519dce50cc0ccd61c511d834aa39c5212ffe530ba0ec4f",
+      "status": "changed"
+    },
+    {
+      "old_sha256": "739a7a09b980cd612bb528f983b81dafa662ec9cda02e992f800fd60e1ae28a4",
+      "path": "package/budget_ledger.py",
+      "release_sha256": "739a7a09b980cd612bb528f983b81dafa662ec9cda02e992f800fd60e1ae28a4",
+      "status": "same"
+    },
+    {
+      "old_sha256": "e799cddeaf6fafb206943d03fbd8886ec9badc109bdcc24885a9bd6c884615f2",
+      "path": "package/candidate_keys.py",
+      "release_sha256": "e799cddeaf6fafb206943d03fbd8886ec9badc109bdcc24885a9bd6c884615f2",
+      "status": "same"
+    },
+    {
+      "old_sha256": "424e17682004737e7ff700a70c9cc62bfd2988e16b2cdc8c9055c57d941bf53d",
+      "path": "package/classical_baselines.py",
+      "release_sha256": "424e17682004737e7ff700a70c9cc62bfd2988e16b2cdc8c9055c57d941bf53d",
+      "status": "same"
+    },
+    {
+      "old_sha256": "615e73f34a2143a7010974253ccf7fbbf32140178a6a6c08418b12b5f64d0522",
+      "path": "package/consequence_collection.py",
+      "release_sha256": "615e73f34a2143a7010974253ccf7fbbf32140178a6a6c08418b12b5f64d0522",
+      "status": "same"
+    },
+    {
+      "old_sha256": "9fd4da2353faea0677f79117d0d0a2f0980a6ee140e66b086d8c73d9dd40f79d",
+      "path": "package/consequence_contract.py",
+      "release_sha256": "9fd4da2353faea0677f79117d0d0a2f0980a6ee140e66b086d8c73d9dd40f79d",
+      "status": "same"
+    },
+    {
+      "old_sha256": "fd1e4176fa2feb5e8b4eba7ba44f0481d2ebdd8d9acf991765d5050de0eb01de",
+      "path": "package/consequence_features.py",
+      "release_sha256": "fd1e4176fa2feb5e8b4eba7ba44f0481d2ebdd8d9acf991765d5050de0eb01de",
+      "status": "same"
+    },
+    {
+      "old_sha256": "eb62cef01e4e1da32a04468c138691a82c679397199f086281cffd3b76ad2d5f",
+      "path": "package/consequence_model.py",
+      "release_sha256": "eb62cef01e4e1da32a04468c138691a82c679397199f086281cffd3b76ad2d5f",
+      "status": "same"
+    },
+    {
+      "old_sha256": "018e6a1508ce93be6c36c47d97c3d942e87373bb7b59435df5bbc77fcdb8338a",
+      "path": "package/consequence_policy.py",
+      "release_sha256": "018e6a1508ce93be6c36c47d97c3d942e87373bb7b59435df5bbc77fcdb8338a",
+      "status": "same"
+    },
+    {
+      "old_sha256": "a91b0c6b8fde0767c4c63de6e3fed4935a42bb5b2567af3da2c0f646eb11ef22",
+      "path": "package/consequence_replay.py",
+      "release_sha256": "a91b0c6b8fde0767c4c63de6e3fed4935a42bb5b2567af3da2c0f646eb11ef22",
+      "status": "same"
+    },
+    {
+      "old_sha256": "6c3801628a261afc133cfa5caed90cdb3ea57cce9611f1acb106bdbcf3ff47b4",
+      "path": "package/consequence_training.py",
+      "release_sha256": "6c3801628a261afc133cfa5caed90cdb3ea57cce9611f1acb106bdbcf3ff47b4",
+      "status": "same"
+    },
+    {
+      "old_sha256": "ba7b154a9385b2285a3f7bbf5dc82911cc087e194b4b8d5338d4db6d8c88d194",
+      "path": "package/event_signal_contract.py",
+      "release_sha256": "ba7b154a9385b2285a3f7bbf5dc82911cc087e194b4b8d5338d4db6d8c88d194",
+      "status": "same"
+    },
+    {
+      "old_sha256": "fbd6533833f8845d49ce6ad28b793245e58f22467acbe83e7c45a14704db7ace",
+      "path": "package/infra_io.py",
+      "release_sha256": "fbd6533833f8845d49ce6ad28b793245e58f22467acbe83e7c45a14704db7ace",
+      "status": "same"
+    },
+    {
+      "old_sha256": "3cc229bd1d64971a029f6d1f37ea5f63e708224a04d9ed11537a9f2f8d4c0f21",
+      "path": "package/linux_process_scope.py",
+      "release_sha256": "3cc229bd1d64971a029f6d1f37ea5f63e708224a04d9ed11537a9f2f8d4c0f21",
+      "status": "same"
+    },
+    {
+      "old_sha256": "3883a8ec3d5294cc9348d9cbfa4af625b543def57a0381ba2115e8a4847dfb00",
+      "path": "package/native/gppo_world/__init__.py",
+      "release_sha256": "3883a8ec3d5294cc9348d9cbfa4af625b543def57a0381ba2115e8a4847dfb00",
+      "status": "same"
+    },
+    {
+      "old_sha256": "07d71d87bb04703bb1fb017808956398b59cfd535b75b13270864133d74fe268",
+      "path": "package/native/gppo_world/adapter_probe.py",
+      "release_sha256": "07d71d87bb04703bb1fb017808956398b59cfd535b75b13270864133d74fe268",
+      "status": "same"
+    },
+    {
+      "old_sha256": "d4d97ee7a07f7fcb2a5ab4e8fada89001b4f88eb845085b5fa3aa0aca31e21ab",
+      "path": "package/native/gppo_world/arrival_consequence_data.py",
+      "release_sha256": "d4d97ee7a07f7fcb2a5ab4e8fada89001b4f88eb845085b5fa3aa0aca31e21ab",
+      "status": "same"
+    },
+    {
+      "old_sha256": "0ebfce661f6348e64cfddcdd56fc837de984287a511c1bdb8c8ec1746f69b3a2",
+      "path": "package/native/gppo_world/arrival_consequence_model.py",
+      "release_sha256": "0ebfce661f6348e64cfddcdd56fc837de984287a511c1bdb8c8ec1746f69b3a2",
+      "status": "same"
+    },
+    {
+      "old_sha256": "6ea9d60955afd55be818172457a45b74bdb77519382651e389fc4e2f0ba28059",
+      "path": "package/native/gppo_world/arrival_gppo_fusion.py",
+      "release_sha256": "6ea9d60955afd55be818172457a45b74bdb77519382651e389fc4e2f0ba28059",
+      "status": "same"
+    },
+    {
+      "old_sha256": "5a2a7536a0ebb0078638a1fd45491a5d13cd9a719c9f012f158b74f5050fd29b",
+      "path": "package/native/gppo_world/budget_executor.py",
+      "release_sha256": "5a2a7536a0ebb0078638a1fd45491a5d13cd9a719c9f012f158b74f5050fd29b",
+      "status": "same"
+    },
+    {
+      "old_sha256": "6955676756f8ec2ff1bb937f3f3ded9a037cc38151122a7bfa58d5625ff0e57c",
+      "path": "package/native/gppo_world/calibration.py",
+      "release_sha256": "6955676756f8ec2ff1bb937f3f3ded9a037cc38151122a7bfa58d5625ff0e57c",
+      "status": "same"
+    },
+    {
+      "old_sha256": "6bf909c4da3242cafb2af04437be6df6518d195088e407f33c164362b49edfb7",
+      "path": "package/native/gppo_world/consequence_data.py",
+      "release_sha256": "6bf909c4da3242cafb2af04437be6df6518d195088e407f33c164362b49edfb7",
+      "status": "same"
+    },
+    {
+      "old_sha256": "cdec5ff9b33ec3fc8202c2ebd8f9cc01ac418e4b9b5af349d9a3f97a3e230f12",
+      "path": "package/native/gppo_world/consequence_model.py",
+      "release_sha256": "cdec5ff9b33ec3fc8202c2ebd8f9cc01ac418e4b9b5af349d9a3f97a3e230f12",
+      "status": "same"
+    },
+    {
+      "old_sha256": "c7a66851e2513524ac17be33a7f96f61b18dca6d7840fdcefda5ac3f6cfbe290",
+      "path": "package/native/gppo_world/contracts.py",
+      "release_sha256": "c7a66851e2513524ac17be33a7f96f61b18dca6d7840fdcefda5ac3f6cfbe290",
+      "status": "same"
+    },
+    {
+      "old_sha256": "ed45cfab16e08b66bee55839e5c55a1dd711faa5380f4f5643fbd01a86e4b807",
+      "path": "package/native/gppo_world/data.py",
+      "release_sha256": "ed45cfab16e08b66bee55839e5c55a1dd711faa5380f4f5643fbd01a86e4b807",
+      "status": "same"
+    },
+    {
+      "old_sha256": "b296d8ce8aec9a4fff83cd2686d2e147b972a1255f51174479abda53230f4664",
+      "path": "package/native/gppo_world/dataset.py",
+      "release_sha256": "b296d8ce8aec9a4fff83cd2686d2e147b972a1255f51174479abda53230f4664",
+      "status": "same"
+    },
+    {
+      "old_sha256": "5f613d40c34fa8381ccd27a36b7048cdb92b53692bb58eebc6f24efb523e2afc",
+      "path": "package/native/gppo_world/event_training.py",
+      "release_sha256": "5f613d40c34fa8381ccd27a36b7048cdb92b53692bb58eebc6f24efb523e2afc",
+      "status": "same"
+    },
+    {
+      "old_sha256": "f348db4e865c945cae90d848bf2d859c443cfdea188f6a9db325a22aa33a25e8",
+      "path": "package/native/gppo_world/event_trigger_semimarkov.py",
+      "release_sha256": "f348db4e865c945cae90d848bf2d859c443cfdea188f6a9db325a22aa33a25e8",
+      "status": "same"
+    },
+    {
+      "old_sha256": "84cc0e1850d2ddb62967df4b96d23def57bf58dad5ab41308bae7167c438b077",
+      "path": "package/native/gppo_world/events.py",
+      "release_sha256": "84cc0e1850d2ddb62967df4b96d23def57bf58dad5ab41308bae7167c438b077",
+      "status": "same"
+    },
+    {
+      "old_sha256": "ea0b763106cb8c1a45c8cd16fe52307d0a8de4023c69aa550aa14273c62993e3",
+      "path": "package/native/gppo_world/gppo_adapter.py",
+      "release_sha256": "ea0b763106cb8c1a45c8cd16fe52307d0a8de4023c69aa550aa14273c62993e3",
+      "status": "same"
+    },
+    {
+      "old_sha256": "426aeefcbf9f5275dceb8f36959c65d46c17b83d28a4134ee9ec228553ab6bab",
+      "path": "package/native/gppo_world/gppo_shadow_env.py",
+      "release_sha256": "426aeefcbf9f5275dceb8f36959c65d46c17b83d28a4134ee9ec228553ab6bab",
+      "status": "same"
+    },
+    {
+      "old_sha256": "ec2c6f0fb8038b9e6ada5247b3b51da5c2eeabd670acabcd6a518ad24e4db2ab",
+      "path": "package/native/gppo_world/gppo_trainer.py",
+      "release_sha256": "ec2c6f0fb8038b9e6ada5247b3b51da5c2eeabd670acabcd6a518ad24e4db2ab",
+      "status": "same"
+    },
+    {
+      "old_sha256": "ed29c11754d9eeb14af86417a52e5d52f1297069e51935268e01ee70bc95e51c",
+      "path": "package/native/gppo_world/graph5.py",
+      "release_sha256": "ed29c11754d9eeb14af86417a52e5d52f1297069e51935268e01ee70bc95e51c",
+      "status": "same"
+    },
+    {
+      "old_sha256": "3c3ce3cc995c1b2a80be2c37107dadd922531116cb8aaaad0f8511760fcfeb54",
+      "path": "package/native/gppo_world/jepa.py",
+      "release_sha256": "3c3ce3cc995c1b2a80be2c37107dadd922531116cb8aaaad0f8511760fcfeb54",
+      "status": "same"
+    },
+    {
+      "old_sha256": "15064c42882a37f6e339cbb98a8e18fbac0b81d6ad688cedf28011059d69b0b2",
+      "path": "package/native/gppo_world/jepa_two_stage.py",
+      "release_sha256": "15064c42882a37f6e339cbb98a8e18fbac0b81d6ad688cedf28011059d69b0b2",
+      "status": "same"
+    },
+    {
+      "old_sha256": "34f377abdc5957125727fd71d870243ff273ac9988817beacd6cde6fcfde34ba",
+      "path": "package/native/gppo_world/joint_consequence.py",
+      "release_sha256": "34f377abdc5957125727fd71d870243ff273ac9988817beacd6cde6fcfde34ba",
+      "status": "same"
+    },
+    {
+      "old_sha256": "38f6740baabcc856c37c3757797b341b4c22b9d94ebafefa24688293e99b2c37",
+      "path": "package/native/gppo_world/joint_consequence_baseline.py",
+      "release_sha256": "38f6740baabcc856c37c3757797b341b4c22b9d94ebafefa24688293e99b2c37",
+      "status": "same"
+    },
+    {
+      "old_sha256": "9e87b21b6cac74e441a0cfafbaffff5eee9085e605e97323fd126ffd902ee5e9",
+      "path": "package/native/gppo_world/joint_consequence_data.py",
+      "release_sha256": "9e87b21b6cac74e441a0cfafbaffff5eee9085e605e97323fd126ffd902ee5e9",
+      "status": "same"
+    },
+    {
+      "old_sha256": "7588fa49333a3bcf5dcce30cd3411ed7197bde0efae63d3123080e32316a0241",
+      "path": "package/native/gppo_world/joint_consequence_model.py",
+      "release_sha256": "7588fa49333a3bcf5dcce30cd3411ed7197bde0efae63d3123080e32316a0241",
+      "status": "same"
+    },
+    {
+      "old_sha256": "3c799cfe12050971e1b11da6b2c04fa6a7c244a36935578861c5db533396f55e",
+      "path": "package/native/gppo_world/joint_gppo.py",
+      "release_sha256": "3c799cfe12050971e1b11da6b2c04fa6a7c244a36935578861c5db533396f55e",
+      "status": "same"
+    },
+    {
+      "old_sha256": "39d202d0c590875af25764001c99e39af7d4cc82d4f7689f6b12c3cc6213874e",
+      "path": "package/native/gppo_world/joint_training.py",
+      "release_sha256": "39d202d0c590875af25764001c99e39af7d4cc82d4f7689f6b12c3cc6213874e",
+      "status": "same"
+    },
+    {
+      "old_sha256": "fcaada4fea48446aae509fb97f4b6b8275d5b6b9dda3bcdef00c5c392e6011ce",
+      "path": "package/native/gppo_world/m10_communication.py",
+      "release_sha256": "fcaada4fea48446aae509fb97f4b6b8275d5b6b9dda3bcdef00c5c392e6011ce",
+      "status": "same"
+    },
+    {
+      "old_sha256": "2444b1b973e37856b588731959d097a68d0673db5589f9e929526c9900628c2a",
+      "path": "package/native/gppo_world/m10_environment.py",
+      "release_sha256": "2444b1b973e37856b588731959d097a68d0673db5589f9e929526c9900628c2a",
+      "status": "same"
+    },
+    {
+      "old_sha256": "20642fde3349692d5f0d48750a04c53a7b4df29f1e1f2830f7fc6bfefae45941",
+      "path": "package/native/gppo_world/m10_training.py",
+      "release_sha256": "20642fde3349692d5f0d48750a04c53a7b4df29f1e1f2830f7fc6bfefae45941",
+      "status": "same"
+    },
+    {
+      "old_sha256": "4bfd4deb85165e7eeeb0338beab17d2a1c76582248cb893f76cfd4db73a19ce7",
+      "path": "package/native/gppo_world/model.py",
+      "release_sha256": "4bfd4deb85165e7eeeb0338beab17d2a1c76582248cb893f76cfd4db73a19ce7",
+      "status": "same"
+    },
+    {
+      "old_sha256": "42bf58bcad83e1480ccff80459978a690412175880651e63f58ce7d96b6c35d8",
+      "path": "package/native/gppo_world/phase_data.py",
+      "release_sha256": "42bf58bcad83e1480ccff80459978a690412175880651e63f58ce7d96b6c35d8",
+      "status": "same"
+    },
+    {
+      "old_sha256": "bce4203320d7b8e184200f78bdb83084bd37d9f1cfcb0cba7800c6f2707d4e20",
+      "path": "package/native/gppo_world/phase_learning.py",
+      "release_sha256": "bce4203320d7b8e184200f78bdb83084bd37d9f1cfcb0cba7800c6f2707d4e20",
+      "status": "same"
+    },
+    {
+      "old_sha256": "cea67089e9ca7b9d9c5a2415c912840bf33f4cf7c01ccb8857efea8267108023",
+      "path": "package/native/gppo_world/recorder.py",
+      "release_sha256": "cea67089e9ca7b9d9c5a2415c912840bf33f4cf7c01ccb8857efea8267108023",
+      "status": "same"
+    },
+    {
+      "old_sha256": "516af07f6a7b013f463d0aac4c5606c3925a6089c71327c5f6be478c51940db6",
+      "path": "package/native/gppo_world/registry.py",
+      "release_sha256": "516af07f6a7b013f463d0aac4c5606c3925a6089c71327c5f6be478c51940db6",
+      "status": "same"
+    },
+    {
+      "old_sha256": "772f8ba385d3c6ed8dccf8431d1019e506259350b40f40c8dc5970ddca9db719",
+      "path": "package/native/gppo_world/s1_r_contracts.py",
+      "release_sha256": "772f8ba385d3c6ed8dccf8431d1019e506259350b40f40c8dc5970ddca9db719",
+      "status": "same"
+    },
+    {
+      "old_sha256": "c5699bd117b442534725a88a0805704a0477217e8b918069152665f4bd1538f3",
+      "path": "package/native/gppo_world/service_clock.py",
+      "release_sha256": "c5699bd117b442534725a88a0805704a0477217e8b918069152665f4bd1538f3",
+      "status": "same"
+    },
+    {
+      "old_sha256": "bd81fd1a6289186f0a6c57697159a88c2d0bae07e455fddff9d21c97ec1f970a",
+      "path": "package/native/gppo_world/shadow.py",
+      "release_sha256": "bd81fd1a6289186f0a6c57697159a88c2d0bae07e455fddff9d21c97ec1f970a",
+      "status": "same"
+    },
+    {
+      "old_sha256": "dd066a4e1be16607e5005e66eed5b90b1b97b485e57d7c7236b46eb171f8b1fd",
+      "path": "package/native/gppo_world/task_decision_bridge.py",
+      "release_sha256": "dd066a4e1be16607e5005e66eed5b90b1b97b485e57d7c7236b46eb171f8b1fd",
+      "status": "same"
+    },
+    {
+      "old_sha256": "87285ac5a20e761dc9e7c754c0701ba0d2d36725e70ea258343e8e6f7d2dc3ca",
+      "path": "package/native/gppo_world/task_execution.py",
+      "release_sha256": "87285ac5a20e761dc9e7c754c0701ba0d2d36725e70ea258343e8e6f7d2dc3ca",
+      "status": "same"
+    },
+    {
+      "old_sha256": "50248afa519fd18dbc5995ba0bbf7e58adc0833ae501760ea032ab91fca5ed89",
+      "path": "package/native/gppo_world/task_lifecycle.py",
+      "release_sha256": "50248afa519fd18dbc5995ba0bbf7e58adc0833ae501760ea032ab91fca5ed89",
+      "status": "same"
+    },
+    {
+      "old_sha256": "f5877b6582a02a5bb6c9c39b469dd222e9f5727390fd8080c01e160cd7b23317",
+      "path": "package/native/gppo_world/task_policy_view.py",
+      "release_sha256": "f5877b6582a02a5bb6c9c39b469dd222e9f5727390fd8080c01e160cd7b23317",
+      "status": "same"
+    },
+    {
+      "old_sha256": "c52f2367c06625dc670f08211dc8e514caf2e005cce7d3b82c2ab1bd7cc556bc",
+      "path": "package/native/gppo_world/telemetry.py",
+      "release_sha256": "c52f2367c06625dc670f08211dc8e514caf2e005cce7d3b82c2ab1bd7cc556bc",
+      "status": "same"
+    },
+    {
+      "old_sha256": "6b358fc686118aaf29b9686ba23871c9565ad783849a012c19bc941ddc700f70",
+      "path": "package/native/gppo_world/training.py",
+      "release_sha256": "6b358fc686118aaf29b9686ba23871c9565ad783849a012c19bc941ddc700f70",
+      "status": "same"
+    },
+    {
+      "old_sha256": "e28d7cd3c9bd8d8cb161939a47898a11c45da3a841745f79fa79118ad3983438",
+      "path": "package/offline_metrics.py",
+      "release_sha256": "e28d7cd3c9bd8d8cb161939a47898a11c45da3a841745f79fa79118ad3983438",
+      "status": "same"
+    },
+    {
+      "old_sha256": "cba29223018bec26972bd3f3352cf400cfa94fb98ef22cec2851291646817b43",
+      "path": "package/phase_handshake.py",
+      "release_sha256": "cba29223018bec26972bd3f3352cf400cfa94fb98ef22cec2851291646817b43",
+      "status": "same"
+    },
+    {
+      "old_sha256": "ef66eda18c7a1a2debf902e2dfdfc341c064994882ae2ff2cd0169cae687768d",
+      "path": "package/prediction_diagnostics.py",
+      "release_sha256": "ef66eda18c7a1a2debf902e2dfdfc341c064994882ae2ff2cd0169cae687768d",
+      "status": "same"
+    },
+    {
+      "old_sha256": "a441f95b03993d29ce609efb6105b6ea17b8da7f9b6fc01341805ab4a09ee0d7",
+      "path": "package/production_driver.py",
+      "release_sha256": "a441f95b03993d29ce609efb6105b6ea17b8da7f9b6fc01341805ab4a09ee0d7",
+      "status": "same"
+    },
+    {
+      "old_sha256": "309f0ce219578e338faee087e626cd741a91521b74e8e7b4862134c5e747d01e",
+      "path": "package/public_controller.py",
+      "release_sha256": "309f0ce219578e338faee087e626cd741a91521b74e8e7b4862134c5e747d01e",
+      "status": "same"
+    },
+    {
+      "old_sha256": "f566ceb3879f56f27ebadb04f0f2b5207860beb017e8d6a09e518829c4601a16",
+      "path": "package/public_history.py",
+      "release_sha256": "f566ceb3879f56f27ebadb04f0f2b5207860beb017e8d6a09e518829c4601a16",
+      "status": "same"
+    },
+    {
+      "old_sha256": "82095baeb687f479250486d983ad027dc0271f6bd058b8b0aea785221d6a2ae6",
+      "path": "package/public_prefix.py",
+      "release_sha256": "82095baeb687f479250486d983ad027dc0271f6bd058b8b0aea785221d6a2ae6",
+      "status": "same"
+    },
+    {
+      "old_sha256": "cca3888d510988e96437f227e51ca11d9c8b0e0f6417247ca793a5b00b20e154",
+      "path": "package/stage_contract.py",
+      "release_sha256": "cca3888d510988e96437f227e51ca11d9c8b0e0f6417247ca793a5b00b20e154",
+      "status": "same"
+    },
+    {
+      "old_sha256": "5a343752dc9e381b6e9132d2ad72f8d3788984fc93844afd5f64e434e06f6537",
+      "path": "package/supervise.py",
+      "release_sha256": "5a343752dc9e381b6e9132d2ad72f8d3788984fc93844afd5f64e434e06f6537",
+      "status": "same"
+    },
+    {
+      "old_sha256": "cf88e2014ac6bb311c14784bd2cf954c8ba7b2d84fe19f7546d964207f3cda8d",
+      "path": "package/tail_reserve.py",
+      "release_sha256": "cf88e2014ac6bb311c14784bd2cf954c8ba7b2d84fe19f7546d964207f3cda8d",
+      "status": "same"
+    },
+    {
+      "old_sha256": "850dd90fe7e5852b96e22c956de9ee5b56f8455ddf2ecac78af6f203265a0445",
+      "path": "package/task_analysis.py",
+      "release_sha256": "850dd90fe7e5852b96e22c956de9ee5b56f8455ddf2ecac78af6f203265a0445",
+      "status": "same"
+    },
+    {
+      "old_sha256": "239ff4e78327d1e9d9b7fafad61b4b78e310de1e437758d51ca7290b564a2b63",
+      "path": "package/vendor/w1_graph_jepa.py",
+      "release_sha256": "239ff4e78327d1e9d9b7fafad61b4b78e310de1e437758d51ca7290b564a2b63",
+      "status": "same"
+    },
+    {
+      "old_sha256": "8725c94f93f23453f5aa59d2705e9cf695f8c19f01261101f186db59b1d31ae8",
+      "path": "package/worker_bootstrap.py",
+      "release_sha256": "8725c94f93f23453f5aa59d2705e9cf695f8c19f01261101f186db59b1d31ae8",
+      "status": "same"
+    },
+    {
+      "old_sha256": "20f655d6ac0e5493303b92f31607a7323c5cde7a6881208b0c25f909dbea9079",
+      "path": "server_runtime_contract.py",
+      "release_sha256": "20f655d6ac0e5493303b92f31607a7323c5cde7a6881208b0c25f909dbea9079",
+      "status": "same"
+    },
+    {
+      "old_sha256": "d97df32499276c8530f27bc6b8174a04edbaa500f10abc2ced3bb474c7434b46",
+      "path": "summarize_controlled_evidence.py",
+      "release_sha256": "d97df32499276c8530f27bc6b8174a04edbaa500f10abc2ced3bb474c7434b46",
+      "status": "same"
+    }
+  ],
+  "source_differences": [
+    {
+      "old_sha256": "c5aa15f6d168ee96082fa3da979d4c70349e1da755b1d464e0884e73772c5562",
+      "path": "launch_pilot.py",
+      "release_sha256": "fe81d1764a3d23f3b2db36e734b40fac6003f6118b38fbe1a4ca4db4da60f0e4",
+      "status": "changed"
+    },
+    {
+      "old_sha256": "49b4f7e7a0922a383cf5965c86289ce26b8325933e3baf8cc5137162beb31a9e",
+      "path": "package/acceptance/recovery_path_acceptance.py",
+      "release_sha256": "849705e4d6c2d79680519dce50cc0ccd61c511d834aa39c5212ffe530ba0ec4f",
+      "status": "changed"
+    }
+  ],
+  "source_file_count_old": 81,
+  "source_file_count_release": 81,
+  "source_files_added": [],
+  "source_files_identical_except_listed_changes": true,
+  "source_files_missing": [],
+  "window_cache_bytes": 25549852,
+  "window_cache_count": 288,
+  "window_cache_differences": []
+}

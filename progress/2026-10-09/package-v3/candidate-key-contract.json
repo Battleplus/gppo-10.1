@@ -1,0 +1,55 @@
+{
+  "event_signal_contract": {
+    "schema": "w1-event-signal-contract/1",
+    "semantics": "pre_action_public_observation",
+    "value": "float exactly 0.0 or 1.0; 0.0 is a valid false event value",
+    "validity": "event_signal_valid must be boolean true; false is explicit unknown and rejected before model forward",
+    "producer": "M10Environment._observation trigger_flags at the decision boundary",
+    "restored_branch": "preserve the pre-action value; internal post-restore trigger flags cannot redefine the prefix",
+    "consumer_boundaries": ["collector", "branch_snapshot", "label_lookup", "graph_action_encoding", "world_model_input", "prediction_export", "replay", "GPPO"]
+  },
+  "NOOP": {
+    "action_index": 24,
+    "noop": true,
+    "task_id": null,
+    "task_slot": null,
+    "uav_id": null,
+    "uav_slot": null
+  },
+  "branches_labels_features": "strict canonical order; permutations rejected, never silently relabeled",
+  "canonical_serialization": "strict JSON object; ASCII escapes; sorted keys; compact separators; finite numbers; no tuple coercion",
+  "fields": [
+    "schema",
+    "parent",
+    "repeat",
+    "window_id",
+    "time",
+    "public_sha256",
+    "prefix_sha256",
+    "action_index",
+    "noop",
+    "candidate_order",
+    "uav_slot",
+    "uav_id",
+    "task_slot",
+    "task_id"
+  ],
+  "layers": [
+    "collector",
+    "branch_snapshot",
+    "label_lookup",
+    "graph_action_encoding",
+    "world_model_input",
+    "prediction_export",
+    "candidate_features",
+    "replay",
+    "GPPO"
+  ],
+  "legacy_action_N_keys_accepted": false,
+  "no_future_information": true,
+  "no_implicit_list_tuple_conversion": true,
+  "order": "ascending legal global action index; candidate_order is rank in this canonical catalog",
+  "prefix_semantics": "public decision context digest; distinct from full private branch snapshot prefix_sha256 in pair_identity",
+  "schema": "w1-structured-candidate/1",
+  "single_source": "candidate_context + decision-before public entity IDs and effective legal mask"
+}

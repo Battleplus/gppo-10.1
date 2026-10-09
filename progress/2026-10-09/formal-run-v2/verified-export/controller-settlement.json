@@ -1,0 +1,21 @@
+{
+  "CPU_scope": "dispatcher SELF/waited children + controller SELF/waited supervisor/export descendants counted once",
+  "Linux_evidence_retained": "/home/user1/w1-pilot/runs/w1-drone-action-consequence-world-model-v5-recovery-v1-linux-release-v2-once",
+  "dispatch_CPU_seconds": 0.358226953,
+  "exitcode": 1,
+  "export_CPU_seconds": 0.16786426000001597,
+  "export_wall_seconds": 0.5121300686150789,
+  "first_controller_error": null,
+  "hosting_receipt": "/home/user1/w1-pilot/hosting/w1-drone-action-consequence-world-model-v5-recovery-v1-linux-release-v2-once.json",
+  "local_export": "/home/user1/w1-pilot/packages/w1-drone-action-consequence-world-model-v5-recovery-v1-linux-release-v2/exports/w1-drone-action-consequence-world-model-v5-recovery-v1-linux-release-v2-once",
+  "measured_Linux_CPU_seconds": 138.31047194500002,
+  "reserves_are_not_measurements": true,
+  "resource_scope_complete": false,
+  "status": "stopped",
+  "unmeasured": [
+    "SSH/client transfer outside server research scope",
+    "systemd user-manager CPU",
+    "controller exit tail"
+  ],
+  "wall_seconds": 141.67668371787295
+}

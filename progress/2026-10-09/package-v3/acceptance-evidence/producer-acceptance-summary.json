@@ -1,0 +1,250 @@
+{
+  "pass": true,
+  "controlled_producer_cases": 24,
+  "cases": [
+    {
+      "tasks": 3,
+      "time": 2.0,
+      "event": false,
+      "pass": true,
+      "saved_flat769": 0.0,
+      "reobserved_flat769": 0.0,
+      "source_sha256": "031173df318029a0778129a00215b93f42384b371ea6624b6cfcbfa361d8ce10"
+    },
+    {
+      "tasks": 3,
+      "time": 2.0,
+      "event": true,
+      "pass": true,
+      "saved_flat769": 1.0,
+      "reobserved_flat769": 0.0,
+      "source_sha256": "9098158ae976c1596764c7d8c55c6dc2abe3b34277517a830ca719d5318180f1"
+    },
+    {
+      "tasks": 3,
+      "time": 4.0,
+      "event": false,
+      "pass": true,
+      "saved_flat769": 0.0,
+      "reobserved_flat769": 0.0,
+      "source_sha256": "33f810f872b86105751949a00fbd07618348561ea9f169136d370698f7e58672"
+    },
+    {
+      "tasks": 3,
+      "time": 4.0,
+      "event": true,
+      "pass": true,
+      "saved_flat769": 1.0,
+      "reobserved_flat769": 0.0,
+      "source_sha256": "e90ddce5a4fc04794e33de32573363d57dfb0a648792eddb24c0f5d15daa5a27"
+    },
+    {
+      "tasks": 3,
+      "time": 8.0,
+      "event": false,
+      "pass": true,
+      "saved_flat769": 0.0,
+      "reobserved_flat769": 0.0,
+      "source_sha256": "1632e0c43e880aea5b0fca1496b9e8dfbc60ff1cb10e736db4381532ebdd0202"
+    },
+    {
+      "tasks": 3,
+      "time": 8.0,
+      "event": true,
+      "pass": true,
+      "saved_flat769": 1.0,
+      "reobserved_flat769": 0.0,
+      "source_sha256": "8a551466f4c45f7a2975dfae9e183f57a0595252e197193043092da621e8c590"
+    },
+    {
+      "tasks": 3,
+      "time": 12.0,
+      "event": false,
+      "pass": true,
+      "saved_flat769": 0.0,
+      "reobserved_flat769": 0.0,
+      "source_sha256": "5dca270d556145601c56287a8c9e731378893239473ae682066e091bf2679381"
+    },
+    {
+      "tasks": 3,
+      "time": 12.0,
+      "event": true,
+      "pass": true,
+      "saved_flat769": 1.0,
+      "reobserved_flat769": 0.0,
+      "source_sha256": "fdbde739c8695fb5d16bf638dac196641698eb21fcaa983f100829e8d19aad88"
+    },
+    {
+      "tasks": 4,
+      "time": 2.0,
+      "event": false,
+      "pass": true,
+      "saved_flat769": 0.0,
+      "reobserved_flat769": 0.0,
+      "source_sha256": "1d9ea6fcbb93285d65a7ad91fa68022e8d80d14b3f3590a61a4d6ee9aafaed94"
+    },
+    {
+      "tasks": 4,
+      "time": 2.0,
+      "event": true,
+      "pass": true,
+      "saved_flat769": 1.0,
+      "reobserved_flat769": 0.0,
+      "source_sha256": "2abdd314414ea0d43ffb0d2486e25a1a0c3fc669e458a33b47fd54738f6c0006"
+    },
+    {
+      "tasks": 4,
+      "time": 4.0,
+      "event": false,
+      "pass": true,
+      "saved_flat769": 0.0,
+      "reobserved_flat769": 0.0,
+      "source_sha256": "788712d6bcf56feaed526689e14dcee91b3aa0791fdedc6bff5db13cde472468"
+    },
+    {
+      "tasks": 4,
+      "time": 4.0,
+      "event": true,
+      "pass": true,
+      "saved_flat769": 1.0,
+      "reobserved_flat769": 0.0,
+      "source_sha256": "e8c9484c3ab7d3862fdc40a73a0de3ae74fb025f5b9e1b05eec2acd75f6dc50f"
+    },
+    {
+      "tasks": 4,
+      "time": 8.0,
+      "event": false,
+      "pass": true,
+      "saved_flat769": 0.0,
+      "reobserved_flat769": 0.0,
+      "source_sha256": "2895a451f91a238b3279244b113a481a99ab806e0387dd0420cc27579796758f"
+    },
+    {
+      "tasks": 4,
+      "time": 8.0,
+      "event": true,
+      "pass": true,
+      "saved_flat769": 1.0,
+      "reobserved_flat769": 0.0,
+      "source_sha256": "36f13d24849a4038670bd269a224ae24f535cc0776b57d7cdf964c47ea5bc935"
+    },
+    {
+      "tasks": 4,
+      "time": 12.0,
+      "event": false,
+      "pass": true,
+      "saved_flat769": 0.0,
+      "reobserved_flat769": 0.0,
+      "source_sha256": "d9caeb688db9f996f894925aec05e0abb252debdb1ffb8f5ae6689eff8cfe28d"
+    },
+    {
+      "tasks": 4,
+      "time": 12.0,
+      "event": true,
+      "pass": true,
+      "saved_flat769": 1.0,
+      "reobserved_flat769": 0.0,
+      "source_sha256": "c3b91cf750061a1009e11b2e30aff54889e09fe11c66cc4ac1ba50174b8446c4"
+    },
+    {
+      "tasks": 6,
+      "time": 2.0,
+      "event": false,
+      "pass": true,
+      "saved_flat769": 0.0,
+      "reobserved_flat769": 0.0,
+      "source_sha256": "254f8eb33b97b475f6703b18834bbc03367ff4dcdf4bb2150750876df967fcd7"
+    },
+    {
+      "tasks": 6,
+      "time": 2.0,
+      "event": true,
+      "pass": true,
+      "saved_flat769": 1.0,
+      "reobserved_flat769": 0.0,
+      "source_sha256": "1d4e9ac687710e3241bfef3766a1168512e38b2a728ba6e8a8dcb241985a3179"
+    },
+    {
+      "tasks": 6,
+      "time": 4.0,
+      "event": false,
+      "pass": true,
+      "saved_flat769": 0.0,
+      "reobserved_flat769": 0.0,
+      "source_sha256": "ff8c699deb7a656f560e04212237136a3f5d00994609f41f6e5c88117a7568d9"
+    },
+    {
+      "tasks": 6,
+      "time": 4.0,
+      "event": true,
+      "pass": true,
+      "saved_flat769": 1.0,
+      "reobserved_flat769": 0.0,
+      "source_sha256": "d359f539ebb123365d2a027b914712b236210f824dc6501e1741a8ea3eb5d11f"
+    },
+    {
+      "tasks": 6,
+      "time": 8.0,
+      "event": false,
+      "pass": true,
+      "saved_flat769": 0.0,
+      "reobserved_flat769": 0.0,
+      "source_sha256": "593daead227963c6df67afbf0c3077c8cc8816f01c536b225c0b35cd12ddd703"
+    },
+    {
+      "tasks": 6,
+      "time": 8.0,
+      "event": true,
+      "pass": true,
+      "saved_flat769": 1.0,
+      "reobserved_flat769": 0.0,
+      "source_sha256": "d3f9ffeb9e40cbffff3e3f2e7a0e690a891b77f331b0abd0e9eea16082b065a7"
+    },
+    {
+      "tasks": 6,
+      "time": 12.0,
+      "event": false,
+      "pass": true,
+      "saved_flat769": 0.0,
+      "reobserved_flat769": 0.0,
+      "source_sha256": "07cdac2cf044f5729a6800eb5632495c3e540140727d8042d7df15c6a6801d76"
+    },
+    {
+      "tasks": 6,
+      "time": 12.0,
+      "event": true,
+      "pass": true,
+      "saved_flat769": 1.0,
+      "reobserved_flat769": 0.0,
+      "source_sha256": "82e226240991d24f9f3d6ea3ad33f671d508f3d32f6aa5e6f9ecaba542f4eced"
+    }
+  ],
+  "strict_consumer_rejections": [
+    {
+      "name": "flat_dtype_float64",
+      "error": "PUBLIC_PREFIX_FLAT_CACHE_DTYPE_SHAPE",
+      "before_flatten": true
+    },
+    {
+      "name": "task_ids_tuple",
+      "error": "PUBLIC_PREFIX_ENTITY_IDENTITIES:tasks",
+      "before_flatten": true
+    },
+    {
+      "name": "event_type_int",
+      "error": "PUBLIC_PREFIX_EVENT_FLOAT_REQUIRED",
+      "before_flatten": true
+    }
+  ],
+  "actual_method": "M10Environment._observation",
+  "environment_constructor_called": false,
+  "formal_environment_steps": 0,
+  "neural_forwards": 0,
+  "checkpoint_loads": 0,
+  "world_updates": 0,
+  "GPPO_updates": 0,
+  "task_evaluation_episodes": 0,
+  "wall_seconds_including_import": 1.225642239995068,
+  "CPU_seconds_including_import": 1.349447775,
+  "max_RSS_bytes": 499826688
+}

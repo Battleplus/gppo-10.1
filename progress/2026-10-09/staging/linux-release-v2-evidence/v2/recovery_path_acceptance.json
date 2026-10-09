@@ -1,0 +1,51 @@
+{
+  "admitted_complete_windows": 174,
+  "admitted_no_opportunity_windows": 114,
+  "collector_used": false,
+  "formal_attempt_created": false,
+  "formal_environment_steps": 0,
+  "formal_updates": 0,
+  "ledger_schedule_totals": {
+    "candidate_contract_audits": 1477,
+    "checkpoint_loads": 3,
+    "checkpoint_writes": 3,
+    "output_writes": 3,
+    "reused_windows": 288,
+    "target_candidate_evaluations": 20560,
+    "target_forwards": 4640,
+    "training_candidate_evaluations": 20560,
+    "training_forwards": 640,
+    "world_model_updates": 640
+  },
+  "model_forwards": 0,
+  "normal_path_pass": true,
+  "policy_updates": 0,
+  "task_episodes": 0,
+  "training_schedule": [
+    {
+      "candidate_rows_per_epoch": 257,
+      "epochs": 40,
+      "seed": 8202,
+      "train_windows": 58,
+      "updates": 320
+    },
+    {
+      "candidate_rows_per_epoch": 257,
+      "epochs": 40,
+      "seed": 8203,
+      "train_windows": 58,
+      "updates": 320
+    }
+  ],
+  "under_budget_ledger": {
+    "failed_calls": 0,
+    "pending_calls": 0,
+    "totals": {}
+  },
+  "under_budget_rejected": true,
+  "world_bindings_before_restore": [
+    8201,
+    8202,
+    8203
+  ]
+}

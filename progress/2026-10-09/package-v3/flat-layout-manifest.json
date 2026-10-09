@@ -1,0 +1,130 @@
+{
+  "blocks": [
+    {
+      "dtype": "float32",
+      "end_exclusive": 128,
+      "field": "graph.node_features.uav",
+      "generation_stage": "pre_action_public_observation",
+      "offset": 0,
+      "order": "C",
+      "producer": "M10Environment._observation",
+      "shape": [
+        4,
+        32
+      ],
+      "source_object": "uav_nodes"
+    },
+    {
+      "dtype": "float32",
+      "end_exclusive": 224,
+      "field": "graph.node_features.region",
+      "generation_stage": "pre_action_public_observation",
+      "offset": 128,
+      "order": "C",
+      "producer": "M10Environment._observation",
+      "shape": [
+        3,
+        32
+      ],
+      "source_object": "regions"
+    },
+    {
+      "dtype": "float32",
+      "end_exclusive": 352,
+      "field": "graph.node_features.target",
+      "generation_stage": "pre_action_public_observation",
+      "offset": 224,
+      "order": "C",
+      "producer": "M10Environment._observation",
+      "shape": [
+        4,
+        32
+      ],
+      "source_object": "targets"
+    },
+    {
+      "dtype": "float32",
+      "end_exclusive": 544,
+      "field": "graph.node_features.task",
+      "generation_stage": "pre_action_public_observation",
+      "offset": 352,
+      "order": "C",
+      "producer": "M10Environment._observation",
+      "shape": [
+        6,
+        32
+      ],
+      "source_object": "task_nodes"
+    },
+    {
+      "dtype": "float32",
+      "end_exclusive": 672,
+      "field": "graph.node_features.event",
+      "generation_stage": "pre_action_public_observation",
+      "offset": 544,
+      "order": "C",
+      "producer": "M10Environment._observation",
+      "shape": [
+        4,
+        32
+      ],
+      "source_object": "events"
+    },
+    {
+      "dtype": "float32",
+      "end_exclusive": 768,
+      "field": "graph.relations",
+      "generation_stage": "pre_action_public_observation",
+      "offset": 672,
+      "producer": "M10Environment._observation",
+      "shape": [
+        4,
+        6,
+        4
+      ],
+      "source_object": "relations"
+    },
+    {
+      "dtype": "float32",
+      "end_exclusive": 769,
+      "field": "time_fraction",
+      "generation_stage": "pre_action_public_observation",
+      "offset": 768,
+      "producer": "M10Environment._observation",
+      "shape": [
+        1
+      ],
+      "source_object": "self.clock.time / self.config.horizon"
+    },
+    {
+      "dtype": "float32",
+      "end_exclusive": 770,
+      "field": "event_signal",
+      "generation_stage": "pre_action_public_observation",
+      "offset": 769,
+      "producer": "M10Environment._observation",
+      "shape": [
+        1
+      ],
+      "source_object": "float(any(trigger_flags.values()))"
+    }
+  ],
+  "dimension": 770,
+  "dtype": "float32",
+  "index_769": {
+    "byte_offset": 3076,
+    "dtype": "float32",
+    "element_offset": 769,
+    "field": "event_signal",
+    "validity_field": "event_signal_valid"
+  },
+  "order": "C",
+  "schema": "w1-public-flat/1",
+  "scope": "derived from frozen v4 producer/config and saved small evidence; no formal model or environment executed",
+  "source_files": {
+    "package/consequence_collection.py": "0d45f46b54ec93d604cfd8b6d421e69f00c196950f9c85e62f1899a3dd2ff2ea",
+    "package/environment-config-contract.json": "71baa9a044afad72d8c51760d87ec0bc1590a5d7ef00b2e03161538974301986",
+    "package/native/gppo_world/m10_environment.py": "6d79b1038ddca81188d648f7e5eb01820aa46733f737fd42807e3bedb49b2262",
+    "package/public_controller.py": "65cc8e02381dc6ecf0e08be9359ec5fec7f431e551cb766062f0dda6de1f353f"
+  }
+}

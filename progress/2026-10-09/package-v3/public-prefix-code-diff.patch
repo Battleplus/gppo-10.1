@@ -1,0 +1,1631 @@
+--- v4/acceptance/cached_integration_acceptance.py
++++ v5/acceptance/cached_integration_acceptance.py
+@@ -0,0 +1,105 @@
++"""Final consumer validation on the already collected synthetic cache; no recollection."""
++import copy
++import gzip
++import json
++import os
++from pathlib import Path
++import time
++import public_prefix_acceptance as harness
++from public_prefix_acceptance import Fixture
++from public_controller import public_copy
++from consequence_replay import verify_update
++from candidate_keys import verify_replay_candidate
++from consequence_contract import admit_window
++import public_prefix as pp
++from consequence_collection import snapshot_payload, restore_candidate, state_bytes
++from consequence_collection import collect_window
++
++SOURCE = Path(os.environ['W1_SYNTHETIC_PREFIX_CACHE'])
++assert json.loads((SOURCE.parent / 'RESOURCE_REQUEST.json').read_text())['approval_status'] == 'ENGINEERING_ONLY'
++START = time.monotonic()
++FORBIDDEN = []
++def forbidden(*args, **kwargs):
++    FORBIDDEN.append(True)
++    raise AssertionError('NEURAL_EXECUTION_FORBIDDEN')
++harness.torch.load = forbidden
++harness.torch.nn.Module._call_impl = forbidden
++workspace, request, matrix = harness.setup()
++for stage in request['stages'].values():
++    for key in ('environment_constructions', 'environment_resets', 'environment_steps', 'world_model_batch_forwards', 'world_model_updates', 'policy_updates', 'task_episodes'):
++        stage[key] = 0
++for key in ('environment_constructions', 'environment_resets', 'environment_steps', 'world_model_batch_forwards', 'world_model_updates', 'policy_updates', 'task_episodes'):
++    request['totals'][key] = 0
++harness.durable_atomic_json(workspace / 'RESOURCE_REQUEST.json', request)
++output = workspace / 'controlled-output'; output.mkdir()
++with harness.handshake(output, request) as server:
++    ledger = harness.BudgetLedger(output / 'ledger.sqlite', request)
++    driver = harness.Driver(workspace, output, matrix, ledger, harness.Factory())
++    driver.phase('input_admission'); driver.phase('paired_collection')
++    tested = []
++    inventory = json.loads((SOURCE / 'source-inventory.json').read_text())['windows']
++    for entry in inventory:
++        path = SOURCE / entry['path']
++        import hashlib
++        with path.open('rb') as f: actual = hashlib.file_digest(f, 'sha256').hexdigest()
++        assert actual == entry['sha256'] and path.stat().st_size == entry['bytes']
++        with gzip.open(path, 'rt') as stream: row = json.load(stream)
++        derived = admit_window(row, driver.splits)
++        public_copy(row['state_before'])
++        if row['status'] == 'no_opportunity': continue
++        assert derived == row['labels']
++        pieces = driver.audit_window_input(row)
++        transition = harness.replay_row(driver, row)
++        verify_replay_candidate(transition)
++        state, context, keys = row['state_before'], row['candidate_context'], row['candidate_keys']
++        typed = copy.deepcopy(state)
++        typed['public_entity_ids']['tasks'] = tuple(typed['public_entity_ids']['tasks'])
++        harness.rejects('driver_features_tuple_before_conversion', lambda: driver.features(typed, 'T', candidate_context=context, candidate_keys=keys))
++        harness.rejects('collector_tuple_before_conversion', lambda: collect_window(None, typed,
++            adapter=None, history=None, parent=row['parent'], repeat=0, split=row['split'], window_id=row['window_id'],
++            ledger=ledger, snapshot_store=None, evidence_store=None))
++        damaged = copy.deepcopy(state); damaged['flat'][769] = 1. - damaged['flat'][769]
++        before = pp.FLATTEN_CALLS
++        error = harness.rejects('cached_flat769', lambda: public_copy(damaged))
++        assert pp.FLATTEN_CALLS == before and '$.event_signal (flat[769])' in error
++        damaged_replay = copy.deepcopy(transition)
++        damaged_replay['replay_evidence']['candidate_state_before']['flat'][769] = damaged['flat'][769]
++        harness.rejects('cached_GPPO_prefix', lambda: verify_update(None, [damaged_replay], harness.torch.device('cpu')))
++        tested.append({'parent': row['parent'], 'time': state['time'], 'tasks': len(state['public_entity_ids']['tasks']),
++            'pass': True, 'world_input_candidate_count': len(keys), 'flat769_rejection': error})
++    import pickle
++    candidates = []
++    for path in (SOURCE / 'snapshots').glob('*.pickle'):
++        payload_bytes = path.read_bytes()
++        assert hashlib.sha256(payload_bytes).hexdigest() == path.stem
++        # The synthetic fixture was saved by an engineering __main__ entry.
++        # Its exact class is imported above; production snapshots use module paths.
++        snapshot = pickle.loads(payload_bytes)
++        if snapshot['state_before']['time'] == 4.: candidates.append(snapshot)
++    assert len(candidates) == 3
++    for snapshot in candidates:
++        env, adapter, history = snapshot['environment']
++        state, context, keys = snapshot['state_before'], snapshot['context'], snapshot['keys']
++        payload = snapshot_payload(env, adapter, history, state, context, keys)
++        canonical = state_bytes((env, adapter, history))
++        restored = ledger.call('cached_time4_restore', {'candidate_branches': 1}, restore_candidate,
++            payload, canonical, state, context, keys, keys[0], ledger, driver.record_candidate_audit,
++            expected_payload_sha256=harness.digest(payload))
++        assert state_bytes(restored) == canonical
++        post = copy.deepcopy(state); post['time'] += 1.
++        harness.rejects('snapshot_post_time', lambda: snapshot_payload(env, adapter, history, post, context, keys))
++        wrong_rng = copy.deepcopy(env); wrong_rng._exogenous_key = 'different-synthetic-key'
++        harness.rejects('snapshot_random_key', lambda: snapshot_payload(wrong_rng, adapter, history, state, context, keys))
++    snapshot = ledger.assert_settled()
++    driver.phase('analysis_and_settlement'); driver.phase('settlement_and_verified_export'); ledger.close()
++assert not FORBIDDEN and len(tested) == 12
++report = {'pass': True, 'cache_source': str(SOURCE), 'windows_verified': len(inventory),
++    'final_time4_snapshot_restores': len(candidates), 'snapshot_time_and_random_key_rejections': True,
++    'collector_and_driver_type_guard_before_conversion': True,
++    'opportunity_windows': len(tested), 'rows': tested, 'ledger': snapshot,
++    'model_initializations': 0, 'checkpoint_loads': 0, 'neural_forwards': 0, 'environment_steps': 0,
++    'world_updates': 0, 'GPPO_updates': 0, 'task_episodes': 0,
++    'wall_seconds_after_import': time.monotonic() - START, 'CPU_seconds_including_import': time.process_time(),
++    'scope': 'final code reuses admitted synthetic cache; no new environment or research data'}
++harness.durable_atomic_json(harness.DIAG / 'cached-final-acceptance-summary.json', report)
++print(json.dumps({k: report[k] for k in ('pass', 'windows_verified', 'opportunity_windows', 'neural_forwards', 'environment_steps')}))
+--- v4/acceptance/candidate_contract_acceptance.py
++++ v5/acceptance/candidate_contract_acceptance.py
+@@ -1,398 +1,6 @@
+-"""Production candidate boundaries; synthetic environment only, no neural forward/update."""
+-import ast
+-import copy
+-import json
+-import os
++"""Compatibility engineering entry; v5 uses the unified prefix acceptance suite."""
+ from pathlib import Path
+-import resource
+-import sqlite3
+-import sys
+-import threading
+-import time
+-from contextlib import contextmanager
+-from types import SimpleNamespace
+-
+-ROOT = Path(__file__).resolve().parents[1]
+-sys.path.insert(0, str(ROOT / 'package'))
+-sys.path.insert(0, str(ROOT / 'package/native'))
+-sys.path.insert(0, str(ROOT / 'acceptance'))
+-import numpy as np
+-import torch
+-torch.set_num_threads(1); torch.set_num_interop_threads(1)
+-os.sched_setaffinity(0, {0})
+-from controlled_environment import Environment
+-from production_driver import Driver
+-from budget_ledger import BudgetLedger, BudgetError
+-from phase_handshake import StageServer
+-from linux_process_scope import proc_tree
+-from infra_io import durable_atomic_json, sha256_file
+-from consequence_contract import digest, admit_window, task_slots
+-from event_signal_contract import producer_value, validate as validate_event_signal
+-from consequence_collection import state_bytes, jsonable, restore_candidate
+-from consequence_training import prepare_world_input, serialize_prediction, window_tensors
+-from consequence_model import READOUT_DIM, AUX_DIM
+-from consequence_features import build_features
+-from consequence_policy import ConsequencePolicy, FEATURE_ID
+-from consequence_replay import verify_update
+-from candidate_keys import (context_for, catalog, key_digest, validate_catalog, audit, feature_binding,
+-                            verify_model_inputs, verify_replay_candidate, encoded, validate_window)
+-
+-START = time.monotonic()
+-CPU_START = time.process_time()
+-DIAG = Path(os.environ.get('W1_CANDIDATE_ACCEPTANCE_OUTPUT', str(ROOT.parent.parent / 'research-diagnostics' / 'w1-drone-consequence-v4-event-signal-contract-repair-20261008')))
+-if os.environ.get('W1_VERIFIED_ATTEMPT'):
+-    raise ValueError('FORMAL_AUTHORIZATION_FORBIDDEN_IN_ACCEPTANCE')
+-CASES = []
+-
+-
+-class Fixture(Environment):
+-    def _observation(self):
+-        self.public_read_count = getattr(self, 'public_read_count', 0) + 1
+-        state = super()._observation()
+-        state['mask'][:24] = False
+-        if self.clock.time < self.horizon and not self.noop:
+-            for u in range(4):
+-                t = (u + int(self.clock.time)) % self.n
+-                state['mask'][u * 6 + t] = True
+-        state['graph']['relations'][:, :, 2] = state['mask'][:24].reshape(4, 6)
+-        state['flat'][-98:-2] = state['graph']['relations'].reshape(-1)
+-        # Match the production bridge's observable private-state mutation without native environments.
+-        self.issued_observation = {'read': self.public_read_count, 'time': self.clock.time}
+-        return state
+-
+-
+-class Factory:
+-    def __call__(self, spec, config, purpose):
+-        return Fixture(spec, config, purpose)
+-
+-
+-class NoForwardTarget:
+-    calls = 0
+-    def target(self, nodes):
+-        self.calls += 1
+-        raise AssertionError('NEURAL_TARGET_FORWARD_FORBIDDEN')
+-
+-
+-def case(name, function):
+-    started = time.monotonic()
+-    function()
+-    CASES.append({'name': name, 'pass': True, 'wall_seconds': time.monotonic() - started})
+-    print('PASS ' + name, flush=True)
+-
+-
+-def rejects(function, names=None):
+-    try:
+-        function()
+-    except (ValueError, BudgetError) as exc:
+-        if names is not None and str(exc).split(':')[0] not in names:
+-            raise AssertionError('Unexpected rejection: ' + str(exc)) from exc
+-        return str(exc)
+-    raise AssertionError('Invalid candidate was not rejected')
+-
+-
+-@contextmanager
+-def handshake(output, request):
+-    own = resource.getrusage(resource.RUSAGE_SELF)
+-    children = resource.getrusage(resource.RUSAGE_CHILDREN)
+-    server = StageServer(output / 'phase.sock', request, tree_reader=proc_tree,
+-        cpu_origin_seconds=own.ru_utime + own.ru_stime + children.ru_utime + children.ru_stime,
+-        wall_origin_monotonic=START)
+-    old = os.environ.get('W1_PHASE_ACCOUNTING_SOCKET')
+-    os.environ['W1_PHASE_ACCOUNTING_SOCKET'] = str(server.path)
+-    stop = threading.Event(); errors = []
+-    def serve():
+-        while not stop.is_set():
+-            try: server.process_pending(os.getpid())
+-            except BaseException as exc: errors.append(repr(exc))
+-            stop.wait(.001)
+-    thread = threading.Thread(target=serve); thread.start()
+-    try:
+-        yield server
+-    finally:
+-        stop.set(); thread.join(timeout=6)
+-        assert not thread.is_alive()
+-        server.close()
+-        if old is None: os.environ.pop('W1_PHASE_ACCOUNTING_SOCKET', None)
+-        else: os.environ['W1_PHASE_ACCOUNTING_SOCKET'] = old
+-        durable_atomic_json(output / 'handshake-result.json', {'errors': errors, 'rows': server.rows})
+-        assert not errors
+-
+-
+-def setup():
+-    workspace = DIAG / 'controlled-workspace'; workspace.mkdir(exist_ok=False)
+-    source = json.loads((ROOT / 'RESOURCE_REQUEST.json').read_text())
+-    allowed = {'environment_constructions': 12, 'environment_resets': 12, 'environment_steps': 7200,
+-               'candidate_scans': 8000, 'candidate_branches': 400, 'snapshot_writes': 32,
+-               'forced_first_actions': 400, 'output_writes': 64, 'candidate_snapshot_probes': 401,
+-               'candidate_contract_audits': 2500}
+-    for stage, limits in source['stages'].items():
+-        for key, value in limits.items():
+-            if type(value) is int:
+-                limits[key] = allowed.get(key, 0)
+-        limits.update(wall_seconds=120, complete_process_cpu_seconds=100,
+-                      all_resident_rss_bytes=4 * 2**30, active_storage_bytes=512 * 2**20)
+-    source['totals'] = dict(source['stages']['paired_collection'], wall_seconds=180, complete_process_cpu_seconds=120)
+-    source.update(attempt='controlled-candidate-contract-only', approval_status='ENGINEERING_ONLY')
+-    specs = []
+-    for i, n in enumerate((3, 4, 6, 3)):
+-        scenario = {'seed': 970100 + i, 'task_count': n, 'noop_only': i == 3}
+-        specs.append({'parent': 'synthetic-parent-' + str(i), 'repeat': 0, 'split': 'train',
+-                      'role': 'world_and_policy_train', 'scenario': scenario,
+-                      'scenario_sha256': digest(scenario), 'exogenous_key': 'synthetic-key-' + str(i)})
+-    matrix = json.loads((ROOT / 'experiment-matrix.json').read_text())
+-    matrix.update(controlled=True, attempt='engineering-only-no-formal-identity')
+-    for name, value in [('parent-split.json', {'parents': specs}), ('RESOURCE_REQUEST.json', source),
+-                        ('experiment-matrix.json', matrix), ('evaluation-tape.json', {'parents': []})]:
+-        durable_atomic_json(workspace / name, value)
+-    (workspace / 'environment-config-contract.json').write_bytes((ROOT / 'package/environment-config-contract.json').read_bytes())
+-    durable_atomic_json(DIAG / 'controlled-input-inventory.json', {
+-        'data_source': 'four synthetic parents defined in acceptance source; no formal research result loaded',
+-        'inputs': {p.name: {'sha256': sha256_file(p), 'bytes': p.stat().st_size} for p in workspace.iterdir() if p.is_file()},
+-        'code_files': {p.relative_to(ROOT).as_posix(): sha256_file(p) for p in (ROOT / 'package').rglob('*.py')},
+-        'synthetic_environment_only': True, 'formal_checkpoint_loads': 0})
+-    return workspace, source, matrix
+-
+-
+-def main():
+-    workspace, request, matrix = setup()
+-    output = workspace / 'controlled-output'; output.mkdir()
+-    spy = NoForwardTarget()
+-    with handshake(output, request) as server:
+-        ledger = BudgetLedger(output / 'ledger.sqlite', request)
+-        driver = Driver(workspace, output, matrix, ledger, Factory())
+-        driver.phase('input_admission')
+-        reuse = os.environ.get('W1_CANDIDATE_CONTROLLED_CACHE')
+-        if reuse:
+-            import gzip
+-            previous = Path(reuse)
+-            require(json.loads((previous.parent/'RESOURCE_REQUEST.json').read_text())['approval_status'] == 'ENGINEERING_ONLY')
+-            inventory_source = json.loads((previous/'source-inventory.json').read_text())['windows']
+-            lean = []
+-            for entry in inventory_source:
+-                path = previous/entry['path']
+-                require(sha256_file(path) == entry['sha256'] and path.stat().st_size == entry['bytes'])
+-                with gzip.open(path, 'rt', encoding='utf-8') as f: row = json.load(f)
+-                derived = admit_window(row, driver.splits)
+-                if row['status'] == 'complete':
+-                    require(derived == row['labels']); lean.append(driver.compact(row))
+-            driver.phase('paired_collection')
+-            durable_atomic_json(output/'source-inventory.json', {'windows': inventory_source})
+-            durable_atomic_json(output/'controlled-cache-reuse.json', {'source': str(previous),
+-                'source_inventory_sha256': sha256_file(previous/'source-inventory.json'),
+-                'hashes_labels_and_identity_verified': True, 'previous_live_driver_collection_reused': True,
+-                'no_formal_data': True})
+-        else:
+-            lean = driver.collect()
+-        case('actual_driver_collect_all_four_times_three_four_six_tasks',
+-             lambda: check_windows(lean))
+-        inventory = json.loads((output / 'source-inventory.json').read_text())['windows']
+-        case('no_opportunity_preserved_not_failure_or_unknown',
+-             lambda: require(sum(x['status'] == 'no_opportunity' for x in inventory) == 4))
+-        first = lean[0]
+-        state, context, keys = first['state_before'], first['candidate_context'], first['candidate_keys']
+-        case('event_signal_zero_is_valid_false', lambda: require(
+-            producer_value({}) == {'event_signal': 0.0, 'event_signal_valid': True}))
+-        case('event_signal_one_is_valid_true', lambda: require(
+-            producer_value({'deadline': True}) == {'event_signal': 1.0, 'event_signal_valid': True}))
+-        case('event_signal_unknown_rejected', lambda: rejects(lambda: validate_event_signal(
+-            {'event_signal': 0.0, 'event_signal_valid': False}, path='$.event_signal')))
+-        case('event_signal_missing_rejected', lambda: rejects(lambda: validate_event_signal(
+-            {'event_signal': 0.0}, path='$.event_signal')))
+-        case('event_signal_type_tamper_rejected', lambda: rejects(lambda: validate_event_signal(
+-            {'event_signal': '1.0', 'event_signal_valid': True}, path='$.event_signal')))
+-        def public_event_tamper():
+-            row = copy.deepcopy(first)
+-            row['state_before']['event_signal'] = 1.0 - float(row['state_before']['event_signal'])
+-            rejects(lambda: validate_window(row))
+-        case('pre_action_post_action_event_mix_rejected_before_forward', public_event_tamper)
+-        def graph_unknown_tamper():
+-            row = copy.deepcopy(first)
+-            row['state_before']['event_signal_valid'] = False
+-            rejects(lambda: prepare_world_input(row))
+-        case('graph_input_unknown_event_rejected_before_forward', graph_unknown_tamper)
+-        parts = driver.audit_window_input(first)
+-        case('all_layers_share_structured_identity', lambda: check_layers(driver, first, parts))
+-        for arm in ('G0', 'T', 'G1'):
+-            case('production_feature_boundary_' + arm + '_no_model_available',
+-                 lambda arm=arm: require(driver.features(state, arm, candidate_context=context, candidate_keys=keys)[-1]['world_model_calls'] == 0))
+-
+-        def invalid_row(change):
+-            row = copy.deepcopy(first); change(row)
+-            rejects(lambda: window_tensors(row, spy))
+-            require(spy.calls == 0)
+-        mutations = {
+-            'missing_candidate': lambda r: r['branches'].pop(),
+-            'duplicate_candidate': lambda r: r['branches'].__setitem__(1, copy.deepcopy(r['branches'][0])),
+-            'branch_order_permutation': lambda r: r['branches'].reverse(),
+-            'label_order_permutation': lambda r: r['labels'].reverse(),
+-            'candidate_prefix_tamper': lambda r: r['branches'][0]['candidate_key'].__setitem__('prefix_sha256', '0'*64),
+-            'same_action_wrong_parent': lambda r: r['branches'][0]['candidate_key'].__setitem__('parent', 'other-parent'),
+-            'same_action_wrong_window': lambda r: r['branches'][0]['candidate_key'].__setitem__('window_id', 'time-99'),
+-            'illegal_action': lambda r: r['branches'][0]['candidate_key'].__setitem__('action_index', 25),
+-            'wrong_uav_slot': lambda r: r['branches'][0]['candidate_key'].__setitem__('uav_slot', 3),
+-            'wrong_task_slot': lambda r: r['branches'][0]['candidate_key'].__setitem__('task_slot', 5),
+-            'candidate_key_list_instead_of_object': lambda r: r['branches'][0].__setitem__('candidate_key', list(r['branches'][0]['candidate_key'].values())),
+-            'candidate_catalog_tuple_rejected': lambda r: r.__setitem__('candidate_keys', tuple(r['candidate_keys'])),
+-            'candidate_time_int_rejected': lambda r: r['branches'][0]['candidate_key'].__setitem__('time', 2),
+-            'candidate_order_tamper': lambda r: r['branches'][0]['candidate_key'].__setitem__('candidate_order', 1),
+-            'branch_action_bool_rejected': lambda r: r['branches'][0].__setitem__('action', True),
+-        }
+-        for name, mutate in mutations.items():
+-            case(name + '_before_target_or_forward', lambda mutate=mutate: invalid_row(mutate))
+-        case('strict_serialization_rejects_tuple', lambda: rejects(lambda: encoded(tuple(keys))))
+-        case('action_order_permutation_rejected', lambda: rejects(lambda: validate_catalog(list(reversed(keys)), context, state)))
+-        case('feature_pipeline_rejects_before_forward', lambda: rejects(lambda: build_features(state, None, None, 'G1', ledger,
+-            candidate_context=context, candidate_keys=list(reversed(keys)))))
+-        case('cached_feature_pipeline_still_checks_identity', lambda: rejects(lambda: driver.features(state, 'G1',
+-            candidate_context=context, candidate_keys=list(reversed(keys)))))
+-        nodes, history, actions, relations, _, _, _, binding = parts
+-        case('relation_row_order_tamper_before_forward', lambda: rejects(lambda: verify_model_inputs([binding], nodes, history, actions, relations.flip(0))))
+-        case('graph_node_order_tamper_before_forward', lambda: rejects(lambda: verify_model_inputs([binding],
+-            dict(nodes, task=nodes['task'].flip(1)), history, actions, relations)))
+-        case('model_action_order_tamper_before_forward', lambda: rejects(lambda: verify_model_inputs([binding], nodes, history, actions.flip(0), relations)))
+-        case('unknown_and_absent_slot_masks_preserved', lambda: check_unknown(parts))
+-        case('evaluation_tape_stays_locked', lambda: rejects(driver.evaluation_specs, {'TASK_EVALUATION_TAPE_LOCKED'}))
+-
+-        transition = make_replay(driver, first)
+-        case('valid_replay_pre_model_identity_boundary', lambda: verify_replay_candidate(transition))
+-        for name, change in {
+-            'feature_order': lambda t: t.__setitem__('candidate_features', t['candidate_features'][::-1].copy()),
+-            'key_order': lambda t: t['replay_evidence']['candidate_keys'].reverse(),
+-            'prefix': lambda t: t['replay_evidence']['candidate_keys'][0].__setitem__('prefix_sha256', 'f'*64),
+-            'mask': lambda t: t['mask'].__setitem__(t['replay_evidence']['candidate_keys'][0]['action_index'], False),
+-            'mask_dtype': lambda t: t.__setitem__('mask', t['mask'].astype(np.float32)),
+-            'action_type': lambda t: t.__setitem__('action', True),
+-        }.items():
+-            def invalid_replay(change=change):
+-                t = copy.deepcopy(transition); change(t)
+-                # The actual pre-update verifier rejects before accessing a policy or calling a forward.
+-                rejects(lambda: verify_update(None, [t], torch.device('cpu')))
+-            case('actual_replay_preupdate_rejects_' + name, invalid_replay)
+-        case('native_GPPO_entry_calls_verifier_first_static', check_update_entries)
+-
+-        fired = []
+-        case('real_ledger_unknown_key_rejects_before_operation', lambda: rejects(lambda:
+-            ledger.call('invalid_resource_test', {'unknown_candidate_key': 1}, lambda: fired.append(True)), {'invalid or unbudgeted resource unknown_candidate_key'}))
+-        require(not fired)
+-        case('real_ledger_zero_neural_budget_rejects_before_operation', lambda: rejects(lambda:
+-            ledger.call('forbidden_forward', {'world_model_batch_forwards': 1}, lambda: fired.append(True))))
+-        require(not fired)
+-
+-        # Demonstrate why canonical checking after an observation can reject a pristine restore.
+-        env, adapter, hist, public = driver.create_episode(driver.registry[0], 'paired_collection')
+-        before = state_bytes((env, adapter, hist)); probe = copy.deepcopy((env, adapter, hist))
+-        probe[0]._observation()
+-        case('synthetic_observation_mutation_legacy_predicate_reproduced', lambda: require(state_bytes(probe) != before))
+-        case('new_probe_does_not_mutate_branch', lambda: require(all(json.loads(line).get('audited_branch_unmodified', True)
+-            for line in (output/'candidate-identity-audits.jsonl').read_text().splitlines())))
+-
+-        # A deliberate public mismatch exercises detailed first-field evidence and real failed reservation.
+-        import pickle
+-        bad_public = jsonable(public); bad_public['version'] += 1
+-        bad_context = context_for('synthetic-mismatch', 0, 'time-0', bad_public)
+-        bad_keys = catalog(bad_context, bad_public)
+-        restore_payload = pickle.dumps((env, adapter, hist), protocol=4)
+-        good_context = context_for('synthetic-valid-restore', 0, 'time-0', jsonable(public))
+-        good_keys = catalog(good_context, jsonable(public))
+-        good_restore = ledger.call('controlled_valid_restore', {'candidate_branches': 1}, restore_candidate,
+-            restore_payload, before, jsonable(public), good_context, good_keys, good_keys[0], ledger, driver.record_candidate_audit)
+-        case('current_restore_entry_preserves_full_state_and_candidate_identity', lambda: require(state_bytes(good_restore) == before))
+-        before_failed = ledger.snapshot()['failed_calls']
+-        error = rejects(lambda: ledger.call('controlled_bad_public_restore', {'candidate_branches': 1}, restore_candidate,
+-            restore_payload, before, bad_public, bad_context, bad_keys, bad_keys[0], ledger, driver.record_candidate_audit),
+-            {'CANDIDATE_PUBLIC_PREFIX_MISMATCH'})
+-        durable_atomic_json(output / 'expected-public-mismatch.json', {'error': error, 'synthetic_only': True})
+-        case('separated_public_failure_charged_and_saved', lambda: require(ledger.snapshot()['failed_calls'] == before_failed + 1))
+-        settled = ledger.assert_settled()
+-        driver.phase('analysis_and_settlement'); driver.phase('settlement_and_verified_export'); ledger.close()
+-        require(server.stage == 'settlement_and_verified_export')
+-        require(settled['pending_calls'] == 0 and settled['totals'].get('world_model_updates', 0) == 0)
+-
+-    cpu = time.process_time() - CPU_START
+-    duration = time.monotonic() - START
+-    assert duration <= 180 and cpu <= 120
+-    summary = {'pass': True, 'tests_passed': len(CASES), 'tests': CASES,
+-               'controlled_data_only': True, 'actual_driver_and_ledger_and_handshake': True,
+-               'driver_replaced': False, 'ledger_replaced': False, 'phase_handshake_replaced': False,
+-               'formal_checkpoint_loads': 0, 'neural_forwards': spy.calls, 'GPPO_updates': 0, 'formal_environment_steps': 0,
+-               'synthetic_environment_steps': settled['totals'].get('environment_steps', 0), 'ledger': settled,
+-               'controlled_collection_reused_after_test_fixture_repair': bool(reuse),
+-               'GPPO_scope': 'production verifier and static entry order only; no update or probability evaluation executed',
+-               'historical_root_cause': 'unknown; fixture reproduction is not historical attribution',
+-               'world_contract_schema': 'w1-structured-candidate/1'}
+-    durable_atomic_json(DIAG / 'acceptance-summary.json', summary)
+-    durable_atomic_json(DIAG / 'controlled-resource-receipt.json', {
+-        'wall_seconds': duration, 'CPU_seconds_self_after_import': cpu,
+-        'process_CPU_seconds_including_import': time.process_time(),
+-        'max_RSS_bytes': resource.getrusage(resource.RUSAGE_SELF).ru_maxrss * 1024,
+-        'threads': torch.get_num_threads(), 'affinity': sorted(os.sched_getaffinity(0)),
+-        'GPU_initialized': torch.cuda.is_initialized(), 'interpreter': sys.executable,
+-        'versions': {'python': sys.version.split()[0], 'torch': torch.__version__, 'numpy': np.__version__},
+-        'ledger': settled, 'scope': 'controlled engineering; no formal environment, model forward, training or GPPO'})
+-    print(json.dumps({k: summary[k] for k in ('pass', 'tests_passed', 'synthetic_environment_steps', 'neural_forwards', 'GPPO_updates')}))
+-
+-
+-def require(value):
+-    if not value: raise AssertionError('Required condition failed')
+-
+-
+-def check_windows(lean):
+-    require(len(lean) == 12)
+-    require({r['state_before']['time'] for r in lean} == {2., 4., 8., 12.})
+-    require({len(r['state_before']['public_entity_ids']['tasks']) for r in lean} == {3, 4, 6})
+-    require(all(any(k['noop'] for k in r['candidate_keys']) for r in lean))
+-    require({k['uav_slot'] for r in lean for k in r['candidate_keys'] if not k['noop']} == {0, 1, 2, 3})
+-    require({k['task_slot'] for r in lean for k in r['candidate_keys'] if not k['noop']} == set(range(6)))
+-
+-
+-def check_layers(driver, row, parts):
+-    validate_catalog(row['candidate_keys'], row['candidate_context'], row['state_before'])
+-    predictions = [serialize_prediction(k, row['candidate_context'], row['state_before'], task_slots(row['state_before']),
+-                    [0.] * READOUT_DIM, [False] * READOUT_DIM) for k in row['candidate_keys']]
+-    require([p['candidate_key_sha256'] for p in predictions] == [key_digest(k) for k in row['candidate_keys']])
+-    require(row['candidate_audits']['collector']['candidate_sequence_sha256'] == parts[-1]['audit']['candidate_sequence_sha256'])
+-    require(all(l['candidate_key'] == k for l, k in zip(row['labels'], row['candidate_keys'])))
+-    require([k['action_index'] for k in row['candidate_keys']] == parts[2].tolist())
+-
+-
+-def check_unknown(parts):
+-    masks = parts[5]
+-    require(not masks['binary'][:, 4].any())
+-    require(not masks['per_task'][:, 3:].any())
+-    noop = int(torch.where(parts[2] == 24)[0][0])
+-    require(not masks['binary'][noop, :3].any())
+-
+-
+-def make_replay(driver, row):
+-    state, context, keys = row['state_before'], row['candidate_context'], row['candidate_keys']
+-    base, aux, valid, mask, available, trace = driver.features(state, 'T', candidate_context=context, candidate_keys=keys)
+-    pack_context = SimpleNamespace(arm='T', normalization_mean=torch.zeros(AUX_DIM), normalization_scale=torch.ones(AUX_DIM))
+-    packed = ConsequencePolicy.pack(pack_context, base, aux, valid, mask, available).numpy()
+-    return {'candidate_features': packed, 'mask': mask.numpy(), 'action': keys[0]['action_index'],
+-            'replay_evidence': {'candidate_state_before': state, 'candidate_context': context, 'candidate_keys': keys,
+-                'candidate_feature_binding': feature_binding(keys, context, state, packed),
+-                'candidate_audits': dict(trace['candidate_audits'], replay=audit('replay', keys, context, state)),
+-                'counterfactual_identity': {'public_sha256': context['public_sha256'], 'feature_contract': FEATURE_ID}}}
+-
+-
+-def check_update_entries():
+-    source = (ROOT / 'package/native/gppo_world/joint_training.py').read_text()
+-    tree = ast.parse(source)
+-    for name in ('ppo_preference_update', 'ppo_weighted_preference_update'):
+-        functions = [x for x in tree.body if isinstance(x, ast.FunctionDef) and x.name == name]
+-        if not functions:
+-            raise AssertionError('Native update entry missing')
+-        body = functions[0].body
+-        block = body[1] if isinstance(body[0], ast.Expr) and isinstance(body[0].value, ast.Constant) and type(body[0].value.value) is str else body[0]
+-        require(isinstance(block, ast.If))
+-        require(any(isinstance(x, ast.Call) and isinstance(x.func, ast.Name) and x.func.id == 'verify_update' for x in ast.walk(block)))
+-
++import runpy
+ 
+ if __name__ == '__main__':
+-    try:
+-        main()
+-    except BaseException as exc:
+-        import traceback
+-        path = DIAG / 'acceptance-first-error.json'
+-        if not path.exists(): durable_atomic_json(path, {'type': type(exc).__name__, 'message': str(exc), 'traceback': traceback.format_exc(), 'completed_tests': CASES})
+-        raise
++    runpy.run_path(str(Path(__file__).with_name('public_prefix_acceptance.py')), run_name='__main__')
+--- v4/acceptance/controlled_environment.py
++++ v5/acceptance/controlled_environment.py
+@@ -48,11 +48,13 @@
+         if not terminal and self.full_mask: mask[:24]=True
+         for i in range(self.n): relations[:,i,:]=[i/10.,1.,0.,0.]
+         relations[0,0,2]=mask[0]; relations[0,1,2]=mask[1]
+-        flat=np.concatenate((graph.reshape(-1),relations.reshape(-1),[now/18.,0.])).astype(np.float32)
+-        return {'flat':flat,'uavs':u,'tasks':tasks,'graph':{'node_features':graph,'relations':relations},
++        result = {'uavs':u,'tasks':tasks,'graph':{'node_features':graph,'relations':relations},
+             'mask':mask,'time':now,'version':int(now),'public_entity_ids':{'tasks':[f'task-{i}' for i in range(self.n)],
+             'uavs':[f'uav-{i}' for i in range(4)]},'continuation_actions':[],'event_signal':0.,
+             'event_signal_valid':True,'trigger_flags':{}}
++        from public_prefix import capture_observation
++        return capture_observation(result, source_object='controlled_environment._observation.result',
++                                   random_key=self._exogenous_key)
+ 
+     def step(self,action):
+         if not self._observation()['mask'][action]: raise ValueError('FIXTURE_ILLEGAL_ACTION')
+--- v4/acceptance/producer_boundary_acceptance.py
++++ v5/acceptance/producer_boundary_acceptance.py
+@@ -0,0 +1,82 @@
++"""Execute the real observation producer on a controlled telemetry bridge, not an environment."""
++import copy
++import json
++import os
++from pathlib import Path
++import resource
++import sys
++import time
++from types import SimpleNamespace
++
++ROOT = Path(__file__).resolve().parents[1]
++sys.path[:0] = [str(ROOT / 'package'), str(ROOT / 'package/native')]
++os.sched_setaffinity(0, {0})
++os.environ.update(CUDA_VISIBLE_DEVICES='', OMP_NUM_THREADS='1', MKL_NUM_THREADS='1', OPENBLAS_NUM_THREADS='1')
++START = time.monotonic()
++import torch
++import numpy as np
++from gppo_world.m10_environment import M10Environment, M10Config
++from gppo_world.graph5 import graph5_from_m10_observation
++from public_controller import public_copy
++from public_prefix import make_public_prefix, serialize_public_prefix
++import public_prefix as pp
++
++FORBIDDEN = []
++def forbidden(*args, **kwargs):
++    FORBIDDEN.append(True)
++    raise AssertionError('MODEL_OR_CHECKPOINT_EXECUTION_FORBIDDEN')
++torch.load = forbidden
++torch.nn.Module._call_impl = forbidden
++OUT = Path(os.environ['W1_PRODUCER_ACCEPTANCE_OUTPUT'])
++OUT.mkdir(parents=True, exist_ok=False)
++rows = []
++def fields(values): return [x for v in values for x in (float(v), 1., 1., 0.)]
++for count in (3, 4, 6):
++    for now in (2., 4., 8., 12.):
++        for event in (False, True):
++            uavs = [fields((0., 0., 9., 1., 1., 1.)) for _ in range(4)]
++            tasks = [fields((float(i), 0., 18., 1., 1., 1., 0., float(i % 4))) if i < count else [0.] * 32 for i in range(6)]
++            mask = [False] * 25
++            mask[8] = mask[24] = True
++            telemetry = SimpleNamespace(uavs=uavs, tasks=tasks, mask=mask, version=4)
++            bridge = SimpleNamespace(observe=lambda: telemetry)
++            owner = SimpleNamespace(bridge=bridge, config=M10Config(), clock=SimpleNamespace(time=now),
++                _public_event_records=[], _trigger_flags={'semantic_event': event},
++                uav_ids=tuple('uav-' + str(i) for i in range(4)),
++                view=SimpleNamespace(public_task_ids=tuple('task-' + str(i) for i in range(count))),
++                _active_action=None, _active_actions={}, _exogenous_key='synthetic-producer-key')
++            before = M10Environment._observation(owner, clear_trigger=True)
++            saved = copy.deepcopy(before)
++            public = public_copy(before)
++            prefix = serialize_public_prefix(make_public_prefix(public))
++            graph = graph5_from_m10_observation(public)
++            after = M10Environment._observation(owner)
++            assert saved['event_signal'] == saved['flat'][769] == float(event)
++            assert after['event_signal'] == after['flat'][769] == 0.
++            assert float(graph.global_features[1]) == float(event)
++            assert np.array_equal(prefix['flat'], saved['flat'])
++            rows.append({'tasks': count, 'time': now, 'event': event, 'pass': True,
++                'saved_flat769': float(saved['flat'][769]), 'reobserved_flat769': float(after['flat'][769]),
++                'source_sha256': saved['public_prefix_source']['source_sha256']})
++assert not FORBIDDEN
++rejections = []
++for name, mutate in [
++    ('flat_dtype_float64', lambda s: s.update(flat=s['flat'].astype(np.float64))),
++    ('task_ids_tuple', lambda s: s['public_entity_ids'].update(tasks=tuple(s['public_entity_ids']['tasks']))),
++    ('event_type_int', lambda s: s.update(event_signal=1)),
++]:
++    state = copy.deepcopy(saved); mutate(state); before = pp.FLATTEN_CALLS
++    try: public_copy(state)
++    except ValueError as exc:
++        assert pp.FLATTEN_CALLS == before
++        rejections.append({'name': name, 'error': str(exc), 'before_flatten': True})
++    else: raise AssertionError('Consumer normalized a type mismatch: ' + name)
++report = {'pass': True, 'controlled_producer_cases': len(rows), 'cases': rows,
++    'strict_consumer_rejections': rejections,
++    'actual_method': 'M10Environment._observation', 'environment_constructor_called': False,
++    'formal_environment_steps': 0, 'neural_forwards': 0, 'checkpoint_loads': 0,
++    'world_updates': 0, 'GPPO_updates': 0, 'task_evaluation_episodes': 0,
++    'wall_seconds_including_import': time.monotonic() - START, 'CPU_seconds_including_import': time.process_time(),
++    'max_RSS_bytes': resource.getrusage(resource.RUSAGE_SELF).ru_maxrss * 1024}
++(OUT / 'producer-acceptance-summary.json').write_text(json.dumps(report, indent=2) + '\n')
++print(json.dumps({k: report[k] for k in ('pass', 'controlled_producer_cases', 'neural_forwards', 'checkpoint_loads')}))
+--- v4/acceptance/public_prefix_acceptance.py
++++ v5/acceptance/public_prefix_acceptance.py
+@@ -0,0 +1,292 @@
++"""Production prefix integration; synthetic environment only, no neural execution."""
++import ast
++import copy
++from contextlib import contextmanager
++from dataclasses import replace
++import json
++import os
++from pathlib import Path
++import pickle
++import resource
++import sys
++import threading
++import time
++from types import SimpleNamespace
++
++ROOT = Path(__file__).resolve().parents[1]
++sys.path[:0] = [str(ROOT / 'package'), str(ROOT / 'package/native'), str(ROOT / 'acceptance')]
++if os.environ.get('W1_VERIFIED_ATTEMPT'): raise ValueError('FORMAL_IDENTITY_FORBIDDEN_IN_ACCEPTANCE')
++os.sched_setaffinity(0, {0})
++os.environ.update(CUDA_VISIBLE_DEVICES='', OMP_NUM_THREADS='1', MKL_NUM_THREADS='1', OPENBLAS_NUM_THREADS='1')
++START = time.monotonic()
++import numpy as np
++import torch
++torch.set_num_threads(1); torch.set_num_interop_threads(1)
++from controlled_environment import Environment
++from production_driver import Driver
++from budget_ledger import BudgetLedger, BudgetError
++from phase_handshake import StageServer
++from linux_process_scope import proc_tree
++from infra_io import durable_atomic_json
++from consequence_collection import jsonable, snapshot_payload, state_bytes, restore_candidate
++from consequence_contract import digest, task_slots, admit_window
++from consequence_training import serialize_prediction
++from consequence_model import READOUT_DIM, AUX_DIM
++from consequence_policy import ConsequencePolicy
++from consequence_replay import verify_update
++from candidate_keys import catalog, context_for, audit, feature_binding, verify_replay_candidate, validate_window
++import public_prefix as pp
++
++DIAG = Path(os.environ['W1_PUBLIC_PREFIX_ACCEPTANCE_OUTPUT'])
++CASES = []
++EXPECTED_FAILURES = []
++
++
++def require(value):
++    if not value: raise AssertionError('Required condition failed')
++
++
++def case(name, function):
++    started = time.monotonic(); function()
++    CASES.append({'name': name, 'pass': True, 'wall_seconds': time.monotonic() - started})
++    print('PASS ' + name, flush=True)
++
++
++def rejects(name, function, *, no_flatten=True):
++    before = pp.FLATTEN_CALLS
++    try: function()
++    except (ValueError, BudgetError) as exc:
++        if no_flatten: require(pp.FLATTEN_CALLS == before)
++        EXPECTED_FAILURES.append({'case': name, 'error': str(exc), 'new_flattens': pp.FLATTEN_CALLS - before})
++        return str(exc)
++    raise AssertionError('Invalid input accepted: ' + name)
++
++
++class Fixture(Environment):
++    def _observation(self):
++        state = super()._observation()
++        self.observation_calls = getattr(self, 'observation_calls', 0) + 1
++        state['mask'][:24] = [False] * 24
++        if self.clock.time < self.horizon and not self.noop:
++            for u in range(4): state['mask'][u * 6 + (u + int(self.clock.time)) % self.n] = True
++        for u in range(4):
++            for t in range(6): state['graph']['relations'][u][t][2] = float(state['mask'][u * 6 + t])
++        now = self.clock.time
++        event = now in (2., 4., 8., 12.) and getattr(self, 'trigger_observed_at', None) != now
++        self.trigger_observed_at = now
++        state.update(event_signal=float(event), trigger_flags={'public_boundary': event})
++        state.pop('flat'); state.pop('public_prefix_source')
++        return pp.capture_observation(state, source_object='controlled_environment._observation.result', random_key=self._exogenous_key)
++
++
++class Factory:
++    def __call__(self, spec, config, purpose): return Fixture(spec, config, purpose)
++
++
++@contextmanager
++def handshake(output, request):
++    own = resource.getrusage(resource.RUSAGE_SELF); child = resource.getrusage(resource.RUSAGE_CHILDREN)
++    server = StageServer(output / 'phase.sock', request, tree_reader=proc_tree,
++        cpu_origin_seconds=own.ru_utime + own.ru_stime + child.ru_utime + child.ru_stime,
++        wall_origin_monotonic=START)
++    os.environ['W1_PHASE_ACCOUNTING_SOCKET'] = str(server.path)
++    stop = threading.Event(); errors = []
++    def serve():
++        while not stop.is_set():
++            try: server.process_pending(os.getpid())
++            except BaseException as exc: errors.append(repr(exc))
++            stop.wait(.001)
++    thread = threading.Thread(target=serve); thread.start()
++    try: yield server
++    finally:
++        stop.set(); thread.join(timeout=6); server.close()
++        os.environ.pop('W1_PHASE_ACCOUNTING_SOCKET', None)
++        durable_atomic_json(output / 'handshake-result.json', {'errors': errors, 'rows': server.rows})
++        require(not errors and not thread.is_alive())
++
++
++def setup():
++    DIAG.mkdir(parents=True, exist_ok=True)
++    workspace = DIAG / 'controlled-workspace'; workspace.mkdir(exist_ok=False)
++    request = json.loads((ROOT / 'RESOURCE_REQUEST.json').read_text())
++    allowed = {'environment_constructions': 4, 'environment_resets': 4, 'environment_steps': 7200,
++        'candidate_scans': 8000, 'candidate_branches': 400, 'snapshot_writes': 32,
++        'forced_first_actions': 400, 'output_writes': 64, 'candidate_snapshot_probes': 401,
++        'candidate_contract_audits': 2500}
++    for stage, limits in request['stages'].items():
++        for key, value in list(limits.items()):
++            if type(value) is int: limits[key] = allowed.get(key, 0)
++        limits.update(wall_seconds=240, complete_process_cpu_seconds=180,
++                      all_resident_rss_bytes=4 * 2**30, active_storage_bytes=512 * 2**20)
++    request['totals'] = dict(request['stages']['paired_collection'], wall_seconds=300, complete_process_cpu_seconds=240)
++    request.update(attempt='controlled-public-prefix-only', approval_status='ENGINEERING_ONLY')
++    specs = []
++    for i, count in enumerate((3, 4, 6, 3)):
++        scenario = {'seed': 970200 + i, 'task_count': count, 'noop_only': i == 3}
++        specs.append({'parent': 'synthetic-prefix-parent-' + str(i), 'repeat': 0, 'split': 'train',
++            'role': 'world_and_policy_train', 'scenario': scenario, 'scenario_sha256': digest(scenario),
++            'exogenous_key': 'synthetic-prefix-key-' + str(i)})
++    matrix = json.loads((ROOT / 'experiment-matrix.json').read_text())
++    matrix.update(controlled=True, attempt='engineering-only-no-formal-identity')
++    for name, value in [('parent-split.json', {'parents': specs}), ('RESOURCE_REQUEST.json', request),
++        ('experiment-matrix.json', matrix), ('evaluation-tape.json', {'parents': []})]:
++        durable_atomic_json(workspace / name, value)
++    (workspace / 'environment-config-contract.json').write_bytes((ROOT / 'package/environment-config-contract.json').read_bytes())
++    return workspace, request, matrix
++
++
++def replay_row(driver, row):
++    state, context, keys = row['state_before'], row['candidate_context'], row['candidate_keys']
++    base, aux, valid, mask, available, trace = driver.features(state, 'T', candidate_context=context, candidate_keys=keys)
++    pack = SimpleNamespace(arm='T', normalization_mean=torch.zeros(AUX_DIM), normalization_scale=torch.ones(AUX_DIM))
++    packed = ConsequencePolicy.pack(pack, base, aux, valid, mask, available).numpy()
++    return {'candidate_features': packed, 'mask': mask.numpy(), 'action': keys[0]['action_index'],
++        'replay_evidence': {'candidate_state_before': state, 'candidate_context': context,
++            'candidate_keys': keys, 'public_prefixes': trace['public_prefixes'],
++            'candidate_feature_binding': feature_binding(keys, context, state, packed),
++            'candidate_audits': dict(trace['candidate_audits'], replay=audit('replay', keys, context, state)),
++            'counterfactual_identity': {'public_sha256': context['public_sha256']}}}
++
++
++def main():
++    workspace, request, matrix = setup(); output = workspace / 'controlled-output'; output.mkdir()
++    with handshake(output, request) as server:
++        ledger = BudgetLedger(output / 'ledger.sqlite', request)
++        driver = Driver(workspace, output, matrix, ledger, Factory())
++        driver.phase('input_admission')
++        lean = driver.collect()
++        case('actual_driver_collect_2_4_8_12_and_3_4_6_tasks', lambda: require(len(lean) == 12 and
++            {r['state_before']['time'] for r in lean} == {2., 4., 8., 12.} and
++            {len(r['state_before']['public_entity_ids']['tasks']) for r in lean} == {3, 4, 6}))
++        inventory = json.loads((output / 'source-inventory.json').read_text())['windows']
++        case('no_opportunity_is_normal', lambda: require(sum(r['status'] == 'no_opportunity' for r in inventory) == 4))
++        row = next(r for r in lean if r['state_before']['time'] == 4.)
++        state, context, keys = row['state_before'], row['candidate_context'], row['candidate_keys']
++        case('first_time4_candidate_preserves_event_one_and_flat769', lambda: require(keys[0]['candidate_order'] == 0 and
++            state['event_signal'] == state['flat'][769] == 1.0))
++        audits = [json.loads(line) for line in (output / 'candidate-identity-audits.jsonl').read_text().splitlines()]
++        probes = [r for r in audits if r.get('restoration_public_source')]
++        case('all_restores_read_saved_snapshot_without_environment_observation', lambda: require(
++            len(probes) == 60 and all(r['environment_observation_calls_during_probe'] == 0 and r['audited_branch_unmodified'] for r in probes)))
++        case('all_legal_candidates_including_noop_and_multi_uav_slots', lambda: require(
++            all(any(k['noop'] for k in r['candidate_keys']) for r in lean) and
++            {k['uav_slot'] for r in lean for k in r['candidate_keys'] if not k['noop']} == {0, 1, 2, 3}))
++        parts = driver.audit_window_input(row)
++        expected_hashes = [r['sha256'] for r in row['public_prefixes']]
++        predictions = [serialize_prediction(k, context, state, task_slots(state), [0.] * READOUT_DIM, [False] * READOUT_DIM) for k in keys]
++        case('collector_label_graph_world_input_prediction_share_prefix', lambda: require(
++            row['candidate_audits']['collector']['public_prefix_sha256'] == expected_hashes and
++            row['candidate_audits']['label_lookup']['public_prefix_sha256'] == expected_hashes and
++            parts[-1]['audit']['public_prefix_sha256'] == expected_hashes and
++            [l['public_prefix']['sha256'] for l in row['labels']] == expected_hashes and
++            [p['public_prefix']['sha256'] for p in predictions] == expected_hashes))
++        case('unknown_collision_not_fabricated', lambda: require(not parts[5]['binary'][:, 4].any()))
++        transition = replay_row(driver, row)
++        case('replay_GPPO_preupdate_verifier_preserves_prefix', lambda: require(verify_replay_candidate(transition)['public_prefix_sha256'] == expected_hashes))
++        producer = pp.make_public_prefix(state, context, keys[0])
++        for value in (0., 1.):
++            event_state = copy.deepcopy(state); event_state.update(event_signal=value, trigger_flags={'public_boundary': bool(value)})
++            event_state.pop('flat'); event_state.pop('public_prefix_source')
++            event_state = jsonable(pp.capture_observation(event_state, source_object='controlled_environment._observation.result', random_key='synthetic-events'))
++            case('valid_event_' + str(int(value)), lambda s=event_state, v=value: require(
++                pp.serialize_public_prefix(pp.make_public_prefix(s))['flat'][769] == v))
++        for name, mutate in [
++            ('event_value', lambda s: s.update(event_signal=0.)),
++            ('event_type', lambda s: s.update(event_signal=1)),
++            ('event_unknown', lambda s: s.update(event_signal_valid=False)),
++            ('event_missing', lambda s: s.pop('event_signal')),
++            ('event_bool_type', lambda s: s.update(event_signal=True)),
++            ('pre_post_time_mix', lambda s: s.update(time=5.)),
++            ('pre_post_phase_mix', lambda s: s['public_prefix_source'].update(phase='post_action')),
++            ('graph_shape', lambda s: s['graph']['node_features'].pop()),
++            ('flat769_cached_mismatch', lambda s: s['flat'].__setitem__(769, 0.)),
++            ('snapshot_identity', lambda s: s['public_prefix_source'].update(source_sha256='0' * 64)),
++        ]:
++            def reject_state(name=name, mutate=mutate):
++                damaged = copy.deepcopy(state); mutate(damaged)
++                error = rejects(name, lambda: pp.serialize_public_prefix(pp.make_public_prefix(damaged, context, keys[0]), expected=producer))
++                if name == 'flat769_cached_mismatch':
++                    require('$.event_signal (flat[769])' in error and 'producer_source_sha256' in error and 'producer_value' in error)
++            case(name + '_before_flatten', reject_state)
++        for name, mutate in [
++            ('parent', lambda k: k.update(parent='other-parent')),
++            ('window', lambda k: k.update(window_id='time-8')),
++            ('candidate_order', lambda k: k.update(candidate_order=1)),
++            ('candidate_prefix', lambda k: k.update(prefix_sha256='0' * 64)),
++            ('candidate_slot', lambda k: k.update(task_slot=5)),
++            ('candidate_action', lambda k: k.update(action_index=24)),
++        ]:
++            def reject_key(name=name, mutate=mutate):
++                key = copy.deepcopy(keys[0]); mutate(key)
++                rejects(name, lambda: pp.serialize_public_prefix(pp.make_public_prefix(state, context, key), expected=producer))
++            case(name + '_before_flatten', reject_key)
++        for name, mutate in [
++            ('candidate_sequence', lambda r: r['candidate_keys'].reverse()),
++            ('missing_candidate', lambda r: r['candidate_keys'].pop()),
++            ('duplicate_candidate', lambda r: r['candidate_keys'].__setitem__(1, r['candidate_keys'][0])),
++            ('prefix_sequence', lambda r: r['public_prefixes'].reverse()),
++            ('illegal_action', lambda r: r['candidate_keys'][0].update(action_index=0)),
++        ]:
++            def reject_window(name=name, mutate=mutate):
++                damaged = copy.deepcopy(row); mutate(damaged)
++                rejects(name, lambda: driver.audit_window_input(damaged))
++            case(name + '_production_input_before_flatten', reject_window)
++        for name, mutate in [
++            ('mask', lambda r: r['mask'].__setitem__(0, True)),
++            ('prefix_order', lambda r: r['replay_evidence']['public_prefixes'].reverse()),
++            ('prefix_missing', lambda r: r['replay_evidence'].pop('public_prefixes')),
++            ('event', lambda r: r['replay_evidence']['candidate_state_before']['flat'].__setitem__(769, 0.)),
++        ]:
++            def reject_replay(name=name, mutate=mutate):
++                damaged = copy.deepcopy(transition); mutate(damaged)
++                rejects('replay_' + name, lambda: verify_update(None, [damaged], torch.device('cpu')))
++            case('actual_preupdate_' + name + '_before_flatten', reject_replay)
++        # A saved synthetic snapshot can be restored even if the caller's current state advances.
++        spec = driver.registry[0]
++        payload_path = next((output / 'snapshots').glob('*.pickle'))
++        snapshot = pickle.loads(payload_path.read_bytes())
++        env, adapter, history = snapshot['environment']
++        saved_state, saved_context, saved_keys = snapshot['state_before'], snapshot['context'], snapshot['keys']
++        canonical = state_bytes((env, adapter, history)); public_reads = env.observation_calls
++        restored = ledger.call('controlled_saved_restore', {'candidate_branches': 1}, restore_candidate,
++            payload_path.read_bytes(), canonical, saved_state, saved_context, saved_keys, saved_keys[0], ledger,
++            driver.record_candidate_audit, expected_payload_sha256=digest(payload_path.read_bytes()))
++        case('saved_restore_never_reads_trigger_or_post_state', lambda: require(
++            state_bytes(restored) == canonical and restored[0].observation_calls == public_reads))
++        fired = []
++        case('real_ledger_rejects_unknown_key', lambda: rejects('unknown_key', lambda:
++            ledger.call('forbidden_unknown', {'not_in_contract': 1}, lambda: fired.append(True))))
++        case('real_ledger_neural_budget_is_zero', lambda: rejects('neural_budget', lambda:
++            ledger.call('forbidden_forward', {'world_model_batch_forwards': 1}, lambda: fired.append(True))))
++        require(not fired)
++        case('evaluation_remains_locked', lambda: rejects('evaluation_locked', driver.evaluation_specs))
++        settled = ledger.assert_settled()
++        driver.phase('analysis_and_settlement'); driver.phase('settlement_and_verified_export'); ledger.close()
++        require(settled['pending_calls'] == 0 and server.stage == 'settlement_and_verified_export')
++    source = (ROOT / 'package/consequence_collection.py').read_text()
++    restore = next(n for n in ast.parse(source).body if isinstance(n, ast.FunctionDef) and n.name == 'restore_candidate')
++    case('restore_has_no_environment_observation_or_trigger_read_static', lambda: require(
++        not any(isinstance(n, ast.Attribute) and n.attr in ('_observation', '_trigger_flags', 'clock') for n in ast.walk(restore))))
++    duration = time.monotonic() - START
++    require(duration <= 300 and time.process_time() <= 240)
++    summary = {'pass': True, 'tests_passed': len(CASES), 'tests': CASES,
++        'actual_driver_and_ledger_and_handshake': True, 'synthetic_environment_only': True,
++        'formal_environment_steps': 0, 'formal_checkpoint_loads': 0, 'model_initializations': 0,
++        'neural_forwards': 0, 'world_updates': 0, 'GPPO_updates': 0, 'task_evaluation_episodes': 0,
++        'synthetic_environment_steps': settled['totals'].get('environment_steps', 0), 'ledger': settled,
++        'wall_seconds_including_import': duration, 'CPU_seconds_including_import': time.process_time(),
++        'peak_RSS_bytes': resource.getrusage(resource.RUSAGE_SELF).ru_maxrss * 1024,
++        'interpreter': sys.executable, 'python': sys.version.split()[0], 'torch': torch.__version__, 'numpy': np.__version__,
++        'flatten_calls': pp.FLATTEN_CALLS, 'GPPO_scope': 'actual preupdate identity verifier only; no GPPO or model computation'}
++    durable_atomic_json(DIAG / 'acceptance-summary.json', summary)
++    durable_atomic_json(DIAG / 'expected-rejections.json', EXPECTED_FAILURES)
++    print(json.dumps({k: summary[k] for k in ('pass', 'tests_passed', 'neural_forwards', 'GPPO_updates', 'wall_seconds_including_import')}))
++
++
++if __name__ == '__main__':
++    try: main()
++    except BaseException as exc:
++        import traceback
++        p = DIAG / 'acceptance-first-error.json'
++        if not p.exists(): durable_atomic_json(p, {'type': type(exc).__name__, 'message': str(exc), 'traceback': traceback.format_exc(), 'completed_tests': CASES})
++        raise
+--- v4/launch_pilot.py
++++ v5/launch_pilot.py
+@@ -44,6 +44,11 @@
+             or manifest.get('candidate_key_contract') != 'candidate-key-contract.json'
+             or read(root/'candidate-key-contract.json').get('schema') != 'w1-structured-candidate/1'):
+         raise ValueError('STRUCTURED_CANDIDATE_CONTRACT_REQUIRED')
++    if (matrix.get('public_prefix_contract') != 'w1-public-prefix/1'
++            or manifest.get('public_prefix_contract') != 'PUBLIC_PREFIX_CONTRACT.json'
++            or read(root/'PUBLIC_PREFIX_CONTRACT.json').get('schema') != 'w1-public-prefix/1'
++            or read(root/'flat-layout-manifest.json').get('dimension') != 770):
++        raise ValueError('UNIFIED_PUBLIC_PREFIX_CONTRACT_REQUIRED')
+     if matrix['world_seeds']!=[8201,8202,8203] or matrix['policy_seeds']!=[8301,8302,8303]:raise ValueError('FIXED_SEEDS')
+     if request['approval_status']!='NOT_APPROVED':raise ValueError('FROZEN_REQUEST_MUST_NOT_CONTAIN_APPROVAL')
+     return identity,request
+--- v4/package/candidate_keys.py
++++ v5/package/candidate_keys.py
+@@ -54,6 +54,8 @@
+ 
+ 
+ def context_for(parent, repeat, window_id, state):
++    from public_prefix import make_public_prefix, serialize_public_prefix
++    serialize_public_prefix(make_public_prefix(state), validation_only=True)
+     from consequence_contract import task_slots, legal_actions, digest
+     if type(parent) is not str or not parent or type(window_id) is not str or not window_id:
+         raise ValueError('CANDIDATE_PARENT_WINDOW')
+@@ -112,9 +114,12 @@
+ 
+ 
+ def audit(layer, keys, context, state):
++    from public_prefix import prefix_hashes, SCHEMA as PREFIX_SCHEMA
+     hashes = validate_catalog(keys, context, state)
+     return {'layer': layer, 'context_sha256': key_digest(context), 'candidate_key_sha256': hashes,
+-            'candidate_sequence_sha256': key_digest(keys)}
++            'candidate_sequence_sha256': key_digest(keys), 'public_prefix_schema': PREFIX_SCHEMA,
++            'public_prefix_sha256': prefix_hashes(state, context, keys),
++            'public_source_sha256': state['public_prefix_source']['source_sha256']}
+ 
+ 
+ def validate_audit(record, keys, context, state, layer):
+@@ -122,8 +127,13 @@
+ 
+ 
+ def validate_window(row, *, labels_required=True):
++    from public_prefix import make_public_prefix, serialize_public_prefix
+     state, context, keys = row['state_before'], row['candidate_context'], row['candidate_keys']
+     validate_catalog(keys, context, state)
++    saved = row.get('public_prefixes')
++    if type(saved) is not list or len(saved) != len(keys): raise ValueError('PUBLIC_PREFIX_WINDOW_RECORDS')
++    for key, record in zip(keys, saved):
++        serialize_public_prefix(make_public_prefix(state, context, key), expected_record=record, validation_only=True)
+     for name in ('parent', 'repeat', 'window_id'):
+         _same(row[name], context[name], 'window.' + name)
+     if row['status'] == 'no_opportunity':
+@@ -150,6 +160,7 @@
+             _same(label['candidate_key'], key, 'label.candidate_key')
+             if label['candidate_key_sha256'] != key_digest(key):
+                 raise ValueError('CANDIDATE_LABEL_DIGEST')
++            serialize_public_prefix(make_public_prefix(state, context, key), expected_record=label['public_prefix'], validation_only=True)
+         validate_audit(row['candidate_audits']['label_lookup'], keys, context, state, 'label_lookup')
+     return keys
+ 
+@@ -209,9 +220,14 @@
+ 
+ 
+ def verify_replay_candidate(transition):
++    from public_prefix import make_public_prefix, serialize_public_prefix
+     evidence = transition['replay_evidence']
+     state, context, keys = evidence['candidate_state_before'], evidence['candidate_context'], evidence['candidate_keys']
+     validate_catalog(keys, context, state)
++    records = evidence.get('public_prefixes')
++    if type(records) is not list or len(records) != len(keys): raise ValueError('PUBLIC_PREFIX_REPLAY_RECORDS')
++    for key, record in zip(keys, records):
++        serialize_public_prefix(make_public_prefix(state, context, key), expected_record=record, validation_only=True)
+     if str(transition['mask'].dtype) != 'bool' or type(transition['action']) is not int or transition['mask'].tolist() != state['mask'] or transition['action'] not in context['legal_actions']:
+         raise ValueError('CANDIDATE_REPLAY_MASK_ACTION')
+     _same(evidence['candidate_feature_binding'], feature_binding(keys, context, state, transition['candidate_features']), 'replay.feature_binding')
+--- v4/package/consequence_collection.py
++++ v5/package/consequence_collection.py
+@@ -32,26 +32,43 @@
+     return None
+ 
+ 
+-def restore_candidate(payload, canonical, state, context, keys, key, ledger, evidence_store):
+-    """Observe a separate probe; never mutate the branch while auditing its prefix."""
+-    from public_controller import public_copy
+-    from event_signal_contract import validate as validate_event_signal
+-    expected_event_signal, expected_event_signal_valid = validate_event_signal(state, path='$.event_signal')
++def snapshot_payload(env, adapter, history, state, context, keys):
++    from public_prefix import prefix_records
++    if float(env.clock.time) != state['time']:
++        raise ValueError('PUBLIC_PREFIX_SNAPSHOT_TIME_MISMATCH')
++    from public_prefix import sha as public_sha
++    if public_sha(env._exogenous_key) != state['public_prefix_source']['random_key_sha256']:
++        raise ValueError('PUBLIC_PREFIX_SNAPSHOT_RANDOM_KEY_MISMATCH')
++    if jsonable(history.state) != state.get('public_history'):
++        raise ValueError('PUBLIC_PREFIX_SNAPSHOT_HISTORY_MISMATCH')
++    prefixes = prefix_records(state, context, keys)
++    return pickle.dumps({'schema': 'w1-pre-action-branch-snapshot/1',
++        'environment': (env, adapter, history), 'state_before': copy.deepcopy(state),
++        'context': copy.deepcopy(context), 'keys': copy.deepcopy(keys), 'public_prefixes': prefixes}, protocol=4)
++
++
++def restore_candidate(payload, canonical, state, context, keys, key, ledger, evidence_store, *, expected_payload_sha256):
++    """Rebuild exclusively from the saved public snapshot; never observe restored env."""
++    from public_prefix import make_public_prefix, serialize_public_prefix, compare
+     validate_catalog(keys, context, state)
+     validate_key(key, context, state)
+-    branch, adapter, history = pickle.loads(payload)
++    if digest(payload) != expected_payload_sha256: raise ValueError('PUBLIC_PREFIX_SNAPSHOT_PAYLOAD_DIGEST')
++    snapshot = pickle.loads(payload)
++    if type(snapshot) is not dict or set(snapshot) != {'schema', 'environment', 'state_before', 'context', 'keys', 'public_prefixes'} or snapshot['schema'] != 'w1-pre-action-branch-snapshot/1':
++        raise ValueError('PUBLIC_PREFIX_BRANCH_SNAPSHOT_SCHEMA')
++    branch, adapter, history = snapshot['environment']
+     initial = state_bytes((branch, adapter, history))
+     canonical_ok = initial == canonical
+     def probe():
+-        env_copy, adapter_copy, history_copy = copy.deepcopy((branch, adapter, history))
+-        # event_signal is frozen at the pre-action observation boundary. A
+-        # restored branch's internal trigger flags cannot redefine that prefix.
+-        public = public_copy(env_copy._observation(),
+-                             event_signal_override=expected_event_signal,
+-                             event_signal_valid_override=expected_event_signal_valid)
+-        public['mask'] = [i in adapter_copy.memory.candidates(public) for i in range(25)]
+-        return jsonable(history_copy.attach_current(public))
+-    public = ledger.call('candidate_public_snapshot_probe', {'candidate_snapshot_probes': 1}, probe)
++        compare(context, snapshot['context'], '$.snapshot.context')
++        compare(keys, snapshot['keys'], '$.snapshot.candidate_keys')
++        public = snapshot['state_before']
++        expected = make_public_prefix(state, context, key)
++        actual = make_public_prefix(public, snapshot['context'], key)
++        serialize_public_prefix(actual, expected=expected)
++        serialized = serialize_public_prefix(actual, expected_record=snapshot['public_prefixes'][key['candidate_order']])
++        return public, serialized['sha256']
++    public, public_prefix_sha256 = ledger.call('candidate_public_snapshot_probe', {'candidate_snapshot_probes': 1}, probe)
+     after = state_bytes((branch, adapter, history))
+     result = {'candidate_key': key, 'candidate_key_sha256': key_digest(key),
+               'candidate_audit': audit('branch_snapshot', keys, context, state),
+@@ -59,9 +76,9 @@
+               'canonical_equal': canonical_ok, 'public_expected_sha256': digest(state),
+               'public_actual_sha256': digest(public), 'public_equal': public == state,
+               'first_public_difference': first_difference(state, public),
+-              'event_signal_contract': {'schema': 'w1-event-signal-contract/1',
+-                  'semantics': 'pre_action_public_observation',
+-                  'expected': expected_event_signal, 'expected_valid': expected_event_signal_valid},
++              'public_prefix_sha256': public_prefix_sha256, 'snapshot_payload_sha256': expected_payload_sha256,
++              'restoration_public_source': 'saved_pre_action_snapshot_only',
++              'environment_observation_calls_during_probe': 0,
+               'audited_branch_unmodified': after == initial}
+     evidence_store(result)
+     if not canonical_ok: raise ValueError('CANDIDATE_CANONICAL_PREFIX_MISMATCH')
+@@ -123,18 +140,22 @@
+     """Shared production collection hook; acceptance replaces only the environment."""
+     from pathlib import Path
+     from gppo_world.joint_training import _vector_reward
++    from public_prefix import make_public_prefix, serialize_public_prefix
++    serialize_public_prefix(make_public_prefix(observation), validation_only=True)
+     state = jsonable(observation)
+     slots = task_slots(state)
+     row = {"parent": parent, "repeat": repeat, "split": split, "window_id": window_id, "state_before": state}
+     context = context_for(parent, repeat, window_id, state)
+     keys = catalog(context, state)
++    from public_prefix import prefix_records
++    row['public_prefixes'] = prefix_records(state, context, keys)
+     row.update(candidate_context=context, candidate_keys=keys, candidate_audits={'collector': audit('collector', keys, context, state)})
+     if not opportunity(state["mask"]):
+         row.update(status="no_opportunity", branches=[])
+         return row
+-    restoration = pickle.dumps((env, adapter, history), protocol=4)
++    restoration = snapshot_payload(env, adapter, history, state, context, keys)
+     canonical = state_bytes((env, adapter, history))
+-    if state_bytes(pickle.loads(restoration)) != canonical:
++    if state_bytes(pickle.loads(restoration)['environment']) != canonical:
+         raise ValueError("PREFIX_RESTORE_MISMATCH")
+     rng = pickle.dumps({"scheme": "stateless-semantic-message-sha256", "seed": env.scenario.seed,
+                         "key": env._exogenous_key, "communication": asdict(env.communication)}, protocol=4)
+@@ -152,7 +173,8 @@
+     for key in keys:
+         a = key['action_index']
+         branch, branch_adapter, branch_history = ledger.call('restore_candidate', {'candidate_branches': 1},
+-            restore_candidate, restoration, canonical, state, context, keys, key, ledger, evidence_store)
++            restore_candidate, restoration, canonical, state, context, keys, key, ledger, evidence_store,
++            expected_payload_sha256=digest(restoration))
+         previous_counts = {"completed": env._last_completed, "expired": env._last_expired}
+         previous_energy = sum(r.energy for r in env.clock.resources.values())
+         initial_energy = previous_energy
+--- v4/package/consequence_contract.py
++++ v5/package/consequence_contract.py
+@@ -13,7 +13,7 @@
+ GAMMA = .99
+ PUBLIC_FIELDS = {"flat", "uavs", "tasks", "graph", "mask", "time", "version", "types", "public_entity_ids",
+                  "trigger_flags", "event_signal", "event_signal_valid", "continuation_action", "continuation_actions",
+-                 "public_history", "public_history_schema"}
++                 "public_history", "public_history_schema", "public_prefix_source"}
+ 
+ 
+ def digest(value):
+@@ -49,6 +49,8 @@
+     """Slot order is the public action/graph order, never label-list order."""
+     if set(state) - PUBLIC_FIELDS:
+         raise ValueError("NONPUBLIC_OR_FUTURE_INPUT_FIELD")
++    from public_prefix import make_public_prefix, serialize_public_prefix
++    serialize_public_prefix(make_public_prefix(state), validation_only=True)
+     from event_signal_contract import validate as validate_event_signal
+     validate_event_signal(state, path='$.event_signal')
+     ids = state["public_entity_ids"]["tasks"]
+@@ -150,6 +152,8 @@
+ 
+ 
+ def labels(candidate, baseline, state, expected):
++    from public_prefix import make_public_prefix, serialize_public_prefix
++    public_prefix = serialize_public_prefix(make_public_prefix(state, expected['candidate_context'], candidate['candidate_key']))['record']
+     paired(candidate, baseline, state, expected)
+     c, b = candidate["outcome"], baseline["outcome"]
+     ct, bt = outcome_tasks(c), outcome_tasks(b)
+@@ -168,7 +172,7 @@
+                        ("damage_count_delta", "damage_count"), ("competition_delta", "competition_count")):
+         continuous[out] = difference(c[field], b[field])
+     continuous["global_utility_delta"] = leaf(c["utility"] - b["utility"], True)
+-    return {"candidate_key": candidate['candidate_key'], 'candidate_key_sha256': candidate['candidate_key_sha256'],
++    return {"candidate_key": candidate['candidate_key'], 'candidate_key_sha256': candidate['candidate_key_sha256'], 'public_prefix': public_prefix,
+             "binary": current, "continuous": continuous, "per_task": per_task,
+             "slots": task_slots(state), "source_trace_sha256": candidate["trace_sha256"],
+             "baseline_trace_sha256": baseline["trace_sha256"]}
+--- v4/package/consequence_features.py
++++ v5/package/consequence_features.py
+@@ -25,6 +25,7 @@
+ def build_features(state, ensemble, supported_readouts, arm, ledger=None, *, candidate_context, candidate_keys):
+     """Only public identity/presence/training support controls validity, never future labels."""
+     validate_catalog(candidate_keys, candidate_context, state)
++    from public_prefix import prefix_records
+     slots = task_slots(state)
+     base = base_candidates(state)
+     aux = torch.zeros(25, AUX_DIM)
+@@ -35,6 +36,7 @@
+     trace = {"feature_contract": FEATURE_ID, "task_slots": slots,
+              "public_input_sha256": digest(state), "support_times": list(SUPPORT_TIMES), "world_model_calls": 0}
+     trace.update(candidate_context=candidate_context, candidate_keys=candidate_keys,
++                 public_prefixes=prefix_records(state, candidate_context, candidate_keys),
+                  candidate_audits={'graph_action_encoding': audit('graph_action_encoding', candidate_keys, candidate_context, state),
+                                    'candidate_features': audit('candidate_features', candidate_keys, candidate_context, state)})
+     if not opportunity(state["mask"]):
+--- v4/package/consequence_replay.py
++++ v5/package/consequence_replay.py
+@@ -11,7 +11,7 @@
+ REGISTRY = weakref.WeakKeyDictionary()
+ EVIDENCE_FIELDS = ("counterfactual_identity", "world_model_identity", "normalization_identity",
+                    "hidden_source", "random_key", "gate", "task_slots", "feature_contract",
+-                   'candidate_state_before', 'candidate_context', 'candidate_keys', 'candidate_feature_binding', 'candidate_audits')
++                   'candidate_state_before', 'candidate_context', 'candidate_keys', 'candidate_feature_binding', 'candidate_audits', 'public_prefixes')
+ 
+ 
+ def fingerprint(value):
+--- v4/package/consequence_training.py
++++ v5/package/consequence_training.py
+@@ -125,7 +125,7 @@
+         "selection_rule": "final_fixed_epoch_only", "weights": WEIGHTS, "task_capacity": 6,
+         "slot_contract": "public-action-graph-order", "support_mask": supported.tolist(), "support_counts": counts.tolist(),
+         "train_parents": sorted({r["parent"] for r in train_rows}), "continuation_id": "public-joint-opportunity-rule/1",
+-        "feature_contract": FEATURE_ID, "candidate_key_contract": CANDIDATE_SCHEMA,
++        "feature_contract": FEATURE_ID, "candidate_key_contract": CANDIDATE_SCHEMA, "public_prefix_contract": 'w1-public-prefix/1',
+         "readout_dim": READOUT_DIM, "packed_dim": PACKED_DIM}
+     payload = {"metadata": metadata, "state_dict": model.state_dict(), "optimizer": optimizer.state_dict(),
+                "optimizer_sha256": fingerprint(optimizer.state_dict()), 'metadata_sha256': digest(metadata),
+@@ -150,17 +150,20 @@
+     if fingerprint(payload["state_dict"]) != payload["state_sha256"]: raise ValueError("CHECKPOINT_INTERNAL_STATE_SHA256")
+     if digest(payload['metadata']) != payload['metadata_sha256']: raise ValueError('CHECKPOINT_METADATA_DIGEST')
+     if fingerprint(payload['optimizer']) != payload['optimizer_sha256']: raise ValueError('CHECKPOINT_OPTIMIZER_DIGEST')
+-    if payload["metadata"].get('candidate_key_contract') != CANDIDATE_SCHEMA or payload["metadata"]["task_capacity"] != 6 or payload["metadata"]["packed_dim"] != PACKED_DIM:
++    if payload["metadata"].get('public_prefix_contract') != 'w1-public-prefix/1' or payload["metadata"].get('candidate_key_contract') != CANDIDATE_SCHEMA or payload["metadata"]["task_capacity"] != 6 or payload["metadata"]["packed_dim"] != PACKED_DIM:
+         raise ValueError("CHECKPOINT_MODEL_SLOT_CONTRACT")
+     return {"file_sha256": file_sha256, "state_sha256": payload["state_sha256"], "metadata": payload["metadata"]}
+ 
+ 
+ def serialize_prediction(candidate_key, context, state, task_ids, predicted, valid):
+     validate_key(candidate_key, context, state)
++    from public_prefix import make_public_prefix, serialize_public_prefix
++    public_prefix = serialize_public_prefix(make_public_prefix(state, context, candidate_key))['record']
+     if task_ids != __import__('consequence_contract').task_slots(state) or len(predicted) != READOUT_DIM or len(valid) != READOUT_DIM:
+         raise ValueError("PREDICTION_IDENTITY_LAYOUT")
+     prefix = len(BINARY) + len(CONTINUOUS)
+     return {"action": candidate_key['action_index'], "candidate_key": candidate_key,
++        'public_prefix': public_prefix,
+         'candidate_key_sha256': key_digest(candidate_key),
+         "binary": {k: {"value": float(predicted[i]) if valid[i] else None, "valid": bool(valid[i])} for i, k in enumerate(BINARY)},
+         "continuous": {k: {"value": float(predicted[len(BINARY) + i]) if valid[len(BINARY) + i] else None,
+--- v4/package/native/gppo_world/graph5.py
++++ v5/package/native/gppo_world/graph5.py
+@@ -92,6 +92,9 @@
+ 
+ 
+ def graph5_from_m10_observation(observation: Mapping[str, Any], *, counts: tuple[int, int, int, int, int] = (4, 3, 4, 6, 4)) -> Graph5Snapshot:
++    from public_prefix import make_public_prefix, serialize_public_prefix
++    prefix = serialize_public_prefix(make_public_prefix(dict(observation)))
++    observation = prefix['payload']['pre_action_public_state']
+     from event_signal_contract import validate as validate_event_signal
+     validate_event_signal(observation, path='$.event_signal')
+     graph = observation.get("graph")
+@@ -115,8 +118,8 @@
+             continuation[action] = 1.0
+     global_features = torch.cat((
+         torch.tensor([
+-            float(observation.get("time", 0.0)) / 18.0,
+-            float(observation.get("event_signal", 0.0)),
++            float(prefix['flat'][768]),
++            float(prefix['flat'][769]),
+         ]),
+         continuation,
+     ))
+--- v4/package/native/gppo_world/m10_environment.py
++++ v5/package/native/gppo_world/m10_environment.py
+@@ -849,9 +849,7 @@
+         # safety gate; the policy never reads the private event schedule.
+         trigger_flags = dict(self._trigger_flags)
+         event_signal = float(any(trigger_flags.values()))
+-        flat = np.concatenate((uav_nodes.reshape(-1), regions.reshape(-1), targets.reshape(-1), task_nodes.reshape(-1), events.reshape(-1), relations.reshape(-1), np.asarray([self.clock.time / self.config.horizon, event_signal], dtype=np.float32)))
+         result = {
+-            "flat": flat,
+             "uavs": uavs,
+             "tasks": tasks,
+             "graph": {"node_features": np.concatenate((uav_nodes, regions, targets, task_nodes, events), axis=0), "relations": relations},
+@@ -875,6 +873,9 @@
+             "continuation_action": self._active_action,
+             "continuation_actions": tuple(sorted(self._active_actions.values())),
+         }
++        from public_prefix import capture_observation
++        result = capture_observation(result, source_object='M10Environment._observation.result',
++                                     random_key=self._exogenous_key, horizon=float(self.config.horizon))
+         if clear_trigger:
+             self._trigger_flags = {key: False for key in self._trigger_flags}
+         return result
+--- v4/package/production_driver.py
++++ v5/package/production_driver.py
+@@ -161,7 +161,7 @@
+                         if digest(payload) != b['snapshot_ref']: raise ValueError('SNAPSHOT_FILE_DIGEST')
+                         import pickle
+                         restored = pickle.loads(payload)
+-                        if digest(state_bytes(restored)) != b['prefix_sha256']: raise ValueError('SNAPSHOT_STATE_DIGEST')
++                        if digest(state_bytes(restored['environment'])) != b['prefix_sha256']: raise ValueError('SNAPSHOT_STATE_DIGEST')
+                         snapshot_audit = json.loads(snap.with_suffix('.json').read_text())
+                         validate_audit(snapshot_audit['candidate_audit'], row['candidate_keys'], row['candidate_context'], row['state_before'], 'branch_snapshot')
+                         if snapshot_audit['candidate_keys'] != row['candidate_keys'] or snapshot_audit['candidate_context'] != row['candidate_context']:
+@@ -229,6 +229,8 @@
+             raise ValueError('FROZEN_WORLD_BOUNDARY')
+ 
+     def features(self, state, arm, *, candidate_context=None, candidate_keys=None):
++        from public_prefix import make_public_prefix, serialize_public_prefix
++        serialize_public_prefix(make_public_prefix(state), validation_only=True)
+         state = jsonable(state)
+         if candidate_context is None:
+             if self.active_parent is None: raise ValueError('LIVE_CANDIDATE_PARENT_REQUIRED')
+@@ -360,6 +362,7 @@
+                 'task_slots':trace['task_slots'],'feature_contract':FEATURE_ID,
+                 'candidate_state_before':jsonable(state),'candidate_context':trace['candidate_context'],
+                 'candidate_keys':trace['candidate_keys'],'candidate_feature_binding':trace['candidate_feature_binding'],
++                'public_prefixes':trace['public_prefixes'],
+                 'candidate_audits':dict(trace['candidate_audits'], replay=audit('replay',trace['candidate_keys'],trace['candidate_context'],jsonable(state)))})
+             transitions.append(t)
+             durable_append_jsonl(self.output/'behavior-evidence.jsonl',jsonable(t))
+@@ -415,7 +418,7 @@
+         folder = self.output/'policy-models'; folder.mkdir(exist_ok=True)
+         path = folder/f'{arm}-{seed}.pt'
+         metadata = {'schema':'consequence-critic-policy/2','arm':arm,'seed':seed,'steps':steps,'updates':updates,
+-            'feature_contract':FEATURE_ID,'candidate_key_contract':CANDIDATE_SCHEMA,'packed_dim':PACKED_DIM,'task_capacity':6,'phase':'critic_only',
++            'feature_contract':FEATURE_ID,'candidate_key_contract':CANDIDATE_SCHEMA,'public_prefix_contract':'w1-public-prefix/1','packed_dim':PACKED_DIM,'task_capacity':6,'phase':'critic_only',
+             'world_identity':self.world_identity,'initial_state_sha256':self.initial_hashes[seed],
+             'normalization_identity':replay.normalization_id(policy),'optimizer_class':'Adam','lr':3e-4,
+             'GPPO_config':asdict(JointTrainConfig(seed=seed,rollout_steps=self.matrix['rollout_steps']))}
+@@ -433,7 +436,7 @@
+         meta = payload['metadata']
+         if meta['arm']!=arm or meta['seed']!=seed or meta['steps']!=self.matrix['policy_steps'] or meta['updates']!=self.matrix['policy_updates']:
+             raise ValueError('POLICY_FINAL_IDENTITY')
+-        if meta.get('candidate_key_contract')!=CANDIDATE_SCHEMA or meta['world_identity']!=self.world_identity or meta['feature_contract']!=FEATURE_ID or meta['packed_dim']!=PACKED_DIM:
++        if meta.get('public_prefix_contract')!='w1-public-prefix/1' or meta.get('candidate_key_contract')!=CANDIDATE_SCHEMA or meta['world_identity']!=self.world_identity or meta['feature_contract']!=FEATURE_ID or meta['packed_dim']!=PACKED_DIM:
+             raise ValueError('POLICY_WORLD_FEATURE_IDENTITY')
+         if meta['initial_state_sha256']!=self.initial_hashes.get(seed): raise ValueError('POLICY_PAIRED_INITIAL_IDENTITY')
+         if replay.fingerprint(payload['state'])!=binding['state_sha256'] or replay.fingerprint(payload['optimizer'])!=binding['optimizer_sha256']:
+--- v4/package/public_controller.py
++++ v5/package/public_controller.py
+@@ -9,15 +9,18 @@
+ U_FIELDS = ('x', 'y', 'energy', 'alive', 'connected', 'idle')
+ T_FIELDS = ('x', 'y', 'deadline', 'remaining_service', 'priority', 'pending', 'region_id', 'target_id')
+ ALLOWED = frozenset(('flat', 'graph', 'uavs', 'tasks', 'mask', 'time', 'version',
+-                     'public_entity_ids', 'trigger_flags', 'event_signal', 'event_signal_valid', 'continuation_actions'))
++                     'public_entity_ids', 'trigger_flags', 'event_signal', 'event_signal_valid', 'continuation_actions', 'public_prefix_source'))
+ 
+ 
+ class ContractError(RuntimeError):
+     pass
+ 
+ 
+-def public_copy(obs, *, event_signal_override=None, event_signal_valid_override=None):
++def public_copy(obs):
+     """Take only the native observation whitelist; never forward info/env."""
++    from public_prefix import make_public_prefix, serialize_public_prefix
++    # Validate producer types before the explicit flat-array to JSON boundary.
++    serialize_public_prefix(make_public_prefix({k: obs[k] for k in ALLOWED if k in obs}), validation_only=True)
+     def convert(x):
+         if hasattr(x, 'tolist'):
+             return convert(x.tolist())
+@@ -29,15 +32,14 @@
+             return x
+         raise ContractError(f'Nonpublic object in observation: {type(x).__name__}')
+     out = {k: convert(obs[k]) for k in ALLOWED if k in obs}
+-    if event_signal_override is not None:
+-        out['event_signal'] = float(event_signal_override)
+-    if event_signal_valid_override is not None:
+-        out['event_signal_valid'] = bool(event_signal_valid_override)
++    serialize_public_prefix(make_public_prefix(out))
+     validate(out)
+     return out
+ 
+ 
+ def validate(obs):
++    from public_prefix import make_public_prefix, serialize_public_prefix
++    serialize_public_prefix(make_public_prefix(obs))
+     required = {'uavs', 'tasks', 'mask', 'time', 'public_entity_ids', 'continuation_actions',
+                 'event_signal', 'event_signal_valid'}
+     if not required <= obs.keys() or not obs.keys() <= ALLOWED:
+--- v4/package/public_history.py
++++ v5/package/public_history.py
+@@ -13,7 +13,8 @@
+ 
+ 
+ def public_state_vector(observation: Mapping[str, Any]) -> np.ndarray:
+-    flat = np.asarray(observation.get("flat"), dtype=np.float32).reshape(-1)
++    from public_prefix import make_public_prefix, serialize_public_prefix
++    flat = serialize_public_prefix(make_public_prefix(dict(observation)))['flat']
+     if flat.size < HISTORY_DIM or not np.isfinite(flat[:HISTORY_DIM]).all():
+         raise ValueError("public observation must contain 128 finite state values")
+     return flat[:HISTORY_DIM].copy()
+--- v4/package/public_prefix.py
++++ v5/package/public_prefix.py
+@@ -0,0 +1,288 @@
++"""Single typed pre-action prefix and flat producer for all consequence boundaries."""
++import copy
++from dataclasses import dataclass, fields
++import hashlib
++import json
++import math
++import numpy as np
++
++SCHEMA = 'w1-public-prefix/1'
++LAYOUT = 'w1-public-flat/1'
++COUNTS = (4, 3, 4, 6, 4)
++WIDTH = 32
++FLAT_DIM = 770
++FLATTEN_CALLS = 0
++CORE = ('graph', 'uavs', 'tasks', 'time', 'version', 'public_entity_ids',
++        'continuation_actions', 'trigger_flags', 'event_signal', 'event_signal_valid')
++STATE_FIELDS = set(CORE) | {'mask', 'types', 'continuation_action', 'public_history', 'public_history_schema'}
++SOURCE_FIELDS = {'schema', 'phase', 'generation_stage', 'source_object', 'horizon',
++                 'node_counts', 'flat_dtype', 'random_key_sha256', 'source_sha256'}
++
++
++def encoded(value):
++    return json.dumps(value, sort_keys=True, separators=(',', ':'), ensure_ascii=True,
++                      allow_nan=False).encode('ascii')
++
++
++def sha(value):
++    return hashlib.sha256(value if type(value) is bytes else encoded(value)).hexdigest()
++
++
++def native_json(value):
++    """Conversion is allowed only at the declared NumPy observation producer boundary."""
++    if isinstance(value, np.ndarray):
++        if value.dtype not in (np.dtype('float32'), np.dtype('bool')):
++            raise ValueError('PUBLIC_PREFIX_NATIVE_DTYPE:' + str(value.dtype))
++        return value.tolist()
++    if type(value) is dict: return {k: native_json(v) for k, v in value.items()}
++    if type(value) in (list, tuple): return [native_json(v) for v in value]
++    if value is None or type(value) in (str, bool, int): return value
++    if type(value) is float and math.isfinite(value): return value
++    raise ValueError('PUBLIC_PREFIX_NATIVE_TYPE:' + type(value).__name__)
++
++
++def mismatch(path, producer, consumer, producer_source, consumer_source):
++    detail = {'field': path, 'producer_value': producer, 'consumer_value': consumer,
++              'producer_type': type(producer).__name__, 'consumer_type': type(consumer).__name__,
++              'producer_source_sha256': producer_source, 'consumer_source_sha256': consumer_source,
++              'rejected_before_flatten': True}
++    raise ValueError('PUBLIC_PREFIX_FIELD_MISMATCH:' + json.dumps(detail, sort_keys=True))
++
++
++def compare(producer, consumer, path='$', producer_source=None, consumer_source=None):
++    if type(producer) is not type(consumer):
++        mismatch(path, producer, consumer, producer_source, consumer_source)
++    if type(producer) is dict:
++        if set(producer) != set(consumer):
++            mismatch(path + '.fields', sorted(producer), sorted(consumer), producer_source, consumer_source)
++        for key in sorted(producer):
++            compare(producer[key], consumer[key], path + '.' + key, producer_source, consumer_source)
++    elif type(producer) is list:
++        if len(producer) != len(consumer):
++            mismatch(path + '.shape', [len(producer)], [len(consumer)], producer_source, consumer_source)
++        for i, (a, b) in enumerate(zip(producer, consumer)):
++            compare(a, b, path + '[' + str(i) + ']', producer_source, consumer_source)
++    elif producer != consumer:
++        mismatch(path, producer, consumer, producer_source, consumer_source)
++
++
++def matrix(value, shape, path):
++    if type(value) is not list or len(value) != shape[0]: raise ValueError('PUBLIC_PREFIX_SHAPE:' + path)
++    if len(shape) > 1:
++        for i, row in enumerate(value): matrix(row, shape[1:], path + '[' + str(i) + ']')
++    elif any(type(v) is not float or not math.isfinite(v) for v in value):
++        raise ValueError('PUBLIC_PREFIX_FLOAT32_JSON_VALUES:' + path)
++
++
++def source_material(state, source):
++    return {'observation': {k: state[k] for k in CORE},
++            'header': {k: source[k] for k in SOURCE_FIELDS - {'source_sha256'}}}
++
++
++def layout_manifest():
++    cursor = 0; blocks = []
++    for name, count in zip(('uav', 'region', 'target', 'task', 'event'), COUNTS):
++        blocks.append({'field': 'graph.node_features.' + name, 'offset': cursor,
++            'end_exclusive': cursor + count * WIDTH, 'shape': [count, WIDTH], 'dtype': 'float32',
++            'source_object': 'pre_action_public_state.graph.node_features', 'generation_stage': 'pre_action_observation'})
++        cursor += count * WIDTH
++    blocks.extend([
++        {'field': 'graph.relations', 'offset': 672, 'end_exclusive': 768, 'shape': [4, 6, 4], 'dtype': 'float32',
++         'source_object': 'pre_action_public_state.graph.relations', 'generation_stage': 'pre_action_observation'},
++        {'field': 'time_fraction', 'offset': 768, 'end_exclusive': 769, 'shape': [1], 'dtype': 'float32',
++         'source_object': 'time / snapshot_identity.horizon', 'generation_stage': 'serialize_public_prefix'},
++        {'field': 'event_signal', 'offset': 769, 'end_exclusive': 770, 'shape': [1], 'dtype': 'float32',
++         'source_object': 'pre_action_public_state.event_signal', 'generation_stage': 'pre_action_observation'},
++    ])
++    return {'schema': LAYOUT, 'dimension': FLAT_DIM, 'dtype': 'float32', 'order': 'C',
++            'blocks': blocks, 'index_769': {'field': 'event_signal', 'element_offset': 769,
++                'byte_offset': 3076, 'dtype': 'float32', 'validity_field': 'event_signal_valid'}}
++
++
++@dataclass(frozen=True)
++class PublicPrefix:
++    pre_action_public_state: dict
++    event_signal: float
++    event_signal_valid: bool
++    candidate_key: dict | None
++    time: float
++    task_slot: int | None
++    legal_mask: list
++    snapshot_identity: dict
++    flat_cache: object = None
++
++    def payload(self):
++        return {'schema': SCHEMA, **{f.name: copy.deepcopy(getattr(self, f.name))
++            for f in fields(self) if f.name != 'flat_cache'}}
++
++    @classmethod
++    def from_payload(cls, value):
++        expected = {'schema'} | {f.name for f in fields(cls) if f.name != 'flat_cache'}
++        if type(value) is not dict or set(value) != expected or value['schema'] != SCHEMA:
++            raise ValueError('PUBLIC_PREFIX_PAYLOAD_FIELDS')
++        return cls(**{k: copy.deepcopy(v) for k, v in value.items() if k != 'schema'})
++
++
++def make_public_prefix(observation, context=None, candidate_key=None):
++    if type(observation) is not dict: raise ValueError('PUBLIC_PREFIX_STATE_DICT')
++    if not {'event_signal', 'event_signal_valid', 'time', 'mask'} <= set(observation):
++        raise ValueError('PUBLIC_PREFIX_MISSING_FIELD')
++    source = observation.get('public_prefix_source')
++    if type(source) is not dict or set(source) != SOURCE_FIELDS:
++        raise ValueError('PUBLIC_PREFIX_SOURCE_REQUIRED')
++    state = {k: copy.deepcopy(v) for k, v in observation.items() if k not in ('flat', 'public_prefix_source')}
++    snapshot = dict(source, parent=None if context is None else context['parent'],
++                    repeat=None if context is None else context['repeat'],
++                    window_id=None if context is None else context['window_id'], time=state['time'],
++                    public_sha256=None if context is None else context['public_sha256'],
++                    context_prefix_sha256=None if context is None else context['prefix_sha256'])
++    return PublicPrefix(state, state['event_signal'], state['event_signal_valid'], copy.deepcopy(candidate_key),
++                        state['time'], None if candidate_key is None else candidate_key['task_slot'],
++                        copy.deepcopy(state['mask']), snapshot, observation.get('flat'))
++
++
++def validate_prefix(prefix):
++    if type(prefix) is not PublicPrefix: raise ValueError('PUBLIC_PREFIX_TYPE')
++    state, identity = prefix.pre_action_public_state, prefix.snapshot_identity
++    if type(state) is not dict or set(state) - STATE_FIELDS or not set(CORE) <= set(state):
++        raise ValueError('PUBLIC_PREFIX_PUBLIC_FIELDS')
++    if type(identity) is not dict or set(identity) != SOURCE_FIELDS | {'parent', 'repeat', 'window_id', 'time', 'public_sha256', 'context_prefix_sha256'}:
++        raise ValueError('PUBLIC_PREFIX_SNAPSHOT_FIELDS')
++    source = {k: identity[k] for k in SOURCE_FIELDS}
++    if source['schema'] != SCHEMA or source['phase'] != 'pre_action' or source['flat_dtype'] != 'float32':
++        raise ValueError('PUBLIC_PREFIX_PHASE_OR_DTYPE')
++    if type(source['node_counts']) is not list or source['node_counts'] != list(COUNTS):
++        raise ValueError('PUBLIC_PREFIX_NODE_LAYOUT')
++    if type(source['horizon']) is not float or source['horizon'] != 18.0:
++        raise ValueError('PUBLIC_PREFIX_HORIZON')
++    if source['generation_stage'] != 'pre_action_observation' or source['source_object'] not in (
++        'M10Environment._observation.result', 'controlled_environment._observation.result'):
++        raise ValueError('PUBLIC_PREFIX_SOURCE_STAGE')
++    for name in ('source_sha256', 'random_key_sha256'):
++        value = source[name]
++        if type(value) is not str or len(value) != 64 or any(c not in '0123456789abcdef' for c in value):
++            raise ValueError('PUBLIC_PREFIX_SOURCE_DIGEST:' + name)
++    from event_signal_contract import validate
++    validate({'event_signal': prefix.event_signal, 'event_signal_valid': prefix.event_signal_valid})
++    if type(prefix.event_signal) is not float: raise ValueError('PUBLIC_PREFIX_EVENT_FLOAT_REQUIRED')
++    for name, value in [('event_signal', prefix.event_signal), ('event_signal_valid', prefix.event_signal_valid),
++                        ('time', prefix.time), ('mask', prefix.legal_mask)]:
++        compare(state[name], value, '$.' + name, source['source_sha256'], source['source_sha256'])
++    if type(prefix.time) is not float or not math.isfinite(prefix.time) or prefix.time < 0:
++        raise ValueError('PUBLIC_PREFIX_TIME')
++    if type(state['version']) is not int or type(state['trigger_flags']) is not dict or any(
++        type(k) is not str or type(v) is not bool for k, v in state['trigger_flags'].items()):
++        raise ValueError('PUBLIC_PREFIX_VERSION_OR_FLAGS')
++    if type(state['continuation_actions']) is not list or any(type(a) is not int or not 0 <= a < 24 for a in state['continuation_actions']):
++        raise ValueError('PUBLIC_PREFIX_CONTINUATION_ACTIONS')
++    if 'public_history' in state:
++        matrix(state['public_history'], [128], '$.public_history')
++        if state.get('public_history_schema') != 'w1-causal-public-history/1.0.0':
++            raise ValueError('PUBLIC_PREFIX_HISTORY_SCHEMA')
++    compare(identity['time'], prefix.time, '$.snapshot_identity.time')
++    if type(prefix.legal_mask) is not list or len(prefix.legal_mask) != 25 or any(type(v) is not bool for v in prefix.legal_mask):
++        raise ValueError('PUBLIC_PREFIX_LEGAL_MASK')
++    graph = state['graph']
++    if type(graph) is not dict or set(graph) != {'node_features', 'relations'}:
++        raise ValueError('PUBLIC_PREFIX_GRAPH_FIELDS')
++    matrix(graph['node_features'], [21, 32], '$.graph.node_features')
++    matrix(graph['relations'], [4, 6, 4], '$.graph.relations')
++    matrix(state['uavs'], [4, 24], '$.uavs'); matrix(state['tasks'], [6, 32], '$.tasks')
++    compare([r[:24] for r in graph['node_features'][:4]], state['uavs'], '$.uavs.graph_alignment')
++    compare(graph['node_features'][11:17], state['tasks'], '$.tasks.graph_alignment')
++    ids = state['public_entity_ids']
++    if type(ids) is not dict or set(ids) != {'tasks', 'uavs'}: raise ValueError('PUBLIC_PREFIX_ENTITY_FIELDS')
++    for name, capacity in [('uavs', 4), ('tasks', 6)]:
++        if type(ids[name]) is not list or len(ids[name]) > capacity or any(type(v) is not str or not v for v in ids[name]) or len(set(ids[name])) != len(ids[name]):
++            raise ValueError('PUBLIC_PREFIX_ENTITY_IDENTITIES:' + name)
++    if len(ids['uavs']) != 4: raise ValueError('PUBLIC_PREFIX_UAV_CAPACITY')
++    if any(legal and a % 6 >= len(ids['tasks']) for a, legal in enumerate(prefix.legal_mask[:24])):
++        raise ValueError('PUBLIC_PREFIX_ILLEGAL_SLOT')
++    actual = sha(source_material(state, source))
++    if source['source_sha256'] != actual:
++        mismatch('$.snapshot_identity.source_sha256', source['source_sha256'], actual, source['source_sha256'], actual)
++    key = prefix.candidate_key
++    if key is not None:
++        from candidate_keys import KEY_FIELDS
++        if type(key) is not dict or set(key) != KEY_FIELDS: raise ValueError('PUBLIC_PREFIX_CANDIDATE_FIELDS')
++        for name, expected in [('parent', identity['parent']), ('repeat', identity['repeat']),
++            ('window_id', identity['window_id']), ('time', prefix.time), ('public_sha256', identity['public_sha256']),
++            ('prefix_sha256', identity['context_prefix_sha256'])]:
++            compare(expected, key[name], '$.candidate_key.' + name, source['source_sha256'], actual)
++        a = key['action_index']
++        if type(a) is not int or not 0 <= a < 25 or not prefix.legal_mask[a]: raise ValueError('PUBLIC_PREFIX_ILLEGAL_CANDIDATE')
++        legal = [i for i, v in enumerate(prefix.legal_mask) if v]
++        compare(legal.index(a), key['candidate_order'], '$.candidate_key.candidate_order')
++        noop = a == 24
++        for name, expected in [('noop', noop), ('schema', 'w1-structured-candidate/1'),
++            ('uav_slot', None if noop else a // 6), ('task_slot', None if noop else a % 6),
++            ('uav_id', None if noop else ids['uavs'][a // 6]), ('task_id', None if noop else ids['tasks'][a % 6])]:
++            compare(expected, key[name], '$.candidate_key.' + name)
++        compare(key['task_slot'], prefix.task_slot, '$.task_slot')
++    elif prefix.task_slot is not None: raise ValueError('PUBLIC_PREFIX_UNBOUND_SLOT')
++    return source
++
++
++def _scalar_sources(prefix):
++    graph = prefix.pre_action_public_state['graph']
++    for i, row in enumerate(graph['node_features']):
++        for j, value in enumerate(row): yield '$.graph.node_features[' + str(i) + '][' + str(j) + ']', value
++    for u, tasks in enumerate(graph['relations']):
++        for t, row in enumerate(tasks):
++            for j, value in enumerate(row): yield f'$.graph.relations[{u}][{t}][{j}]', value
++    yield '$.time_fraction', float(np.float32(prefix.time / prefix.snapshot_identity['horizon']))
++    yield '$.event_signal', prefix.event_signal
++
++
++def serialize_public_prefix(prefix, *, expected=None, expected_record=None, validation_only=False):
++    """Compare named typed fields and caches before any new flat vector is built."""
++    global FLATTEN_CALLS
++    if expected is not None:
++        compare(expected.payload(), prefix.payload(), producer_source=expected.snapshot_identity['source_sha256'],
++                consumer_source=prefix.snapshot_identity['source_sha256'])
++    source = validate_prefix(prefix)
++    payload = prefix.payload()
++    record = {'schema': SCHEMA, 'sha256': sha(payload), 'source_sha256': source['source_sha256'],
++              'candidate_key_sha256': sha(prefix.candidate_key), 'snapshot_identity_sha256': sha(prefix.snapshot_identity)}
++    if expected_record is not None:
++        compare(expected_record, record, '$.serialized_prefix',
++                producer_source=expected_record.get('source_sha256'), consumer_source=source['source_sha256'])
++    cache = prefix.flat_cache
++    if cache is not None:
++        if isinstance(cache, np.ndarray):
++            if cache.dtype != np.dtype('float32') or cache.shape != (FLAT_DIM,): raise ValueError('PUBLIC_PREFIX_FLAT_CACHE_DTYPE_SHAPE')
++            cache = cache.tolist()
++        if type(cache) is not list or len(cache) != FLAT_DIM: raise ValueError('PUBLIC_PREFIX_FLAT_CACHE_SHAPE')
++        cache_sha256 = sha(cache)
++        for index, ((path, value), cached) in enumerate(zip(_scalar_sources(prefix), cache)):
++            compare(value, cached, path + f' (flat[{index}])', source['source_sha256'], cache_sha256)
++    result = {'schema': SCHEMA, 'payload': payload, 'encoded': encoded(payload), 'sha256': record['sha256'], 'record': record}
++    if validation_only:
++        return result
++    FLATTEN_CALLS += 1
++    result['flat'] = np.asarray([value for _, value in _scalar_sources(prefix)], dtype=np.float32)
++    return result
++
++
++def capture_observation(observation, *, source_object, random_key, horizon=18.0):
++    """Native producer: assemble a named snapshot, then use the sole serializer."""
++    state = native_json(observation)
++    source = {'schema': SCHEMA, 'phase': 'pre_action', 'generation_stage': 'pre_action_observation',
++        'source_object': source_object, 'horizon': horizon, 'node_counts': list(COUNTS),
++        'flat_dtype': 'float32', 'random_key_sha256': sha(random_key), 'source_sha256': ''}
++    source['source_sha256'] = sha(source_material(state, source))
++    state['public_prefix_source'] = source
++    result = serialize_public_prefix(make_public_prefix(state))
++    # Native callers retain array types; JSON boundaries use the same saved source.
++    state['flat'] = result['flat']
++    return state
++
++
++def prefix_hashes(state, context, keys):
++    for key in keys: serialize_public_prefix(make_public_prefix(state, context, key), validation_only=True)
++    return [serialize_public_prefix(make_public_prefix(state, context, key))['sha256'] for key in keys]
++
++
++def prefix_records(state, context, keys):
++    for key in keys: serialize_public_prefix(make_public_prefix(state, context, key), validation_only=True)
++    return [serialize_public_prefix(make_public_prefix(state, context, key))['record'] for key in keys]

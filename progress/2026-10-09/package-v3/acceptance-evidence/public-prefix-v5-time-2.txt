@@ -1,0 +1,23 @@
+	Command being timed: "timeout 320 /home/asus/.venvs/w1-light-repaired-fair-rerun-py31116/bin/python -B /home/asus/w1-engineering/public-prefix-v5-devel-20261008/acceptance/public_prefix_acceptance.py"
+	User time (seconds): 33.56
+	System time (seconds): 1.90
+	Percent of CPU this job got: 55%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:03.48
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 578924
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1650
+	Minor (reclaiming a frame) page faults: 106225
+	Voluntary context switches: 98228
+	Involuntary context switches: 46077
+	Swaps: 0
+	File system inputs: 261529
+	File system outputs: 219472
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

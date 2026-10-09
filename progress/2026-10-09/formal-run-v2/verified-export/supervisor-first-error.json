@@ -1,0 +1,1 @@
+{"automatic_retry":false,"error":"Worker exited 1","exception_type":"RuntimeError","phase_rejection":null,"schema":"w1-supervisor-first-error/1.0.0","stage":"settlement_and_verified_export","status":"technical_stop","traceback":null}

@@ -1,0 +1,17 @@
+{
+  "GPPO_updates": 0,
+  "cached_time4_restores": 3,
+  "cached_windows": 16,
+  "collector_and_driver_type_guard_before_conversion": true,
+  "consumer_type_rejections": 3,
+  "formal_checkpoint_loads": 0,
+  "formal_environment_steps": 0,
+  "full_path_tests": 40,
+  "neural_forwards": 0,
+  "pass": true,
+  "producer_cases": 24,
+  "scope": "CPU0 WSL controlled engineering; server v5 admission pending",
+  "server_preflight_pass": false,
+  "task_evaluation_episodes": 0,
+  "world_updates": 0
+}

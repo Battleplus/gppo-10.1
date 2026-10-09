@@ -1,0 +1,1818 @@
+{
+  "excludes": [
+    "__pycache__",
+    "*.pyc",
+    "*.pyo",
+    "exports",
+    "frozen-identity.json",
+    "hashes.json",
+    "package/run-once"
+  ],
+  "files": {
+    "BUDGET_BASIS.md": {
+      "bytes": 5351,
+      "sha256": "417c48dd3c0459a67afaf7987786a42efd76172c648ea51e6a4dab77ff65552b"
+    },
+    "EVENT_SIGNAL_CODE_DIFF.md": {
+      "bytes": 1078,
+      "sha256": "b8a48f4579858cfa271c24dcaeb14898b31d15e8e18de577d329ab1f50837be1"
+    },
+    "EVENT_SIGNAL_CONTRACT.md": {
+      "bytes": 1236,
+      "sha256": "bf0e7fa5f71b5e4f5fe22ee21d8146fb4a62aaad5122ef60e74674ba601f6d50"
+    },
+    "EVENT_SIGNAL_SEMANTIC_TRACE.json": {
+      "bytes": 2330,
+      "sha256": "0240ef7f53784e0c1b01383d70729b20a6ae4dccc70ed6d47d778bd3d459d0a9"
+    },
+    "GIT_ARCHIVE_STATUS.md": {
+      "bytes": 435,
+      "sha256": "856ea7e8a3fc659c95e1e1f42f17fc244fdae7f0b0dd91c1d1e9bf1f7e62439a"
+    },
+    "INPUT_ADMISSION_OUTPUT_CONTRACT.json": {
+      "bytes": 1790,
+      "sha256": "b22f9d0d57025201b42f15f969ba2f7a0dc6e175c09b39e34bddee3509f32056"
+    },
+    "INPUT_ADMISSION_OUTPUT_CONTRACT.md": {
+      "bytes": 1102,
+      "sha256": "ead2998efe69cc0e8972593458ae0b8baf8e9531840e5fecc9460c99f434e693"
+    },
+    "LOSS_CONTRACT.json": {
+      "bytes": 605,
+      "sha256": "74f8ec68a6222b114b28375306b6c07f6ea3aa1f8d76b625a9e3294dea25db85"
+    },
+    "PREFLIGHT_AND_ACCEPTANCE_STATUS.md": {
+      "bytes": 1768,
+      "sha256": "48475438397e1ead31642b9ee8db48c130efae3b4e80ec3da4e0ca5f9c021d18"
+    },
+    "PRODUCTION_CALL_GRAPH.md": {
+      "bytes": 3179,
+      "sha256": "4a05136dd950cc13ec6ece16f9521c865b58724b24aac216aed7abc08ceab642"
+    },
+    "PUBLIC_PREFIX_CONTRACT.json": {
+      "bytes": 3882,
+      "sha256": "c6d7b0a1193a4d33ed8d8ae2b72dde90f7fe014e477c1222589d8b0a8a00b7a9"
+    },
+    "PUBLIC_PREFIX_CONTRACT.md": {
+      "bytes": 2860,
+      "sha256": "1d32b1debc6e8fdfc34f36544562cb07eff03767f106bda4ab6dbe87919a086d"
+    },
+    "PUBLISH_RELEASE_REPORT.md": {
+      "bytes": 2490,
+      "sha256": "d7c2ea2762dc4c5dc42811f15eed3ea7e5dc51ff3a90a89ffdf1569b4d159444"
+    },
+    "README.md": {
+      "bytes": 1597,
+      "sha256": "20ccd2a9d7b15f0651c9a3921516357571a1d4b7c1251767fbda2cd51161fdfd"
+    },
+    "RECOVERY_AUDIT.md": {
+      "bytes": 3942,
+      "sha256": "b54eb05889bce81cd89157ad147ca7e3cb74a224daf1d691c4ab9e4db5895820"
+    },
+    "RECOVERY_BUDGET.md": {
+      "bytes": 4284,
+      "sha256": "ada0f8c792e59ef5472e7c193fae9428bdd081ea56e560305cae15c2102835ff"
+    },
+    "REPAIR_REPORT.md": {
+      "bytes": 3789,
+      "sha256": "c93535a11625c5d43c8121e4c7aeb7440f134726557098917884dae98498d61f"
+    },
+    "RESOURCE_KEY_MAP.json": {
+      "bytes": 14727,
+      "sha256": "d71ad754fb531224e15010cbc9d0fe38aa9fed2a38a745786aa91bed6189e8e0"
+    },
+    "RESOURCE_REQUEST.json": {
+      "bytes": 15501,
+      "sha256": "5d9c42a564478a5d785b6453fa27f33aabbfc13868674e4ae31f4b90f42fd877"
+    },
+    "RESOURCE_REVISION.md": {
+      "bytes": 2411,
+      "sha256": "9da1597ce319d0b14a783ffc972d4d9f01f7ab23c066293cb9858df7ca8fb80e"
+    },
+    "RESULT_DECISION_CONTRACT.md": {
+      "bytes": 2843,
+      "sha256": "5a874d997a40be7747ae0eb658630503fc2ea3b50ce2016202fa0c3f62f253b3"
+    },
+    "V5_BUDGET_REVISION.md": {
+      "bytes": 2766,
+      "sha256": "8b0431abae097b1f1a8f86680bb603a2562de4393910e90ed4d0ac8231013714"
+    },
+    "V5_PRODUCTION_CALL_GRAPH.md": {
+      "bytes": 2378,
+      "sha256": "080aba517aefe33b71db93f2edf4a9806721726b75e317c582d8f997c3a854b5"
+    },
+    "acceptance-evidence/acceptance-summary.json": {
+      "bytes": 4901,
+      "sha256": "7585c4ba666ae40fae54a6f5e43cc9e74a1853c7ec6bb3923e35675e5895ecb2"
+    },
+    "acceptance-evidence/cached-final-acceptance-summary.json": {
+      "bytes": 7291,
+      "sha256": "21261c1c5d596dc8036dca9d24287120cd888cae2098dc964b1ae00f0598b1d2"
+    },
+    "acceptance-evidence/cached-final-pass-handshake-result.json": {
+      "bytes": 2432,
+      "sha256": "2a00213018fc9c8957e4864b1e029478aa902d9f52c3433ee98da9ab487b58ff"
+    },
+    "acceptance-evidence/cached-fixture-first-error.json": {
+      "bytes": 718,
+      "sha256": "d66d0c5e60cfdab7d6c3f8962dbbb644c268e9edd297fdf7369523e9d789954c"
+    },
+    "acceptance-evidence/cached-type-final-handshake-result.json": {
+      "bytes": 2470,
+      "sha256": "546287d3f7898b24ae923cb288f0aa45854cc225aef78301f17b87343b06fe89"
+    },
+    "acceptance-evidence/controlled-final-handshake-result.json": {
+      "bytes": 2446,
+      "sha256": "31fc72424e5035ab547a90ebd24721e71da3a91a043b6a08d5465dcf3ac7f41b"
+    },
+    "acceptance-evidence/development-interrupted-first-error.json": {
+      "bytes": 3428,
+      "sha256": "d2bcd6cd38b2b48706f847d1b73d6c37849a8cee7acd9634f6c65a5a9b32d009"
+    },
+    "acceptance-evidence/engineering-resource-accounting.json": {
+      "bytes": 2910,
+      "sha256": "dce8f6e32ff1eebcaeeb4380523233ac0974d4745e134f366fd45aece5d2ef02"
+    },
+    "acceptance-evidence/expected-rejections.json": {
+      "bytes": 9931,
+      "sha256": "d8d31a05148533f7e8a5dc6abef10e9465d2c41926557477e8c296361803c522"
+    },
+    "acceptance-evidence/historical-preservation-final.json": {
+      "bytes": 151,
+      "sha256": "1239e3ee9a8ef238333f8a7e73b65d3a8a5e486dbdc614d52e598231f09fa951"
+    },
+    "acceptance-evidence/producer-acceptance-summary.json": {
+      "bytes": 6707,
+      "sha256": "ea15c47739ff671e24bf98b88854967638df6fd8f8b9ffe7356b6bf19fd80b84"
+    },
+    "acceptance-evidence/public-prefix-v5-cached-final-bindings-time.txt": {
+      "bytes": 949,
+      "sha256": "6a0c5a91c2e6d095862d3da82c8f2a8d2eacaf8c5d0100148cc72978138c6c3e"
+    },
+    "acceptance-evidence/public-prefix-v5-cached-final-pass-time.txt": {
+      "bytes": 920,
+      "sha256": "ae13aceae42870579cb7f5fe053c452da118a809cad0b5d5633566cd4febbcc6"
+    },
+    "acceptance-evidence/public-prefix-v5-cached-final-time.txt": {
+      "bytes": 911,
+      "sha256": "3c2db16657e05eea48d55a91ae4bed5b534220bcbad859c48d79806de86f0791"
+    },
+    "acceptance-evidence/public-prefix-v5-cached-type-final-time.txt": {
+      "bytes": 920,
+      "sha256": "d67c16b55e9e194815c3690d61a5dccf47604d0dba4ad63ca4306f70bf064199"
+    },
+    "acceptance-evidence/public-prefix-v5-producer-final-time.txt": {
+      "bytes": 900,
+      "sha256": "177e8f95599105597093a990cc7dc01f038b9f78f4546798431a05e4ff62f72a"
+    },
+    "acceptance-evidence/public-prefix-v5-producer-time.txt": {
+      "bytes": 900,
+      "sha256": "3c86a2bc3b1eb00eee0a63c490f715f3f8fa8f2735e7354739023db291fe7b69"
+    },
+    "acceptance-evidence/public-prefix-v5-time-1.txt": {
+      "bytes": 948,
+      "sha256": "592ff63a8cef516bf158d274867277b85c79e2ad5a173aa1d4009e88dcbf1b2f"
+    },
+    "acceptance-evidence/public-prefix-v5-time-2.txt": {
+      "bytes": 917,
+      "sha256": "82e5bc9f352c4e947b3af132a22431c07190199a7f8a73c6271a5bb20b974fea"
+    },
+    "acceptance-evidence/test-output.txt": {
+      "bytes": 1962,
+      "sha256": "3127a9be7349310e9e16710d46512a48129b19d2b82c93b8e15d034065a2261b"
+    },
+    "acceptance-evidence/v4-seal-receipt.json": {
+      "bytes": 42355,
+      "sha256": "a2ed9107570456abff98e44ddc56421eade628bd8796ec2d55bdd5cab58d66c1"
+    },
+    "acceptance-evidence/v5-admission-summary.json": {
+      "bytes": 507,
+      "sha256": "4d01afdf445402fe1f0a3166e03b84ae1e84416b3d191f283e7cfc8ceb8f0d26"
+    },
+    "acceptance/cached_integration_acceptance.py": {
+      "bytes": 6783,
+      "sha256": "063160c2eaaf7780389b7a4625694a2d2a251aff8d31968a235c28c9888a1bef"
+    },
+    "acceptance/candidate_contract_acceptance.py": {
+      "bytes": 252,
+      "sha256": "c3b549136064b0300cf7a5f812a97579e2f6546a11d0f503ca3d5672a61991b4"
+    },
+    "acceptance/controlled_environment.py": {
+      "bytes": 4419,
+      "sha256": "b399cc445d80680391a8c17bcb6134eb9d82d9555c16240824c7c947ed60e760"
+    },
+    "acceptance/input_admission_output_acceptance.py": {
+      "bytes": 9786,
+      "sha256": "f3cddd78d0bca34a1b3c6a25892d6242fc1bcee6a22263a2b8e95e82a779f873"
+    },
+    "acceptance/producer_boundary_acceptance.py": {
+      "bytes": 4489,
+      "sha256": "41ffa777b310a95b666d864333e101aa61f48bc7a08ba4bbbb7740dc2b0479b0"
+    },
+    "acceptance/public_prefix_acceptance.py": {
+      "bytes": 18563,
+      "sha256": "ddb9ce24528bcf90d525f6c161e6bdc206c5a0916b3768d5c77efac6798124fc"
+    },
+    "candidate-contract-diff.patch": {
+      "bytes": 77791,
+      "sha256": "08c1424129f28d35123a9a19f97ce46973a4b2e794972206c8a46ba0a760737b"
+    },
+    "candidate-key-contract.json": {
+      "bytes": 2072,
+      "sha256": "5d04e17d40882c14f2b2e67b28651387beb714a154222ed6b66c781ba182c6b5"
+    },
+    "evaluation-isolation-audit.json": {
+      "bytes": 49205,
+      "sha256": "c75480a28c46a3dea5f710d1a592ae01e96ecce0b6d90accfb3c8860c4c5d0c0"
+    },
+    "execution-manifest.json": {
+      "bytes": 3303,
+      "sha256": "6d30ab05cc7015045c7547f2c62c65e0fb0a20325906b7fdcadd562dbbe19f5b"
+    },
+    "experiment-matrix.json": {
+      "bytes": 1926,
+      "sha256": "b29de6b25fc5d2a5b5ee49a189466aedde34ea3eafa3d23e5faed08ecd3649c9"
+    },
+    "export_artifacts.py": {
+      "bytes": 2809,
+      "sha256": "91d8d2a224708d12c2a3fea212feb9c575ea0d8fb5cf96d6129bf5cf4d0a95e9"
+    },
+    "flat-layout-manifest.json": {
+      "bytes": 3682,
+      "sha256": "92bcb0f2e21d36fb52136a6b912ee56b254d7fdd1744c14208e136b463f92c8b"
+    },
+    "historical-v4-evidence/acceptance-first-error.json": {
+      "bytes": 1393,
+      "sha256": "04cd4ebc15e988cbfe02855f1b3b0f13299b538f4b8c0ba97c9d26cc2573a6c4"
+    },
+    "historical-v4-evidence/acceptance-summary.json": {
+      "bytes": 6266,
+      "sha256": "eafcbf7f473ce1ae8d539bb0dc26e2af1ee7fda9c2b17b8826b340f537838b72"
+    },
+    "historical-v4-evidence/controlled-evidence-hashes.json": {
+      "bytes": 1400,
+      "sha256": "598f7c2244997b1cf59b75ad33703dfb7ee8439f7a8d0aa147833343981f5b57"
+    },
+    "historical-v4-evidence/controlled-input-inventory.json": {
+      "bytes": 8157,
+      "sha256": "db52e92fdba4e55f042cbcdde53482dbb780bc086b0594d7b820d188a54865ff"
+    },
+    "historical-v4-evidence/controlled-resource-receipt.json": {
+      "bytes": 765,
+      "sha256": "c1d8c7c0e01994cde61e6c7fb2e896b33a25844662523fa240235087505f664b"
+    },
+    "historical-v4-evidence/engineering-resource-accounting.json": {
+      "bytes": 765,
+      "sha256": "c1d8c7c0e01994cde61e6c7fb2e896b33a25844662523fa240235087505f664b"
+    },
+    "historical-v4-evidence/test-output.json": {
+      "bytes": 6266,
+      "sha256": "eafcbf7f473ce1ae8d539bb0dc26e2af1ee7fda9c2b17b8826b340f537838b72"
+    },
+    "historical-v4-evidence/test-output.txt": {
+      "bytes": 6266,
+      "sha256": "eafcbf7f473ce1ae8d539bb0dc26e2af1ee7fda9c2b17b8826b340f537838b72"
+    },
+    "historical-v4-evidence/v2-first-error-identity-trace.json": {
+      "bytes": 1988,
+      "sha256": "dbb7f1c9e3c9953caf3352442775b03b15296af47c25dc65498e37ac5dc689d0"
+    },
+    "historical-v4-evidence/v3-first-error.json": {
+      "bytes": 1988,
+      "sha256": "dbb7f1c9e3c9953caf3352442775b03b15296af47c25dc65498e37ac5dc689d0"
+    },
+    "launch_pilot.py": {
+      "bytes": 14155,
+      "sha256": "fe81d1764a3d23f3b2db36e734b40fac6003f6118b38fbe1a4ca4db4da60f0e4"
+    },
+    "managed_host.py": {
+      "bytes": 4750,
+      "sha256": "04c21f28daa90cc69118691fc5e4326f4e255f72aaf8c88847cf7b192d606bc0"
+    },
+    "package/RESOURCE_REQUEST.json": {
+      "bytes": 15501,
+      "sha256": "5d9c42a564478a5d785b6453fa27f33aabbfc13868674e4ae31f4b90f42fd877"
+    },
+    "package/acceptance/recovery_path_acceptance.py": {
+      "bytes": 7661,
+      "sha256": "849705e4d6c2d79680519dce50cc0ccd61c511d834aa39c5212ffe530ba0ec4f"
+    },
+    "package/budget_ledger.py": {
+      "bytes": 13506,
+      "sha256": "739a7a09b980cd612bb528f983b81dafa662ec9cda02e992f800fd60e1ae28a4"
+    },
+    "package/candidate_keys.py": {
+      "bytes": 12799,
+      "sha256": "e799cddeaf6fafb206943d03fbd8886ec9badc109bdcc24885a9bd6c884615f2"
+    },
+    "package/classical_baselines.py": {
+      "bytes": 6911,
+      "sha256": "424e17682004737e7ff700a70c9cc62bfd2988e16b2cdc8c9055c57d941bf53d"
+    },
+    "package/consequence_collection.py": {
+      "bytes": 14561,
+      "sha256": "615e73f34a2143a7010974253ccf7fbbf32140178a6a6c08418b12b5f64d0522"
+    },
+    "package/consequence_contract.py": {
+      "bytes": 11512,
+      "sha256": "9fd4da2353faea0677f79117d0d0a2f0980a6ee140e66b086d8c73d9dd40f79d"
+    },
+    "package/consequence_features.py": {
+      "bytes": 5464,
+      "sha256": "fd1e4176fa2feb5e8b4eba7ba44f0481d2ebdd8d9acf991765d5050de0eb01de"
+    },
+    "package/consequence_model.py": {
+      "bytes": 6951,
+      "sha256": "eb62cef01e4e1da32a04468c138691a82c679397199f086281cffd3b76ad2d5f"
+    },
+    "package/consequence_policy.py": {
+      "bytes": 4108,
+      "sha256": "018e6a1508ce93be6c36c47d97c3d942e87373bb7b59435df5bbc77fcdb8338a"
+    },
+    "package/consequence_replay.py": {
+      "bytes": 6035,
+      "sha256": "a91b0c6b8fde0767c4c63de6e3fed4935a42bb5b2567af3da2c0f646eb11ef22"
+    },
+    "package/consequence_training.py": {
+      "bytes": 11294,
+      "sha256": "6c3801628a261afc133cfa5caed90cdb3ea57cce9611f1acb106bdbcf3ff47b4"
+    },
+    "package/environment-config-contract.json": {
+      "bytes": 1524,
+      "sha256": "71baa9a044afad72d8c51760d87ec0bc1590a5d7ef00b2e03161538974301986"
+    },
+    "package/evaluation-tape.json": {
+      "bytes": 88756,
+      "sha256": "2272c665654619f83a10bf9e1641a284e2afb7ac7ae2844f5d37b1d8ef24755f"
+    },
+    "package/event_signal_contract.py": {
+      "bytes": 1858,
+      "sha256": "ba7b154a9385b2285a3f7bbf5dc82911cc087e194b4b8d5338d4db6d8c88d194"
+    },
+    "package/experiment-matrix.json": {
+      "bytes": 2206,
+      "sha256": "be823e660880479010f6f5ebff9208ddd661c39c3fcb0980a1ac5305805f79ae"
+    },
+    "package/infra_io.py": {
+      "bytes": 15517,
+      "sha256": "fbd6533833f8845d49ce6ad28b793245e58f22467acbe83e7c45a14704db7ace"
+    },
+    "package/linux_process_scope.py": {
+      "bytes": 14027,
+      "sha256": "3cc229bd1d64971a029f6d1f37ea5f63e708224a04d9ed11537a9f2f8d4c0f21"
+    },
+    "package/native/gppo_world/__init__.py": {
+      "bytes": 823,
+      "sha256": "3883a8ec3d5294cc9348d9cbfa4af625b543def57a0381ba2115e8a4847dfb00"
+    },
+    "package/native/gppo_world/adapter_probe.py": {
+      "bytes": 3862,
+      "sha256": "07d71d87bb04703bb1fb017808956398b59cfd535b75b13270864133d74fe268"
+    },
+    "package/native/gppo_world/arrival_consequence_data.py": {
+      "bytes": 4121,
+      "sha256": "d4d97ee7a07f7fcb2a5ab4e8fada89001b4f88eb845085b5fa3aa0aca31e21ab"
+    },
+    "package/native/gppo_world/arrival_consequence_model.py": {
+      "bytes": 5387,
+      "sha256": "0ebfce661f6348e64cfddcdd56fc837de984287a511c1bdb8c8ec1746f69b3a2"
+    },
+    "package/native/gppo_world/arrival_gppo_fusion.py": {
+      "bytes": 14324,
+      "sha256": "6ea9d60955afd55be818172457a45b74bdb77519382651e389fc4e2f0ba28059"
+    },
+    "package/native/gppo_world/budget_executor.py": {
+      "bytes": 22576,
+      "sha256": "5a2a7536a0ebb0078638a1fd45491a5d13cd9a719c9f012f158b74f5050fd29b"
+    },
+    "package/native/gppo_world/calibration.py": {
+      "bytes": 10264,
+      "sha256": "6955676756f8ec2ff1bb937f3f3ded9a037cc38151122a7bfa58d5625ff0e57c"
+    },
+    "package/native/gppo_world/consequence_data.py": {
+      "bytes": 11298,
+      "sha256": "6bf909c4da3242cafb2af04437be6df6518d195088e407f33c164362b49edfb7"
+    },
+    "package/native/gppo_world/consequence_model.py": {
+      "bytes": 18732,
+      "sha256": "cdec5ff9b33ec3fc8202c2ebd8f9cc01ac418e4b9b5af349d9a3f97a3e230f12"
+    },
+    "package/native/gppo_world/contracts.py": {
+      "bytes": 10946,
+      "sha256": "c7a66851e2513524ac17be33a7f96f61b18dca6d7840fdcefda5ac3f6cfbe290"
+    },
+    "package/native/gppo_world/data.py": {
+      "bytes": 11987,
+      "sha256": "ed45cfab16e08b66bee55839e5c55a1dd711faa5380f4f5643fbd01a86e4b807"
+    },
+    "package/native/gppo_world/dataset.py": {
+      "bytes": 3378,
+      "sha256": "b296d8ce8aec9a4fff83cd2686d2e147b972a1255f51174479abda53230f4664"
+    },
+    "package/native/gppo_world/event_training.py": {
+      "bytes": 23984,
+      "sha256": "5f613d40c34fa8381ccd27a36b7048cdb92b53692bb58eebc6f24efb523e2afc"
+    },
+    "package/native/gppo_world/event_trigger_semimarkov.py": {
+      "bytes": 4201,
+      "sha256": "f348db4e865c945cae90d848bf2d859c443cfdea188f6a9db325a22aa33a25e8"
+    },
+    "package/native/gppo_world/events.py": {
+      "bytes": 17233,
+      "sha256": "84cc0e1850d2ddb62967df4b96d23def57bf58dad5ab41308bae7167c438b077"
+    },
+    "package/native/gppo_world/gppo_adapter.py": {
+      "bytes": 19252,
+      "sha256": "ea0b763106cb8c1a45c8cd16fe52307d0a8de4023c69aa550aa14273c62993e3"
+    },
+    "package/native/gppo_world/gppo_shadow_env.py": {
+      "bytes": 12531,
+      "sha256": "426aeefcbf9f5275dceb8f36959c65d46c17b83d28a4134ee9ec228553ab6bab"
+    },
+    "package/native/gppo_world/gppo_trainer.py": {
+      "bytes": 20387,
+      "sha256": "ec2c6f0fb8038b9e6ada5247b3b51da5c2eeabd670acabcd6a518ad24e4db2ab"
+    },
+    "package/native/gppo_world/graph5.py": {
+      "bytes": 6483,
+      "sha256": "ed29c11754d9eeb14af86417a52e5d52f1297069e51935268e01ee70bc95e51c"
+    },
+    "package/native/gppo_world/jepa.py": {
+      "bytes": 6202,
+      "sha256": "3c3ce3cc995c1b2a80be2c37107dadd922531116cb8aaaad0f8511760fcfeb54"
+    },
+    "package/native/gppo_world/jepa_two_stage.py": {
+      "bytes": 6822,
+      "sha256": "15064c42882a37f6e339cbb98a8e18fbac0b81d6ad688cedf28011059d69b0b2"
+    },
+    "package/native/gppo_world/joint_consequence.py": {
+      "bytes": 11131,
+      "sha256": "34f377abdc5957125727fd71d870243ff273ac9988817beacd6cde6fcfde34ba"
+    },
+    "package/native/gppo_world/joint_consequence_baseline.py": {
+      "bytes": 5744,
+      "sha256": "38f6740baabcc856c37c3757797b341b4c22b9d94ebafefa24688293e99b2c37"
+    },
+    "package/native/gppo_world/joint_consequence_data.py": {
+      "bytes": 5108,
+      "sha256": "9e87b21b6cac74e441a0cfafbaffff5eee9085e605e97323fd126ffd902ee5e9"
+    },
+    "package/native/gppo_world/joint_consequence_model.py": {
+      "bytes": 3988,
+      "sha256": "7588fa49333a3bcf5dcce30cd3411ed7197bde0efae63d3123080e32316a0241"
+    },
+    "package/native/gppo_world/joint_gppo.py": {
+      "bytes": 20878,
+      "sha256": "3c799cfe12050971e1b11da6b2c04fa6a7c244a36935578861c5db533396f55e"
+    },
+    "package/native/gppo_world/joint_training.py": {
+      "bytes": 114181,
+      "sha256": "39d202d0c590875af25764001c99e39af7d4cc82d4f7689f6b12c3cc6213874e"
+    },
+    "package/native/gppo_world/m10_communication.py": {
+      "bytes": 9018,
+      "sha256": "fcaada4fea48446aae509fb97f4b6b8275d5b6b9dda3bcdef00c5c392e6011ce"
+    },
+    "package/native/gppo_world/m10_environment.py": {
+      "bytes": 57569,
+      "sha256": "2444b1b973e37856b588731959d097a68d0673db5589f9e929526c9900628c2a"
+    },
+    "package/native/gppo_world/m10_training.py": {
+      "bytes": 55272,
+      "sha256": "20642fde3349692d5f0d48750a04c53a7b4df29f1e1f2830f7fc6bfefae45941"
+    },
+    "package/native/gppo_world/model.py": {
+      "bytes": 20179,
+      "sha256": "4bfd4deb85165e7eeeb0338beab17d2a1c76582248cb893f76cfd4db73a19ce7"
+    },
+    "package/native/gppo_world/phase_data.py": {
+      "bytes": 8463,
+      "sha256": "42bf58bcad83e1480ccff80459978a690412175880651e63f58ce7d96b6c35d8"
+    },
+    "package/native/gppo_world/phase_learning.py": {
+      "bytes": 3251,
+      "sha256": "bce4203320d7b8e184200f78bdb83084bd37d9f1cfcb0cba7800c6f2707d4e20"
+    },
+    "package/native/gppo_world/recorder.py": {
+      "bytes": 4057,
+      "sha256": "cea67089e9ca7b9d9c5a2415c912840bf33f4cf7c01ccb8857efea8267108023"
+    },
+    "package/native/gppo_world/registry.py": {
+      "bytes": 5059,
+      "sha256": "516af07f6a7b013f463d0aac4c5606c3925a6089c71327c5f6be478c51940db6"
+    },
+    "package/native/gppo_world/s1_r_contracts.py": {
+      "bytes": 4727,
+      "sha256": "772f8ba385d3c6ed8dccf8431d1019e506259350b40f40c8dc5970ddca9db719"
+    },
+    "package/native/gppo_world/service_clock.py": {
+      "bytes": 10947,
+      "sha256": "c5699bd117b442534725a88a0805704a0477217e8b918069152665f4bd1538f3"
+    },
+    "package/native/gppo_world/shadow.py": {
+      "bytes": 13873,
+      "sha256": "bd81fd1a6289186f0a6c57697159a88c2d0bae07e455fddff9d21c97ec1f970a"
+    },
+    "package/native/gppo_world/task_decision_bridge.py": {
+      "bytes": 1643,
+      "sha256": "dd066a4e1be16607e5005e66eed5b90b1b97b485e57d7c7236b46eb171f8b1fd"
+    },
+    "package/native/gppo_world/task_execution.py": {
+      "bytes": 6213,
+      "sha256": "87285ac5a20e761dc9e7c754c0701ba0d2d36725e70ea258343e8e6f7d2dc3ca"
+    },
+    "package/native/gppo_world/task_lifecycle.py": {
+      "bytes": 5133,
+      "sha256": "50248afa519fd18dbc5995ba0bbf7e58adc0833ae501760ea032ab91fca5ed89"
+    },
+    "package/native/gppo_world/task_policy_view.py": {
+      "bytes": 6648,
+      "sha256": "f5877b6582a02a5bb6c9c39b469dd222e9f5727390fd8080c01e160cd7b23317"
+    },
+    "package/native/gppo_world/telemetry.py": {
+      "bytes": 2838,
+      "sha256": "c52f2367c06625dc670f08211dc8e514caf2e005cce7d3b82c2ab1bd7cc556bc"
+    },
+    "package/native/gppo_world/training.py": {
+      "bytes": 18357,
+      "sha256": "6b358fc686118aaf29b9686ba23871c9565ad783849a012c19bc941ddc700f70"
+    },
+    "package/offline_metrics.py": {
+      "bytes": 4055,
+      "sha256": "e28d7cd3c9bd8d8cb161939a47898a11c45da3a841745f79fa79118ad3983438"
+    },
+    "package/parent-split.json": {
+      "bytes": 282629,
+      "sha256": "ec79640aceeca84e2c71f1f16bce8998e9b68ea138ecfe48f8c95cd790a35211"
+    },
+    "package/phase_handshake.py": {
+      "bytes": 32952,
+      "sha256": "cba29223018bec26972bd3f3352cf400cfa94fb98ef22cec2851291646817b43"
+    },
+    "package/prediction_diagnostics.py": {
+      "bytes": 2508,
+      "sha256": "ef66eda18c7a1a2debf902e2dfdfc341c064994882ae2ff2cd0169cae687768d"
+    },
+    "package/production_driver.py": {
+      "bytes": 49860,
+      "sha256": "87bc4498c9a57fa7a004edaf5b6472c1cb25b735d1fabd4dbd803ffcda064464"
+    },
+    "package/public_controller.py": {
+      "bytes": 13449,
+      "sha256": "309f0ce219578e338faee087e626cd741a91521b74e8e7b4862134c5e747d01e"
+    },
+    "package/public_history.py": {
+      "bytes": 2769,
+      "sha256": "f566ceb3879f56f27ebadb04f0f2b5207860beb017e8d6a09e518829c4601a16"
+    },
+    "package/public_prefix.py": {
+      "bytes": 17219,
+      "sha256": "82095baeb687f479250486d983ad027dc0271f6bd058b8b0aea785221d6a2ae6"
+    },
+    "package/recovery-inputs/export-verification.json": {
+      "bytes": 163056,
+      "sha256": "ef01f8649d7acb180de1ebd253615c70c1f10f3cde0a9e14efdd82fa75eae86d"
+    },
+    "package/recovery-inputs/parent-split.json": {
+      "bytes": 282629,
+      "sha256": "ec79640aceeca84e2c71f1f16bce8998e9b68ea138ecfe48f8c95cd790a35211"
+    },
+    "package/recovery-inputs/reused-world-8201-binding.json": {
+      "bytes": 3087,
+      "sha256": "23257ebf8697c43ecf20a1a525f0f55b5156fba699b7427f7f03ebde22656dbb"
+    },
+    "package/recovery-inputs/window-cache-manifest.json": {
+      "bytes": 113081,
+      "sha256": "d7f61c59c6d90a1b92c0aedf55ede1d58c0dc517255cb639a6ba8b817fcab81a"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-000--time-12.json.gz": {
+      "bytes": 2748,
+      "sha256": "24a2c177882006123dd549dadf612bf5b66cc70dce62e00048fee9108292347b"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-000--time-2.json.gz": {
+      "bytes": 175250,
+      "sha256": "e2425fa6846bb3c09ceeac824b7be47dad2ac248c9bc14da80e159f3b0a27cf7"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-000--time-4.json.gz": {
+      "bytes": 113255,
+      "sha256": "a52344b0148cc77fcf60acc7b93c342e7ca1f18444df8477a5977560a43d3522"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-000--time-8.json.gz": {
+      "bytes": 2524,
+      "sha256": "3f592af6972a5c57b01c9d4c15e64a1eb03bcb806bc3a3d33a13dd88575a27b9"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-001--time-12.json.gz": {
+      "bytes": 2741,
+      "sha256": "5574bf5488cc00a4bab82e6f09e359c2353ead1eade3d5ea85d491e09a941758"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-001--time-2.json.gz": {
+      "bytes": 142981,
+      "sha256": "1b242c3a5eb7a13eebe31f25bd8d89338eca33beeef6789d8860fe92e8499173"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-001--time-4.json.gz": {
+      "bytes": 2123,
+      "sha256": "37419e00844442b0bf5c9ebe6ff0516250512b3b596eea8a8c5fd6a90dae0805"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-001--time-8.json.gz": {
+      "bytes": 83764,
+      "sha256": "20bf03dfde7f688b3399aec80a986253cc8d6029aa9273320fdf5bd26bbc20b9"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-002--time-12.json.gz": {
+      "bytes": 2751,
+      "sha256": "df70365b1141d1f9821643a628189cb4a6daa7d4be4e611d11bf379f1b97fa5b"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-002--time-2.json.gz": {
+      "bytes": 171222,
+      "sha256": "d767ef143f8b75d6add5000951e1bcdf1df8c83338867cf07a5aa1700c4841e0"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-002--time-4.json.gz": {
+      "bytes": 2062,
+      "sha256": "6e405df8d30491a58faf7b6a4705c0b99d35f8c2d1e93c1c9db063ca282a4ea0"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-002--time-8.json.gz": {
+      "bytes": 94417,
+      "sha256": "7ce82f8cb4888977d12c124541cd2a72f7936302393ef05a5dbe1d55c7131cd4"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-003--time-12.json.gz": {
+      "bytes": 2744,
+      "sha256": "fa27e6f64837bc4c6fd93a0ec44799603e3089c844043146f11467675c058602"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-003--time-2.json.gz": {
+      "bytes": 129765,
+      "sha256": "0a244b7081d3e9e8a1982e1d76eaaa18baca6c2ca4a3ebfd9c284383644015a0"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-003--time-4.json.gz": {
+      "bytes": 2086,
+      "sha256": "3fe7f618892912893825c419f58254172d3e4db7426be7f35ca53c609721f38c"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-003--time-8.json.gz": {
+      "bytes": 2564,
+      "sha256": "261b9b57ccb5220aaf8d7f28f90034d563c43aca31a288e8849bc4697cd19661"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-004--time-12.json.gz": {
+      "bytes": 2858,
+      "sha256": "da4bebbd5ddcd4e419b05fac62f48b44dc45ba0b6624d372011d4aef18f3da49"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-004--time-2.json.gz": {
+      "bytes": 171318,
+      "sha256": "76369adad517d1dd27d475400881a38d15674c68d3eba49233792cc878f2c44e"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-004--time-4.json.gz": {
+      "bytes": 2164,
+      "sha256": "bbc0e4ecebf0940ff943bde21fa92035a15979e79ec0e6fcdedb3a1856881b31"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-004--time-8.json.gz": {
+      "bytes": 59656,
+      "sha256": "9ee7ebfdb3bc1112fad7f242a51115865755352244bdefcef1afa6121d1f86df"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-005--time-12.json.gz": {
+      "bytes": 2800,
+      "sha256": "c8105da4fecafd9ac1796679be375f9cf0285bc98515be5ed8b309562bb3060e"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-005--time-2.json.gz": {
+      "bytes": 169772,
+      "sha256": "fe7e988fc6e6c35f3db63e8f07fa3a6faddf1807c11a7f735903684a1ace61dc"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-005--time-4.json.gz": {
+      "bytes": 156263,
+      "sha256": "25d25d917bcec2d421371db6c4ed93118f6cdd7c54bc385110a07726eb581002"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-005--time-8.json.gz": {
+      "bytes": 50882,
+      "sha256": "c3faa999ce0c5122d6736e669df7d62b594047f86007a3a037cd0ee88259f7cc"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-006--time-12.json.gz": {
+      "bytes": 65652,
+      "sha256": "00e6fe964da437ed0c5c1d9ac04b05711bc9ee8aa1836a2c19f1d852878b413e"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-006--time-2.json.gz": {
+      "bytes": 192584,
+      "sha256": "a95528628629537cb69e233e04deccad6d196f9bd06e1250dd149ced3adbe842"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-006--time-4.json.gz": {
+      "bytes": 277524,
+      "sha256": "5b57d6beabb8b7c4f02997b2942d6aa25fb86546b95d1cbf7a7c09fb84d0e39b"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-006--time-8.json.gz": {
+      "bytes": 64385,
+      "sha256": "0c8184b7b1725ee5ceadab4d6fb9315ea5a786519ad46b8de58bf5f426e15e2a"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-007--time-12.json.gz": {
+      "bytes": 2838,
+      "sha256": "54a7b6c06988d49766cb4f6c06b4660deacb6e1e37f8073ffce44b1be33385f8"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-007--time-2.json.gz": {
+      "bytes": 157509,
+      "sha256": "05f8a98f32c2f5a10ba6d5fa8361c96064c54562edc23647bb12799d9ec50223"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-007--time-4.json.gz": {
+      "bytes": 139384,
+      "sha256": "3b1ff6ad5bae71074c0d7fde55d9b213333d355ebdc8435de6df81c1b2a522d8"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-007--time-8.json.gz": {
+      "bytes": 66262,
+      "sha256": "4a366898d67c98dd4bc8d1d48fa33b69be25bc173491b2371d443e260fe14cad"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-008--time-12.json.gz": {
+      "bytes": 2701,
+      "sha256": "69946b8adf1b61234ec6cecbdc54ce3a1a5e407ce6435db1e4d7e5ba5208faa5"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-008--time-2.json.gz": {
+      "bytes": 153785,
+      "sha256": "d3464c70f86edc4b70fa3fbbacc7c8d08ff2de9904bcd1ef309704ea6aafbc96"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-008--time-4.json.gz": {
+      "bytes": 79756,
+      "sha256": "126867a535f36cd816dbfeb282645c6723e11b929fffb7ef65f3069cb72362a9"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-008--time-8.json.gz": {
+      "bytes": 2469,
+      "sha256": "b7234d24605bb6dd8885a240e7bb80a9fd797d4e01ef3849a96c3704673ba4dd"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-009--time-12.json.gz": {
+      "bytes": 2681,
+      "sha256": "9c844a46e65b6d03d032e54fe3d0e875f48fdf251c17451847ccc81fe1ba3237"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-009--time-2.json.gz": {
+      "bytes": 163536,
+      "sha256": "ecdafd7c882069c0cd82a5a5784d9b98b48fe9ee1de05880f3e81f038bb4a7b2"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-009--time-4.json.gz": {
+      "bytes": 112730,
+      "sha256": "353c824b843482b1847cf94bb41053327fda81a2a3994ceb83868ea73a6cdcbf"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-009--time-8.json.gz": {
+      "bytes": 85993,
+      "sha256": "7f398a6cd52f5d6b9019ac249e3e21ee2e586c415ba2b65e76f24bb036b102d4"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-010--time-12.json.gz": {
+      "bytes": 46043,
+      "sha256": "3edba57f80cfc289e32ead2b04b569d8251deae4d5b69d872cdc42c4bf362cb7"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-010--time-2.json.gz": {
+      "bytes": 1644,
+      "sha256": "e44373a325e9bf7357d935604f8dc5f28245977b594214f36d62cf9b650ede7c"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-010--time-4.json.gz": {
+      "bytes": 107877,
+      "sha256": "6320a3650688ba17aa418e0c750739f45e3f7af133d537949b130609bddbc3b0"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-010--time-8.json.gz": {
+      "bytes": 2633,
+      "sha256": "3193a9613d6909e296f915de24a1541bb31486db32490d7f6a380a44ad74b805"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-011--time-12.json.gz": {
+      "bytes": 2743,
+      "sha256": "4e77c593dfc854ceb05dcf8a32dd79c008df0a9b57d5c4f488fb522c33cbbd30"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-011--time-2.json.gz": {
+      "bytes": 188652,
+      "sha256": "ecfcbbbb6370986be454bb2ffbcad4bd60d4d8f43c40f3d010445523f5246ddb"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-011--time-4.json.gz": {
+      "bytes": 2115,
+      "sha256": "59d221ceb01579d2c0ef4f60fed59ac0ba16cf3b65b694beceebd32dfbaf2cde"
+    },
+    "package/recovery-inputs/windows/consequence-v1-mechanism_diagnostics_only-011--time-8.json.gz": {
+      "bytes": 2590,
+      "sha256": "be9b099e5a89c5028126f2ebf77e213eeb1f4e4504c7e2c9fb0be7cae2311ccb"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-000--time-12.json.gz": {
+      "bytes": 2678,
+      "sha256": "a4586f9ed26ff61a908ffac1bf6cd047d2d2d0b4168b05dafb28b900f862a202"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-000--time-2.json.gz": {
+      "bytes": 157600,
+      "sha256": "7fa3f93f31251b4d8ccbc39e889412355000ff62d135fabb912fd6535925087b"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-000--time-4.json.gz": {
+      "bytes": 2033,
+      "sha256": "ce6db77c84ad9683a5b8c816d0c846ece72e09d4494df12460a7c14072d283f2"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-000--time-8.json.gz": {
+      "bytes": 73173,
+      "sha256": "1afc4f493c9b140a70ac1e27b7845826af9420abbdaef8ec544ad879e8e29131"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-001--time-12.json.gz": {
+      "bytes": 54213,
+      "sha256": "08ac122491699af28798185ba581a07be6c61475736e84be9b33d22f40045b36"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-001--time-2.json.gz": {
+      "bytes": 178829,
+      "sha256": "7b6c0df1c49db7f2aaa6e4c1d9bb5c23886faac4267a798d7e73fd4970cd0d3c"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-001--time-4.json.gz": {
+      "bytes": 108322,
+      "sha256": "ce1d26dd803acd8a6f3f0e000c72aea7cde9b38a0e03b14f4ac9d109d9ef3592"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-001--time-8.json.gz": {
+      "bytes": 158788,
+      "sha256": "ed6ca4b0f371579d4a894826d3b65179e431c778259e0ef8d09fc77e2f12489b"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-002--time-12.json.gz": {
+      "bytes": 2754,
+      "sha256": "0e0eaa1caff52c0e3078f5d282d7c7bfa5daa242c1f7e74b12f80f830e2c9821"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-002--time-2.json.gz": {
+      "bytes": 163640,
+      "sha256": "5338c32744111d62e1e1cd1c7189de6c1b308e53c09d50a8615e15315039d525"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-002--time-4.json.gz": {
+      "bytes": 2141,
+      "sha256": "b8115e6290711eb70cb931fe7515716aac74098b0f6f5b79a2096238f33cc44c"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-002--time-8.json.gz": {
+      "bytes": 2572,
+      "sha256": "997d03625c0fd02b401659740b7b66d9f33656b0785457c30094a9d2f9ddf074"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-003--time-12.json.gz": {
+      "bytes": 2846,
+      "sha256": "b1160c95cc9bab5be48ca1a848797ba9b4e363fed1ad8d6bd7e1e3c0725c7d80"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-003--time-2.json.gz": {
+      "bytes": 205529,
+      "sha256": "a8de2f3243641dcad8ec5f7c86d9f496dae82ab0fc381f46820e5df4da6025d3"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-003--time-4.json.gz": {
+      "bytes": 184125,
+      "sha256": "e638afb365932c636cc392f8d22a56cf236ed5fcca43d5fc6e83bdfaab80711f"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-003--time-8.json.gz": {
+      "bytes": 57962,
+      "sha256": "67cb944ceb1bf2469e77bb110660674546da760e64a53262514e3bedced11770"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-004--time-12.json.gz": {
+      "bytes": 2726,
+      "sha256": "1a04731f35cf0116a182f8780e363dc86554cd31b0ad6d4015f6da80aa4b02ae"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-004--time-2.json.gz": {
+      "bytes": 141089,
+      "sha256": "ade0b1f2d9c31a56f0cdea2c88a71877afc924a7fe2a03c54a9355ca4a9128b2"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-004--time-4.json.gz": {
+      "bytes": 122877,
+      "sha256": "3627ec7e17321ab58f4c474f644190c51d82f8b35ea841b5b0d8222636952ca3"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-004--time-8.json.gz": {
+      "bytes": 26372,
+      "sha256": "c0b5c19c6c920732b80a6616d2c2b5c9cd2faa98a28190bf829f42b0ccda9ebd"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-005--time-12.json.gz": {
+      "bytes": 2763,
+      "sha256": "ae9b5be5449151935d651853127502cb6066a1e0677b86ff50f0407e78e798ac"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-005--time-2.json.gz": {
+      "bytes": 168880,
+      "sha256": "2d3f119df24fd3e27827d23c9b878f6ec30537ca83493dcf6daa167ed3edb786"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-005--time-4.json.gz": {
+      "bytes": 169605,
+      "sha256": "f6e146643980e9fff0976d5be4864d4c0dc4a896e4e7ff80b39eb6e1739e64d1"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-005--time-8.json.gz": {
+      "bytes": 2484,
+      "sha256": "bfa4a9024eb56d3947c82041d22331cd2450ad5255da9161c385f90d5c96831d"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-006--time-12.json.gz": {
+      "bytes": 2855,
+      "sha256": "35597978832e75005c9f1e13fbd2bccaf90decc984c368ae481a7cac2d7d7446"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-006--time-2.json.gz": {
+      "bytes": 171368,
+      "sha256": "97b3f741b424af9cf625c481df305157586f81b2032c286633cb448c304a532a"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-006--time-4.json.gz": {
+      "bytes": 68997,
+      "sha256": "c6792214a0e4ef03a23f19cd15f3e5b18193aed900fd3d5b34f9410c2bafd647"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-006--time-8.json.gz": {
+      "bytes": 60637,
+      "sha256": "fdb67eafd462625a125cbd44b517c1e48cf3d400887ec733f84ccf3ee412afe6"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-007--time-12.json.gz": {
+      "bytes": 2819,
+      "sha256": "5e1b81af8fbdf9f63c14e5a5c81cb41b31a2b4306743e834fa7af38186ba90f8"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-007--time-2.json.gz": {
+      "bytes": 178333,
+      "sha256": "e37a759ab734cc109a7f12245f48eece1c17565447d79709c3a733b006b93b11"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-007--time-4.json.gz": {
+      "bytes": 2067,
+      "sha256": "4ce56dbaaf367325d706fc383c47d2af6cc472e00edacf851d4ba290465df3f8"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-007--time-8.json.gz": {
+      "bytes": 2559,
+      "sha256": "7a7f5d43fb07bbbc32991c0f4c3bc52ebf47e793a9162afd850a0d6bc3677b5a"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-008--time-12.json.gz": {
+      "bytes": 2791,
+      "sha256": "00c05b0430ba4038ebe478026b2c3379d2746165722e3859afd1f094cdc27aba"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-008--time-2.json.gz": {
+      "bytes": 162369,
+      "sha256": "f6edee0573b7807e7f06c33f6eccdfd32eef8b6264aaf98330b0fc74695209dc"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-008--time-4.json.gz": {
+      "bytes": 2191,
+      "sha256": "33749c31936f4d882b1c394340b47a89adbd17cd9dc83680f58105011d83e0ff"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-008--time-8.json.gz": {
+      "bytes": 57420,
+      "sha256": "57f9a5d028381f798cd5989aa71fc992879dd06de390d0e7f7fe768e477c5a07"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-009--time-12.json.gz": {
+      "bytes": 2786,
+      "sha256": "8502c3e40e148971c350acf3dbd22d4299c41a57be826ac54248300676ba2307"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-009--time-2.json.gz": {
+      "bytes": 169545,
+      "sha256": "0bd4cdc1e18ddc11fc561ca0730e9257c564be863d85f33a4e66ca86dc3947d7"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-009--time-4.json.gz": {
+      "bytes": 144144,
+      "sha256": "9bbe177a1e05ffe2cf7b623e6e579ab62a7e6859388cdc49ec3d0df0ea1dc33a"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-009--time-8.json.gz": {
+      "bytes": 2707,
+      "sha256": "6c172cafbce9e68ef2c815cacef10611c2ea22ba698ce9f74ad305ccf10f9e8e"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-010--time-12.json.gz": {
+      "bytes": 2820,
+      "sha256": "1631cdb856cb4e30d444874aa1465257afdc83f682708fc70e06ded13ed062f6"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-010--time-2.json.gz": {
+      "bytes": 175347,
+      "sha256": "d8b3758281a759bca93294f4c583682fe118308bd11b4b8f2e94846bfbc193b7"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-010--time-4.json.gz": {
+      "bytes": 117158,
+      "sha256": "c969006218c4b9ddf9e1245843d3159817bc0b4311e60b5992e1d400a61421ce"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-010--time-8.json.gz": {
+      "bytes": 67294,
+      "sha256": "4ff11f99a88281e9c127bea71141e70d603e86bc9b2c9876f365231f41de5eb8"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-011--time-12.json.gz": {
+      "bytes": 2895,
+      "sha256": "610c8ed3ce38646f4693bb0a294a2548a64b1886dd9198a577ee3b9b5f398065"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-011--time-2.json.gz": {
+      "bytes": 192735,
+      "sha256": "f3428d2923e7b5a46183c076e93fd7348f1d6399265872c8a365615d38e90372"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-011--time-4.json.gz": {
+      "bytes": 2085,
+      "sha256": "88cc78484a711210ab935a805830263537a7827d0eace616c276cd48f0395455"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-011--time-8.json.gz": {
+      "bytes": 83293,
+      "sha256": "d698830e6f98fb7fc1ac45c934e6a3eb5cac50b24763ea0f605e9370b64eab0e"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-012--time-12.json.gz": {
+      "bytes": 2776,
+      "sha256": "3bd2c233ea94c9bf4825370f88b89d4e7a38350986c5b1e959a4fd641aa17023"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-012--time-2.json.gz": {
+      "bytes": 179779,
+      "sha256": "600e34f11768db67e2595833b83189bd221b83c3ddd357295a00d035205c3b18"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-012--time-4.json.gz": {
+      "bytes": 106262,
+      "sha256": "c180a5a075c2a38090c97d1acd63770f08ec3fea40f3b1a794330c9df66e7803"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-012--time-8.json.gz": {
+      "bytes": 2610,
+      "sha256": "6abe97f77080b8bd228b0b004f802bdbeedcd0a153de7459113919caaa0a6f7d"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-013--time-12.json.gz": {
+      "bytes": 2789,
+      "sha256": "077c53af12e4f2e1487305abe26aa9ed193adbac7251598b7a977196d5a5be18"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-013--time-2.json.gz": {
+      "bytes": 163489,
+      "sha256": "c08b2c52998be7dc7d1772edd70f0b44f1ffc6c0fa6a429decb95770e72c4f7d"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-013--time-4.json.gz": {
+      "bytes": 151014,
+      "sha256": "3846dbfb808a2b147a910005f58d3ce6eb3403ffdede9a7bc302a967b7f6ed9a"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-013--time-8.json.gz": {
+      "bytes": 163261,
+      "sha256": "9d137145f5a200185f9febd5ecb5561f255cf34b51f47a943b52dc484a2b9458"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-014--time-12.json.gz": {
+      "bytes": 2775,
+      "sha256": "9c1c0b267eacd0e1609e3ad956ff3e84fdd91e2016ddd2c882ae6edb3f1f513d"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-014--time-2.json.gz": {
+      "bytes": 171485,
+      "sha256": "3d45090b52026a669315e159cb15a5bcd96c19f211a3856e9df38dd7878969f6"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-014--time-4.json.gz": {
+      "bytes": 135734,
+      "sha256": "d65198b18b83504b1a759a5508559cf39e9a68411ce2d631bc6e7603a08ad2f2"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-014--time-8.json.gz": {
+      "bytes": 2426,
+      "sha256": "ec5b55aba5c3e4be5e4fc555c07c19f87fb8eacf7cd39f6f496dd7e526066b9b"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-015--time-12.json.gz": {
+      "bytes": 2785,
+      "sha256": "494862a67abcbef8d01f9207f682502b47b65eb8a05e2e60f356a4672bbcf056"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-015--time-2.json.gz": {
+      "bytes": 171142,
+      "sha256": "4a26f83708e6783384ac42f86efeb8bfd782ceae728e26dfbdddf5707a83251f"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-015--time-4.json.gz": {
+      "bytes": 137645,
+      "sha256": "ec226104f46ce9d64226d5e634f752c7948df48a0867070128e24d3a01849dd3"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-015--time-8.json.gz": {
+      "bytes": 2444,
+      "sha256": "72ce162545a4b261a83308ca78d78c522b3a6e3f6dbcdf2dab1ed325a9719946"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-016--time-12.json.gz": {
+      "bytes": 2690,
+      "sha256": "7bff3ac14512bde72aab00ca330589b2b3f75c39c36c2bd4bc5e5aa02a64c712"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-016--time-2.json.gz": {
+      "bytes": 143017,
+      "sha256": "4b77681be8872248d13f19b1c97ef4cee791b44665bcbdf3f2a10a0d35e96ea0"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-016--time-4.json.gz": {
+      "bytes": 2076,
+      "sha256": "e37e02fd3c58f1793869c979cd6f5a238aec45eb675265401a33efcc9dc9af92"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-016--time-8.json.gz": {
+      "bytes": 37095,
+      "sha256": "028ed7dccf0de960603bb4ac6e2162f9109e439290a9f6af323c85ce9f81288e"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-017--time-12.json.gz": {
+      "bytes": 2799,
+      "sha256": "0fe8be0b6c341b1099ba0a4c5eec8ebdb46f859a30b74591079a5acc2bfab48d"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-017--time-2.json.gz": {
+      "bytes": 169917,
+      "sha256": "d56bdb996745082a947ce644d0448f5fb11f519c444c1f98474739f2030eed60"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-017--time-4.json.gz": {
+      "bytes": 268092,
+      "sha256": "d05047d47a943e013e6b3fb297a7a2d9beec717d921902fc27a3d0ef967f5b31"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-017--time-8.json.gz": {
+      "bytes": 65360,
+      "sha256": "94d9391ae2879e11e3fb2ce48975f2c95dca86610ed14da0e8da70f023aec66b"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-018--time-12.json.gz": {
+      "bytes": 2778,
+      "sha256": "96cec5429999e3e47d13aa4d74ab2aa491eb9de94ffbee29b7ad097aa152f7f4"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-018--time-2.json.gz": {
+      "bytes": 196852,
+      "sha256": "9e6a1040cc04a9bd5c6bc6ad70b79adc6ffdc6bcab00a1705093aa28a4f65146"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-018--time-4.json.gz": {
+      "bytes": 286893,
+      "sha256": "b20a32a9ee424b269d8db9f1338eb4f074c01bec76c26af46cbb92f80a23bdeb"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-018--time-8.json.gz": {
+      "bytes": 2488,
+      "sha256": "71e7d4c8989994fc941e6edc3064179820b53d6a2669e17d9b1c736e63bd8598"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-019--time-12.json.gz": {
+      "bytes": 2867,
+      "sha256": "01ca0c15eccae947a6ee3d5ed0241b4e8acbca74ad2d64fcf0435ddc9c261382"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-019--time-2.json.gz": {
+      "bytes": 173378,
+      "sha256": "12b21c03d35e0105f8fcb61b3daf3b57b1b505c9394474bee00bc7da216d9981"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-019--time-4.json.gz": {
+      "bytes": 157575,
+      "sha256": "f79906b19d03db7b9ead4adc0598e628b850c5715f12a0d0683daf20b22c1b5e"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-019--time-8.json.gz": {
+      "bytes": 70876,
+      "sha256": "e1d9f5b23a2e30a38561dce6540ed173613d72948da86e2943875db4db5d1d9e"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-020--time-12.json.gz": {
+      "bytes": 2760,
+      "sha256": "d60ca2528ae9063e9c82503a2adf56a80087cf55953e5961bfb990f44d8d735a"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-020--time-2.json.gz": {
+      "bytes": 169143,
+      "sha256": "2271a70b981e18b9d5972243cc0336e4f096101475a9d14e6201456341bd1cc7"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-020--time-4.json.gz": {
+      "bytes": 172860,
+      "sha256": "f085ba6e277cf0ca9bb76de79450da7b4ef49eee1a5d301b65548486a0fee342"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-020--time-8.json.gz": {
+      "bytes": 50163,
+      "sha256": "dd5382f81ac1ec6ed8f5968350ea31d531c8b3a37b4e4ca7b2a8c62f3d0f553f"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-021--time-12.json.gz": {
+      "bytes": 2731,
+      "sha256": "5bf7b0b1d4cc9b275004b25568335280046442f40800f8a80616783304022141"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-021--time-2.json.gz": {
+      "bytes": 158679,
+      "sha256": "98b9f24ce898ae0fa9fec5e824a5db666e8c6dc64091345c344011b190ebb64b"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-021--time-4.json.gz": {
+      "bytes": 114682,
+      "sha256": "0f7134c1d3e409c08a3bb53ee0ff8707eaf11c6bcad1d11f9ef0425b5beb06c0"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-021--time-8.json.gz": {
+      "bytes": 2673,
+      "sha256": "7c5b299e1ef66fbc120be65ec3d281828bfb93a5e5d5dd0984d40f577ac6b23e"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-022--time-12.json.gz": {
+      "bytes": 2803,
+      "sha256": "7b77c7d817447b12d41e40ad19a1cf420c862bb03fa2efbb38c99e752ca34e4c"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-022--time-2.json.gz": {
+      "bytes": 162317,
+      "sha256": "586c39af0d2e7ad801b86dab96beb4a1e988a40e1b021e6274c3fd532556d807"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-022--time-4.json.gz": {
+      "bytes": 169670,
+      "sha256": "4be54ef345fb65707b62f45dc09a8a24b41586be9f61eb989feb082d0247709c"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-022--time-8.json.gz": {
+      "bytes": 154838,
+      "sha256": "d85c2cb1cf5cd6116dd8eac71e30216c4e3381b85d0898b7b6ec86d747f6672f"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-023--time-12.json.gz": {
+      "bytes": 2713,
+      "sha256": "c5bad378284e654e27ef14fb3471b4d0569dfedd26fe9b6ccdf08cf442943d7a"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-023--time-2.json.gz": {
+      "bytes": 158805,
+      "sha256": "e360f36b4071ebf205d91e39128ef6e3de8700fd8dab7a2af94a6d967b3237d3"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-023--time-4.json.gz": {
+      "bytes": 250514,
+      "sha256": "7ee8b57aa256c15fe211b2e340c2f80b7bf9de81562875b31aec87daa9b4342b"
+    },
+    "package/recovery-inputs/windows/consequence-v1-offline_prediction_gate-023--time-8.json.gz": {
+      "bytes": 63922,
+      "sha256": "d4c9aa35fd484f62f95dacdef786ee6dd550ff725e13a85d35c27fbfba092a18"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-000--time-12.json.gz": {
+      "bytes": 2786,
+      "sha256": "4dddbf775959daea43e0080953fda99f0c48b93c3f630fb64d442f666ccd3a9e"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-000--time-2.json.gz": {
+      "bytes": 182038,
+      "sha256": "1b68e48336a6b7a51586663e8d193e8cce2474e796feb67c8b66010ddc922814"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-000--time-4.json.gz": {
+      "bytes": 159128,
+      "sha256": "1ec63844e3be3eb28f9900705577fe788be402431790d1758ed205900fd6377f"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-000--time-8.json.gz": {
+      "bytes": 80486,
+      "sha256": "df1a88ac24e50dc880472e9310557e62ef635ac9b2aa4840de2dc4724b5d648d"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-001--time-12.json.gz": {
+      "bytes": 2770,
+      "sha256": "ecf9ddba9b0d7d357b11557532ef13d121b0beefb8adc30d8ae137e7b2df53c9"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-001--time-2.json.gz": {
+      "bytes": 167882,
+      "sha256": "b6d65c6b60a7e0c0f332ce720441dd168ede18ca8f78ba95cdf7bf7f4019a938"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-001--time-4.json.gz": {
+      "bytes": 241195,
+      "sha256": "87e2605e8cfc52e1ab6c842139c4b6ae07050ffe886f42a977e8f102c4f777d5"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-001--time-8.json.gz": {
+      "bytes": 112003,
+      "sha256": "df8a3ad64cada0b793eca057ccc6a720798ba5b35aa8eddda0fd721b22a39d23"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-002--time-12.json.gz": {
+      "bytes": 56587,
+      "sha256": "a9fbcc7b92661315d7606e83d795c20ea48845be8fdb645f020da7ab8643a2ab"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-002--time-2.json.gz": {
+      "bytes": 171939,
+      "sha256": "2bbe430104d4ebdc48ad882a53a2bfd379847ef82919d03fc438ee582b1be052"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-002--time-4.json.gz": {
+      "bytes": 2135,
+      "sha256": "3110597959c87e4b1419418849baa13a16e0315b28f9b3fa538a1c216778b7d8"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-002--time-8.json.gz": {
+      "bytes": 2549,
+      "sha256": "dbeefda701d6f18af65ac24c364f3431d6786bd7aed37eb693e8eec2f608c5c9"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-003--time-12.json.gz": {
+      "bytes": 2826,
+      "sha256": "9de543bf15f066f48776900bd04e2a9a099530d5dea0245217111b25717ac0b6"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-003--time-2.json.gz": {
+      "bytes": 1627,
+      "sha256": "96139acee9ca13d990338f38fce507f589b4a17beb8050cebfb994414ab08046"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-003--time-4.json.gz": {
+      "bytes": 259641,
+      "sha256": "46a010251da27540350ec31174b65f1f01c87b97dc3207059be53e65016411a9"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-003--time-8.json.gz": {
+      "bytes": 2535,
+      "sha256": "2474456cacf697498306e384165cd41bebfcce89bec146dc88fef18ebc6c6c3e"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-004--time-12.json.gz": {
+      "bytes": 2772,
+      "sha256": "36e7463761833559e01680d10a77a70ef75e0266f03cbc48a8ee34b8633c8869"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-004--time-2.json.gz": {
+      "bytes": 191206,
+      "sha256": "38c8f7f3ca7ae82f7425ba1d7131566f4df8e98e1055d5a6fd6ddc6bbe78b925"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-004--time-4.json.gz": {
+      "bytes": 1990,
+      "sha256": "a3913d02288dec0982898e617988adff4068d6ca548ddaefa2cd0de948ba0e1d"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-004--time-8.json.gz": {
+      "bytes": 82004,
+      "sha256": "05e0b2c4163d3ddf11c50b502be729fcfed03dd74f9670518aa3bf8482477133"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-005--time-12.json.gz": {
+      "bytes": 2834,
+      "sha256": "a0bc74bdc1a9f532230da1a2c47de966f45cb53799669bb1da79d5beb6c9063e"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-005--time-2.json.gz": {
+      "bytes": 175058,
+      "sha256": "5b78bf4df8bd68226b08c8c1df7eabf7a67ef947a33befcca48bf912fc1a0c7b"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-005--time-4.json.gz": {
+      "bytes": 108085,
+      "sha256": "e565ff6e232f4ac1b0a1c5bf73610bbceba3534696d7259191ea641b7a8e235f"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-005--time-8.json.gz": {
+      "bytes": 77098,
+      "sha256": "d165abfc1fc21caa454e929043fecae5fede05ccb95b84297d863998f0f9dcbe"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-006--time-12.json.gz": {
+      "bytes": 54946,
+      "sha256": "b50ffe888b9ecdbf529e593a31cfc196d77fcaa1bf5b7d65c439d3628767760a"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-006--time-2.json.gz": {
+      "bytes": 176787,
+      "sha256": "ad813e1b74131b5f5eb8679d073f206f261272e0a3398838cf9ddd0495defb83"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-006--time-4.json.gz": {
+      "bytes": 120376,
+      "sha256": "3331dc7e3dfded76cf390b65e294e02b72eb345948696a39ada9f12b4976d4a9"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-006--time-8.json.gz": {
+      "bytes": 80692,
+      "sha256": "8223d8c8fb0a73f242d8147c85c0e5d76dd26e2a01027cc6e1b70c0a3f341058"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-007--time-12.json.gz": {
+      "bytes": 53980,
+      "sha256": "45016ebde00d085618f3be9222f3ea9a09f956a4bc79eda05c421a3a6432c23a"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-007--time-2.json.gz": {
+      "bytes": 164244,
+      "sha256": "5fc35e0797b8859f5e9f8ffbbaffac0442b376c2a75b8abf04ae32235b863fc6"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-007--time-4.json.gz": {
+      "bytes": 2007,
+      "sha256": "16d998c76279bfbdbd72efe96bd339159a7831bd88c543886ec806dae968e4aa"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-007--time-8.json.gz": {
+      "bytes": 2715,
+      "sha256": "4e5f9c27ee1905d73024522707f9cf11a311de24a8bf096cc67824146b0feac2"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-008--time-12.json.gz": {
+      "bytes": 2793,
+      "sha256": "d209e6b083e62c2604e6ef312b0dfa39c9bb97c73806e99c2969f897f17658c7"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-008--time-2.json.gz": {
+      "bytes": 176428,
+      "sha256": "a23ca25b3f88261cfbba6c38833f3363545c82f17cb348ef8fd740619000f3d0"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-008--time-4.json.gz": {
+      "bytes": 288726,
+      "sha256": "895c14ea02796042659c941957901d265cbeb3f217a3424a17a916151798cf5d"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-008--time-8.json.gz": {
+      "bytes": 78861,
+      "sha256": "a3b680b7bc4fbc6531a67aedb82eb43ba78d416d7cf5117f794ef74dcbc0bc03"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-009--time-12.json.gz": {
+      "bytes": 2834,
+      "sha256": "2d01436bf9079147047711ff594386afd627056782895f65eb7d879472ee87a3"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-009--time-2.json.gz": {
+      "bytes": 183673,
+      "sha256": "d2593de707720191c75b3d6a35571ee785acb98a33a09dc6014a14d5096bc0a4"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-009--time-4.json.gz": {
+      "bytes": 275630,
+      "sha256": "ed2413d461630fe2e75f1cc81eb6d52bb2e9bfb940607468f82ae367bb7e4e0f"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-009--time-8.json.gz": {
+      "bytes": 70966,
+      "sha256": "4217e1305d3b4bb0fb86d208dbf5a330de872493a9f2f33d973e3b6eddb1adf1"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-010--time-12.json.gz": {
+      "bytes": 2903,
+      "sha256": "b7b3af589a615c3c830f545aae6185cfbe3e9eefb9657875354bf65ea7f89612"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-010--time-2.json.gz": {
+      "bytes": 168431,
+      "sha256": "29a67c08255e37a8d216b935db0310bb77381777bdf9986605cfc33f0952d9dd"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-010--time-4.json.gz": {
+      "bytes": 271330,
+      "sha256": "d93fe1944563974c18f651820c0497a059b9e6bc108394703b27d6ef07737a18"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-010--time-8.json.gz": {
+      "bytes": 113498,
+      "sha256": "e0d44edb370bb3405b0ff54728f8bb16aa484b08b0bc0d39042980e59797c5c9"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-011--time-12.json.gz": {
+      "bytes": 2752,
+      "sha256": "d71b22ffb45580dc36f2332fb5dd43add3906873ff9af4ff937aea83fdeea6f3"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-011--time-2.json.gz": {
+      "bytes": 162873,
+      "sha256": "88c12c80625802e05503fd65c1ed12021b28d42473dda6e785f1dc4321449020"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-011--time-4.json.gz": {
+      "bytes": 257151,
+      "sha256": "25d15f55109637ef6f72288f9204c72b3dbffbc4f7a98b87e7e7bae3fc74e219"
+    },
+    "package/recovery-inputs/windows/consequence-v1-uncertainty_diagnostics_only-011--time-8.json.gz": {
+      "bytes": 2560,
+      "sha256": "51cc3bdfb0f20ccb33f6c605449dd277bfdf88c1bc02760aeba59ebc3b55fc91"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-000--time-12.json.gz": {
+      "bytes": 2817,
+      "sha256": "4cc6a762f62afc6b85939474e3c6c01123970d271bb3e15000ebaf8dac284bbb"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-000--time-2.json.gz": {
+      "bytes": 161874,
+      "sha256": "e37db2b56d3ecd3abc91170b6d5dff79bbb4b0aad6793262ed42df2279aa7905"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-000--time-4.json.gz": {
+      "bytes": 265493,
+      "sha256": "dc32a279e4045cd198e087e5acc92085150de552fd380813bcbacd1bdeb0e944"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-000--time-8.json.gz": {
+      "bytes": 107724,
+      "sha256": "a7f27760a8779a396dd3eaf74c115fb265037dd2763676fb6a8ef5d172e0282b"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-001--time-12.json.gz": {
+      "bytes": 2831,
+      "sha256": "3a8debaed0b7b3353067e7b551768ecb231199b797020ae38d6db8f6180eda6f"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-001--time-2.json.gz": {
+      "bytes": 1656,
+      "sha256": "8eb7390f51295435d3124c18fb5f99616de4de6ca8ff60e014d2ab8e62e40b52"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-001--time-4.json.gz": {
+      "bytes": 158734,
+      "sha256": "ff02288617202871538bd2c7ce8030e64404583bd682cb3f3822357690066c0c"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-001--time-8.json.gz": {
+      "bytes": 126421,
+      "sha256": "41e5e7a87c064beb9d13d1094756b13dc7343b978cc72441f2ef0ebee0258b67"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-002--time-12.json.gz": {
+      "bytes": 2736,
+      "sha256": "485d4bd711ce24a2378cc615215bee14d8a98149807ba62a9671d0901f7fbd0a"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-002--time-2.json.gz": {
+      "bytes": 345573,
+      "sha256": "09ecb8656b18b65ccccaf76608e0b3c92a49fcc882fa91ed37141839864ad12e"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-002--time-4.json.gz": {
+      "bytes": 141028,
+      "sha256": "081360b100e52d8711de60e383f4d6fe029bd9be3f7b72dd74cbba7be139a853"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-002--time-8.json.gz": {
+      "bytes": 44384,
+      "sha256": "251009b1d498820116da7bbcb4caa4f3261b3fdc46800344ce677c209c893309"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-003--time-12.json.gz": {
+      "bytes": 2740,
+      "sha256": "1eb4d351887b670d46eb76d59262367e40200d5d3f46f75ea0ccd9e746f5d7d5"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-003--time-2.json.gz": {
+      "bytes": 159848,
+      "sha256": "2cba0ad4faa5dba3b074dfcb863bee8e84d8057df167e0131daa7251ca772072"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-003--time-4.json.gz": {
+      "bytes": 1965,
+      "sha256": "2033d3a450feefca889079b2f5c534d1a3953a3087ae320997339a971a36eae1"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-003--time-8.json.gz": {
+      "bytes": 2632,
+      "sha256": "396a51976c2392ff4b5fbe4f23045fdc49c6a83a21efe87b011b9dc2e3e00b1c"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-004--time-12.json.gz": {
+      "bytes": 2764,
+      "sha256": "e6ec2fb3ef82c1bb1e5cec54c36d95a9b5fe7bd7ac0bba2004c81ff30bcef6fe"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-004--time-2.json.gz": {
+      "bytes": 125238,
+      "sha256": "dc08e6a5633a661e7072f0782aa00514827cf5c032ca22e2d6097cd452631ea3"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-004--time-4.json.gz": {
+      "bytes": 1992,
+      "sha256": "a5d20e2c1c11aed9bab06b0178fa74f810c4bf6244bcd4f58cf4b924e3faf11b"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-004--time-8.json.gz": {
+      "bytes": 2521,
+      "sha256": "a5e11c582c1d8530bcd90c6287ef2aee9bebdacf9e76e4f3dbbd50769925a779"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-005--time-12.json.gz": {
+      "bytes": 2776,
+      "sha256": "132afa4986e64f8a78252a8d3a155e49778279cb1c40e35569cf2ab6ec0995e8"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-005--time-2.json.gz": {
+      "bytes": 167285,
+      "sha256": "acf90d656c0c2382771456d1a06351eb0174a99ee192d097308c13db77cece16"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-005--time-4.json.gz": {
+      "bytes": 101528,
+      "sha256": "6de042f6160482cf018b1f622c2e2214f928973d0501cb52deacc42648b1ea30"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-005--time-8.json.gz": {
+      "bytes": 113018,
+      "sha256": "ce6ac4694c128c3c0eabd325a760aed535367df5289e229d6e72422ea8f11112"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-006--time-12.json.gz": {
+      "bytes": 2782,
+      "sha256": "1089c4e1a7f589533609982a50c908916dace901b76a5355d5862c82acad9345"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-006--time-2.json.gz": {
+      "bytes": 176199,
+      "sha256": "18b070718260df3d530896ff64968416ba47162d251de50bdf9a8734c1569ec4"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-006--time-4.json.gz": {
+      "bytes": 268196,
+      "sha256": "ea5ad3bffa16b807391fbab56b4cc37228df24f6e2d3b22eb03e2cd944c30702"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-006--time-8.json.gz": {
+      "bytes": 2501,
+      "sha256": "6816d2fd0d50ee2fa1154ec09bc56abc7f5c8bac274b5cabfcbef6acc3eca108"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-007--time-12.json.gz": {
+      "bytes": 2915,
+      "sha256": "303efc2379730f156667953d254971a4e2056c65c882407e31227f6f5d615c1b"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-007--time-2.json.gz": {
+      "bytes": 180344,
+      "sha256": "501f774178c6afd40e56d59c4952e67b30ac2e02f5cf207573d33880bb6a4cc8"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-007--time-4.json.gz": {
+      "bytes": 153689,
+      "sha256": "fbc7dce4557a9c750c44f3968c4ab23f1b5245f9de7418eb827e6e2d78357543"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-007--time-8.json.gz": {
+      "bytes": 119888,
+      "sha256": "9bf949e7d77d9cff988cf3443a1e77750e82e92f89da6966b7d408d7afef1134"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-008--time-12.json.gz": {
+      "bytes": 2878,
+      "sha256": "222a94c08abd21173fb8a2d47922528e53664d0b54ff9020c315f8e788ee3e67"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-008--time-2.json.gz": {
+      "bytes": 175931,
+      "sha256": "88db9bad9ad36e9747461a604fb676083ea65167ca8e726b82497522b2453090"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-008--time-4.json.gz": {
+      "bytes": 159329,
+      "sha256": "4556902cdc5426df354368b1f7c38bf9679172359e95a41f77bef4080a538988"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-008--time-8.json.gz": {
+      "bytes": 75076,
+      "sha256": "96e5a179e285e621d6734615882f46efdae0859e0a681599430118201a68dce4"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-009--time-12.json.gz": {
+      "bytes": 2751,
+      "sha256": "d58b99836b418967ef99c8535fed89edac7086baad5e366a0516d8eff0ef5d70"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-009--time-2.json.gz": {
+      "bytes": 164529,
+      "sha256": "8f8904214cfb0dc43d764ca6eb12a8d17271a19f9fcb471ab9d95c0735f73d9b"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-009--time-4.json.gz": {
+      "bytes": 152190,
+      "sha256": "e6a6c2c0cbb7b966304d68226cd8ceb328d3d6909896311e97c4bcc89c576fae"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-009--time-8.json.gz": {
+      "bytes": 68399,
+      "sha256": "b8061c91a7abf2133b28d2dc17034eecb25df15c7015468c46bbc0556fd8c180"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-010--time-12.json.gz": {
+      "bytes": 2749,
+      "sha256": "dc59a93cc8fd68eb6e3ad1c5a125ae0073e776cb3491e218ea16e8c8338a6e1a"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-010--time-2.json.gz": {
+      "bytes": 181399,
+      "sha256": "65d91d50bac2695f4aa269269081bf8b7f8ccb52f8a4275ccae1c7f19b1e23df"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-010--time-4.json.gz": {
+      "bytes": 271843,
+      "sha256": "02eef2e5506342d8f3dc68e96a2ea355f4ffa3b6064b5570968ac01f6a3891fd"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-010--time-8.json.gz": {
+      "bytes": 116080,
+      "sha256": "9f9a00716c61278feeb735932e6b5e9a92631b39e4c41e1894d8c45811c073f2"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-011--time-12.json.gz": {
+      "bytes": 2712,
+      "sha256": "0e1183e986452956b2f95f720e659e6cff704fcf60728a896b484015cd027cc4"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-011--time-2.json.gz": {
+      "bytes": 167704,
+      "sha256": "01d645910d9b1f19bd21fc5a4890ff1752f4a0ce531be726044efb06cc8ef8bb"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-011--time-4.json.gz": {
+      "bytes": 1969,
+      "sha256": "95902e88aa80a9eafd64bcaabea513bb7d217b178a9c25482a73de5f79e38308"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-011--time-8.json.gz": {
+      "bytes": 60310,
+      "sha256": "a0ac018f94f669a5a368d386d7c6e1ed39b4ad416f2ad7ade0d4aa23fc530a4c"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-012--time-12.json.gz": {
+      "bytes": 2697,
+      "sha256": "a9c5c8722bd6d1894efd3d7edbb1cf5b48576dc20212e8b18d4dbd007a1980f1"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-012--time-2.json.gz": {
+      "bytes": 162156,
+      "sha256": "b8d5fde9a853f63dd587dc5b9af3fd6a3476f10bb9ac0c35c4f7bf179b10650b"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-012--time-4.json.gz": {
+      "bytes": 259366,
+      "sha256": "b6d714890005baa450be45b1c63fb4a6bd563a8d8608fbe6005a7d35b7e17f6c"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-012--time-8.json.gz": {
+      "bytes": 95543,
+      "sha256": "e1c03f300576e5653cc15d710dbb290d7ce5a093c48c4f6893b936e9966f605a"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-013--time-12.json.gz": {
+      "bytes": 2793,
+      "sha256": "a199b4ba05691827efb3def630998393622333364e801150fa5de549967d11fc"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-013--time-2.json.gz": {
+      "bytes": 386865,
+      "sha256": "0435b919d70910265e387e7bbe2d4dee8cba4125d85086e910db1f4feb6ad008"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-013--time-4.json.gz": {
+      "bytes": 112010,
+      "sha256": "0eb69589b3087e6e4bcacdff47a1fa1e23d288e9ccb2e7749d7485d7b771f7ec"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-013--time-8.json.gz": {
+      "bytes": 47596,
+      "sha256": "26e5e0be8360efee04ad89c910d5a10b92c688331775988d9924e46a7e675b1c"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-014--time-12.json.gz": {
+      "bytes": 2787,
+      "sha256": "53e1884c652582fba505536df175d3b85f78f0e25a18782a601c9490135e31eb"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-014--time-2.json.gz": {
+      "bytes": 158925,
+      "sha256": "c83999e22678b5516e4ebba4d7125afd3ecdb3d2bf1dcefef8aac3943a6ac08f"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-014--time-4.json.gz": {
+      "bytes": 246892,
+      "sha256": "fb806935b70a66a231d001f3573974e59fe08e67100d27922233c5f18d5d545d"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-014--time-8.json.gz": {
+      "bytes": 2565,
+      "sha256": "77879d761b5fc9fb354ad3f0919bbec0ec7c90f090efe312eac0eae5532a7d4f"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-015--time-12.json.gz": {
+      "bytes": 2779,
+      "sha256": "5aa8570256e59821712a493277c395480e17b139d7fc4709fe4c9d882170c137"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-015--time-2.json.gz": {
+      "bytes": 183731,
+      "sha256": "13d6ef052b4e378cf6eb1a4550263e11f2ece4e6096a9e41a506b653d72db7e5"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-015--time-4.json.gz": {
+      "bytes": 138515,
+      "sha256": "2af9d6fdcee96e3e6c164235a9f3b6cf3a7af7944538b7a04050e4c705473499"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-015--time-8.json.gz": {
+      "bytes": 50857,
+      "sha256": "01363642076fe135e06ab048aa801ac6fda4d3cae919f82c4a3ac66434bffbf4"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-016--time-12.json.gz": {
+      "bytes": 2769,
+      "sha256": "4048f9fde8aef9bfa0603cdad121568dc0220d0bfb0c8e82efaf06fe6c5d8eac"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-016--time-2.json.gz": {
+      "bytes": 177055,
+      "sha256": "c17c7876c1bdd93c3ae9fb227e658d3cdbfdf604a7c9d80a0cef129d88c45695"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-016--time-4.json.gz": {
+      "bytes": 68646,
+      "sha256": "14a6b6755e38fc3e59c0122d8340da6fc8301555bd22412824f067fa03d7d3b2"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-016--time-8.json.gz": {
+      "bytes": 2573,
+      "sha256": "b44c19992f223bc7d8605f6572b7c37df82bb59199a27681b7b3119e27a32ae5"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-017--time-12.json.gz": {
+      "bytes": 2755,
+      "sha256": "29afa9ddd24b3e8e3fc84f9388791a18286729816151c5755494c2462d9b5706"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-017--time-2.json.gz": {
+      "bytes": 155500,
+      "sha256": "99b407b5de3df0f4ebe55eec4e620487ebaf902ff73c33e4b5a61df1f46a6248"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-017--time-4.json.gz": {
+      "bytes": 110567,
+      "sha256": "a2d25aec39a9cc045faee0c515fabd4549b8270fe1f29e17d6282a7cd624305f"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-017--time-8.json.gz": {
+      "bytes": 217865,
+      "sha256": "f5365d164f684be4d830431d834034eccd65777cce8be13887dd6a6b43cef678"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-018--time-12.json.gz": {
+      "bytes": 2779,
+      "sha256": "b9fc47691899ba0e7085728b3c4432da39d16793067a5540b0f8dae846f56e96"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-018--time-2.json.gz": {
+      "bytes": 147396,
+      "sha256": "6e6b5164928dc94eca131eca9222eaea58633ec547286e58054eb20ae439c48f"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-018--time-4.json.gz": {
+      "bytes": 140764,
+      "sha256": "6313a91373dada6a2de655fa33f8eaeae97ea6f3e0d22b19573667537635b8ec"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-018--time-8.json.gz": {
+      "bytes": 2509,
+      "sha256": "1948dd69acd28b6bcbfd274744734cb33efed0ce3cabb23aff957fb3be84689b"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-019--time-12.json.gz": {
+      "bytes": 2757,
+      "sha256": "cb1c04db9d297db268960edb9d741ff4e96b5b1b2d366ed1714ed0387c3c179f"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-019--time-2.json.gz": {
+      "bytes": 168161,
+      "sha256": "0db68402f1f7e609e4863c4708a9e37d142431111e00f948a4fc4d55206dae6c"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-019--time-4.json.gz": {
+      "bytes": 247600,
+      "sha256": "ad1849a434b07eca37313cf177ca1ee54a574db02eef07224065e753f4046ef9"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-019--time-8.json.gz": {
+      "bytes": 2544,
+      "sha256": "1cd9b4e9bf39257eccae2e7cddf464405ae2e8afa3696d0cf5cbc10ed1fccc25"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-020--time-12.json.gz": {
+      "bytes": 2752,
+      "sha256": "233f39ce2f5aac97495cfed459ed39732d4291b797590ee15fea814c99b4f59d"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-020--time-2.json.gz": {
+      "bytes": 119028,
+      "sha256": "7e1b10bc8887422d117128e577d352645e1fbc758f24195b00f53d8280d19c52"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-020--time-4.json.gz": {
+      "bytes": 156607,
+      "sha256": "b438d8a0c4f4ee2f7fc62b2aaa1c90bad71253b3392c8fa996ae6a9590279644"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-020--time-8.json.gz": {
+      "bytes": 177077,
+      "sha256": "9cd4c65ee66b6d36c36630daac49134753a12aaa5574c7d3c32fe5974ae83201"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-021--time-12.json.gz": {
+      "bytes": 2781,
+      "sha256": "1c785a82f986481ba380f01e12dd87dce21561eef19186b338e74c23a7ac960a"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-021--time-2.json.gz": {
+      "bytes": 146763,
+      "sha256": "a4f9e206862c7d41703032fb577bf5523d024102b3fc9bd97c8bfd11a2d192ec"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-021--time-4.json.gz": {
+      "bytes": 91860,
+      "sha256": "1f39a2dbcb56b410a65db8ebd4f3655f4f6d00b6859c1d24f1e5f67d64ee816f"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-021--time-8.json.gz": {
+      "bytes": 2547,
+      "sha256": "573c6963fbd8d92a1050f08f0e716fca2ab34cf57be6cb868755c62bb33f8b43"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-022--time-12.json.gz": {
+      "bytes": 2655,
+      "sha256": "c350f95ad8a343062ecc342fd70256f3c5933ae5f23a7bae1613237949e8d9d6"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-022--time-2.json.gz": {
+      "bytes": 141266,
+      "sha256": "1292111039ca7d87c5670a81542d056a1a0e0161edb9a7e6d32f290370996bdd"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-022--time-4.json.gz": {
+      "bytes": 2054,
+      "sha256": "7acde7872016d0c1a79ed935ed3951590e37d1e5904fc98be3a0009c960afcf7"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-022--time-8.json.gz": {
+      "bytes": 43479,
+      "sha256": "891ae3ae268adab70cfad20a983c11f71b7d41ba60c77f4e4025ca3005e80516"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-023--time-12.json.gz": {
+      "bytes": 2858,
+      "sha256": "097c95b57fda297bf355a156a80e8cdd3908ee4e73d4becfcdea69e40106b8d6"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-023--time-2.json.gz": {
+      "bytes": 158443,
+      "sha256": "62a24a10d966c4220d6a565752461b7d6d73591e0b7d83f021416d91169a8650"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-023--time-4.json.gz": {
+      "bytes": 2136,
+      "sha256": "cc7623e07bfcb84ef8e15520e648b8955ae1b998b1c3c46f70a1c7c7883f3e4b"
+    },
+    "package/recovery-inputs/windows/consequence-v1-world_and_policy_train-023--time-8.json.gz": {
+      "bytes": 58504,
+      "sha256": "8dc38f0b8005176d334b833119d03734375856a46000b3baff4cb455cb080d22"
+    },
+    "package/recovery-inputs/world-models/world-8201.pt": {
+      "bytes": 2896861,
+      "sha256": "ebd9894270d6a32edec6892a912d11933c1a266c1a831294388ffb06be52d8b0"
+    },
+    "package/stage_contract.py": {
+      "bytes": 1157,
+      "sha256": "cca3888d510988e96437f227e51ca11d9c8b0e0f6417247ca793a5b00b20e154"
+    },
+    "package/supervise.py": {
+      "bytes": 45875,
+      "sha256": "5a343752dc9e381b6e9132d2ad72f8d3788984fc93844afd5f64e434e06f6537"
+    },
+    "package/tail_reserve.py": {
+      "bytes": 1393,
+      "sha256": "cf88e2014ac6bb311c14784bd2cf954c8ba7b2d84fe19f7546d964207f3cda8d"
+    },
+    "package/task_analysis.py": {
+      "bytes": 6128,
+      "sha256": "850dd90fe7e5852b96e22c956de9ee5b56f8455ddf2ecac78af6f203265a0445"
+    },
+    "package/vendor/w1_graph_jepa.py": {
+      "bytes": 7466,
+      "sha256": "239ff4e78327d1e9d9b7fafad61b4b78e310de1e437758d51ca7290b564a2b63"
+    },
+    "package/worker_bootstrap.py": {
+      "bytes": 516,
+      "sha256": "8725c94f93f23453f5aa59d2705e9cf695f8c19f01261101f186db59b1d31ae8"
+    },
+    "parent-split.json": {
+      "bytes": 282629,
+      "sha256": "ec79640aceeca84e2c71f1f16bce8998e9b68ea138ecfe48f8c95cd790a35211"
+    },
+    "protected-inputs.json": {
+      "bytes": 1169,
+      "sha256": "72c6ddcc9d7eee1ec98e4bbb8b5e94c46442ce35a92bc9062d42f5f433eebdc5"
+    },
+    "public-prefix-code-diff.patch": {
+      "bytes": 104432,
+      "sha256": "425bd2c389ddde3b858586518c53e15a2e4d9d6438150ac975c6ebf349f667b6"
+    },
+    "reference-runtime/runtime-binding.json": {
+      "bytes": 1726,
+      "sha256": "e256c72635149633cb3035a3b230cc8d6d5050bd2e0f899848c962e3dcd4fa80"
+    },
+    "reference-runtime/runtime-identity.json": {
+      "bytes": 2507,
+      "sha256": "15592fb4b9a05f6cdaee095b53f6fde42a910639e3f717bdeffc3be5a928f9a5"
+    },
+    "release-comparison.json": {
+      "bytes": 25980,
+      "sha256": "bf50d2c97e2e893c52b24c5183cd457d871e40d42ca8441490b5f432f949f204"
+    },
+    "server-evidence/runtime-binding.json": {
+      "bytes": 1726,
+      "sha256": "e256c72635149633cb3035a3b230cc8d6d5050bd2e0f899848c962e3dcd4fa80"
+    },
+    "server_runtime_contract.py": {
+      "bytes": 1388,
+      "sha256": "20f655d6ac0e5493303b92f31607a7323c5cde7a6881208b0c25f909dbea9079"
+    },
+    "summarize_controlled_evidence.py": {
+      "bytes": 5065,
+      "sha256": "d97df32499276c8530f27bc6b8174a04edbaa500f10abc2ced3bb474c7434b46"
+    },
+    "unique-launch-command.md": {
+      "bytes": 1470,
+      "sha256": "679692e7273c80233f373d2f97604a33c48f9b57faf6147240b4be33fc714561"
+    },
+    "v4-first-error-flat769-trace.json": {
+      "bytes": 5481,
+      "sha256": "6fa30da29675064fe3b8a2fdf8ed9a6222d5b875f9fbf48efd20940e41232564"
+    },
+    "v5-original-RESOURCE_REQUEST.json": {
+      "bytes": 14753,
+      "sha256": "2e6e1cba20c4ff92785ce92a92b5002cac409979085defd7cddf73b4d5f63aed"
+    }
+  },
+  "schema": "w1-recovery-publish-hashes/1"
+}

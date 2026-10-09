@@ -1,0 +1,33 @@
+{
+  "schema": "w1-event-signal-semantic-trace/1",
+  "historical_first_error": {
+    "code": "CANDIDATE_PUBLIC_PREFIX_MISMATCH",
+    "field": "$.event_signal",
+    "expected": 1.0,
+    "actual": 0.0,
+    "source": "formal v3 run first-error.json",
+    "historical_root_cause": "not proven beyond this observed mismatch"
+  },
+  "contract": {
+    "definition": "pre-action public event indicator derived from trigger_flags",
+    "validity": "event_signal_valid=true means observed; false means unknown and is rejected",
+    "range": [0.0, 1.0],
+    "zero_semantics": "valid false event when valid=true",
+    "one_semantics": "valid true event when any producer trigger flag is true",
+    "unknown_semantics": "never imputed; reject before model forward"
+  },
+  "layers": [
+    {"layer":"producer","source":"M10Environment._observation","writes":"float(any(trigger_flags.values())), event_signal_valid=true","time":"pre-action observation"},
+    {"layer":"collector","source":"collect_window","consumes":"state_before event fields and candidate context","time":"before first branch action"},
+    {"layer":"paired_branch_snapshot","source":"restore_candidate probe","consumes":"same pre-action fields; restored internal trigger flags cannot redefine prefix","time":"restored snapshot before candidate action"},
+    {"layer":"label_target_builder","source":"consequence_contract.task_slots/admit_window","consumes":"validated state_before","time":"target construction"},
+    {"layer":"graph_action_encoder","source":"graph5_from_m10_observation","consumes":"validated event fields; unknown rejected","time":"model input preparation"},
+    {"layer":"world_model_input","source":"candidate_keys.bind_model_input","consumes":"same public digest and key sequence","time":"before forward"},
+    {"layer":"prediction_export","source":"serialize_prediction","consumes":"candidate key and upstream audit","time":"after prediction"},
+    {"layer":"replay_gppo","source":"verify_replay_candidate/verify_update","consumes":"frozen event-containing public digest","time":"before update"}
+  ],
+  "first_v3_inconsistency_layer": "paired_branch_snapshot public probe versus state_before",
+  "v3_producer_value": 1.0,
+  "v3_consumer_value": 0.0,
+  "v4_resolution": "explicit pre-action override during restored public projection; no constant bypass"
+}

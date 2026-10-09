@@ -1,0 +1,404 @@
+{
+  "inherited_v2_map": {
+    "aliases": "none; branches prohibited; candidate_branches canonical",
+    "auxiliary_audit_units": "forced_first_actions counts first step but does not add environment_steps twice; update_rows/replay_rows distinct operations",
+    "billing_time": "before function execution SQLite atomic reservation; complete or failed confirmation; pending retained on kill",
+    "controller_and_transport": "RESOURCE_REQUEST controller_limits/external_transport_limits; bounded subprocess and receipt, not fake ledger model operations",
+    "keys": {
+      "action_samples": {
+        "stage_caps": {
+          "analysis_and_settlement": 0,
+          "conditional_policy_training": 18432,
+          "conditional_task_confirmation": 3888,
+          "input_admission": 0,
+          "offline_prediction": 0,
+          "paired_collection": 0,
+          "settlement_and_verified_export": 0,
+          "world_training_and_restore": 0
+        },
+        "total_cap": 22320,
+        "unit": "count"
+      },
+      "analysis_calls": {
+        "stage_caps": {
+          "analysis_and_settlement": 1,
+          "conditional_policy_training": 0,
+          "conditional_task_confirmation": 0,
+          "input_admission": 0,
+          "offline_prediction": 0,
+          "paired_collection": 0,
+          "settlement_and_verified_export": 0,
+          "world_training_and_restore": 0
+        },
+        "total_cap": 1,
+        "unit": "count"
+      },
+      "behavior_snapshots": {
+        "stage_caps": {
+          "analysis_and_settlement": 0,
+          "conditional_policy_training": 288,
+          "conditional_task_confirmation": 0,
+          "input_admission": 0,
+          "offline_prediction": 0,
+          "paired_collection": 0,
+          "settlement_and_verified_export": 0,
+          "world_training_and_restore": 0
+        },
+        "total_cap": 288,
+        "unit": "count"
+      },
+      "bootstrap_forwards": {
+        "stage_caps": {
+          "analysis_and_settlement": 0,
+          "conditional_policy_training": 18432,
+          "conditional_task_confirmation": 0,
+          "input_admission": 0,
+          "offline_prediction": 0,
+          "paired_collection": 0,
+          "settlement_and_verified_export": 0,
+          "world_training_and_restore": 0
+        },
+        "total_cap": 18432,
+        "unit": "count"
+      },
+      "candidate_branches": {
+        "stage_caps": {
+          "analysis_and_settlement": 0,
+          "conditional_policy_training": 0,
+          "conditional_task_confirmation": 0,
+          "input_admission": 0,
+          "offline_prediction": 0,
+          "paired_collection": 7200,
+          "settlement_and_verified_export": 0,
+          "world_training_and_restore": 0
+        },
+        "total_cap": 7200,
+        "unit": "one candidate snapshot restore"
+      },
+      "candidate_scans": {
+        "stage_caps": {
+          "analysis_and_settlement": 0,
+          "conditional_policy_training": 36864,
+          "conditional_task_confirmation": 4320,
+          "input_admission": 0,
+          "offline_prediction": 288,
+          "paired_collection": 76752,
+          "settlement_and_verified_export": 0,
+          "world_training_and_restore": 0
+        },
+        "total_cap": 118224,
+        "unit": "one legal candidate scan/feature-pipeline entry"
+      },
+      "checkpoint_loads": {
+        "stage_caps": {
+          "analysis_and_settlement": 0,
+          "conditional_policy_training": 9,
+          "conditional_task_confirmation": 0,
+          "input_admission": 0,
+          "offline_prediction": 0,
+          "paired_collection": 0,
+          "settlement_and_verified_export": 0,
+          "world_training_and_restore": 9
+        },
+        "total_cap": 18,
+        "unit": "count"
+      },
+      "checkpoint_writes": {
+        "stage_caps": {
+          "analysis_and_settlement": 0,
+          "conditional_policy_training": 9,
+          "conditional_task_confirmation": 0,
+          "input_admission": 0,
+          "offline_prediction": 0,
+          "paired_collection": 0,
+          "settlement_and_verified_export": 0,
+          "world_training_and_restore": 3
+        },
+        "total_cap": 12,
+        "unit": "count"
+      },
+      "environment_constructions": {
+        "stage_caps": {
+          "analysis_and_settlement": 0,
+          "conditional_policy_training": 18441,
+          "conditional_task_confirmation": 240,
+          "input_admission": 0,
+          "offline_prediction": 0,
+          "paired_collection": 72,
+          "settlement_and_verified_export": 0,
+          "world_training_and_restore": 0
+        },
+        "total_cap": 18753,
+        "unit": "count"
+      },
+      "environment_resets": {
+        "stage_caps": {
+          "analysis_and_settlement": 0,
+          "conditional_policy_training": 18441,
+          "conditional_task_confirmation": 240,
+          "input_admission": 0,
+          "offline_prediction": 0,
+          "paired_collection": 72,
+          "settlement_and_verified_export": 0,
+          "world_training_and_restore": 0
+        },
+        "total_cap": 18753,
+        "unit": "count"
+      },
+      "environment_steps": {
+        "stage_caps": {
+          "analysis_and_settlement": 0,
+          "conditional_policy_training": 18432,
+          "conditional_task_confirmation": 4320,
+          "input_admission": 0,
+          "offline_prediction": 0,
+          "paired_collection": 83664,
+          "settlement_and_verified_export": 0,
+          "world_training_and_restore": 0
+        },
+        "total_cap": 106416,
+        "unit": "one env.step including prefix/candidate/policy/task"
+      },
+      "forced_first_actions": {
+        "stage_caps": {
+          "analysis_and_settlement": 0,
+          "conditional_policy_training": 0,
+          "conditional_task_confirmation": 0,
+          "input_admission": 0,
+          "offline_prediction": 0,
+          "paired_collection": 7200,
+          "settlement_and_verified_export": 0,
+          "world_training_and_restore": 0
+        },
+        "total_cap": 7200,
+        "unit": "first env.step in each candidate branch"
+      },
+      "model_initializations": {
+        "stage_caps": {
+          "analysis_and_settlement": 0,
+          "conditional_policy_training": 18,
+          "conditional_task_confirmation": 0,
+          "input_admission": 0,
+          "offline_prediction": 0,
+          "paired_collection": 0,
+          "settlement_and_verified_export": 0,
+          "world_training_and_restore": 6
+        },
+        "total_cap": 24,
+        "unit": "count"
+      },
+      "output_writes": {
+        "stage_caps": {
+          "analysis_and_settlement": 8,
+          "conditional_policy_training": 4,
+          "conditional_task_confirmation": 244,
+          "input_admission": 4,
+          "offline_prediction": 8,
+          "paired_collection": 300,
+          "settlement_and_verified_export": 0,
+          "world_training_and_restore": 4
+        },
+        "total_cap": 572,
+        "unit": "result publication only; heartbeat/journal/SQLite writes included in measured process/storage without extra counter"
+      },
+      "policy_forwards": {
+        "stage_caps": {
+          "analysis_and_settlement": 0,
+          "conditional_policy_training": 202752,
+          "conditional_task_confirmation": 3888,
+          "input_admission": 0,
+          "offline_prediction": 0,
+          "paired_collection": 0,
+          "settlement_and_verified_export": 0,
+          "world_training_and_restore": 0
+        },
+        "total_cap": 206640,
+        "unit": "one row encode/value/distribution logical path; current replay rows billed natively; snapshots billed by caller"
+      },
+      "policy_updates": {
+        "stage_caps": {
+          "analysis_and_settlement": 0,
+          "conditional_policy_training": 1152,
+          "conditional_task_confirmation": 0,
+          "input_admission": 0,
+          "offline_prediction": 0,
+          "paired_collection": 0,
+          "settlement_and_verified_export": 0,
+          "world_training_and_restore": 0
+        },
+        "total_cap": 1152,
+        "unit": "count"
+      },
+      "replay_rows": {
+        "stage_caps": {
+          "analysis_and_settlement": 0,
+          "conditional_policy_training": 92160,
+          "conditional_task_confirmation": 0,
+          "input_admission": 0,
+          "offline_prediction": 0,
+          "paired_collection": 0,
+          "settlement_and_verified_export": 0,
+          "world_training_and_restore": 0
+        },
+        "total_cap": 92160,
+        "unit": "one behavior-snapshot old log_prob reconstruction"
+      },
+      "snapshot_writes": {
+        "stage_caps": {
+          "analysis_and_settlement": 0,
+          "conditional_policy_training": 0,
+          "conditional_task_confirmation": 0,
+          "input_admission": 0,
+          "offline_prediction": 0,
+          "paired_collection": 288,
+          "settlement_and_verified_export": 0,
+          "world_training_and_restore": 0
+        },
+        "total_cap": 288,
+        "unit": "one snapshot bundle (pickle plus audit)"
+      },
+      "target_candidate_evaluations": {
+        "stage_caps": {
+          "analysis_and_settlement": 0,
+          "conditional_policy_training": 0,
+          "conditional_task_confirmation": 0,
+          "input_admission": 0,
+          "offline_prediction": 0,
+          "paired_collection": 0,
+          "settlement_and_verified_export": 0,
+          "world_training_and_restore": 288000
+        },
+        "total_cap": 288000,
+        "unit": "count"
+      },
+      "target_forwards": {
+        "stage_caps": {
+          "analysis_and_settlement": 0,
+          "conditional_policy_training": 0,
+          "conditional_task_confirmation": 0,
+          "input_admission": 0,
+          "offline_prediction": 0,
+          "paired_collection": 0,
+          "settlement_and_verified_export": 0,
+          "world_training_and_restore": 11520
+        },
+        "total_cap": 11520,
+        "unit": "count"
+      },
+      "task_episodes": {
+        "stage_caps": {
+          "analysis_and_settlement": 0,
+          "conditional_policy_training": 0,
+          "conditional_task_confirmation": 240,
+          "input_admission": 0,
+          "offline_prediction": 0,
+          "paired_collection": 0,
+          "settlement_and_verified_export": 0,
+          "world_training_and_restore": 0
+        },
+        "total_cap": 240,
+        "unit": "count"
+      },
+      "training_candidate_evaluations": {
+        "stage_caps": {
+          "analysis_and_settlement": 0,
+          "conditional_policy_training": 0,
+          "conditional_task_confirmation": 0,
+          "input_admission": 0,
+          "offline_prediction": 0,
+          "paired_collection": 0,
+          "settlement_and_verified_export": 0,
+          "world_training_and_restore": 288000
+        },
+        "total_cap": 288000,
+        "unit": "count"
+      },
+      "training_forwards": {
+        "stage_caps": {
+          "analysis_and_settlement": 0,
+          "conditional_policy_training": 0,
+          "conditional_task_confirmation": 0,
+          "input_admission": 0,
+          "offline_prediction": 0,
+          "paired_collection": 0,
+          "settlement_and_verified_export": 0,
+          "world_training_and_restore": 1440
+        },
+        "total_cap": 1440,
+        "unit": "count"
+      },
+      "update_rows": {
+        "stage_caps": {
+          "analysis_and_settlement": 0,
+          "conditional_policy_training": 73728,
+          "conditional_task_confirmation": 0,
+          "input_admission": 0,
+          "offline_prediction": 0,
+          "paired_collection": 0,
+          "settlement_and_verified_export": 0,
+          "world_training_and_restore": 0
+        },
+        "total_cap": 73728,
+        "unit": "rows presented to one native optimizer update"
+      },
+      "world_model_batch_forwards": {
+        "stage_caps": {
+          "analysis_and_settlement": 0,
+          "conditional_policy_training": 36864,
+          "conditional_task_confirmation": 3888,
+          "input_admission": 0,
+          "offline_prediction": 864,
+          "paired_collection": 0,
+          "settlement_and_verified_export": 0,
+          "world_training_and_restore": 0
+        },
+        "total_cap": 41616,
+        "unit": "one seed model candidate batch forward"
+      },
+      "world_model_candidate_evaluations": {
+        "stage_caps": {
+          "analysis_and_settlement": 0,
+          "conditional_policy_training": 921600,
+          "conditional_task_confirmation": 97200,
+          "input_admission": 0,
+          "offline_prediction": 21600,
+          "paired_collection": 0,
+          "settlement_and_verified_export": 0,
+          "world_training_and_restore": 0
+        },
+        "total_cap": 1040400,
+        "unit": "candidate x seed"
+      },
+      "world_model_updates": {
+        "stage_caps": {
+          "analysis_and_settlement": 0,
+          "conditional_policy_training": 0,
+          "conditional_task_confirmation": 0,
+          "input_admission": 0,
+          "offline_prediction": 0,
+          "paired_collection": 0,
+          "settlement_and_verified_export": 0,
+          "world_training_and_restore": 1440
+        },
+        "total_cap": 1440,
+        "unit": "count"
+      }
+    }
+  },
+  "new_fields": {
+    "audit_caps_basis": {
+      "collection": "7200 probes + 288*(collector+label+2 input audits+2 pretraining audits) <=9000",
+      "offline": "288*(2 input+3 feature+1 export audits) <=1800",
+      "policy": "36864 current/bootstrap feature pipelines*3 + 92160 replay/GPPO audits <=203000",
+      "tasks": "4320 decisions*3 <=13000"
+    },
+    "candidate_contract_audits": "one durable identity audit row; inline hashes included in enclosing operation costs",
+    "candidate_snapshot_probes": "one deepcopy/public reconstruction per restored candidate; before first branch action",
+    "existing_research_caps_unchanged": true,
+    "incremental_storage_reserve_bytes_within_existing_cap": 1073741824,
+    "old_authorization_reusable": false,
+    "storage_basis": "bounded sidecar/catalog/public-state/audit overhead; estimate, not full-scale measurement",
+    "time_basis": "existing stage limits retained as hard caps; controlled measurement is engineering-only, not full-scale execution"
+  },
+  "no_alias_renaming_or_duplicate_charge": true
+}

@@ -1,0 +1,88 @@
+{
+  "attempt": "w1-drone-action-consequence-world-model-v5-recovery-v1-linux-release-v3-output-writes-contract-repair-once",
+  "candidate_key_contract": "w1-structured-candidate/1",
+  "controlled": false,
+  "cpu_execution": {
+    "affinity": [
+      0
+    ],
+    "threads": 1
+  },
+  "critic_feature_contract": {
+    "G0": "public_only",
+    "G1": "T_plus_frozen_world",
+    "T": "public_plus_transparent",
+    "actor_direct_feature_injection": false,
+    "aux_dim": 245,
+    "latent": "fixed_8201_8202_8203_concatenation_192",
+    "packed_dim": 507,
+    "public_dim": 17,
+    "readouts": "equal_mean_and_std_25_each",
+    "transparent_dim": 3
+  },
+  "evaluation_preference": [
+    0.8,
+    0.2
+  ],
+  "event_signal_contract": "w1-event-signal-contract/1",
+  "flat_layout_contract": "w1-public-flat/1",
+  "global_evaluation_independence": "unproven_development_exploration",
+  "offline_gate": "RESULT_DECISION_CONTRACT.md",
+  "phase": "critic_only",
+  "policy_seeds": [
+    8301,
+    8302,
+    8303
+  ],
+  "policy_selection": "final_complete_only",
+  "policy_steps": 2048,
+  "policy_updates": 128,
+  "public_prefix_contract": "w1-public-prefix/1",
+  "research_mode": "multihead_ranking_critic_combination",
+  "risk_certification": false,
+  "rollout_steps": 64,
+  "schema": "drone-consequence-production/4-public-prefix",
+  "support_times": [
+    2.0,
+    4.0,
+    8.0,
+    12.0
+  ],
+  "task_episode_matrix": {
+    "G0": 72,
+    "G1": 72,
+    "H": 24,
+    "T": 72
+  },
+  "task_episodes": 240,
+  "training_preferences": [
+    [
+      0.2,
+      0.8
+    ],
+    [
+      0.5,
+      0.5
+    ],
+    [
+      0.8,
+      0.2
+    ]
+  ],
+  "updates_per_rollout": 4,
+  "world_epochs": 40,
+  "world_model_device": "cpu",
+  "world_model_training_enabled": true,
+  "recovery_mode": "reuse_verified_windows",
+  "recovery_source_attempt": "w1-drone-action-consequence-world-model-v5-public-prefix-contract-repair-once",
+  "reuse_world_seed": 8201,
+  "train_world_seeds": [8202, 8203],
+  "collection_enabled": false,
+  "world_seeds": [
+    8201,
+    8202,
+    8203
+  ],
+  "world_selection": "final_fixed_epoch_only",
+  "world_window_batch": 8
+}

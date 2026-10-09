@@ -1,0 +1,976 @@
+{
+  "evaluation_outcomes_viewed": false,
+  "group_counts": {
+    "mechanism_diagnostics_only": 12,
+    "offline_prediction_gate": 24,
+    "policy_task_evaluation": 24,
+    "uncertainty_diagnostics_only": 12,
+    "world_and_policy_train": 24
+  },
+  "historical_global_independence": "unproven; development_exploration_only",
+  "package_identity_disjoint": true,
+  "parents": [
+    {
+      "exogenous_key": "drone-action-consequence-v1|world_and_policy_train|2030100700|repeat-0",
+      "parent": "consequence-v1-world_and_policy_train-000",
+      "role": "world_and_policy_train",
+      "scenario_sha256": "d4b30ffbfdedad39af39d5710d53f8f9d6d14529c4d9c63100ba0677627da2b5",
+      "seed": 2030100700,
+      "split": "train",
+      "structure_sha256": "8a054820fbae3fe8f69672c1927d75c6523633eb07fbd71009359ec420fc900a",
+      "tape_id": "train-mixed-seed-2030100700-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|world_and_policy_train|2030100701|repeat-0",
+      "parent": "consequence-v1-world_and_policy_train-001",
+      "role": "world_and_policy_train",
+      "scenario_sha256": "ecbd73547e24ae7452e61f34115da281a12e6ee368654e8654f1ef657c078861",
+      "seed": 2030100701,
+      "split": "train",
+      "structure_sha256": "722ce72e64f8a4c8d6cc3cbbbd54a1be6ca33c52649eadf6c25997802cafcb6f",
+      "tape_id": "train-mixed-seed-2030100701-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|world_and_policy_train|2030100702|repeat-0",
+      "parent": "consequence-v1-world_and_policy_train-002",
+      "role": "world_and_policy_train",
+      "scenario_sha256": "7a22f34a5393b74489f02f28e88f69884f62d144734896060354ead5e24e9201",
+      "seed": 2030100702,
+      "split": "train",
+      "structure_sha256": "828e526e0b408332f1329316b5f767c7311ce7e99ff805cdf42788a2752b52a2",
+      "tape_id": "train-mixed-seed-2030100702-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|world_and_policy_train|2030100703|repeat-0",
+      "parent": "consequence-v1-world_and_policy_train-003",
+      "role": "world_and_policy_train",
+      "scenario_sha256": "f83ae8c63d2c05ca3461045baadcec3a8cabc3e46abcd81b86e92f28a76acfa2",
+      "seed": 2030100703,
+      "split": "train",
+      "structure_sha256": "c03a822e35932123577ba845b6497ba5af652bfe4cdbedc5f2cc67b5b1c32b25",
+      "tape_id": "train-mixed-seed-2030100703-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|world_and_policy_train|2030100704|repeat-0",
+      "parent": "consequence-v1-world_and_policy_train-004",
+      "role": "world_and_policy_train",
+      "scenario_sha256": "e96ea07deb5e74017353155e98322ec3af60c17f4aa1a80501d4da2b8f21e759",
+      "seed": 2030100704,
+      "split": "train",
+      "structure_sha256": "eb1ab50f09a5fa62d21a87cb27b4893604f21e905766e05ddd94178c84afeb85",
+      "tape_id": "train-mixed-seed-2030100704-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|world_and_policy_train|2030100705|repeat-0",
+      "parent": "consequence-v1-world_and_policy_train-005",
+      "role": "world_and_policy_train",
+      "scenario_sha256": "0de82f3749064525b3d82be5d654a531d1da3fa6c7e812babd15854cf6432fa5",
+      "seed": 2030100705,
+      "split": "train",
+      "structure_sha256": "18d294f69d0364370d73f675ec523704a8f28a2704719e438150bfa3b7ef80c0",
+      "tape_id": "train-mixed-seed-2030100705-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|world_and_policy_train|2030100706|repeat-0",
+      "parent": "consequence-v1-world_and_policy_train-006",
+      "role": "world_and_policy_train",
+      "scenario_sha256": "0330748db6bc3abe59f59af1eeb40deac661521ca9cdac0d4833345a11c2f0cd",
+      "seed": 2030100706,
+      "split": "train",
+      "structure_sha256": "9d28569ac88f08f5ea49d01acba38779c8d4faa9a860a4bcc55e3769faef2ef2",
+      "tape_id": "train-mixed-seed-2030100706-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|world_and_policy_train|2030100707|repeat-0",
+      "parent": "consequence-v1-world_and_policy_train-007",
+      "role": "world_and_policy_train",
+      "scenario_sha256": "8e8c3ca887f4621c5dfd16f50324686715d2b49c617a471fb22ed24821bd3211",
+      "seed": 2030100707,
+      "split": "train",
+      "structure_sha256": "23c7f13dde114244343eacf8dce3cd76a232bce1d51cf0753d2501f8226b2718",
+      "tape_id": "train-mixed-seed-2030100707-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|world_and_policy_train|2030100708|repeat-0",
+      "parent": "consequence-v1-world_and_policy_train-008",
+      "role": "world_and_policy_train",
+      "scenario_sha256": "ed8ab6dda7f59b50b6f77fbf46a98ce1fcec554f4d70540dd95f1b5741d81e2e",
+      "seed": 2030100708,
+      "split": "train",
+      "structure_sha256": "592cdc67499e32989566954ba898bde35472852d227a51caa95bd9c2c8081132",
+      "tape_id": "train-mixed-seed-2030100708-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|world_and_policy_train|2030100709|repeat-0",
+      "parent": "consequence-v1-world_and_policy_train-009",
+      "role": "world_and_policy_train",
+      "scenario_sha256": "4f9995b706ab8b70b8247932d2970e62bf0a1e4be67e8773af66ab048a036868",
+      "seed": 2030100709,
+      "split": "train",
+      "structure_sha256": "987faf67074b65fec29d1a24e553a10d948831e02bd9e1603a4c934283e9c224",
+      "tape_id": "train-mixed-seed-2030100709-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|world_and_policy_train|2030100710|repeat-0",
+      "parent": "consequence-v1-world_and_policy_train-010",
+      "role": "world_and_policy_train",
+      "scenario_sha256": "bf06a2c6b01a9ec23433561eec5a2eddd3dab272809a502563f18f05c7eb9b9c",
+      "seed": 2030100710,
+      "split": "train",
+      "structure_sha256": "45d2baba553459e7cb22e48a62e018a4d2d9256d745b7353b43f6c22cb4af7dd",
+      "tape_id": "train-mixed-seed-2030100710-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|world_and_policy_train|2030100711|repeat-0",
+      "parent": "consequence-v1-world_and_policy_train-011",
+      "role": "world_and_policy_train",
+      "scenario_sha256": "7b2a4955468bc84fc060d6024321b5a711a04b1ff8255be23338b4bcf86ce5c3",
+      "seed": 2030100711,
+      "split": "train",
+      "structure_sha256": "fd5619371c04dd6e5ed0c80b7c4c8015cc137d30ab7657108f2240a4d3b4d656",
+      "tape_id": "train-mixed-seed-2030100711-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|world_and_policy_train|2030100712|repeat-0",
+      "parent": "consequence-v1-world_and_policy_train-012",
+      "role": "world_and_policy_train",
+      "scenario_sha256": "5f7d2cec3cb37dd7308678cfc56f6a438d2e1f4e8edeb42bc525f3162a7c2c98",
+      "seed": 2030100712,
+      "split": "train",
+      "structure_sha256": "f96d68f56e47ad803d261f69ec940ad558ab7ed18b3fd8e827161cee642e5341",
+      "tape_id": "train-mixed-seed-2030100712-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|world_and_policy_train|2030100713|repeat-0",
+      "parent": "consequence-v1-world_and_policy_train-013",
+      "role": "world_and_policy_train",
+      "scenario_sha256": "d6e3b0288883dc5644c24d69a4584a86bc1fa92904540bd7b75364a582633ccc",
+      "seed": 2030100713,
+      "split": "train",
+      "structure_sha256": "9a5d0d99fc8e33abbdc96ca0a9149fbd77fe2d91cb3780fbdd1efa19670356f5",
+      "tape_id": "train-mixed-seed-2030100713-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|world_and_policy_train|2030100714|repeat-0",
+      "parent": "consequence-v1-world_and_policy_train-014",
+      "role": "world_and_policy_train",
+      "scenario_sha256": "81401e6121c81a51804d8842f575b630bab5260b8e53aa46caa0d6e8480980c1",
+      "seed": 2030100714,
+      "split": "train",
+      "structure_sha256": "97c3e1b2a0db92938f67b3f734055a3fa68d6e4548da9c840623b45021f47c5a",
+      "tape_id": "train-mixed-seed-2030100714-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|world_and_policy_train|2030100715|repeat-0",
+      "parent": "consequence-v1-world_and_policy_train-015",
+      "role": "world_and_policy_train",
+      "scenario_sha256": "3f8c525ef984afe91a28d2e98a41ffd19ee75c20d1646addae884a45dafa5a65",
+      "seed": 2030100715,
+      "split": "train",
+      "structure_sha256": "97dc695910bba685d5c3c5de73a61c1dc0c54adf444785f8974e3842e2562dd3",
+      "tape_id": "train-mixed-seed-2030100715-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|world_and_policy_train|2030100716|repeat-0",
+      "parent": "consequence-v1-world_and_policy_train-016",
+      "role": "world_and_policy_train",
+      "scenario_sha256": "bc723df63ca62d1e69084b21851f3bf9b00e13c338b07f709e11d11106af8e5a",
+      "seed": 2030100716,
+      "split": "train",
+      "structure_sha256": "d6e52a62b44a50b439eea96ab11c0d82c3bbdbdae8f7e4a804e52938825ec450",
+      "tape_id": "train-mixed-seed-2030100716-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|world_and_policy_train|2030100717|repeat-0",
+      "parent": "consequence-v1-world_and_policy_train-017",
+      "role": "world_and_policy_train",
+      "scenario_sha256": "ce1b01c5d0a2594d4e458a20151d11b5927df521d7addc5bb578bc96169b4802",
+      "seed": 2030100717,
+      "split": "train",
+      "structure_sha256": "f235f578f0d599c17c4105f400b248e11a9348ab3f556feb731cedef39630593",
+      "tape_id": "train-mixed-seed-2030100717-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|world_and_policy_train|2030100718|repeat-0",
+      "parent": "consequence-v1-world_and_policy_train-018",
+      "role": "world_and_policy_train",
+      "scenario_sha256": "00f87e330302b399276838f2f2595026c026d7dd577ea7c1f1cff9ecaa7cee3c",
+      "seed": 2030100718,
+      "split": "train",
+      "structure_sha256": "3fa720a492e009c98273c7f171a98aed115524e49fb8efbc185ff75cb3bcd125",
+      "tape_id": "train-mixed-seed-2030100718-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|world_and_policy_train|2030100719|repeat-0",
+      "parent": "consequence-v1-world_and_policy_train-019",
+      "role": "world_and_policy_train",
+      "scenario_sha256": "188af436a239e6706ba23118ddb21b036dfdd57dfd6954c43b90f9de34a208a1",
+      "seed": 2030100719,
+      "split": "train",
+      "structure_sha256": "faff3636c96aae22ff764aa3f8b775008c1e35cda7ddcc6590d21fbb00acc514",
+      "tape_id": "train-mixed-seed-2030100719-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|world_and_policy_train|2030100720|repeat-0",
+      "parent": "consequence-v1-world_and_policy_train-020",
+      "role": "world_and_policy_train",
+      "scenario_sha256": "118a12c6fc5c4e14cd429f4781c3113cbe84b250f31ab83ee5e10b7158f988fc",
+      "seed": 2030100720,
+      "split": "train",
+      "structure_sha256": "23ce3cb792418a11db8ba5ea38fd4180e2f9c0568f68de4cdcd0d526a8eae8aa",
+      "tape_id": "train-mixed-seed-2030100720-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|world_and_policy_train|2030100721|repeat-0",
+      "parent": "consequence-v1-world_and_policy_train-021",
+      "role": "world_and_policy_train",
+      "scenario_sha256": "d9d1725e3505183629f2fa6f0c35bf047172c9b26229d0955b974f069f5e8aaa",
+      "seed": 2030100721,
+      "split": "train",
+      "structure_sha256": "dab4d81ada760d02549017439f686d96484e35fdf8884f88da13fe65e8ce6172",
+      "tape_id": "train-mixed-seed-2030100721-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|world_and_policy_train|2030100722|repeat-0",
+      "parent": "consequence-v1-world_and_policy_train-022",
+      "role": "world_and_policy_train",
+      "scenario_sha256": "7e0f5ee874009d9354ddbbbb699f3a678215bd8040965ef6136028b227567b40",
+      "seed": 2030100722,
+      "split": "train",
+      "structure_sha256": "d9c7816a769bc5bcf7efbab544caac5a5a961faa2d88b5f9f00daac669d90021",
+      "tape_id": "train-mixed-seed-2030100722-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|world_and_policy_train|2030100723|repeat-0",
+      "parent": "consequence-v1-world_and_policy_train-023",
+      "role": "world_and_policy_train",
+      "scenario_sha256": "f15c123e66a9ee8557cad67f805830536eb3c45fd0155f2c6cca9a3ccbfee791",
+      "seed": 2030100723,
+      "split": "train",
+      "structure_sha256": "8efc3a70408144c431edd960e3c60ceb62be795358c68b86f5ae76014fd76a5a",
+      "tape_id": "train-mixed-seed-2030100723-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|uncertainty_diagnostics_only|2031200700|repeat-0",
+      "parent": "consequence-v1-uncertainty_diagnostics_only-000",
+      "role": "uncertainty_diagnostics_only",
+      "scenario_sha256": "3bae77b42bff22d15874dc5eb15120ae129966d95881058591ecaaffcb971460",
+      "seed": 2031200700,
+      "split": "calibration",
+      "structure_sha256": "0976d30c21f4aea2117a0225a19405d403654c8d5f6b2b969ab59d40ac04fe43",
+      "tape_id": "validation-mixed-seed-2031200700-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|uncertainty_diagnostics_only|2031200701|repeat-0",
+      "parent": "consequence-v1-uncertainty_diagnostics_only-001",
+      "role": "uncertainty_diagnostics_only",
+      "scenario_sha256": "478c9ad906b3b4a009b084d81f813dfb64164ddacc87645da3d41b7fea678d9a",
+      "seed": 2031200701,
+      "split": "calibration",
+      "structure_sha256": "18dd1c9d2faa1292d6bd6af5c843323cfcc3576d498166b64d27b1ce55dfa5b9",
+      "tape_id": "validation-mixed-seed-2031200701-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|uncertainty_diagnostics_only|2031200702|repeat-0",
+      "parent": "consequence-v1-uncertainty_diagnostics_only-002",
+      "role": "uncertainty_diagnostics_only",
+      "scenario_sha256": "498017fd2cd0ae1e5fdaec6e4115ea0af24f60668321d41f97cda623701f8a80",
+      "seed": 2031200702,
+      "split": "calibration",
+      "structure_sha256": "1f033d0ee05622e89a8ace340492569b7daf261ea85e726785494848beca3da2",
+      "tape_id": "validation-mixed-seed-2031200702-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|uncertainty_diagnostics_only|2031200703|repeat-0",
+      "parent": "consequence-v1-uncertainty_diagnostics_only-003",
+      "role": "uncertainty_diagnostics_only",
+      "scenario_sha256": "e3edb151c7a968fb7b87d1c541d0418bf408d07f6b24ce2f2cd1ddc0808d3dde",
+      "seed": 2031200703,
+      "split": "calibration",
+      "structure_sha256": "ba2537e384ff6a92704d72154345c6fe9f8985529c5ecc0dab71246a30618197",
+      "tape_id": "validation-mixed-seed-2031200703-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|uncertainty_diagnostics_only|2031200704|repeat-0",
+      "parent": "consequence-v1-uncertainty_diagnostics_only-004",
+      "role": "uncertainty_diagnostics_only",
+      "scenario_sha256": "5455a2772b9b432f44a3156d6f4117edf919d2dbe35a8be70e86d696884c8d53",
+      "seed": 2031200704,
+      "split": "calibration",
+      "structure_sha256": "fd4a259e3382638b1d9ded30b4b6d7ff50297aad78c86cf6480ae7c91ff7020d",
+      "tape_id": "validation-mixed-seed-2031200704-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|uncertainty_diagnostics_only|2031200705|repeat-0",
+      "parent": "consequence-v1-uncertainty_diagnostics_only-005",
+      "role": "uncertainty_diagnostics_only",
+      "scenario_sha256": "fc9b04ccdd0f8f297d410d46faf2484bf397bb25f6e861054b320933d403b501",
+      "seed": 2031200705,
+      "split": "calibration",
+      "structure_sha256": "8f79755049e7c4518ff5addc68ca68667cd605524609ca27b49240c77300996f",
+      "tape_id": "validation-mixed-seed-2031200705-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|uncertainty_diagnostics_only|2031200706|repeat-0",
+      "parent": "consequence-v1-uncertainty_diagnostics_only-006",
+      "role": "uncertainty_diagnostics_only",
+      "scenario_sha256": "0c4eef068a98af979fb2f3bbd67f2b221752e35e4e66c665859b09790e38ebc2",
+      "seed": 2031200706,
+      "split": "calibration",
+      "structure_sha256": "2df9576fc8443e6ab34758ac9802e0762216b6bd2fc7fedcb7774cfa40160c22",
+      "tape_id": "validation-mixed-seed-2031200706-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|uncertainty_diagnostics_only|2031200707|repeat-0",
+      "parent": "consequence-v1-uncertainty_diagnostics_only-007",
+      "role": "uncertainty_diagnostics_only",
+      "scenario_sha256": "bbe7c7518152693dec1a24c11cf824a73a0c103d13548f8177014b280b32c685",
+      "seed": 2031200707,
+      "split": "calibration",
+      "structure_sha256": "5a3c3aaa247a5957ff99609ba2400476bb8ef58dde0a2fbe861521c66c1481d8",
+      "tape_id": "validation-mixed-seed-2031200707-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|uncertainty_diagnostics_only|2031200708|repeat-0",
+      "parent": "consequence-v1-uncertainty_diagnostics_only-008",
+      "role": "uncertainty_diagnostics_only",
+      "scenario_sha256": "230aa6e074201ba9d6376cb1f2a96f120609c4dd556bdfb92db9d3ff4d323c6a",
+      "seed": 2031200708,
+      "split": "calibration",
+      "structure_sha256": "afbc301998551eeb9caa66c08b052b26350d753ba51764733028313ab4458982",
+      "tape_id": "validation-mixed-seed-2031200708-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|uncertainty_diagnostics_only|2031200709|repeat-0",
+      "parent": "consequence-v1-uncertainty_diagnostics_only-009",
+      "role": "uncertainty_diagnostics_only",
+      "scenario_sha256": "c3088b9e9ed05535acc6979d1b6222e43980a901eb096f6ee6914e8014579067",
+      "seed": 2031200709,
+      "split": "calibration",
+      "structure_sha256": "cd5a19d25d66a97efe7d5388fecd3e4dc8ade533c413222988024e52fcbeb3e3",
+      "tape_id": "validation-mixed-seed-2031200709-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|uncertainty_diagnostics_only|2031200710|repeat-0",
+      "parent": "consequence-v1-uncertainty_diagnostics_only-010",
+      "role": "uncertainty_diagnostics_only",
+      "scenario_sha256": "21a27bd6363c966a148ac1e17b87b91fafdfeb8c302a5ce0d8aa66b025411628",
+      "seed": 2031200710,
+      "split": "calibration",
+      "structure_sha256": "3de594485e8171d6de02222d9c526a5c1e5d426321627bb1c2fafe88940a36f8",
+      "tape_id": "validation-mixed-seed-2031200710-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|uncertainty_diagnostics_only|2031200711|repeat-0",
+      "parent": "consequence-v1-uncertainty_diagnostics_only-011",
+      "role": "uncertainty_diagnostics_only",
+      "scenario_sha256": "9a568a4cb7b2422d4ac88488b81e6fde5c554b36b3dd0027083f85ee11ac6e63",
+      "seed": 2031200711,
+      "split": "calibration",
+      "structure_sha256": "10b3fd5c7873bd21b35146d155e7e77103a458b89281200cd3342efe6c86ff6b",
+      "tape_id": "validation-mixed-seed-2031200711-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|mechanism_diagnostics_only|2031300700|repeat-0",
+      "parent": "consequence-v1-mechanism_diagnostics_only-000",
+      "role": "mechanism_diagnostics_only",
+      "scenario_sha256": "952c973c4da672b2fd5b916aa4ffb62e81e5a0b9df80f6a610ee295857117641",
+      "seed": 2031300700,
+      "split": "development",
+      "structure_sha256": "4f915270815ccc2a39f376e76d11a3f9c934bb23e5db976695f059d269feded9",
+      "tape_id": "validation-mixed-seed-2031300700-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|mechanism_diagnostics_only|2031300701|repeat-0",
+      "parent": "consequence-v1-mechanism_diagnostics_only-001",
+      "role": "mechanism_diagnostics_only",
+      "scenario_sha256": "468668d399a1abe78fe3ce6c0e654817acd827fce4b91b679aedd61d0ad9b3ce",
+      "seed": 2031300701,
+      "split": "development",
+      "structure_sha256": "308a950eecb91d651d298d8c15466dccbb840535b26c0b63d72a8597275cf486",
+      "tape_id": "validation-mixed-seed-2031300701-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|mechanism_diagnostics_only|2031300702|repeat-0",
+      "parent": "consequence-v1-mechanism_diagnostics_only-002",
+      "role": "mechanism_diagnostics_only",
+      "scenario_sha256": "b3ee3bca6c2c13dc1a872d9c50c01c80e2e49094766756a24ea9e2eeaab634fe",
+      "seed": 2031300702,
+      "split": "development",
+      "structure_sha256": "e6935a300d92537604a0a5cb993f38f4db8f6f92adfbc41c7299eb6541f37f83",
+      "tape_id": "validation-mixed-seed-2031300702-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|mechanism_diagnostics_only|2031300703|repeat-0",
+      "parent": "consequence-v1-mechanism_diagnostics_only-003",
+      "role": "mechanism_diagnostics_only",
+      "scenario_sha256": "c2c072601465a7ce3c628af9ec6f6bb19fa1c9485f631177746b29670e0427c4",
+      "seed": 2031300703,
+      "split": "development",
+      "structure_sha256": "caf1731c287d76f0f002373ed3ca1245c410e57544f2e7ad7c873971c90bfa8c",
+      "tape_id": "validation-mixed-seed-2031300703-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|mechanism_diagnostics_only|2031300704|repeat-0",
+      "parent": "consequence-v1-mechanism_diagnostics_only-004",
+      "role": "mechanism_diagnostics_only",
+      "scenario_sha256": "1cfd301fa6624fdbd05e84b8cfd5cee23a19f6a1689a9f1ffbbfe0bddf89b41e",
+      "seed": 2031300704,
+      "split": "development",
+      "structure_sha256": "bf344fc9d5f74987eb76d693ea83d68f53c0cad55aa0cf6f2306f36d42ebbed7",
+      "tape_id": "validation-mixed-seed-2031300704-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|mechanism_diagnostics_only|2031300705|repeat-0",
+      "parent": "consequence-v1-mechanism_diagnostics_only-005",
+      "role": "mechanism_diagnostics_only",
+      "scenario_sha256": "a717dec0e8f6ce516c8dc122815122fe80e5a2a71b6ab776c48f0ed34f740ef1",
+      "seed": 2031300705,
+      "split": "development",
+      "structure_sha256": "7a0882a5058ddc66f86a577310925cdfde819b572bb8d426205aec427447f10f",
+      "tape_id": "validation-mixed-seed-2031300705-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|mechanism_diagnostics_only|2031300706|repeat-0",
+      "parent": "consequence-v1-mechanism_diagnostics_only-006",
+      "role": "mechanism_diagnostics_only",
+      "scenario_sha256": "f6b7aa3c9a594e8559a3a8598c879a29fac7ec28fd7bc4be16c07e6bd4e921cb",
+      "seed": 2031300706,
+      "split": "development",
+      "structure_sha256": "1b7c62f4d834fa1bfaaf8ae9007913a4d72a05990a1e002b437734fc1f8efdda",
+      "tape_id": "validation-mixed-seed-2031300706-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|mechanism_diagnostics_only|2031300707|repeat-0",
+      "parent": "consequence-v1-mechanism_diagnostics_only-007",
+      "role": "mechanism_diagnostics_only",
+      "scenario_sha256": "b0a17cc99011953b32d8dedf07ef3ecc925f70702a6cd2d509b9fc47c09a7793",
+      "seed": 2031300707,
+      "split": "development",
+      "structure_sha256": "83f560262f8407f6d19955befdd43d40d63743658f65d896f226e5180a9b6fa1",
+      "tape_id": "validation-mixed-seed-2031300707-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|mechanism_diagnostics_only|2031300708|repeat-0",
+      "parent": "consequence-v1-mechanism_diagnostics_only-008",
+      "role": "mechanism_diagnostics_only",
+      "scenario_sha256": "c0dfcb2407c2656ea6f1e34f2a43ec32259323de0b42f77c394f1bbad4c7f632",
+      "seed": 2031300708,
+      "split": "development",
+      "structure_sha256": "72ddee0ecf7b46b552729f28f3afdbec68726693542fa71040b41004b6e7bdce",
+      "tape_id": "validation-mixed-seed-2031300708-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|mechanism_diagnostics_only|2031300709|repeat-0",
+      "parent": "consequence-v1-mechanism_diagnostics_only-009",
+      "role": "mechanism_diagnostics_only",
+      "scenario_sha256": "d947e9f64f15566cd0cee8cb821434e58c904400bd58a9abfa69763531fb120f",
+      "seed": 2031300709,
+      "split": "development",
+      "structure_sha256": "0ac25c9c5669d977e7933e8601f4591d3bb17d6c85a676401164b127fa627a25",
+      "tape_id": "validation-mixed-seed-2031300709-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|mechanism_diagnostics_only|2031300710|repeat-0",
+      "parent": "consequence-v1-mechanism_diagnostics_only-010",
+      "role": "mechanism_diagnostics_only",
+      "scenario_sha256": "3f74bfad7e3bf7a17545a14909b176df93d78ef684c04652eb8f1b87e03df7c7",
+      "seed": 2031300710,
+      "split": "development",
+      "structure_sha256": "ab192e1c08ac71505d365777278f3e37f6a0dfed54034ee5d475ba1e12dadaff",
+      "tape_id": "validation-mixed-seed-2031300710-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|mechanism_diagnostics_only|2031300711|repeat-0",
+      "parent": "consequence-v1-mechanism_diagnostics_only-011",
+      "role": "mechanism_diagnostics_only",
+      "scenario_sha256": "403174285c265a5a229ca1901a1c483ec1ba45c83bd35022c8a2f4ec0cfa93dc",
+      "seed": 2031300711,
+      "split": "development",
+      "structure_sha256": "4d19da327e06783afb497c0c65b9c486f06c12ca858eadd9148fc1738727facc",
+      "tape_id": "validation-mixed-seed-2031300711-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|offline_prediction_gate|2032400700|repeat-0",
+      "parent": "consequence-v1-offline_prediction_gate-000",
+      "role": "offline_prediction_gate",
+      "scenario_sha256": "42203d3c755d073c0d1609b7e60a6e3a4f63d24b2479cbe19b4bc981f4902940",
+      "seed": 2032400700,
+      "split": "evaluation",
+      "structure_sha256": "4e006b2d0c8bbb53f0c3cb87066ad8e97b38dc99a6dd1e542c95da29cfc6f614",
+      "tape_id": "test-mixed-seed-2032400700-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|offline_prediction_gate|2032400701|repeat-0",
+      "parent": "consequence-v1-offline_prediction_gate-001",
+      "role": "offline_prediction_gate",
+      "scenario_sha256": "908b3258a5b1913886ebb629037852752ab7dac27beb64b79fc20b05746f9482",
+      "seed": 2032400701,
+      "split": "evaluation",
+      "structure_sha256": "5c17471438b1c32ee3ea1421107e04b5ae79d4be32dc46cb841225eda9170fd8",
+      "tape_id": "test-mixed-seed-2032400701-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|offline_prediction_gate|2032400702|repeat-0",
+      "parent": "consequence-v1-offline_prediction_gate-002",
+      "role": "offline_prediction_gate",
+      "scenario_sha256": "8ccb720a3f1ec2a900a55984741332227ac4e35b032c3c65e3d9da15d89e7934",
+      "seed": 2032400702,
+      "split": "evaluation",
+      "structure_sha256": "6a8ac37cde9580601b938bbabb8ea2feaea6cd7c612932820873940a70d95949",
+      "tape_id": "test-mixed-seed-2032400702-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|offline_prediction_gate|2032400703|repeat-0",
+      "parent": "consequence-v1-offline_prediction_gate-003",
+      "role": "offline_prediction_gate",
+      "scenario_sha256": "3ae709d7c97b0658bc0f3ec7ae4c718a9294615a94c190e8bc5762e923b60b79",
+      "seed": 2032400703,
+      "split": "evaluation",
+      "structure_sha256": "9078aacd6557ee82cf9f4316965a010c5280908b9f0d4d380a0f972ca92758f0",
+      "tape_id": "test-mixed-seed-2032400703-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|offline_prediction_gate|2032400704|repeat-0",
+      "parent": "consequence-v1-offline_prediction_gate-004",
+      "role": "offline_prediction_gate",
+      "scenario_sha256": "ae35adce753e936e1316e3f656bf3ee40405ab942062d4142e26b6cbce49d4f3",
+      "seed": 2032400704,
+      "split": "evaluation",
+      "structure_sha256": "37cd04d86e0447d94a53deff56fbbe4225a7ee5019d44851aca89d1ea6b23422",
+      "tape_id": "test-mixed-seed-2032400704-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|offline_prediction_gate|2032400705|repeat-0",
+      "parent": "consequence-v1-offline_prediction_gate-005",
+      "role": "offline_prediction_gate",
+      "scenario_sha256": "6fb2f16fe404743c17d3c5e3fda5ffb426e0b11c0639c748562f4ce8c5cdfa25",
+      "seed": 2032400705,
+      "split": "evaluation",
+      "structure_sha256": "ef11dba24ff557f36f5697050f014ba98574b07176b5aa4cd5993bfe8617eb24",
+      "tape_id": "test-mixed-seed-2032400705-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|offline_prediction_gate|2032400706|repeat-0",
+      "parent": "consequence-v1-offline_prediction_gate-006",
+      "role": "offline_prediction_gate",
+      "scenario_sha256": "e369a8720cb50c1de147573feb78c58ed52a64125711b053e24bfe0b7f756e43",
+      "seed": 2032400706,
+      "split": "evaluation",
+      "structure_sha256": "ae8352bf627f4e9c9a38daca57fb7f6f3bc1e89d0fcff38c11e612caa3022841",
+      "tape_id": "test-mixed-seed-2032400706-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|offline_prediction_gate|2032400707|repeat-0",
+      "parent": "consequence-v1-offline_prediction_gate-007",
+      "role": "offline_prediction_gate",
+      "scenario_sha256": "4ca588ad22ee67c8e422309b6455725b6507b9f504192b782a7d626434ef3de5",
+      "seed": 2032400707,
+      "split": "evaluation",
+      "structure_sha256": "079f17a83f22dcce792fe10241547430f3835c59a58c5fd76cb1f2155934bc3e",
+      "tape_id": "test-mixed-seed-2032400707-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|offline_prediction_gate|2032400708|repeat-0",
+      "parent": "consequence-v1-offline_prediction_gate-008",
+      "role": "offline_prediction_gate",
+      "scenario_sha256": "77194976ff9bb60ab9c7b1cd5d2dac1f49b2ec59710e03b75676523bccacab48",
+      "seed": 2032400708,
+      "split": "evaluation",
+      "structure_sha256": "ae7bbc45e14fe3aedab0690ad9f13116947a150a8b318c2594ee83fb74211ccd",
+      "tape_id": "test-mixed-seed-2032400708-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|offline_prediction_gate|2032400709|repeat-0",
+      "parent": "consequence-v1-offline_prediction_gate-009",
+      "role": "offline_prediction_gate",
+      "scenario_sha256": "c181865487b23ed5e38497f162f6fbbb2a610c3492c5e1d6bfeb6bb496341113",
+      "seed": 2032400709,
+      "split": "evaluation",
+      "structure_sha256": "0e6852a5bba74ff466ad859d9a3d0594ed51470492de74a4c75cfab3753ec63e",
+      "tape_id": "test-mixed-seed-2032400709-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|offline_prediction_gate|2032400710|repeat-0",
+      "parent": "consequence-v1-offline_prediction_gate-010",
+      "role": "offline_prediction_gate",
+      "scenario_sha256": "af16f050d7103734c645f566414e31910ad935a3e106f3eebad22efa5e0e45fd",
+      "seed": 2032400710,
+      "split": "evaluation",
+      "structure_sha256": "8ab4d22fc0f8264ba604b6137632c4e142c274de64538bbe121280087e411e16",
+      "tape_id": "test-mixed-seed-2032400710-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|offline_prediction_gate|2032400711|repeat-0",
+      "parent": "consequence-v1-offline_prediction_gate-011",
+      "role": "offline_prediction_gate",
+      "scenario_sha256": "82bef04b33db3fdb6001b2d1d5f4a0518b175f3d1be4feaa9f1741f07cda2c27",
+      "seed": 2032400711,
+      "split": "evaluation",
+      "structure_sha256": "895e1ca66e4f467c510053cfa708f512be6e59f59f2787df4a62f8863866a883",
+      "tape_id": "test-mixed-seed-2032400711-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|offline_prediction_gate|2032400712|repeat-0",
+      "parent": "consequence-v1-offline_prediction_gate-012",
+      "role": "offline_prediction_gate",
+      "scenario_sha256": "a9ebb8c59459d8d1b8a1867c409247d94fa4a1f54353fd42dd3e0c068ad9a34b",
+      "seed": 2032400712,
+      "split": "evaluation",
+      "structure_sha256": "3575737055a9a543ea4e836095e0b28b6bed59ec746dd05943161fb1087b3da8",
+      "tape_id": "test-mixed-seed-2032400712-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|offline_prediction_gate|2032400713|repeat-0",
+      "parent": "consequence-v1-offline_prediction_gate-013",
+      "role": "offline_prediction_gate",
+      "scenario_sha256": "d9d7e713f3721d3b4a04f2078b626ebfa9a4bd7cb053bccb7b6750f64e0778d4",
+      "seed": 2032400713,
+      "split": "evaluation",
+      "structure_sha256": "17e87d4fbcc165c386f430d9b043c49dcf49cf4820e2f5749135233aa074ceaf",
+      "tape_id": "test-mixed-seed-2032400713-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|offline_prediction_gate|2032400714|repeat-0",
+      "parent": "consequence-v1-offline_prediction_gate-014",
+      "role": "offline_prediction_gate",
+      "scenario_sha256": "7e156e2bf00293206e5df3fe3a7c3f500bb3806952fb589f44be0b614de4140e",
+      "seed": 2032400714,
+      "split": "evaluation",
+      "structure_sha256": "28c9dd764b1a0168be3d0566033a25b5fe426c2c9da06790d9eea6e10f51b7c2",
+      "tape_id": "test-mixed-seed-2032400714-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|offline_prediction_gate|2032400715|repeat-0",
+      "parent": "consequence-v1-offline_prediction_gate-015",
+      "role": "offline_prediction_gate",
+      "scenario_sha256": "2169debcf8cb35925ca313469bfa54684da759ebbe34228a30261697df4ff7ab",
+      "seed": 2032400715,
+      "split": "evaluation",
+      "structure_sha256": "22fad788b39097aaa8cd9a255a47abf8453c46d00082b9b75a6445c68a69edd9",
+      "tape_id": "test-mixed-seed-2032400715-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|offline_prediction_gate|2032400716|repeat-0",
+      "parent": "consequence-v1-offline_prediction_gate-016",
+      "role": "offline_prediction_gate",
+      "scenario_sha256": "59060519a67cc450821b22dd8456f51d0832e11296373f6676265d3368203ff9",
+      "seed": 2032400716,
+      "split": "evaluation",
+      "structure_sha256": "b10a9183171330d9c74d7ec91da7644de6422903e5bd4fb919c0640cb39a351e",
+      "tape_id": "test-mixed-seed-2032400716-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|offline_prediction_gate|2032400717|repeat-0",
+      "parent": "consequence-v1-offline_prediction_gate-017",
+      "role": "offline_prediction_gate",
+      "scenario_sha256": "e76df8f81bf334413741734a0375be128eed5832619ddf4059c5d53837db93bc",
+      "seed": 2032400717,
+      "split": "evaluation",
+      "structure_sha256": "f8967ec7b2d02748f80fe74140ef993014bae8698aa3eeb7122a223f6e2a2c50",
+      "tape_id": "test-mixed-seed-2032400717-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|offline_prediction_gate|2032400718|repeat-0",
+      "parent": "consequence-v1-offline_prediction_gate-018",
+      "role": "offline_prediction_gate",
+      "scenario_sha256": "902bd610eab25a9bc0c6ee54b4db5c702667b3370f6c043f972be7f6d30a85d1",
+      "seed": 2032400718,
+      "split": "evaluation",
+      "structure_sha256": "5efa40435fde806f1f58c0c94df0253b1722087079d46ea62adf17a13f4abf9c",
+      "tape_id": "test-mixed-seed-2032400718-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|offline_prediction_gate|2032400719|repeat-0",
+      "parent": "consequence-v1-offline_prediction_gate-019",
+      "role": "offline_prediction_gate",
+      "scenario_sha256": "80044659fb46e983d929c22f95ce7f7d92be06f0a953b3a4cd33570833ac6fc9",
+      "seed": 2032400719,
+      "split": "evaluation",
+      "structure_sha256": "e05d353b9226d7a009737d4a4e6b8dbd337fe8da243f5e90acffee4853e442e1",
+      "tape_id": "test-mixed-seed-2032400719-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|offline_prediction_gate|2032400720|repeat-0",
+      "parent": "consequence-v1-offline_prediction_gate-020",
+      "role": "offline_prediction_gate",
+      "scenario_sha256": "19421ed76f553533b7e1e2ebd348910503df472909fbb369d07e76b3b05aab99",
+      "seed": 2032400720,
+      "split": "evaluation",
+      "structure_sha256": "b20460ff155097a7baaba4fb4e860345789321fdc0f39998fc631c6f942f72c3",
+      "tape_id": "test-mixed-seed-2032400720-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|offline_prediction_gate|2032400721|repeat-0",
+      "parent": "consequence-v1-offline_prediction_gate-021",
+      "role": "offline_prediction_gate",
+      "scenario_sha256": "ad19d99f2c012c642cc62998648f93f0348eb646214b0f5858a1c07c171cfe93",
+      "seed": 2032400721,
+      "split": "evaluation",
+      "structure_sha256": "1b3483bb3ec2b49a79076b46494f1490076a2f0d091ccec57c7fc8f0ef2ae880",
+      "tape_id": "test-mixed-seed-2032400721-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|offline_prediction_gate|2032400722|repeat-0",
+      "parent": "consequence-v1-offline_prediction_gate-022",
+      "role": "offline_prediction_gate",
+      "scenario_sha256": "cc43fca73d77758a7bba6c501cbb583176060a242e19cdc36870c4221b4489c9",
+      "seed": 2032400722,
+      "split": "evaluation",
+      "structure_sha256": "ee1056247ec8586e8a31c636c257a2567976c3ec9221613fe4e8dfa6c325371b",
+      "tape_id": "test-mixed-seed-2032400722-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|offline_prediction_gate|2032400723|repeat-0",
+      "parent": "consequence-v1-offline_prediction_gate-023",
+      "role": "offline_prediction_gate",
+      "scenario_sha256": "fbd43761b7fd7b52993337a0f3da647bccf86707328a66193eacd7034e11b882",
+      "seed": 2032400723,
+      "split": "evaluation",
+      "structure_sha256": "45a209eeb2feb942dbae7cbd66f2dcb5cbcdc72fb62b7380d025db359610dbc3",
+      "tape_id": "test-mixed-seed-2032400723-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400724|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-000",
+      "role": "policy_task_evaluation",
+      "scenario_sha256": "308ac23f90b53b0496120c72f2db33c21b29a5107a77fb3c81169d4153347991",
+      "seed": 2032400724,
+      "split": "evaluation",
+      "structure_sha256": "289962f467152aaefa28043662f0ecda63f74a1a0f633fd2e2b0b3a0bf26048a",
+      "tape_id": "test-mixed-seed-2032400724-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400725|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-001",
+      "role": "policy_task_evaluation",
+      "scenario_sha256": "80d0e3dc3a24fcea6c81ef5f1866a9190111d333e1ef0d3d8739763058d04279",
+      "seed": 2032400725,
+      "split": "evaluation",
+      "structure_sha256": "43a898fe53c20f9e3be27ce89497635dcaa997a2fc01288fe1c6c36dafeae04a",
+      "tape_id": "test-mixed-seed-2032400725-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400726|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-002",
+      "role": "policy_task_evaluation",
+      "scenario_sha256": "2d9a6c311a77ab071916d265be488e1fbaf1685d7c761c37dba63b9f28ef1f6d",
+      "seed": 2032400726,
+      "split": "evaluation",
+      "structure_sha256": "aade1e9ec760f9b26951738bb9dc0224efa1e9ebfdb435c822e6f9e461bad60e",
+      "tape_id": "test-mixed-seed-2032400726-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400727|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-003",
+      "role": "policy_task_evaluation",
+      "scenario_sha256": "b2650ec91ceb5faadcb6904e76b89cdfdafdf3f6601417cfdc4f79425d6ced47",
+      "seed": 2032400727,
+      "split": "evaluation",
+      "structure_sha256": "dbba88f09c330a6dc00deb8216f6043d385a23542c13d81127634a2268b73ab6",
+      "tape_id": "test-mixed-seed-2032400727-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400728|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-004",
+      "role": "policy_task_evaluation",
+      "scenario_sha256": "726402e9a6c98f0ac8c6b28d2b501ce24bfd2b07821b7618a520b0a336e2e683",
+      "seed": 2032400728,
+      "split": "evaluation",
+      "structure_sha256": "cbdb3a9cafcdf75a13e566063b738cbdf3627b6017c8221071b19f56b6c5e918",
+      "tape_id": "test-mixed-seed-2032400728-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400729|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-005",
+      "role": "policy_task_evaluation",
+      "scenario_sha256": "6b03001dcd51a2519d8773a9a9ca7e72ffff640bd895225bd6cc94abbb7049aa",
+      "seed": 2032400729,
+      "split": "evaluation",
+      "structure_sha256": "d198546d249b90cf3e9fa8a4ce724ca9605dc326f5ce5ca37fae0116e36b74f4",
+      "tape_id": "test-mixed-seed-2032400729-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400730|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-006",
+      "role": "policy_task_evaluation",
+      "scenario_sha256": "24f929f7dc469d9980d1fa839316e30dc9642bcbdd2191ce0d81324b3215c027",
+      "seed": 2032400730,
+      "split": "evaluation",
+      "structure_sha256": "cf36aa6a29f970c8dbfb4784140b32cb41b8d788c93670b48f1b10015be02b8c",
+      "tape_id": "test-mixed-seed-2032400730-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400731|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-007",
+      "role": "policy_task_evaluation",
+      "scenario_sha256": "1f29189e34a570f73846c270154daf5704cd0ba36551d40f27ed7b52b9539481",
+      "seed": 2032400731,
+      "split": "evaluation",
+      "structure_sha256": "bb2bcd43c2f822dc812669fa8cccea802b374ddc276aacab57fd71b96a8f9f7b",
+      "tape_id": "test-mixed-seed-2032400731-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400732|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-008",
+      "role": "policy_task_evaluation",
+      "scenario_sha256": "88c01f52bd55849f5571dcbe88e63a53430ec01706e1833354afabff502876da",
+      "seed": 2032400732,
+      "split": "evaluation",
+      "structure_sha256": "ad9f0953e4d334122d344e3690bfc21597003688aa34cb1c6985669158a9b833",
+      "tape_id": "test-mixed-seed-2032400732-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400733|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-009",
+      "role": "policy_task_evaluation",
+      "scenario_sha256": "ac357350eb6abb7c61ce800b54ab0d456e1f7cf466d7129e0b6a0acdbfaa9266",
+      "seed": 2032400733,
+      "split": "evaluation",
+      "structure_sha256": "4c9278342562e864101fa6db8389b7e6c057094a38fa6d8a5d784ccf55485539",
+      "tape_id": "test-mixed-seed-2032400733-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400734|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-010",
+      "role": "policy_task_evaluation",
+      "scenario_sha256": "53e51ff57e3f85088b1c0bc691eaa2ac43a851465a85014abd82946970abce1b",
+      "seed": 2032400734,
+      "split": "evaluation",
+      "structure_sha256": "d9bafaeb4cea8674031a60fe54fdbc2082d19f9d6f5961d9317b79230851f07a",
+      "tape_id": "test-mixed-seed-2032400734-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400735|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-011",
+      "role": "policy_task_evaluation",
+      "scenario_sha256": "69021e99581e705a7e6f37f42f26aa8b57cab5d773783926c7ef94501eae8e1c",
+      "seed": 2032400735,
+      "split": "evaluation",
+      "structure_sha256": "c2f7ddd108028cbe5147c7b126b8474d9ceba66d0cf44300bf1c9ece9c6f52eb",
+      "tape_id": "test-mixed-seed-2032400735-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400736|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-012",
+      "role": "policy_task_evaluation",
+      "scenario_sha256": "2f727d1e6e4669388867b83823aff1636c3b944be61cc443782772e11a43d54f",
+      "seed": 2032400736,
+      "split": "evaluation",
+      "structure_sha256": "a4a91844f8b99e68ec91c3c58d9035f82ed2ab026744cb9b9f1af3adb0d3a54c",
+      "tape_id": "test-mixed-seed-2032400736-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400737|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-013",
+      "role": "policy_task_evaluation",
+      "scenario_sha256": "b1b592a06be110a673b581ab76a14ff795790145203e12b2984ed8a934a29593",
+      "seed": 2032400737,
+      "split": "evaluation",
+      "structure_sha256": "96ae45ab5bf2c843d6040c9c4d35aa3fd687f868434a9f4babd08ea184f563a0",
+      "tape_id": "test-mixed-seed-2032400737-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400738|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-014",
+      "role": "policy_task_evaluation",
+      "scenario_sha256": "4d5ccc462bfdbffc430b9ec40db0fb6694302c8c0c1e360ae312e7e760026ea2",
+      "seed": 2032400738,
+      "split": "evaluation",
+      "structure_sha256": "b60fe6e9997eb944845e97132d2270b557e72271e23c5ba8ecc4ec161fe7304f",
+      "tape_id": "test-mixed-seed-2032400738-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400739|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-015",
+      "role": "policy_task_evaluation",
+      "scenario_sha256": "a8e402c31d1ad95f53c9ca988d3b9641a73e82da9969693841f89d0f31a8f70e",
+      "seed": 2032400739,
+      "split": "evaluation",
+      "structure_sha256": "bbc2026e114f1a580ef00acae28dc2c5366f0f2cd6403573ed2340f1f1c1c556",
+      "tape_id": "test-mixed-seed-2032400739-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400740|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-016",
+      "role": "policy_task_evaluation",
+      "scenario_sha256": "6711c1c1f0804cc93ef39a49061c6c28ec7ee46223d7a66bed39d22c5708a6b1",
+      "seed": 2032400740,
+      "split": "evaluation",
+      "structure_sha256": "9cd6da9708f0ebabde498426b04d5505a6eeaea47d06e0713a1f9bc42e190e31",
+      "tape_id": "test-mixed-seed-2032400740-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400741|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-017",
+      "role": "policy_task_evaluation",
+      "scenario_sha256": "e995b1be62b2943974661e45ad60f5b9036a3fc2fcdcd6b0ef5a729281d18929",
+      "seed": 2032400741,
+      "split": "evaluation",
+      "structure_sha256": "ebb2fb046b5cf292e2a05c28daa327b1ef3dc5d4828f783f734bc6c7de42bee8",
+      "tape_id": "test-mixed-seed-2032400741-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400742|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-018",
+      "role": "policy_task_evaluation",
+      "scenario_sha256": "4795cfbc120c845f79694558aaaf7b3f352d9393fafbae0afd2e383eaaaf86b1",
+      "seed": 2032400742,
+      "split": "evaluation",
+      "structure_sha256": "511b5f20d10fce8606005a91a8e8cfdef851bdca0ee6c916e2d8cf5892442b34",
+      "tape_id": "test-mixed-seed-2032400742-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400743|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-019",
+      "role": "policy_task_evaluation",
+      "scenario_sha256": "23c9515d55037822a217b9bc7e187e58580f4e01a5a1f54657ff38b04ef4e98e",
+      "seed": 2032400743,
+      "split": "evaluation",
+      "structure_sha256": "87ea585357f65b9e1fa10d3ca665d18b696919892e42ee3c3debb9ce05d82428",
+      "tape_id": "test-mixed-seed-2032400743-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400744|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-020",
+      "role": "policy_task_evaluation",
+      "scenario_sha256": "9adae0154f65d80559e42f35ca72aa95e6919cb82f62dd24ccaa81820a9c0697",
+      "seed": 2032400744,
+      "split": "evaluation",
+      "structure_sha256": "8209c6c299efffab9699aa3bbe0c2ff45cfa2d3e6276d470c3f52b35fd14a972",
+      "tape_id": "test-mixed-seed-2032400744-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400745|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-021",
+      "role": "policy_task_evaluation",
+      "scenario_sha256": "3ef6950617c8d45a8db1406c31e9487ef1eb14aff5dab6963644535c666a9ac8",
+      "seed": 2032400745,
+      "split": "evaluation",
+      "structure_sha256": "feefb2c548cb37d7c9a7ca4b3ce0b1341989763d42a1767b65e3be48af035e40",
+      "tape_id": "test-mixed-seed-2032400745-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400746|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-022",
+      "role": "policy_task_evaluation",
+      "scenario_sha256": "bcad25ac97e0ff78229237d910b6bec8b4b862618cf41b9193868d85c42d5f43",
+      "seed": 2032400746,
+      "split": "evaluation",
+      "structure_sha256": "373278f8fe0e06e5fee4c1975442e3728c0356ccd58819ce01705388aa4b039e",
+      "tape_id": "test-mixed-seed-2032400746-W1"
+    },
+    {
+      "exogenous_key": "drone-action-consequence-v1|policy_task_evaluation|2032400747|repeat-0",
+      "parent": "consequence-v1-policy_task_evaluation-023",
+      "role": "policy_task_evaluation",
+      "scenario_sha256": "2935389b91e29529c596feaa892957dcee493126c36720738dcdd12b2de0c2c5",
+      "seed": 2032400747,
+      "split": "evaluation",
+      "structure_sha256": "e0e34f5caa6033a1b73e25ab334aefcbb9e4516ba75605d9027776e20de563b0",
+      "tape_id": "test-mixed-seed-2032400747-W1"
+    }
+  ],
+  "seed_parent_tape_disjoint": true,
+  "task_tape_parse_lock": "production_driver.evaluation_specs after nine strict restores"
+}

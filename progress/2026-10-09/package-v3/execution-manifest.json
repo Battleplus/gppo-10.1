@@ -1,0 +1,77 @@
+{
+  "attempt": "w1-drone-action-consequence-world-model-v5-recovery-v1-linux-release-v3-output-writes-contract-repair-once",
+  "candidate_key_contract": "candidate-key-contract.json",
+  "collection_enabled": false,
+  "collection_reused_from_cache": true,
+  "data_cache_manifest": "package/recovery-inputs/window-cache-manifest.json",
+  "execution": {
+    "cpu_affinity": [
+      0
+    ],
+    "gpu": false,
+    "persistent_supervisor": "existing systemd user service contract; Restart=no; KillMode=control-group",
+    "runtime": "/home/user1/w1-runtimes/w1-py31116-torch270cu128-v2/w1-light-repaired-fair-rerun-py31116/bin/python",
+    "server": "user1@172.17.27.173",
+    "threads": 1
+  },
+  "formal_attempt_created": false,
+  "formal_fixture_allowed": false,
+  "formal_token_created": false,
+  "historical_costs_separate": {
+    "collection_environment_steps": 6839,
+    "evaluation_environment_steps": 0,
+    "strategy_training_environment_steps": 0,
+    "worker_final_ledger_available": false,
+    "world_model_updates_complete": 475,
+    "world_model_updates_pending": 1
+  },
+  "new_authorization_required": true,
+  "new_run_resources": {
+    "collection_environment_steps": 0,
+    "evaluation_environment_steps": 4320,
+    "evaluation_episodes": 240,
+    "policy_updates": 1152,
+    "strategy_training_environment_steps": 18432,
+    "total_environment_steps": 22752,
+    "world_model_updates": 640
+  },
+  "old_prediction_gate": "unchanged; failure requires zero GPPO updates and zero task episodes",
+  "parent_split": "package/recovery-inputs/parent-split.json",
+  "public_prefix_contract": "PUBLIC_PREFIX_CONTRACT.json",
+  "publish_release": {
+    "bytecode_policy": "exclude __pycache__, *.pyc, *.pyo; reject if present",
+    "resource_request_changed_only_for_attempt_binding": false,
+    "scientific_protocol_unchanged": true,
+    "source_changes": [
+      "launch_pilot.py rejects bytecode-cache trees and excludes bytecode patterns during staging copy",
+      "package/acceptance/recovery_path_acceptance.py keeps schedule accounting and checkpoint operations inside scheduled_train",
+      "package/production_driver.py makes formal JSON writes atomic, post-write hash-checked and idempotent",
+      "input_admission output_writes is frozen at the three real formal outputs",
+      "acceptance/input_admission_output_acceptance.py validates normal, insufficient and duplicate-write paths"
+    ],
+    "supersedes_attempt": "w1-drone-action-consequence-world-model-v5-recovery-v1-linux-release-once"
+  },
+  "research_mode": "multihead_ranking_critic_combination_recovery",
+  "schema": "drone-consequence-recovery-freeze/1",
+  "source_attempt_read_only": "w1-drone-action-consequence-world-model-v5-public-prefix-contract-repair-once",
+  "stage_order": [
+    "input_admission",
+    "paired_collection",
+    "world_training_and_restore",
+    "offline_prediction",
+    "conditional_policy_training",
+    "conditional_task_confirmation",
+    "analysis_and_settlement",
+    "settlement_and_verified_export"
+  ],
+  "unique_entry": "launch_pilot.py",
+  "worker": "package/production_driver.py",
+  "world_model_training_enabled": true,
+  "world_models_reused": [
+    8201
+  ],
+  "world_models_trained": [
+    8202,
+    8203
+  ]
+}

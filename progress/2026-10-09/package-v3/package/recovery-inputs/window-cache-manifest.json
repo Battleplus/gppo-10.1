@@ -1,0 +1,2888 @@
+{
+  "files": [
+    {
+      "bytes": 2748,
+      "candidate_count": 1,
+      "parent": "consequence-v1-mechanism_diagnostics_only-000",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-000--time-12.json.gz",
+      "sha256": "24a2c177882006123dd549dadf612bf5b66cc70dce62e00048fee9108292347b",
+      "split": "development",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 175250,
+      "candidate_count": 4,
+      "parent": "consequence-v1-mechanism_diagnostics_only-000",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-000--time-2.json.gz",
+      "sha256": "e2425fa6846bb3c09ceeac824b7be47dad2ac248c9bc14da80e159f3b0a27cf7",
+      "split": "development",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 113255,
+      "candidate_count": 3,
+      "parent": "consequence-v1-mechanism_diagnostics_only-000",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-000--time-4.json.gz",
+      "sha256": "a52344b0148cc77fcf60acc7b93c342e7ca1f18444df8477a5977560a43d3522",
+      "split": "development",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 2524,
+      "candidate_count": 1,
+      "parent": "consequence-v1-mechanism_diagnostics_only-000",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-000--time-8.json.gz",
+      "sha256": "3f592af6972a5c57b01c9d4c15e64a1eb03bcb806bc3a3d33a13dd88575a27b9",
+      "split": "development",
+      "status": "no_opportunity",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2741,
+      "candidate_count": 1,
+      "parent": "consequence-v1-mechanism_diagnostics_only-001",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-001--time-12.json.gz",
+      "sha256": "5574bf5488cc00a4bab82e6f09e359c2353ead1eade3d5ea85d491e09a941758",
+      "split": "development",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 142981,
+      "candidate_count": 4,
+      "parent": "consequence-v1-mechanism_diagnostics_only-001",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-001--time-2.json.gz",
+      "sha256": "1b242c3a5eb7a13eebe31f25bd8d89338eca33beeef6789d8860fe92e8499173",
+      "split": "development",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 2123,
+      "candidate_count": 1,
+      "parent": "consequence-v1-mechanism_diagnostics_only-001",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-001--time-4.json.gz",
+      "sha256": "37419e00844442b0bf5c9ebe6ff0516250512b3b596eea8a8c5fd6a90dae0805",
+      "split": "development",
+      "status": "no_opportunity",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 83764,
+      "candidate_count": 4,
+      "parent": "consequence-v1-mechanism_diagnostics_only-001",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-001--time-8.json.gz",
+      "sha256": "20bf03dfde7f688b3399aec80a986253cc8d6029aa9273320fdf5bd26bbc20b9",
+      "split": "development",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2751,
+      "candidate_count": 1,
+      "parent": "consequence-v1-mechanism_diagnostics_only-002",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-002--time-12.json.gz",
+      "sha256": "df70365b1141d1f9821643a628189cb4a6daa7d4be4e611d11bf379f1b97fa5b",
+      "split": "development",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 171222,
+      "candidate_count": 4,
+      "parent": "consequence-v1-mechanism_diagnostics_only-002",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-002--time-2.json.gz",
+      "sha256": "d767ef143f8b75d6add5000951e1bcdf1df8c83338867cf07a5aa1700c4841e0",
+      "split": "development",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 2062,
+      "candidate_count": 1,
+      "parent": "consequence-v1-mechanism_diagnostics_only-002",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-002--time-4.json.gz",
+      "sha256": "6e405df8d30491a58faf7b6a4705c0b99d35f8c2d1e93c1c9db063ca282a4ea0",
+      "split": "development",
+      "status": "no_opportunity",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 94417,
+      "candidate_count": 5,
+      "parent": "consequence-v1-mechanism_diagnostics_only-002",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-002--time-8.json.gz",
+      "sha256": "7ce82f8cb4888977d12c124541cd2a72f7936302393ef05a5dbe1d55c7131cd4",
+      "split": "development",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2744,
+      "candidate_count": 1,
+      "parent": "consequence-v1-mechanism_diagnostics_only-003",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-003--time-12.json.gz",
+      "sha256": "fa27e6f64837bc4c6fd93a0ec44799603e3089c844043146f11467675c058602",
+      "split": "development",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 129765,
+      "candidate_count": 3,
+      "parent": "consequence-v1-mechanism_diagnostics_only-003",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-003--time-2.json.gz",
+      "sha256": "0a244b7081d3e9e8a1982e1d76eaaa18baca6c2ca4a3ebfd9c284383644015a0",
+      "split": "development",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 2086,
+      "candidate_count": 1,
+      "parent": "consequence-v1-mechanism_diagnostics_only-003",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-003--time-4.json.gz",
+      "sha256": "3fe7f618892912893825c419f58254172d3e4db7426be7f35ca53c609721f38c",
+      "split": "development",
+      "status": "no_opportunity",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 2564,
+      "candidate_count": 1,
+      "parent": "consequence-v1-mechanism_diagnostics_only-003",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-003--time-8.json.gz",
+      "sha256": "261b9b57ccb5220aaf8d7f28f90034d563c43aca31a288e8849bc4697cd19661",
+      "split": "development",
+      "status": "no_opportunity",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2858,
+      "candidate_count": 1,
+      "parent": "consequence-v1-mechanism_diagnostics_only-004",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-004--time-12.json.gz",
+      "sha256": "da4bebbd5ddcd4e419b05fac62f48b44dc45ba0b6624d372011d4aef18f3da49",
+      "split": "development",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 171318,
+      "candidate_count": 4,
+      "parent": "consequence-v1-mechanism_diagnostics_only-004",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-004--time-2.json.gz",
+      "sha256": "76369adad517d1dd27d475400881a38d15674c68d3eba49233792cc878f2c44e",
+      "split": "development",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 2164,
+      "candidate_count": 1,
+      "parent": "consequence-v1-mechanism_diagnostics_only-004",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-004--time-4.json.gz",
+      "sha256": "bbc0e4ecebf0940ff943bde21fa92035a15979e79ec0e6fcdedb3a1856881b31",
+      "split": "development",
+      "status": "no_opportunity",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 59656,
+      "candidate_count": 3,
+      "parent": "consequence-v1-mechanism_diagnostics_only-004",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-004--time-8.json.gz",
+      "sha256": "9ee7ebfdb3bc1112fad7f242a51115865755352244bdefcef1afa6121d1f86df",
+      "split": "development",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2800,
+      "candidate_count": 1,
+      "parent": "consequence-v1-mechanism_diagnostics_only-005",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-005--time-12.json.gz",
+      "sha256": "c8105da4fecafd9ac1796679be375f9cf0285bc98515be5ed8b309562bb3060e",
+      "split": "development",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 169772,
+      "candidate_count": 4,
+      "parent": "consequence-v1-mechanism_diagnostics_only-005",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-005--time-2.json.gz",
+      "sha256": "fe7e988fc6e6c35f3db63e8f07fa3a6faddf1807c11a7f735903684a1ace61dc",
+      "split": "development",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 156263,
+      "candidate_count": 4,
+      "parent": "consequence-v1-mechanism_diagnostics_only-005",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-005--time-4.json.gz",
+      "sha256": "25d25d917bcec2d421371db6c4ed93118f6cdd7c54bc385110a07726eb581002",
+      "split": "development",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 50882,
+      "candidate_count": 2,
+      "parent": "consequence-v1-mechanism_diagnostics_only-005",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-005--time-8.json.gz",
+      "sha256": "c3faa999ce0c5122d6736e669df7d62b594047f86007a3a037cd0ee88259f7cc",
+      "split": "development",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 65652,
+      "candidate_count": 4,
+      "parent": "consequence-v1-mechanism_diagnostics_only-006",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-006--time-12.json.gz",
+      "sha256": "00e6fe964da437ed0c5c1d9ac04b05711bc9ee8aa1836a2c19f1d852878b413e",
+      "split": "development",
+      "status": "complete",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 192584,
+      "candidate_count": 4,
+      "parent": "consequence-v1-mechanism_diagnostics_only-006",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-006--time-2.json.gz",
+      "sha256": "a95528628629537cb69e233e04deccad6d196f9bd06e1250dd149ced3adbe842",
+      "split": "development",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 277524,
+      "candidate_count": 7,
+      "parent": "consequence-v1-mechanism_diagnostics_only-006",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-006--time-4.json.gz",
+      "sha256": "5b57d6beabb8b7c4f02997b2942d6aa25fb86546b95d1cbf7a7c09fb84d0e39b",
+      "split": "development",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 64385,
+      "candidate_count": 3,
+      "parent": "consequence-v1-mechanism_diagnostics_only-006",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-006--time-8.json.gz",
+      "sha256": "0c8184b7b1725ee5ceadab4d6fb9315ea5a786519ad46b8de58bf5f426e15e2a",
+      "split": "development",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2838,
+      "candidate_count": 1,
+      "parent": "consequence-v1-mechanism_diagnostics_only-007",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-007--time-12.json.gz",
+      "sha256": "54a7b6c06988d49766cb4f6c06b4660deacb6e1e37f8073ffce44b1be33385f8",
+      "split": "development",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 157509,
+      "candidate_count": 4,
+      "parent": "consequence-v1-mechanism_diagnostics_only-007",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-007--time-2.json.gz",
+      "sha256": "05f8a98f32c2f5a10ba6d5fa8361c96064c54562edc23647bb12799d9ec50223",
+      "split": "development",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 139384,
+      "candidate_count": 4,
+      "parent": "consequence-v1-mechanism_diagnostics_only-007",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-007--time-4.json.gz",
+      "sha256": "3b1ff6ad5bae71074c0d7fde55d9b213333d355ebdc8435de6df81c1b2a522d8",
+      "split": "development",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 66262,
+      "candidate_count": 3,
+      "parent": "consequence-v1-mechanism_diagnostics_only-007",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-007--time-8.json.gz",
+      "sha256": "4a366898d67c98dd4bc8d1d48fa33b69be25bc173491b2371d443e260fe14cad",
+      "split": "development",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2701,
+      "candidate_count": 1,
+      "parent": "consequence-v1-mechanism_diagnostics_only-008",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-008--time-12.json.gz",
+      "sha256": "69946b8adf1b61234ec6cecbdc54ce3a1a5e407ce6435db1e4d7e5ba5208faa5",
+      "split": "development",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 153785,
+      "candidate_count": 4,
+      "parent": "consequence-v1-mechanism_diagnostics_only-008",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-008--time-2.json.gz",
+      "sha256": "d3464c70f86edc4b70fa3fbbacc7c8d08ff2de9904bcd1ef309704ea6aafbc96",
+      "split": "development",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 79756,
+      "candidate_count": 3,
+      "parent": "consequence-v1-mechanism_diagnostics_only-008",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-008--time-4.json.gz",
+      "sha256": "126867a535f36cd816dbfeb282645c6723e11b929fffb7ef65f3069cb72362a9",
+      "split": "development",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 2469,
+      "candidate_count": 1,
+      "parent": "consequence-v1-mechanism_diagnostics_only-008",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-008--time-8.json.gz",
+      "sha256": "b7234d24605bb6dd8885a240e7bb80a9fd797d4e01ef3849a96c3704673ba4dd",
+      "split": "development",
+      "status": "no_opportunity",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2681,
+      "candidate_count": 1,
+      "parent": "consequence-v1-mechanism_diagnostics_only-009",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-009--time-12.json.gz",
+      "sha256": "9c844a46e65b6d03d032e54fe3d0e875f48fdf251c17451847ccc81fe1ba3237",
+      "split": "development",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 163536,
+      "candidate_count": 4,
+      "parent": "consequence-v1-mechanism_diagnostics_only-009",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-009--time-2.json.gz",
+      "sha256": "ecdafd7c882069c0cd82a5a5784d9b98b48fe9ee1de05880f3e81f038bb4a7b2",
+      "split": "development",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 112730,
+      "candidate_count": 3,
+      "parent": "consequence-v1-mechanism_diagnostics_only-009",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-009--time-4.json.gz",
+      "sha256": "353c824b843482b1847cf94bb41053327fda81a2a3994ceb83868ea73a6cdcbf",
+      "split": "development",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 85993,
+      "candidate_count": 4,
+      "parent": "consequence-v1-mechanism_diagnostics_only-009",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-009--time-8.json.gz",
+      "sha256": "7f398a6cd52f5d6b9019ac249e3e21ee2e586c415ba2b65e76f24bb036b102d4",
+      "split": "development",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 46043,
+      "candidate_count": 4,
+      "parent": "consequence-v1-mechanism_diagnostics_only-010",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-010--time-12.json.gz",
+      "sha256": "3edba57f80cfc289e32ead2b04b569d8251deae4d5b69d872cdc42c4bf362cb7",
+      "split": "development",
+      "status": "complete",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 1644,
+      "candidate_count": 1,
+      "parent": "consequence-v1-mechanism_diagnostics_only-010",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-010--time-2.json.gz",
+      "sha256": "e44373a325e9bf7357d935604f8dc5f28245977b594214f36d62cf9b650ede7c",
+      "split": "development",
+      "status": "no_opportunity",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 107877,
+      "candidate_count": 3,
+      "parent": "consequence-v1-mechanism_diagnostics_only-010",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-010--time-4.json.gz",
+      "sha256": "6320a3650688ba17aa418e0c750739f45e3f7af133d537949b130609bddbc3b0",
+      "split": "development",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 2633,
+      "candidate_count": 1,
+      "parent": "consequence-v1-mechanism_diagnostics_only-010",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-010--time-8.json.gz",
+      "sha256": "3193a9613d6909e296f915de24a1541bb31486db32490d7f6a380a44ad74b805",
+      "split": "development",
+      "status": "no_opportunity",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2743,
+      "candidate_count": 1,
+      "parent": "consequence-v1-mechanism_diagnostics_only-011",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-011--time-12.json.gz",
+      "sha256": "4e77c593dfc854ceb05dcf8a32dd79c008df0a9b57d5c4f488fb522c33cbbd30",
+      "split": "development",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 188652,
+      "candidate_count": 4,
+      "parent": "consequence-v1-mechanism_diagnostics_only-011",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-011--time-2.json.gz",
+      "sha256": "ecfcbbbb6370986be454bb2ffbcad4bd60d4d8f43c40f3d010445523f5246ddb",
+      "split": "development",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 2115,
+      "candidate_count": 1,
+      "parent": "consequence-v1-mechanism_diagnostics_only-011",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-011--time-4.json.gz",
+      "sha256": "59d221ceb01579d2c0ef4f60fed59ac0ba16cf3b65b694beceebd32dfbaf2cde",
+      "split": "development",
+      "status": "no_opportunity",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 2590,
+      "candidate_count": 1,
+      "parent": "consequence-v1-mechanism_diagnostics_only-011",
+      "path": "windows/consequence-v1-mechanism_diagnostics_only-011--time-8.json.gz",
+      "sha256": "be9b099e5a89c5028126f2ebf77e213eeb1f4e4504c7e2c9fb0be7cae2311ccb",
+      "split": "development",
+      "status": "no_opportunity",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2678,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-000",
+      "path": "windows/consequence-v1-offline_prediction_gate-000--time-12.json.gz",
+      "sha256": "a4586f9ed26ff61a908ffac1bf6cd047d2d2d0b4168b05dafb28b900f862a202",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 157600,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-000",
+      "path": "windows/consequence-v1-offline_prediction_gate-000--time-2.json.gz",
+      "sha256": "7fa3f93f31251b4d8ccbc39e889412355000ff62d135fabb912fd6535925087b",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 2033,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-000",
+      "path": "windows/consequence-v1-offline_prediction_gate-000--time-4.json.gz",
+      "sha256": "ce6db77c84ad9683a5b8c816d0c846ece72e09d4494df12460a7c14072d283f2",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 73173,
+      "candidate_count": 3,
+      "parent": "consequence-v1-offline_prediction_gate-000",
+      "path": "windows/consequence-v1-offline_prediction_gate-000--time-8.json.gz",
+      "sha256": "1afc4f493c9b140a70ac1e27b7845826af9420abbdaef8ec544ad879e8e29131",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 54213,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-001",
+      "path": "windows/consequence-v1-offline_prediction_gate-001--time-12.json.gz",
+      "sha256": "08ac122491699af28798185ba581a07be6c61475736e84be9b33d22f40045b36",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 178829,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-001",
+      "path": "windows/consequence-v1-offline_prediction_gate-001--time-2.json.gz",
+      "sha256": "7b6c0df1c49db7f2aaa6e4c1d9bb5c23886faac4267a798d7e73fd4970cd0d3c",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 108322,
+      "candidate_count": 3,
+      "parent": "consequence-v1-offline_prediction_gate-001",
+      "path": "windows/consequence-v1-offline_prediction_gate-001--time-4.json.gz",
+      "sha256": "ce1d26dd803acd8a6f3f0e000c72aea7cde9b38a0e03b14f4ac9d109d9ef3592",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 158788,
+      "candidate_count": 7,
+      "parent": "consequence-v1-offline_prediction_gate-001",
+      "path": "windows/consequence-v1-offline_prediction_gate-001--time-8.json.gz",
+      "sha256": "ed6ca4b0f371579d4a894826d3b65179e431c778259e0ef8d09fc77e2f12489b",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2754,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-002",
+      "path": "windows/consequence-v1-offline_prediction_gate-002--time-12.json.gz",
+      "sha256": "0e0eaa1caff52c0e3078f5d282d7c7bfa5daa242c1f7e74b12f80f830e2c9821",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 163640,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-002",
+      "path": "windows/consequence-v1-offline_prediction_gate-002--time-2.json.gz",
+      "sha256": "5338c32744111d62e1e1cd1c7189de6c1b308e53c09d50a8615e15315039d525",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 2141,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-002",
+      "path": "windows/consequence-v1-offline_prediction_gate-002--time-4.json.gz",
+      "sha256": "b8115e6290711eb70cb931fe7515716aac74098b0f6f5b79a2096238f33cc44c",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 2572,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-002",
+      "path": "windows/consequence-v1-offline_prediction_gate-002--time-8.json.gz",
+      "sha256": "997d03625c0fd02b401659740b7b66d9f33656b0785457c30094a9d2f9ddf074",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2846,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-003",
+      "path": "windows/consequence-v1-offline_prediction_gate-003--time-12.json.gz",
+      "sha256": "b1160c95cc9bab5be48ca1a848797ba9b4e363fed1ad8d6bd7e1e3c0725c7d80",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 205529,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-003",
+      "path": "windows/consequence-v1-offline_prediction_gate-003--time-2.json.gz",
+      "sha256": "a8de2f3243641dcad8ec5f7c86d9f496dae82ab0fc381f46820e5df4da6025d3",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 184125,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-003",
+      "path": "windows/consequence-v1-offline_prediction_gate-003--time-4.json.gz",
+      "sha256": "e638afb365932c636cc392f8d22a56cf236ed5fcca43d5fc6e83bdfaab80711f",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 57962,
+      "candidate_count": 2,
+      "parent": "consequence-v1-offline_prediction_gate-003",
+      "path": "windows/consequence-v1-offline_prediction_gate-003--time-8.json.gz",
+      "sha256": "67cb944ceb1bf2469e77bb110660674546da760e64a53262514e3bedced11770",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2726,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-004",
+      "path": "windows/consequence-v1-offline_prediction_gate-004--time-12.json.gz",
+      "sha256": "1a04731f35cf0116a182f8780e363dc86554cd31b0ad6d4015f6da80aa4b02ae",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 141089,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-004",
+      "path": "windows/consequence-v1-offline_prediction_gate-004--time-2.json.gz",
+      "sha256": "ade0b1f2d9c31a56f0cdea2c88a71877afc924a7fe2a03c54a9355ca4a9128b2",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 122877,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-004",
+      "path": "windows/consequence-v1-offline_prediction_gate-004--time-4.json.gz",
+      "sha256": "3627ec7e17321ab58f4c474f644190c51d82f8b35ea841b5b0d8222636952ca3",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 26372,
+      "candidate_count": 2,
+      "parent": "consequence-v1-offline_prediction_gate-004",
+      "path": "windows/consequence-v1-offline_prediction_gate-004--time-8.json.gz",
+      "sha256": "c0b5c19c6c920732b80a6616d2c2b5c9cd2faa98a28190bf829f42b0ccda9ebd",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2763,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-005",
+      "path": "windows/consequence-v1-offline_prediction_gate-005--time-12.json.gz",
+      "sha256": "ae9b5be5449151935d651853127502cb6066a1e0677b86ff50f0407e78e798ac",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 168880,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-005",
+      "path": "windows/consequence-v1-offline_prediction_gate-005--time-2.json.gz",
+      "sha256": "2d3f119df24fd3e27827d23c9b878f6ec30537ca83493dcf6daa167ed3edb786",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 169605,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-005",
+      "path": "windows/consequence-v1-offline_prediction_gate-005--time-4.json.gz",
+      "sha256": "f6e146643980e9fff0976d5be4864d4c0dc4a896e4e7ff80b39eb6e1739e64d1",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 2484,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-005",
+      "path": "windows/consequence-v1-offline_prediction_gate-005--time-8.json.gz",
+      "sha256": "bfa4a9024eb56d3947c82041d22331cd2450ad5255da9161c385f90d5c96831d",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2855,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-006",
+      "path": "windows/consequence-v1-offline_prediction_gate-006--time-12.json.gz",
+      "sha256": "35597978832e75005c9f1e13fbd2bccaf90decc984c368ae481a7cac2d7d7446",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 171368,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-006",
+      "path": "windows/consequence-v1-offline_prediction_gate-006--time-2.json.gz",
+      "sha256": "97b3f741b424af9cf625c481df305157586f81b2032c286633cb448c304a532a",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 68997,
+      "candidate_count": 2,
+      "parent": "consequence-v1-offline_prediction_gate-006",
+      "path": "windows/consequence-v1-offline_prediction_gate-006--time-4.json.gz",
+      "sha256": "c6792214a0e4ef03a23f19cd15f3e5b18193aed900fd3d5b34f9410c2bafd647",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 60637,
+      "candidate_count": 3,
+      "parent": "consequence-v1-offline_prediction_gate-006",
+      "path": "windows/consequence-v1-offline_prediction_gate-006--time-8.json.gz",
+      "sha256": "fdb67eafd462625a125cbd44b517c1e48cf3d400887ec733f84ccf3ee412afe6",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2819,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-007",
+      "path": "windows/consequence-v1-offline_prediction_gate-007--time-12.json.gz",
+      "sha256": "5e1b81af8fbdf9f63c14e5a5c81cb41b31a2b4306743e834fa7af38186ba90f8",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 178333,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-007",
+      "path": "windows/consequence-v1-offline_prediction_gate-007--time-2.json.gz",
+      "sha256": "e37a759ab734cc109a7f12245f48eece1c17565447d79709c3a733b006b93b11",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 2067,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-007",
+      "path": "windows/consequence-v1-offline_prediction_gate-007--time-4.json.gz",
+      "sha256": "4ce56dbaaf367325d706fc383c47d2af6cc472e00edacf851d4ba290465df3f8",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 2559,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-007",
+      "path": "windows/consequence-v1-offline_prediction_gate-007--time-8.json.gz",
+      "sha256": "7a7f5d43fb07bbbc32991c0f4c3bc52ebf47e793a9162afd850a0d6bc3677b5a",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2791,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-008",
+      "path": "windows/consequence-v1-offline_prediction_gate-008--time-12.json.gz",
+      "sha256": "00c05b0430ba4038ebe478026b2c3379d2746165722e3859afd1f094cdc27aba",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 162369,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-008",
+      "path": "windows/consequence-v1-offline_prediction_gate-008--time-2.json.gz",
+      "sha256": "f6edee0573b7807e7f06c33f6eccdfd32eef8b6264aaf98330b0fc74695209dc",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 2191,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-008",
+      "path": "windows/consequence-v1-offline_prediction_gate-008--time-4.json.gz",
+      "sha256": "33749c31936f4d882b1c394340b47a89adbd17cd9dc83680f58105011d83e0ff",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 57420,
+      "candidate_count": 3,
+      "parent": "consequence-v1-offline_prediction_gate-008",
+      "path": "windows/consequence-v1-offline_prediction_gate-008--time-8.json.gz",
+      "sha256": "57f9a5d028381f798cd5989aa71fc992879dd06de390d0e7f7fe768e477c5a07",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2786,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-009",
+      "path": "windows/consequence-v1-offline_prediction_gate-009--time-12.json.gz",
+      "sha256": "8502c3e40e148971c350acf3dbd22d4299c41a57be826ac54248300676ba2307",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 169545,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-009",
+      "path": "windows/consequence-v1-offline_prediction_gate-009--time-2.json.gz",
+      "sha256": "0bd4cdc1e18ddc11fc561ca0730e9257c564be863d85f33a4e66ca86dc3947d7",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 144144,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-009",
+      "path": "windows/consequence-v1-offline_prediction_gate-009--time-4.json.gz",
+      "sha256": "9bbe177a1e05ffe2cf7b623e6e579ab62a7e6859388cdc49ec3d0df0ea1dc33a",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 2707,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-009",
+      "path": "windows/consequence-v1-offline_prediction_gate-009--time-8.json.gz",
+      "sha256": "6c172cafbce9e68ef2c815cacef10611c2ea22ba698ce9f74ad305ccf10f9e8e",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2820,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-010",
+      "path": "windows/consequence-v1-offline_prediction_gate-010--time-12.json.gz",
+      "sha256": "1631cdb856cb4e30d444874aa1465257afdc83f682708fc70e06ded13ed062f6",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 175347,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-010",
+      "path": "windows/consequence-v1-offline_prediction_gate-010--time-2.json.gz",
+      "sha256": "d8b3758281a759bca93294f4c583682fe118308bd11b4b8f2e94846bfbc193b7",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 117158,
+      "candidate_count": 3,
+      "parent": "consequence-v1-offline_prediction_gate-010",
+      "path": "windows/consequence-v1-offline_prediction_gate-010--time-4.json.gz",
+      "sha256": "c969006218c4b9ddf9e1245843d3159817bc0b4311e60b5992e1d400a61421ce",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 67294,
+      "candidate_count": 3,
+      "parent": "consequence-v1-offline_prediction_gate-010",
+      "path": "windows/consequence-v1-offline_prediction_gate-010--time-8.json.gz",
+      "sha256": "4ff11f99a88281e9c127bea71141e70d603e86bc9b2c9876f365231f41de5eb8",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2895,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-011",
+      "path": "windows/consequence-v1-offline_prediction_gate-011--time-12.json.gz",
+      "sha256": "610c8ed3ce38646f4693bb0a294a2548a64b1886dd9198a577ee3b9b5f398065",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 192735,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-011",
+      "path": "windows/consequence-v1-offline_prediction_gate-011--time-2.json.gz",
+      "sha256": "f3428d2923e7b5a46183c076e93fd7348f1d6399265872c8a365615d38e90372",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 2085,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-011",
+      "path": "windows/consequence-v1-offline_prediction_gate-011--time-4.json.gz",
+      "sha256": "88cc78484a711210ab935a805830263537a7827d0eace616c276cd48f0395455",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 83293,
+      "candidate_count": 3,
+      "parent": "consequence-v1-offline_prediction_gate-011",
+      "path": "windows/consequence-v1-offline_prediction_gate-011--time-8.json.gz",
+      "sha256": "d698830e6f98fb7fc1ac45c934e6a3eb5cac50b24763ea0f605e9370b64eab0e",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2776,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-012",
+      "path": "windows/consequence-v1-offline_prediction_gate-012--time-12.json.gz",
+      "sha256": "3bd2c233ea94c9bf4825370f88b89d4e7a38350986c5b1e959a4fd641aa17023",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 179779,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-012",
+      "path": "windows/consequence-v1-offline_prediction_gate-012--time-2.json.gz",
+      "sha256": "600e34f11768db67e2595833b83189bd221b83c3ddd357295a00d035205c3b18",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 106262,
+      "candidate_count": 3,
+      "parent": "consequence-v1-offline_prediction_gate-012",
+      "path": "windows/consequence-v1-offline_prediction_gate-012--time-4.json.gz",
+      "sha256": "c180a5a075c2a38090c97d1acd63770f08ec3fea40f3b1a794330c9df66e7803",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 2610,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-012",
+      "path": "windows/consequence-v1-offline_prediction_gate-012--time-8.json.gz",
+      "sha256": "6abe97f77080b8bd228b0b004f802bdbeedcd0a153de7459113919caaa0a6f7d",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2789,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-013",
+      "path": "windows/consequence-v1-offline_prediction_gate-013--time-12.json.gz",
+      "sha256": "077c53af12e4f2e1487305abe26aa9ed193adbac7251598b7a977196d5a5be18",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 163489,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-013",
+      "path": "windows/consequence-v1-offline_prediction_gate-013--time-2.json.gz",
+      "sha256": "c08b2c52998be7dc7d1772edd70f0b44f1ffc6c0fa6a429decb95770e72c4f7d",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 151014,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-013",
+      "path": "windows/consequence-v1-offline_prediction_gate-013--time-4.json.gz",
+      "sha256": "3846dbfb808a2b147a910005f58d3ce6eb3403ffdede9a7bc302a967b7f6ed9a",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 163261,
+      "candidate_count": 7,
+      "parent": "consequence-v1-offline_prediction_gate-013",
+      "path": "windows/consequence-v1-offline_prediction_gate-013--time-8.json.gz",
+      "sha256": "9d137145f5a200185f9febd5ecb5561f255cf34b51f47a943b52dc484a2b9458",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2775,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-014",
+      "path": "windows/consequence-v1-offline_prediction_gate-014--time-12.json.gz",
+      "sha256": "9c1c0b267eacd0e1609e3ad956ff3e84fdd91e2016ddd2c882ae6edb3f1f513d",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 171485,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-014",
+      "path": "windows/consequence-v1-offline_prediction_gate-014--time-2.json.gz",
+      "sha256": "3d45090b52026a669315e159cb15a5bcd96c19f211a3856e9df38dd7878969f6",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 135734,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-014",
+      "path": "windows/consequence-v1-offline_prediction_gate-014--time-4.json.gz",
+      "sha256": "d65198b18b83504b1a759a5508559cf39e9a68411ce2d631bc6e7603a08ad2f2",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 2426,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-014",
+      "path": "windows/consequence-v1-offline_prediction_gate-014--time-8.json.gz",
+      "sha256": "ec5b55aba5c3e4be5e4fc555c07c19f87fb8eacf7cd39f6f496dd7e526066b9b",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2785,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-015",
+      "path": "windows/consequence-v1-offline_prediction_gate-015--time-12.json.gz",
+      "sha256": "494862a67abcbef8d01f9207f682502b47b65eb8a05e2e60f356a4672bbcf056",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 171142,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-015",
+      "path": "windows/consequence-v1-offline_prediction_gate-015--time-2.json.gz",
+      "sha256": "4a26f83708e6783384ac42f86efeb8bfd782ceae728e26dfbdddf5707a83251f",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 137645,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-015",
+      "path": "windows/consequence-v1-offline_prediction_gate-015--time-4.json.gz",
+      "sha256": "ec226104f46ce9d64226d5e634f752c7948df48a0867070128e24d3a01849dd3",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 2444,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-015",
+      "path": "windows/consequence-v1-offline_prediction_gate-015--time-8.json.gz",
+      "sha256": "72ce162545a4b261a83308ca78d78c522b3a6e3f6dbcdf2dab1ed325a9719946",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2690,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-016",
+      "path": "windows/consequence-v1-offline_prediction_gate-016--time-12.json.gz",
+      "sha256": "7bff3ac14512bde72aab00ca330589b2b3f75c39c36c2bd4bc5e5aa02a64c712",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 143017,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-016",
+      "path": "windows/consequence-v1-offline_prediction_gate-016--time-2.json.gz",
+      "sha256": "4b77681be8872248d13f19b1c97ef4cee791b44665bcbdf3f2a10a0d35e96ea0",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 2076,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-016",
+      "path": "windows/consequence-v1-offline_prediction_gate-016--time-4.json.gz",
+      "sha256": "e37e02fd3c58f1793869c979cd6f5a238aec45eb675265401a33efcc9dc9af92",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 37095,
+      "candidate_count": 3,
+      "parent": "consequence-v1-offline_prediction_gate-016",
+      "path": "windows/consequence-v1-offline_prediction_gate-016--time-8.json.gz",
+      "sha256": "028ed7dccf0de960603bb4ac6e2162f9109e439290a9f6af323c85ce9f81288e",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2799,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-017",
+      "path": "windows/consequence-v1-offline_prediction_gate-017--time-12.json.gz",
+      "sha256": "0fe8be0b6c341b1099ba0a4c5eec8ebdb46f859a30b74591079a5acc2bfab48d",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 169917,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-017",
+      "path": "windows/consequence-v1-offline_prediction_gate-017--time-2.json.gz",
+      "sha256": "d56bdb996745082a947ce644d0448f5fb11f519c444c1f98474739f2030eed60",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 268092,
+      "candidate_count": 7,
+      "parent": "consequence-v1-offline_prediction_gate-017",
+      "path": "windows/consequence-v1-offline_prediction_gate-017--time-4.json.gz",
+      "sha256": "d05047d47a943e013e6b3fb297a7a2d9beec717d921902fc27a3d0ef967f5b31",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 65360,
+      "candidate_count": 3,
+      "parent": "consequence-v1-offline_prediction_gate-017",
+      "path": "windows/consequence-v1-offline_prediction_gate-017--time-8.json.gz",
+      "sha256": "94d9391ae2879e11e3fb2ce48975f2c95dca86610ed14da0e8da70f023aec66b",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2778,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-018",
+      "path": "windows/consequence-v1-offline_prediction_gate-018--time-12.json.gz",
+      "sha256": "96cec5429999e3e47d13aa4d74ab2aa491eb9de94ffbee29b7ad097aa152f7f4",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 196852,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-018",
+      "path": "windows/consequence-v1-offline_prediction_gate-018--time-2.json.gz",
+      "sha256": "9e6a1040cc04a9bd5c6bc6ad70b79adc6ffdc6bcab00a1705093aa28a4f65146",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 286893,
+      "candidate_count": 7,
+      "parent": "consequence-v1-offline_prediction_gate-018",
+      "path": "windows/consequence-v1-offline_prediction_gate-018--time-4.json.gz",
+      "sha256": "b20a32a9ee424b269d8db9f1338eb4f074c01bec76c26af46cbb92f80a23bdeb",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 2488,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-018",
+      "path": "windows/consequence-v1-offline_prediction_gate-018--time-8.json.gz",
+      "sha256": "71e7d4c8989994fc941e6edc3064179820b53d6a2669e17d9b1c736e63bd8598",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2867,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-019",
+      "path": "windows/consequence-v1-offline_prediction_gate-019--time-12.json.gz",
+      "sha256": "01ca0c15eccae947a6ee3d5ed0241b4e8acbca74ad2d64fcf0435ddc9c261382",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 173378,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-019",
+      "path": "windows/consequence-v1-offline_prediction_gate-019--time-2.json.gz",
+      "sha256": "12b21c03d35e0105f8fcb61b3daf3b57b1b505c9394474bee00bc7da216d9981",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 157575,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-019",
+      "path": "windows/consequence-v1-offline_prediction_gate-019--time-4.json.gz",
+      "sha256": "f79906b19d03db7b9ead4adc0598e628b850c5715f12a0d0683daf20b22c1b5e",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 70876,
+      "candidate_count": 3,
+      "parent": "consequence-v1-offline_prediction_gate-019",
+      "path": "windows/consequence-v1-offline_prediction_gate-019--time-8.json.gz",
+      "sha256": "e1d9f5b23a2e30a38561dce6540ed173613d72948da86e2943875db4db5d1d9e",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2760,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-020",
+      "path": "windows/consequence-v1-offline_prediction_gate-020--time-12.json.gz",
+      "sha256": "d60ca2528ae9063e9c82503a2adf56a80087cf55953e5961bfb990f44d8d735a",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 169143,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-020",
+      "path": "windows/consequence-v1-offline_prediction_gate-020--time-2.json.gz",
+      "sha256": "2271a70b981e18b9d5972243cc0336e4f096101475a9d14e6201456341bd1cc7",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 172860,
+      "candidate_count": 5,
+      "parent": "consequence-v1-offline_prediction_gate-020",
+      "path": "windows/consequence-v1-offline_prediction_gate-020--time-4.json.gz",
+      "sha256": "f085ba6e277cf0ca9bb76de79450da7b4ef49eee1a5d301b65548486a0fee342",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 50163,
+      "candidate_count": 2,
+      "parent": "consequence-v1-offline_prediction_gate-020",
+      "path": "windows/consequence-v1-offline_prediction_gate-020--time-8.json.gz",
+      "sha256": "dd5382f81ac1ec6ed8f5968350ea31d531c8b3a37b4e4ca7b2a8c62f3d0f553f",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2731,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-021",
+      "path": "windows/consequence-v1-offline_prediction_gate-021--time-12.json.gz",
+      "sha256": "5bf7b0b1d4cc9b275004b25568335280046442f40800f8a80616783304022141",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 158679,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-021",
+      "path": "windows/consequence-v1-offline_prediction_gate-021--time-2.json.gz",
+      "sha256": "98b9f24ce898ae0fa9fec5e824a5db666e8c6dc64091345c344011b190ebb64b",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 114682,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-021",
+      "path": "windows/consequence-v1-offline_prediction_gate-021--time-4.json.gz",
+      "sha256": "0f7134c1d3e409c08a3bb53ee0ff8707eaf11c6bcad1d11f9ef0425b5beb06c0",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 2673,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-021",
+      "path": "windows/consequence-v1-offline_prediction_gate-021--time-8.json.gz",
+      "sha256": "7c5b299e1ef66fbc120be65ec3d281828bfb93a5e5d5dd0984d40f577ac6b23e",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2803,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-022",
+      "path": "windows/consequence-v1-offline_prediction_gate-022--time-12.json.gz",
+      "sha256": "7b77c7d817447b12d41e40ad19a1cf420c862bb03fa2efbb38c99e752ca34e4c",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 162317,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-022",
+      "path": "windows/consequence-v1-offline_prediction_gate-022--time-2.json.gz",
+      "sha256": "586c39af0d2e7ad801b86dab96beb4a1e988a40e1b021e6274c3fd532556d807",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 169670,
+      "candidate_count": 5,
+      "parent": "consequence-v1-offline_prediction_gate-022",
+      "path": "windows/consequence-v1-offline_prediction_gate-022--time-4.json.gz",
+      "sha256": "4be54ef345fb65707b62f45dc09a8a24b41586be9f61eb989feb082d0247709c",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 154838,
+      "candidate_count": 7,
+      "parent": "consequence-v1-offline_prediction_gate-022",
+      "path": "windows/consequence-v1-offline_prediction_gate-022--time-8.json.gz",
+      "sha256": "d85c2cb1cf5cd6116dd8eac71e30216c4e3381b85d0898b7b6ec86d747f6672f",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2713,
+      "candidate_count": 1,
+      "parent": "consequence-v1-offline_prediction_gate-023",
+      "path": "windows/consequence-v1-offline_prediction_gate-023--time-12.json.gz",
+      "sha256": "c5bad378284e654e27ef14fb3471b4d0569dfedd26fe9b6ccdf08cf442943d7a",
+      "split": "evaluation",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 158805,
+      "candidate_count": 4,
+      "parent": "consequence-v1-offline_prediction_gate-023",
+      "path": "windows/consequence-v1-offline_prediction_gate-023--time-2.json.gz",
+      "sha256": "e360f36b4071ebf205d91e39128ef6e3de8700fd8dab7a2af94a6d967b3237d3",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 250514,
+      "candidate_count": 7,
+      "parent": "consequence-v1-offline_prediction_gate-023",
+      "path": "windows/consequence-v1-offline_prediction_gate-023--time-4.json.gz",
+      "sha256": "7ee8b57aa256c15fe211b2e340c2f80b7bf9de81562875b31aec87daa9b4342b",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 63922,
+      "candidate_count": 3,
+      "parent": "consequence-v1-offline_prediction_gate-023",
+      "path": "windows/consequence-v1-offline_prediction_gate-023--time-8.json.gz",
+      "sha256": "d4c9aa35fd484f62f95dacdef786ee6dd550ff725e13a85d35c27fbfba092a18",
+      "split": "evaluation",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2786,
+      "candidate_count": 1,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-000",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-000--time-12.json.gz",
+      "sha256": "4dddbf775959daea43e0080953fda99f0c48b93c3f630fb64d442f666ccd3a9e",
+      "split": "calibration",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 182038,
+      "candidate_count": 4,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-000",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-000--time-2.json.gz",
+      "sha256": "1b68e48336a6b7a51586663e8d193e8cce2474e796feb67c8b66010ddc922814",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 159128,
+      "candidate_count": 4,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-000",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-000--time-4.json.gz",
+      "sha256": "1ec63844e3be3eb28f9900705577fe788be402431790d1758ed205900fd6377f",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 80486,
+      "candidate_count": 3,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-000",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-000--time-8.json.gz",
+      "sha256": "df1a88ac24e50dc880472e9310557e62ef635ac9b2aa4840de2dc4724b5d648d",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2770,
+      "candidate_count": 1,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-001",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-001--time-12.json.gz",
+      "sha256": "ecf9ddba9b0d7d357b11557532ef13d121b0beefb8adc30d8ae137e7b2df53c9",
+      "split": "calibration",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 167882,
+      "candidate_count": 4,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-001",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-001--time-2.json.gz",
+      "sha256": "b6d65c6b60a7e0c0f332ce720441dd168ede18ca8f78ba95cdf7bf7f4019a938",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 241195,
+      "candidate_count": 7,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-001",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-001--time-4.json.gz",
+      "sha256": "87e2605e8cfc52e1ab6c842139c4b6ae07050ffe886f42a977e8f102c4f777d5",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 112003,
+      "candidate_count": 5,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-001",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-001--time-8.json.gz",
+      "sha256": "df8a3ad64cada0b793eca057ccc6a720798ba5b35aa8eddda0fd721b22a39d23",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 56587,
+      "candidate_count": 4,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-002",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-002--time-12.json.gz",
+      "sha256": "a9fbcc7b92661315d7606e83d795c20ea48845be8fdb645f020da7ab8643a2ab",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 171939,
+      "candidate_count": 4,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-002",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-002--time-2.json.gz",
+      "sha256": "2bbe430104d4ebdc48ad882a53a2bfd379847ef82919d03fc438ee582b1be052",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 2135,
+      "candidate_count": 1,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-002",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-002--time-4.json.gz",
+      "sha256": "3110597959c87e4b1419418849baa13a16e0315b28f9b3fa538a1c216778b7d8",
+      "split": "calibration",
+      "status": "no_opportunity",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 2549,
+      "candidate_count": 1,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-002",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-002--time-8.json.gz",
+      "sha256": "dbeefda701d6f18af65ac24c364f3431d6786bd7aed37eb693e8eec2f608c5c9",
+      "split": "calibration",
+      "status": "no_opportunity",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2826,
+      "candidate_count": 1,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-003",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-003--time-12.json.gz",
+      "sha256": "9de543bf15f066f48776900bd04e2a9a099530d5dea0245217111b25717ac0b6",
+      "split": "calibration",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 1627,
+      "candidate_count": 1,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-003",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-003--time-2.json.gz",
+      "sha256": "96139acee9ca13d990338f38fce507f589b4a17beb8050cebfb994414ab08046",
+      "split": "calibration",
+      "status": "no_opportunity",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 259641,
+      "candidate_count": 7,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-003",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-003--time-4.json.gz",
+      "sha256": "46a010251da27540350ec31174b65f1f01c87b97dc3207059be53e65016411a9",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 2535,
+      "candidate_count": 1,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-003",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-003--time-8.json.gz",
+      "sha256": "2474456cacf697498306e384165cd41bebfcce89bec146dc88fef18ebc6c6c3e",
+      "split": "calibration",
+      "status": "no_opportunity",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2772,
+      "candidate_count": 1,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-004",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-004--time-12.json.gz",
+      "sha256": "36e7463761833559e01680d10a77a70ef75e0266f03cbc48a8ee34b8633c8869",
+      "split": "calibration",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 191206,
+      "candidate_count": 4,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-004",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-004--time-2.json.gz",
+      "sha256": "38c8f7f3ca7ae82f7425ba1d7131566f4df8e98e1055d5a6fd6ddc6bbe78b925",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 1990,
+      "candidate_count": 1,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-004",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-004--time-4.json.gz",
+      "sha256": "a3913d02288dec0982898e617988adff4068d6ca548ddaefa2cd0de948ba0e1d",
+      "split": "calibration",
+      "status": "no_opportunity",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 82004,
+      "candidate_count": 3,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-004",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-004--time-8.json.gz",
+      "sha256": "05e0b2c4163d3ddf11c50b502be729fcfed03dd74f9670518aa3bf8482477133",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2834,
+      "candidate_count": 1,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-005",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-005--time-12.json.gz",
+      "sha256": "a0bc74bdc1a9f532230da1a2c47de966f45cb53799669bb1da79d5beb6c9063e",
+      "split": "calibration",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 175058,
+      "candidate_count": 4,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-005",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-005--time-2.json.gz",
+      "sha256": "5b78bf4df8bd68226b08c8c1df7eabf7a67ef947a33befcca48bf912fc1a0c7b",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 108085,
+      "candidate_count": 3,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-005",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-005--time-4.json.gz",
+      "sha256": "e565ff6e232f4ac1b0a1c5bf73610bbceba3534696d7259191ea641b7a8e235f",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 77098,
+      "candidate_count": 4,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-005",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-005--time-8.json.gz",
+      "sha256": "d165abfc1fc21caa454e929043fecae5fede05ccb95b84297d863998f0f9dcbe",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 54946,
+      "candidate_count": 4,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-006",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-006--time-12.json.gz",
+      "sha256": "b50ffe888b9ecdbf529e593a31cfc196d77fcaa1bf5b7d65c439d3628767760a",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 176787,
+      "candidate_count": 4,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-006",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-006--time-2.json.gz",
+      "sha256": "ad813e1b74131b5f5eb8679d073f206f261272e0a3398838cf9ddd0495defb83",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 120376,
+      "candidate_count": 3,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-006",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-006--time-4.json.gz",
+      "sha256": "3331dc7e3dfded76cf390b65e294e02b72eb345948696a39ada9f12b4976d4a9",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 80692,
+      "candidate_count": 3,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-006",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-006--time-8.json.gz",
+      "sha256": "8223d8c8fb0a73f242d8147c85c0e5d76dd26e2a01027cc6e1b70c0a3f341058",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 53980,
+      "candidate_count": 4,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-007",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-007--time-12.json.gz",
+      "sha256": "45016ebde00d085618f3be9222f3ea9a09f956a4bc79eda05c421a3a6432c23a",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 164244,
+      "candidate_count": 4,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-007",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-007--time-2.json.gz",
+      "sha256": "5fc35e0797b8859f5e9f8ffbbaffac0442b376c2a75b8abf04ae32235b863fc6",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 2007,
+      "candidate_count": 1,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-007",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-007--time-4.json.gz",
+      "sha256": "16d998c76279bfbdbd72efe96bd339159a7831bd88c543886ec806dae968e4aa",
+      "split": "calibration",
+      "status": "no_opportunity",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 2715,
+      "candidate_count": 1,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-007",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-007--time-8.json.gz",
+      "sha256": "4e5f9c27ee1905d73024522707f9cf11a311de24a8bf096cc67824146b0feac2",
+      "split": "calibration",
+      "status": "no_opportunity",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2793,
+      "candidate_count": 1,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-008",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-008--time-12.json.gz",
+      "sha256": "d209e6b083e62c2604e6ef312b0dfa39c9bb97c73806e99c2969f897f17658c7",
+      "split": "calibration",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 176428,
+      "candidate_count": 4,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-008",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-008--time-2.json.gz",
+      "sha256": "a23ca25b3f88261cfbba6c38833f3363545c82f17cb348ef8fd740619000f3d0",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 288726,
+      "candidate_count": 7,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-008",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-008--time-4.json.gz",
+      "sha256": "895c14ea02796042659c941957901d265cbeb3f217a3424a17a916151798cf5d",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 78861,
+      "candidate_count": 3,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-008",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-008--time-8.json.gz",
+      "sha256": "a3b680b7bc4fbc6531a67aedb82eb43ba78d416d7cf5117f794ef74dcbc0bc03",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2834,
+      "candidate_count": 1,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-009",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-009--time-12.json.gz",
+      "sha256": "2d01436bf9079147047711ff594386afd627056782895f65eb7d879472ee87a3",
+      "split": "calibration",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 183673,
+      "candidate_count": 4,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-009",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-009--time-2.json.gz",
+      "sha256": "d2593de707720191c75b3d6a35571ee785acb98a33a09dc6014a14d5096bc0a4",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 275630,
+      "candidate_count": 7,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-009",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-009--time-4.json.gz",
+      "sha256": "ed2413d461630fe2e75f1cc81eb6d52bb2e9bfb940607468f82ae367bb7e4e0f",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 70966,
+      "candidate_count": 3,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-009",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-009--time-8.json.gz",
+      "sha256": "4217e1305d3b4bb0fb86d208dbf5a330de872493a9f2f33d973e3b6eddb1adf1",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2903,
+      "candidate_count": 1,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-010",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-010--time-12.json.gz",
+      "sha256": "b7b3af589a615c3c830f545aae6185cfbe3e9eefb9657875354bf65ea7f89612",
+      "split": "calibration",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 168431,
+      "candidate_count": 4,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-010",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-010--time-2.json.gz",
+      "sha256": "29a67c08255e37a8d216b935db0310bb77381777bdf9986605cfc33f0952d9dd",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 271330,
+      "candidate_count": 7,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-010",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-010--time-4.json.gz",
+      "sha256": "d93fe1944563974c18f651820c0497a059b9e6bc108394703b27d6ef07737a18",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 113498,
+      "candidate_count": 4,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-010",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-010--time-8.json.gz",
+      "sha256": "e0d44edb370bb3405b0ff54728f8bb16aa484b08b0bc0d39042980e59797c5c9",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2752,
+      "candidate_count": 1,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-011",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-011--time-12.json.gz",
+      "sha256": "d71b22ffb45580dc36f2332fb5dd43add3906873ff9af4ff937aea83fdeea6f3",
+      "split": "calibration",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 162873,
+      "candidate_count": 4,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-011",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-011--time-2.json.gz",
+      "sha256": "88c12c80625802e05503fd65c1ed12021b28d42473dda6e785f1dc4321449020",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 257151,
+      "candidate_count": 7,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-011",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-011--time-4.json.gz",
+      "sha256": "25d15f55109637ef6f72288f9204c72b3dbffbc4f7a98b87e7e7bae3fc74e219",
+      "split": "calibration",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 2560,
+      "candidate_count": 1,
+      "parent": "consequence-v1-uncertainty_diagnostics_only-011",
+      "path": "windows/consequence-v1-uncertainty_diagnostics_only-011--time-8.json.gz",
+      "sha256": "51cc3bdfb0f20ccb33f6c605449dd277bfdf88c1bc02760aeba59ebc3b55fc91",
+      "split": "calibration",
+      "status": "no_opportunity",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2817,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-000",
+      "path": "windows/consequence-v1-world_and_policy_train-000--time-12.json.gz",
+      "sha256": "4cc6a762f62afc6b85939474e3c6c01123970d271bb3e15000ebaf8dac284bbb",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 161874,
+      "candidate_count": 4,
+      "parent": "consequence-v1-world_and_policy_train-000",
+      "path": "windows/consequence-v1-world_and_policy_train-000--time-2.json.gz",
+      "sha256": "e37db2b56d3ecd3abc91170b6d5dff79bbb4b0aad6793262ed42df2279aa7905",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 265493,
+      "candidate_count": 7,
+      "parent": "consequence-v1-world_and_policy_train-000",
+      "path": "windows/consequence-v1-world_and_policy_train-000--time-4.json.gz",
+      "sha256": "dc32a279e4045cd198e087e5acc92085150de552fd380813bcbacd1bdeb0e944",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 107724,
+      "candidate_count": 5,
+      "parent": "consequence-v1-world_and_policy_train-000",
+      "path": "windows/consequence-v1-world_and_policy_train-000--time-8.json.gz",
+      "sha256": "a7f27760a8779a396dd3eaf74c115fb265037dd2763676fb6a8ef5d172e0282b",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2831,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-001",
+      "path": "windows/consequence-v1-world_and_policy_train-001--time-12.json.gz",
+      "sha256": "3a8debaed0b7b3353067e7b551768ecb231199b797020ae38d6db8f6180eda6f",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 1656,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-001",
+      "path": "windows/consequence-v1-world_and_policy_train-001--time-2.json.gz",
+      "sha256": "8eb7390f51295435d3124c18fb5f99616de4de6ca8ff60e014d2ab8e62e40b52",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 158734,
+      "candidate_count": 4,
+      "parent": "consequence-v1-world_and_policy_train-001",
+      "path": "windows/consequence-v1-world_and_policy_train-001--time-4.json.gz",
+      "sha256": "ff02288617202871538bd2c7ce8030e64404583bd682cb3f3822357690066c0c",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 126421,
+      "candidate_count": 5,
+      "parent": "consequence-v1-world_and_policy_train-001",
+      "path": "windows/consequence-v1-world_and_policy_train-001--time-8.json.gz",
+      "sha256": "41e5e7a87c064beb9d13d1094756b13dc7343b978cc72441f2ef0ebee0258b67",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2736,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-002",
+      "path": "windows/consequence-v1-world_and_policy_train-002--time-12.json.gz",
+      "sha256": "485d4bd711ce24a2378cc615215bee14d8a98149807ba62a9671d0901f7fbd0a",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 345573,
+      "candidate_count": 9,
+      "parent": "consequence-v1-world_and_policy_train-002",
+      "path": "windows/consequence-v1-world_and_policy_train-002--time-2.json.gz",
+      "sha256": "09ecb8656b18b65ccccaf76608e0b3c92a49fcc882fa91ed37141839864ad12e",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 141028,
+      "candidate_count": 5,
+      "parent": "consequence-v1-world_and_policy_train-002",
+      "path": "windows/consequence-v1-world_and_policy_train-002--time-4.json.gz",
+      "sha256": "081360b100e52d8711de60e383f4d6fe029bd9be3f7b72dd74cbba7be139a853",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 44384,
+      "candidate_count": 3,
+      "parent": "consequence-v1-world_and_policy_train-002",
+      "path": "windows/consequence-v1-world_and_policy_train-002--time-8.json.gz",
+      "sha256": "251009b1d498820116da7bbcb4caa4f3261b3fdc46800344ce677c209c893309",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2740,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-003",
+      "path": "windows/consequence-v1-world_and_policy_train-003--time-12.json.gz",
+      "sha256": "1eb4d351887b670d46eb76d59262367e40200d5d3f46f75ea0ccd9e746f5d7d5",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 159848,
+      "candidate_count": 4,
+      "parent": "consequence-v1-world_and_policy_train-003",
+      "path": "windows/consequence-v1-world_and_policy_train-003--time-2.json.gz",
+      "sha256": "2cba0ad4faa5dba3b074dfcb863bee8e84d8057df167e0131daa7251ca772072",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 1965,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-003",
+      "path": "windows/consequence-v1-world_and_policy_train-003--time-4.json.gz",
+      "sha256": "2033d3a450feefca889079b2f5c534d1a3953a3087ae320997339a971a36eae1",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 2632,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-003",
+      "path": "windows/consequence-v1-world_and_policy_train-003--time-8.json.gz",
+      "sha256": "396a51976c2392ff4b5fbe4f23045fdc49c6a83a21efe87b011b9dc2e3e00b1c",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2764,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-004",
+      "path": "windows/consequence-v1-world_and_policy_train-004--time-12.json.gz",
+      "sha256": "e6ec2fb3ef82c1bb1e5cec54c36d95a9b5fe7bd7ac0bba2004c81ff30bcef6fe",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 125238,
+      "candidate_count": 3,
+      "parent": "consequence-v1-world_and_policy_train-004",
+      "path": "windows/consequence-v1-world_and_policy_train-004--time-2.json.gz",
+      "sha256": "dc08e6a5633a661e7072f0782aa00514827cf5c032ca22e2d6097cd452631ea3",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 1992,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-004",
+      "path": "windows/consequence-v1-world_and_policy_train-004--time-4.json.gz",
+      "sha256": "a5d20e2c1c11aed9bab06b0178fa74f810c4bf6244bcd4f58cf4b924e3faf11b",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 2521,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-004",
+      "path": "windows/consequence-v1-world_and_policy_train-004--time-8.json.gz",
+      "sha256": "a5e11c582c1d8530bcd90c6287ef2aee9bebdacf9e76e4f3dbbd50769925a779",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2776,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-005",
+      "path": "windows/consequence-v1-world_and_policy_train-005--time-12.json.gz",
+      "sha256": "132afa4986e64f8a78252a8d3a155e49778279cb1c40e35569cf2ab6ec0995e8",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 167285,
+      "candidate_count": 4,
+      "parent": "consequence-v1-world_and_policy_train-005",
+      "path": "windows/consequence-v1-world_and_policy_train-005--time-2.json.gz",
+      "sha256": "acf90d656c0c2382771456d1a06351eb0174a99ee192d097308c13db77cece16",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 101528,
+      "candidate_count": 3,
+      "parent": "consequence-v1-world_and_policy_train-005",
+      "path": "windows/consequence-v1-world_and_policy_train-005--time-4.json.gz",
+      "sha256": "6de042f6160482cf018b1f622c2e2214f928973d0501cb52deacc42648b1ea30",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 113018,
+      "candidate_count": 5,
+      "parent": "consequence-v1-world_and_policy_train-005",
+      "path": "windows/consequence-v1-world_and_policy_train-005--time-8.json.gz",
+      "sha256": "ce6ac4694c128c3c0eabd325a760aed535367df5289e229d6e72422ea8f11112",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2782,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-006",
+      "path": "windows/consequence-v1-world_and_policy_train-006--time-12.json.gz",
+      "sha256": "1089c4e1a7f589533609982a50c908916dace901b76a5355d5862c82acad9345",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 176199,
+      "candidate_count": 4,
+      "parent": "consequence-v1-world_and_policy_train-006",
+      "path": "windows/consequence-v1-world_and_policy_train-006--time-2.json.gz",
+      "sha256": "18b070718260df3d530896ff64968416ba47162d251de50bdf9a8734c1569ec4",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 268196,
+      "candidate_count": 7,
+      "parent": "consequence-v1-world_and_policy_train-006",
+      "path": "windows/consequence-v1-world_and_policy_train-006--time-4.json.gz",
+      "sha256": "ea5ad3bffa16b807391fbab56b4cc37228df24f6e2d3b22eb03e2cd944c30702",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 2501,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-006",
+      "path": "windows/consequence-v1-world_and_policy_train-006--time-8.json.gz",
+      "sha256": "6816d2fd0d50ee2fa1154ec09bc56abc7f5c8bac274b5cabfcbef6acc3eca108",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2915,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-007",
+      "path": "windows/consequence-v1-world_and_policy_train-007--time-12.json.gz",
+      "sha256": "303efc2379730f156667953d254971a4e2056c65c882407e31227f6f5d615c1b",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 180344,
+      "candidate_count": 4,
+      "parent": "consequence-v1-world_and_policy_train-007",
+      "path": "windows/consequence-v1-world_and_policy_train-007--time-2.json.gz",
+      "sha256": "501f774178c6afd40e56d59c4952e67b30ac2e02f5cf207573d33880bb6a4cc8",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 153689,
+      "candidate_count": 4,
+      "parent": "consequence-v1-world_and_policy_train-007",
+      "path": "windows/consequence-v1-world_and_policy_train-007--time-4.json.gz",
+      "sha256": "fbc7dce4557a9c750c44f3968c4ab23f1b5245f9de7418eb827e6e2d78357543",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 119888,
+      "candidate_count": 5,
+      "parent": "consequence-v1-world_and_policy_train-007",
+      "path": "windows/consequence-v1-world_and_policy_train-007--time-8.json.gz",
+      "sha256": "9bf949e7d77d9cff988cf3443a1e77750e82e92f89da6966b7d408d7afef1134",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2878,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-008",
+      "path": "windows/consequence-v1-world_and_policy_train-008--time-12.json.gz",
+      "sha256": "222a94c08abd21173fb8a2d47922528e53664d0b54ff9020c315f8e788ee3e67",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 175931,
+      "candidate_count": 4,
+      "parent": "consequence-v1-world_and_policy_train-008",
+      "path": "windows/consequence-v1-world_and_policy_train-008--time-2.json.gz",
+      "sha256": "88db9bad9ad36e9747461a604fb676083ea65167ca8e726b82497522b2453090",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 159329,
+      "candidate_count": 4,
+      "parent": "consequence-v1-world_and_policy_train-008",
+      "path": "windows/consequence-v1-world_and_policy_train-008--time-4.json.gz",
+      "sha256": "4556902cdc5426df354368b1f7c38bf9679172359e95a41f77bef4080a538988",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 75076,
+      "candidate_count": 3,
+      "parent": "consequence-v1-world_and_policy_train-008",
+      "path": "windows/consequence-v1-world_and_policy_train-008--time-8.json.gz",
+      "sha256": "96e5a179e285e621d6734615882f46efdae0859e0a681599430118201a68dce4",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2751,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-009",
+      "path": "windows/consequence-v1-world_and_policy_train-009--time-12.json.gz",
+      "sha256": "d58b99836b418967ef99c8535fed89edac7086baad5e366a0516d8eff0ef5d70",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 164529,
+      "candidate_count": 4,
+      "parent": "consequence-v1-world_and_policy_train-009",
+      "path": "windows/consequence-v1-world_and_policy_train-009--time-2.json.gz",
+      "sha256": "8f8904214cfb0dc43d764ca6eb12a8d17271a19f9fcb471ab9d95c0735f73d9b",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 152190,
+      "candidate_count": 4,
+      "parent": "consequence-v1-world_and_policy_train-009",
+      "path": "windows/consequence-v1-world_and_policy_train-009--time-4.json.gz",
+      "sha256": "e6a6c2c0cbb7b966304d68226cd8ceb328d3d6909896311e97c4bcc89c576fae",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 68399,
+      "candidate_count": 3,
+      "parent": "consequence-v1-world_and_policy_train-009",
+      "path": "windows/consequence-v1-world_and_policy_train-009--time-8.json.gz",
+      "sha256": "b8061c91a7abf2133b28d2dc17034eecb25df15c7015468c46bbc0556fd8c180",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2749,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-010",
+      "path": "windows/consequence-v1-world_and_policy_train-010--time-12.json.gz",
+      "sha256": "dc59a93cc8fd68eb6e3ad1c5a125ae0073e776cb3491e218ea16e8c8338a6e1a",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 181399,
+      "candidate_count": 4,
+      "parent": "consequence-v1-world_and_policy_train-010",
+      "path": "windows/consequence-v1-world_and_policy_train-010--time-2.json.gz",
+      "sha256": "65d91d50bac2695f4aa269269081bf8b7f8ccb52f8a4275ccae1c7f19b1e23df",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 271843,
+      "candidate_count": 7,
+      "parent": "consequence-v1-world_and_policy_train-010",
+      "path": "windows/consequence-v1-world_and_policy_train-010--time-4.json.gz",
+      "sha256": "02eef2e5506342d8f3dc68e96a2ea355f4ffa3b6064b5570968ac01f6a3891fd",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 116080,
+      "candidate_count": 5,
+      "parent": "consequence-v1-world_and_policy_train-010",
+      "path": "windows/consequence-v1-world_and_policy_train-010--time-8.json.gz",
+      "sha256": "9f9a00716c61278feeb735932e6b5e9a92631b39e4c41e1894d8c45811c073f2",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2712,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-011",
+      "path": "windows/consequence-v1-world_and_policy_train-011--time-12.json.gz",
+      "sha256": "0e1183e986452956b2f95f720e659e6cff704fcf60728a896b484015cd027cc4",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 167704,
+      "candidate_count": 4,
+      "parent": "consequence-v1-world_and_policy_train-011",
+      "path": "windows/consequence-v1-world_and_policy_train-011--time-2.json.gz",
+      "sha256": "01d645910d9b1f19bd21fc5a4890ff1752f4a0ce531be726044efb06cc8ef8bb",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 1969,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-011",
+      "path": "windows/consequence-v1-world_and_policy_train-011--time-4.json.gz",
+      "sha256": "95902e88aa80a9eafd64bcaabea513bb7d217b178a9c25482a73de5f79e38308",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 60310,
+      "candidate_count": 3,
+      "parent": "consequence-v1-world_and_policy_train-011",
+      "path": "windows/consequence-v1-world_and_policy_train-011--time-8.json.gz",
+      "sha256": "a0ac018f94f669a5a368d386d7c6e1ed39b4ad416f2ad7ade0d4aa23fc530a4c",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2697,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-012",
+      "path": "windows/consequence-v1-world_and_policy_train-012--time-12.json.gz",
+      "sha256": "a9c5c8722bd6d1894efd3d7edbb1cf5b48576dc20212e8b18d4dbd007a1980f1",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 162156,
+      "candidate_count": 4,
+      "parent": "consequence-v1-world_and_policy_train-012",
+      "path": "windows/consequence-v1-world_and_policy_train-012--time-2.json.gz",
+      "sha256": "b8d5fde9a853f63dd587dc5b9af3fd6a3476f10bb9ac0c35c4f7bf179b10650b",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 259366,
+      "candidate_count": 7,
+      "parent": "consequence-v1-world_and_policy_train-012",
+      "path": "windows/consequence-v1-world_and_policy_train-012--time-4.json.gz",
+      "sha256": "b6d714890005baa450be45b1c63fb4a6bd563a8d8608fbe6005a7d35b7e17f6c",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 95543,
+      "candidate_count": 5,
+      "parent": "consequence-v1-world_and_policy_train-012",
+      "path": "windows/consequence-v1-world_and_policy_train-012--time-8.json.gz",
+      "sha256": "e1c03f300576e5653cc15d710dbb290d7ce5a093c48c4f6893b936e9966f605a",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2793,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-013",
+      "path": "windows/consequence-v1-world_and_policy_train-013--time-12.json.gz",
+      "sha256": "a199b4ba05691827efb3def630998393622333364e801150fa5de549967d11fc",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 386865,
+      "candidate_count": 9,
+      "parent": "consequence-v1-world_and_policy_train-013",
+      "path": "windows/consequence-v1-world_and_policy_train-013--time-2.json.gz",
+      "sha256": "0435b919d70910265e387e7bbe2d4dee8cba4125d85086e910db1f4feb6ad008",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 112010,
+      "candidate_count": 3,
+      "parent": "consequence-v1-world_and_policy_train-013",
+      "path": "windows/consequence-v1-world_and_policy_train-013--time-4.json.gz",
+      "sha256": "0eb69589b3087e6e4bcacdff47a1fa1e23d288e9ccb2e7749d7485d7b771f7ec",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 47596,
+      "candidate_count": 2,
+      "parent": "consequence-v1-world_and_policy_train-013",
+      "path": "windows/consequence-v1-world_and_policy_train-013--time-8.json.gz",
+      "sha256": "26e5e0be8360efee04ad89c910d5a10b92c688331775988d9924e46a7e675b1c",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2787,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-014",
+      "path": "windows/consequence-v1-world_and_policy_train-014--time-12.json.gz",
+      "sha256": "53e1884c652582fba505536df175d3b85f78f0e25a18782a601c9490135e31eb",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 158925,
+      "candidate_count": 4,
+      "parent": "consequence-v1-world_and_policy_train-014",
+      "path": "windows/consequence-v1-world_and_policy_train-014--time-2.json.gz",
+      "sha256": "c83999e22678b5516e4ebba4d7125afd3ecdb3d2bf1dcefef8aac3943a6ac08f",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 246892,
+      "candidate_count": 7,
+      "parent": "consequence-v1-world_and_policy_train-014",
+      "path": "windows/consequence-v1-world_and_policy_train-014--time-4.json.gz",
+      "sha256": "fb806935b70a66a231d001f3573974e59fe08e67100d27922233c5f18d5d545d",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 2565,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-014",
+      "path": "windows/consequence-v1-world_and_policy_train-014--time-8.json.gz",
+      "sha256": "77879d761b5fc9fb354ad3f0919bbec0ec7c90f090efe312eac0eae5532a7d4f",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2779,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-015",
+      "path": "windows/consequence-v1-world_and_policy_train-015--time-12.json.gz",
+      "sha256": "5aa8570256e59821712a493277c395480e17b139d7fc4709fe4c9d882170c137",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 183731,
+      "candidate_count": 4,
+      "parent": "consequence-v1-world_and_policy_train-015",
+      "path": "windows/consequence-v1-world_and_policy_train-015--time-2.json.gz",
+      "sha256": "13d6ef052b4e378cf6eb1a4550263e11f2ece4e6096a9e41a506b653d72db7e5",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 138515,
+      "candidate_count": 4,
+      "parent": "consequence-v1-world_and_policy_train-015",
+      "path": "windows/consequence-v1-world_and_policy_train-015--time-4.json.gz",
+      "sha256": "2af9d6fdcee96e3e6c164235a9f3b6cf3a7af7944538b7a04050e4c705473499",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 50857,
+      "candidate_count": 2,
+      "parent": "consequence-v1-world_and_policy_train-015",
+      "path": "windows/consequence-v1-world_and_policy_train-015--time-8.json.gz",
+      "sha256": "01363642076fe135e06ab048aa801ac6fda4d3cae919f82c4a3ac66434bffbf4",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2769,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-016",
+      "path": "windows/consequence-v1-world_and_policy_train-016--time-12.json.gz",
+      "sha256": "4048f9fde8aef9bfa0603cdad121568dc0220d0bfb0c8e82efaf06fe6c5d8eac",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 177055,
+      "candidate_count": 4,
+      "parent": "consequence-v1-world_and_policy_train-016",
+      "path": "windows/consequence-v1-world_and_policy_train-016--time-2.json.gz",
+      "sha256": "c17c7876c1bdd93c3ae9fb227e658d3cdbfdf604a7c9d80a0cef129d88c45695",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 68646,
+      "candidate_count": 2,
+      "parent": "consequence-v1-world_and_policy_train-016",
+      "path": "windows/consequence-v1-world_and_policy_train-016--time-4.json.gz",
+      "sha256": "14a6b6755e38fc3e59c0122d8340da6fc8301555bd22412824f067fa03d7d3b2",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 2573,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-016",
+      "path": "windows/consequence-v1-world_and_policy_train-016--time-8.json.gz",
+      "sha256": "b44c19992f223bc7d8605f6572b7c37df82bb59199a27681b7b3119e27a32ae5",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2755,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-017",
+      "path": "windows/consequence-v1-world_and_policy_train-017--time-12.json.gz",
+      "sha256": "29afa9ddd24b3e8e3fc84f9388791a18286729816151c5755494c2462d9b5706",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 155500,
+      "candidate_count": 4,
+      "parent": "consequence-v1-world_and_policy_train-017",
+      "path": "windows/consequence-v1-world_and_policy_train-017--time-2.json.gz",
+      "sha256": "99b407b5de3df0f4ebe55eec4e620487ebaf902ff73c33e4b5a61df1f46a6248",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 110567,
+      "candidate_count": 3,
+      "parent": "consequence-v1-world_and_policy_train-017",
+      "path": "windows/consequence-v1-world_and_policy_train-017--time-4.json.gz",
+      "sha256": "a2d25aec39a9cc045faee0c515fabd4549b8270fe1f29e17d6282a7cd624305f",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 217865,
+      "candidate_count": 9,
+      "parent": "consequence-v1-world_and_policy_train-017",
+      "path": "windows/consequence-v1-world_and_policy_train-017--time-8.json.gz",
+      "sha256": "f5365d164f684be4d830431d834034eccd65777cce8be13887dd6a6b43cef678",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2779,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-018",
+      "path": "windows/consequence-v1-world_and_policy_train-018--time-12.json.gz",
+      "sha256": "b9fc47691899ba0e7085728b3c4432da39d16793067a5540b0f8dae846f56e96",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 147396,
+      "candidate_count": 4,
+      "parent": "consequence-v1-world_and_policy_train-018",
+      "path": "windows/consequence-v1-world_and_policy_train-018--time-2.json.gz",
+      "sha256": "6e6b5164928dc94eca131eca9222eaea58633ec547286e58054eb20ae439c48f",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 140764,
+      "candidate_count": 4,
+      "parent": "consequence-v1-world_and_policy_train-018",
+      "path": "windows/consequence-v1-world_and_policy_train-018--time-4.json.gz",
+      "sha256": "6313a91373dada6a2de655fa33f8eaeae97ea6f3e0d22b19573667537635b8ec",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 2509,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-018",
+      "path": "windows/consequence-v1-world_and_policy_train-018--time-8.json.gz",
+      "sha256": "1948dd69acd28b6bcbfd274744734cb33efed0ce3cabb23aff957fb3be84689b",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2757,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-019",
+      "path": "windows/consequence-v1-world_and_policy_train-019--time-12.json.gz",
+      "sha256": "cb1c04db9d297db268960edb9d741ff4e96b5b1b2d366ed1714ed0387c3c179f",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 168161,
+      "candidate_count": 4,
+      "parent": "consequence-v1-world_and_policy_train-019",
+      "path": "windows/consequence-v1-world_and_policy_train-019--time-2.json.gz",
+      "sha256": "0db68402f1f7e609e4863c4708a9e37d142431111e00f948a4fc4d55206dae6c",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 247600,
+      "candidate_count": 7,
+      "parent": "consequence-v1-world_and_policy_train-019",
+      "path": "windows/consequence-v1-world_and_policy_train-019--time-4.json.gz",
+      "sha256": "ad1849a434b07eca37313cf177ca1ee54a574db02eef07224065e753f4046ef9",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 2544,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-019",
+      "path": "windows/consequence-v1-world_and_policy_train-019--time-8.json.gz",
+      "sha256": "1cd9b4e9bf39257eccae2e7cddf464405ae2e8afa3696d0cf5cbc10ed1fccc25",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2752,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-020",
+      "path": "windows/consequence-v1-world_and_policy_train-020--time-12.json.gz",
+      "sha256": "233f39ce2f5aac97495cfed459ed39732d4291b797590ee15fea814c99b4f59d",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 119028,
+      "candidate_count": 3,
+      "parent": "consequence-v1-world_and_policy_train-020",
+      "path": "windows/consequence-v1-world_and_policy_train-020--time-2.json.gz",
+      "sha256": "7e1b10bc8887422d117128e577d352645e1fbc758f24195b00f53d8280d19c52",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 156607,
+      "candidate_count": 4,
+      "parent": "consequence-v1-world_and_policy_train-020",
+      "path": "windows/consequence-v1-world_and_policy_train-020--time-4.json.gz",
+      "sha256": "b438d8a0c4f4ee2f7fc62b2aaa1c90bad71253b3392c8fa996ae6a9590279644",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 177077,
+      "candidate_count": 7,
+      "parent": "consequence-v1-world_and_policy_train-020",
+      "path": "windows/consequence-v1-world_and_policy_train-020--time-8.json.gz",
+      "sha256": "9cd4c65ee66b6d36c36630daac49134753a12aaa5574c7d3c32fe5974ae83201",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2781,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-021",
+      "path": "windows/consequence-v1-world_and_policy_train-021--time-12.json.gz",
+      "sha256": "1c785a82f986481ba380f01e12dd87dce21561eef19186b338e74c23a7ac960a",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 146763,
+      "candidate_count": 4,
+      "parent": "consequence-v1-world_and_policy_train-021",
+      "path": "windows/consequence-v1-world_and_policy_train-021--time-2.json.gz",
+      "sha256": "a4f9e206862c7d41703032fb577bf5523d024102b3fc9bd97c8bfd11a2d192ec",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 91860,
+      "candidate_count": 3,
+      "parent": "consequence-v1-world_and_policy_train-021",
+      "path": "windows/consequence-v1-world_and_policy_train-021--time-4.json.gz",
+      "sha256": "1f39a2dbcb56b410a65db8ebd4f3655f4f6d00b6859c1d24f1e5f67d64ee816f",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 2547,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-021",
+      "path": "windows/consequence-v1-world_and_policy_train-021--time-8.json.gz",
+      "sha256": "573c6963fbd8d92a1050f08f0e716fca2ab34cf57be6cb868755c62bb33f8b43",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2655,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-022",
+      "path": "windows/consequence-v1-world_and_policy_train-022--time-12.json.gz",
+      "sha256": "c350f95ad8a343062ecc342fd70256f3c5933ae5f23a7bae1613237949e8d9d6",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 141266,
+      "candidate_count": 4,
+      "parent": "consequence-v1-world_and_policy_train-022",
+      "path": "windows/consequence-v1-world_and_policy_train-022--time-2.json.gz",
+      "sha256": "1292111039ca7d87c5670a81542d056a1a0e0161edb9a7e6d32f290370996bdd",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 2054,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-022",
+      "path": "windows/consequence-v1-world_and_policy_train-022--time-4.json.gz",
+      "sha256": "7acde7872016d0c1a79ed935ed3951590e37d1e5904fc98be3a0009c960afcf7",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 43479,
+      "candidate_count": 3,
+      "parent": "consequence-v1-world_and_policy_train-022",
+      "path": "windows/consequence-v1-world_and_policy_train-022--time-8.json.gz",
+      "sha256": "891ae3ae268adab70cfad20a983c11f71b7d41ba60c77f4e4025ca3005e80516",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-8"
+    },
+    {
+      "bytes": 2858,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-023",
+      "path": "windows/consequence-v1-world_and_policy_train-023--time-12.json.gz",
+      "sha256": "097c95b57fda297bf355a156a80e8cdd3908ee4e73d4becfcdea69e40106b8d6",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-12"
+    },
+    {
+      "bytes": 158443,
+      "candidate_count": 4,
+      "parent": "consequence-v1-world_and_policy_train-023",
+      "path": "windows/consequence-v1-world_and_policy_train-023--time-2.json.gz",
+      "sha256": "62a24a10d966c4220d6a565752461b7d6d73591e0b7d83f021416d91169a8650",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-2"
+    },
+    {
+      "bytes": 2136,
+      "candidate_count": 1,
+      "parent": "consequence-v1-world_and_policy_train-023",
+      "path": "windows/consequence-v1-world_and_policy_train-023--time-4.json.gz",
+      "sha256": "cc7623e07bfcb84ef8e15520e648b8955ae1b998b1c3c46f70a1c7c7883f3e4b",
+      "split": "train",
+      "status": "no_opportunity",
+      "window_id": "time-4"
+    },
+    {
+      "bytes": 58504,
+      "candidate_count": 3,
+      "parent": "consequence-v1-world_and_policy_train-023",
+      "path": "windows/consequence-v1-world_and_policy_train-023--time-8.json.gz",
+      "sha256": "8dc38f0b8005176d334b833119d03734375856a46000b3baff4cb455cb080d22",
+      "split": "train",
+      "status": "complete",
+      "window_id": "time-8"
+    }
+  ],
+  "schema": "w1-recovery-window-cache/1",
+  "source_attempt": "w1-drone-action-consequence-world-model-v5-public-prefix-contract-repair-once",
+  "source_export_verification_sha256": "ef01f8649d7acb180de1ebd253615c70c1f10f3cde0a9e14efdd82fa75eae86d",
+  "window_count": 288
+}

@@ -1,0 +1,112 @@
+{
+  "SQLite_integrity": "ok",
+  "pending_rows": [
+    {
+      "id": 18028,
+      "stage": "world_training_and_restore",
+      "name": "world_update",
+      "amounts": "{\"target_candidate_evaluations\": 37, \"target_forwards\": 8, \"world_model_updates\": 1}",
+      "status": "pending",
+      "error": null
+    },
+    {
+      "id": 18029,
+      "stage": "world_training_and_restore",
+      "name": "world_forward",
+      "amounts": "{\"training_candidate_evaluations\": 37, \"training_forwards\": 1}",
+      "status": "pending",
+      "error": null
+    }
+  ],
+  "world_model_update_charges_by_status": {
+    "complete": 475,
+    "pending": 1
+  },
+  "world_training_forward_charges_by_status": {
+    "complete": 475,
+    "pending": 1
+  },
+  "world8201_checkpoint": {
+    "bytes": 2896861,
+    "sha256": "ebd9894270d6a32edec6892a912d11933c1a266c1a831294388ffb06be52d8b0"
+  },
+  "world_models_completed": 1,
+  "world_models_partially_trained_or_absent": {
+    "8202": "partial in-memory state; no checkpoint file",
+    "8203": "not started"
+  },
+  "total_limits": {
+    "action_samples": 22320,
+    "active_storage_bytes": 17179869184,
+    "all_resident_rss_bytes": 4294967296,
+    "analysis_calls": 1,
+    "behavior_snapshots": 288,
+    "bootstrap_forwards": 18432,
+    "candidate_branches": 7200,
+    "candidate_contract_audits": 226800,
+    "candidate_scans": 118224,
+    "candidate_snapshot_probes": 7200,
+    "checkpoint_loads": 18,
+    "checkpoint_writes": 12,
+    "complete_process_cpu_seconds": 14900,
+    "environment_constructions": 18753,
+    "environment_resets": 18753,
+    "environment_steps": 106416,
+    "forced_first_actions": 7200,
+    "model_initializations": 24,
+    "output_writes": 572,
+    "policy_forwards": 206640,
+    "policy_updates": 1152,
+    "replay_rows": 92160,
+    "snapshot_writes": 288,
+    "target_candidate_evaluations": 288000,
+    "target_forwards": 11520,
+    "task_episodes": 240,
+    "training_candidate_evaluations": 288000,
+    "training_forwards": 1440,
+    "update_rows": 73728,
+    "wall_seconds": 32500,
+    "world_model_batch_forwards": 41616,
+    "world_model_candidate_evaluations": 1040400,
+    "world_model_updates": 1440
+  },
+  "controller": {
+    "CPU_scope": "dispatcher SELF/waited children + controller SELF/waited supervisor/export descendants counted once",
+    "Linux_evidence_retained": "/home/user1/w1-pilot/runs/w1-drone-action-consequence-world-model-v5-public-prefix-contract-repair-once",
+    "dispatch_CPU_seconds": 0.3372152259999999,
+    "exitcode": 1,
+    "export_CPU_seconds": 0.5657069899998532,
+    "export_wall_seconds": 1.1605997267179191,
+    "first_controller_error": null,
+    "hosting_receipt": "/home/user1/w1-pilot/hosting/w1-drone-action-consequence-world-model-v5-public-prefix-contract-repair-once.json",
+    "local_export": "/home/user1/w1-pilot/packages/w1-drone-action-consequence-world-model-v5-public-prefix-contract-repair/exports/w1-drone-action-consequence-world-model-v5-public-prefix-contract-repair-once",
+    "measured_Linux_CPU_seconds": 2335.6306550239997,
+    "reserves_are_not_measurements": true,
+    "resource_scope_complete": false,
+    "status": "stopped",
+    "unmeasured": [
+      "SSH/client transfer outside server research scope",
+      "systemd user-manager CPU",
+      "controller exit tail"
+    ],
+    "wall_seconds": 2423.3381745279767
+  },
+  "unconfirmed_stage_tail": {
+    "cpu_attribution_status": "worker_journal_matches_server_commit",
+    "cpu_scope": "included once in supervisor SELF plus waited-children total; phase rows are non-additive views",
+    "cpu_seconds": 1600.2274009999996,
+    "cpu_tail_measurement_reversed": false,
+    "event": "unconfirmed_stage_tail",
+    "measurement_status": "measured_incomplete",
+    "stage": "world_training_and_restore",
+    "stage_cpu_seconds": 1600.2274009999996,
+    "stage_resource_cap_pass": false,
+    "stage_wall_seconds": 1605.1718239453621,
+    "transition_committed": false,
+    "wall_seconds": 1605.1718239453621
+  },
+  "stage_cpu_cap": 1600,
+  "stage_wall_cap": 2000,
+  "worker_final_ledger": "unavailable; derive only from SQLite",
+  "classification": "technical_stop; worker killed by CPU shutdown-reserve guard after measured stage tail crossed frozen stage CPU limit"
+}

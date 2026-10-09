@@ -1,0 +1,12 @@
+{
+  "scope": "controlled engineering cache test only; not formal research",
+  "provenance": "observed tool stderr and exit code; original partial SQLite and time log preserved in cached-final",
+  "exitcode": 1,
+  "type": "AttributeError",
+  "message": "Can't get attribute 'Fixture' on <module '__main__' from '/home/asus/w1-engineering/public-prefix-v5-devel-20261008/acceptance/cached_integration_acceptance.py'>",
+  "operation": "pickle.loads of the hash-verified synthetic engineering snapshot",
+  "repair": "test entry imports the exact same Fixture class; no change to production deserialization or metadata tolerances",
+  "formal_checkpoint_loads": 0,
+  "model_forwards": 0,
+  "formal_attempt_created": false
+}

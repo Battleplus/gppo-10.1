@@ -1,3 +1,16 @@
+# W1 世界模型 × GPPO：2026-10-09 进度更新
+
+**最新进度：真实后果数据和8201模型已保存；恢复v2在准入输出计数处技术停止，尚未完成新分支预测或GPPO评价。v3修复源码快照已归档，不能视为获批运行。**
+
+- [当前进度、恢复计划及最新身份](progress/2026-10-09/CURRENT_PROGRESS.md)
+- [最新正式停止报告](progress/2026-10-09/formal-run-v2/FINAL_STOP_REPORT_CN.md)
+- [源码与合同快照](progress/2026-10-09/package-v3/)
+- [本次档案清单与SHA-256](progress/2026-10-09/ARCHIVE_FILE_SHA256.txt)
+
+以下保留截至2026-10-05的历史首页，所有“当前”“最新”均指该历史时点；旧科学负结果不变。
+
+---
+
 # W1 世界模型 × GPPO：当前状态
 
 状态截至 **2026-10-05 已封存的正式结果**。详细证据见[当前状态说明](docs/CURRENT_STATUS.md)和[最终正式报告](evidence/recovery/formal-run-report.md)。

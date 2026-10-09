@@ -1,0 +1,20 @@
+{
+  "old_attempt_consumed": {
+    "attempt": "w1-drone-action-consequence-world-model-v2-execution-once",
+    "authorization_sha256": "9d95c94e67d08c233a98d51ad0ec46a1b4b64dc8fbad80e37a04e1b72b463c83",
+    "status": "consumed_no_retry",
+    "token_sha256": "fc7f4368c0715ba49eb06c4cd4e7faecf43ab327eaae6b3c395678f7c7305a9a"
+  },
+  "old_evidence_files_checked": 585,
+  "old_files_checked": 548,
+  "old_files_unchanged": true,
+  "old_final_delivery_hashes_sha256": "3ea26c5a6e355ed15b67c0d754631f189256765f48de8e042fea20837f022ade",
+  "old_frozen_identity": {
+    "RESOURCE_REQUEST.json": "2ce53ba70d9af81b1f2d4cfa19df56c3de74663334f73d559c8fcc32acd68de8",
+    "execution-manifest.json": "01b9c59c6eb74b63e71eb3048c635ad645d4a1732a055aa8e234b37e9ddaf745",
+    "frozen-identity.json": "b1a01bbfc3bd9cfb9f34f6d842ccd47a928191263754d35700e46df153328a2c",
+    "hashes.json": "8520be218471ed53933d77da8d0a58ac208aa6c880726cdbe080e199527c21bb"
+  },
+  "old_package": "E:\\Z博士\\research-plans\\w1-drone-action-consequence-world-model-v2-execution",
+  "old_stop_evidence": "E:\\Z博士\\research-diagnostics\\w1-drone-consequence-v2-formal-run-20261008"
+}

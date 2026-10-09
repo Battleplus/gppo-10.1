@@ -1,0 +1,12 @@
+{
+  "approval_status": "NOT_APPROVED",
+  "attempt": "w1-drone-action-consequence-world-model-v5-recovery-v1-linux-release-v3-output-writes-contract-repair-once",
+  "formal_attempt_created": false,
+  "formal_token_created": false,
+  "hashes_sha256": "aa5d44b5ca8d7274ac49c2a6dd33baa35e479ce640448e8a607892c953af0627",
+  "manifest_sha256": "6d30ab05cc7015045c7547f2c62c65e0fb0a20325906b7fdcadd562dbbe19f5b",
+  "research_started": false,
+  "resource_request_sha256": "5d9c42a564478a5d785b6453fa27f33aabbfc13868674e4ae31f4b90f42fd877",
+  "schema": "w1-recovery-frozen-identity/1",
+  "supersedes_attempt": "w1-drone-action-consequence-world-model-v5-recovery-v1-linux-release-once"
+}
